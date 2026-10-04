@@ -2,7 +2,7 @@
   "cases": [
     {
       "id": "person/en/organization-collision/architects-two-surnames",
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "en",
       "title": "Architecture firm named with two surnames",
@@ -30,7 +30,8 @@
           "no-person"
         ],
         "name_features": [],
-        "boundary_tags": []
+        "boundary_tags": [],
+        "familiarity_basis": "author-judgment"
       },
       "ambiguity": {
         "level": "context-resolvable",
@@ -47,8 +48,234 @@
       }
     },
     {
+      "id": "person/en/organization-collision/bare-meridian-either",
+      "schema_version": "1.1.0",
+      "entity_type": "PERSON",
+      "language": "en",
+      "title": "Meridian as a company or a given name, bare subject",
+      "why": "A rare given name that is also a well-known company-style word; a bare subject of an approval verb has no head noun, title or first name.",
+      "text": "Meridian approved the transfer.",
+      "expectations": [
+        {
+          "start": 0,
+          "end": 8,
+          "surface": "Meridian",
+          "expect": "either"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "rare",
+        "script": "latin",
+        "token_class": "single",
+        "collision_classes": [
+          "organization",
+          "common-word"
+        ],
+        "context_types": [
+          "plain-prose",
+          "sentence-initial"
+        ],
+        "name_features": [
+          "given-only"
+        ],
+        "boundary_tags": [],
+        "familiarity_basis": "author-judgment"
+      },
+      "ambiguity": {
+        "level": "genuinely-ambiguous",
+        "kind": "category-collision",
+        "alternative_reading": "organization-name",
+        "resolved_by": [
+          "nothing"
+        ],
+        "acceptable_outcomes": [
+          "person",
+          "not-person"
+        ],
+        "note": "Companies and people can approve transfers, and 'Meridian' alone carries no suffix or title."
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/en/organization-collision/brand-roadster-product",
+      "schema_version": "1.1.0",
+      "entity_type": "PERSON",
+      "language": "en",
+      "title": "Vehicle model named after a surname",
+      "why": "A product name built from a surname and a model noun is not a person.",
+      "text": "He drove a Tessler Roadster to work.",
+      "expectations": [
+        {
+          "start": 11,
+          "end": 27,
+          "surface": "Tessler Roadster",
+          "expect": "not-person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "rare",
+        "script": "latin",
+        "token_class": "multi",
+        "collision_classes": [
+          "product-brand"
+        ],
+        "context_types": [
+          "plain-prose",
+          "no-person"
+        ],
+        "name_features": [],
+        "boundary_tags": [],
+        "familiarity_basis": "author-judgment"
+      },
+      "ambiguity": {
+        "level": "context-resolvable",
+        "kind": "category-collision",
+        "alternative_reading": "brand-or-product",
+        "resolved_by": [
+          "head-noun-or-suffix",
+          "modifier-or-determiner"
+        ],
+        "note": "'a ... Roadster' is a singular countable product and 'Roadster' is a model noun."
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/en/organization-collision/chairs-namesake-capital",
+      "schema_version": "1.1.0",
+      "entity_type": "PERSON",
+      "language": "en",
+      "title": "Title and surname chairing a namesake company",
+      "why": "A titled surname and a firm named with the same surname, linked by 'chairs'.",
+      "text": "Ms. Carrow chairs Carrow Capital.",
+      "expectations": [
+        {
+          "start": 4,
+          "end": 10,
+          "surface": "Carrow",
+          "expect": "person"
+        },
+        {
+          "start": 18,
+          "end": 32,
+          "surface": "Carrow Capital",
+          "expect": "not-person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "rare",
+        "script": "latin",
+        "token_class": "single",
+        "collision_classes": [
+          "organization"
+        ],
+        "context_types": [
+          "plain-prose",
+          "title-honorific"
+        ],
+        "name_features": [
+          "surname-only"
+        ],
+        "boundary_tags": [
+          "honorific-excluded",
+          "abbreviation-period"
+        ],
+        "familiarity_basis": "author-judgment"
+      },
+      "ambiguity": {
+        "level": "context-resolvable",
+        "kind": "category-collision",
+        "alternative_reading": "organization-name",
+        "resolved_by": [
+          "title-or-honorific",
+          "head-noun-or-suffix"
+        ],
+        "note": "'Ms.' selects the person; 'Capital' is a financial head noun."
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/en/organization-collision/collection-named-sloane",
+      "schema_version": "1.1.0",
+      "entity_type": "PERSON",
+      "language": "en",
+      "title": "Collection named with a surname plus a lowercase noun",
+      "why": "'The Sloane collection' is a product line even though only the surname is capitalized.",
+      "text": "The Sloane collection launched in spring.",
+      "expectations": [
+        {
+          "start": 4,
+          "end": 10,
+          "surface": "Sloane",
+          "expect": "not-person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "latin",
+        "token_class": "single",
+        "collision_classes": [
+          "product-brand"
+        ],
+        "context_types": [
+          "plain-prose",
+          "sentence-initial",
+          "no-person"
+        ],
+        "name_features": [],
+        "boundary_tags": [],
+        "familiarity_basis": "author-judgment"
+      },
+      "ambiguity": {
+        "level": "context-resolvable",
+        "kind": "category-collision",
+        "alternative_reading": "brand-or-product",
+        "resolved_by": [
+          "modifier-or-determiner",
+          "head-noun-or-suffix"
+        ],
+        "note": "A surname used as an attributive modifier of 'collection' names a product line."
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
       "id": "person/en/organization-collision/company-named-with-given-name",
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "en",
       "title": "Company named with a given name",
@@ -77,7 +304,8 @@
           "no-person"
         ],
         "name_features": [],
-        "boundary_tags": []
+        "boundary_tags": [],
+        "familiarity_basis": "author-judgment"
       },
       "ambiguity": {
         "level": "context-resolvable",
@@ -95,7 +323,7 @@
     },
     {
       "id": "person/en/organization-collision/dr-martens-brand",
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "en",
       "title": "Title-plus-surname that is a footwear brand",
@@ -123,7 +351,8 @@
           "no-person"
         ],
         "name_features": [],
-        "boundary_tags": []
+        "boundary_tags": [],
+        "familiarity_basis": "author-judgment"
       },
       "ambiguity": {
         "level": "context-resolvable",
@@ -140,8 +369,65 @@
       }
     },
     {
+      "id": "person/en/organization-collision/either-bare-halden-announced",
+      "schema_version": "1.1.0",
+      "entity_type": "PERSON",
+      "language": "en",
+      "title": "Halden as a firm or a surname, bare subject",
+      "why": "A rare surname that is also a plausible company name; making an announcement is something a firm or a person does.",
+      "text": "Halden announced the merger on Tuesday.",
+      "expectations": [
+        {
+          "start": 0,
+          "end": 6,
+          "surface": "Halden",
+          "expect": "either"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "rare",
+        "script": "latin",
+        "token_class": "single",
+        "collision_classes": [
+          "organization"
+        ],
+        "context_types": [
+          "plain-prose",
+          "sentence-initial"
+        ],
+        "name_features": [
+          "surname-only"
+        ],
+        "boundary_tags": [],
+        "familiarity_basis": "author-judgment"
+      },
+      "ambiguity": {
+        "level": "genuinely-ambiguous",
+        "kind": "category-collision",
+        "alternative_reading": "organization-name",
+        "resolved_by": [
+          "nothing"
+        ],
+        "acceptable_outcomes": [
+          "person",
+          "not-person"
+        ],
+        "note": "With no title, first name or legal-form suffix both a company and an individual can announce a merger."
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
       "id": "person/en/organization-collision/family-business-and-sons",
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "en",
       "title": "Family business with surname and 'Sons'",
@@ -169,7 +455,8 @@
           "no-person"
         ],
         "name_features": [],
-        "boundary_tags": []
+        "boundary_tags": [],
+        "familiarity_basis": "author-judgment"
       },
       "ambiguity": {
         "level": "context-resolvable",
@@ -187,7 +474,7 @@
     },
     {
       "id": "person/en/organization-collision/fictional-firm-with-surnames",
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "en",
       "title": "Law-firm-style organization made of two surnames",
@@ -214,7 +501,8 @@
           "no-person"
         ],
         "name_features": [],
-        "boundary_tags": []
+        "boundary_tags": [],
+        "familiarity_basis": "author-judgment"
       },
       "ambiguity": {
         "level": "context-resolvable",
@@ -231,8 +519,122 @@
       }
     },
     {
+      "id": "person/en/organization-collision/firm-before-namesake-person",
+      "schema_version": "1.1.0",
+      "entity_type": "PERSON",
+      "language": "en",
+      "title": "Namesake firm mentioned before its namesake",
+      "why": "Organization first, person second, sharing a surname. The firm name is not a person even though it contains the surname, and the person span stops before the firm.",
+      "text": "Quill Analytics hired Aldous Quill last week.",
+      "expectations": [
+        {
+          "start": 0,
+          "end": 15,
+          "surface": "Quill Analytics",
+          "expect": "not-person"
+        },
+        {
+          "start": 22,
+          "end": 34,
+          "surface": "Aldous Quill",
+          "expect": "person"
+        }
+      ],
+      "focus_span": 1,
+      "dimensions": {
+        "familiarity": "rare",
+        "script": "latin",
+        "token_class": "multi",
+        "collision_classes": [
+          "organization"
+        ],
+        "context_types": [
+          "plain-prose",
+          "sentence-initial"
+        ],
+        "name_features": [
+          "full-name"
+        ],
+        "boundary_tags": [],
+        "familiarity_basis": "author-judgment"
+      },
+      "ambiguity": {
+        "level": "context-resolvable",
+        "kind": "category-collision",
+        "alternative_reading": "organization-name",
+        "resolved_by": [
+          "head-noun-or-suffix",
+          "predicate-or-argument"
+        ],
+        "note": "'Analytics' is a business head noun; 'hired X' takes a person as object."
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/en/organization-collision/football-club-versus-verb",
+      "schema_version": "1.1.0",
+      "entity_type": "PERSON",
+      "language": "en",
+      "title": "Club name beginning with a surname",
+      "why": "'Mason United' is a team; the sentence-initial capitalized word cannot be read as a person because 'United' completes a club name.",
+      "text": "Mason United won the derby.",
+      "expectations": [
+        {
+          "start": 0,
+          "end": 12,
+          "surface": "Mason United",
+          "expect": "not-person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "latin",
+        "token_class": "multi",
+        "collision_classes": [
+          "organization",
+          "common-word"
+        ],
+        "context_types": [
+          "plain-prose",
+          "sentence-initial",
+          "no-person"
+        ],
+        "name_features": [],
+        "boundary_tags": [],
+        "familiarity_basis": "author-judgment"
+      },
+      "ambiguity": {
+        "level": "context-resolvable",
+        "kind": "category-collision",
+        "alternative_reading": "organization-name",
+        "resolved_by": [
+          "head-noun-or-suffix",
+          "predicate-or-argument"
+        ],
+        "note": "'United' is a club-name element and winning a derby is predicated of a team."
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
       "id": "person/en/organization-collision/ford-foundation-org",
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "en",
       "title": "Ford Foundation as an organization",
@@ -259,7 +661,8 @@
           "no-person"
         ],
         "name_features": [],
-        "boundary_tags": []
+        "boundary_tags": [],
+        "familiarity_basis": "author-judgment"
       },
       "ambiguity": {
         "level": "context-resolvable",
@@ -277,7 +680,7 @@
     },
     {
       "id": "person/en/organization-collision/ford-mustang-product",
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "en",
       "title": "Ford Mustang as a vehicle model",
@@ -305,7 +708,8 @@
           "no-person"
         ],
         "name_features": [],
-        "boundary_tags": []
+        "boundary_tags": [],
+        "familiarity_basis": "author-judgment"
       },
       "ambiguity": {
         "level": "context-resolvable",
@@ -322,8 +726,63 @@
       }
     },
     {
+      "id": "person/en/organization-collision/handbag-brand-surname-modifier",
+      "schema_version": "1.1.0",
+      "entity_type": "PERSON",
+      "language": "en",
+      "title": "Brand name used as a modifier of a product noun",
+      "why": "A surname used as a brand directly before a product noun; the possessive pronoun 'Her' shows the handbag is hers, not the brand's owner.",
+      "text": "Her Marlowe handbag was stolen.",
+      "expectations": [
+        {
+          "start": 4,
+          "end": 11,
+          "surface": "Marlowe",
+          "expect": "not-person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "rare",
+        "script": "latin",
+        "token_class": "single",
+        "collision_classes": [
+          "product-brand"
+        ],
+        "context_types": [
+          "plain-prose",
+          "no-person"
+        ],
+        "name_features": [],
+        "boundary_tags": [],
+        "contrast_classes": [
+          "en-lookalike-entity"
+        ],
+        "familiarity_basis": "author-judgment"
+      },
+      "ambiguity": {
+        "level": "context-resolvable",
+        "kind": "category-collision",
+        "alternative_reading": "brand-or-product",
+        "resolved_by": [
+          "modifier-or-determiner",
+          "head-noun-or-suffix"
+        ],
+        "note": "'handbag' is a product noun and the surname modifies it."
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
       "id": "person/en/organization-collision/hardware-store-surname",
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "en",
       "title": "Shop named after a surname",
@@ -350,7 +809,8 @@
           "no-person"
         ],
         "name_features": [],
-        "boundary_tags": []
+        "boundary_tags": [],
+        "familiarity_basis": "author-judgment"
       },
       "ambiguity": {
         "level": "context-resolvable",
@@ -368,7 +828,7 @@
     },
     {
       "id": "person/en/organization-collision/hospital-named-after-surname",
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "en",
       "title": "Hospital named after a surname",
@@ -395,7 +855,8 @@
           "no-person"
         ],
         "name_features": [],
-        "boundary_tags": []
+        "boundary_tags": [],
+        "familiarity_basis": "author-judgment"
       },
       "ambiguity": {
         "level": "context-resolvable",
@@ -412,8 +873,234 @@
       }
     },
     {
+      "id": "person/en/organization-collision/kinsey-brothers-band",
+      "schema_version": "1.1.0",
+      "entity_type": "PERSON",
+      "language": "en",
+      "title": "Band name made of a surname and a band noun",
+      "why": "A band named with a surname and 'Band' is a group, not a person; the record-release predicate selects an act.",
+      "text": "Kinsey Band released a record in March.",
+      "expectations": [
+        {
+          "start": 0,
+          "end": 11,
+          "surface": "Kinsey Band",
+          "expect": "not-person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "latin",
+        "token_class": "multi",
+        "collision_classes": [
+          "organization"
+        ],
+        "context_types": [
+          "plain-prose",
+          "sentence-initial",
+          "no-person"
+        ],
+        "name_features": [],
+        "boundary_tags": [],
+        "familiarity_basis": "author-judgment"
+      },
+      "ambiguity": {
+        "level": "context-resolvable",
+        "kind": "category-collision",
+        "alternative_reading": "organization-name",
+        "resolved_by": [
+          "predicate-or-argument",
+          "head-noun-or-suffix"
+        ],
+        "note": "'Band' is a group head noun and releasing a record is predicated of an act."
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/en/organization-collision/law-firm-three-surnames",
+      "schema_version": "1.1.0",
+      "entity_type": "PERSON",
+      "language": "en",
+      "title": "Three-surname law firm with a legal-form suffix",
+      "why": "A comma-and-ampersand list of three surnames looks like three people; the legal-form suffix LLP makes the whole string one firm.",
+      "text": "Reyes, Okafor & Lindqvist LLP filed the motion on Friday.",
+      "expectations": [
+        {
+          "start": 0,
+          "end": 29,
+          "surface": "Reyes, Okafor & Lindqvist LLP",
+          "expect": "not-person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "rare",
+        "script": "latin",
+        "token_class": "multi",
+        "collision_classes": [
+          "organization"
+        ],
+        "context_types": [
+          "plain-prose",
+          "sentence-initial",
+          "list-or-enumeration",
+          "no-person"
+        ],
+        "name_features": [],
+        "boundary_tags": [
+          "punctuation-adjacent"
+        ],
+        "familiarity_basis": "author-judgment"
+      },
+      "ambiguity": {
+        "level": "context-resolvable",
+        "kind": "category-collision",
+        "alternative_reading": "organization-name",
+        "resolved_by": [
+          "head-noun-or-suffix"
+        ],
+        "note": "LLP is a legal-form suffix; the surnames inside are part of the firm name, not mentions of individuals."
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/en/organization-collision/manager-named-after-brand",
+      "schema_version": "1.1.0",
+      "entity_type": "PERSON",
+      "language": "en",
+      "title": "Manager whose surname is also a brand",
+      "why": "A job title followed by a surname that is also a household brand style name.",
+      "text": "Manager Rowan said that Rowan Paints had moved.",
+      "expectations": [
+        {
+          "start": 8,
+          "end": 13,
+          "surface": "Rowan",
+          "expect": "person"
+        },
+        {
+          "start": 24,
+          "end": 36,
+          "surface": "Rowan Paints",
+          "expect": "not-person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "latin",
+        "token_class": "single",
+        "collision_classes": [
+          "product-brand",
+          "organization"
+        ],
+        "context_types": [
+          "plain-prose",
+          "title-honorific"
+        ],
+        "name_features": [
+          "surname-only"
+        ],
+        "boundary_tags": [
+          "honorific-excluded"
+        ],
+        "familiarity_basis": "author-judgment"
+      },
+      "ambiguity": {
+        "level": "context-resolvable",
+        "kind": "category-collision",
+        "alternative_reading": "brand-or-product",
+        "resolved_by": [
+          "title-or-honorific",
+          "head-noun-or-suffix"
+        ],
+        "note": "A job title selects the person; 'Paints' is a trade head noun."
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/en/organization-collision/mason-united-verb",
+      "schema_version": "1.1.0",
+      "entity_type": "PERSON",
+      "language": "en",
+      "title": "Given name as the subject of the verb 'united'",
+      "why": "Partner of football-club-versus-verb: the lowercase 'united' is a verb, so the capitalized first word is a person.",
+      "text": "Mason united the two committees.",
+      "expectations": [
+        {
+          "start": 0,
+          "end": 5,
+          "surface": "Mason",
+          "expect": "person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "latin",
+        "token_class": "single",
+        "collision_classes": [
+          "organization",
+          "common-word"
+        ],
+        "context_types": [
+          "plain-prose",
+          "sentence-initial"
+        ],
+        "name_features": [
+          "given-only"
+        ],
+        "boundary_tags": [],
+        "familiarity_basis": "author-judgment"
+      },
+      "ambiguity": {
+        "level": "context-resolvable",
+        "kind": "category-collision",
+        "alternative_reading": "organization-name",
+        "resolved_by": [
+          "syntactic-position",
+          "punctuation-or-format"
+        ],
+        "note": "A verb phrase 'united the two committees' needs a subject; the capitalized word before it is that agent."
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
       "id": "person/en/organization-collision/mercedes-brand-subject",
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "en",
       "title": "Mercedes as a car brand",
@@ -443,7 +1130,8 @@
           "no-person"
         ],
         "name_features": [],
-        "boundary_tags": []
+        "boundary_tags": [],
+        "familiarity_basis": "author-judgment"
       },
       "ambiguity": {
         "level": "context-resolvable",
@@ -461,7 +1149,7 @@
     },
     {
       "id": "person/en/organization-collision/mercedes-given-name",
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "en",
       "title": "Mercedes as a person to be phoned",
@@ -488,7 +1176,8 @@
           "plain-prose"
         ],
         "name_features": [],
-        "boundary_tags": []
+        "boundary_tags": [],
+        "familiarity_basis": "author-judgment"
       },
       "ambiguity": {
         "level": "context-resolvable",
@@ -505,8 +1194,228 @@
       }
     },
     {
+      "id": "person/en/organization-collision/ms-same-surname-funded",
+      "schema_version": "1.1.0",
+      "entity_type": "PERSON",
+      "language": "en",
+      "title": "Surname with Ms. as the funder",
+      "why": "Partner of trust-versus-title: the same surname with 'Ms.' funding a clinic is a person.",
+      "text": "Ms. Whitaker funded the clinic.",
+      "expectations": [
+        {
+          "start": 4,
+          "end": 12,
+          "surface": "Whitaker",
+          "expect": "person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "latin",
+        "token_class": "single",
+        "collision_classes": [
+          "organization"
+        ],
+        "context_types": [
+          "plain-prose",
+          "title-honorific"
+        ],
+        "name_features": [
+          "surname-only"
+        ],
+        "boundary_tags": [
+          "honorific-excluded",
+          "abbreviation-period"
+        ],
+        "familiarity_basis": "author-judgment"
+      },
+      "ambiguity": {
+        "level": "context-resolvable",
+        "kind": "category-collision",
+        "alternative_reading": "organization-name",
+        "resolved_by": [
+          "title-or-honorific"
+        ],
+        "note": "'Ms.' attaches to a person."
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/en/organization-collision/ms-tessler-driving",
+      "schema_version": "1.1.0",
+      "entity_type": "PERSON",
+      "language": "en",
+      "title": "Surname with a title as a driver",
+      "why": "Partner of brand-roadster-product: the same surname as a person, marked by a title.",
+      "text": "Ms. Tessler drove to work.",
+      "expectations": [
+        {
+          "start": 4,
+          "end": 11,
+          "surface": "Tessler",
+          "expect": "person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "rare",
+        "script": "latin",
+        "token_class": "single",
+        "collision_classes": [
+          "product-brand"
+        ],
+        "context_types": [
+          "plain-prose",
+          "title-honorific"
+        ],
+        "name_features": [
+          "surname-only"
+        ],
+        "boundary_tags": [
+          "honorific-excluded",
+          "abbreviation-period"
+        ],
+        "familiarity_basis": "author-judgment"
+      },
+      "ambiguity": {
+        "level": "context-resolvable",
+        "kind": "category-collision",
+        "alternative_reading": "brand-or-product",
+        "resolved_by": [
+          "title-or-honorific"
+        ],
+        "note": "'Ms.' attaches to a person."
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/en/organization-collision/named-storm-with-given-name",
+      "schema_version": "1.1.0",
+      "entity_type": "PERSON",
+      "language": "en",
+      "title": "Named storm built from a given name",
+      "why": "Storms are named with given names; 'Hurricane Delia' is an event.",
+      "text": "Hurricane Delia flooded the coast.",
+      "expectations": [
+        {
+          "start": 0,
+          "end": 15,
+          "surface": "Hurricane Delia",
+          "expect": "not-person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "latin",
+        "token_class": "multi",
+        "collision_classes": [],
+        "context_types": [
+          "plain-prose",
+          "sentence-initial",
+          "no-person"
+        ],
+        "name_features": [],
+        "boundary_tags": [],
+        "contrast_classes": [
+          "en-lookalike-entity"
+        ],
+        "familiarity_basis": "author-judgment"
+      },
+      "ambiguity": {
+        "level": "context-resolvable",
+        "kind": "category-collision",
+        "alternative_reading": "event-name",
+        "resolved_by": [
+          "head-noun-or-suffix",
+          "predicate-or-argument"
+        ],
+        "note": "'Hurricane' is an event head noun and flooding is predicated of a storm."
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/en/organization-collision/perfume-numbered-product",
+      "schema_version": "1.1.0",
+      "entity_type": "PERSON",
+      "language": "en",
+      "title": "Product whose name is a given name plus a number",
+      "why": "A numbered fragrance name looks like a given name followed by a digit; a bottle on a shelf is an object.",
+      "text": "A bottle of Marguerite No. 5 sat on the shelf.",
+      "expectations": [
+        {
+          "start": 12,
+          "end": 28,
+          "surface": "Marguerite No. 5",
+          "expect": "not-person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "latin",
+        "token_class": "multi",
+        "collision_classes": [
+          "product-brand"
+        ],
+        "context_types": [
+          "plain-prose",
+          "no-person"
+        ],
+        "name_features": [],
+        "boundary_tags": [
+          "digit-adjacent",
+          "abbreviation-period"
+        ],
+        "familiarity_basis": "author-judgment"
+      },
+      "ambiguity": {
+        "level": "context-resolvable",
+        "kind": "category-collision",
+        "alternative_reading": "brand-or-product",
+        "resolved_by": [
+          "modifier-or-determiner"
+        ],
+        "note": "'A bottle of ...' takes a substance or product as its complement."
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
       "id": "person/en/organization-collision/person-and-namesake-firm",
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "en",
       "title": "A person and a firm that share the surname",
@@ -540,7 +1449,8 @@
         "name_features": [
           "full-name"
         ],
-        "boundary_tags": []
+        "boundary_tags": [],
+        "familiarity_basis": "author-judgment"
       },
       "ambiguity": {
         "level": "context-resolvable",
@@ -557,8 +1467,345 @@
       }
     },
     {
+      "id": "person/en/organization-collision/person-reports-to-director",
+      "schema_version": "1.1.0",
+      "entity_type": "PERSON",
+      "language": "en",
+      "title": "Given name followed by the verb 'reports'",
+      "why": "Partner of software-product-reports: here 'reports' is a verb and the first word is a person; the span stops before the verb.",
+      "text": "Ada reports to the director on Fridays.",
+      "expectations": [
+        {
+          "start": 0,
+          "end": 3,
+          "surface": "Ada",
+          "expect": "person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "latin",
+        "token_class": "single",
+        "collision_classes": [
+          "product-brand",
+          "common-word"
+        ],
+        "context_types": [
+          "plain-prose",
+          "sentence-initial"
+        ],
+        "name_features": [
+          "given-only"
+        ],
+        "boundary_tags": [],
+        "familiarity_basis": "author-judgment"
+      },
+      "ambiguity": {
+        "level": "context-resolvable",
+        "kind": "category-collision",
+        "alternative_reading": "brand-or-product",
+        "resolved_by": [
+          "syntactic-position",
+          "predicate-or-argument"
+        ],
+        "note": "'reports to the director' is a human reporting line."
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/en/organization-collision/possessive-company-furniture",
+      "schema_version": "1.1.0",
+      "entity_type": "PERSON",
+      "language": "en",
+      "title": "Possessive company name with a trade noun",
+      "why": "A possessive surname followed by a capitalized trade noun is a shop name; the possessive marker belongs to the organization span.",
+      "text": "Dunmore's Furniture closed its showroom.",
+      "expectations": [
+        {
+          "start": 0,
+          "end": 19,
+          "surface": "Dunmore's Furniture",
+          "expect": "not-person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "latin",
+        "token_class": "multi",
+        "collision_classes": [
+          "organization"
+        ],
+        "context_types": [
+          "plain-prose",
+          "sentence-initial",
+          "possessive",
+          "no-person"
+        ],
+        "name_features": [],
+        "boundary_tags": [
+          "apostrophe-boundary"
+        ],
+        "familiarity_basis": "author-judgment"
+      },
+      "ambiguity": {
+        "level": "context-resolvable",
+        "kind": "category-collision",
+        "alternative_reading": "organization-name",
+        "resolved_by": [
+          "head-noun-or-suffix",
+          "predicate-or-argument"
+        ],
+        "note": "'Furniture' is a trade head noun and 'closed its showroom' is predicated of a business."
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/en/organization-collision/possessive-person-furniture",
+      "schema_version": "1.1.0",
+      "entity_type": "PERSON",
+      "language": "en",
+      "title": "Possessive person reference before a lowercase noun",
+      "why": "Partner of possessive-company-furniture: the same possessive surname followed by a lowercase noun is a person who owns the furniture; the possessive marker is excluded from the span.",
+      "text": "Dunmore's furniture arrived late.",
+      "expectations": [
+        {
+          "start": 0,
+          "end": 7,
+          "surface": "Dunmore",
+          "expect": "person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "latin",
+        "token_class": "single",
+        "collision_classes": [
+          "organization"
+        ],
+        "context_types": [
+          "plain-prose",
+          "sentence-initial",
+          "possessive"
+        ],
+        "name_features": [
+          "surname-only"
+        ],
+        "boundary_tags": [
+          "apostrophe-boundary"
+        ],
+        "familiarity_basis": "author-judgment"
+      },
+      "ambiguity": {
+        "level": "context-resolvable",
+        "kind": "category-collision",
+        "alternative_reading": "organization-name",
+        "resolved_by": [
+          "modifier-or-determiner",
+          "punctuation-or-format"
+        ],
+        "note": "The lowercase common noun 'furniture' is a possessed object, so 'Dunmore' is its owner."
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/en/organization-collision/prize-named-after-surname",
+      "schema_version": "1.1.0",
+      "entity_type": "PERSON",
+      "language": "en",
+      "title": "Prize named with a surname",
+      "why": "A prize named with a surname is an eponymous term, not a person mention.",
+      "text": "She won the Okafor Prize in chemistry.",
+      "expectations": [
+        {
+          "start": 12,
+          "end": 24,
+          "surface": "Okafor Prize",
+          "expect": "not-person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "rare",
+        "script": "latin",
+        "token_class": "multi",
+        "collision_classes": [
+          "eponym"
+        ],
+        "context_types": [
+          "plain-prose",
+          "no-person"
+        ],
+        "name_features": [],
+        "boundary_tags": [],
+        "contrast_classes": [
+          "en-lookalike-entity"
+        ],
+        "familiarity_basis": "author-judgment"
+      },
+      "ambiguity": {
+        "level": "context-resolvable",
+        "kind": "category-collision",
+        "alternative_reading": "eponymous-term",
+        "resolved_by": [
+          "head-noun-or-suffix",
+          "predicate-or-argument"
+        ],
+        "note": "'won the ... Prize' takes an award."
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/en/organization-collision/professor-same-surname",
+      "schema_version": "1.1.0",
+      "entity_type": "PERSON",
+      "language": "en",
+      "title": "Surname with a professor title",
+      "why": "Partner of university-surname-campus: the same surname with 'Professor' is a person; the title stays outside the span.",
+      "text": "Professor Hartwell opened a new seminar series.",
+      "expectations": [
+        {
+          "start": 10,
+          "end": 18,
+          "surface": "Hartwell",
+          "expect": "person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "latin",
+        "token_class": "single",
+        "collision_classes": [
+          "organization"
+        ],
+        "context_types": [
+          "plain-prose",
+          "title-honorific"
+        ],
+        "name_features": [
+          "surname-only"
+        ],
+        "boundary_tags": [
+          "honorific-excluded"
+        ],
+        "familiarity_basis": "author-judgment"
+      },
+      "ambiguity": {
+        "level": "context-resolvable",
+        "kind": "category-collision",
+        "alternative_reading": "organization-name",
+        "resolved_by": [
+          "title-or-honorific"
+        ],
+        "note": "'Professor' selects a person; the same surname after 'University' would not."
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/en/organization-collision/resigns-from-namesake-holdings",
+      "schema_version": "1.1.0",
+      "entity_type": "PERSON",
+      "language": "en",
+      "title": "Person resigning from a company named with his surname",
+      "why": "A full name and a holdings company that reuses the surname, linked by 'resigned from'.",
+      "text": "Hollis Brandt resigned from Brandt Holdings.",
+      "expectations": [
+        {
+          "start": 0,
+          "end": 13,
+          "surface": "Hollis Brandt",
+          "expect": "person"
+        },
+        {
+          "start": 28,
+          "end": 43,
+          "surface": "Brandt Holdings",
+          "expect": "not-person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "rare",
+        "script": "latin",
+        "token_class": "multi",
+        "collision_classes": [
+          "organization"
+        ],
+        "context_types": [
+          "plain-prose"
+        ],
+        "name_features": [
+          "full-name"
+        ],
+        "boundary_tags": [],
+        "familiarity_basis": "author-judgment"
+      },
+      "ambiguity": {
+        "level": "context-resolvable",
+        "kind": "category-collision",
+        "alternative_reading": "organization-name",
+        "resolved_by": [
+          "predicate-or-argument",
+          "head-noun-or-suffix"
+        ],
+        "note": "'resigned from X' takes an organization; 'Holdings' is a company head noun."
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
       "id": "person/en/organization-collision/rose-garden-venue",
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "en",
       "title": "Rose Garden as a venue",
@@ -586,7 +1833,8 @@
           "no-person"
         ],
         "name_features": [],
-        "boundary_tags": []
+        "boundary_tags": [],
+        "familiarity_basis": "author-judgment"
       },
       "ambiguity": {
         "level": "context-resolvable",
@@ -603,8 +1851,62 @@
       }
     },
     {
+      "id": "person/en/organization-collision/scattering-effect-eponym",
+      "schema_version": "1.1.0",
+      "entity_type": "PERSON",
+      "language": "en",
+      "title": "Eponymous physical effect",
+      "why": "A scientific effect named after a person; the whole term is not a person mention.",
+      "text": "The lab measured Raman scattering at low temperature.",
+      "expectations": [
+        {
+          "start": 17,
+          "end": 33,
+          "surface": "Raman scattering",
+          "expect": "not-person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "rare",
+        "script": "latin",
+        "token_class": "multi",
+        "collision_classes": [
+          "eponym"
+        ],
+        "context_types": [
+          "plain-prose",
+          "no-person"
+        ],
+        "name_features": [],
+        "boundary_tags": [],
+        "contrast_classes": [
+          "en-lookalike-entity"
+        ],
+        "familiarity_basis": "author-judgment"
+      },
+      "ambiguity": {
+        "level": "context-resolvable",
+        "kind": "category-collision",
+        "alternative_reading": "eponymous-term",
+        "resolved_by": [
+          "head-noun-or-suffix"
+        ],
+        "note": "'scattering' is the head noun of a physical term."
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
       "id": "person/en/organization-collision/school-named-after-surname",
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "en",
       "title": "School named after a surname",
@@ -633,7 +1935,8 @@
           "no-person"
         ],
         "name_features": [],
-        "boundary_tags": []
+        "boundary_tags": [],
+        "familiarity_basis": "author-judgment"
       },
       "ambiguity": {
         "level": "context-resolvable",
@@ -650,8 +1953,61 @@
       }
     },
     {
+      "id": "person/en/organization-collision/ship-named-with-two-names",
+      "schema_version": "1.1.0",
+      "entity_type": "PERSON",
+      "language": "en",
+      "title": "Ship named with two given names",
+      "why": "A ship is named with a given name and a middle-style name; the vessel is not a person and is referred to by a definite article.",
+      "text": "The Margaret Rose sailed at dawn.",
+      "expectations": [
+        {
+          "start": 4,
+          "end": 17,
+          "surface": "Margaret Rose",
+          "expect": "not-person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "latin",
+        "token_class": "multi",
+        "collision_classes": [
+          "product-brand"
+        ],
+        "context_types": [
+          "plain-prose",
+          "sentence-initial",
+          "no-person"
+        ],
+        "name_features": [],
+        "boundary_tags": [],
+        "familiarity_basis": "author-judgment"
+      },
+      "ambiguity": {
+        "level": "context-resolvable",
+        "kind": "category-collision",
+        "alternative_reading": "animal-or-object-name",
+        "resolved_by": [
+          "modifier-or-determiner",
+          "predicate-or-argument"
+        ],
+        "note": "'The ... sailed at dawn' with a definite article is a vessel."
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
       "id": "person/en/organization-collision/smith-and-jones-llp",
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "en",
       "title": "Law firm named with two surnames",
@@ -679,7 +2035,8 @@
           "no-person"
         ],
         "name_features": [],
-        "boundary_tags": []
+        "boundary_tags": [],
+        "familiarity_basis": "author-judgment"
       },
       "ambiguity": {
         "level": "context-resolvable",
@@ -696,8 +2053,61 @@
       }
     },
     {
+      "id": "person/en/organization-collision/software-product-reports",
+      "schema_version": "1.1.0",
+      "entity_type": "PERSON",
+      "language": "en",
+      "title": "Product name that ends in a plural noun",
+      "why": "'Ada Reports' is a product; the following verb 'exports' completes a clause about software.",
+      "text": "Ada Reports exports spreadsheets nightly.",
+      "expectations": [
+        {
+          "start": 0,
+          "end": 11,
+          "surface": "Ada Reports",
+          "expect": "not-person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "latin",
+        "token_class": "multi",
+        "collision_classes": [
+          "product-brand",
+          "common-word"
+        ],
+        "context_types": [
+          "plain-prose",
+          "sentence-initial",
+          "no-person"
+        ],
+        "name_features": [],
+        "boundary_tags": [],
+        "familiarity_basis": "author-judgment"
+      },
+      "ambiguity": {
+        "level": "context-resolvable",
+        "kind": "category-collision",
+        "alternative_reading": "brand-or-product",
+        "resolved_by": [
+          "predicate-or-argument"
+        ],
+        "note": "Exporting spreadsheets nightly is a software behaviour."
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
       "id": "person/en/organization-collision/subway-station-name",
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "en",
       "title": "Station named with a common surname",
@@ -725,7 +2135,8 @@
           "no-person"
         ],
         "name_features": [],
-        "boundary_tags": []
+        "boundary_tags": [],
+        "familiarity_basis": "author-judgment"
       },
       "ambiguity": {
         "level": "context-resolvable",
@@ -742,8 +2153,171 @@
       }
     },
     {
+      "id": "person/en/organization-collision/thanks-brewer-for-lager",
+      "schema_version": "1.1.0",
+      "entity_type": "PERSON",
+      "language": "en",
+      "title": "Person thanked for a lager that carries the surname",
+      "why": "A person and a beer brand that share a surname.",
+      "text": "He thanked Lucien Vale for the Vale Lager.",
+      "expectations": [
+        {
+          "start": 11,
+          "end": 22,
+          "surface": "Lucien Vale",
+          "expect": "person"
+        },
+        {
+          "start": 31,
+          "end": 41,
+          "surface": "Vale Lager",
+          "expect": "not-person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "rare",
+        "script": "latin",
+        "token_class": "multi",
+        "collision_classes": [
+          "product-brand"
+        ],
+        "context_types": [
+          "plain-prose"
+        ],
+        "name_features": [
+          "full-name"
+        ],
+        "boundary_tags": [],
+        "familiarity_basis": "author-judgment"
+      },
+      "ambiguity": {
+        "level": "context-resolvable",
+        "kind": "category-collision",
+        "alternative_reading": "brand-or-product",
+        "resolved_by": [
+          "predicate-or-argument",
+          "head-noun-or-suffix"
+        ],
+        "note": "'thanked X' takes a person; 'for the ... Lager' names a product."
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/en/organization-collision/trust-versus-title",
+      "schema_version": "1.1.0",
+      "entity_type": "PERSON",
+      "language": "en",
+      "title": "Charitable trust named after a surname",
+      "why": "A charitable trust and a person share a surname; 'The ... Trust' is an organization, while 'Ms.' selects the person.",
+      "text": "The Whitaker Trust funded the clinic.",
+      "expectations": [
+        {
+          "start": 4,
+          "end": 18,
+          "surface": "Whitaker Trust",
+          "expect": "not-person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "latin",
+        "token_class": "multi",
+        "collision_classes": [
+          "organization"
+        ],
+        "context_types": [
+          "plain-prose",
+          "sentence-initial",
+          "no-person"
+        ],
+        "name_features": [],
+        "boundary_tags": [],
+        "familiarity_basis": "author-judgment"
+      },
+      "ambiguity": {
+        "level": "context-resolvable",
+        "kind": "category-collision",
+        "alternative_reading": "organization-name",
+        "resolved_by": [
+          "head-noun-or-suffix"
+        ],
+        "note": "'Trust' is an organization head noun and funding is predicated of an organization."
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/en/organization-collision/university-surname-campus",
+      "schema_version": "1.1.0",
+      "entity_type": "PERSON",
+      "language": "en",
+      "title": "University named after a surname",
+      "why": "An institution named with a surname and a head noun is not a person even though the surname alone often is.",
+      "text": "Hartwell University opened a new campus.",
+      "expectations": [
+        {
+          "start": 0,
+          "end": 19,
+          "surface": "Hartwell University",
+          "expect": "not-person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "latin",
+        "token_class": "multi",
+        "collision_classes": [
+          "organization"
+        ],
+        "context_types": [
+          "plain-prose",
+          "sentence-initial",
+          "no-person"
+        ],
+        "name_features": [],
+        "boundary_tags": [],
+        "familiarity_basis": "author-judgment"
+      },
+      "ambiguity": {
+        "level": "context-resolvable",
+        "kind": "category-collision",
+        "alternative_reading": "organization-name",
+        "resolved_by": [
+          "head-noun-or-suffix"
+        ],
+        "note": "'University' is an institutional head noun."
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
       "id": "person/en/organization-collision/young-adults-group",
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "en",
       "title": "Young Adults Ministry as an organization",
@@ -772,7 +2346,8 @@
           "no-person"
         ],
         "name_features": [],
-        "boundary_tags": []
+        "boundary_tags": [],
+        "familiarity_basis": "author-judgment"
       },
       "ambiguity": {
         "level": "context-resolvable",

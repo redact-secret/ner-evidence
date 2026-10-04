@@ -6,7 +6,7 @@ import json
 import subprocess
 from pathlib import Path
 
-from . import __version__, canonical, privacy, project, provenance, slices, validate
+from . import __version__, canonical, privacy, project, provenance, references, reviews, slices, validate
 from .jsonschema_lite import validate as schema_validate
 from .repo import Problem, Repo, read_json
 
@@ -15,6 +15,7 @@ MANIFEST_VERSION = "0.1.0"
 CONSUMER_CONTRACT_VERSION = "0.1.0"
 EMBEDDED_SCHEMAS = ["case", "fixture", "source", "snapshot-manifest", "projection-ruleset"]
 MANIFEST_NAME = "manifest.json"
+BANDS_PATH = "references/name-frequency-bands.json"
 
 
 class SnapshotError(Exception):
@@ -35,7 +36,7 @@ def tool_source_digest(root: Path) -> str:
 
 def build_files(repo: Repo) -> tuple[dict[str, bytes], dict, list[dict]]:
     fixtures = project.project_all(repo.cases, repo.ruleset)
-    report = slices.compute(repo.cases, fixtures, repo.targets)
+    report = slices.compute(repo.cases, fixtures, repo.targets, reviews.summary(repo))
     files: dict[str, bytes] = {
         "cases.jsonl": canonical.jsonl_bytes(sorted(repo.cases, key=lambda c: c["id"])),
         "fixtures.jsonl": canonical.jsonl_bytes(fixtures),
@@ -46,6 +47,14 @@ def build_files(repo: Repo) -> tuple[dict[str, bytes], dict, list[dict]]:
     }
     for name in EMBEDDED_SCHEMAS:
         files[f"schemas/{name}.schema.json"] = canonical.pretty(repo.schema(name)).encode()
+    if (repo.root / "evidence" / "reviews").exists():  # review registry + ledger travel with the snapshot
+        files["reviews/reviewers.json"] = canonical.pretty(repo.reviewers).encode()
+        files["reviews/ledger.jsonl"] = canonical.jsonl_bytes(repo.ledger)
+        files["schemas/review-event.schema.json"] = canonical.pretty(repo.schema("review-event")).encode()
+        files["schemas/reviewers.schema.json"] = canonical.pretty(repo.schema("reviewers")).encode()
+    if repo.bands:  # derived name-frequency bands that reference-frequency cases cite
+        files[BANDS_PATH] = canonical.pretty(repo.bands).encode()
+        files["schemas/name-frequency-bands.schema.json"] = canonical.pretty(repo.schema("name-frequency-bands")).encode()
     return files, report, fixtures
 
 
@@ -79,6 +88,7 @@ def preflight(repo: Repo) -> list[Problem]:
     probs += provenance.check_sources(repo) + provenance.check_case_provenance(repo)
     probs += [Problem("PRIVACY", f.where, f.rule) for f in privacy.scan_tree(repo.root)]
     probs += project.check_ruleset(repo.ruleset, repo.cases)
+    probs += reviews.check_reviews(repo)
     if not probs:
         fixtures = project.project_all(repo.cases, repo.ruleset)
         probs += project.verify_all(fixtures, repo.cases, repo.ruleset, repo.schema("fixture"))
@@ -200,6 +210,14 @@ def verify(snap: Path) -> list[Problem]:
 
     # Everything below runs the same checks as authoring, against the embedded copies.
     emb = Repo(root=snap, taxonomy=taxonomy, sources=sources, ruleset=ruleset, cases=cases)
+    if (snap / BANDS_PATH).exists():
+        emb.bands = read_json(snap / BANDS_PATH)
+        probs.extend(references.check_bands(emb))
+    has_reviews = (snap / "reviews" / "ledger.jsonl").exists()
+    if has_reviews:
+        emb.reviewers = read_json(snap / "reviews" / "reviewers.json")
+        emb.ledger = _read_jsonl(snap / "reviews" / "ledger.jsonl")
+        probs.extend(reviews.check_reviews(emb))
     for case in cases:
         probs.extend(validate.check_case(case, emb))
     probs.extend(provenance.check_sources(emb))
@@ -208,15 +226,23 @@ def verify(snap: Path) -> list[Problem]:
     probs.extend(project.verify_all(fixtures, cases, ruleset, read_json(snap / "schemas" / "fixture.schema.json")))
     if manifest["redistribution"] != provenance.redistribution_level(emb):
         bad("PROVENANCE", "manifest redistribution disagrees with the sources")
-    for rel in ("cases.jsonl", "fixtures.jsonl", "sources.json", "taxonomy.json", "projections.json"):
+    for f in privacy.scan_sources_file(snap / "sources.json", "sources.json"):
+        bad("PRIVACY", f"{f.where} {f.rule}")
+    for rel in ("cases.jsonl", "fixtures.jsonl", "taxonomy.json", "projections.json"):
         for n, line in enumerate((snap / rel).read_text(encoding="utf-8").splitlines(), 1):
             for rule in privacy.scan_text(line):
                 bad("PRIVACY", f"{rel}:{n} {rule}")
     report = read_json(snap / "slice-report.json")
     again = slices.compute(cases, fixtures, {"targets_version": report["targets_version"], "known_gaps": report["known_gaps"]})
-    for key in ("cases", "fixtures", "cases_by_language", "fixtures_by_language", "mentions", "dimensions", "review"):
+    for key in ("cases", "fixtures", "cases_by_language", "fixtures_by_language", "mentions", "review"):
         if again[key] != report[key]:
             bad("SLICES", f"slice-report {key} does not match the content")
+    # A released report may list dimensions that later tooling renamed or added; compare the ones both define.
+    for dim, table in report["dimensions"].items():
+        if dim in again["dimensions"] and again["dimensions"][dim] != table:
+            bad("SLICES", f"slice-report dimension {dim!r} does not match the content")
+    if has_reviews and report.get("review_ledger") != reviews.summary(emb):
+        bad("SLICES", "slice-report review_ledger does not match the embedded ledger")
     if report["unmet_targets"]:
         bad("SLICES", f"snapshot was built with unmet targets: {report['unmet_targets']}")
     if manifest["waived_targets"] != report["waived_targets"] or manifest["known_gaps"] != report["known_gaps"]:

@@ -2,7 +2,7 @@
   "cases": [
     {
       "id": "person/ko/common-name/full-name-dative-marker",
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "ko",
       "title": "Common full name followed by the dative 에게",
@@ -33,7 +33,8 @@
         ],
         "boundary_tags": [
           "particle-excluded"
-        ]
+        ],
+        "familiarity_basis": "author-judgment"
       },
       "ambiguity": {
         "level": "unambiguous"
@@ -50,7 +51,7 @@
     },
     {
       "id": "person/ko/common-name/full-name-object-marker",
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "ko",
       "title": "Common full name followed by the object marker 을",
@@ -81,7 +82,8 @@
         ],
         "boundary_tags": [
           "particle-excluded"
-        ]
+        ],
+        "familiarity_basis": "author-judgment"
       },
       "ambiguity": {
         "level": "unambiguous"
@@ -98,7 +100,7 @@
     },
     {
       "id": "person/ko/common-name/full-name-sentence-initial",
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "ko",
       "title": "Common full name opening the sentence with 가",
@@ -130,7 +132,8 @@
         ],
         "boundary_tags": [
           "particle-excluded"
-        ]
+        ],
+        "familiarity_basis": "author-judgment"
       },
       "ambiguity": {
         "level": "unambiguous"
@@ -147,7 +150,7 @@
     },
     {
       "id": "person/ko/common-name/full-name-subject-marker",
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "ko",
       "title": "Common full name followed by the subject marker 이",
@@ -178,7 +181,8 @@
         ],
         "boundary_tags": [
           "particle-excluded"
-        ]
+        ],
+        "familiarity_basis": "author-judgment"
       },
       "ambiguity": {
         "level": "unambiguous"
@@ -195,7 +199,7 @@
     },
     {
       "id": "person/ko/common-name/full-name-topic-marker",
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "ko",
       "title": "Common three-syllable name followed by the topic marker 은",
@@ -226,7 +230,8 @@
         ],
         "boundary_tags": [
           "particle-excluded"
-        ]
+        ],
+        "familiarity_basis": "author-judgment"
       },
       "ambiguity": {
         "level": "unambiguous"
@@ -243,7 +248,7 @@
     },
     {
       "id": "person/ko/common-name/given-name-only-subject",
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "ko",
       "title": "Common given name alone without a surname",
@@ -273,7 +278,8 @@
         ],
         "boundary_tags": [
           "particle-excluded"
-        ]
+        ],
+        "familiarity_basis": "author-judgment"
       },
       "ambiguity": {
         "level": "unambiguous"
@@ -290,7 +296,7 @@
     },
     {
       "id": "person/ko/common-name/name-before-copula",
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "ko",
       "title": "Full name followed by the copula 였다",
@@ -321,7 +327,8 @@
         ],
         "boundary_tags": [
           "particle-excluded"
-        ]
+        ],
+        "familiarity_basis": "author-judgment"
       },
       "ambiguity": {
         "level": "unambiguous"
@@ -338,7 +345,7 @@
     },
     {
       "id": "person/ko/common-name/two-names-joined-by-gwa",
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "ko",
       "title": "Two full names joined by the conjunctive particle 과",
@@ -375,7 +382,8 @@
         ],
         "boundary_tags": [
           "particle-excluded"
-        ]
+        ],
+        "familiarity_basis": "author-judgment"
       },
       "ambiguity": {
         "level": "unambiguous"

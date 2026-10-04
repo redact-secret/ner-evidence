@@ -1,8 +1,341 @@
 {
   "cases": [
     {
+      "id": "person/ko/title-honorific/honorific-doctor-degree",
+      "schema_version": "1.1.0",
+      "entity_type": "PERSON",
+      "language": "ko",
+      "title": "Degree title 박사 after a name",
+      "why": "박사 ('doctor') is a degree/title that follows the name; it is also a common noun and begins with the surname 박.",
+      "text": "송하준 박사는 논문을 발표했다.",
+      "expectations": [
+        {
+          "start": 0,
+          "end": 3,
+          "surface": "송하준",
+          "expect": "person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "hangul",
+        "token_class": "single",
+        "collision_classes": [],
+        "context_types": [
+          "plain-prose",
+          "sentence-initial",
+          "particle-attached",
+          "title-honorific"
+        ],
+        "name_features": [
+          "full-name",
+          "ko-surname-given",
+          "ko-3-syllable"
+        ],
+        "boundary_tags": [
+          "honorific-excluded",
+          "particle-excluded"
+        ],
+        "contrast_classes": [
+          "ko-honorific-suffix",
+          "ko-surname-prefix-trap"
+        ],
+        "familiarity_basis": "author-judgment"
+      },
+      "ambiguity": {
+        "level": "unambiguous"
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/ko/title-honorific/honorific-gun-topic",
+      "schema_version": "1.1.0",
+      "entity_type": "PERSON",
+      "language": "ko",
+      "title": "Young male suffix 군 with a topic marker",
+      "why": "군 ('Mr.' for a boy/young man) after a name and followed by a topic marker.",
+      "text": "박현우 군은 시험을 마쳤다.",
+      "expectations": [
+        {
+          "start": 0,
+          "end": 3,
+          "surface": "박현우",
+          "expect": "person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "hangul",
+        "token_class": "single",
+        "collision_classes": [],
+        "context_types": [
+          "plain-prose",
+          "sentence-initial",
+          "particle-attached",
+          "title-honorific"
+        ],
+        "name_features": [
+          "full-name",
+          "ko-surname-given",
+          "ko-3-syllable"
+        ],
+        "boundary_tags": [
+          "honorific-excluded",
+          "particle-excluded"
+        ],
+        "contrast_classes": [
+          "ko-honorific-suffix"
+        ],
+        "familiarity_basis": "author-judgment"
+      },
+      "ambiguity": {
+        "level": "unambiguous"
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/ko/title-honorific/honorific-nim-attached",
+      "schema_version": "1.1.0",
+      "entity_type": "PERSON",
+      "language": "ko",
+      "title": "Attached honorific 님 without a space",
+      "why": "Partner of honorific-nim-spaced: 님 glued to the name leaves no whitespace boundary; the span still stops before it.",
+      "text": "김은지님께 안내 메일을 보냈다.",
+      "expectations": [
+        {
+          "start": 0,
+          "end": 3,
+          "surface": "김은지",
+          "expect": "person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "hangul",
+        "token_class": "single",
+        "collision_classes": [],
+        "context_types": [
+          "plain-prose",
+          "sentence-initial",
+          "particle-attached",
+          "title-honorific"
+        ],
+        "name_features": [
+          "full-name",
+          "ko-surname-given",
+          "ko-3-syllable"
+        ],
+        "boundary_tags": [
+          "suffix-excluded",
+          "no-space",
+          "particle-excluded"
+        ],
+        "contrast_classes": [
+          "ko-honorific-suffix",
+          "ko-spacing-variation"
+        ],
+        "familiarity_basis": "author-judgment"
+      },
+      "ambiguity": {
+        "level": "unambiguous"
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/ko/title-honorific/honorific-nim-spaced",
+      "schema_version": "1.1.0",
+      "entity_type": "PERSON",
+      "language": "ko",
+      "title": "Spaced honorific 님 after a name",
+      "why": "님 after a space is a separate token and is excluded from the span.",
+      "text": "김은지 님께 안내 메일을 보냈다.",
+      "expectations": [
+        {
+          "start": 0,
+          "end": 3,
+          "surface": "김은지",
+          "expect": "person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "hangul",
+        "token_class": "single",
+        "collision_classes": [],
+        "context_types": [
+          "plain-prose",
+          "sentence-initial",
+          "particle-attached",
+          "title-honorific"
+        ],
+        "name_features": [
+          "full-name",
+          "ko-surname-given",
+          "ko-3-syllable"
+        ],
+        "boundary_tags": [
+          "honorific-excluded",
+          "particle-excluded"
+        ],
+        "contrast_classes": [
+          "ko-honorific-suffix"
+        ],
+        "familiarity_basis": "author-judgment"
+      },
+      "ambiguity": {
+        "level": "unambiguous"
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/ko/title-honorific/honorific-role-nim-respectful",
+      "schema_version": "1.1.0",
+      "entity_type": "PERSON",
+      "language": "ko",
+      "title": "Role plus 님 after a name",
+      "why": "A role with the respect suffix 님 follows the name; both are outside the span.",
+      "text": "최민기 팀장님이 회의를 시작했다.",
+      "expectations": [
+        {
+          "start": 0,
+          "end": 3,
+          "surface": "최민기",
+          "expect": "person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "hangul",
+        "token_class": "single",
+        "collision_classes": [],
+        "context_types": [
+          "plain-prose",
+          "sentence-initial",
+          "particle-attached",
+          "title-honorific"
+        ],
+        "name_features": [
+          "full-name",
+          "ko-surname-given",
+          "ko-3-syllable"
+        ],
+        "boundary_tags": [
+          "honorific-excluded",
+          "particle-excluded"
+        ],
+        "contrast_classes": [
+          "ko-honorific-suffix"
+        ],
+        "familiarity_basis": "author-judgment"
+      },
+      "ambiguity": {
+        "level": "unambiguous"
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/ko/title-honorific/honorific-yang-subject",
+      "schema_version": "1.1.0",
+      "entity_type": "PERSON",
+      "language": "ko",
+      "title": "Young female suffix 양 with a subject marker",
+      "why": "양 ('Miss') is also a common noun for 'sheep' and a surname; here it follows a name and takes the subject marker.",
+      "text": "이서아 양이 대표로 답했다.",
+      "expectations": [
+        {
+          "start": 0,
+          "end": 3,
+          "surface": "이서아",
+          "expect": "person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "hangul",
+        "token_class": "single",
+        "collision_classes": [],
+        "context_types": [
+          "plain-prose",
+          "sentence-initial",
+          "particle-attached",
+          "title-honorific"
+        ],
+        "name_features": [
+          "full-name",
+          "ko-surname-given",
+          "ko-3-syllable"
+        ],
+        "boundary_tags": [
+          "honorific-excluded",
+          "particle-excluded"
+        ],
+        "contrast_classes": [
+          "ko-honorific-suffix"
+        ],
+        "familiarity_basis": "author-judgment"
+      },
+      "ambiguity": {
+        "level": "unambiguous"
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
       "id": "person/ko/title-honorific/name-daepyoisa",
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "ko",
       "title": "Full name followed by the title 대표이사",
@@ -35,7 +368,8 @@
         "boundary_tags": [
           "honorific-excluded",
           "particle-excluded"
-        ]
+        ],
+        "familiarity_basis": "author-judgment"
       },
       "ambiguity": {
         "level": "unambiguous"
@@ -52,7 +386,7 @@
     },
     {
       "id": "person/ko/title-honorific/name-daeri",
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "ko",
       "title": "Full name followed by the job title 대리",
@@ -85,7 +419,8 @@
         "boundary_tags": [
           "honorific-excluded",
           "particle-excluded"
-        ]
+        ],
+        "familiarity_basis": "author-judgment"
       },
       "ambiguity": {
         "level": "unambiguous"
@@ -102,7 +437,7 @@
     },
     {
       "id": "person/ko/title-honorific/name-gyosunim-ui",
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "ko",
       "title": "Full name followed by 교수님 and possessive 의",
@@ -135,7 +470,8 @@
         "boundary_tags": [
           "honorific-excluded",
           "particle-excluded"
-        ]
+        ],
+        "familiarity_basis": "author-judgment"
       },
       "ambiguity": {
         "level": "unambiguous"
@@ -152,7 +488,7 @@
     },
     {
       "id": "person/ko/title-honorific/name-nim-kkeseo",
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "ko",
       "title": "Full name followed by honorific 님 and honorific particle 께서",
@@ -185,7 +521,8 @@
         "boundary_tags": [
           "honorific-excluded",
           "particle-excluded"
-        ]
+        ],
+        "familiarity_basis": "author-judgment"
       },
       "ambiguity": {
         "level": "unambiguous"
@@ -202,7 +539,7 @@
     },
     {
       "id": "person/ko/title-honorific/name-ssi-spaced",
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "ko",
       "title": "Full name followed by the spaced honorific 씨",
@@ -235,7 +572,8 @@
         "boundary_tags": [
           "honorific-excluded",
           "particle-excluded"
-        ]
+        ],
+        "familiarity_basis": "author-judgment"
       },
       "ambiguity": {
         "level": "unambiguous"
@@ -252,7 +590,7 @@
     },
     {
       "id": "person/ko/title-honorific/name-timjang-nim",
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "ko",
       "title": "Full name followed by the title 팀장님",
@@ -285,7 +623,8 @@
         "boundary_tags": [
           "honorific-excluded",
           "particle-excluded"
-        ]
+        ],
+        "familiarity_basis": "author-judgment"
       },
       "ambiguity": {
         "level": "unambiguous"
@@ -301,8 +640,368 @@
       }
     },
     {
+      "id": "person/ko/title-honorific/rare-surname-doctor-title",
+      "schema_version": "1.1.0",
+      "entity_type": "PERSON",
+      "language": "ko",
+      "title": "Rare surname with 박사",
+      "why": "Degree title after a rare name. The surname is uncommon in Korean, so name frequency gives no cue and the boundary must come from the structure.",
+      "text": "어도현 박사는 논문을 발표했다.",
+      "expectations": [
+        {
+          "start": 0,
+          "end": 3,
+          "surface": "어도현",
+          "expect": "person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "rare",
+        "script": "hangul",
+        "token_class": "single",
+        "collision_classes": [],
+        "context_types": [
+          "plain-prose",
+          "sentence-initial",
+          "particle-attached",
+          "title-honorific"
+        ],
+        "name_features": [
+          "full-name",
+          "ko-surname-given",
+          "ko-3-syllable",
+          "ko-rare-surname"
+        ],
+        "boundary_tags": [
+          "honorific-excluded",
+          "particle-excluded"
+        ],
+        "contrast_classes": [
+          "ko-honorific-suffix"
+        ],
+        "familiarity_basis": "author-judgment"
+      },
+      "ambiguity": {
+        "level": "unambiguous"
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/ko/title-honorific/rare-surname-honorific-nim",
+      "schema_version": "1.1.0",
+      "entity_type": "PERSON",
+      "language": "ko",
+      "title": "Rare surname with spaced 님",
+      "why": "Spaced honorific after a rare name. The surname is uncommon in Korean, so name frequency gives no cue and the boundary must come from the structure.",
+      "text": "설지안 님께 안내 메일을 보냈다.",
+      "expectations": [
+        {
+          "start": 0,
+          "end": 3,
+          "surface": "설지안",
+          "expect": "person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "rare",
+        "script": "hangul",
+        "token_class": "single",
+        "collision_classes": [],
+        "context_types": [
+          "plain-prose",
+          "sentence-initial",
+          "particle-attached",
+          "title-honorific"
+        ],
+        "name_features": [
+          "full-name",
+          "ko-surname-given",
+          "ko-3-syllable",
+          "ko-rare-surname"
+        ],
+        "boundary_tags": [
+          "honorific-excluded",
+          "particle-excluded"
+        ],
+        "contrast_classes": [
+          "ko-honorific-suffix"
+        ],
+        "familiarity_basis": "author-judgment"
+      },
+      "ambiguity": {
+        "level": "unambiguous"
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/ko/title-honorific/rule-spaced-bagsa",
+      "schema_version": "1.1.0",
+      "entity_type": "PERSON",
+      "language": "ko",
+      "title": "Written-together name followed by a spaced 박사",
+      "why": "Article 48 spaces the title 박사 after the name; 박사 also begins with a surname syllable.",
+      "text": "백이안 박사가 논문을 발표했다.",
+      "expectations": [
+        {
+          "start": 0,
+          "end": 3,
+          "surface": "백이안",
+          "expect": "person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "hangul",
+        "token_class": "single",
+        "collision_classes": [],
+        "context_types": [
+          "plain-prose",
+          "sentence-initial",
+          "particle-attached",
+          "title-honorific"
+        ],
+        "name_features": [
+          "full-name",
+          "ko-surname-given",
+          "ko-3-syllable"
+        ],
+        "boundary_tags": [
+          "honorific-excluded",
+          "particle-excluded"
+        ],
+        "contrast_classes": [
+          "ko-honorific-suffix"
+        ],
+        "familiarity_basis": "author-judgment"
+      },
+      "ambiguity": {
+        "level": "unambiguous"
+      },
+      "evidence_class": "reference-backed",
+      "source_ids": [
+        "src/project-authored-synthetic",
+        "src/ref-ko-hangul-matchumbeop"
+      ],
+      "citations": [
+        {
+          "source_id": "src/ref-ko-hangul-matchumbeop",
+          "locator": "Hangul Spelling Rules, chapter 5, Article 48"
+        }
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/ko/title-honorific/rule-spaced-janggun",
+      "schema_version": "1.1.0",
+      "entity_type": "PERSON",
+      "language": "ko",
+      "title": "Written-together name followed by a spaced office title",
+      "why": "Article 48 spaces an office or rank title (장군) after the name.",
+      "text": "구서현 장군이 연설했다.",
+      "expectations": [
+        {
+          "start": 0,
+          "end": 3,
+          "surface": "구서현",
+          "expect": "person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "hangul",
+        "token_class": "single",
+        "collision_classes": [],
+        "context_types": [
+          "plain-prose",
+          "sentence-initial",
+          "particle-attached",
+          "title-honorific"
+        ],
+        "name_features": [
+          "full-name",
+          "ko-surname-given",
+          "ko-3-syllable"
+        ],
+        "boundary_tags": [
+          "honorific-excluded",
+          "particle-excluded"
+        ],
+        "contrast_classes": [
+          "ko-honorific-suffix"
+        ],
+        "familiarity_basis": "author-judgment"
+      },
+      "ambiguity": {
+        "level": "unambiguous"
+      },
+      "evidence_class": "reference-backed",
+      "source_ids": [
+        "src/project-authored-synthetic",
+        "src/ref-ko-hangul-matchumbeop"
+      ],
+      "citations": [
+        {
+          "source_id": "src/ref-ko-hangul-matchumbeop",
+          "locator": "Hangul Spelling Rules, chapter 5, Article 48"
+        }
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/ko/title-honorific/rule-spaced-seonsaeng",
+      "schema_version": "1.1.0",
+      "entity_type": "PERSON",
+      "language": "ko",
+      "title": "Written-together name followed by a spaced 선생",
+      "why": "Article 48 spaces the title 선생 after the name; the title is outside the span.",
+      "text": "한도윤 선생이 강의를 시작했다.",
+      "expectations": [
+        {
+          "start": 0,
+          "end": 3,
+          "surface": "한도윤",
+          "expect": "person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "hangul",
+        "token_class": "single",
+        "collision_classes": [],
+        "context_types": [
+          "plain-prose",
+          "sentence-initial",
+          "particle-attached",
+          "title-honorific"
+        ],
+        "name_features": [
+          "full-name",
+          "ko-surname-given",
+          "ko-3-syllable"
+        ],
+        "boundary_tags": [
+          "honorific-excluded",
+          "particle-excluded"
+        ],
+        "contrast_classes": [
+          "ko-honorific-suffix"
+        ],
+        "familiarity_basis": "author-judgment"
+      },
+      "ambiguity": {
+        "level": "unambiguous"
+      },
+      "evidence_class": "reference-backed",
+      "source_ids": [
+        "src/project-authored-synthetic",
+        "src/ref-ko-hangul-matchumbeop"
+      ],
+      "citations": [
+        {
+          "source_id": "src/ref-ko-hangul-matchumbeop",
+          "locator": "Hangul Spelling Rules, chapter 5, Article 48"
+        }
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/ko/title-honorific/rule-surname-given-then-spaced-ssi",
+      "schema_version": "1.1.0",
+      "entity_type": "PERSON",
+      "language": "ko",
+      "title": "Written-together name followed by a spaced 씨",
+      "why": "Article 48 writes surname and given name together and spaces the address term that follows, so the span is the whole name and 씨 is outside it.",
+      "text": "임서윤 씨가 보고서를 읽었다.",
+      "expectations": [
+        {
+          "start": 0,
+          "end": 3,
+          "surface": "임서윤",
+          "expect": "person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "hangul",
+        "token_class": "single",
+        "collision_classes": [],
+        "context_types": [
+          "plain-prose",
+          "sentence-initial",
+          "particle-attached",
+          "title-honorific"
+        ],
+        "name_features": [
+          "full-name",
+          "ko-surname-given",
+          "ko-3-syllable"
+        ],
+        "boundary_tags": [
+          "honorific-excluded",
+          "particle-excluded"
+        ],
+        "contrast_classes": [
+          "ko-honorific-suffix"
+        ],
+        "familiarity_basis": "author-judgment"
+      },
+      "ambiguity": {
+        "level": "unambiguous"
+      },
+      "evidence_class": "reference-backed",
+      "source_ids": [
+        "src/project-authored-synthetic",
+        "src/ref-ko-hangul-matchumbeop"
+      ],
+      "citations": [
+        {
+          "source_id": "src/ref-ko-hangul-matchumbeop",
+          "locator": "Hangul Spelling Rules, chapter 5, Article 48"
+        }
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
       "id": "person/ko/title-honorific/surname-only-bujangnim",
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "ko",
       "title": "Surname 조 followed by the title 부장님 and the honorific particle 께",
@@ -335,7 +1034,8 @@
         "boundary_tags": [
           "honorific-excluded",
           "particle-excluded"
-        ]
+        ],
+        "familiarity_basis": "author-judgment"
       },
       "ambiguity": {
         "level": "context-resolvable",
@@ -353,7 +1053,7 @@
     },
     {
       "id": "person/ko/title-honorific/surname-only-seonsaengnim",
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "ko",
       "title": "Surname alone followed by 선생님",
@@ -384,7 +1084,8 @@
         "boundary_tags": [
           "honorific-excluded",
           "particle-excluded"
-        ]
+        ],
+        "familiarity_basis": "author-judgment"
       },
       "ambiguity": {
         "level": "unambiguous"
@@ -401,7 +1102,7 @@
     },
     {
       "id": "person/ko/title-honorific/surname-ssi",
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "ko",
       "title": "Surname alone followed by 씨",
@@ -432,7 +1133,8 @@
         "boundary_tags": [
           "honorific-excluded",
           "particle-excluded"
-        ]
+        ],
+        "familiarity_basis": "author-judgment"
       },
       "ambiguity": {
         "level": "unambiguous"
@@ -449,7 +1151,7 @@
     },
     {
       "id": "person/ko/title-honorific/title-before-name-daepyo",
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "ko",
       "title": "Job title preceding the name",
@@ -482,7 +1184,8 @@
         "boundary_tags": [
           "honorific-excluded",
           "particle-excluded"
-        ]
+        ],
+        "familiarity_basis": "author-judgment"
       },
       "ambiguity": {
         "level": "unambiguous"
@@ -499,7 +1202,7 @@
     },
     {
       "id": "person/ko/title-honorific/yi-gyosunim-ambiguous",
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "ko",
       "title": "이 교수님: demonstrative 'this professor' or Professor Lee",
@@ -532,7 +1235,8 @@
         "boundary_tags": [
           "honorific-excluded",
           "particle-excluded"
-        ]
+        ],
+        "familiarity_basis": "author-judgment"
       },
       "ambiguity": {
         "level": "genuinely-ambiguous",

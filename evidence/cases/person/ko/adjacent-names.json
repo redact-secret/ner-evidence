@@ -2,7 +2,7 @@
   "cases": [
     {
       "id": "person/ko/adjacent-names/attendee-label-adjacent-names",
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "ko",
       "title": "Label followed by three adjacent names",
@@ -45,7 +45,8 @@
         ],
         "boundary_tags": [
           "adjacent-names"
-        ]
+        ],
+        "familiarity_basis": "author-judgment"
       },
       "ambiguity": {
         "level": "unambiguous"
@@ -62,7 +63,7 @@
     },
     {
       "id": "person/ko/adjacent-names/couple-with-buebu",
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "ko",
       "title": "Two adjacent names followed by 부부",
@@ -101,7 +102,8 @@
         "boundary_tags": [
           "adjacent-names",
           "honorific-excluded"
-        ]
+        ],
+        "familiarity_basis": "author-judgment"
       },
       "ambiguity": {
         "level": "unambiguous"
@@ -118,7 +120,7 @@
     },
     {
       "id": "person/ko/adjacent-names/three-names-space-separated",
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "ko",
       "title": "Three full names separated only by spaces",
@@ -163,7 +165,8 @@
         "boundary_tags": [
           "adjacent-names",
           "particle-excluded"
-        ]
+        ],
+        "familiarity_basis": "author-judgment"
       },
       "ambiguity": {
         "level": "unambiguous"
@@ -180,7 +183,7 @@
     },
     {
       "id": "person/ko/adjacent-names/three-names-with-hangul-particles-in-between",
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "ko",
       "title": "Names alternating with conjunctive particles",
@@ -225,7 +228,8 @@
         "boundary_tags": [
           "adjacent-names",
           "particle-excluded"
-        ]
+        ],
+        "familiarity_basis": "author-judgment"
       },
       "ambiguity": {
         "level": "unambiguous"
@@ -242,7 +246,7 @@
     },
     {
       "id": "person/ko/adjacent-names/three-surnames-slash",
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "ko",
       "title": "Three surnames separated by middle dots",
@@ -287,7 +291,8 @@
           "adjacent-names",
           "no-space",
           "punctuation-adjacent"
-        ]
+        ],
+        "familiarity_basis": "author-judgment"
       },
       "ambiguity": {
         "level": "context-resolvable",
@@ -305,7 +310,7 @@
     },
     {
       "id": "person/ko/adjacent-names/two-titled-names-comma-separated",
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "ko",
       "title": "Two titled names in a row",
@@ -345,7 +350,8 @@
           "honorific-excluded",
           "adjacent-names",
           "particle-excluded"
-        ]
+        ],
+        "familiarity_basis": "author-judgment"
       },
       "ambiguity": {
         "level": "unambiguous"

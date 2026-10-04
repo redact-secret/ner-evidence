@@ -21,6 +21,8 @@ SAFE_EMAIL_DOMAINS = re.compile(r"(^|\.)(example\.(com|org|net)|[a-z0-9-]+\.(inv
 SAFE_URL_HOSTS = re.compile(SAFE_EMAIL_DOMAINS.pattern + r"|^json-schema\.org$", re.I)
 
 HEX_DIGEST = re.compile(r"(?<![0-9a-fA-F])[0-9a-f]{64}(?![0-9a-fA-F])")
+# Review-ledger event ids: a content hash prefix that can contain long digit runs by chance.
+EVENT_ID = re.compile(r"\bev-[0-9a-f]{16}\b")
 EMAIL = re.compile(r"[A-Za-z0-9._%+-]+@([A-Za-z0-9-]+(?:\.[A-Za-z0-9-]+)*\.[A-Za-z]{2,})")
 URL = re.compile(r"https?://([^/\s\"'<>\\]+)", re.I)
 PHONE = re.compile(r"(?<![\w.])\+?\d[\d ().-]{7,}\d(?![\w])")
@@ -74,7 +76,7 @@ def _public_ipv4(addr: str) -> bool:
 def scan_text(text: str) -> list[str]:
     """Return rule names triggered by ``text`` (no matched values)."""
     rules: list[str] = []
-    text = HEX_DIGEST.sub(" ", text)  # SHA-256 digests are not personal data but contain digit runs
+    text = EVENT_ID.sub(" ", HEX_DIGEST.sub(" ", text))  # digests and event ids are not personal data but can contain digit runs
     for m in EMAIL.finditer(text):
         if not SAFE_EMAIL_DOMAINS.search(m.group(1)):
             rules.append("email-address")
@@ -104,6 +106,41 @@ def scan_text(text: str) -> list[str]:
     return sorted(set(rules))
 
 
+LOCATOR = re.compile(r"^https://[A-Za-z0-9.-]+(:\d+)?/[^\s@]*$")
+# Fields of a source record that legitimately hold identifiers (URLs, revision ids) rather than evidence text.
+SOURCE_IDENTIFIER_KEYS = {"locator", "version"}
+
+
+def scan_sources_file(path: Path, rel: str) -> list[Finding]:
+    """Source records hold origin locators and version identifiers that the text lint would reject.
+
+    Every other string is scanned as usual; a locator must be a plain https URL without credentials.
+    """
+    import json
+
+    findings: list[Finding] = []
+    for src in json.loads(path.read_text(encoding="utf-8")).get("sources", []):
+        where = f"{rel}:{src.get('id', '<no id>')}"
+
+        def walk(node, key=""):
+            if isinstance(node, dict):
+                for k, v in node.items():
+                    walk(v, k)
+            elif isinstance(node, list):
+                for v in node:
+                    walk(v, key)
+            elif isinstance(node, str):
+                if key == "locator":
+                    if not LOCATOR.match(node):
+                        findings.append(Finding("source-locator-not-plain-https", where))
+                elif key not in SOURCE_IDENTIFIER_KEYS:
+                    for rule in scan_text(node):
+                        findings.append(Finding(rule, where))
+
+        walk(src)
+    return findings
+
+
 def scan_tree(root: Path) -> list[Finding]:
     findings: list[Finding] = []
     for d in SCAN_DIRS:
@@ -117,6 +154,9 @@ def scan_tree(root: Path) -> list[Finding]:
                 continue
             if path.stat().st_size > MAX_FILE_BYTES:
                 findings.append(Finding("oversized-file", rel))
+                continue
+            if path.name == "sources.json":
+                findings.extend(scan_sources_file(path, rel))
                 continue
             for lineno, line in enumerate(path.read_text(encoding="utf-8").splitlines(), 1):
                 for rule in scan_text(line):

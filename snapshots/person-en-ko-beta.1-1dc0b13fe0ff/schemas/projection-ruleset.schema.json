@@ -1,0 +1,75 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:ner-evidence:schema:projection-ruleset:1.0.0",
+  "title": "Fixture projection ruleset",
+  "description": "Declarative, deterministic projections from an authored Case to executable fixtures.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "ruleset_version",
+    "offset_units",
+    "projections"
+  ],
+  "properties": {
+    "ruleset_version": {
+      "type": "string",
+      "pattern": "^\\d+\\.\\d+\\.\\d+$"
+    },
+    "offset_units": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "projections": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "version",
+          "description",
+          "prefix",
+          "suffix",
+          "segment_transform",
+          "applies_when"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$"
+          },
+          "version": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "description": {
+            "type": "string",
+            "minLength": 10
+          },
+          "prefix": {
+            "type": "string"
+          },
+          "suffix": {
+            "type": "string"
+          },
+          "segment_transform": {
+            "enum": [
+              "identity",
+              "json-escape",
+              "nfd"
+            ]
+          },
+          "applies_when": {
+            "enum": [
+              "always",
+              "text-changes-under-nfd"
+            ]
+          }
+        }
+      }
+    }
+  }
+}

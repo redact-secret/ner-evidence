@@ -1,8 +1,120 @@
 {
   "cases": [
     {
+      "id": "person/en/location-collision/address-line-lane-and-town",
+      "schema_version": "1.1.0",
+      "entity_type": "PERSON",
+      "language": "en",
+      "title": "Street and town in a shipping address",
+      "why": "In an address, the street contains a surname-like word and the town is a place; neither is a person.",
+      "text": "Ship to: 14 Chester Lane, Dover.",
+      "expectations": [
+        {
+          "start": 12,
+          "end": 24,
+          "surface": "Chester Lane",
+          "expect": "not-person"
+        },
+        {
+          "start": 26,
+          "end": 31,
+          "surface": "Dover",
+          "expect": "not-person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "latin",
+        "token_class": "multi",
+        "collision_classes": [
+          "location"
+        ],
+        "context_types": [
+          "structured-text",
+          "no-person"
+        ],
+        "name_features": [],
+        "boundary_tags": [
+          "punctuation-adjacent"
+        ],
+        "familiarity_basis": "author-judgment"
+      },
+      "ambiguity": {
+        "level": "context-resolvable",
+        "kind": "format-dependence",
+        "alternative_reading": "place-name",
+        "resolved_by": [
+          "label-or-key",
+          "head-noun-or-suffix"
+        ],
+        "note": "The 'Ship to:' label introduces an address and 'Lane' is a street head noun."
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/en/location-collision/airport-named-after-surname",
+      "schema_version": "1.1.0",
+      "entity_type": "PERSON",
+      "language": "en",
+      "title": "Airport named with a surname",
+      "why": "An airport is a place even when named with a surname.",
+      "text": "Delmar Airport reopened on Monday.",
+      "expectations": [
+        {
+          "start": 0,
+          "end": 14,
+          "surface": "Delmar Airport",
+          "expect": "not-person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "latin",
+        "token_class": "multi",
+        "collision_classes": [
+          "location"
+        ],
+        "context_types": [
+          "plain-prose",
+          "sentence-initial",
+          "no-person"
+        ],
+        "name_features": [],
+        "boundary_tags": [],
+        "familiarity_basis": "author-judgment"
+      },
+      "ambiguity": {
+        "level": "context-resolvable",
+        "kind": "category-collision",
+        "alternative_reading": "place-name",
+        "resolved_by": [
+          "head-noun-or-suffix"
+        ],
+        "note": "'Airport' is a place head noun."
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
       "id": "person/en/location-collision/austin-city",
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "en",
       "title": "Austin as the host city of a conference",
@@ -29,7 +141,8 @@
           "no-person"
         ],
         "name_features": [],
-        "boundary_tags": []
+        "boundary_tags": [],
+        "familiarity_basis": "author-judgment"
       },
       "ambiguity": {
         "level": "context-resolvable",
@@ -47,7 +160,7 @@
     },
     {
       "id": "person/en/location-collision/austin-person-full",
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "en",
       "title": "Austin as a given name in a full name",
@@ -76,7 +189,8 @@
         "name_features": [
           "full-name"
         ],
-        "boundary_tags": []
+        "boundary_tags": [],
+        "familiarity_basis": "author-judgment"
       },
       "ambiguity": {
         "level": "context-resolvable",
@@ -93,8 +207,119 @@
       }
     },
     {
+      "id": "person/en/location-collision/bare-sierra-either",
+      "schema_version": "1.1.0",
+      "entity_type": "PERSON",
+      "language": "en",
+      "title": "Sierra as a region, a resort or a given name, bare subject",
+      "why": "A bare capitalized word that names a region and is also a given name; opening a pass is something a resort or a person can do in context.",
+      "text": "Sierra opened the pass on Monday.",
+      "expectations": [
+        {
+          "start": 0,
+          "end": 6,
+          "surface": "Sierra",
+          "expect": "either"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "rare",
+        "script": "latin",
+        "token_class": "single",
+        "collision_classes": [
+          "location",
+          "common-word"
+        ],
+        "context_types": [
+          "plain-prose",
+          "sentence-initial"
+        ],
+        "name_features": [
+          "given-only"
+        ],
+        "boundary_tags": [],
+        "familiarity_basis": "author-judgment"
+      },
+      "ambiguity": {
+        "level": "genuinely-ambiguous",
+        "kind": "category-collision",
+        "alternative_reading": "place-name",
+        "resolved_by": [
+          "nothing"
+        ],
+        "acceptable_outcomes": [
+          "person",
+          "not-person"
+        ],
+        "note": "A resort or a place can 'open the pass', and so can a person employed to do it; the text has no head noun, title or locative."
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/en/location-collision/bridge-named-after-surname",
+      "schema_version": "1.1.0",
+      "entity_type": "PERSON",
+      "language": "en",
+      "title": "Bridge named with a surname",
+      "why": "A bridge name is not a person; 'is closed for repairs' is predicated of infrastructure.",
+      "text": "The Calloway Bridge is closed for repairs.",
+      "expectations": [
+        {
+          "start": 4,
+          "end": 19,
+          "surface": "Calloway Bridge",
+          "expect": "not-person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "latin",
+        "token_class": "multi",
+        "collision_classes": [
+          "location"
+        ],
+        "context_types": [
+          "plain-prose",
+          "sentence-initial",
+          "no-person"
+        ],
+        "name_features": [],
+        "boundary_tags": [],
+        "familiarity_basis": "author-judgment"
+      },
+      "ambiguity": {
+        "level": "context-resolvable",
+        "kind": "category-collision",
+        "alternative_reading": "place-name",
+        "resolved_by": [
+          "head-noun-or-suffix",
+          "predicate-or-argument"
+        ],
+        "note": "'Bridge' is a structure head noun."
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
       "id": "person/en/location-collision/brooklyn-borough",
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "en",
       "title": "Brooklyn as a borough",
@@ -123,7 +348,8 @@
         "name_features": [],
         "boundary_tags": [
           "punctuation-adjacent"
-        ]
+        ],
+        "familiarity_basis": "author-judgment"
       },
       "ambiguity": {
         "level": "context-resolvable",
@@ -141,7 +367,7 @@
     },
     {
       "id": "person/en/location-collision/brooklyn-given-name",
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "en",
       "title": "Brooklyn as a person's given name",
@@ -170,7 +396,8 @@
         "name_features": [
           "full-name"
         ],
-        "boundary_tags": []
+        "boundary_tags": [],
+        "familiarity_basis": "author-judgment"
       },
       "ambiguity": {
         "level": "context-resolvable",
@@ -188,7 +415,7 @@
     },
     {
       "id": "person/en/location-collision/charlotte-city",
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "en",
       "title": "Charlotte as a city",
@@ -215,7 +442,8 @@
           "no-person"
         ],
         "name_features": [],
-        "boundary_tags": []
+        "boundary_tags": [],
+        "familiarity_basis": "author-judgment"
       },
       "ambiguity": {
         "level": "context-resolvable",
@@ -233,7 +461,7 @@
     },
     {
       "id": "person/en/location-collision/charlotte-person",
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "en",
       "title": "Charlotte as a person receiving a note",
@@ -259,7 +487,8 @@
           "plain-prose"
         ],
         "name_features": [],
-        "boundary_tags": []
+        "boundary_tags": [],
+        "familiarity_basis": "author-judgment"
       },
       "ambiguity": {
         "level": "context-resolvable",
@@ -276,8 +505,75 @@
       }
     },
     {
+      "id": "person/en/location-collision/country-given-name-and-country",
+      "schema_version": "1.1.0",
+      "entity_type": "PERSON",
+      "language": "en",
+      "title": "Country-name given name followed by the country",
+      "why": "A person whose given name is a country name and the country itself, plus a month, in one sentence.",
+      "text": "India Clarke visited India in May.",
+      "expectations": [
+        {
+          "start": 0,
+          "end": 12,
+          "surface": "India Clarke",
+          "expect": "person"
+        },
+        {
+          "start": 21,
+          "end": 26,
+          "surface": "India",
+          "expect": "not-person"
+        },
+        {
+          "start": 30,
+          "end": 33,
+          "surface": "May",
+          "expect": "not-person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "rare",
+        "script": "latin",
+        "token_class": "multi",
+        "collision_classes": [
+          "location",
+          "temporal"
+        ],
+        "context_types": [
+          "plain-prose",
+          "sentence-initial"
+        ],
+        "name_features": [
+          "full-name"
+        ],
+        "boundary_tags": [],
+        "familiarity_basis": "author-judgment"
+      },
+      "ambiguity": {
+        "level": "context-resolvable",
+        "kind": "category-collision",
+        "alternative_reading": "place-name",
+        "resolved_by": [
+          "syntactic-position",
+          "co-occurring-entity"
+        ],
+        "note": "A subject with a surname is a person; the object of 'visited' is a place; 'in May' is a time expression."
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
       "id": "person/en/location-collision/florence-city",
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "en",
       "title": "Florence as a city",
@@ -304,7 +600,8 @@
           "no-person"
         ],
         "name_features": [],
-        "boundary_tags": []
+        "boundary_tags": [],
+        "familiarity_basis": "author-judgment"
       },
       "ambiguity": {
         "level": "context-resolvable",
@@ -322,7 +619,7 @@
     },
     {
       "id": "person/en/location-collision/florence-person",
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "en",
       "title": "Florence as a person receiving a message",
@@ -348,7 +645,8 @@
           "plain-prose"
         ],
         "name_features": [],
-        "boundary_tags": []
+        "boundary_tags": [],
+        "familiarity_basis": "author-judgment"
       },
       "ambiguity": {
         "level": "context-resolvable",
@@ -366,7 +664,7 @@
     },
     {
       "id": "person/en/location-collision/georgia-person-recipient",
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "en",
       "title": "Georgia as an email recipient",
@@ -392,7 +690,8 @@
           "plain-prose"
         ],
         "name_features": [],
-        "boundary_tags": []
+        "boundary_tags": [],
+        "familiarity_basis": "author-judgment"
       },
       "ambiguity": {
         "level": "context-resolvable",
@@ -410,7 +709,7 @@
     },
     {
       "id": "person/en/location-collision/georgia-state",
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "en",
       "title": "Georgia as a place of upbringing",
@@ -437,7 +736,8 @@
           "no-person"
         ],
         "name_features": [],
-        "boundary_tags": []
+        "boundary_tags": [],
+        "familiarity_basis": "author-judgment"
       },
       "ambiguity": {
         "level": "context-resolvable",
@@ -454,8 +754,68 @@
       }
     },
     {
+      "id": "person/en/location-collision/given-name-then-same-city",
+      "schema_version": "1.1.0",
+      "entity_type": "PERSON",
+      "language": "en",
+      "title": "Given name followed by the same city in one sentence",
+      "why": "A person whose given name equals a borough and the borough itself in one sentence.",
+      "text": "Brooklyn Beckett toured Brooklyn on Sunday.",
+      "expectations": [
+        {
+          "start": 0,
+          "end": 16,
+          "surface": "Brooklyn Beckett",
+          "expect": "person"
+        },
+        {
+          "start": 24,
+          "end": 32,
+          "surface": "Brooklyn",
+          "expect": "not-person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "latin",
+        "token_class": "multi",
+        "collision_classes": [
+          "location"
+        ],
+        "context_types": [
+          "plain-prose",
+          "sentence-initial"
+        ],
+        "name_features": [
+          "full-name"
+        ],
+        "boundary_tags": [],
+        "familiarity_basis": "author-judgment"
+      },
+      "ambiguity": {
+        "level": "context-resolvable",
+        "kind": "category-collision",
+        "alternative_reading": "place-name",
+        "resolved_by": [
+          "syntactic-position",
+          "co-occurring-entity"
+        ],
+        "note": "The two-token subject is a full name; the object of 'toured' is a place and has no surname."
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
       "id": "person/en/location-collision/jordan-country",
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "en",
       "title": "Jordan as a country",
@@ -482,7 +842,8 @@
           "no-person"
         ],
         "name_features": [],
-        "boundary_tags": []
+        "boundary_tags": [],
+        "familiarity_basis": "author-judgment"
       },
       "ambiguity": {
         "level": "context-resolvable",
@@ -500,7 +861,7 @@
     },
     {
       "id": "person/en/location-collision/jordan-river",
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "en",
       "title": "Jordan River as a geographic feature",
@@ -527,7 +888,8 @@
           "no-person"
         ],
         "name_features": [],
-        "boundary_tags": []
+        "boundary_tags": [],
+        "familiarity_basis": "author-judgment"
       },
       "ambiguity": {
         "level": "context-resolvable",
@@ -545,7 +907,7 @@
     },
     {
       "id": "person/en/location-collision/lake-victoria",
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "en",
       "title": "Lake Victoria as a lake",
@@ -572,7 +934,8 @@
           "no-person"
         ],
         "name_features": [],
-        "boundary_tags": []
+        "boundary_tags": [],
+        "familiarity_basis": "author-judgment"
       },
       "ambiguity": {
         "level": "context-resolvable",
@@ -590,7 +953,7 @@
     },
     {
       "id": "person/en/location-collision/lincoln-park",
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "en",
       "title": "Lincoln Park as a place name",
@@ -617,7 +980,8 @@
           "no-person"
         ],
         "name_features": [],
-        "boundary_tags": []
+        "boundary_tags": [],
+        "familiarity_basis": "author-judgment"
       },
       "ambiguity": {
         "level": "context-resolvable",
@@ -635,7 +999,7 @@
     },
     {
       "id": "person/en/location-collision/mount-washington",
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "en",
       "title": "Mount Washington as a mountain",
@@ -662,7 +1026,8 @@
           "no-person"
         ],
         "name_features": [],
-        "boundary_tags": []
+        "boundary_tags": [],
+        "familiarity_basis": "author-judgment"
       },
       "ambiguity": {
         "level": "context-resolvable",
@@ -679,8 +1044,75 @@
       }
     },
     {
+      "id": "person/en/location-collision/mountain-and-two-climbers",
+      "schema_version": "1.1.0",
+      "entity_type": "PERSON",
+      "language": "en",
+      "title": "Mountain sharing a surname with one of two climbers",
+      "why": "Two persons and a mountain appear together and one person shares the mountain surname; the mountain span includes the head noun and is not a person.",
+      "text": "Ellison and Cho climbed Mount Ellison.",
+      "expectations": [
+        {
+          "start": 0,
+          "end": 7,
+          "surface": "Ellison",
+          "expect": "person"
+        },
+        {
+          "start": 12,
+          "end": 15,
+          "surface": "Cho",
+          "expect": "person"
+        },
+        {
+          "start": 24,
+          "end": 37,
+          "surface": "Mount Ellison",
+          "expect": "not-person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "latin",
+        "token_class": "single",
+        "collision_classes": [
+          "location"
+        ],
+        "context_types": [
+          "plain-prose",
+          "sentence-initial",
+          "list-or-enumeration"
+        ],
+        "name_features": [
+          "surname-only"
+        ],
+        "boundary_tags": [],
+        "familiarity_basis": "author-judgment"
+      },
+      "ambiguity": {
+        "level": "context-resolvable",
+        "kind": "category-collision",
+        "alternative_reading": "place-name",
+        "resolved_by": [
+          "head-noun-or-suffix",
+          "predicate-or-argument"
+        ],
+        "note": "Subjects of 'climbed' are people; 'Mount' marks the object as a place."
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
       "id": "person/en/location-collision/paris-city",
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "en",
       "title": "Paris as a city",
@@ -707,7 +1139,8 @@
           "no-person"
         ],
         "name_features": [],
-        "boundary_tags": []
+        "boundary_tags": [],
+        "familiarity_basis": "author-judgment"
       },
       "ambiguity": {
         "level": "context-resolvable",
@@ -725,7 +1158,7 @@
     },
     {
       "id": "person/en/location-collision/paris-given-name-full",
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "en",
       "title": "Paris as a given name in a full name",
@@ -754,7 +1187,8 @@
         "name_features": [
           "full-name"
         ],
-        "boundary_tags": []
+        "boundary_tags": [],
+        "familiarity_basis": "author-judgment"
       },
       "ambiguity": {
         "level": "context-resolvable",
@@ -771,8 +1205,68 @@
       }
     },
     {
+      "id": "person/en/location-collision/person-and-namesake-street",
+      "schema_version": "1.1.0",
+      "entity_type": "PERSON",
+      "language": "en",
+      "title": "Person and street sharing a surname",
+      "why": "A full name and a street with the same surname in one sentence; only the first is a person.",
+      "text": "Dana Marlowe lives on Marlowe Street.",
+      "expectations": [
+        {
+          "start": 0,
+          "end": 12,
+          "surface": "Dana Marlowe",
+          "expect": "person"
+        },
+        {
+          "start": 22,
+          "end": 36,
+          "surface": "Marlowe Street",
+          "expect": "not-person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "latin",
+        "token_class": "multi",
+        "collision_classes": [
+          "location"
+        ],
+        "context_types": [
+          "plain-prose",
+          "sentence-initial"
+        ],
+        "name_features": [
+          "full-name"
+        ],
+        "boundary_tags": [],
+        "familiarity_basis": "author-judgment"
+      },
+      "ambiguity": {
+        "level": "context-resolvable",
+        "kind": "category-collision",
+        "alternative_reading": "place-name",
+        "resolved_by": [
+          "head-noun-or-suffix",
+          "predicate-or-argument"
+        ],
+        "note": "The subject of 'lives' is a person; after 'on', 'Street' makes the span a place."
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
       "id": "person/en/location-collision/phoenix-city",
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "en",
       "title": "Phoenix as a city",
@@ -799,7 +1293,8 @@
           "no-person"
         ],
         "name_features": [],
-        "boundary_tags": []
+        "boundary_tags": [],
+        "familiarity_basis": "author-judgment"
       },
       "ambiguity": {
         "level": "context-resolvable",
@@ -817,7 +1312,7 @@
     },
     {
       "id": "person/en/location-collision/savannah-person-and-city",
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "en",
       "title": "Savannah as a person who lives in Savannah",
@@ -850,7 +1345,8 @@
           "sentence-initial"
         ],
         "name_features": [],
-        "boundary_tags": []
+        "boundary_tags": [],
+        "familiarity_basis": "author-judgment"
       },
       "ambiguity": {
         "level": "context-resolvable",
@@ -867,8 +1363,61 @@
       }
     },
     {
+      "id": "person/en/location-collision/street-named-after-surname",
+      "schema_version": "1.1.0",
+      "entity_type": "PERSON",
+      "language": "en",
+      "title": "Street named with a surname",
+      "why": "A street name is not a person even though its first word is a surname; 'lives on' takes a street.",
+      "text": "She lives on Marlowe Street.",
+      "expectations": [
+        {
+          "start": 13,
+          "end": 27,
+          "surface": "Marlowe Street",
+          "expect": "not-person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "latin",
+        "token_class": "multi",
+        "collision_classes": [
+          "location"
+        ],
+        "context_types": [
+          "plain-prose",
+          "sentence-initial",
+          "no-person"
+        ],
+        "name_features": [],
+        "boundary_tags": [],
+        "familiarity_basis": "author-judgment"
+      },
+      "ambiguity": {
+        "level": "context-resolvable",
+        "kind": "category-collision",
+        "alternative_reading": "place-name",
+        "resolved_by": [
+          "head-noun-or-suffix",
+          "predicate-or-argument"
+        ],
+        "note": "'Street' is a place head noun and 'lives on' takes a location."
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
       "id": "person/en/location-collision/sydney-park-venue",
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "en",
       "title": "Sydney Park as a place that a person and a city share",
@@ -896,7 +1445,8 @@
           "no-person"
         ],
         "name_features": [],
-        "boundary_tags": []
+        "boundary_tags": [],
+        "familiarity_basis": "author-judgment"
       },
       "ambiguity": {
         "level": "context-resolvable",
@@ -914,7 +1464,7 @@
     },
     {
       "id": "person/en/location-collision/washington-metonym",
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "en",
       "title": "Washington used as a metonym with no other cue",
@@ -942,7 +1492,8 @@
           "sentence-initial"
         ],
         "name_features": [],
-        "boundary_tags": []
+        "boundary_tags": [],
+        "familiarity_basis": "author-judgment"
       },
       "ambiguity": {
         "level": "genuinely-ambiguous",

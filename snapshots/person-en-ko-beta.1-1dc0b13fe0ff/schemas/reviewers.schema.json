@@ -1,0 +1,76 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:ner-evidence:schema:reviewers:1.0.0",
+  "title": "Reviewer registry",
+  "description": "Pseudonymous reviewers whose verdicts may count. No real name, email address or other personal identifier is stored; the pseudonym is the reviewer's stable identity in the ledger.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "reviewers"
+  ],
+  "properties": {
+    "reviewers": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "languages",
+          "facets",
+          "qualification",
+          "independent_of_authors",
+          "status",
+          "registered_on"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^rev/[a-z0-9]+(-[a-z0-9]+)*$"
+          },
+          "languages": {
+            "type": "array",
+            "minItems": 1,
+            "uniqueItems": true,
+            "items": {
+              "enum": [
+                "en",
+                "ko"
+              ]
+            }
+          },
+          "facets": {
+            "type": "array",
+            "minItems": 1,
+            "uniqueItems": true,
+            "items": {
+              "enum": [
+                "factual",
+                "linguistic"
+              ]
+            }
+          },
+          "qualification": {
+            "type": "string",
+            "minLength": 20,
+            "description": "Why this person can judge these facets (for example 'native Korean speaker with linguistics training'). Self-description, not verified by tooling."
+          },
+          "independent_of_authors": {
+            "type": "boolean",
+            "description": "True only if the reviewer did not write or edit any case they review. A maintainer attestation; tooling cannot verify it."
+          },
+          "status": {
+            "enum": [
+              "active",
+              "retired"
+            ]
+          },
+          "registered_on": {
+            "type": "string",
+            "format": "date"
+          }
+        }
+      }
+    }
+  }
+}

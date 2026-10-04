@@ -54,7 +54,8 @@ def cmd_slices(args) -> int:
     from . import project, slices
     repo = _repo(args)
     fixtures = project.project_all(repo.cases, repo.ruleset)
-    report = slices.compute(repo.cases, fixtures, repo.targets)
+    from . import reviews
+    report = slices.compute(repo.cases, fixtures, repo.targets, reviews.summary(repo))
     probs = slices.check_targets(report)
     for p in probs:
         print(p)
@@ -65,7 +66,8 @@ def cmd_slices(args) -> int:
 def cmd_report(args) -> int:
     from . import project, slices
     repo = _repo(args)
-    md = slices.render_markdown(slices.compute(repo.cases, project.project_all(repo.cases, repo.ruleset), repo.targets))
+    from . import reviews
+    md = slices.render_markdown(slices.compute(repo.cases, project.project_all(repo.cases, repo.ruleset), repo.targets, reviews.summary(repo)))
     path = repo.root / "docs" / "evidence-coverage.md"
     if args.write:
         path.write_text(md, encoding="utf-8")
@@ -106,6 +108,85 @@ def cmd_snapshot(args) -> int:
     return 1 if probs else 0
 
 
+def cmd_references_check(args) -> int:
+    from . import references
+    repo = _repo(args)
+    probs = references.check_bands(repo)
+    for p in probs:
+        print(p)
+    n = sum(len(r["entries"]) for r in repo.bands.get("references", []))
+    print(f"references: {n} derived bands, {len(probs)} problems")
+    return 1 if probs else 0
+
+
+def cmd_review(args) -> int:
+    import datetime
+    from . import reviews
+    repo = _repo(args)
+    if args.action == "check":
+        probs = reviews.check_reviews(repo)
+        for p in probs:
+            print(p)
+        rl = reviews.summary(repo)
+        print(f"reviews: {rl['events']} events, {len(probs)} problems, {len(rl['disputed'])} unresolved disagreements")
+        return 1 if probs else 0
+    if args.action == "immutability":
+        probs, note = reviews.check_ledger_immutability(repo.root, args.base)
+        for p in probs:
+            print(p)
+        print(f"review immutability: {len(probs)} problems ({note})")
+        return 1 if probs else 0
+    if args.action == "sync":
+        changed = reviews.sync(repo)
+        print("synced: " + (", ".join(changed) if changed else "nothing to change"))
+        return 0
+    if args.action == "summary":
+        import json
+        print(json.dumps(reviews.summary(repo), indent=2, ensure_ascii=False))
+        return 0
+    if args.action == "verdict":
+        import datetime
+        from . import canonical
+        case = next((c for c in repo.cases if c["id"] == args.case), None)
+        if case is None or not (args.facet and args.reviewer and args.verdict and args.comment):
+            print("review verdict needs --case (an existing id), --facet, --reviewer, --verdict and --comment")
+            return 2
+        if args.reviewer not in {r["id"] for r in repo.reviewers.get("reviewers", [])}:
+            print(f"{args.reviewer} is not registered in evidence/reviews/reviewers.json")
+            return 2
+        ev = {"event_type": "verdict", "case_id": case["id"], "subject_digest": reviews.subject_digest(case), "facet": args.facet,
+              "recorded_on": args.date or datetime.date.today().isoformat(), "reviewer_id": args.reviewer, "verdict": args.verdict, "comment": args.comment}
+        if args.proposed_change:
+            ev["proposed_change"] = args.proposed_change
+        ev = reviews.with_id(ev)
+        with open(repo.root / reviews.LEDGER_PATH, "a", encoding="utf-8") as f:
+            f.write(canonical.dumps(ev) + "\n")
+        print(f"recorded {ev['event_id']}; now run `review sync` and `review check`")
+        return 0
+    if not args.language or not args.facet:
+        print(f"review {args.action} needs --language and --facet")
+        return 2
+    if args.action == "packet":
+        text = reviews.render_packet(repo, args.language, args.facet, args.limit, args.blind)
+        if args.out:
+            Path(args.out).write_text(text, encoding="utf-8")
+            print(f"wrote {args.out}")
+        else:
+            print(text, end="")
+        return 0
+    role = args.role or {("en", "linguistic"): "en-annotator", ("ko", "linguistic"): "ko-native-linguist"}.get((args.language, args.facet), "factual-checker")
+    events = reviews.request_events(repo, args.language, args.facet, role, args.limit, args.date or datetime.date.today().isoformat(), args.only_referenced)
+    if not events:
+        print("nothing to request")
+        return 0
+    from . import canonical
+    with open(repo.root / reviews.LEDGER_PATH, "a", encoding="utf-8") as f:
+        for ev in events:
+            f.write(canonical.dumps(ev) + "\n")
+    print(f"requested {len(events)} {args.language} {args.facet} reviews ({role})")
+    return 0
+
+
 def cmd_check(args) -> int:
     """Every repository gate, in one command. This is what CI runs."""
     from argparse import Namespace
@@ -117,6 +198,9 @@ def cmd_check(args) -> int:
         ("fmt", cli.cmd_fmt, {}),
         ("provenance", cmd_provenance, {}),
         ("privacy", cmd_privacy, {}),
+        ("references", cmd_references_check, {}),
+        ("reviews", cmd_review, {"action": "check"}),
+        ("review immutability", cmd_review, {"action": "immutability"}),
         ("project", cmd_project, {}),
         ("slices", cmd_slices, {}),
         ("report", cmd_report, {}),
@@ -148,10 +232,29 @@ def register(sub) -> None:
     s.add_argument("--path", help="verify a single snapshot directory (works on a downloaded copy)")
     s.add_argument("--base", help="git ref to compare against for immutability (default origin/main, main)")
     s.set_defaults(fn=cmd_snapshot)
+    r = sub.add_parser("review", help="independent review workflow: check, sync, request, packet, summary, immutability")
+    r.add_argument("action", choices=["check", "sync", "request", "packet", "verdict", "summary", "immutability"])
+    r.add_argument("--language", choices=["en", "ko"])
+    r.add_argument("--facet", choices=["factual", "linguistic"])
+    r.add_argument("--role", choices=["en-annotator", "ko-native-linguist", "factual-checker"])
+    r.add_argument("--limit", type=int, default=50)
+    r.add_argument("--out", help="packet: write here instead of stdout")
+    r.add_argument("--blind", action="store_true", help="packet: hide expected labels and rationale (for blind annotation)")
+    r.add_argument("--date", help="request/verdict: recorded_on (default today)")
+    r.add_argument("--only-referenced", action="store_true", help="request: only cases that cite a reference rule or a familiarity reference (factual review)")
+    r.add_argument("--case", help="verdict: case id")
+    r.add_argument("--reviewer", help="verdict: registered reviewer id (rev/...)")
+    r.add_argument("--verdict", choices=["agree", "disagree", "abstain"])
+    r.add_argument("--comment", help="verdict: at least 20 characters")
+    r.add_argument("--proposed-change", help="verdict: text only; never applied automatically")
+    r.add_argument("--base", help="immutability: git ref to compare the ledger against")
+    r.set_defaults(fn=cmd_review)
     p = sub.add_parser("project", help="project cases to fixtures, verify lineage and determinism")
     p.add_argument("--out", help="write fixtures.jsonl here")
     p.set_defaults(fn=cmd_project)
     p = sub.add_parser("provenance", help="source registry and case provenance completeness")
     p.add_argument("--public-release", action="store_true", help="also apply the public-release gate (expected to fail while private)")
     p.set_defaults(fn=cmd_provenance)
+    from . import references
+    references.register(sub)
     sub.add_parser("privacy", help="privacy/safe-data lint over committed evidence").set_defaults(fn=cmd_privacy)

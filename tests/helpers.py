@@ -7,7 +7,7 @@ from ner_evidence import repo as repo_mod
 
 GOOD_CASE = {
     "id": "person/en/common-word-collision/may-month",
-    "schema_version": "1.0.0",
+    "schema_version": "1.1.0",
     "entity_type": "PERSON",
     "language": "en",
     "title": "May as a month, not a person",
@@ -20,6 +20,7 @@ GOOD_CASE = {
     "focus_span": 1,
     "dimensions": {
         "familiarity": "common",
+        "familiarity_basis": "author-judgment",
         "script": "latin",
         "token_class": "single",
         "collision_classes": ["temporal", "common-word"],

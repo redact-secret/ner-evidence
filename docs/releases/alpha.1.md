@@ -34,3 +34,5 @@ and gaps: [`../evidence-coverage.md`](../evidence-coverage.md).
 * Built twice, in the working tree and in a fresh clone under a different `PYTHONHASHSEED`: byte-identical
   `manifest.json`.
 * Tests rebuild in different record orders and assert identical digests.
+
+Successor: [`beta.1`](beta.1.md). This snapshot stays valid and immutable.

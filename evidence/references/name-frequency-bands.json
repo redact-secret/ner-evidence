@@ -1,0 +1,66 @@
+{
+  "bands_version": "1.0.0",
+  "references": [
+    {
+      "source_id": "src/ref-us-census-2010-surnames",
+      "language": "en",
+      "component_type": "surname",
+      "rules": {
+        "common": "The normalized surname has rank 1000 or better in the 2010 Census surname table (the published Top 1,000).",
+        "rare": "The normalized surname is in the table (100 or more occurrences) but ranks below 1000.",
+        "novel": "The normalized surname is absent from the table (fewer than 100 occurrences in the 2010 Census).",
+        "normalization": "Unicode NFKD, combining marks removed, lowercase, only the letters a-z kept (so O'Brien and Al-Rashid become obrien and alrashid, as in the table)."
+      },
+      "entries": {
+        "Ashgrove": "novel",
+        "Brannoch": "novel",
+        "Calloway": "rare",
+        "Delmar": "rare",
+        "Galbraith": "rare",
+        "Hadjiyannis": "novel",
+        "Kinsey": "rare",
+        "Lindqvist": "novel",
+        "Marlowe": "rare",
+        "Okafor": "rare",
+        "Penhallow": "novel",
+        "Quill": "rare",
+        "Tolliver": "rare",
+        "Valdrenne": "novel",
+        "Vellacott": "novel",
+        "Wexcombe": "novel",
+        "Whitlow": "rare",
+        "Winterbourne": "novel",
+        "ostrander": "rare"
+      }
+    },
+    {
+      "source_id": "src/ref-ko-surname-population-2015",
+      "language": "ko",
+      "component_type": "surname",
+      "rules": {
+        "common": "The surname is listed and held by at least 0.5% of the 2015 South Korean population (49,705,663 in the table note).",
+        "rare": "The surname is listed with a population share below 0.5%.",
+        "novel": "Not derivable: the transcription lists only part of the surnames in use, so absence from it proves nothing; no Korean case uses this band.",
+        "normalization": "The Hangul surname string exactly as listed (one or two syllables); no normalization."
+      },
+      "entries": {
+        "감": "rare",
+        "길": "rare",
+        "남궁": "rare",
+        "도": "rare",
+        "독고": "rare",
+        "마": "rare",
+        "맹": "rare",
+        "명": "rare",
+        "빈": "rare",
+        "사공": "rare",
+        "선우": "rare",
+        "설": "rare",
+        "어": "rare",
+        "연": "rare",
+        "위": "rare",
+        "황보": "rare"
+      }
+    }
+  ]
+}

@@ -1,8 +1,8 @@
 {
   "cases": [
     {
-      "id": "person/ko/unseen-name/constructed-four-syllable-with-two-syllable-surname",
-      "schema_version": "1.0.0",
+      "id": "person/ko/uncommon-name/constructed-four-syllable-with-two-syllable-surname",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "ko",
       "title": "Constructed given name with a two-syllable surname",
@@ -34,7 +34,8 @@
         ],
         "boundary_tags": [
           "particle-excluded"
-        ]
+        ],
+        "familiarity_basis": "constructed"
       },
       "ambiguity": {
         "level": "unambiguous"
@@ -50,8 +51,8 @@
       }
     },
     {
-      "id": "person/ko/unseen-name/constructed-full-name-nim-kkeseo",
-      "schema_version": "1.0.0",
+      "id": "person/ko/uncommon-name/constructed-full-name-nim-kkeseo",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "ko",
       "title": "Constructed full name with 님께서",
@@ -84,7 +85,8 @@
         "boundary_tags": [
           "honorific-excluded",
           "particle-excluded"
-        ]
+        ],
+        "familiarity_basis": "constructed"
       },
       "ambiguity": {
         "level": "unambiguous"
@@ -100,8 +102,8 @@
       }
     },
     {
-      "id": "person/ko/unseen-name/constructed-full-name-ssi",
-      "schema_version": "1.0.0",
+      "id": "person/ko/uncommon-name/constructed-full-name-ssi",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "ko",
       "title": "Constructed full name with 씨",
@@ -134,7 +136,8 @@
         "boundary_tags": [
           "honorific-excluded",
           "particle-excluded"
-        ]
+        ],
+        "familiarity_basis": "constructed"
       },
       "ambiguity": {
         "level": "unambiguous"
@@ -150,8 +153,8 @@
       }
     },
     {
-      "id": "person/ko/unseen-name/constructed-given-name-adel",
-      "schema_version": "1.0.0",
+      "id": "person/ko/uncommon-name/constructed-given-name-adel",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "ko",
       "title": "Common surname with a constructed foreign-style given name",
@@ -182,7 +185,8 @@
         ],
         "boundary_tags": [
           "particle-excluded"
-        ]
+        ],
+        "familiarity_basis": "author-judgment"
       },
       "ambiguity": {
         "level": "unambiguous"
@@ -198,8 +202,8 @@
       }
     },
     {
-      "id": "person/ko/unseen-name/constructed-given-name-doha",
-      "schema_version": "1.0.0",
+      "id": "person/ko/uncommon-name/constructed-given-name-doha",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "ko",
       "title": "Common surname with a rare given name",
@@ -232,7 +236,8 @@
         ],
         "boundary_tags": [
           "particle-excluded"
-        ]
+        ],
+        "familiarity_basis": "author-judgment"
       },
       "ambiguity": {
         "level": "context-resolvable",
@@ -249,8 +254,8 @@
       }
     },
     {
-      "id": "person/ko/unseen-name/constructed-given-name-jamo-laughter",
-      "schema_version": "1.0.0",
+      "id": "person/ko/uncommon-name/constructed-given-name-jamo-laughter",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "ko",
       "title": "Constructed given name followed by ㅋㅋ",
@@ -281,7 +286,8 @@
         "boundary_tags": [
           "no-space",
           "suffix-excluded"
-        ]
+        ],
+        "familiarity_basis": "constructed"
       },
       "ambiguity": {
         "level": "unambiguous"
@@ -297,8 +303,8 @@
       }
     },
     {
-      "id": "person/ko/unseen-name/constructed-given-name-jyuno",
-      "schema_version": "1.0.0",
+      "id": "person/ko/uncommon-name/constructed-given-name-jyuno",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "ko",
       "title": "Common surname with a constructed given name",
@@ -329,7 +335,8 @@
         ],
         "boundary_tags": [
           "particle-excluded"
-        ]
+        ],
+        "familiarity_basis": "constructed"
       },
       "ambiguity": {
         "level": "unambiguous"
@@ -345,8 +352,8 @@
       }
     },
     {
-      "id": "person/ko/unseen-name/constructed-given-name-rael",
-      "schema_version": "1.0.0",
+      "id": "person/ko/uncommon-name/constructed-given-name-rael",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "ko",
       "title": "Constructed given name beginning with a vowel syllable",
@@ -377,7 +384,8 @@
         ],
         "boundary_tags": [
           "particle-excluded"
-        ]
+        ],
+        "familiarity_basis": "constructed"
       },
       "ambiguity": {
         "level": "unambiguous"
@@ -393,8 +401,8 @@
       }
     },
     {
-      "id": "person/ko/unseen-name/constructed-given-name-rwian",
-      "schema_version": "1.0.0",
+      "id": "person/ko/uncommon-name/constructed-given-name-rwian",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "ko",
       "title": "Common surname with a constructed given name containing 뤼",
@@ -425,7 +433,8 @@
         ],
         "boundary_tags": [
           "particle-excluded"
-        ]
+        ],
+        "familiarity_basis": "constructed"
       },
       "ambiguity": {
         "level": "unambiguous"
@@ -441,8 +450,8 @@
       }
     },
     {
-      "id": "person/ko/unseen-name/constructed-given-name-seirun",
-      "schema_version": "1.0.0",
+      "id": "person/ko/uncommon-name/constructed-given-name-seirun",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "ko",
       "title": "Common surname with a constructed three-syllable given name",
@@ -473,7 +482,8 @@
         ],
         "boundary_tags": [
           "particle-excluded"
-        ]
+        ],
+        "familiarity_basis": "constructed"
       },
       "ambiguity": {
         "level": "unambiguous"
@@ -489,8 +499,8 @@
       }
     },
     {
-      "id": "person/ko/unseen-name/constructed-given-name-solmoe",
-      "schema_version": "1.0.0",
+      "id": "person/ko/uncommon-name/constructed-given-name-solmoe",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "ko",
       "title": "Common surname with a rare native-looking given name",
@@ -521,7 +531,8 @@
         ],
         "boundary_tags": [
           "particle-excluded"
-        ]
+        ],
+        "familiarity_basis": "author-judgment"
       },
       "ambiguity": {
         "level": "unambiguous"
@@ -537,8 +548,8 @@
       }
     },
     {
-      "id": "person/ko/unseen-name/constructed-given-name-vocative",
-      "schema_version": "1.0.0",
+      "id": "person/ko/uncommon-name/constructed-given-name-vocative",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "ko",
       "title": "Constructed given name in a vocative",
@@ -570,7 +581,8 @@
         "boundary_tags": [
           "suffix-excluded",
           "punctuation-adjacent"
-        ]
+        ],
+        "familiarity_basis": "constructed"
       },
       "ambiguity": {
         "level": "unambiguous"
@@ -586,8 +598,8 @@
       }
     },
     {
-      "id": "person/ko/unseen-name/constructed-given-only-single-syllable",
-      "schema_version": "1.0.0",
+      "id": "person/ko/uncommon-name/constructed-given-only-single-syllable",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "ko",
       "title": "Constructed single-syllable given name used alone",
@@ -619,7 +631,8 @@
         "boundary_tags": [
           "suffix-excluded",
           "punctuation-adjacent"
-        ]
+        ],
+        "familiarity_basis": "constructed"
       },
       "ambiguity": {
         "level": "unambiguous"
@@ -635,8 +648,57 @@
       }
     },
     {
-      "id": "person/ko/unseen-name/constructed-name-before-copula",
-      "schema_version": "1.0.0",
+      "id": "person/ko/uncommon-name/constructed-name-asked",
+      "schema_version": "1.1.0",
+      "entity_type": "PERSON",
+      "language": "ko",
+      "title": "Constructed Korean name, dative marker",
+      "why": "The author assembled the given name from syllables that do not form an attested name, on a common-looking surname, so no name list contains the combination. There is no reference table for absence in Korean.",
+      "text": "오새눈에게 물어봤다.",
+      "expectations": [
+        {
+          "start": 0,
+          "end": 3,
+          "surface": "오새눈",
+          "expect": "person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "novel",
+        "script": "hangul",
+        "token_class": "single",
+        "collision_classes": [],
+        "context_types": [
+          "plain-prose",
+          "particle-attached"
+        ],
+        "name_features": [
+          "full-name",
+          "ko-surname-given",
+          "ko-3-syllable"
+        ],
+        "boundary_tags": [
+          "particle-excluded"
+        ],
+        "familiarity_basis": "constructed"
+      },
+      "ambiguity": {
+        "level": "unambiguous"
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/ko/uncommon-name/constructed-name-before-copula",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "ko",
       "title": "Constructed full name before the copula 입니다",
@@ -667,7 +729,8 @@
         ],
         "boundary_tags": [
           "particle-excluded"
-        ]
+        ],
+        "familiarity_basis": "constructed"
       },
       "ambiguity": {
         "level": "unambiguous"
@@ -683,8 +746,8 @@
       }
     },
     {
-      "id": "person/ko/unseen-name/constructed-name-in-structured-field",
-      "schema_version": "1.0.0",
+      "id": "person/ko/uncommon-name/constructed-name-in-structured-field",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "ko",
       "title": "Constructed name in a form field",
@@ -714,7 +777,8 @@
         ],
         "boundary_tags": [
           "punctuation-adjacent"
-        ]
+        ],
+        "familiarity_basis": "constructed"
       },
       "ambiguity": {
         "level": "unambiguous"
@@ -730,8 +794,158 @@
       }
     },
     {
-      "id": "person/ko/unseen-name/constructed-two-syllable-jen",
-      "schema_version": "1.0.0",
+      "id": "person/ko/uncommon-name/constructed-name-informed-by-report",
+      "schema_version": "1.1.0",
+      "entity_type": "PERSON",
+      "language": "ko",
+      "title": "Constructed Korean name, subject marker",
+      "why": "The author assembled the given name from syllables that do not form an attested name, on a common-looking surname, so no name list contains the combination. There is no reference table for absence in Korean.",
+      "text": "배누솔이 연락을 줬다.",
+      "expectations": [
+        {
+          "start": 0,
+          "end": 3,
+          "surface": "배누솔",
+          "expect": "person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "novel",
+        "script": "hangul",
+        "token_class": "single",
+        "collision_classes": [],
+        "context_types": [
+          "plain-prose",
+          "sentence-initial",
+          "particle-attached"
+        ],
+        "name_features": [
+          "full-name",
+          "ko-surname-given",
+          "ko-3-syllable"
+        ],
+        "boundary_tags": [
+          "particle-excluded"
+        ],
+        "familiarity_basis": "constructed"
+      },
+      "ambiguity": {
+        "level": "unambiguous"
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/ko/uncommon-name/constructed-name-on-leave",
+      "schema_version": "1.1.0",
+      "entity_type": "PERSON",
+      "language": "ko",
+      "title": "Constructed Korean name, topic marker",
+      "why": "The author assembled the given name from syllables that do not form an attested name, on a common-looking surname, so no name list contains the combination. There is no reference table for absence in Korean.",
+      "text": "윤하르는 오늘 휴가다.",
+      "expectations": [
+        {
+          "start": 0,
+          "end": 3,
+          "surface": "윤하르",
+          "expect": "person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "novel",
+        "script": "hangul",
+        "token_class": "single",
+        "collision_classes": [],
+        "context_types": [
+          "plain-prose",
+          "sentence-initial",
+          "particle-attached"
+        ],
+        "name_features": [
+          "full-name",
+          "ko-surname-given",
+          "ko-3-syllable"
+        ],
+        "boundary_tags": [
+          "particle-excluded"
+        ],
+        "familiarity_basis": "constructed"
+      },
+      "ambiguity": {
+        "level": "unambiguous"
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/ko/uncommon-name/constructed-name-presenter",
+      "schema_version": "1.1.0",
+      "entity_type": "PERSON",
+      "language": "ko",
+      "title": "Constructed Korean name, subject marker",
+      "why": "The author assembled the given name from syllables that do not form an attested name, on a common-looking surname, so no name list contains the combination. There is no reference table for absence in Korean.",
+      "text": "한소빛이 발표를 맡았다.",
+      "expectations": [
+        {
+          "start": 0,
+          "end": 3,
+          "surface": "한소빛",
+          "expect": "person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "novel",
+        "script": "hangul",
+        "token_class": "single",
+        "collision_classes": [],
+        "context_types": [
+          "plain-prose",
+          "sentence-initial",
+          "particle-attached"
+        ],
+        "name_features": [
+          "full-name",
+          "ko-surname-given",
+          "ko-3-syllable"
+        ],
+        "boundary_tags": [
+          "particle-excluded"
+        ],
+        "familiarity_basis": "constructed"
+      },
+      "ambiguity": {
+        "level": "unambiguous"
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/ko/uncommon-name/constructed-two-syllable-jen",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "ko",
       "title": "Constructed two-syllable name with a loanword-style given syllable",
@@ -762,7 +976,8 @@
         ],
         "boundary_tags": [
           "particle-excluded"
-        ]
+        ],
+        "familiarity_basis": "constructed"
       },
       "ambiguity": {
         "level": "unambiguous"
@@ -778,8 +993,8 @@
       }
     },
     {
-      "id": "person/ko/unseen-name/hangul-transliterated-foreign-full-name",
-      "schema_version": "1.0.0",
+      "id": "person/ko/uncommon-name/hangul-transliterated-foreign-full-name",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "ko",
       "title": "Foreign full name transliterated into Hangul",
@@ -808,7 +1023,8 @@
         ],
         "boundary_tags": [
           "particle-excluded"
-        ]
+        ],
+        "familiarity_basis": "author-judgment"
       },
       "ambiguity": {
         "level": "unambiguous"
@@ -824,8 +1040,8 @@
       }
     },
     {
-      "id": "person/ko/unseen-name/hangul-transliterated-foreign-given",
-      "schema_version": "1.0.0",
+      "id": "person/ko/uncommon-name/hangul-transliterated-foreign-given",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "ko",
       "title": "Foreign given name transliterated into Hangul",
@@ -854,7 +1070,8 @@
         ],
         "boundary_tags": [
           "particle-excluded"
-        ]
+        ],
+        "familiarity_basis": "author-judgment"
       },
       "ambiguity": {
         "level": "unambiguous"
@@ -870,8 +1087,8 @@
       }
     },
     {
-      "id": "person/ko/unseen-name/hanja-rare-surname-with-hangul-particle",
-      "schema_version": "1.0.0",
+      "id": "person/ko/uncommon-name/hanja-rare-surname-with-hangul-particle",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "ko",
       "title": "Hanja-written rare name followed by a Hangul particle",
@@ -905,7 +1122,8 @@
         "boundary_tags": [
           "particle-excluded",
           "mixed-script-boundary"
-        ]
+        ],
+        "familiarity_basis": "author-judgment"
       },
       "ambiguity": {
         "level": "unambiguous"
@@ -921,8 +1139,8 @@
       }
     },
     {
-      "id": "person/ko/unseen-name/hanja-rare-two-syllable-surname",
-      "schema_version": "1.0.0",
+      "id": "person/ko/uncommon-name/hanja-rare-two-syllable-surname",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "ko",
       "title": "Rare two-syllable surname written in hanja",
@@ -957,7 +1175,8 @@
         "boundary_tags": [
           "particle-excluded",
           "mixed-script-boundary"
-        ]
+        ],
+        "familiarity_basis": "author-judgment"
       },
       "ambiguity": {
         "level": "unambiguous"
@@ -973,12 +1192,12 @@
       }
     },
     {
-      "id": "person/ko/unseen-name/rare-surname-bin",
-      "schema_version": "1.0.0",
+      "id": "person/ko/uncommon-name/rare-surname-bin",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "ko",
       "title": "Rare surname 빈 that is also a common syllable",
-      "why": "빈 means 'empty' as a syllable and is a rare surname; the full name is a person even though the first syllable has a common lexical reading.",
+      "why": "빈 means 'empty' as a syllable and is a rare surname; the full name is a person even though the first syllable has a common lexical reading. The surname is uncommon in Korean, so name frequency gives no cue and the boundary must come from the structure.",
       "text": "빈하율을 아는 사람이 없었다.",
       "expectations": [
         {
@@ -1006,7 +1225,8 @@
         ],
         "boundary_tags": [
           "particle-excluded"
-        ]
+        ],
+        "familiarity_basis": "author-judgment"
       },
       "ambiguity": {
         "level": "unambiguous"
@@ -1022,12 +1242,12 @@
       }
     },
     {
-      "id": "person/ko/unseen-name/rare-surname-bin-bujang",
-      "schema_version": "1.0.0",
+      "id": "person/ko/uncommon-name/rare-surname-bin-bujang",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "ko",
       "title": "Rare surname 빈 with the title 부장님",
-      "why": "A rare surname with a job title; 빈 ('empty') is a common syllable otherwise.",
+      "why": "A rare surname with a job title; 빈 ('empty') is a common syllable otherwise. The surname is uncommon in Korean, so name frequency gives no cue and the boundary must come from the structure.",
       "text": "빈 부장님께서 직접 확인하셨다.",
       "expectations": [
         {
@@ -1057,7 +1277,8 @@
         "boundary_tags": [
           "honorific-excluded",
           "particle-excluded"
-        ]
+        ],
+        "familiarity_basis": "author-judgment"
       },
       "ambiguity": {
         "level": "context-resolvable",
@@ -1074,12 +1295,12 @@
       }
     },
     {
-      "id": "person/ko/unseen-name/rare-surname-bong",
-      "schema_version": "1.0.0",
+      "id": "person/ko/uncommon-name/rare-surname-bong",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "ko",
       "title": "Rare surname 봉 followed by a common given name",
-      "why": "봉 is a rare surname and a common syllable (봉투 'envelope'); the full name is a person.",
+      "why": "봉 is a rare surname and a common syllable (봉투 'envelope'); the full name is a person. The surname is uncommon in Korean, so name frequency gives no cue and the boundary must come from the structure.",
       "text": "봉지후가 발표 자료를 준비했다.",
       "expectations": [
         {
@@ -1107,7 +1328,8 @@
         ],
         "boundary_tags": [
           "particle-excluded"
-        ]
+        ],
+        "familiarity_basis": "author-judgment"
       },
       "ambiguity": {
         "level": "unambiguous"
@@ -1123,12 +1345,12 @@
       }
     },
     {
-      "id": "person/ko/unseen-name/rare-surname-eo",
-      "schema_version": "1.0.0",
+      "id": "person/ko/uncommon-name/rare-surname-eo",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "ko",
       "title": "Very rare one-syllable surname 어",
-      "why": "A real but uncommon surname written with a single common-looking syllable; without a surname list, 어재윤 is easily read as a common word plus a given name.",
+      "why": "A real but uncommon surname written with a single common-looking syllable; without a surname list, 어재윤 is easily read as a common word plus a given name. The surname is uncommon in Korean, so name frequency gives no cue and the boundary must come from the structure.",
       "text": "어재윤이 보고서를 제출했다.",
       "expectations": [
         {
@@ -1156,7 +1378,8 @@
         ],
         "boundary_tags": [
           "particle-excluded"
-        ]
+        ],
+        "familiarity_basis": "author-judgment"
       },
       "ambiguity": {
         "level": "unambiguous"
@@ -1172,12 +1395,12 @@
       }
     },
     {
-      "id": "person/ko/unseen-name/rare-surname-eo-ssi",
-      "schema_version": "1.0.0",
+      "id": "person/ko/uncommon-name/rare-surname-eo-ssi",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "ko",
       "title": "Rare surname 어 alone with 씨",
-      "why": "어 is a rare surname and a very common syllable (어디, 어제); the honorific after it gives the only person cue.",
+      "why": "어 is a rare surname and a very common syllable (어디, 어제); the honorific after it gives the only person cue. The surname is uncommon in Korean, so name frequency gives no cue and the boundary must come from the structure.",
       "text": "어 씨는 오전에 다녀갔다.",
       "expectations": [
         {
@@ -1207,7 +1430,8 @@
         "boundary_tags": [
           "honorific-excluded",
           "particle-excluded"
-        ]
+        ],
+        "familiarity_basis": "author-judgment"
       },
       "ambiguity": {
         "level": "context-resolvable",
@@ -1224,12 +1448,12 @@
       }
     },
     {
-      "id": "person/ko/unseen-name/rare-surname-gal",
-      "schema_version": "1.0.0",
+      "id": "person/ko/uncommon-name/rare-surname-gal",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "ko",
       "title": "Rare surname 갈 followed by a common given name",
-      "why": "갈 is a rare surname and a common syllable in words like 갈등 ('conflict').",
+      "why": "갈 is a rare surname and a common syllable in words like 갈등 ('conflict'). The surname is uncommon in Korean, so name frequency gives no cue and the boundary must come from the structure.",
       "text": "갈도윤이 회의에 늦게 도착했다.",
       "expectations": [
         {
@@ -1257,7 +1481,8 @@
         ],
         "boundary_tags": [
           "particle-excluded"
-        ]
+        ],
+        "familiarity_basis": "author-judgment"
       },
       "ambiguity": {
         "level": "unambiguous"
@@ -1273,12 +1498,68 @@
       }
     },
     {
-      "id": "person/ko/unseen-name/rare-surname-gyeon",
-      "schema_version": "1.0.0",
+      "id": "person/ko/uncommon-name/rare-surname-genitive",
+      "schema_version": "1.1.0",
+      "entity_type": "PERSON",
+      "language": "ko",
+      "title": "Rare surname with a genitive",
+      "why": "The surname is listed but held by under 0.5% of the 2015 population in the registered reference, and the given name is a very common one, so the combination is rare for a reason a table can verify.",
+      "text": "마시우의 발표가 끝났다.",
+      "expectations": [
+        {
+          "start": 0,
+          "end": 3,
+          "surface": "마시우",
+          "expect": "person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "rare",
+        "script": "hangul",
+        "token_class": "single",
+        "collision_classes": [],
+        "context_types": [
+          "plain-prose",
+          "sentence-initial",
+          "particle-attached"
+        ],
+        "name_features": [
+          "full-name",
+          "ko-surname-given",
+          "ko-3-syllable",
+          "ko-rare-surname"
+        ],
+        "boundary_tags": [
+          "particle-excluded"
+        ],
+        "familiarity_basis": "reference-frequency",
+        "familiarity_reference": {
+          "source_id": "src/ref-ko-surname-population-2015",
+          "component": "마"
+        }
+      },
+      "ambiguity": {
+        "level": "unambiguous"
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic",
+        "src/ref-ko-surname-population-2015"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/ko/uncommon-name/rare-surname-gyeon",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "ko",
       "title": "Rare surname 견 followed by a common given name",
-      "why": "견 is a rare surname and a syllable in 견학 ('field trip').",
+      "why": "견 is a rare surname and a syllable in 견학 ('field trip'). The surname is uncommon in Korean, so name frequency gives no cue and the boundary must come from the structure.",
       "text": "견우진이 인사팀을 안내했다.",
       "expectations": [
         {
@@ -1306,7 +1587,8 @@
         ],
         "boundary_tags": [
           "particle-excluded"
-        ]
+        ],
+        "familiarity_basis": "author-judgment"
       },
       "ambiguity": {
         "level": "unambiguous"
@@ -1322,12 +1604,12 @@
       }
     },
     {
-      "id": "person/ko/unseen-name/rare-surname-in-english-sentence",
-      "schema_version": "1.0.0",
+      "id": "person/ko/uncommon-name/rare-surname-in-english-sentence",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "ko",
       "title": "Hangul rare-surname name inside an English sentence",
-      "why": "A Hangul full name with a rare surname inside English text; both script and rarity are unusual.",
+      "why": "A Hangul full name with a rare surname inside English text; both script and rarity are unusual. The surname is uncommon in Korean, so name frequency gives no cue and the boundary must come from the structure.",
       "text": "The invoice was approved by 탁서진 yesterday.",
       "expectations": [
         {
@@ -1355,7 +1637,8 @@
         ],
         "boundary_tags": [
           "mixed-script-boundary"
-        ]
+        ],
+        "familiarity_basis": "author-judgment"
       },
       "ambiguity": {
         "level": "unambiguous"
@@ -1371,12 +1654,12 @@
       }
     },
     {
-      "id": "person/ko/unseen-name/rare-surname-in-list",
-      "schema_version": "1.0.0",
+      "id": "person/ko/uncommon-name/rare-surname-in-list",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "ko",
       "title": "Rare-surname names in a comma list",
-      "why": "Three rare-surname full names in a list; each must be found with no frequent-name support.",
+      "why": "Three rare-surname full names in a list; each must be found with no frequent-name support. The surname is uncommon in Korean, so name frequency gives no cue and the boundary must come from the structure.",
       "text": "어재윤, 탁서진, 빈하율이 참석했다.",
       "expectations": [
         {
@@ -1419,7 +1702,8 @@
           "punctuation-adjacent",
           "adjacent-names",
           "particle-excluded"
-        ]
+        ],
+        "familiarity_basis": "author-judgment"
       },
       "ambiguity": {
         "level": "unambiguous"
@@ -1435,12 +1719,66 @@
       }
     },
     {
-      "id": "person/ko/unseen-name/rare-surname-in-quotation",
-      "schema_version": "1.0.0",
+      "id": "person/ko/uncommon-name/rare-surname-in-owner-field",
+      "schema_version": "1.1.0",
+      "entity_type": "PERSON",
+      "language": "ko",
+      "title": "Rare surname in a label",
+      "why": "The surname is listed but held by under 0.5% of the 2015 population in the registered reference, and the given name is a very common one, so the combination is rare for a reason a table can verify.",
+      "text": "담당자: 길수아",
+      "expectations": [
+        {
+          "start": 5,
+          "end": 8,
+          "surface": "길수아",
+          "expect": "person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "rare",
+        "script": "hangul",
+        "token_class": "single",
+        "collision_classes": [],
+        "context_types": [
+          "structured-text"
+        ],
+        "name_features": [
+          "full-name",
+          "ko-surname-given",
+          "ko-3-syllable",
+          "ko-rare-surname"
+        ],
+        "boundary_tags": [
+          "punctuation-adjacent"
+        ],
+        "familiarity_basis": "reference-frequency",
+        "familiarity_reference": {
+          "source_id": "src/ref-ko-surname-population-2015",
+          "component": "길"
+        }
+      },
+      "ambiguity": {
+        "level": "unambiguous"
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic",
+        "src/ref-ko-surname-population-2015"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/ko/uncommon-name/rare-surname-in-quotation",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "ko",
       "title": "Rare-surname name inside a quotation",
-      "why": "A rare-surname full name inside quotation marks with a quotative marker; the rare surname gives no lexical anchor and the quotes add boundary work.",
+      "why": "A rare-surname full name inside quotation marks with a quotative marker; the rare surname gives no lexical anchor and the quotes add boundary work. The surname is uncommon in Korean, so name frequency gives no cue and the boundary must come from the structure.",
       "text": "\"탁서진에게 물어봐\"라고 말했다.",
       "expectations": [
         {
@@ -1470,7 +1808,8 @@
         "boundary_tags": [
           "quote-boundary",
           "particle-excluded"
-        ]
+        ],
+        "familiarity_basis": "author-judgment"
       },
       "ambiguity": {
         "level": "unambiguous"
@@ -1492,12 +1831,71 @@
       ]
     },
     {
-      "id": "person/ko/unseen-name/rare-surname-maeng",
-      "schema_version": "1.0.0",
+      "id": "person/ko/uncommon-name/rare-surname-in-quoted-request",
+      "schema_version": "1.1.0",
+      "entity_type": "PERSON",
+      "language": "ko",
+      "title": "Rare surname in a quoted request",
+      "why": "The surname is listed but held by under 0.5% of the 2015 population in the registered reference, and the given name is a very common one, so the combination is rare for a reason a table can verify.",
+      "text": "“어서준에게 전해 주세요.”라고 말했다.",
+      "expectations": [
+        {
+          "start": 1,
+          "end": 4,
+          "surface": "어서준",
+          "expect": "person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "rare",
+        "script": "hangul",
+        "token_class": "single",
+        "collision_classes": [],
+        "context_types": [
+          "plain-prose",
+          "quotation",
+          "dialogue",
+          "particle-attached"
+        ],
+        "name_features": [
+          "full-name",
+          "ko-surname-given",
+          "ko-3-syllable",
+          "ko-rare-surname"
+        ],
+        "boundary_tags": [
+          "quote-boundary",
+          "particle-excluded",
+          "punctuation-adjacent"
+        ],
+        "familiarity_basis": "reference-frequency",
+        "familiarity_reference": {
+          "source_id": "src/ref-ko-surname-population-2015",
+          "component": "어"
+        }
+      },
+      "ambiguity": {
+        "level": "unambiguous"
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic",
+        "src/ref-ko-surname-population-2015"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/ko/uncommon-name/rare-surname-maeng",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "ko",
       "title": "Rare surname 맹 followed by a common given name",
-      "why": "맹 is a rare surname and a syllable inside words like 맹렬 ('fierce').",
+      "why": "맹 is a rare surname and a syllable inside words like 맹렬 ('fierce'). The surname is uncommon in Korean, so name frequency gives no cue and the boundary must come from the structure.",
       "text": "맹하은은 어제 합격 통보를 받았다.",
       "expectations": [
         {
@@ -1525,7 +1923,8 @@
         ],
         "boundary_tags": [
           "particle-excluded"
-        ]
+        ],
+        "familiarity_basis": "author-judgment"
       },
       "ambiguity": {
         "level": "unambiguous"
@@ -1541,12 +1940,67 @@
       }
     },
     {
-      "id": "person/ko/unseen-name/rare-surname-ok",
-      "schema_version": "1.0.0",
+      "id": "person/ko/uncommon-name/rare-surname-met-yesterday",
+      "schema_version": "1.1.0",
+      "entity_type": "PERSON",
+      "language": "ko",
+      "title": "Rare surname as an object",
+      "why": "The surname is listed but held by under 0.5% of the 2015 population in the registered reference, and the given name is a very common one, so the combination is rare for a reason a table can verify.",
+      "text": "어제 빈도윤을 만났다.",
+      "expectations": [
+        {
+          "start": 3,
+          "end": 6,
+          "surface": "빈도윤",
+          "expect": "person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "rare",
+        "script": "hangul",
+        "token_class": "single",
+        "collision_classes": [],
+        "context_types": [
+          "plain-prose",
+          "particle-attached"
+        ],
+        "name_features": [
+          "full-name",
+          "ko-surname-given",
+          "ko-3-syllable",
+          "ko-rare-surname"
+        ],
+        "boundary_tags": [
+          "particle-excluded"
+        ],
+        "familiarity_basis": "reference-frequency",
+        "familiarity_reference": {
+          "source_id": "src/ref-ko-surname-population-2015",
+          "component": "빈"
+        }
+      },
+      "ambiguity": {
+        "level": "unambiguous"
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic",
+        "src/ref-ko-surname-population-2015"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/ko/uncommon-name/rare-surname-ok",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "ko",
       "title": "Rare surname 옥 with a common given name",
-      "why": "옥 is a real but infrequent surname and also means 'jade'; the full name must still be read as a person.",
+      "why": "옥 is a real but infrequent surname and also means 'jade'; the full name must still be read as a person. The surname is uncommon in Korean, so name frequency gives no cue and the boundary must come from the structure.",
       "text": "옥서진이 새 프로젝트를 맡았다.",
       "expectations": [
         {
@@ -1574,7 +2028,8 @@
         ],
         "boundary_tags": [
           "particle-excluded"
-        ]
+        ],
+        "familiarity_basis": "author-judgment"
       },
       "ambiguity": {
         "level": "unambiguous"
@@ -1590,12 +2045,12 @@
       }
     },
     {
-      "id": "person/ko/unseen-name/rare-surname-paeng",
-      "schema_version": "1.0.0",
+      "id": "person/ko/uncommon-name/rare-surname-paeng",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "ko",
       "title": "Rare surname 팽 as the head of a new role",
-      "why": "A rare surname in a subject position with a promotion predicate; checks that rarity alone does not push a detector to PERSON-negative.",
+      "why": "A rare surname in a subject position with a promotion predicate; checks that rarity alone does not push a detector to PERSON-negative. The surname is uncommon in Korean, so name frequency gives no cue and the boundary must come from the structure.",
       "text": "팽도현이 새 팀장이 되었다.",
       "expectations": [
         {
@@ -1623,7 +2078,8 @@
         ],
         "boundary_tags": [
           "particle-excluded"
-        ]
+        ],
+        "familiarity_basis": "author-judgment"
       },
       "ambiguity": {
         "level": "unambiguous"
@@ -1639,12 +2095,12 @@
       }
     },
     {
-      "id": "person/ko/unseen-name/rare-surname-paeng-seonsaengnim",
-      "schema_version": "1.0.0",
+      "id": "person/ko/uncommon-name/rare-surname-paeng-seonsaengnim",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "ko",
       "title": "Rare surname 팽 with 선생님",
-      "why": "A very rare surname with the teacher honorific.",
+      "why": "A very rare surname with the teacher honorific. The surname is uncommon in Korean, so name frequency gives no cue and the boundary must come from the structure.",
       "text": "팽 선생님은 수업 중이다.",
       "expectations": [
         {
@@ -1672,7 +2128,8 @@
         "boundary_tags": [
           "honorific-excluded",
           "particle-excluded"
-        ]
+        ],
+        "familiarity_basis": "author-judgment"
       },
       "ambiguity": {
         "level": "unambiguous"
@@ -1688,12 +2145,12 @@
       }
     },
     {
-      "id": "person/ko/unseen-name/rare-surname-pi",
-      "schema_version": "1.0.0",
+      "id": "person/ko/uncommon-name/rare-surname-pi",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "ko",
       "title": "Rare surname 피 followed by a common given name",
-      "why": "피 ('blood') is a rare surname and an everyday noun; the name reading comes only from context.",
+      "why": "피 ('blood') is a rare surname and an everyday noun; the name reading comes only from context. The surname is uncommon in Korean, so name frequency gives no cue and the boundary must come from the structure.",
       "text": "피서현은 내일 휴가를 낸다.",
       "expectations": [
         {
@@ -1721,7 +2178,8 @@
         ],
         "boundary_tags": [
           "particle-excluded"
-        ]
+        ],
+        "familiarity_basis": "author-judgment"
       },
       "ambiguity": {
         "level": "unambiguous"
@@ -1737,12 +2195,124 @@
       }
     },
     {
-      "id": "person/ko/unseen-name/rare-surname-seol",
-      "schema_version": "1.0.0",
+      "id": "person/ko/uncommon-name/rare-surname-presentation-finished",
+      "schema_version": "1.1.0",
+      "entity_type": "PERSON",
+      "language": "ko",
+      "title": "Rare surname with a topic marker",
+      "why": "The surname is listed but held by under 0.5% of the 2015 population in the registered reference, and the given name is a very common one, so the combination is rare for a reason a table can verify.",
+      "text": "맹지우는 발표를 마쳤다.",
+      "expectations": [
+        {
+          "start": 0,
+          "end": 3,
+          "surface": "맹지우",
+          "expect": "person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "rare",
+        "script": "hangul",
+        "token_class": "single",
+        "collision_classes": [],
+        "context_types": [
+          "plain-prose",
+          "sentence-initial",
+          "particle-attached"
+        ],
+        "name_features": [
+          "full-name",
+          "ko-surname-given",
+          "ko-3-syllable",
+          "ko-rare-surname"
+        ],
+        "boundary_tags": [
+          "particle-excluded"
+        ],
+        "familiarity_basis": "reference-frequency",
+        "familiarity_reference": {
+          "source_id": "src/ref-ko-surname-population-2015",
+          "component": "맹"
+        }
+      },
+      "ambiguity": {
+        "level": "unambiguous"
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic",
+        "src/ref-ko-surname-population-2015"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/ko/uncommon-name/rare-surname-report-written",
+      "schema_version": "1.1.0",
+      "entity_type": "PERSON",
+      "language": "ko",
+      "title": "Rare surname with a subject marker",
+      "why": "The surname is listed but held by under 0.5% of the 2015 population in the registered reference, and the given name is a very common one, so the combination is rare for a reason a table can verify.",
+      "text": "감하린이 회의록을 작성했다.",
+      "expectations": [
+        {
+          "start": 0,
+          "end": 3,
+          "surface": "감하린",
+          "expect": "person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "rare",
+        "script": "hangul",
+        "token_class": "single",
+        "collision_classes": [],
+        "context_types": [
+          "plain-prose",
+          "sentence-initial",
+          "particle-attached"
+        ],
+        "name_features": [
+          "full-name",
+          "ko-surname-given",
+          "ko-3-syllable",
+          "ko-rare-surname"
+        ],
+        "boundary_tags": [
+          "particle-excluded"
+        ],
+        "familiarity_basis": "reference-frequency",
+        "familiarity_reference": {
+          "source_id": "src/ref-ko-surname-population-2015",
+          "component": "감"
+        }
+      },
+      "ambiguity": {
+        "level": "unambiguous"
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic",
+        "src/ref-ko-surname-population-2015"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/ko/uncommon-name/rare-surname-seol",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "ko",
       "title": "Less common surname 설 followed by a common given name",
-      "why": "설 is a less common surname and the word for the Lunar New Year; a calendar reading competes.",
+      "why": "설 is a less common surname and the word for the Lunar New Year; a calendar reading competes. The surname is uncommon in Korean, so name frequency gives no cue and the boundary must come from the structure.",
       "text": "설하준이 현장을 점검했다.",
       "expectations": [
         {
@@ -1770,7 +2340,8 @@
         ],
         "boundary_tags": [
           "particle-excluded"
-        ]
+        ],
+        "familiarity_basis": "author-judgment"
       },
       "ambiguity": {
         "level": "unambiguous"
@@ -1786,12 +2357,69 @@
       }
     },
     {
-      "id": "person/ko/unseen-name/rare-surname-tak",
-      "schema_version": "1.0.0",
+      "id": "person/ko/uncommon-name/rare-surname-seonu",
+      "schema_version": "1.1.0",
+      "entity_type": "PERSON",
+      "language": "ko",
+      "title": "Rare two-syllable surname 선우",
+      "why": "The surname is listed but held by under 0.5% of the 2015 population in the registered reference, and the given name is a very common one, so the combination is rare for a reason a table can verify.",
+      "text": "선우도윤이 마지막에 발표했다.",
+      "expectations": [
+        {
+          "start": 0,
+          "end": 4,
+          "surface": "선우도윤",
+          "expect": "person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "rare",
+        "script": "hangul",
+        "token_class": "single",
+        "collision_classes": [],
+        "context_types": [
+          "plain-prose",
+          "sentence-initial",
+          "particle-attached"
+        ],
+        "name_features": [
+          "full-name",
+          "ko-surname-given",
+          "ko-4-syllable",
+          "ko-two-syllable-surname",
+          "ko-rare-surname"
+        ],
+        "boundary_tags": [
+          "particle-excluded"
+        ],
+        "familiarity_basis": "reference-frequency",
+        "familiarity_reference": {
+          "source_id": "src/ref-ko-surname-population-2015",
+          "component": "선우"
+        }
+      },
+      "ambiguity": {
+        "level": "unambiguous"
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic",
+        "src/ref-ko-surname-population-2015"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/ko/uncommon-name/rare-surname-tak",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "ko",
       "title": "Rare surname 탁 with a common-looking given name",
-      "why": "Rare surname plus a given name that is common in other combinations; tests that a rare first syllable does not cancel the name reading.",
+      "why": "Rare surname plus a given name that is common in other combinations; tests that a rare first syllable does not cancel the name reading. The surname is uncommon in Korean, so name frequency gives no cue and the boundary must come from the structure.",
       "text": "탁서진은 오늘 휴가다.",
       "expectations": [
         {
@@ -1819,7 +2447,8 @@
         ],
         "boundary_tags": [
           "particle-excluded"
-        ]
+        ],
+        "familiarity_basis": "author-judgment"
       },
       "ambiguity": {
         "level": "unambiguous"
@@ -1835,12 +2464,12 @@
       }
     },
     {
-      "id": "person/ko/unseen-name/rare-surname-tak-ssi",
-      "schema_version": "1.0.0",
+      "id": "person/ko/uncommon-name/rare-surname-tak-ssi",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "ko",
       "title": "Rare surname 탁 alone with 씨",
-      "why": "A very rare surname alone followed by the honorific 씨; with no given name, the rare syllable and the honorific are the only evidence.",
+      "why": "A very rare surname alone followed by the honorific 씨; with no given name, the rare syllable and the honorific are the only evidence. The surname is uncommon in Korean, so name frequency gives no cue and the boundary must come from the structure.",
       "text": "탁 씨가 먼저 말했다.",
       "expectations": [
         {
@@ -1870,7 +2499,8 @@
         "boundary_tags": [
           "honorific-excluded",
           "particle-excluded"
-        ]
+        ],
+        "familiarity_basis": "author-judgment"
       },
       "ambiguity": {
         "level": "context-resolvable",
@@ -1887,12 +2517,12 @@
       }
     },
     {
-      "id": "person/ko/unseen-name/rare-surname-with-daeri",
-      "schema_version": "1.0.0",
+      "id": "person/ko/uncommon-name/rare-surname-with-daeri",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "ko",
       "title": "Rare-surname full name with 대리",
-      "why": "A rare-surname full name followed by a job title; the title is excluded.",
+      "why": "A rare-surname full name followed by a job title; the title is excluded. The surname is uncommon in Korean, so name frequency gives no cue and the boundary must come from the structure.",
       "text": "팽도현 대리가 보고서를 제출했다.",
       "expectations": [
         {
@@ -1922,7 +2552,8 @@
         "boundary_tags": [
           "honorific-excluded",
           "particle-excluded"
-        ]
+        ],
+        "familiarity_basis": "author-judgment"
       },
       "ambiguity": {
         "level": "unambiguous"
@@ -1938,12 +2569,181 @@
       }
     },
     {
-      "id": "person/ko/unseen-name/rare-surname-yuk",
-      "schema_version": "1.0.0",
+      "id": "person/ko/uncommon-name/rare-surname-with-ssi",
+      "schema_version": "1.1.0",
+      "entity_type": "PERSON",
+      "language": "ko",
+      "title": "Rare surname with 씨",
+      "why": "The surname is listed but held by under 0.5% of the 2015 population in the registered reference, and the given name is a very common one, so the combination is rare for a reason a table can verify.",
+      "text": "설지후 씨가 먼저 도착했다.",
+      "expectations": [
+        {
+          "start": 0,
+          "end": 3,
+          "surface": "설지후",
+          "expect": "person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "rare",
+        "script": "hangul",
+        "token_class": "single",
+        "collision_classes": [],
+        "context_types": [
+          "plain-prose",
+          "sentence-initial",
+          "title-honorific"
+        ],
+        "name_features": [
+          "full-name",
+          "ko-surname-given",
+          "ko-3-syllable",
+          "ko-rare-surname"
+        ],
+        "boundary_tags": [
+          "honorific-excluded"
+        ],
+        "familiarity_basis": "reference-frequency",
+        "familiarity_reference": {
+          "source_id": "src/ref-ko-surname-population-2015",
+          "component": "설"
+        }
+      },
+      "ambiguity": {
+        "level": "unambiguous"
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic",
+        "src/ref-ko-surname-population-2015"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/ko/uncommon-name/rare-surname-with-team-lead-title",
+      "schema_version": "1.1.0",
+      "entity_type": "PERSON",
+      "language": "ko",
+      "title": "Rare surname with a team-lead title",
+      "why": "The surname is listed but held by under 0.5% of the 2015 population in the registered reference, and the given name is a very common one, so the combination is rare for a reason a table can verify.",
+      "text": "위하람 팀장님이 승인했다.",
+      "expectations": [
+        {
+          "start": 0,
+          "end": 3,
+          "surface": "위하람",
+          "expect": "person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "rare",
+        "script": "hangul",
+        "token_class": "single",
+        "collision_classes": [],
+        "context_types": [
+          "plain-prose",
+          "sentence-initial",
+          "title-honorific"
+        ],
+        "name_features": [
+          "full-name",
+          "ko-surname-given",
+          "ko-3-syllable",
+          "ko-rare-surname"
+        ],
+        "boundary_tags": [
+          "honorific-excluded"
+        ],
+        "familiarity_basis": "reference-frequency",
+        "familiarity_reference": {
+          "source_id": "src/ref-ko-surname-population-2015",
+          "component": "위"
+        }
+      },
+      "ambiguity": {
+        "level": "unambiguous"
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic",
+        "src/ref-ko-surname-population-2015"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/ko/uncommon-name/rare-surname-with-vocative",
+      "schema_version": "1.1.0",
+      "entity_type": "PERSON",
+      "language": "ko",
+      "title": "Rare surname with a vocative suffix",
+      "why": "The surname is listed but held by under 0.5% of the 2015 population in the registered reference, and the given name is a very common one, so the combination is rare for a reason a table can verify.",
+      "text": "연서윤아, 이리 와.",
+      "expectations": [
+        {
+          "start": 0,
+          "end": 3,
+          "surface": "연서윤",
+          "expect": "person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "rare",
+        "script": "hangul",
+        "token_class": "single",
+        "collision_classes": [],
+        "context_types": [
+          "plain-prose",
+          "sentence-initial",
+          "vocative"
+        ],
+        "name_features": [
+          "full-name",
+          "ko-surname-given",
+          "ko-3-syllable",
+          "ko-rare-surname"
+        ],
+        "boundary_tags": [
+          "suffix-excluded",
+          "punctuation-adjacent"
+        ],
+        "familiarity_basis": "reference-frequency",
+        "familiarity_reference": {
+          "source_id": "src/ref-ko-surname-population-2015",
+          "component": "연"
+        }
+      },
+      "ambiguity": {
+        "level": "unambiguous"
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic",
+        "src/ref-ko-surname-population-2015"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/ko/uncommon-name/rare-surname-yuk",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "ko",
       "title": "Rare surname 육 followed by a common given name",
-      "why": "육 is a rare surname and the Sino-Korean numeral six; both lexical readings compete with the surname.",
+      "why": "육 is a rare surname and the Sino-Korean numeral six; both lexical readings compete with the surname. The surname is uncommon in Korean, so name frequency gives no cue and the boundary must come from the structure.",
       "text": "육지안이 오늘 처음 출근했다.",
       "expectations": [
         {
@@ -1971,7 +2771,8 @@
         ],
         "boundary_tags": [
           "particle-excluded"
-        ]
+        ],
+        "familiarity_basis": "author-judgment"
       },
       "ambiguity": {
         "level": "unambiguous"
@@ -1987,8 +2788,371 @@
       }
     },
     {
-      "id": "person/ko/unseen-name/rare-two-syllable-surname-sagong-name",
-      "schema_version": "1.0.0",
+      "id": "person/ko/uncommon-name/rare-surnames-coordinated",
+      "schema_version": "1.1.0",
+      "entity_type": "PERSON",
+      "language": "ko",
+      "title": "Two rare surnames coordinated",
+      "why": "The surname is listed but held by under 0.5% of the 2015 population in the registered reference, and the given name is a very common one, so the combination is rare for a reason a table can verify. The first name is the focus.",
+      "text": "명예준과 반서현이 같은 팀이다.",
+      "expectations": [
+        {
+          "start": 0,
+          "end": 3,
+          "surface": "명예준",
+          "expect": "person"
+        },
+        {
+          "start": 5,
+          "end": 8,
+          "surface": "반서현",
+          "expect": "person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "rare",
+        "script": "hangul",
+        "token_class": "single",
+        "collision_classes": [],
+        "context_types": [
+          "plain-prose",
+          "sentence-initial",
+          "list-or-enumeration",
+          "particle-attached"
+        ],
+        "name_features": [
+          "full-name",
+          "ko-surname-given",
+          "ko-3-syllable",
+          "ko-rare-surname"
+        ],
+        "boundary_tags": [
+          "particle-excluded",
+          "adjacent-names"
+        ],
+        "familiarity_basis": "reference-frequency",
+        "familiarity_reference": {
+          "source_id": "src/ref-ko-surname-population-2015",
+          "component": "명"
+        }
+      },
+      "ambiguity": {
+        "level": "unambiguous"
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic",
+        "src/ref-ko-surname-population-2015"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/ko/uncommon-name/rare-surnames-in-attendee-list",
+      "schema_version": "1.1.0",
+      "entity_type": "PERSON",
+      "language": "ko",
+      "title": "Rare surnames in an attendee list",
+      "why": "The surname is listed but held by under 0.5% of the 2015 population in the registered reference, and the given name is a very common one, so the combination is rare for a reason a table can verify. The first name is the focus.",
+      "text": "도하윤, 추민서, 소지아가 참석했다.",
+      "expectations": [
+        {
+          "start": 0,
+          "end": 3,
+          "surface": "도하윤",
+          "expect": "person"
+        },
+        {
+          "start": 5,
+          "end": 8,
+          "surface": "추민서",
+          "expect": "person"
+        },
+        {
+          "start": 10,
+          "end": 13,
+          "surface": "소지아",
+          "expect": "person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "rare",
+        "script": "hangul",
+        "token_class": "single",
+        "collision_classes": [],
+        "context_types": [
+          "plain-prose",
+          "sentence-initial",
+          "list-or-enumeration",
+          "particle-attached"
+        ],
+        "name_features": [
+          "full-name",
+          "ko-surname-given",
+          "ko-3-syllable",
+          "ko-rare-surname"
+        ],
+        "boundary_tags": [
+          "particle-excluded",
+          "punctuation-adjacent",
+          "adjacent-names"
+        ],
+        "familiarity_basis": "reference-frequency",
+        "familiarity_reference": {
+          "source_id": "src/ref-ko-surname-population-2015",
+          "component": "도"
+        }
+      },
+      "ambiguity": {
+        "level": "unambiguous"
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic",
+        "src/ref-ko-surname-population-2015"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/ko/uncommon-name/rare-two-syllable-surname-dokgo",
+      "schema_version": "1.1.0",
+      "entity_type": "PERSON",
+      "language": "ko",
+      "title": "Rare two-syllable surname 독고",
+      "why": "The surname is listed but held by under 0.5% of the 2015 population in the registered reference, and the given name is a very common one, so the combination is rare for a reason a table can verify.",
+      "text": "독고시우가 문을 열었다.",
+      "expectations": [
+        {
+          "start": 0,
+          "end": 4,
+          "surface": "독고시우",
+          "expect": "person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "rare",
+        "script": "hangul",
+        "token_class": "single",
+        "collision_classes": [],
+        "context_types": [
+          "plain-prose",
+          "sentence-initial",
+          "particle-attached"
+        ],
+        "name_features": [
+          "full-name",
+          "ko-surname-given",
+          "ko-4-syllable",
+          "ko-two-syllable-surname",
+          "ko-rare-surname"
+        ],
+        "boundary_tags": [
+          "particle-excluded"
+        ],
+        "familiarity_basis": "reference-frequency",
+        "familiarity_reference": {
+          "source_id": "src/ref-ko-surname-population-2015",
+          "component": "독고"
+        }
+      },
+      "ambiguity": {
+        "level": "unambiguous"
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic",
+        "src/ref-ko-surname-population-2015"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/ko/uncommon-name/rare-two-syllable-surname-hwangbo",
+      "schema_version": "1.1.0",
+      "entity_type": "PERSON",
+      "language": "ko",
+      "title": "Rare two-syllable surname 황보",
+      "why": "The surname is listed but held by under 0.5% of the 2015 population in the registered reference, and the given name is a very common one, so the combination is rare for a reason a table can verify.",
+      "text": "황보준서가 합류했다.",
+      "expectations": [
+        {
+          "start": 0,
+          "end": 4,
+          "surface": "황보준서",
+          "expect": "person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "rare",
+        "script": "hangul",
+        "token_class": "single",
+        "collision_classes": [],
+        "context_types": [
+          "plain-prose",
+          "sentence-initial",
+          "particle-attached"
+        ],
+        "name_features": [
+          "full-name",
+          "ko-surname-given",
+          "ko-4-syllable",
+          "ko-two-syllable-surname",
+          "ko-rare-surname"
+        ],
+        "boundary_tags": [
+          "particle-excluded"
+        ],
+        "familiarity_basis": "reference-frequency",
+        "familiarity_reference": {
+          "source_id": "src/ref-ko-surname-population-2015",
+          "component": "황보"
+        }
+      },
+      "ambiguity": {
+        "level": "unambiguous"
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic",
+        "src/ref-ko-surname-population-2015"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/ko/uncommon-name/rare-two-syllable-surname-namgung",
+      "schema_version": "1.1.0",
+      "entity_type": "PERSON",
+      "language": "ko",
+      "title": "Rare two-syllable surname 남궁",
+      "why": "The surname is listed but held by under 0.5% of the 2015 population in the registered reference, and the given name is a very common one, so the combination is rare for a reason a table can verify.",
+      "text": "남궁서연은 일찍 도착했다.",
+      "expectations": [
+        {
+          "start": 0,
+          "end": 4,
+          "surface": "남궁서연",
+          "expect": "person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "rare",
+        "script": "hangul",
+        "token_class": "single",
+        "collision_classes": [],
+        "context_types": [
+          "plain-prose",
+          "sentence-initial",
+          "particle-attached"
+        ],
+        "name_features": [
+          "full-name",
+          "ko-surname-given",
+          "ko-4-syllable",
+          "ko-two-syllable-surname",
+          "ko-rare-surname"
+        ],
+        "boundary_tags": [
+          "particle-excluded"
+        ],
+        "familiarity_basis": "reference-frequency",
+        "familiarity_reference": {
+          "source_id": "src/ref-ko-surname-population-2015",
+          "component": "남궁"
+        }
+      },
+      "ambiguity": {
+        "level": "unambiguous"
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic",
+        "src/ref-ko-surname-population-2015"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/ko/uncommon-name/rare-two-syllable-surname-sagong",
+      "schema_version": "1.1.0",
+      "entity_type": "PERSON",
+      "language": "ko",
+      "title": "Rare two-syllable surname 사공",
+      "why": "The surname is listed but held by under 0.5% of the 2015 population in the registered reference, and the given name is a very common one, so the combination is rare for a reason a table can verify.",
+      "text": "사공하린이 보고서를 제출했다.",
+      "expectations": [
+        {
+          "start": 0,
+          "end": 4,
+          "surface": "사공하린",
+          "expect": "person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "rare",
+        "script": "hangul",
+        "token_class": "single",
+        "collision_classes": [],
+        "context_types": [
+          "plain-prose",
+          "sentence-initial",
+          "particle-attached"
+        ],
+        "name_features": [
+          "full-name",
+          "ko-surname-given",
+          "ko-4-syllable",
+          "ko-two-syllable-surname",
+          "ko-rare-surname"
+        ],
+        "boundary_tags": [
+          "particle-excluded"
+        ],
+        "familiarity_basis": "reference-frequency",
+        "familiarity_reference": {
+          "source_id": "src/ref-ko-surname-population-2015",
+          "component": "사공"
+        }
+      },
+      "ambiguity": {
+        "level": "unambiguous"
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic",
+        "src/ref-ko-surname-population-2015"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/ko/uncommon-name/rare-two-syllable-surname-sagong-name",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "ko",
       "title": "Rare two-syllable surname 사공 with a given name",
@@ -2022,7 +3186,8 @@
         ],
         "boundary_tags": [
           "particle-excluded"
-        ]
+        ],
+        "familiarity_basis": "author-judgment"
       },
       "ambiguity": {
         "level": "context-resolvable",
@@ -2039,8 +3204,8 @@
       }
     },
     {
-      "id": "person/ko/unseen-name/romanized-rare-dokgo",
-      "schema_version": "1.0.0",
+      "id": "person/ko/uncommon-name/romanized-rare-dokgo",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "ko",
       "title": "Romanized rare surname Dokgo",
@@ -2076,7 +3241,8 @@
         ],
         "boundary_tags": [
           "hyphen-boundary"
-        ]
+        ],
+        "familiarity_basis": "author-judgment"
       },
       "ambiguity": {
         "level": "context-resolvable",
@@ -2093,8 +3259,8 @@
       }
     },
     {
-      "id": "person/ko/unseen-name/romanized-rare-eo",
-      "schema_version": "1.0.0",
+      "id": "person/ko/uncommon-name/romanized-rare-eo",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "ko",
       "title": "Romanized very short rare surname Eo",
@@ -2126,7 +3292,8 @@
         ],
         "boundary_tags": [
           "hyphen-boundary"
-        ]
+        ],
+        "familiarity_basis": "author-judgment"
       },
       "ambiguity": {
         "level": "unambiguous"
@@ -2142,8 +3309,8 @@
       }
     },
     {
-      "id": "person/ko/unseen-name/romanized-rare-hwangbo",
-      "schema_version": "1.0.0",
+      "id": "person/ko/uncommon-name/romanized-rare-hwangbo",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "ko",
       "title": "Romanized two-syllable surname Hwangbo",
@@ -2177,7 +3344,8 @@
         ],
         "boundary_tags": [
           "hyphen-boundary"
-        ]
+        ],
+        "familiarity_basis": "author-judgment"
       },
       "ambiguity": {
         "level": "unambiguous"
@@ -2193,8 +3361,8 @@
       }
     },
     {
-      "id": "person/ko/unseen-name/romanized-rare-in-parentheses",
-      "schema_version": "1.0.0",
+      "id": "person/ko/uncommon-name/romanized-rare-in-parentheses",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "ko",
       "title": "Romanized rare-surname name in parentheses",
@@ -2227,7 +3395,8 @@
         "boundary_tags": [
           "hyphen-boundary",
           "parenthetical-boundary"
-        ]
+        ],
+        "familiarity_basis": "author-judgment"
       },
       "ambiguity": {
         "level": "unambiguous"
@@ -2243,8 +3412,8 @@
       }
     },
     {
-      "id": "person/ko/unseen-name/romanized-rare-namgung",
-      "schema_version": "1.0.0",
+      "id": "person/ko/uncommon-name/romanized-rare-namgung",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "ko",
       "title": "Romanized two-syllable surname Namgung",
@@ -2278,7 +3447,8 @@
         ],
         "boundary_tags": [
           "hyphen-boundary"
-        ]
+        ],
+        "familiarity_basis": "author-judgment"
       },
       "ambiguity": {
         "level": "unambiguous"
@@ -2294,8 +3464,8 @@
       }
     },
     {
-      "id": "person/ko/unseen-name/romanized-rare-seonwoo",
-      "schema_version": "1.0.0",
+      "id": "person/ko/uncommon-name/romanized-rare-seonwoo",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "ko",
       "title": "Romanized surname Seonwoo",
@@ -2329,7 +3499,8 @@
         ],
         "boundary_tags": [
           "hyphen-boundary"
-        ]
+        ],
+        "familiarity_basis": "author-judgment"
       },
       "ambiguity": {
         "level": "unambiguous"
@@ -2345,8 +3516,8 @@
       }
     },
     {
-      "id": "person/ko/unseen-name/romanized-rare-surname-with-title",
-      "schema_version": "1.0.0",
+      "id": "person/ko/uncommon-name/romanized-rare-surname-with-title",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "ko",
       "title": "Romanized rare surname after a title",
@@ -2380,7 +3551,8 @@
           "hyphen-boundary",
           "honorific-excluded",
           "abbreviation-period"
-        ]
+        ],
+        "familiarity_basis": "author-judgment"
       },
       "ambiguity": {
         "level": "unambiguous"
@@ -2396,8 +3568,8 @@
       }
     },
     {
-      "id": "person/ko/unseen-name/transliterated-foreign-name-ahmed",
-      "schema_version": "1.0.0",
+      "id": "person/ko/uncommon-name/transliterated-foreign-name-ahmed",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "ko",
       "title": "Transliterated Arabic given name in Hangul",
@@ -2426,7 +3598,8 @@
         ],
         "boundary_tags": [
           "particle-excluded"
-        ]
+        ],
+        "familiarity_basis": "author-judgment"
       },
       "ambiguity": {
         "level": "unambiguous"
@@ -2442,8 +3615,8 @@
       }
     },
     {
-      "id": "person/ko/unseen-name/transliterated-foreign-name-noah",
-      "schema_version": "1.0.0",
+      "id": "person/ko/uncommon-name/transliterated-foreign-name-noah",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "ko",
       "title": "Transliterated English full name in Hangul",
@@ -2472,7 +3645,8 @@
         ],
         "boundary_tags": [
           "particle-excluded"
-        ]
+        ],
+        "familiarity_basis": "author-judgment"
       },
       "ambiguity": {
         "level": "unambiguous"
@@ -2488,8 +3662,8 @@
       }
     },
     {
-      "id": "person/ko/unseen-name/transliterated-foreign-name-olga",
-      "schema_version": "1.0.0",
+      "id": "person/ko/uncommon-name/transliterated-foreign-name-olga",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "ko",
       "title": "Transliterated Slavic full name in Hangul",
@@ -2518,7 +3692,8 @@
         ],
         "boundary_tags": [
           "particle-excluded"
-        ]
+        ],
+        "familiarity_basis": "constructed"
       },
       "ambiguity": {
         "level": "unambiguous"
@@ -2534,8 +3709,8 @@
       }
     },
     {
-      "id": "person/ko/unseen-name/transliterated-foreign-name-with-eul",
-      "schema_version": "1.0.0",
+      "id": "person/ko/uncommon-name/transliterated-foreign-name-with-eul",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "ko",
       "title": "Transliterated foreign name with the object marker",
@@ -2564,7 +3739,8 @@
         ],
         "boundary_tags": [
           "particle-excluded"
-        ]
+        ],
+        "familiarity_basis": "constructed"
       },
       "ambiguity": {
         "level": "unambiguous"
@@ -2580,8 +3756,8 @@
       }
     },
     {
-      "id": "person/ko/unseen-name/transliterated-name-in-list",
-      "schema_version": "1.0.0",
+      "id": "person/ko/uncommon-name/transliterated-name-in-list",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "ko",
       "title": "Transliterated foreign names in a list",
@@ -2617,7 +3793,8 @@
         "boundary_tags": [
           "punctuation-adjacent",
           "adjacent-names"
-        ]
+        ],
+        "familiarity_basis": "author-judgment"
       },
       "ambiguity": {
         "level": "unambiguous"
@@ -2633,8 +3810,8 @@
       }
     },
     {
-      "id": "person/ko/unseen-name/transliterated-single-name-with-hante",
-      "schema_version": "1.0.0",
+      "id": "person/ko/uncommon-name/transliterated-single-name-with-hante",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "ko",
       "title": "Transliterated foreign given name with 한테",
@@ -2663,7 +3840,8 @@
         ],
         "boundary_tags": [
           "particle-excluded"
-        ]
+        ],
+        "familiarity_basis": "author-judgment"
       },
       "ambiguity": {
         "level": "unambiguous"

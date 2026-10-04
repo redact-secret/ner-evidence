@@ -1,0 +1,259 @@
+{
+  "manifest_version": "0.1.0",
+  "snapshot_id": "person-en-ko-beta.1-1dc0b13fe0ff",
+  "scope": "person-en-ko",
+  "release_label": "beta.1",
+  "stage": "beta",
+  "entity_types": [
+    "PERSON"
+  ],
+  "languages": [
+    "en",
+    "ko"
+  ],
+  "schema_version": "1.1.0",
+  "taxonomy_version": "0.2.0",
+  "projection_ruleset_version": "1.0.0",
+  "consumer_contract_version": "0.1.0",
+  "counts": {
+    "cases": 872,
+    "fixtures": 4803,
+    "sources": 6,
+    "cases_by_language": {
+      "en": 390,
+      "ko": 482
+    },
+    "fixtures_by_language": {
+      "en": 1945,
+      "ko": 2858
+    }
+  },
+  "source_manifest_digest": "f877dcfc3c46e2bf0642379efd81a411b69a237dac360b1473b7b33890b2bcfe",
+  "digest_spec": "ner-evidence-snapshot-digest/1",
+  "content_digest": "1dc0b13fe0ff13e24616fef6d9c4b7aec3b9ab9672e531a2a02bcfffdac46ba9",
+  "files": [
+    {
+      "path": "cases.jsonl",
+      "sha256": "ac87c837e102a706479a66ff945f4b6e003df0ad2b73b45fb4d2e5f8617eb0d8",
+      "bytes": 904253
+    },
+    {
+      "path": "fixtures.jsonl",
+      "sha256": "8f82bcb7e98c126f5a439cc30682bf212d0397f1acca059dcc27f1f3c72e8e42",
+      "bytes": 3294311
+    },
+    {
+      "path": "projections.json",
+      "sha256": "183ad1b95b6cbf3e46c5726044cb90fd6079b75289c609627d456cf69d46cf8a",
+      "bytes": 2032
+    },
+    {
+      "path": "references/name-frequency-bands.json",
+      "sha256": "6b90cbbb931916131aeea4abbeedeee24b8132bfe7c88ccf0699df3a12a7e3b0",
+      "bytes": 2350
+    },
+    {
+      "path": "reviews/ledger.jsonl",
+      "sha256": "c27e4560b5fa9b90ec6d42abe1d3bd9d938fc528f4abf2ec2577f6d8bdc0a1f5",
+      "bytes": 105477
+    },
+    {
+      "path": "reviews/reviewers.json",
+      "sha256": "2962aedc8b875547aaf85f47e1c2598d74253ca5d92bb947c07d2c8b137e8154",
+      "bytes": 22
+    },
+    {
+      "path": "schemas/case.schema.json",
+      "sha256": "cf52d3ac629f1ec534e0e980ab17c41d605dc4ccc5eac5cd4c9cd162e13fc881",
+      "bytes": 9541
+    },
+    {
+      "path": "schemas/fixture.schema.json",
+      "sha256": "704b20b1583517853deb275dd856c963f9798884da69ecbe4c33ea136c076b00",
+      "bytes": 2978
+    },
+    {
+      "path": "schemas/name-frequency-bands.schema.json",
+      "sha256": "cb6bf0c83ee9bb4a37245b3f8830e23ee55cf5d6edbf10eb455820055174c184",
+      "bytes": 2174
+    },
+    {
+      "path": "schemas/projection-ruleset.schema.json",
+      "sha256": "0e51ce512a127db574fcbb06570836cfe8d3beb03fb4a222503034f2b487fb54",
+      "bytes": 1738
+    },
+    {
+      "path": "schemas/review-event.schema.json",
+      "sha256": "3311948751a7addedb97264f94e44d8907dd0063d9341402417d5271876e9516",
+      "bytes": 1694
+    },
+    {
+      "path": "schemas/reviewers.schema.json",
+      "sha256": "c3e46ef4be0582db86f414bc1e22754277c84041b7e0d59c91627bbf3b9ba0d0",
+      "bytes": 2182
+    },
+    {
+      "path": "schemas/snapshot-manifest.schema.json",
+      "sha256": "6fec0bca222210f494d23cba9b5a61fc324070f6ecc19f97c32efe77977716bc",
+      "bytes": 4754
+    },
+    {
+      "path": "schemas/source.schema.json",
+      "sha256": "fab0e6b018bae56295a62b4682c201ed300d94c8df1f59a52a9aa54906c77ad1",
+      "bytes": 5742
+    },
+    {
+      "path": "slice-report.json",
+      "sha256": "ae7d28553b72be6a07eab0e344b93b3ace5922137d47c0a317f1c5c57b84be93",
+      "bytes": 52691
+    },
+    {
+      "path": "sources.json",
+      "sha256": "f877dcfc3c46e2bf0642379efd81a411b69a237dac360b1473b7b33890b2bcfe",
+      "bytes": 14462
+    },
+    {
+      "path": "taxonomy.json",
+      "sha256": "f0f5c5c06b9b8e358e1009f304447fb01905380fe5231495cc3f4420471b9ac6",
+      "bytes": 30626
+    }
+  ],
+  "generation": {
+    "tool": "ner-evidence-tools",
+    "tool_version": "0.1.0",
+    "tool_source_digest": "b53499e979ec9bdd91f735420652b349daa65558b47eb402ac0beb7f546140a5"
+  },
+  "redistribution": "internal-only",
+  "review_summary": {
+    "factual": {
+      "author-only": 872
+    },
+    "linguistic": {
+      "author-only": 872
+    }
+  },
+  "waived_targets": [
+    {
+      "id": "linguistic-independent-review",
+      "waiver": "The independent review workflow exists (docs/review-workflow.md) and English and Korean linguistic reviews have been requested in the ledger, but no independent reviewer is registered yet and no verdict is recorded, so every case is still author-only. The floor stays waived until independent verdicts exist; the review ledger summary in the coverage report shows the live numbers."
+    },
+    {
+      "id": "factual-independent-review",
+      "waiver": "The independent review workflow exists (docs/review-workflow.md) and English and Korean linguistic reviews have been requested in the ledger, but no independent reviewer is registered yet and no verdict is recorded, so every case is still author-only. The floor stays waived until independent verdicts exist; the review ledger summary in the coverage report shows the live numbers."
+    }
+  ],
+  "known_gaps": [
+    {
+      "id": "synthetic-only-no-corpus-backing",
+      "description": "All evidence is project-authored. No naturally occurring text is included, so the distribution of contexts, name frequencies and noise in real documents is not represented. Results on this corpus must not be read as real-world accuracy."
+    },
+    {
+      "id": "familiarity-labels-unverified",
+      "description": "The common/rare/novel familiarity labels are author judgments against written criteria (docs/familiarity-and-rarity.md). Only cases whose familiarity_basis is reference-frequency are checked against a public name-frequency table, and only for the surname component; given-name frequency is not reference-checked. The labels describe the name in its language community and say nothing about any model's training data."
+    },
+    {
+      "id": "single-author-selection-bias",
+      "description": "Cases reflect one author's view of what is confusable. Collision breadth (months, flowers, brands, districts) is illustrative, not a sampled or exhaustive list."
+    },
+    {
+      "id": "no-inter-annotator-agreement",
+      "description": "Span boundary conventions (titles, possessives, Korean particles and honorifics) were applied consistently by one author; agreement with an independent annotator has not been measured."
+    },
+    {
+      "id": "plural-and-family-references-undefined",
+      "description": "Plural and family references (the Joneses, two Johns, the Smiths' house, 'the Okafor family') have no span convention in taxonomy 0.1.0. The 5 cases that use them, plus 1 ampersand-couple case, are marked either; they are not a test of correctness until a convention exists."
+    },
+    {
+      "id": "scripts-beyond-latin-hangul-han",
+      "description": "No Cyrillic, Arabic, Devanagari, Thai or other scripts, and no Japanese kana. Han coverage is limited to Korean hanja notation; Chinese and Japanese naming is out of scope."
+    },
+    {
+      "id": "north-korean-and-diaspora-orthography",
+      "description": "Korean cases follow contemporary South Korean spelling and spacing. North Korean orthography, older spellings and diaspora romanization variants are not covered."
+    },
+    {
+      "id": "handles-usernames-email-local-parts",
+      "description": "Usernames, social handles and email local parts that embed names are out of scope for taxonomy 0.1.0."
+    },
+    {
+      "id": "small-eponym-and-work-title-slices",
+      "description": "Eponym (Ohm's law, Nobel Prize) and work-title (novel, song, film) slices are present but small (single digits per language). They flag the problem but do not support per-slice conclusions."
+    },
+    {
+      "id": "wrapper-projections-only",
+      "description": "Fixtures are structural wrappers of the authored sentence (quote, log line, JSON, email, NFD). There are no noisy-text projections (typos, OCR errors, casing mutations) because each needs per-case semantic review."
+    },
+    {
+      "id": "fixture-correlation",
+      "description": "Fixtures derived from one case are correlated. Counting fixtures instead of cases overweights cases that accept more projections (Korean cases accept the NFD projection; English mostly do not)."
+    },
+    {
+      "id": "legacy-ambiguity-unstructured",
+      "description": "Ambiguous cases authored before schema 1.1.0 carry only a free-text ambiguity note; their kind, alternative reading and resolving context are not machine-readable. Backfilling needs per-case linguistic judgment and is deliberately not derived by script."
+    },
+    {
+      "id": "contrast-classes-beta-cases-only",
+      "description": "Contrast classes (dimensions.contrast_classes) are assigned only to cases authored from Beta 1 on. Alpha-era Korean particle, spacing and mixed-script cases are not retro-tagged, so per-class counts understate the true coverage and must not be read as the whole corpus."
+    },
+    {
+      "id": "ko-small-contrast-classes",
+      "description": "Genitive/apposition, hanja annotation, script boundary and noun/name homograph classes have single-digit case counts: they show the class exists but support no per-class conclusions."
+    },
+    {
+      "id": "ko-particle-coverage-incomplete",
+      "description": "Not yet covered: the archaic vocative 이여/여, 이여서/이시여 forms, contracted particle forms in chat text (-ㄴ/-ㅇ clipped endings), quotative 이라며/이라고는 chains, and particle usage after four-syllable and two-syllable-surname names beyond the allomorph cases."
+    },
+    {
+      "id": "ko-spacing-and-separators-incomplete",
+      "description": "Not yet covered: NBSP and full-width spaces, zero-width characters, spaces inside hanja names, and name lists in table or CSV cells with Korean separators."
+    },
+    {
+      "id": "en-contrast-small-classes",
+      "description": "Markup-embedded, delimited-row, table and lookalike-entity classes have single-digit case counts: they show the class exists but support no per-class conclusions."
+    },
+    {
+      "id": "en-structured-text-synthetic-formats",
+      "description": "Log, label, table and delimited-row cases are synthetic one-line or two-line records written for the contrast. Real log files contain longer context, timestamps, ids and repeated fields that these cases do not reproduce; no real logs are included because they would carry personal data."
+    },
+    {
+      "id": "en-usernames-and-emails-out-of-scope",
+      "description": "Handles, usernames and email local parts that embed names remain out of scope; log-style cases deliberately use display names only."
+    },
+    {
+      "id": "familiarity-reference-surname-only",
+      "description": "Only the surname component is reference-checked (US 2010 Census surnames for English; the 2015 Statistics Korea surname table, read through a pinned Wikipedia transcription, for Korean). Given-name frequency is not reference-checked: the reference-frequency basis asserts, by author judgment, that the given name is a very common one."
+    },
+    {
+      "id": "familiarity-reference-us-centric",
+      "description": "The English reference is the US 2010 Census, so surnames frequent in the UK, India, Africa or East Asia can be 'rare' by the reference although routine in their communities. English 'common' labels that disagree with the reference band are listed by `python -m ner_evidence references audit`; they are not changed because the audit is informational."
+    },
+    {
+      "id": "familiarity-korean-novel-not-reference-derivable",
+      "description": "No Korean 'novel' band is reference-derived: the parsed surname table is partial, so absence proves nothing. Korean novel names rest on the constructed basis (author-assembled given names)."
+    },
+    {
+      "id": "familiarity-labels-not-model-evidence",
+      "description": "Familiarity says how routinely a name is used in its language community. It is not a claim about, and cannot be used as a proxy for, any model's training data."
+    },
+    {
+      "id": "no-independent-review",
+      "description": "No case has a counted independent review. The workflow, reviewer registry, append-only ledger, blind packets and review requests exist, but no independent reviewer has been registered and no verdict recorded. Korean cases in particular need a native speaker or linguist, and English boundary conventions need a second annotator. Factual review has not been requested at all."
+    },
+    {
+      "id": "review-independence-is-attested",
+      "description": "A reviewer's independence from the authors is a maintainer attestation in evidence/reviews/reviewers.json; tooling cannot verify it. Verdicts from reviewers not marked independent are kept and reported but never counted."
+    },
+    {
+      "id": "no-corpus-backed-evidence",
+      "description": "No case is corpus-backed. The policy, schema and gates for importing a public or licensed corpus exist and are tested, but an import needs an independent legal review of the exact corpus version and a name-replacement step, neither of which has been done. Candidates considered are in docs/corpus-candidates.md. Until then results on this evidence say nothing about real-world text."
+    },
+    {
+      "id": "reference-backed-cases-cite-conventions-not-text",
+      "description": "Reference-backed cases rest on orthography and naming conventions (Hangul Spelling Rules Articles 41 and 48, Romanization of Korean Articles 3 and 4, a W3C article on personal names). They justify how a name is written and where its boundary lies, not that a detector must find it, and they are small in number. The citations name the article or section; no source text is copied."
+    },
+    {
+      "id": "reference-sources-legal-review-pending",
+      "description": "Every reference source has legal review 'pending'. The reading that a government notice, a W3C article or derived band labels may be cited without copying is the author's, not a legal opinion. The public-release gate fails on this on purpose."
+    }
+  ]
+}

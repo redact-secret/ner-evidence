@@ -2,7 +2,7 @@
   "cases": [
     {
       "id": "person/en/common-name/full-name-prose",
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "en",
       "title": "Common two-token name in a plain sentence",
@@ -28,7 +28,8 @@
         "name_features": [
           "full-name"
         ],
-        "boundary_tags": []
+        "boundary_tags": [],
+        "familiarity_basis": "author-judgment"
       },
       "ambiguity": {
         "level": "unambiguous"
@@ -45,7 +46,7 @@
     },
     {
       "id": "person/en/common-name/given-name-only",
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "en",
       "title": "Common given name alone mid-sentence",
@@ -71,7 +72,8 @@
         "name_features": [
           "given-only"
         ],
-        "boundary_tags": []
+        "boundary_tags": [],
+        "familiarity_basis": "author-judgment"
       },
       "ambiguity": {
         "level": "unambiguous"
@@ -88,7 +90,7 @@
     },
     {
       "id": "person/en/common-name/given-name-recipient",
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "en",
       "title": "Common given name as the indirect object",
@@ -114,7 +116,8 @@
         "name_features": [
           "given-only"
         ],
-        "boundary_tags": []
+        "boundary_tags": [],
+        "familiarity_basis": "author-judgment"
       },
       "ambiguity": {
         "level": "unambiguous"
@@ -131,7 +134,7 @@
     },
     {
       "id": "person/en/common-name/object-of-preposition",
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "en",
       "title": "Common full name as the object of a preposition",
@@ -157,7 +160,8 @@
         "name_features": [
           "full-name"
         ],
-        "boundary_tags": []
+        "boundary_tags": [],
+        "familiarity_basis": "author-judgment"
       },
       "ambiguity": {
         "level": "unambiguous"
@@ -174,7 +178,7 @@
     },
     {
       "id": "person/en/common-name/sentence-final-name",
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "en",
       "title": "Common full name immediately before the sentence period",
@@ -202,7 +206,8 @@
         ],
         "boundary_tags": [
           "punctuation-adjacent"
-        ]
+        ],
+        "familiarity_basis": "author-judgment"
       },
       "ambiguity": {
         "level": "unambiguous"
@@ -219,7 +224,7 @@
     },
     {
       "id": "person/en/common-name/surname-only-agent",
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "en",
       "title": "Common surname alone as the agent of a verb",
@@ -245,7 +250,8 @@
         "name_features": [
           "surname-only"
         ],
-        "boundary_tags": []
+        "boundary_tags": [],
+        "familiarity_basis": "author-judgment"
       },
       "ambiguity": {
         "level": "unambiguous"
@@ -262,7 +268,7 @@
     },
     {
       "id": "person/en/common-name/two-full-names",
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "en",
       "title": "Two common full names in one sentence",
@@ -294,7 +300,8 @@
         "name_features": [
           "full-name"
         ],
-        "boundary_tags": []
+        "boundary_tags": [],
+        "familiarity_basis": "author-judgment"
       },
       "ambiguity": {
         "level": "unambiguous"
@@ -311,7 +318,7 @@
     },
     {
       "id": "person/en/common-name/two-short-given-names",
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "en",
       "title": "Two short common given names joined by 'and'",
@@ -344,7 +351,8 @@
         "name_features": [
           "given-only"
         ],
-        "boundary_tags": []
+        "boundary_tags": [],
+        "familiarity_basis": "author-judgment"
       },
       "ambiguity": {
         "level": "unambiguous"

@@ -2,7 +2,7 @@
   "cases": [
     {
       "id": "person/en/name-structure/all-initials-before-surname",
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "en",
       "title": "Two initials before a surname",
@@ -32,7 +32,8 @@
         "boundary_tags": [
           "abbreviation-period",
           "punctuation-adjacent"
-        ]
+        ],
+        "familiarity_basis": "author-judgment"
       },
       "ambiguity": {
         "level": "unambiguous"
@@ -49,7 +50,7 @@
     },
     {
       "id": "person/en/name-structure/generational-suffix",
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "en",
       "title": "Full name with a generational suffix",
@@ -78,7 +79,8 @@
         ],
         "boundary_tags": [
           "abbreviation-period"
-        ]
+        ],
+        "familiarity_basis": "author-judgment"
       },
       "ambiguity": {
         "level": "unambiguous"
@@ -95,7 +97,7 @@
     },
     {
       "id": "person/en/name-structure/hyphenated-given-name",
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "en",
       "title": "Hyphenated given name with surname",
@@ -124,7 +126,8 @@
         ],
         "boundary_tags": [
           "hyphen-boundary"
-        ]
+        ],
+        "familiarity_basis": "author-judgment"
       },
       "ambiguity": {
         "level": "unambiguous"
@@ -141,7 +144,7 @@
     },
     {
       "id": "person/en/name-structure/inverted-surname-comma-given",
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "en",
       "title": "Surname, comma, given name",
@@ -172,7 +175,8 @@
         "boundary_tags": [
           "comma-inverted",
           "punctuation-adjacent"
-        ]
+        ],
+        "familiarity_basis": "author-judgment"
       },
       "ambiguity": {
         "level": "unambiguous"
@@ -189,7 +193,7 @@
     },
     {
       "id": "person/en/name-structure/mc-prefix-surname",
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "en",
       "title": "Surname with an internal capital (Mc- prefix)",
@@ -215,7 +219,8 @@
         "name_features": [
           "full-name"
         ],
-        "boundary_tags": []
+        "boundary_tags": [],
+        "familiarity_basis": "author-judgment"
       },
       "ambiguity": {
         "level": "unambiguous"
@@ -232,7 +237,7 @@
     },
     {
       "id": "person/en/name-structure/middle-initial",
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "en",
       "title": "Given name, middle initial with period, surname",
@@ -262,7 +267,8 @@
         ],
         "boundary_tags": [
           "abbreviation-period"
-        ]
+        ],
+        "familiarity_basis": "author-judgment"
       },
       "ambiguity": {
         "level": "unambiguous"
@@ -279,7 +285,7 @@
     },
     {
       "id": "person/en/name-structure/mononym-given-only",
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "en",
       "title": "Single-name performer-style mononym",
@@ -306,7 +312,8 @@
         "name_features": [
           "mononym"
         ],
-        "boundary_tags": []
+        "boundary_tags": [],
+        "familiarity_basis": "author-judgment"
       },
       "ambiguity": {
         "level": "unambiguous"
@@ -322,8 +329,731 @@
       }
     },
     {
+      "id": "person/en/name-structure/rule-arabic-ibn-chain",
+      "schema_version": "1.1.0",
+      "entity_type": "PERSON",
+      "language": "en",
+      "title": "Arabic-style ibn chain",
+      "why": "The reference describes names built from a son-of chain with ibn; the chain is one name.",
+      "text": "Karim ibn Nidal al-Rashid welcomed the guests.",
+      "expectations": [
+        {
+          "start": 0,
+          "end": 25,
+          "surface": "Karim ibn Nidal al-Rashid",
+          "expect": "person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "rare",
+        "script": "latin",
+        "token_class": "multi",
+        "collision_classes": [],
+        "context_types": [
+          "plain-prose",
+          "sentence-initial"
+        ],
+        "name_features": [
+          "full-name",
+          "surname-particle"
+        ],
+        "boundary_tags": [
+          "hyphen-boundary"
+        ],
+        "familiarity_basis": "author-judgment"
+      },
+      "ambiguity": {
+        "level": "context-resolvable",
+        "kind": "boundary-extent",
+        "alternative_reading": "shorter-or-longer-name-span",
+        "resolved_by": [
+          "syntactic-position",
+          "world-knowledge"
+        ],
+        "note": "'ibn' and 'al-' could be read as separate words; the cited convention makes the chain one name."
+      },
+      "evidence_class": "reference-backed",
+      "source_ids": [
+        "src/project-authored-synthetic",
+        "src/ref-w3c-personal-names"
+      ],
+      "citations": [
+        {
+          "source_id": "src/ref-w3c-personal-names",
+          "locator": "Mixing it up"
+        }
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/en/name-structure/rule-family-name-first",
+      "schema_version": "1.1.0",
+      "entity_type": "PERSON",
+      "language": "en",
+      "title": "Family name first in a three-part name",
+      "why": "The reference describes names ordered family name first, with a generational middle part; all three tokens are one name.",
+      "text": "Lin Wei Jun presented the findings.",
+      "expectations": [
+        {
+          "start": 0,
+          "end": 11,
+          "surface": "Lin Wei Jun",
+          "expect": "person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "latin",
+        "token_class": "multi",
+        "collision_classes": [],
+        "context_types": [
+          "plain-prose",
+          "sentence-initial"
+        ],
+        "name_features": [
+          "full-name"
+        ],
+        "boundary_tags": [],
+        "familiarity_basis": "author-judgment"
+      },
+      "ambiguity": {
+        "level": "unambiguous"
+      },
+      "evidence_class": "reference-backed",
+      "source_ids": [
+        "src/project-authored-synthetic",
+        "src/ref-w3c-personal-names"
+      ],
+      "citations": [
+        {
+          "source_id": "src/ref-w3c-personal-names",
+          "locator": "Different order of parts"
+        }
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/en/name-structure/rule-filipino-style-middle-initial",
+      "schema_version": "1.1.0",
+      "entity_type": "PERSON",
+      "language": "en",
+      "title": "Middle initial with a period",
+      "why": "The reference describes middle initials; the initial and its period belong inside the name span.",
+      "text": "Maria J. Bautista filed the report.",
+      "expectations": [
+        {
+          "start": 0,
+          "end": 17,
+          "surface": "Maria J. Bautista",
+          "expect": "person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "latin",
+        "token_class": "multi",
+        "collision_classes": [],
+        "context_types": [
+          "plain-prose",
+          "sentence-initial"
+        ],
+        "name_features": [
+          "full-name",
+          "middle-name",
+          "initials"
+        ],
+        "boundary_tags": [
+          "abbreviation-period"
+        ],
+        "familiarity_basis": "author-judgment"
+      },
+      "ambiguity": {
+        "level": "unambiguous"
+      },
+      "evidence_class": "reference-backed",
+      "source_ids": [
+        "src/project-authored-synthetic",
+        "src/ref-w3c-personal-names"
+      ],
+      "citations": [
+        {
+          "source_id": "src/ref-w3c-personal-names",
+          "locator": "Middle initials"
+        }
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/en/name-structure/rule-hyphenated-family-name",
+      "schema_version": "1.1.0",
+      "entity_type": "PERSON",
+      "language": "en",
+      "title": "Hyphenated family name",
+      "why": "The reference mentions hyphenated family names as a way to combine two; the hyphen stays inside the span.",
+      "text": "Carlos Rojas-Medina filed the report.",
+      "expectations": [
+        {
+          "start": 0,
+          "end": 19,
+          "surface": "Carlos Rojas-Medina",
+          "expect": "person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "rare",
+        "script": "latin",
+        "token_class": "multi",
+        "collision_classes": [],
+        "context_types": [
+          "plain-prose",
+          "sentence-initial"
+        ],
+        "name_features": [
+          "full-name",
+          "hyphenated"
+        ],
+        "boundary_tags": [
+          "hyphen-boundary"
+        ],
+        "familiarity_basis": "author-judgment"
+      },
+      "ambiguity": {
+        "level": "unambiguous"
+      },
+      "evidence_class": "reference-backed",
+      "source_ids": [
+        "src/project-authored-synthetic",
+        "src/ref-w3c-personal-names"
+      ],
+      "citations": [
+        {
+          "source_id": "src/ref-w3c-personal-names",
+          "locator": "Inheritance of names"
+        }
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/en/name-structure/rule-linking-de-between-family-names",
+      "schema_version": "1.1.0",
+      "entity_type": "PERSON",
+      "language": "en",
+      "title": "Linking word de between family names",
+      "why": "The reference notes that short words such as de link family names, so 'Padilla de Soto' is one family name and the span includes the linking word.",
+      "text": "Elena Padilla de Soto joined the panel.",
+      "expectations": [
+        {
+          "start": 0,
+          "end": 21,
+          "surface": "Elena Padilla de Soto",
+          "expect": "person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "rare",
+        "script": "latin",
+        "token_class": "multi",
+        "collision_classes": [],
+        "context_types": [
+          "plain-prose",
+          "sentence-initial"
+        ],
+        "name_features": [
+          "full-name",
+          "surname-particle"
+        ],
+        "boundary_tags": [],
+        "familiarity_basis": "author-judgment"
+      },
+      "ambiguity": {
+        "level": "context-resolvable",
+        "kind": "boundary-extent",
+        "alternative_reading": "shorter-or-longer-name-span",
+        "resolved_by": [
+          "syntactic-position",
+          "world-knowledge"
+        ],
+        "note": "'de' could be read as a stray word; the cited convention makes it part of the name."
+      },
+      "evidence_class": "reference-backed",
+      "source_ids": [
+        "src/project-authored-synthetic",
+        "src/ref-w3c-personal-names"
+      ],
+      "citations": [
+        {
+          "source_id": "src/ref-w3c-personal-names",
+          "locator": "Multiple family names"
+        }
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/en/name-structure/rule-linking-e-between-family-names",
+      "schema_version": "1.1.0",
+      "entity_type": "PERSON",
+      "language": "en",
+      "title": "Linking word e between family names",
+      "why": "The reference notes that short words such as e link family names, so 'Tavares e Silva' is one family name; a coordination reading would be two people.",
+      "text": "Rui Tavares e Silva opened the session.",
+      "expectations": [
+        {
+          "start": 0,
+          "end": 19,
+          "surface": "Rui Tavares e Silva",
+          "expect": "person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "rare",
+        "script": "latin",
+        "token_class": "multi",
+        "collision_classes": [],
+        "context_types": [
+          "plain-prose",
+          "sentence-initial"
+        ],
+        "name_features": [
+          "full-name",
+          "surname-particle"
+        ],
+        "boundary_tags": [],
+        "familiarity_basis": "author-judgment"
+      },
+      "ambiguity": {
+        "level": "context-resolvable",
+        "kind": "boundary-extent",
+        "alternative_reading": "shorter-or-longer-name-span",
+        "resolved_by": [
+          "syntactic-position",
+          "world-knowledge"
+        ],
+        "note": "'e' also means 'and', so the text can be read as Rui Tavares plus Silva; the cited convention makes it one name."
+      },
+      "evidence_class": "reference-backed",
+      "source_ids": [
+        "src/project-authored-synthetic",
+        "src/ref-w3c-personal-names"
+      ],
+      "citations": [
+        {
+          "source_id": "src/ref-w3c-personal-names",
+          "locator": "Multiple family names"
+        }
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/en/name-structure/rule-patronymic-bin",
+      "schema_version": "1.1.0",
+      "entity_type": "PERSON",
+      "language": "en",
+      "title": "Patronymic marker bin inside a Malay-style name",
+      "why": "The reference describes patronymics joined by 'bin', which is part of the name; a person is not 'Hafiz' plus a stray word.",
+      "text": "Hafiz bin Rahman approved the request.",
+      "expectations": [
+        {
+          "start": 0,
+          "end": 16,
+          "surface": "Hafiz bin Rahman",
+          "expect": "person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "rare",
+        "script": "latin",
+        "token_class": "multi",
+        "collision_classes": [],
+        "context_types": [
+          "plain-prose",
+          "sentence-initial"
+        ],
+        "name_features": [
+          "full-name",
+          "surname-particle"
+        ],
+        "boundary_tags": [],
+        "familiarity_basis": "author-judgment"
+      },
+      "ambiguity": {
+        "level": "context-resolvable",
+        "kind": "boundary-extent",
+        "alternative_reading": "shorter-or-longer-name-span",
+        "resolved_by": [
+          "syntactic-position",
+          "world-knowledge"
+        ],
+        "note": "Without the cited convention 'bin' could look like a stray word; with it the three tokens are one name."
+      },
+      "evidence_class": "reference-backed",
+      "source_ids": [
+        "src/project-authored-synthetic",
+        "src/ref-w3c-personal-names"
+      ],
+      "citations": [
+        {
+          "source_id": "src/ref-w3c-personal-names",
+          "locator": "Given name and patronymic"
+        }
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/en/name-structure/rule-patronymic-dottir",
+      "schema_version": "1.1.0",
+      "entity_type": "PERSON",
+      "language": "en",
+      "title": "Icelandic-style patronymic ending -dóttir",
+      "why": "The reference describes patronymics ending in -dóttir as the second part of a name; the single token is part of the name.",
+      "text": "Reviewer: Halla Ragnarsdóttir",
+      "expectations": [
+        {
+          "start": 10,
+          "end": 29,
+          "surface": "Halla Ragnarsdóttir",
+          "expect": "person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "rare",
+        "script": "latin",
+        "token_class": "multi",
+        "collision_classes": [],
+        "context_types": [
+          "structured-text"
+        ],
+        "name_features": [
+          "full-name"
+        ],
+        "boundary_tags": [
+          "punctuation-adjacent",
+          "decomposition-sensitive"
+        ],
+        "familiarity_basis": "author-judgment"
+      },
+      "ambiguity": {
+        "level": "unambiguous"
+      },
+      "evidence_class": "reference-backed",
+      "source_ids": [
+        "src/project-authored-synthetic",
+        "src/ref-w3c-personal-names"
+      ],
+      "citations": [
+        {
+          "source_id": "src/ref-w3c-personal-names",
+          "locator": "Given name and patronymic"
+        }
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/en/name-structure/rule-patronymic-son",
+      "schema_version": "1.1.0",
+      "entity_type": "PERSON",
+      "language": "en",
+      "title": "Icelandic-style patronymic ending -son",
+      "why": "Same convention with -son: the second token is a patronymic, not a surname in the Western sense, and is still part of the name.",
+      "text": "Gunnar Halldórsson chaired the board.",
+      "expectations": [
+        {
+          "start": 0,
+          "end": 18,
+          "surface": "Gunnar Halldórsson",
+          "expect": "person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "rare",
+        "script": "latin",
+        "token_class": "multi",
+        "collision_classes": [],
+        "context_types": [
+          "plain-prose",
+          "sentence-initial"
+        ],
+        "name_features": [
+          "full-name"
+        ],
+        "boundary_tags": [
+          "decomposition-sensitive"
+        ],
+        "familiarity_basis": "author-judgment"
+      },
+      "ambiguity": {
+        "level": "unambiguous"
+      },
+      "evidence_class": "reference-backed",
+      "source_ids": [
+        "src/project-authored-synthetic",
+        "src/ref-w3c-personal-names"
+      ],
+      "citations": [
+        {
+          "source_id": "src/ref-w3c-personal-names",
+          "locator": "Given name and patronymic"
+        }
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/en/name-structure/rule-russian-family-name-first",
+      "schema_version": "1.1.0",
+      "entity_type": "PERSON",
+      "language": "en",
+      "title": "Russian-style family name first",
+      "why": "The reference notes that a less formal order is family name, given name, patronymic; the three tokens are still one name.",
+      "text": "Volkova Irina Petrovna spoke next.",
+      "expectations": [
+        {
+          "start": 0,
+          "end": 22,
+          "surface": "Volkova Irina Petrovna",
+          "expect": "person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "rare",
+        "script": "latin",
+        "token_class": "multi",
+        "collision_classes": [],
+        "context_types": [
+          "plain-prose",
+          "sentence-initial"
+        ],
+        "name_features": [
+          "full-name"
+        ],
+        "boundary_tags": [],
+        "familiarity_basis": "author-judgment"
+      },
+      "ambiguity": {
+        "level": "unambiguous"
+      },
+      "evidence_class": "reference-backed",
+      "source_ids": [
+        "src/project-authored-synthetic",
+        "src/ref-w3c-personal-names"
+      ],
+      "citations": [
+        {
+          "source_id": "src/ref-w3c-personal-names",
+          "locator": "Variant word forms"
+        }
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/en/name-structure/rule-russian-patronymic-middle",
+      "schema_version": "1.1.0",
+      "entity_type": "PERSON",
+      "language": "en",
+      "title": "Russian-style given name, patronymic, family name",
+      "why": "The reference describes the order given name, patronymic, family name; all three tokens are one name.",
+      "text": "Dmitri Petrovich Volkov spoke next.",
+      "expectations": [
+        {
+          "start": 0,
+          "end": 23,
+          "surface": "Dmitri Petrovich Volkov",
+          "expect": "person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "rare",
+        "script": "latin",
+        "token_class": "multi",
+        "collision_classes": [],
+        "context_types": [
+          "plain-prose",
+          "sentence-initial"
+        ],
+        "name_features": [
+          "full-name"
+        ],
+        "boundary_tags": [],
+        "familiarity_basis": "author-judgment"
+      },
+      "ambiguity": {
+        "level": "unambiguous"
+      },
+      "evidence_class": "reference-backed",
+      "source_ids": [
+        "src/project-authored-synthetic",
+        "src/ref-w3c-personal-names"
+      ],
+      "citations": [
+        {
+          "source_id": "src/ref-w3c-personal-names",
+          "locator": "Variant word forms"
+        }
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/en/name-structure/rule-town-given-caste-order",
+      "schema_version": "1.1.0",
+      "entity_type": "PERSON",
+      "language": "en",
+      "title": "Town, given name and community name order",
+      "why": "The reference gives examples of names that combine place, given and community names; all three tokens are one name.",
+      "text": "Tirupur Selvam Pillai joined the call.",
+      "expectations": [
+        {
+          "start": 0,
+          "end": 21,
+          "surface": "Tirupur Selvam Pillai",
+          "expect": "person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "rare",
+        "script": "latin",
+        "token_class": "multi",
+        "collision_classes": [],
+        "context_types": [
+          "plain-prose",
+          "sentence-initial"
+        ],
+        "name_features": [
+          "full-name"
+        ],
+        "boundary_tags": [],
+        "familiarity_basis": "author-judgment"
+      },
+      "ambiguity": {
+        "level": "unambiguous"
+      },
+      "evidence_class": "reference-backed",
+      "source_ids": [
+        "src/project-authored-synthetic",
+        "src/ref-w3c-personal-names"
+      ],
+      "citations": [
+        {
+          "source_id": "src/ref-w3c-personal-names",
+          "locator": "Mixing it up"
+        }
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/en/name-structure/rule-two-family-names",
+      "schema_version": "1.1.0",
+      "entity_type": "PERSON",
+      "language": "en",
+      "title": "Two family names in a Spanish-style name",
+      "why": "The reference describes two family names after the given name; all three tokens are one name.",
+      "text": "Lucía Herrera Domínguez signed the form.",
+      "expectations": [
+        {
+          "start": 0,
+          "end": 23,
+          "surface": "Lucía Herrera Domínguez",
+          "expect": "person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "rare",
+        "script": "latin",
+        "token_class": "multi",
+        "collision_classes": [],
+        "context_types": [
+          "plain-prose",
+          "sentence-initial"
+        ],
+        "name_features": [
+          "full-name"
+        ],
+        "boundary_tags": [
+          "decomposition-sensitive"
+        ],
+        "familiarity_basis": "author-judgment"
+      },
+      "ambiguity": {
+        "level": "unambiguous"
+      },
+      "evidence_class": "reference-backed",
+      "source_ids": [
+        "src/project-authored-synthetic",
+        "src/ref-w3c-personal-names"
+      ],
+      "citations": [
+        {
+          "source_id": "src/ref-w3c-personal-names",
+          "locator": "Multiple family names"
+        }
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
       "id": "person/en/name-structure/surname-particle-de-la",
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "en",
       "title": "Multi-word surname with lowercase particles",
@@ -350,7 +1080,8 @@
           "full-name",
           "surname-particle"
         ],
-        "boundary_tags": []
+        "boundary_tags": [],
+        "familiarity_basis": "author-judgment"
       },
       "ambiguity": {
         "level": "unambiguous"
@@ -367,7 +1098,7 @@
     },
     {
       "id": "person/en/name-structure/surname-particle-van-der",
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "en",
       "title": "Dutch surname with lowercase 'van der'",
@@ -394,7 +1125,8 @@
           "full-name",
           "surname-particle"
         ],
-        "boundary_tags": []
+        "boundary_tags": [],
+        "familiarity_basis": "author-judgment"
       },
       "ambiguity": {
         "level": "unambiguous"

@@ -2,7 +2,7 @@
   "cases": [
     {
       "id": "person/ko/romanization/all-caps-passport-style",
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "ko",
       "title": "ALL-CAPS romanized name as on a passport",
@@ -33,7 +33,8 @@
         "boundary_tags": [
           "hyphen-boundary",
           "punctuation-adjacent"
-        ]
+        ],
+        "familiarity_basis": "author-judgment"
       },
       "ambiguity": {
         "level": "unambiguous"
@@ -50,7 +51,7 @@
     },
     {
       "id": "person/ko/romanization/choi-surname-english-text",
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "ko",
       "title": "Romanized surname Choi in English text",
@@ -83,7 +84,8 @@
           "hyphen-boundary",
           "honorific-excluded",
           "abbreviation-period"
-        ]
+        ],
+        "familiarity_basis": "author-judgment"
       },
       "ambiguity": {
         "level": "unambiguous"
@@ -100,7 +102,7 @@
     },
     {
       "id": "person/ko/romanization/hong-gil-dong-placeholder",
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "ko",
       "title": "Romanized placeholder name Hong Gil-dong",
@@ -132,7 +134,8 @@
         "boundary_tags": [
           "hyphen-boundary",
           "punctuation-adjacent"
-        ]
+        ],
+        "familiarity_basis": "author-judgment"
       },
       "ambiguity": {
         "level": "unambiguous"
@@ -149,7 +152,7 @@
     },
     {
       "id": "person/ko/romanization/hong-kong-not-person",
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "ko",
       "title": "Hong Kong beside the surname Hong",
@@ -176,7 +179,8 @@
           "no-person"
         ],
         "name_features": [],
-        "boundary_tags": []
+        "boundary_tags": [],
+        "familiarity_basis": "author-judgment"
       },
       "ambiguity": {
         "level": "context-resolvable",
@@ -194,7 +198,7 @@
     },
     {
       "id": "person/ko/romanization/hyphenated-given-name-surname-first",
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "ko",
       "title": "Romanized Korean name, surname first, hyphenated given name",
@@ -225,7 +229,8 @@
         ],
         "boundary_tags": [
           "hyphen-boundary"
-        ]
+        ],
+        "familiarity_basis": "author-judgment"
       },
       "ambiguity": {
         "level": "unambiguous"
@@ -242,7 +247,7 @@
     },
     {
       "id": "person/ko/romanization/initials-with-surname",
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "ko",
       "title": "Romanized name abbreviated to initials plus surname",
@@ -272,7 +277,8 @@
         ],
         "boundary_tags": [
           "abbreviation-period"
-        ]
+        ],
+        "familiarity_basis": "author-judgment"
       },
       "ambiguity": {
         "level": "unambiguous"
@@ -289,7 +295,7 @@
     },
     {
       "id": "person/ko/romanization/jung-surname-with-title",
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "ko",
       "title": "Romanized surname Jung after Mr.",
@@ -322,7 +328,8 @@
         "boundary_tags": [
           "honorific-excluded",
           "abbreviation-period"
-        ]
+        ],
+        "familiarity_basis": "author-judgment"
       },
       "ambiguity": {
         "level": "context-resolvable",
@@ -340,7 +347,7 @@
     },
     {
       "id": "person/ko/romanization/lee-surname",
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "ko",
       "title": "Romanized surname Lee with a hyphenated given name",
@@ -371,7 +378,8 @@
         ],
         "boundary_tags": [
           "hyphen-boundary"
-        ]
+        ],
+        "familiarity_basis": "author-judgment"
       },
       "ambiguity": {
         "level": "unambiguous"
@@ -388,7 +396,7 @@
     },
     {
       "id": "person/ko/romanization/lowercase-park-and-given-name",
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "ko",
       "title": "Lowercase park noun beside a romanized given name",
@@ -428,7 +436,8 @@
         "boundary_tags": [
           "hyphen-boundary",
           "punctuation-adjacent"
-        ]
+        ],
+        "familiarity_basis": "author-judgment"
       },
       "ambiguity": {
         "level": "context-resolvable",
@@ -446,7 +455,7 @@
     },
     {
       "id": "person/ko/romanization/moon-surname",
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "ko",
       "title": "Romanized surname Moon, also an English noun",
@@ -479,7 +488,8 @@
         ],
         "boundary_tags": [
           "hyphen-boundary"
-        ]
+        ],
+        "familiarity_basis": "author-judgment"
       },
       "ambiguity": {
         "level": "context-resolvable",
@@ -497,7 +507,7 @@
     },
     {
       "id": "person/ko/romanization/park-surname-common-word",
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "ko",
       "title": "Romanized surname Park, which is also a common English noun",
@@ -530,7 +540,8 @@
         ],
         "boundary_tags": [
           "hyphen-boundary"
-        ]
+        ],
+        "familiarity_basis": "author-judgment"
       },
       "ambiguity": {
         "level": "context-resolvable",
@@ -547,8 +558,166 @@
       }
     },
     {
+      "id": "person/ko/romanization/rule-capitalized-name",
+      "schema_version": "1.1.0",
+      "entity_type": "PERSON",
+      "language": "ko",
+      "title": "Romanized name with capitalized parts",
+      "why": "Article 3 starts proper nouns with a capital letter, so both parts are capitalized and the name is one span.",
+      "text": "Please contact Han Dohyeon today.",
+      "expectations": [
+        {
+          "start": 15,
+          "end": 26,
+          "surface": "Han Dohyeon",
+          "expect": "person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "latin",
+        "token_class": "multi",
+        "collision_classes": [],
+        "context_types": [
+          "plain-prose"
+        ],
+        "name_features": [
+          "full-name",
+          "ko-romanized"
+        ],
+        "boundary_tags": [],
+        "familiarity_basis": "author-judgment"
+      },
+      "ambiguity": {
+        "level": "unambiguous"
+      },
+      "evidence_class": "reference-backed",
+      "source_ids": [
+        "src/project-authored-synthetic",
+        "src/ref-ko-romanization-rules"
+      ],
+      "citations": [
+        {
+          "source_id": "src/ref-ko-romanization-rules",
+          "locator": "Romanization of Korean, chapter 3, Article 3"
+        }
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/ko/romanization/rule-given-name-hyphen",
+      "schema_version": "1.1.0",
+      "entity_type": "PERSON",
+      "language": "ko",
+      "title": "Romanized name with a hyphen between given-name syllables",
+      "why": "Article 4 permits a hyphen between the syllables of the given name; the hyphen stays inside the span.",
+      "text": "The author is Min Seo-yun.",
+      "expectations": [
+        {
+          "start": 14,
+          "end": 25,
+          "surface": "Min Seo-yun",
+          "expect": "person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "latin",
+        "token_class": "multi",
+        "collision_classes": [],
+        "context_types": [
+          "plain-prose"
+        ],
+        "name_features": [
+          "full-name",
+          "ko-romanized"
+        ],
+        "boundary_tags": [
+          "hyphen-boundary"
+        ],
+        "familiarity_basis": "author-judgment"
+      },
+      "ambiguity": {
+        "level": "unambiguous"
+      },
+      "evidence_class": "reference-backed",
+      "source_ids": [
+        "src/project-authored-synthetic",
+        "src/ref-ko-romanization-rules"
+      ],
+      "citations": [
+        {
+          "source_id": "src/ref-ko-romanization-rules",
+          "locator": "Romanization of Korean, chapter 3, Article 4"
+        }
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/ko/romanization/rule-surname-space-given",
+      "schema_version": "1.1.0",
+      "entity_type": "PERSON",
+      "language": "ko",
+      "title": "Romanized name: surname, space, given name",
+      "why": "Article 4 writes a personal name as surname, space, given name with the given name written together, so the two tokens are one name.",
+      "text": "The author is Min Seoyun.",
+      "expectations": [
+        {
+          "start": 14,
+          "end": 24,
+          "surface": "Min Seoyun",
+          "expect": "person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "latin",
+        "token_class": "multi",
+        "collision_classes": [],
+        "context_types": [
+          "plain-prose"
+        ],
+        "name_features": [
+          "full-name",
+          "ko-romanized"
+        ],
+        "boundary_tags": [],
+        "familiarity_basis": "author-judgment"
+      },
+      "ambiguity": {
+        "level": "unambiguous"
+      },
+      "evidence_class": "reference-backed",
+      "source_ids": [
+        "src/project-authored-synthetic",
+        "src/ref-ko-romanization-rules"
+      ],
+      "citations": [
+        {
+          "source_id": "src/ref-ko-romanization-rules",
+          "locator": "Romanization of Korean, chapter 3, Article 4"
+        }
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
       "id": "person/ko/romanization/song-surname-common-word",
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "ko",
       "title": "Romanized surname Song, which is also an English noun",
@@ -581,7 +750,8 @@
         ],
         "boundary_tags": [
           "hyphen-boundary"
-        ]
+        ],
+        "familiarity_basis": "author-judgment"
       },
       "ambiguity": {
         "level": "context-resolvable",
@@ -599,7 +769,7 @@
     },
     {
       "id": "person/ko/romanization/two-syllable-romanized-seo-jun",
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "ko",
       "title": "Two-syllable romanized name Seo Jun",
@@ -628,7 +798,8 @@
           "ko-romanized",
           "ko-2-syllable"
         ],
-        "boundary_tags": []
+        "boundary_tags": [],
+        "familiarity_basis": "author-judgment"
       },
       "ambiguity": {
         "level": "unambiguous"
@@ -645,7 +816,7 @@
     },
     {
       "id": "person/ko/romanization/unhyphenated-given-name",
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "ko",
       "title": "Romanized Korean name without a hyphen in the given name",
@@ -675,7 +846,8 @@
         ],
         "boundary_tags": [
           "punctuation-adjacent"
-        ]
+        ],
+        "familiarity_basis": "author-judgment"
       },
       "ambiguity": {
         "level": "unambiguous"
@@ -692,7 +864,7 @@
     },
     {
       "id": "person/ko/romanization/western-order-hyphenated",
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "ko",
       "title": "Romanized Korean name in given-then-surname order",
@@ -724,7 +896,8 @@
         "boundary_tags": [
           "hyphen-boundary",
           "punctuation-adjacent"
-        ]
+        ],
+        "familiarity_basis": "author-judgment"
       },
       "ambiguity": {
         "level": "unambiguous"
@@ -741,7 +914,7 @@
     },
     {
       "id": "person/ko/romanization/yoon-do-yoon-two-names",
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "ko",
       "title": "Two romanized Korean full names in one sentence",
@@ -778,7 +951,8 @@
         ],
         "boundary_tags": [
           "hyphen-boundary"
-        ]
+        ],
+        "familiarity_basis": "author-judgment"
       },
       "ambiguity": {
         "level": "unambiguous"
@@ -795,7 +969,7 @@
     },
     {
       "id": "person/ko/romanization/young-hee-given-name",
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "ko",
       "title": "Romanized given name Young-hee containing the English word Young",
@@ -829,7 +1003,8 @@
         ],
         "boundary_tags": [
           "hyphen-boundary"
-        ]
+        ],
+        "familiarity_basis": "author-judgment"
       },
       "ambiguity": {
         "level": "context-resolvable",

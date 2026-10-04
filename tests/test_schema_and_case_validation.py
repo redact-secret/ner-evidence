@@ -120,6 +120,154 @@ class CaseValidation(unittest.TestCase):
         self.assertIn("PROJECTION", self.codes(c))
 
 
+class StructuredAmbiguity(unittest.TestCase):
+    """Machine-readable ambiguity semantics (schema 1.1.0)."""
+
+    @classmethod
+    def setUpClass(cls):
+        cls.repo = load_repo()
+
+    def codes(self, case):
+        return {p.code for p in validate.check_case(case, self.repo)}
+
+    def structured(self, **amb):
+        c = good_case()
+        c["ambiguity"].update(kind="lexical-homograph", alternative_reading="temporal-term",
+                              resolved_by=["predicate-or-argument"], **amb)
+        return c
+
+    def test_complete_structure_passes(self):
+        self.assertEqual(validate.check_case(self.structured(), self.repo), [])
+
+    def test_partial_structure_rejected(self):
+        c = good_case()
+        c["ambiguity"]["kind"] = "lexical-homograph"
+        self.assertIn("AMBIGUITY", self.codes(c))
+
+    def test_unknown_vocabulary_rejected(self):
+        c = self.structured()
+        c["ambiguity"]["kind"] = "made-up-kind"
+        c["ambiguity"]["resolved_by"] = ["tea-leaves"]
+        self.assertEqual(sum(1 for p in validate.check_case(c, self.repo) if p.code == "VOCAB"), 2)
+
+    def test_nothing_iff_genuinely_ambiguous(self):
+        c = self.structured()
+        c["ambiguity"]["resolved_by"] = ["nothing"]
+        self.assertIn("AMBIGUITY", self.codes(c))
+
+    def test_genuine_case_needs_both_outcomes(self):
+        c = good_case()
+        c["expectations"][1]["expect"] = "either"
+        c["ambiguity"].update(level="genuinely-ambiguous", kind="lexical-homograph",
+                              alternative_reading="temporal-term", resolved_by=["nothing"])
+        self.assertIn("AMBIGUITY", self.codes(c))  # acceptable_outcomes missing
+        c["ambiguity"]["acceptable_outcomes"] = ["person", "not-person"]
+        self.assertEqual(validate.check_case(c, self.repo), [])
+
+    def test_unambiguous_case_cannot_carry_structure(self):
+        c = good_case()
+        c["dimensions"]["collision_classes"] = []
+        c["ambiguity"] = {"level": "unambiguous", "kind": "lexical-homograph"}
+        self.assertIn("AMBIGUITY", self.codes(c))
+
+    def test_context_ambiguity_cases_are_all_structured(self):
+        for case in self.repo.cases:
+            if case["id"].split("/")[2] == "context-ambiguity":
+                self.assertIn("kind", case["ambiguity"], case["id"])
+
+    def test_minimal_pairs_exist_in_both_languages(self):
+        by_lang = {"en": 0, "ko": 0}
+        for case in self.repo.cases:
+            if case["id"].split("/")[2] == "context-ambiguity" and case["ambiguity"]["level"] == "genuinely-ambiguous":
+                by_lang[case["language"]] += 1
+        self.assertGreaterEqual(by_lang["en"], 4)
+        self.assertGreaterEqual(by_lang["ko"], 2)
+
+
+class ContrastClasses(unittest.TestCase):
+    @classmethod
+    def setUpClass(cls):
+        cls.repo = load_repo()
+
+    def codes(self, case):
+        return {p.code for p in validate.check_case(case, self.repo)}
+
+    def test_unknown_class_rejected(self):
+        c = good_case()
+        c["dimensions"]["contrast_classes"] = ["en-placeholder"]
+        self.assertIn("VOCAB", self.codes(c))  # unknown id
+
+    def test_class_must_match_case_language(self):
+        c = good_case()
+        c["dimensions"]["contrast_classes"] = ["ko-particle-allomorph"]
+        self.assertIn("VOCAB", self.codes(c))
+
+    def test_every_class_has_a_floor_and_a_rationale(self):
+        ids = {t["id"] for t in self.repo.targets["count_targets"]}
+        for entry in self.repo.taxonomy["dimensions"]["contrast_class"]:
+            self.assertIn("contrast-" + entry["id"], ids)
+            self.assertIn("Why:", entry["definition"], entry["id"])
+
+
+class FamiliarityBasis(unittest.TestCase):
+    @classmethod
+    def setUpClass(cls):
+        cls.repo = load_repo()
+
+    def codes(self, case):
+        return {p.code for p in validate.check_case(case, self.repo)}
+
+    def with_basis(self, basis, familiarity="rare", ref=None):
+        c = good_case()
+        c["dimensions"]["familiarity"] = familiarity
+        c["dimensions"]["familiarity_basis"] = basis
+        if ref:
+            c["dimensions"]["familiarity_reference"] = ref
+        return c
+
+    def test_basis_is_required_when_a_label_applies(self):
+        c = good_case()
+        del c["dimensions"]["familiarity_basis"]
+        self.assertIn("FAMILIARITY", self.codes(c))
+
+    def test_author_judgment_needs_no_reference(self):
+        self.assertEqual(validate.check_case(self.with_basis("author-judgment"), self.repo), [])
+
+    def test_not_applicable_forbids_a_basis(self):
+        self.assertIn("FAMILIARITY", self.codes(self.with_basis("author-judgment", "not-applicable")))
+
+    def test_constructed_only_supports_novel(self):
+        self.assertIn("FAMILIARITY", self.codes(self.with_basis("constructed", "rare")))
+        self.assertEqual(validate.check_case(self.with_basis("constructed", "novel"), self.repo), [])
+
+    def test_reference_frequency_requires_a_reference(self):
+        self.assertIn("FAMILIARITY", self.codes(self.with_basis("reference-frequency")))
+
+    def test_reference_must_match_the_committed_band(self):
+        ref = {"source_id": "src/ref-us-census-2010-surnames", "component": "Whitlow"}
+        c = self.with_basis("reference-frequency", "rare", ref)
+        c["expectations"][1].update(start=26, end=29)
+        c["text"] = "The meeting is in May and Whitlow will attend."
+        c["expectations"] = [{"start": 18, "end": 21, "surface": "May", "expect": "not-person"},
+                             {"start": 26, "end": 33, "surface": "Whitlow", "expect": "person"}]
+        c["source_ids"] = ["src/project-authored-synthetic", "src/ref-us-census-2010-surnames"]
+        self.assertEqual(validate.check_case(c, self.repo), [])
+        c["dimensions"]["familiarity"] = "common"  # the band is rare
+        self.assertIn("FAMILIARITY", self.codes(c))
+        c["dimensions"]["familiarity"] = "rare"
+        c["dimensions"]["familiarity_reference"]["component"] = "Smithwick"  # no derived band
+        self.assertIn("FAMILIARITY", self.codes(c))
+
+    def test_reference_source_must_be_listed_on_the_case(self):
+        ref = {"source_id": "src/ref-us-census-2010-surnames", "component": "May"}
+        self.assertIn("PROVENANCE", self.codes(self.with_basis("reference-frequency", "rare", ref)))
+
+    def test_every_labelled_committed_case_has_a_basis(self):
+        for case in self.repo.cases:
+            fam = case["dimensions"]["familiarity"]
+            self.assertEqual("familiarity_basis" in case["dimensions"], fam != "not-applicable", case["id"])
+
+
 class Annotate(unittest.TestCase):
     def test_offsets(self):
         text, spans = annotate.annotate("Dr. [[p:Reyes]] saw [[n:May]].")

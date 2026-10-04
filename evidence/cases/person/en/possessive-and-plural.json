@@ -2,7 +2,7 @@
   "cases": [
     {
       "id": "person/en/possessive-and-plural/family-singular-surname",
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "en",
       "title": "Singular surname modifying 'family'",
@@ -28,7 +28,8 @@
         "name_features": [
           "surname-only"
         ],
-        "boundary_tags": []
+        "boundary_tags": [],
+        "familiarity_basis": "author-judgment"
       },
       "ambiguity": {
         "level": "genuinely-ambiguous",
@@ -46,7 +47,7 @@
     },
     {
       "id": "person/en/possessive-and-plural/name-ending-in-s-possessive",
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "en",
       "title": "Name ending in s with a bare apostrophe possessive",
@@ -75,7 +76,8 @@
         ],
         "boundary_tags": [
           "apostrophe-boundary"
-        ]
+        ],
+        "familiarity_basis": "author-judgment"
       },
       "ambiguity": {
         "level": "unambiguous"
@@ -92,7 +94,7 @@
     },
     {
       "id": "person/en/possessive-and-plural/plural-s-possessive",
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "en",
       "title": "Plural-possessive apostrophe after a family surname",
@@ -121,7 +123,8 @@
         ],
         "boundary_tags": [
           "apostrophe-boundary"
-        ]
+        ],
+        "familiarity_basis": "author-judgment"
       },
       "ambiguity": {
         "level": "genuinely-ambiguous",
@@ -139,7 +142,7 @@
     },
     {
       "id": "person/en/possessive-and-plural/possessive-of-multi-token-name",
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "en",
       "title": "Possessive after a two-token name",
@@ -168,7 +171,8 @@
         ],
         "boundary_tags": [
           "apostrophe-boundary"
-        ]
+        ],
+        "familiarity_basis": "author-judgment"
       },
       "ambiguity": {
         "level": "unambiguous"
@@ -185,7 +189,7 @@
     },
     {
       "id": "person/en/possessive-and-plural/surname-possessive-after-title",
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "en",
       "title": "Surname with possessive after a title in subject position",
@@ -217,7 +221,8 @@
           "apostrophe-boundary",
           "honorific-excluded",
           "abbreviation-period"
-        ]
+        ],
+        "familiarity_basis": "author-judgment"
       },
       "ambiguity": {
         "level": "unambiguous"
@@ -234,7 +239,7 @@
     },
     {
       "id": "person/en/possessive-and-plural/the-joneses",
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "en",
       "title": "The Joneses used for a family of neighbours",
@@ -260,7 +265,8 @@
         "name_features": [
           "surname-only"
         ],
-        "boundary_tags": []
+        "boundary_tags": [],
+        "familiarity_basis": "author-judgment"
       },
       "ambiguity": {
         "level": "genuinely-ambiguous",
@@ -278,7 +284,7 @@
     },
     {
       "id": "person/en/possessive-and-plural/two-johns-plural-given-name",
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "en",
       "title": "Plural of a given name for two namesakes",
@@ -304,7 +310,8 @@
         "name_features": [
           "given-only"
         ],
-        "boundary_tags": []
+        "boundary_tags": [],
+        "familiarity_basis": "author-judgment"
       },
       "ambiguity": {
         "level": "genuinely-ambiguous",

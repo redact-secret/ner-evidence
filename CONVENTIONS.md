@@ -59,5 +59,7 @@ in `evidence/slice-targets.json`.
 
 ## Review honesty
 
+Review status is derived from the append-only review ledger (`docs/review-workflow.md`); it is never hand-set.
+
 `review.*` fields describe who looked, not how sure the author is. Use `author-only` until someone other than the
 author has reviewed that facet. Never use a model's output, or agreement between models, as a review.

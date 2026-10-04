@@ -2,7 +2,7 @@
   "cases": [
     {
       "id": "person/ko/punctuation-boundary/comma-list-with-spaces",
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "ko",
       "title": "Three names in a comma-separated list with spaces",
@@ -48,7 +48,8 @@
           "punctuation-adjacent",
           "adjacent-names",
           "particle-excluded"
-        ]
+        ],
+        "familiarity_basis": "author-judgment"
       },
       "ambiguity": {
         "level": "unambiguous"
@@ -64,8 +65,124 @@
       }
     },
     {
+      "id": "person/ko/punctuation-boundary/corner-brackets-around-work-title",
+      "schema_version": "1.1.0",
+      "entity_type": "PERSON",
+      "language": "ko",
+      "title": "Corner brackets around a title that begins with a surname",
+      "why": "「」 quotes mark a work title; the word inside begins with the surname 김 and is a food term, not a person.",
+      "text": "「김치」라는 제목의 책을 읽었다.",
+      "expectations": [
+        {
+          "start": 1,
+          "end": 3,
+          "surface": "김치",
+          "expect": "not-person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "not-applicable",
+        "script": "hangul",
+        "token_class": "single",
+        "collision_classes": [
+          "common-word"
+        ],
+        "context_types": [
+          "plain-prose",
+          "quotation",
+          "no-person"
+        ],
+        "name_features": [],
+        "boundary_tags": [
+          "quote-boundary",
+          "punctuation-adjacent"
+        ],
+        "contrast_classes": [
+          "ko-separator-punctuation",
+          "ko-surname-prefix-trap"
+        ]
+      },
+      "ambiguity": {
+        "level": "context-resolvable",
+        "kind": "lexical-homograph",
+        "alternative_reading": "common-noun",
+        "resolved_by": [
+          "fixed-phrase",
+          "punctuation-or-format"
+        ],
+        "note": "A work title in corner brackets introduced by 라는 제목 is a title; 김치 is the food word."
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/ko/punctuation-boundary/curly-quotes-quotative",
+      "schema_version": "1.1.0",
+      "entity_type": "PERSON",
+      "language": "ko",
+      "title": "Curly quotes with a quotative after a name",
+      "why": "A name inside “ ” followed by 이라고 ('called'); both the quotation marks and the particle are outside the span.",
+      "text": "아이들은 그를 “오하늘”이라고 불렀다.",
+      "expectations": [
+        {
+          "start": 9,
+          "end": 12,
+          "surface": "오하늘",
+          "expect": "person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "hangul",
+        "token_class": "single",
+        "collision_classes": [],
+        "context_types": [
+          "plain-prose",
+          "sentence-initial",
+          "particle-attached",
+          "quotation"
+        ],
+        "name_features": [
+          "full-name",
+          "ko-surname-given",
+          "ko-3-syllable"
+        ],
+        "boundary_tags": [
+          "quote-boundary",
+          "particle-excluded",
+          "punctuation-adjacent"
+        ],
+        "contrast_classes": [
+          "ko-separator-punctuation",
+          "ko-copula-quotative"
+        ],
+        "familiarity_basis": "author-judgment"
+      },
+      "ambiguity": {
+        "level": "unambiguous"
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
       "id": "person/ko/punctuation-boundary/fullwidth-comma-between-names",
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "ko",
       "title": "Two names separated by a full-width comma",
@@ -106,7 +223,8 @@
           "adjacent-names",
           "no-space",
           "particle-excluded"
-        ]
+        ],
+        "familiarity_basis": "author-judgment"
       },
       "ambiguity": {
         "level": "unambiguous"
@@ -123,7 +241,7 @@
     },
     {
       "id": "person/ko/punctuation-boundary/honorific-nim-then-tilde",
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "ko",
       "title": "Name with attached honorific 님 followed by a tilde",
@@ -156,7 +274,8 @@
           "punctuation-adjacent",
           "honorific-excluded",
           "no-space"
-        ]
+        ],
+        "familiarity_basis": "author-judgment"
       },
       "ambiguity": {
         "level": "unambiguous"
@@ -173,7 +292,7 @@
     },
     {
       "id": "person/ko/punctuation-boundary/hyphen-between-names-couple",
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "ko",
       "title": "Two names joined by a hyphen before 부부",
@@ -213,7 +332,8 @@
           "hyphen-boundary",
           "adjacent-names",
           "no-space"
-        ]
+        ],
+        "familiarity_basis": "author-judgment"
       },
       "ambiguity": {
         "level": "unambiguous"
@@ -230,7 +350,7 @@
     },
     {
       "id": "person/ko/punctuation-boundary/korean-ellipsis-after-name",
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "ko",
       "title": "Name followed directly by the ellipsis character …",
@@ -261,7 +381,8 @@
         ],
         "boundary_tags": [
           "punctuation-adjacent"
-        ]
+        ],
+        "familiarity_basis": "author-judgment"
       },
       "ambiguity": {
         "level": "unambiguous"
@@ -278,7 +399,7 @@
     },
     {
       "id": "person/ko/punctuation-boundary/lenticular-brackets-around-name",
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "ko",
       "title": "Name inside lenticular brackets 【 】",
@@ -312,7 +433,8 @@
           "punctuation-adjacent",
           "honorific-excluded",
           "parenthetical-boundary"
-        ]
+        ],
+        "familiarity_basis": "author-judgment"
       },
       "ambiguity": {
         "level": "unambiguous"
@@ -328,8 +450,68 @@
       }
     },
     {
+      "id": "person/ko/punctuation-boundary/middle-dot-pair",
+      "schema_version": "1.1.0",
+      "entity_type": "PERSON",
+      "language": "ko",
+      "title": "Two names joined by a middle dot",
+      "why": "A middle dot (·) between two names is common in Korean headings; it sits inside one whitespace token.",
+      "text": "김서진·이도하 공동 연구가 발표됐다.",
+      "expectations": [
+        {
+          "start": 0,
+          "end": 3,
+          "surface": "김서진",
+          "expect": "person"
+        },
+        {
+          "start": 4,
+          "end": 7,
+          "surface": "이도하",
+          "expect": "person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "hangul",
+        "token_class": "single",
+        "collision_classes": [],
+        "context_types": [
+          "plain-prose",
+          "list-or-enumeration"
+        ],
+        "name_features": [
+          "full-name",
+          "ko-surname-given",
+          "ko-3-syllable"
+        ],
+        "boundary_tags": [
+          "no-space",
+          "punctuation-adjacent",
+          "adjacent-names"
+        ],
+        "contrast_classes": [
+          "ko-separator-punctuation"
+        ],
+        "familiarity_basis": "author-judgment"
+      },
+      "ambiguity": {
+        "level": "unambiguous"
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
       "id": "person/ko/punctuation-boundary/name-in-parentheses-then-particle",
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "ko",
       "title": "Name in parentheses followed by a particle after the closing parenthesis",
@@ -362,7 +544,8 @@
         "boundary_tags": [
           "parenthetical-boundary",
           "particle-excluded"
-        ]
+        ],
+        "familiarity_basis": "author-judgment"
       },
       "ambiguity": {
         "level": "unambiguous"
@@ -379,7 +562,7 @@
     },
     {
       "id": "person/ko/punctuation-boundary/question-mark-after-vocative",
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "ko",
       "title": "Given name with vocative and a question mark",
@@ -411,7 +594,8 @@
         "boundary_tags": [
           "punctuation-adjacent",
           "suffix-excluded"
-        ]
+        ],
+        "familiarity_basis": "author-judgment"
       },
       "ambiguity": {
         "level": "unambiguous"
@@ -427,8 +611,69 @@
       }
     },
     {
+      "id": "person/ko/punctuation-boundary/rare-surname-middle-dot-pair",
+      "schema_version": "1.1.0",
+      "entity_type": "PERSON",
+      "language": "ko",
+      "title": "Two rare names joined by a middle dot",
+      "why": "Middle-dot coordination of rare names. The surname is uncommon in Korean, so name frequency gives no cue and the boundary must come from the structure.",
+      "text": "탁서윤·옹지후 공동 연구가 발표됐다.",
+      "expectations": [
+        {
+          "start": 0,
+          "end": 3,
+          "surface": "탁서윤",
+          "expect": "person"
+        },
+        {
+          "start": 4,
+          "end": 7,
+          "surface": "옹지후",
+          "expect": "person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "rare",
+        "script": "hangul",
+        "token_class": "single",
+        "collision_classes": [],
+        "context_types": [
+          "plain-prose",
+          "list-or-enumeration"
+        ],
+        "name_features": [
+          "full-name",
+          "ko-surname-given",
+          "ko-3-syllable",
+          "ko-rare-surname"
+        ],
+        "boundary_tags": [
+          "no-space",
+          "punctuation-adjacent",
+          "adjacent-names"
+        ],
+        "contrast_classes": [
+          "ko-separator-punctuation"
+        ],
+        "familiarity_basis": "author-judgment"
+      },
+      "ambiguity": {
+        "level": "unambiguous"
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
       "id": "person/ko/punctuation-boundary/semicolon-separated-names",
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "ko",
       "title": "Three names separated by semicolons",
@@ -472,7 +717,8 @@
         "boundary_tags": [
           "punctuation-adjacent",
           "adjacent-names"
-        ]
+        ],
+        "familiarity_basis": "author-judgment"
       },
       "ambiguity": {
         "level": "unambiguous"
@@ -489,7 +735,7 @@
     },
     {
       "id": "person/ko/punctuation-boundary/speaker-label-colon-ko",
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "ko",
       "title": "Speaker label with a colon in a transcript",
@@ -522,7 +768,8 @@
         ],
         "boundary_tags": [
           "punctuation-adjacent"
-        ]
+        ],
+        "familiarity_basis": "author-judgment"
       },
       "ambiguity": {
         "level": "unambiguous"

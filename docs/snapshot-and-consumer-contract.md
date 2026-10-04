@@ -19,6 +19,7 @@ snapshots/<snapshot_id>/
   taxonomy.json                            vocabularies, language profiles, span conventions
   projections.json                         the projection ruleset that produced fixtures.jsonl
   slice-report.json                        slice counts, target results, waivers, known gaps
+  references/name-frequency-bands.json    derived surname bands cited by reference-frequency cases (present from Beta 1 when any case cites one)
   schemas/*.schema.json                    schemas the content conforms to
 ```
 

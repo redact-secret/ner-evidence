@@ -2,7 +2,7 @@
   "cases": [
     {
       "id": "person/en/adjacent-names/couple-with-ampersand",
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "en",
       "title": "Two given names joined by an ampersand before a shared surname",
@@ -30,7 +30,8 @@
         ],
         "boundary_tags": [
           "adjacent-names"
-        ]
+        ],
+        "familiarity_basis": "author-judgment"
       },
       "ambiguity": {
         "level": "genuinely-ambiguous",
@@ -48,7 +49,7 @@
     },
     {
       "id": "person/en/adjacent-names/et-al-citation",
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "en",
       "title": "Surname followed by 'et al.'",
@@ -77,7 +78,8 @@
         "boundary_tags": [
           "abbreviation-period",
           "punctuation-adjacent"
-        ]
+        ],
+        "familiarity_basis": "author-judgment"
       },
       "ambiguity": {
         "level": "unambiguous"
@@ -94,7 +96,7 @@
     },
     {
       "id": "person/en/adjacent-names/newline-separated-signatures",
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "en",
       "title": "Two names on consecutive lines in a signature block",
@@ -128,7 +130,8 @@
         ],
         "boundary_tags": [
           "adjacent-names"
-        ]
+        ],
+        "familiarity_basis": "author-judgment"
       },
       "ambiguity": {
         "level": "unambiguous"
@@ -145,7 +148,7 @@
     },
     {
       "id": "person/en/adjacent-names/pipe-separated-table-row",
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "en",
       "title": "Two names in a pipe-separated table row",
@@ -181,7 +184,8 @@
         "boundary_tags": [
           "adjacent-names",
           "punctuation-adjacent"
-        ]
+        ],
+        "familiarity_basis": "author-judgment"
       },
       "ambiguity": {
         "level": "unambiguous"
@@ -198,7 +202,7 @@
     },
     {
       "id": "person/en/adjacent-names/sam-lee-kim-one-or-three",
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "en",
       "title": "Three adjacent tokens that may be one, two or three people",
@@ -226,7 +230,8 @@
         ],
         "boundary_tags": [
           "adjacent-names"
-        ]
+        ],
+        "familiarity_basis": "author-judgment"
       },
       "ambiguity": {
         "level": "genuinely-ambiguous",
@@ -244,7 +249,7 @@
     },
     {
       "id": "person/en/adjacent-names/three-names-no-separator",
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "en",
       "title": "Three full names written one after another without separators",
@@ -285,7 +290,8 @@
         ],
         "boundary_tags": [
           "adjacent-names"
-        ]
+        ],
+        "familiarity_basis": "author-judgment"
       },
       "ambiguity": {
         "level": "context-resolvable",
@@ -303,7 +309,7 @@
     },
     {
       "id": "person/en/adjacent-names/titles-in-a-list",
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "en",
       "title": "Several titled surnames in a list",
@@ -347,7 +353,8 @@
           "honorific-excluded",
           "adjacent-names",
           "abbreviation-period"
-        ]
+        ],
+        "familiarity_basis": "author-judgment"
       },
       "ambiguity": {
         "level": "unambiguous"
@@ -364,7 +371,7 @@
     },
     {
       "id": "person/en/adjacent-names/two-surnames-citation",
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "en",
       "title": "Two surnames joined by 'and' in a citation",
@@ -399,7 +406,8 @@
         "boundary_tags": [
           "adjacent-names",
           "digit-adjacent"
-        ]
+        ],
+        "familiarity_basis": "author-judgment"
       },
       "ambiguity": {
         "level": "unambiguous"
