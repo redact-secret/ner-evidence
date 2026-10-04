@@ -1184,7 +1184,7 @@
       "entity_type": "PERSON",
       "language": "ko",
       "title": "Single name that mixes Latin and Hangul",
-      "why": "A given-name-first mixed form such as 'Kim 민수' appears in informal text; the span contains both scripts and is one name.",
+      "why": "A mixed form such as 'Kim 민수' (Latin surname then Hangul given name) appears in informal text; the span contains both scripts and is one name.",
       "text": "Please welcome Kim 민수 to the team.",
       "expectations": [
         {
@@ -1196,7 +1196,7 @@
       ],
       "focus_span": 0,
       "dimensions": {
-        "familiarity": "rare",
+        "familiarity": "common",
         "script": "mixed",
         "token_class": "multi",
         "collision_classes": [],

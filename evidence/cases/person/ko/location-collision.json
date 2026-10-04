@@ -151,7 +151,7 @@
       "entity_type": "PERSON",
       "language": "ko",
       "title": "고양시 starting with the surname 고",
-      "why": "A city name with the surname syllable 고 plus 양시.",
+      "why": "A city name whose first syllable 고 is a surname; the name is 고양 plus the suffix 시, which the span includes.",
       "text": "고양시에 새 도서관이 생겼다.",
       "expectations": [
         {

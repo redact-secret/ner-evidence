@@ -565,7 +565,7 @@
       ],
       "focus_span": 0,
       "dimensions": {
-        "familiarity": "not-applicable",
+        "familiarity": "common",
         "script": "hangul",
         "token_class": "single",
         "collision_classes": [
@@ -576,7 +576,11 @@
           "plain-prose",
           "particle-attached"
         ],
-        "name_features": [],
+        "name_features": [
+          "given-only",
+          "ko-given-only",
+          "ko-given-name-is-common-noun"
+        ],
         "boundary_tags": [
           "particle-excluded"
         ]

@@ -1735,7 +1735,7 @@
       "language": "ko",
       "title": "이 과장님은 휴가다: this manager or Manager Lee",
       "why": "Another 이 + title pattern where demonstrative and surname readings are both grammatical.",
-      "text": "이 과장님은 휴가다.",
+      "text": "이 과장님은 휴가 중이시다.",
       "expectations": [
         {
           "start": 0,

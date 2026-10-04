@@ -493,8 +493,8 @@
       "schema_version": "1.0.0",
       "entity_type": "PERSON",
       "language": "ko",
-      "title": "Common surname with a constructed native-looking given name",
-      "why": "솔뫼 combines native-looking syllables in a combination that appears in no name list.",
+      "title": "Common surname with a rare native-looking given name",
+      "why": "솔뫼 combines native-looking syllables and is rare as a given name (it is also a place name), so little frequency support exists; the surname anchors the PERSON reading.",
       "text": "이솔뫼가 마지막 순서로 발표했다.",
       "expectations": [
         {
@@ -506,7 +506,7 @@
       ],
       "focus_span": 0,
       "dimensions": {
-        "familiarity": "novel",
+        "familiarity": "rare",
         "script": "hangul",
         "token_class": "single",
         "collision_classes": [],
@@ -1211,7 +1211,7 @@
       },
       "ambiguity": {
         "level": "context-resolvable",
-        "note": "The honorific 씨 attaches to a person reference, not to a question word."
+        "note": "The honorific 씨 attaches to a person reference, not to a bare syllable such as the 어 of 어디 or 어제."
       },
       "evidence_class": "authored-adversarial",
       "source_ids": [
@@ -1874,7 +1874,7 @@
       },
       "ambiguity": {
         "level": "context-resolvable",
-        "note": "A single syllable followed by 씨 is a surname reference, though 탁 also means 'table-like'."
+        "note": "A single syllable followed by 씨 is a surname reference, though 탁 is also an onomatopoeic adverb (thud)."
       },
       "evidence_class": "authored-adversarial",
       "source_ids": [

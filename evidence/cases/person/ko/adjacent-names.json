@@ -304,7 +304,7 @@
       }
     },
     {
-      "id": "person/ko/adjacent-names/two-names-with-comma-no-space-and-title",
+      "id": "person/ko/adjacent-names/two-titled-names-comma-separated",
       "schema_version": "1.0.0",
       "entity_type": "PERSON",
       "language": "ko",

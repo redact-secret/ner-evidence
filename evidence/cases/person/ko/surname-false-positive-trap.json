@@ -1375,7 +1375,7 @@
       "language": "ko",
       "title": "이 as the numeral two",
       "why": "The Sino-Korean numeral 이 ('two') is the same syllable as the surname 이.",
-      "text": "이 더하기 삼은 오다.",
+      "text": "이 더하기 삼은 오입니다.",
       "expectations": [
         {
           "start": 0,
