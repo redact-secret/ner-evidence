@@ -1,0 +1,530 @@
+{
+  "cases": [
+    {
+      "id": "person/ko/spacing-variation/age-in-parentheses",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "ko",
+      "title": "Name followed by an age in parentheses",
+      "why": "News style: name, age in parentheses, then a particle. Digits and parentheses are not part of the name.",
+      "text": "김민수(35)는 오전에 체포되었다.",
+      "expectations": [
+        {
+          "start": 0,
+          "end": 3,
+          "surface": "김민수",
+          "expect": "person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "hangul",
+        "token_class": "single",
+        "collision_classes": [],
+        "context_types": [
+          "plain-prose",
+          "particle-attached",
+          "parenthetical"
+        ],
+        "name_features": [
+          "full-name",
+          "ko-surname-given",
+          "ko-3-syllable"
+        ],
+        "boundary_tags": [
+          "parenthetical-boundary",
+          "digit-adjacent",
+          "particle-excluded"
+        ]
+      },
+      "ambiguity": {
+        "level": "unambiguous"
+      },
+      "evidence_class": "authored-baseline",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/ko/spacing-variation/comma-list-without-spaces",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "ko",
+      "title": "Three names separated by commas without spaces",
+      "why": "Comma-separated names with no whitespace form one long token; boundary logic that splits only on whitespace would see a single token.",
+      "text": "김민수,박지은,이서연이 참석했다.",
+      "expectations": [
+        {
+          "start": 0,
+          "end": 3,
+          "surface": "김민수",
+          "expect": "person"
+        },
+        {
+          "start": 4,
+          "end": 7,
+          "surface": "박지은",
+          "expect": "person"
+        },
+        {
+          "start": 8,
+          "end": 11,
+          "surface": "이서연",
+          "expect": "person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "hangul",
+        "token_class": "single",
+        "collision_classes": [],
+        "context_types": [
+          "plain-prose",
+          "particle-attached",
+          "list-or-enumeration"
+        ],
+        "name_features": [
+          "full-name",
+          "ko-surname-given",
+          "ko-3-syllable"
+        ],
+        "boundary_tags": [
+          "no-space",
+          "punctuation-adjacent",
+          "particle-excluded"
+        ]
+      },
+      "ambiguity": {
+        "level": "unambiguous"
+      },
+      "evidence_class": "authored-baseline",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/ko/spacing-variation/corner-brackets-around-name",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "ko",
+      "title": "Name inside Japanese-style corner brackets",
+      "why": "Corner brackets 「」 are used for quotation and titles in Korean text; they touch the name and are excluded.",
+      "text": "「김민수」는 소설 속 인물이다.",
+      "expectations": [
+        {
+          "start": 1,
+          "end": 4,
+          "surface": "김민수",
+          "expect": "person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "hangul",
+        "token_class": "single",
+        "collision_classes": [],
+        "context_types": [
+          "quotation",
+          "particle-attached"
+        ],
+        "name_features": [
+          "full-name",
+          "ko-surname-given",
+          "ko-3-syllable"
+        ],
+        "boundary_tags": [
+          "quote-boundary",
+          "punctuation-adjacent",
+          "particle-excluded"
+        ]
+      },
+      "ambiguity": {
+        "level": "unambiguous"
+      },
+      "evidence_class": "authored-baseline",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/ko/spacing-variation/double-space-inside-name",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "ko",
+      "title": "Name with a double ASCII space inside",
+      "why": "Double spaces occur in copy-pasted forms and OCR output; the name is still one span and includes both spaces.",
+      "text": "담당자: 김  민수입니다.",
+      "expectations": [
+        {
+          "start": 5,
+          "end": 10,
+          "surface": "김  민수",
+          "expect": "person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "hangul",
+        "token_class": "multi",
+        "collision_classes": [],
+        "context_types": [
+          "structured-text",
+          "particle-attached"
+        ],
+        "name_features": [
+          "full-name",
+          "ko-surname-given",
+          "ko-spaced"
+        ],
+        "boundary_tags": [
+          "extra-spacing",
+          "particle-excluded"
+        ]
+      },
+      "ambiguity": {
+        "level": "unambiguous"
+      },
+      "evidence_class": "authored-baseline",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/ko/spacing-variation/ideographic-space-inside-name",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "ko",
+      "title": "Name with an ideographic (full-width) space between surname and given name",
+      "why": "U+3000 is a whitespace character that does not look like an ASCII space. It sits inside the span, so whitespace-splitting logic must treat it like the ordinary spaced-name case.",
+      "text": "김　민수는 오전에 도착했다.",
+      "expectations": [
+        {
+          "start": 0,
+          "end": 4,
+          "surface": "김　민수",
+          "expect": "person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "hangul",
+        "token_class": "multi",
+        "collision_classes": [],
+        "context_types": [
+          "plain-prose",
+          "particle-attached"
+        ],
+        "name_features": [
+          "full-name",
+          "ko-surname-given",
+          "ko-spaced"
+        ],
+        "boundary_tags": [
+          "extra-spacing",
+          "particle-excluded"
+        ]
+      },
+      "ambiguity": {
+        "level": "unambiguous"
+      },
+      "evidence_class": "authored-baseline",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/ko/spacing-variation/middle-dot-between-names",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "ko",
+      "title": "Two names joined by the middle dot ·",
+      "why": "The middle dot is a common separator for co-authors; it is punctuation between two spans.",
+      "text": "김민수·박지은 공동 연구팀이 상을 받았다.",
+      "expectations": [
+        {
+          "start": 0,
+          "end": 3,
+          "surface": "김민수",
+          "expect": "person"
+        },
+        {
+          "start": 4,
+          "end": 7,
+          "surface": "박지은",
+          "expect": "person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "hangul",
+        "token_class": "single",
+        "collision_classes": [],
+        "context_types": [
+          "plain-prose",
+          "list-or-enumeration"
+        ],
+        "name_features": [
+          "full-name",
+          "ko-surname-given",
+          "ko-3-syllable"
+        ],
+        "boundary_tags": [
+          "no-space",
+          "punctuation-adjacent"
+        ]
+      },
+      "ambiguity": {
+        "level": "unambiguous"
+      },
+      "evidence_class": "authored-baseline",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/ko/spacing-variation/single-quotes-with-quotative",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "ko",
+      "title": "Name in single quotes followed by the quotative 라고",
+      "why": "Quotation marks plus the quotative particle 라고 on a vowel-final name; two different boundary conventions meet.",
+      "text": "'김민수'라고 적혀 있었다.",
+      "expectations": [
+        {
+          "start": 1,
+          "end": 4,
+          "surface": "김민수",
+          "expect": "person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "hangul",
+        "token_class": "single",
+        "collision_classes": [],
+        "context_types": [
+          "quotation",
+          "particle-attached"
+        ],
+        "name_features": [
+          "full-name",
+          "ko-surname-given",
+          "ko-3-syllable"
+        ],
+        "boundary_tags": [
+          "quote-boundary",
+          "punctuation-adjacent",
+          "particle-excluded"
+        ]
+      },
+      "ambiguity": {
+        "level": "unambiguous"
+      },
+      "evidence_class": "authored-baseline",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      },
+      "projections_excluded": [
+        {
+          "projection_id": "quoted",
+          "reason": "The projection wraps the text in another pair of quotation marks, which would nest with the quotes this case is about and change what it tests."
+        }
+      ]
+    },
+    {
+      "id": "person/ko/spacing-variation/slash-between-names",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "ko",
+      "title": "Two names separated by a slash",
+      "why": "A slash with no spaces between two full names, as in a reviewer or owner column.",
+      "text": "담당자: 김민수/박지은",
+      "expectations": [
+        {
+          "start": 5,
+          "end": 8,
+          "surface": "김민수",
+          "expect": "person"
+        },
+        {
+          "start": 9,
+          "end": 12,
+          "surface": "박지은",
+          "expect": "person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "hangul",
+        "token_class": "single",
+        "collision_classes": [],
+        "context_types": [
+          "structured-text",
+          "list-or-enumeration"
+        ],
+        "name_features": [
+          "full-name",
+          "ko-surname-given",
+          "ko-3-syllable"
+        ],
+        "boundary_tags": [
+          "no-space",
+          "punctuation-adjacent"
+        ]
+      },
+      "ambiguity": {
+        "level": "unambiguous"
+      },
+      "evidence_class": "authored-baseline",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/ko/spacing-variation/space-between-surname-and-given",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "ko",
+      "title": "Spaced name with a space after the surname",
+      "why": "Some forms write the surname and given name separately (김 민수). Per the taxonomy, internal spacing does not split the span.",
+      "text": "김 민수는 오전에 도착했다.",
+      "expectations": [
+        {
+          "start": 0,
+          "end": 4,
+          "surface": "김 민수",
+          "expect": "person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "hangul",
+        "token_class": "multi",
+        "collision_classes": [],
+        "context_types": [
+          "plain-prose",
+          "particle-attached"
+        ],
+        "name_features": [
+          "full-name",
+          "ko-surname-given",
+          "ko-spaced"
+        ],
+        "boundary_tags": [
+          "extra-spacing",
+          "particle-excluded"
+        ]
+      },
+      "ambiguity": {
+        "level": "unambiguous"
+      },
+      "evidence_class": "authored-baseline",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/ko/spacing-variation/space-in-the-middle-of-given-name",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "ko",
+      "title": "Irregular space inside the given name",
+      "why": "Informal text sometimes inserts a space inside the given name (김민 수). The whole string is one person.",
+      "text": "김민 수는 오전에 도착했다.",
+      "expectations": [
+        {
+          "start": 0,
+          "end": 4,
+          "surface": "김민 수",
+          "expect": "person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "hangul",
+        "token_class": "multi",
+        "collision_classes": [],
+        "context_types": [
+          "plain-prose",
+          "particle-attached"
+        ],
+        "name_features": [
+          "full-name",
+          "ko-spaced"
+        ],
+        "boundary_tags": [
+          "extra-spacing",
+          "particle-excluded"
+        ]
+      },
+      "ambiguity": {
+        "level": "context-resolvable",
+        "note": "A space inside a three-syllable name is a typing variant; the following topic particle and verb show it is one referent."
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    }
+  ]
+}

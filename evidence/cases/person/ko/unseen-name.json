@@ -1,0 +1,436 @@
+{
+  "cases": [
+    {
+      "id": "person/ko/unseen-name/constructed-given-name-jyuno",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "ko",
+      "title": "Common surname with a constructed given name",
+      "why": "The given name is constructed with an unusual syllable (쥬) so no name list contains it; the surname alone anchors the PERSON reading.",
+      "text": "김쥬노는 발표를 시작했다.",
+      "expectations": [
+        {
+          "start": 0,
+          "end": 3,
+          "surface": "김쥬노",
+          "expect": "person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "novel",
+        "script": "hangul",
+        "token_class": "single",
+        "collision_classes": [],
+        "context_types": [
+          "plain-prose",
+          "particle-attached"
+        ],
+        "name_features": [
+          "full-name",
+          "ko-surname-given",
+          "ko-3-syllable"
+        ],
+        "boundary_tags": [
+          "particle-excluded"
+        ]
+      },
+      "ambiguity": {
+        "level": "unambiguous"
+      },
+      "evidence_class": "authored-baseline",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/ko/unseen-name/constructed-given-name-rael",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "ko",
+      "title": "Constructed given name beginning with a vowel syllable",
+      "why": "Constructed name 라엘; tests a name that does not follow any common Korean given-name pattern.",
+      "text": "이라엘이 문서를 검토했다.",
+      "expectations": [
+        {
+          "start": 0,
+          "end": 3,
+          "surface": "이라엘",
+          "expect": "person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "novel",
+        "script": "hangul",
+        "token_class": "single",
+        "collision_classes": [],
+        "context_types": [
+          "plain-prose",
+          "particle-attached"
+        ],
+        "name_features": [
+          "full-name",
+          "ko-surname-given",
+          "ko-3-syllable"
+        ],
+        "boundary_tags": [
+          "particle-excluded"
+        ]
+      },
+      "ambiguity": {
+        "level": "unambiguous"
+      },
+      "evidence_class": "authored-baseline",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/ko/unseen-name/constructed-two-syllable-jen",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "ko",
+      "title": "Constructed two-syllable name with a loanword-style given syllable",
+      "why": "A short constructed name whose given syllable (젠) is a transliteration-style syllable rather than a native given-name syllable.",
+      "text": "박젠은 늦게 왔다.",
+      "expectations": [
+        {
+          "start": 0,
+          "end": 2,
+          "surface": "박젠",
+          "expect": "person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "novel",
+        "script": "hangul",
+        "token_class": "single",
+        "collision_classes": [],
+        "context_types": [
+          "plain-prose",
+          "particle-attached"
+        ],
+        "name_features": [
+          "full-name",
+          "ko-surname-given",
+          "ko-2-syllable"
+        ],
+        "boundary_tags": [
+          "particle-excluded"
+        ]
+      },
+      "ambiguity": {
+        "level": "unambiguous"
+      },
+      "evidence_class": "authored-baseline",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/ko/unseen-name/hangul-transliterated-foreign-full-name",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "ko",
+      "title": "Foreign full name transliterated into Hangul",
+      "why": "A non-Korean full name written in Hangul with a space. The name is a person but follows no Korean surname/given structure.",
+      "text": "올리비아 브란트가 발표를 맡았다.",
+      "expectations": [
+        {
+          "start": 0,
+          "end": 8,
+          "surface": "올리비아 브란트",
+          "expect": "person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "rare",
+        "script": "hangul",
+        "token_class": "multi",
+        "collision_classes": [],
+        "context_types": [
+          "plain-prose",
+          "particle-attached"
+        ],
+        "name_features": [
+          "full-name"
+        ],
+        "boundary_tags": [
+          "particle-excluded"
+        ]
+      },
+      "ambiguity": {
+        "level": "unambiguous"
+      },
+      "evidence_class": "authored-baseline",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/ko/unseen-name/hangul-transliterated-foreign-given",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "ko",
+      "title": "Foreign given name transliterated into Hangul",
+      "why": "A single-token transliterated name; the Hangul spelling is the only cue and the token is also an ordinary-looking syllable sequence.",
+      "text": "마리아는 오전에 도착했다.",
+      "expectations": [
+        {
+          "start": 0,
+          "end": 3,
+          "surface": "마리아",
+          "expect": "person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "rare",
+        "script": "hangul",
+        "token_class": "single",
+        "collision_classes": [],
+        "context_types": [
+          "plain-prose",
+          "particle-attached"
+        ],
+        "name_features": [
+          "given-only"
+        ],
+        "boundary_tags": [
+          "particle-excluded"
+        ]
+      },
+      "ambiguity": {
+        "level": "unambiguous"
+      },
+      "evidence_class": "authored-baseline",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/ko/unseen-name/rare-surname-bin",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "ko",
+      "title": "Rare surname 빈 that is also a common syllable",
+      "why": "빈 means 'empty' as a syllable and is a rare surname; the full name is a person even though the first syllable has a common lexical reading.",
+      "text": "빈하율을 아는 사람이 없었다.",
+      "expectations": [
+        {
+          "start": 0,
+          "end": 3,
+          "surface": "빈하율",
+          "expect": "person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "rare",
+        "script": "hangul",
+        "token_class": "single",
+        "collision_classes": [],
+        "context_types": [
+          "plain-prose",
+          "particle-attached"
+        ],
+        "name_features": [
+          "full-name",
+          "ko-surname-given",
+          "ko-3-syllable",
+          "ko-rare-surname"
+        ],
+        "boundary_tags": [
+          "particle-excluded"
+        ]
+      },
+      "ambiguity": {
+        "level": "unambiguous"
+      },
+      "evidence_class": "authored-baseline",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/ko/unseen-name/rare-surname-eo",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "ko",
+      "title": "Very rare one-syllable surname 어",
+      "why": "A real but uncommon surname written with a single common-looking syllable; without a surname list, 어재윤 is easily read as a common word plus a given name.",
+      "text": "어재윤이 보고서를 제출했다.",
+      "expectations": [
+        {
+          "start": 0,
+          "end": 3,
+          "surface": "어재윤",
+          "expect": "person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "rare",
+        "script": "hangul",
+        "token_class": "single",
+        "collision_classes": [],
+        "context_types": [
+          "plain-prose",
+          "particle-attached"
+        ],
+        "name_features": [
+          "full-name",
+          "ko-surname-given",
+          "ko-3-syllable",
+          "ko-rare-surname"
+        ],
+        "boundary_tags": [
+          "particle-excluded"
+        ]
+      },
+      "ambiguity": {
+        "level": "unambiguous"
+      },
+      "evidence_class": "authored-baseline",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/ko/unseen-name/rare-surname-paeng",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "ko",
+      "title": "Rare surname 팽 as the head of a new role",
+      "why": "A rare surname in a subject position with a promotion predicate; checks that rarity alone does not push a detector to PERSON-negative.",
+      "text": "팽도현이 새 팀장이 되었다.",
+      "expectations": [
+        {
+          "start": 0,
+          "end": 3,
+          "surface": "팽도현",
+          "expect": "person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "rare",
+        "script": "hangul",
+        "token_class": "single",
+        "collision_classes": [],
+        "context_types": [
+          "plain-prose",
+          "particle-attached"
+        ],
+        "name_features": [
+          "full-name",
+          "ko-surname-given",
+          "ko-3-syllable",
+          "ko-rare-surname"
+        ],
+        "boundary_tags": [
+          "particle-excluded"
+        ]
+      },
+      "ambiguity": {
+        "level": "unambiguous"
+      },
+      "evidence_class": "authored-baseline",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/ko/unseen-name/rare-surname-tak",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "ko",
+      "title": "Rare surname 탁 with a common-looking given name",
+      "why": "Rare surname plus a given name that is common in other combinations; tests that a rare first syllable does not cancel the name reading.",
+      "text": "탁서진은 오늘 휴가다.",
+      "expectations": [
+        {
+          "start": 0,
+          "end": 3,
+          "surface": "탁서진",
+          "expect": "person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "rare",
+        "script": "hangul",
+        "token_class": "single",
+        "collision_classes": [],
+        "context_types": [
+          "plain-prose",
+          "particle-attached"
+        ],
+        "name_features": [
+          "full-name",
+          "ko-surname-given",
+          "ko-3-syllable",
+          "ko-rare-surname"
+        ],
+        "boundary_tags": [
+          "particle-excluded"
+        ]
+      },
+      "ambiguity": {
+        "level": "unambiguous"
+      },
+      "evidence_class": "authored-baseline",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    }
+  ]
+}

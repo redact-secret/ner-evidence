@@ -1,0 +1,405 @@
+{
+  "cases": [
+    {
+      "id": "person/ko/organization-collision/choegang-chicken-brand",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "ko",
+      "title": "Fictional brand 최강 치킨 containing two surname syllables",
+      "why": "최강 ('the strongest') is built from the surnames 최 and 강. In the fictional brand name 최강 치킨 no person is mentioned.",
+      "text": "최강 치킨이 새 매장을 열었다.",
+      "expectations": [
+        {
+          "start": 0,
+          "end": 5,
+          "surface": "최강 치킨",
+          "expect": "not-person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "not-applicable",
+        "script": "hangul",
+        "token_class": "multi",
+        "collision_classes": [
+          "organization",
+          "common-word"
+        ],
+        "context_types": [
+          "plain-prose",
+          "sentence-initial",
+          "particle-attached",
+          "no-person"
+        ],
+        "name_features": [],
+        "boundary_tags": [
+          "particle-excluded"
+        ]
+      },
+      "ambiguity": {
+        "level": "context-resolvable",
+        "note": "'Opened a new store' is something a business does."
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/ko/organization-collision/emart-store",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "ko",
+      "title": "이마트 starting with the surname 이",
+      "why": "A retail chain name beginning with 이 plus 마트 ('mart').",
+      "text": "이마트에서 장을 봤다.",
+      "expectations": [
+        {
+          "start": 0,
+          "end": 3,
+          "surface": "이마트",
+          "expect": "not-person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "not-applicable",
+        "script": "hangul",
+        "token_class": "single",
+        "collision_classes": [
+          "organization"
+        ],
+        "context_types": [
+          "plain-prose",
+          "sentence-initial",
+          "particle-attached",
+          "no-person"
+        ],
+        "name_features": [],
+        "boundary_tags": [
+          "particle-excluded"
+        ]
+      },
+      "ambiguity": {
+        "level": "context-resolvable",
+        "note": "Shopping for groceries 'at X' selects a store."
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/ko/organization-collision/fictional-accounting-firm",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "ko",
+      "title": "Fictional firm 박앤이 세무회계 made of two surnames",
+      "why": "A firm name made of two surnames joined by 앤 ('and'), followed by a business description. No person is mentioned.",
+      "text": "박앤이 세무회계에서 연락이 왔다.",
+      "expectations": [
+        {
+          "start": 0,
+          "end": 8,
+          "surface": "박앤이 세무회계",
+          "expect": "not-person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "not-applicable",
+        "script": "hangul",
+        "token_class": "multi",
+        "collision_classes": [
+          "organization"
+        ],
+        "context_types": [
+          "plain-prose",
+          "particle-attached",
+          "no-person"
+        ],
+        "name_features": [],
+        "boundary_tags": [
+          "particle-excluded"
+        ]
+      },
+      "ambiguity": {
+        "level": "context-resolvable",
+        "note": "'Called from X' with the business descriptor 세무회계 marks an office."
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/ko/organization-collision/hanwha-company-subject",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "ko",
+      "title": "한화 starting with the surname 한",
+      "why": "A conglomerate name beginning with the common surname 한, written like a one-syllable name plus a noun.",
+      "text": "한화는 올해 새 공장을 지었다.",
+      "expectations": [
+        {
+          "start": 0,
+          "end": 2,
+          "surface": "한화",
+          "expect": "not-person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "not-applicable",
+        "script": "hangul",
+        "token_class": "single",
+        "collision_classes": [
+          "organization"
+        ],
+        "context_types": [
+          "plain-prose",
+          "sentence-initial",
+          "particle-attached",
+          "no-person"
+        ],
+        "name_features": [],
+        "boundary_tags": [
+          "particle-excluded"
+        ]
+      },
+      "ambiguity": {
+        "level": "context-resolvable",
+        "note": "'Built a new factory this year' is a corporate action."
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/ko/organization-collision/honest-pharmacy-name",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "ko",
+      "title": "Fictional pharmacy 정직한 약국 starting with the surname syllable 정",
+      "why": "정직한 means 'honest' and begins with 정; the business name is a descriptor plus 약국 ('pharmacy').",
+      "text": "정직한 약국은 일요일에 쉰다.",
+      "expectations": [
+        {
+          "start": 0,
+          "end": 6,
+          "surface": "정직한 약국",
+          "expect": "not-person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "not-applicable",
+        "script": "hangul",
+        "token_class": "multi",
+        "collision_classes": [
+          "organization",
+          "common-word"
+        ],
+        "context_types": [
+          "plain-prose",
+          "sentence-initial",
+          "particle-attached",
+          "no-person"
+        ],
+        "name_features": [],
+        "boundary_tags": [
+          "particle-excluded"
+        ]
+      },
+      "ambiguity": {
+        "level": "context-resolvable",
+        "note": "'Closed on Sundays' describes a business."
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/ko/organization-collision/hyundai-motor-company",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "ko",
+      "title": "현대자동차 starting with the syllable 현",
+      "why": "A company name beginning with the syllable 현 and ending with 자동차 ('automobile').",
+      "text": "현대자동차가 신차를 발표했다.",
+      "expectations": [
+        {
+          "start": 0,
+          "end": 5,
+          "surface": "현대자동차",
+          "expect": "not-person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "not-applicable",
+        "script": "hangul",
+        "token_class": "single",
+        "collision_classes": [
+          "organization"
+        ],
+        "context_types": [
+          "plain-prose",
+          "sentence-initial",
+          "particle-attached",
+          "no-person"
+        ],
+        "name_features": [],
+        "boundary_tags": [
+          "particle-excluded"
+        ]
+      },
+      "ambiguity": {
+        "level": "context-resolvable",
+        "note": "'Announced a new car' is something a manufacturer does."
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/ko/organization-collision/person-works-at-namesake-firm",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "ko",
+      "title": "A person working at a firm named with two surnames",
+      "why": "The full name 김민수 and the fictional firm 박앤이 세무회계 share no characters, but both contain surname syllables. One is a person and the other an organization.",
+      "text": "김민수는 박앤이 세무회계에서 일한다.",
+      "expectations": [
+        {
+          "start": 0,
+          "end": 3,
+          "surface": "김민수",
+          "expect": "person"
+        },
+        {
+          "start": 5,
+          "end": 13,
+          "surface": "박앤이 세무회계",
+          "expect": "not-person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "hangul",
+        "token_class": "single",
+        "collision_classes": [
+          "organization"
+        ],
+        "context_types": [
+          "plain-prose",
+          "particle-attached"
+        ],
+        "name_features": [
+          "full-name",
+          "ko-surname-given",
+          "ko-3-syllable"
+        ],
+        "boundary_tags": [
+          "particle-excluded"
+        ]
+      },
+      "ambiguity": {
+        "level": "context-resolvable",
+        "note": "'Works at X' with the locative 에서 marks the second as an employer; the first takes the topic marker."
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/ko/organization-collision/shin-ramyun-product",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "ko",
+      "title": "신라면 starting with the surname 신",
+      "why": "A packaged-noodle brand beginning with 신 and followed by the common noun 라면.",
+      "text": "신라면을 끓여 먹었다.",
+      "expectations": [
+        {
+          "start": 0,
+          "end": 3,
+          "surface": "신라면",
+          "expect": "not-person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "not-applicable",
+        "script": "hangul",
+        "token_class": "single",
+        "collision_classes": [
+          "product-brand"
+        ],
+        "context_types": [
+          "plain-prose",
+          "sentence-initial",
+          "particle-attached",
+          "no-person"
+        ],
+        "name_features": [],
+        "boundary_tags": [
+          "particle-excluded"
+        ]
+      },
+      "ambiguity": {
+        "level": "context-resolvable",
+        "note": "Boiling and eating selects a food product."
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    }
+  ]
+}

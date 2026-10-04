@@ -32,6 +32,7 @@ a separate record: a wrapper never carries expectations, so it cannot be a reaso
 | Field | Meaning |
 | --- | --- |
 | `id` | `person/<language>/<group>/<slug>`. Semantic only: no issue numbers, stages, model names or scores. Group must exist in `case_groups` and be defined for the language. |
+| `language` | Language profile of the **focus name**, not necessarily of the sentence: a romanized Korean name inside an English sentence is a `ko` case (a Hangul name inside English text is `ko` too; English cases that contain Hangul must be tagged `mixed-script-sentence`). |
 | `title`, `why` | What is tested, and why the case exists. `why` must explain the failure mode, not restate the title. |
 | `text` | NFC-normalized context, at most 600 code points, no control characters. |
 | `expectations[]` | Exact spans: `start`/`end` (code points, half-open), `surface`, `expect`. |

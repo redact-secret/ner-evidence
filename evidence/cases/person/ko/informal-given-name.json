@@ -1,0 +1,349 @@
+{
+  "cases": [
+    {
+      "id": "person/ko/informal-given-name/given-name-possessive-ui",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "ko",
+      "title": "Given name with the possessive 의",
+      "why": "The possessive particle 의 attached to a given name; also the sentence starts with 이것 whose first syllable equals a common surname, which is not a mention here.",
+      "text": "이것은 수진의 가방이다.",
+      "expectations": [
+        {
+          "start": 4,
+          "end": 6,
+          "surface": "수진",
+          "expect": "person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "hangul",
+        "token_class": "single",
+        "collision_classes": [],
+        "context_types": [
+          "plain-prose",
+          "particle-attached"
+        ],
+        "name_features": [
+          "given-only",
+          "ko-given-only"
+        ],
+        "boundary_tags": [
+          "particle-excluded"
+        ]
+      },
+      "ambiguity": {
+        "level": "unambiguous"
+      },
+      "evidence_class": "authored-baseline",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/ko/informal-given-name/given-name-topic-chulsu",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "ko",
+      "title": "Very common given name alone with the topic marker",
+      "why": "The prototypical placeholder-style given name used alone with a particle; a baseline for the given-only shape.",
+      "text": "철수는 학교에 갔다.",
+      "expectations": [
+        {
+          "start": 0,
+          "end": 2,
+          "surface": "철수",
+          "expect": "person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "hangul",
+        "token_class": "single",
+        "collision_classes": [],
+        "context_types": [
+          "plain-prose",
+          "particle-attached"
+        ],
+        "name_features": [
+          "given-only",
+          "ko-given-only"
+        ],
+        "boundary_tags": [
+          "particle-excluded"
+        ]
+      },
+      "ambiguity": {
+        "level": "unambiguous"
+      },
+      "evidence_class": "authored-baseline",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/ko/informal-given-name/given-name-with-hante",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "ko",
+      "title": "Given name with the colloquial dative 한테",
+      "why": "A colloquial dative after a bare given name in speech-like text.",
+      "text": "어제 영희한테 전화했다.",
+      "expectations": [
+        {
+          "start": 3,
+          "end": 5,
+          "surface": "영희",
+          "expect": "person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "hangul",
+        "token_class": "single",
+        "collision_classes": [],
+        "context_types": [
+          "plain-prose",
+          "particle-attached"
+        ],
+        "name_features": [
+          "given-only",
+          "ko-given-only"
+        ],
+        "boundary_tags": [
+          "particle-excluded"
+        ]
+      },
+      "ambiguity": {
+        "level": "unambiguous"
+      },
+      "evidence_class": "authored-baseline",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/ko/informal-given-name/informal-suffix-i-then-ga",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "ko",
+      "title": "Consonant-final given name with informal suffix 이 plus subject marker 가",
+      "why": "Speakers add the euphonic suffix 이 to consonant-final given names and then a case particle. 민석이가 = 민석 + 이 + 가; only 민석 is the name.",
+      "text": "민석이가 먼저 왔다.",
+      "expectations": [
+        {
+          "start": 0,
+          "end": 2,
+          "surface": "민석",
+          "expect": "person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "hangul",
+        "token_class": "single",
+        "collision_classes": [],
+        "context_types": [
+          "plain-prose",
+          "particle-attached"
+        ],
+        "name_features": [
+          "given-only",
+          "ko-given-only"
+        ],
+        "boundary_tags": [
+          "suffix-excluded",
+          "particle-excluded"
+        ]
+      },
+      "ambiguity": {
+        "level": "context-resolvable",
+        "note": "The suffix 이 and particle 가 could be read as part of a three-syllable name 민석이; the convention excludes the euphonic suffix."
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/ko/informal-given-name/quoted-vocative-with-quotation-verb",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "ko",
+      "title": "Quoted vocative followed by a reporting verb",
+      "why": "A name inside quotation marks with a vocative and an exclamation mark, followed by a quotation verb; several boundaries meet at once.",
+      "text": "\"민수야!\" 하고 불렀다.",
+      "expectations": [
+        {
+          "start": 1,
+          "end": 3,
+          "surface": "민수",
+          "expect": "person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "hangul",
+        "token_class": "single",
+        "collision_classes": [],
+        "context_types": [
+          "dialogue",
+          "quotation",
+          "vocative",
+          "particle-attached"
+        ],
+        "name_features": [
+          "given-only",
+          "ko-given-only"
+        ],
+        "boundary_tags": [
+          "quote-boundary",
+          "suffix-excluded",
+          "punctuation-adjacent"
+        ]
+      },
+      "ambiguity": {
+        "level": "unambiguous"
+      },
+      "evidence_class": "authored-baseline",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      },
+      "projections_excluded": [
+        {
+          "projection_id": "quoted",
+          "reason": "The projection wraps the text in another pair of quotation marks, which would nest with the quotes this case is about and change what it tests."
+        }
+      ]
+    },
+    {
+      "id": "person/ko/informal-given-name/vocative-a",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "ko",
+      "title": "Consonant-final given name with the vocative 아",
+      "why": "The vocative allomorph 아 after a consonant-final name; 지은아 is a person address, not a three-syllable name.",
+      "text": "지은아, 밥 먹자.",
+      "expectations": [
+        {
+          "start": 0,
+          "end": 2,
+          "surface": "지은",
+          "expect": "person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "hangul",
+        "token_class": "single",
+        "collision_classes": [],
+        "context_types": [
+          "dialogue",
+          "vocative",
+          "particle-attached"
+        ],
+        "name_features": [
+          "given-only",
+          "ko-given-only"
+        ],
+        "boundary_tags": [
+          "suffix-excluded",
+          "punctuation-adjacent"
+        ]
+      },
+      "ambiguity": {
+        "level": "unambiguous"
+      },
+      "evidence_class": "authored-baseline",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/ko/informal-given-name/vocative-ya",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "ko",
+      "title": "Given name with the vocative 야",
+      "why": "Direct address to a vowel-final given name. The vocative suffix is excluded; the name is the span.",
+      "text": "민수야, 이리 와.",
+      "expectations": [
+        {
+          "start": 0,
+          "end": 2,
+          "surface": "민수",
+          "expect": "person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "hangul",
+        "token_class": "single",
+        "collision_classes": [],
+        "context_types": [
+          "dialogue",
+          "vocative",
+          "particle-attached"
+        ],
+        "name_features": [
+          "given-only",
+          "ko-given-only"
+        ],
+        "boundary_tags": [
+          "suffix-excluded",
+          "punctuation-adjacent"
+        ]
+      },
+      "ambiguity": {
+        "level": "unambiguous"
+      },
+      "evidence_class": "authored-baseline",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    }
+  ]
+}

@@ -37,7 +37,8 @@
       "enum": [
         "en",
         "ko"
-      ]
+      ],
+      "description": "Language profile of the focus name. The surrounding text may be in another language (a romanized Korean name in an English sentence has language 'ko')."
     },
     "title": {
       "type": "string",

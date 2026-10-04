@@ -1,0 +1,552 @@
+{
+  "cases": [
+    {
+      "id": "person/ko/title-honorific/name-daepyoisa",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "ko",
+      "title": "Full name followed by the title 대표이사",
+      "why": "A corporate title with a four-syllable string; the name is the three syllables before it.",
+      "text": "윤재석 대표이사가 인사말을 했다.",
+      "expectations": [
+        {
+          "start": 0,
+          "end": 3,
+          "surface": "윤재석",
+          "expect": "person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "hangul",
+        "token_class": "single",
+        "collision_classes": [],
+        "context_types": [
+          "plain-prose",
+          "title-honorific",
+          "particle-attached"
+        ],
+        "name_features": [
+          "full-name",
+          "ko-surname-given",
+          "ko-3-syllable"
+        ],
+        "boundary_tags": [
+          "honorific-excluded",
+          "particle-excluded"
+        ]
+      },
+      "ambiguity": {
+        "level": "unambiguous"
+      },
+      "evidence_class": "authored-baseline",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/ko/title-honorific/name-daeri",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "ko",
+      "title": "Full name followed by the job title 대리",
+      "why": "A rank title after the name, a very common office-text pattern.",
+      "text": "이서연 대리가 회의를 진행했다.",
+      "expectations": [
+        {
+          "start": 0,
+          "end": 3,
+          "surface": "이서연",
+          "expect": "person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "hangul",
+        "token_class": "single",
+        "collision_classes": [],
+        "context_types": [
+          "plain-prose",
+          "title-honorific",
+          "particle-attached"
+        ],
+        "name_features": [
+          "full-name",
+          "ko-surname-given",
+          "ko-3-syllable"
+        ],
+        "boundary_tags": [
+          "honorific-excluded",
+          "particle-excluded"
+        ]
+      },
+      "ambiguity": {
+        "level": "unambiguous"
+      },
+      "evidence_class": "authored-baseline",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/ko/title-honorific/name-gyosunim-ui",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "ko",
+      "title": "Full name followed by 교수님 and possessive 의",
+      "why": "Professor title plus a possessive particle; boundary stops after the name, not after the title.",
+      "text": "정하윤 교수님의 강의는 인기가 많다.",
+      "expectations": [
+        {
+          "start": 0,
+          "end": 3,
+          "surface": "정하윤",
+          "expect": "person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "hangul",
+        "token_class": "single",
+        "collision_classes": [],
+        "context_types": [
+          "plain-prose",
+          "title-honorific",
+          "particle-attached"
+        ],
+        "name_features": [
+          "full-name",
+          "ko-surname-given",
+          "ko-3-syllable"
+        ],
+        "boundary_tags": [
+          "honorific-excluded",
+          "particle-excluded"
+        ]
+      },
+      "ambiguity": {
+        "level": "unambiguous"
+      },
+      "evidence_class": "authored-baseline",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/ko/title-honorific/name-nim-kkeseo",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "ko",
+      "title": "Full name followed by honorific 님 and honorific particle 께서",
+      "why": "Two layers of respect markers after the name (님 and 께서); both are excluded.",
+      "text": "박지은 님께서 직접 오셨다.",
+      "expectations": [
+        {
+          "start": 0,
+          "end": 3,
+          "surface": "박지은",
+          "expect": "person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "hangul",
+        "token_class": "single",
+        "collision_classes": [],
+        "context_types": [
+          "plain-prose",
+          "title-honorific",
+          "particle-attached"
+        ],
+        "name_features": [
+          "full-name",
+          "ko-surname-given",
+          "ko-3-syllable"
+        ],
+        "boundary_tags": [
+          "honorific-excluded",
+          "particle-excluded"
+        ]
+      },
+      "ambiguity": {
+        "level": "unambiguous"
+      },
+      "evidence_class": "authored-baseline",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/ko/title-honorific/name-ssi-spaced",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "ko",
+      "title": "Full name followed by the spaced honorific 씨",
+      "why": "씨 is an honorific suffix written as a separate word here. It is excluded from the span by convention.",
+      "text": "김민수 씨는 오전에 다녀갔다.",
+      "expectations": [
+        {
+          "start": 0,
+          "end": 3,
+          "surface": "김민수",
+          "expect": "person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "hangul",
+        "token_class": "single",
+        "collision_classes": [],
+        "context_types": [
+          "plain-prose",
+          "title-honorific",
+          "particle-attached"
+        ],
+        "name_features": [
+          "full-name",
+          "ko-surname-given",
+          "ko-3-syllable"
+        ],
+        "boundary_tags": [
+          "honorific-excluded",
+          "particle-excluded"
+        ]
+      },
+      "ambiguity": {
+        "level": "unambiguous"
+      },
+      "evidence_class": "authored-baseline",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/ko/title-honorific/name-timjang-nim",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "ko",
+      "title": "Full name followed by the title 팀장님",
+      "why": "Title with the honorific 님 attached; the whole title word is excluded.",
+      "text": "최유진 팀장님은 휴가 중이다.",
+      "expectations": [
+        {
+          "start": 0,
+          "end": 3,
+          "surface": "최유진",
+          "expect": "person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "hangul",
+        "token_class": "single",
+        "collision_classes": [],
+        "context_types": [
+          "plain-prose",
+          "title-honorific",
+          "particle-attached"
+        ],
+        "name_features": [
+          "full-name",
+          "ko-surname-given",
+          "ko-3-syllable"
+        ],
+        "boundary_tags": [
+          "honorific-excluded",
+          "particle-excluded"
+        ]
+      },
+      "ambiguity": {
+        "level": "unambiguous"
+      },
+      "evidence_class": "authored-baseline",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/ko/title-honorific/surname-only-bujangnim",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "ko",
+      "title": "Surname 조 followed by the title 부장님 and the honorific particle 께",
+      "why": "A one-syllable surname alone with a title; 조 is also a counter and a prefix in many words, so the title carries the evidence.",
+      "text": "조 부장님께 보고드렸다.",
+      "expectations": [
+        {
+          "start": 0,
+          "end": 1,
+          "surface": "조",
+          "expect": "person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "hangul",
+        "token_class": "single",
+        "collision_classes": [
+          "common-word"
+        ],
+        "context_types": [
+          "plain-prose",
+          "title-honorific",
+          "particle-attached"
+        ],
+        "name_features": [
+          "surname-only"
+        ],
+        "boundary_tags": [
+          "honorific-excluded",
+          "particle-excluded"
+        ]
+      },
+      "ambiguity": {
+        "level": "context-resolvable",
+        "note": "The syllable 조 is also a common lexical item; the following title 부장님 resolves it to a surname."
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/ko/title-honorific/surname-only-seonsaengnim",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "ko",
+      "title": "Surname alone followed by 선생님",
+      "why": "Korean usage commonly addresses a person by surname plus title. The surname alone is the PERSON mention.",
+      "text": "강 선생님은 수업 중이다.",
+      "expectations": [
+        {
+          "start": 0,
+          "end": 1,
+          "surface": "강",
+          "expect": "person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "hangul",
+        "token_class": "single",
+        "collision_classes": [],
+        "context_types": [
+          "plain-prose",
+          "title-honorific",
+          "particle-attached"
+        ],
+        "name_features": [
+          "surname-only"
+        ],
+        "boundary_tags": [
+          "honorific-excluded",
+          "particle-excluded"
+        ]
+      },
+      "ambiguity": {
+        "level": "unambiguous"
+      },
+      "evidence_class": "authored-baseline",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/ko/title-honorific/surname-ssi",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "ko",
+      "title": "Surname alone followed by 씨",
+      "why": "Surname plus 씨 is a common way to refer to someone whose given name is unknown or omitted.",
+      "text": "김 씨가 먼저 말했다.",
+      "expectations": [
+        {
+          "start": 0,
+          "end": 1,
+          "surface": "김",
+          "expect": "person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "hangul",
+        "token_class": "single",
+        "collision_classes": [],
+        "context_types": [
+          "plain-prose",
+          "title-honorific",
+          "particle-attached"
+        ],
+        "name_features": [
+          "surname-only"
+        ],
+        "boundary_tags": [
+          "honorific-excluded",
+          "particle-excluded"
+        ]
+      },
+      "ambiguity": {
+        "level": "unambiguous"
+      },
+      "evidence_class": "authored-baseline",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/ko/title-honorific/title-before-name-daepyo",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "ko",
+      "title": "Job title preceding the name",
+      "why": "Titles may precede the name (대표 한지우); the title is excluded and the following full name is the span.",
+      "text": "회사의 대표 한지우는 성명을 발표했다.",
+      "expectations": [
+        {
+          "start": 7,
+          "end": 10,
+          "surface": "한지우",
+          "expect": "person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "hangul",
+        "token_class": "single",
+        "collision_classes": [],
+        "context_types": [
+          "plain-prose",
+          "title-honorific",
+          "particle-attached"
+        ],
+        "name_features": [
+          "full-name",
+          "ko-surname-given",
+          "ko-3-syllable"
+        ],
+        "boundary_tags": [
+          "honorific-excluded",
+          "particle-excluded"
+        ]
+      },
+      "ambiguity": {
+        "level": "unambiguous"
+      },
+      "evidence_class": "authored-baseline",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/ko/title-honorific/yi-gyosunim-ambiguous",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "ko",
+      "title": "이 교수님: demonstrative 'this professor' or Professor Lee",
+      "why": "The syllable 이 is both a very common surname and the demonstrative 'this'. 이 교수님 is therefore either 'Professor Lee' or 'this professor'; the sentence gives no further cue, so the case is recorded as an honest ambiguity.",
+      "text": "이 교수님은 회의에 불참했다.",
+      "expectations": [
+        {
+          "start": 0,
+          "end": 1,
+          "surface": "이",
+          "expect": "either"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "hangul",
+        "token_class": "single",
+        "collision_classes": [
+          "common-word"
+        ],
+        "context_types": [
+          "plain-prose",
+          "title-honorific",
+          "particle-attached"
+        ],
+        "name_features": [
+          "surname-only"
+        ],
+        "boundary_tags": [
+          "honorific-excluded",
+          "particle-excluded"
+        ]
+      },
+      "ambiguity": {
+        "level": "genuinely-ambiguous",
+        "note": "Without a preceding sentence that introduces a professor, 이 can be the demonstrative or the surname 이."
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    }
+  ]
+}

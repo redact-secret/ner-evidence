@@ -1,0 +1,839 @@
+{
+  "cases": [
+    {
+      "id": "person/ko/surname-false-positive-trap/choi-best-modifier",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "ko",
+      "title": "최고 beginning with the surname 최",
+      "why": "최고 ('the best') starts with the common surname 최 and ends with a particle-like syllable 의 after it.",
+      "text": "그는 업계 최고의 전문가다.",
+      "expectations": [
+        {
+          "start": 6,
+          "end": 8,
+          "surface": "최고",
+          "expect": "not-person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "not-applicable",
+        "script": "hangul",
+        "token_class": "single",
+        "collision_classes": [
+          "common-word"
+        ],
+        "context_types": [
+          "plain-prose",
+          "particle-attached",
+          "no-person"
+        ],
+        "name_features": [],
+        "boundary_tags": [
+          "particle-excluded"
+        ]
+      },
+      "ambiguity": {
+        "level": "context-resolvable",
+        "note": "'The best in the industry' is a superlative."
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/ko/surname-false-positive-trap/gim-chiu-person",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "ko",
+      "title": "Full name 김치우 whose first two syllables spell 김치",
+      "why": "김치우 is a plausible person name (surname 김, given name 치우) but its first two syllables spell the word for kimchi. A word-lookup approach can split it as 김치 + 우 and miss the person.",
+      "text": "김치우가 먼저 도착했다.",
+      "expectations": [
+        {
+          "start": 0,
+          "end": 3,
+          "surface": "김치우",
+          "expect": "person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "hangul",
+        "token_class": "single",
+        "collision_classes": [
+          "common-word"
+        ],
+        "context_types": [
+          "plain-prose",
+          "particle-attached"
+        ],
+        "name_features": [
+          "full-name",
+          "ko-surname-given",
+          "ko-3-syllable"
+        ],
+        "boundary_tags": [
+          "particle-excluded"
+        ]
+      },
+      "ambiguity": {
+        "level": "context-resolvable",
+        "note": "Arriving first is a human action and the string is a plausible full name, though 김치 is also the word for kimchi."
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/ko/surname-false-positive-trap/gim-gimbap-lunch",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "ko",
+      "title": "김밥 as lunch",
+      "why": "Another common food word beginning with the surname 김; a prefix lookup on surnames misfires on it.",
+      "text": "점심으로 김밥을 먹었다.",
+      "expectations": [
+        {
+          "start": 5,
+          "end": 7,
+          "surface": "김밥",
+          "expect": "not-person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "not-applicable",
+        "script": "hangul",
+        "token_class": "single",
+        "collision_classes": [
+          "common-word"
+        ],
+        "context_types": [
+          "plain-prose",
+          "particle-attached",
+          "no-person"
+        ],
+        "name_features": [],
+        "boundary_tags": [
+          "particle-excluded"
+        ]
+      },
+      "ambiguity": {
+        "level": "context-resolvable",
+        "note": "김밥 is a food item and the object of 'ate'."
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/ko/surname-false-positive-trap/gim-kimchi-stew",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "ko",
+      "title": "김치찌개 begins with the most common surname 김",
+      "why": "김 is the most common Korean surname and begins the word for kimchi. A detector that fires on a surname character followed by anything produces a false positive on the dish name.",
+      "text": "김치찌개는 매운 음식이다.",
+      "expectations": [
+        {
+          "start": 0,
+          "end": 4,
+          "surface": "김치찌개",
+          "expect": "not-person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "not-applicable",
+        "script": "hangul",
+        "token_class": "single",
+        "collision_classes": [
+          "common-word"
+        ],
+        "context_types": [
+          "plain-prose",
+          "particle-attached",
+          "no-person"
+        ],
+        "name_features": [],
+        "boundary_tags": [
+          "particle-excluded"
+        ]
+      },
+      "ambiguity": {
+        "level": "context-resolvable",
+        "note": "The compound 김치찌개 names a dish; 김 is only the first syllable of the word 김치 (kimchi)."
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/ko/surname-false-positive-trap/gim-laver-object",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "ko",
+      "title": "김 meaning dried seaweed (laver)",
+      "why": "The same syllable as a food ingredient, with the object marker 을; an adjective 마른 ('dried') modifies it.",
+      "text": "마른 김을 구워 먹었다.",
+      "expectations": [
+        {
+          "start": 3,
+          "end": 4,
+          "surface": "김",
+          "expect": "not-person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "not-applicable",
+        "script": "hangul",
+        "token_class": "single",
+        "collision_classes": [
+          "common-word"
+        ],
+        "context_types": [
+          "plain-prose",
+          "particle-attached",
+          "no-person"
+        ],
+        "name_features": [],
+        "boundary_tags": [
+          "particle-excluded"
+        ]
+      },
+      "ambiguity": {
+        "level": "context-resolvable",
+        "note": "'Dried' and 'roasted' show it is the food ingredient laver."
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/ko/surname-false-positive-trap/gim-steam-subject",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "ko",
+      "title": "김 meaning steam, followed by the subject marker 이",
+      "why": "The standalone noun 김 ('steam') followed by 이 looks exactly like a one-syllable name with a particle. This is the hardest false-positive trap for a surname-only reading.",
+      "text": "국에서 김이 모락모락 났다.",
+      "expectations": [
+        {
+          "start": 4,
+          "end": 5,
+          "surface": "김",
+          "expect": "not-person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "not-applicable",
+        "script": "hangul",
+        "token_class": "single",
+        "collision_classes": [
+          "common-word"
+        ],
+        "context_types": [
+          "plain-prose",
+          "particle-attached",
+          "no-person"
+        ],
+        "name_features": [],
+        "boundary_tags": [
+          "particle-excluded"
+        ]
+      },
+      "ambiguity": {
+        "level": "context-resolvable",
+        "note": "'Steam rising from the soup' is a physical phenomenon; the noun 김 takes the subject particle 이."
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/ko/surname-false-positive-trap/im-wage-subject",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "ko",
+      "title": "임금 beginning with the surname 임",
+      "why": "임금 means both 'wages' and 'king'; it begins with the surname 임.",
+      "text": "올해 임금이 올랐다.",
+      "expectations": [
+        {
+          "start": 3,
+          "end": 5,
+          "surface": "임금",
+          "expect": "not-person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "not-applicable",
+        "script": "hangul",
+        "token_class": "single",
+        "collision_classes": [
+          "common-word"
+        ],
+        "context_types": [
+          "plain-prose",
+          "particle-attached",
+          "no-person"
+        ],
+        "name_features": [],
+        "boundary_tags": [
+          "particle-excluded"
+        ]
+      },
+      "ambiguity": {
+        "level": "context-resolvable",
+        "note": "'Rose this year' selects the wage meaning."
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/ko/surname-false-positive-trap/jeong-government-subject",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "ko",
+      "title": "정부 beginning with the surname 정",
+      "why": "정부 ('government') starts with 정 and is an institution word.",
+      "text": "정부는 새 정책을 발표했다.",
+      "expectations": [
+        {
+          "start": 0,
+          "end": 2,
+          "surface": "정부",
+          "expect": "not-person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "not-applicable",
+        "script": "hangul",
+        "token_class": "single",
+        "collision_classes": [
+          "common-word",
+          "organization"
+        ],
+        "context_types": [
+          "plain-prose",
+          "particle-attached",
+          "no-person"
+        ],
+        "name_features": [],
+        "boundary_tags": [
+          "particle-excluded"
+        ]
+      },
+      "ambiguity": {
+        "level": "context-resolvable",
+        "note": "정부 is an institution that announces policy."
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/ko/surname-false-positive-trap/jeong-really-adverb",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "ko",
+      "title": "정말 beginning with the surname 정",
+      "why": "정말 ('really') starts with the common surname 정.",
+      "text": "정말 고마워요.",
+      "expectations": [
+        {
+          "start": 0,
+          "end": 2,
+          "surface": "정말",
+          "expect": "not-person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "not-applicable",
+        "script": "hangul",
+        "token_class": "single",
+        "collision_classes": [
+          "common-word"
+        ],
+        "context_types": [
+          "plain-prose",
+          "sentence-initial",
+          "no-person"
+        ],
+        "name_features": [],
+        "boundary_tags": []
+      },
+      "ambiguity": {
+        "level": "context-resolvable",
+        "note": "정말 is an adverb of degree."
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/ko/surname-false-positive-trap/jo-little-adverb",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "ko",
+      "title": "조금 beginning with the surname 조",
+      "why": "조금 ('a little') starts with the surname 조, which is also a counter and a prefix in many words.",
+      "text": "조금만 기다려 주세요.",
+      "expectations": [
+        {
+          "start": 0,
+          "end": 2,
+          "surface": "조금",
+          "expect": "not-person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "not-applicable",
+        "script": "hangul",
+        "token_class": "single",
+        "collision_classes": [
+          "common-word"
+        ],
+        "context_types": [
+          "plain-prose",
+          "sentence-initial",
+          "particle-attached",
+          "no-person"
+        ],
+        "name_features": [],
+        "boundary_tags": [
+          "particle-excluded"
+        ]
+      },
+      "ambiguity": {
+        "level": "context-resolvable",
+        "note": "조금 is a quantity adverb followed by the restrictive 만."
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/ko/surname-false-positive-trap/no-song-object",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "ko",
+      "title": "노래 beginning with the surname 노",
+      "why": "노래 ('song') starts with the surname 노 and is a very frequent everyday noun.",
+      "text": "노래를 한 곡 불렀다.",
+      "expectations": [
+        {
+          "start": 0,
+          "end": 2,
+          "surface": "노래",
+          "expect": "not-person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "not-applicable",
+        "script": "hangul",
+        "token_class": "single",
+        "collision_classes": [
+          "common-word"
+        ],
+        "context_types": [
+          "plain-prose",
+          "sentence-initial",
+          "particle-attached",
+          "no-person"
+        ],
+        "name_features": [],
+        "boundary_tags": [
+          "particle-excluded"
+        ]
+      },
+      "ambiguity": {
+        "level": "context-resolvable",
+        "note": "A song is sung; 노래 is the object noun."
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/ko/surname-false-positive-trap/o-cucumber-object",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "ko",
+      "title": "오이 as the vegetable 'cucumber'",
+      "why": "오이 is a vegetable and equals the surname 오 plus the particle-like syllable 이.",
+      "text": "오이를 썰어 샐러드에 넣었다.",
+      "expectations": [
+        {
+          "start": 0,
+          "end": 2,
+          "surface": "오이",
+          "expect": "not-person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "not-applicable",
+        "script": "hangul",
+        "token_class": "single",
+        "collision_classes": [
+          "common-word"
+        ],
+        "context_types": [
+          "plain-prose",
+          "sentence-initial",
+          "particle-attached",
+          "no-person"
+        ],
+        "name_features": [],
+        "boundary_tags": [
+          "particle-excluded"
+        ]
+      },
+      "ambiguity": {
+        "level": "context-resolvable",
+        "note": "Slicing for a salad selects the vegetable."
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/ko/surname-false-positive-trap/park-applause-and-park-sujin",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "ko",
+      "title": "A person receiving applause",
+      "why": "박수 is the word for 'applause' and begins with the common surname 박. The sentence holds both the full name 박수진 and the noun 박수.",
+      "text": "박수진이 박수를 받았다.",
+      "expectations": [
+        {
+          "start": 0,
+          "end": 3,
+          "surface": "박수진",
+          "expect": "person"
+        },
+        {
+          "start": 5,
+          "end": 7,
+          "surface": "박수",
+          "expect": "not-person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "hangul",
+        "token_class": "single",
+        "collision_classes": [
+          "common-word"
+        ],
+        "context_types": [
+          "plain-prose",
+          "particle-attached"
+        ],
+        "name_features": [
+          "full-name",
+          "ko-surname-given",
+          "ko-3-syllable"
+        ],
+        "boundary_tags": [
+          "particle-excluded"
+        ]
+      },
+      "ambiguity": {
+        "level": "context-resolvable",
+        "note": "박수진 is a full name and subject; 박수 is the object noun 'applause'."
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/ko/surname-false-positive-trap/person-and-food-same-sentence",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "ko",
+      "title": "A person who bought gimbap",
+      "why": "A sentence that holds a real full name and the food word 김밥, both starting with 김. Exactly one of the two is a person.",
+      "text": "김민수가 김밥을 샀다.",
+      "expectations": [
+        {
+          "start": 0,
+          "end": 3,
+          "surface": "김민수",
+          "expect": "person"
+        },
+        {
+          "start": 5,
+          "end": 7,
+          "surface": "김밥",
+          "expect": "not-person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "hangul",
+        "token_class": "single",
+        "collision_classes": [
+          "common-word"
+        ],
+        "context_types": [
+          "plain-prose",
+          "particle-attached"
+        ],
+        "name_features": [
+          "full-name",
+          "ko-surname-given",
+          "ko-3-syllable"
+        ],
+        "boundary_tags": [
+          "particle-excluded"
+        ]
+      },
+      "ambiguity": {
+        "level": "context-resolvable",
+        "note": "김민수 is a three-syllable full name; 김밥 is a food noun that follows it as the object."
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/ko/surname-false-positive-trap/yi-demonstrative-person-noun",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "ko",
+      "title": "이 as the demonstrative 'this' before 사람",
+      "why": "이 is both a very common surname and the demonstrative 'this'. Followed by 사람 ('person') it is the demonstrative, not a surname.",
+      "text": "이 사람은 어제 처음 왔다.",
+      "expectations": [
+        {
+          "start": 0,
+          "end": 1,
+          "surface": "이",
+          "expect": "not-person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "not-applicable",
+        "script": "hangul",
+        "token_class": "single",
+        "collision_classes": [
+          "common-word"
+        ],
+        "context_types": [
+          "plain-prose",
+          "sentence-initial",
+          "no-person"
+        ],
+        "name_features": [],
+        "boundary_tags": []
+      },
+      "ambiguity": {
+        "level": "context-resolvable",
+        "note": "'This person' is a demonstrative plus noun."
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/ko/surname-false-positive-trap/yi-number-two",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "ko",
+      "title": "이 as the numeral two",
+      "why": "The Sino-Korean numeral 이 ('two') is the same syllable as the surname 이.",
+      "text": "이 더하기 삼은 오다.",
+      "expectations": [
+        {
+          "start": 0,
+          "end": 1,
+          "surface": "이",
+          "expect": "not-person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "not-applicable",
+        "script": "hangul",
+        "token_class": "single",
+        "collision_classes": [
+          "common-word"
+        ],
+        "context_types": [
+          "plain-prose",
+          "sentence-initial",
+          "no-person"
+        ],
+        "name_features": [],
+        "boundary_tags": []
+      },
+      "ambiguity": {
+        "level": "context-resolvable",
+        "note": "'Two plus three is five' is arithmetic."
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/ko/surname-false-positive-trap/yun-ethics-object",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "ko",
+      "title": "윤리 beginning with the surname 윤",
+      "why": "윤리 ('ethics') starts with the surname 윤.",
+      "text": "연구 윤리를 지켜야 한다.",
+      "expectations": [
+        {
+          "start": 3,
+          "end": 5,
+          "surface": "윤리",
+          "expect": "not-person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "not-applicable",
+        "script": "hangul",
+        "token_class": "single",
+        "collision_classes": [
+          "common-word"
+        ],
+        "context_types": [
+          "plain-prose",
+          "particle-attached",
+          "no-person"
+        ],
+        "name_features": [],
+        "boundary_tags": [
+          "particle-excluded"
+        ]
+      },
+      "ambiguity": {
+        "level": "context-resolvable",
+        "note": "연구 윤리 is a noun phrase; 윤리 is an abstract noun."
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    }
+  ]
+}

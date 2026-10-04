@@ -1,0 +1,849 @@
+{
+  "cases": [
+    {
+      "id": "person/ko/romanization/all-caps-passport-style",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "ko",
+      "title": "ALL-CAPS romanized name as on a passport",
+      "why": "Passport and form styles write the surname and given name in capitals. Capitalization cues vanish but the span structure remains.",
+      "text": "Applicant: KIM MIN-SU",
+      "expectations": [
+        {
+          "start": 11,
+          "end": 21,
+          "surface": "KIM MIN-SU",
+          "expect": "person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "latin",
+        "token_class": "multi",
+        "collision_classes": [],
+        "context_types": [
+          "structured-text"
+        ],
+        "name_features": [
+          "full-name",
+          "ko-romanized",
+          "hyphenated"
+        ],
+        "boundary_tags": [
+          "hyphen-boundary",
+          "punctuation-adjacent"
+        ]
+      },
+      "ambiguity": {
+        "level": "unambiguous"
+      },
+      "evidence_class": "authored-baseline",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/ko/romanization/choi-surname-english-text",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "ko",
+      "title": "Romanized surname Choi in English text",
+      "why": "Choi is the standard romanization of 최 and is unfamiliar as an English word, testing a surname that carries no English lexical cue.",
+      "text": "Dr. Choi Yu-jin reviewed the application.",
+      "expectations": [
+        {
+          "start": 4,
+          "end": 15,
+          "surface": "Choi Yu-jin",
+          "expect": "person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "latin",
+        "token_class": "multi",
+        "collision_classes": [],
+        "context_types": [
+          "plain-prose",
+          "title-honorific"
+        ],
+        "name_features": [
+          "full-name",
+          "ko-romanized",
+          "hyphenated"
+        ],
+        "boundary_tags": [
+          "hyphen-boundary",
+          "honorific-excluded",
+          "abbreviation-period"
+        ]
+      },
+      "ambiguity": {
+        "level": "unambiguous"
+      },
+      "evidence_class": "authored-baseline",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/ko/romanization/hong-gil-dong-placeholder",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "ko",
+      "title": "Romanized placeholder name Hong Gil-dong",
+      "why": "Hong Gil-dong is a fictional literary character whose name is used in Korean as the generic placeholder name (like John Doe). It contains no real person.",
+      "text": "The sample form listed Hong Gil-dong as the applicant.",
+      "expectations": [
+        {
+          "start": 23,
+          "end": 36,
+          "surface": "Hong Gil-dong",
+          "expect": "person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "latin",
+        "token_class": "multi",
+        "collision_classes": [],
+        "context_types": [
+          "plain-prose",
+          "structured-text"
+        ],
+        "name_features": [
+          "full-name",
+          "ko-romanized",
+          "hyphenated"
+        ],
+        "boundary_tags": [
+          "hyphen-boundary",
+          "punctuation-adjacent"
+        ]
+      },
+      "ambiguity": {
+        "level": "unambiguous"
+      },
+      "evidence_class": "authored-baseline",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/ko/romanization/hong-kong-not-person",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "ko",
+      "title": "Hong Kong beside the surname Hong",
+      "why": "Hong is a Korean and Chinese surname and the first token of the city name Hong Kong. The place must not produce a PERSON.",
+      "text": "He flew to Hong Kong for the meeting.",
+      "expectations": [
+        {
+          "start": 11,
+          "end": 20,
+          "surface": "Hong Kong",
+          "expect": "not-person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "latin",
+        "token_class": "multi",
+        "collision_classes": [
+          "location"
+        ],
+        "context_types": [
+          "plain-prose",
+          "no-person"
+        ],
+        "name_features": [],
+        "boundary_tags": []
+      },
+      "ambiguity": {
+        "level": "context-resolvable",
+        "note": "The destination of 'flew to' is a place, and Hong Kong is a fixed place name."
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/ko/romanization/hyphenated-given-name-surname-first",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "ko",
+      "title": "Romanized Korean name, surname first, hyphenated given name",
+      "why": "Standard romanization (Revised Romanization) writes the given name with an internal hyphen. The hyphen is inside the span and the whole three-token-looking string is one person.",
+      "text": "Kim Min-su joined the team last year.",
+      "expectations": [
+        {
+          "start": 0,
+          "end": 10,
+          "surface": "Kim Min-su",
+          "expect": "person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "latin",
+        "token_class": "multi",
+        "collision_classes": [],
+        "context_types": [
+          "plain-prose",
+          "sentence-initial"
+        ],
+        "name_features": [
+          "full-name",
+          "ko-romanized",
+          "hyphenated"
+        ],
+        "boundary_tags": [
+          "hyphen-boundary"
+        ]
+      },
+      "ambiguity": {
+        "level": "unambiguous"
+      },
+      "evidence_class": "authored-baseline",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/ko/romanization/initials-with-surname",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "ko",
+      "title": "Romanized name abbreviated to initials plus surname",
+      "why": "Academic citations abbreviate given names to initials. The surname Kim is also an English given name and surname.",
+      "text": "The study by M. S. Kim was replicated.",
+      "expectations": [
+        {
+          "start": 13,
+          "end": 22,
+          "surface": "M. S. Kim",
+          "expect": "person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "latin",
+        "token_class": "multi",
+        "collision_classes": [],
+        "context_types": [
+          "plain-prose"
+        ],
+        "name_features": [
+          "full-name",
+          "ko-romanized",
+          "initials"
+        ],
+        "boundary_tags": [
+          "abbreviation-period"
+        ]
+      },
+      "ambiguity": {
+        "level": "unambiguous"
+      },
+      "evidence_class": "authored-baseline",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/ko/romanization/jung-surname-with-title",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "ko",
+      "title": "Romanized surname Jung after Mr.",
+      "why": "Jung is the romanization of 정 and is also a German surname and word; a title selects the person reading.",
+      "text": "Mr. Jung signed the agreement.",
+      "expectations": [
+        {
+          "start": 4,
+          "end": 8,
+          "surface": "Jung",
+          "expect": "person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "latin",
+        "token_class": "single",
+        "collision_classes": [
+          "common-word"
+        ],
+        "context_types": [
+          "plain-prose",
+          "title-honorific"
+        ],
+        "name_features": [
+          "surname-only",
+          "ko-romanized"
+        ],
+        "boundary_tags": [
+          "honorific-excluded",
+          "abbreviation-period"
+        ]
+      },
+      "ambiguity": {
+        "level": "context-resolvable",
+        "note": "After a title and before a signing verb, Jung is a surname."
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/ko/romanization/lee-surname",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "ko",
+      "title": "Romanized surname Lee with a hyphenated given name",
+      "why": "Lee is a very common Korean surname (이/리) and also an English given name and surname; context shows a Korean full name.",
+      "text": "Lee Seo-yeon approved the budget.",
+      "expectations": [
+        {
+          "start": 0,
+          "end": 12,
+          "surface": "Lee Seo-yeon",
+          "expect": "person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "latin",
+        "token_class": "multi",
+        "collision_classes": [],
+        "context_types": [
+          "plain-prose",
+          "sentence-initial"
+        ],
+        "name_features": [
+          "full-name",
+          "ko-romanized",
+          "hyphenated"
+        ],
+        "boundary_tags": [
+          "hyphen-boundary"
+        ]
+      },
+      "ambiguity": {
+        "level": "unambiguous"
+      },
+      "evidence_class": "authored-baseline",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/ko/romanization/lowercase-park-and-given-name",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "ko",
+      "title": "Lowercase park noun beside a romanized given name",
+      "why": "The lowercase noun 'park' (a green space) and the given name Ji-eun in one sentence; the noun must not be treated as the surname.",
+      "text": "We walked in the park with Ji-eun.",
+      "expectations": [
+        {
+          "start": 17,
+          "end": 21,
+          "surface": "park",
+          "expect": "not-person"
+        },
+        {
+          "start": 27,
+          "end": 33,
+          "surface": "Ji-eun",
+          "expect": "person"
+        }
+      ],
+      "focus_span": 1,
+      "dimensions": {
+        "familiarity": "not-applicable",
+        "script": "latin",
+        "token_class": "single",
+        "collision_classes": [
+          "common-word"
+        ],
+        "context_types": [
+          "plain-prose"
+        ],
+        "name_features": [
+          "given-only",
+          "ko-romanized",
+          "hyphenated",
+          "ko-given-only"
+        ],
+        "boundary_tags": [
+          "hyphen-boundary",
+          "punctuation-adjacent"
+        ]
+      },
+      "ambiguity": {
+        "level": "context-resolvable",
+        "note": "The lowercase noun follows 'the' and a preposition; the name follows 'with' and is a companion."
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/ko/romanization/moon-surname",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "ko",
+      "title": "Romanized surname Moon, also an English noun",
+      "why": "Moon is the romanization of 문 and an English noun for the celestial body.",
+      "text": "Moon Jae-won chaired the committee.",
+      "expectations": [
+        {
+          "start": 0,
+          "end": 12,
+          "surface": "Moon Jae-won",
+          "expect": "person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "latin",
+        "token_class": "multi",
+        "collision_classes": [
+          "common-word"
+        ],
+        "context_types": [
+          "plain-prose",
+          "sentence-initial"
+        ],
+        "name_features": [
+          "full-name",
+          "ko-romanized",
+          "hyphenated"
+        ],
+        "boundary_tags": [
+          "hyphen-boundary"
+        ]
+      },
+      "ambiguity": {
+        "level": "context-resolvable",
+        "note": "Capitalized Moon followed by a hyphenated given name and a chairing verb is a surname."
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/ko/romanization/park-surname-common-word",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "ko",
+      "title": "Romanized surname Park, which is also a common English noun",
+      "why": "Park is a common Korean surname (박) and an everyday English noun. Capitalized and followed by a hyphenated given name it is a person.",
+      "text": "Park Ji-eun presented the results.",
+      "expectations": [
+        {
+          "start": 0,
+          "end": 11,
+          "surface": "Park Ji-eun",
+          "expect": "person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "latin",
+        "token_class": "multi",
+        "collision_classes": [
+          "common-word"
+        ],
+        "context_types": [
+          "plain-prose",
+          "sentence-initial"
+        ],
+        "name_features": [
+          "full-name",
+          "ko-romanized",
+          "hyphenated"
+        ],
+        "boundary_tags": [
+          "hyphen-boundary"
+        ]
+      },
+      "ambiguity": {
+        "level": "context-resolvable",
+        "note": "A capitalized Park followed by a hyphenated given name and a presenter predicate is a surname."
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/ko/romanization/song-surname-common-word",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "ko",
+      "title": "Romanized surname Song, which is also an English noun",
+      "why": "Song is the romanization of 송 and an everyday English noun. As a capitalized first token of a full name it is a person.",
+      "text": "Song Ji-hoon published the paper.",
+      "expectations": [
+        {
+          "start": 0,
+          "end": 12,
+          "surface": "Song Ji-hoon",
+          "expect": "person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "latin",
+        "token_class": "multi",
+        "collision_classes": [
+          "common-word"
+        ],
+        "context_types": [
+          "plain-prose",
+          "sentence-initial"
+        ],
+        "name_features": [
+          "full-name",
+          "ko-romanized",
+          "hyphenated"
+        ],
+        "boundary_tags": [
+          "hyphen-boundary"
+        ]
+      },
+      "ambiguity": {
+        "level": "context-resolvable",
+        "note": "A capitalized Song followed by a hyphenated given name and a publishing verb is a surname."
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/ko/romanization/two-syllable-romanized-seo-jun",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "ko",
+      "title": "Two-syllable romanized name Seo Jun",
+      "why": "A two-syllable name romanized as two single-syllable tokens; Seo and Jun are both short tokens that are easy to treat as noise.",
+      "text": "Seo Jun was promoted last week.",
+      "expectations": [
+        {
+          "start": 0,
+          "end": 7,
+          "surface": "Seo Jun",
+          "expect": "person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "latin",
+        "token_class": "multi",
+        "collision_classes": [],
+        "context_types": [
+          "plain-prose",
+          "sentence-initial"
+        ],
+        "name_features": [
+          "full-name",
+          "ko-romanized",
+          "ko-2-syllable"
+        ],
+        "boundary_tags": []
+      },
+      "ambiguity": {
+        "level": "unambiguous"
+      },
+      "evidence_class": "authored-baseline",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/ko/romanization/unhyphenated-given-name",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "ko",
+      "title": "Romanized Korean name without a hyphen in the given name",
+      "why": "Hyphenation is optional; Minsu is a single two-syllable given name that looks like a rare single-token Western name.",
+      "text": "Please send the form to Minsu Kim.",
+      "expectations": [
+        {
+          "start": 24,
+          "end": 33,
+          "surface": "Minsu Kim",
+          "expect": "person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "latin",
+        "token_class": "multi",
+        "collision_classes": [],
+        "context_types": [
+          "plain-prose"
+        ],
+        "name_features": [
+          "full-name",
+          "ko-romanized",
+          "ko-romanized-western-order"
+        ],
+        "boundary_tags": [
+          "punctuation-adjacent"
+        ]
+      },
+      "ambiguity": {
+        "level": "unambiguous"
+      },
+      "evidence_class": "authored-baseline",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/ko/romanization/western-order-hyphenated",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "ko",
+      "title": "Romanized Korean name in given-then-surname order",
+      "why": "Many Koreans write their names in Western order abroad. The expected span is the same kind of entity but the surname is now last.",
+      "text": "The paper was written by Min-su Kim.",
+      "expectations": [
+        {
+          "start": 25,
+          "end": 35,
+          "surface": "Min-su Kim",
+          "expect": "person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "latin",
+        "token_class": "multi",
+        "collision_classes": [],
+        "context_types": [
+          "plain-prose"
+        ],
+        "name_features": [
+          "full-name",
+          "ko-romanized",
+          "ko-romanized-western-order",
+          "hyphenated"
+        ],
+        "boundary_tags": [
+          "hyphen-boundary",
+          "punctuation-adjacent"
+        ]
+      },
+      "ambiguity": {
+        "level": "unambiguous"
+      },
+      "evidence_class": "authored-baseline",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/ko/romanization/yoon-do-yoon-two-names",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "ko",
+      "title": "Two romanized Korean full names in one sentence",
+      "why": "Two romanized names whose surnames Kang and Yoon are not English words, to confirm both are found.",
+      "text": "Kang Do-yoon and Yoon Ji-woo co-led the project.",
+      "expectations": [
+        {
+          "start": 0,
+          "end": 12,
+          "surface": "Kang Do-yoon",
+          "expect": "person"
+        },
+        {
+          "start": 17,
+          "end": 28,
+          "surface": "Yoon Ji-woo",
+          "expect": "person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "latin",
+        "token_class": "multi",
+        "collision_classes": [],
+        "context_types": [
+          "plain-prose",
+          "sentence-initial"
+        ],
+        "name_features": [
+          "full-name",
+          "ko-romanized",
+          "hyphenated"
+        ],
+        "boundary_tags": [
+          "hyphen-boundary"
+        ]
+      },
+      "ambiguity": {
+        "level": "unambiguous"
+      },
+      "evidence_class": "authored-baseline",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/ko/romanization/young-hee-given-name",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "ko",
+      "title": "Romanized given name Young-hee containing the English word Young",
+      "why": "Young is a very common Korean given-name syllable (영), and the hyphenated Young-hee starts with an English adjective. The hyphen is inside the name.",
+      "text": "Young-hee Kim opened the meeting.",
+      "expectations": [
+        {
+          "start": 0,
+          "end": 13,
+          "surface": "Young-hee Kim",
+          "expect": "person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "latin",
+        "token_class": "multi",
+        "collision_classes": [
+          "common-word"
+        ],
+        "context_types": [
+          "plain-prose",
+          "sentence-initial"
+        ],
+        "name_features": [
+          "full-name",
+          "ko-romanized",
+          "ko-romanized-western-order",
+          "hyphenated"
+        ],
+        "boundary_tags": [
+          "hyphen-boundary"
+        ]
+      },
+      "ambiguity": {
+        "level": "context-resolvable",
+        "note": "Young-hee followed by a surname-like token and a meeting-opening verb is a person."
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    }
+  ]
+}
