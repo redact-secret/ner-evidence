@@ -17,7 +17,8 @@ ALLOWED_SUFFIXES = {".json", ".jsonl", ".md"}
 MAX_FILE_BYTES = 4 * 1024 * 1024
 
 SAFE_EMAIL_DOMAINS = re.compile(r"(^|\.)(example\.(com|org|net)|[a-z0-9-]+\.(invalid|test|example|localhost))$", re.I)
-SAFE_URL_HOSTS = SAFE_EMAIL_DOMAINS
+# json-schema.org appears only as the standard `$schema` dialect identifier in embedded schemas.
+SAFE_URL_HOSTS = re.compile(SAFE_EMAIL_DOMAINS.pattern + r"|^json-schema\.org$", re.I)
 
 EMAIL = re.compile(r"[A-Za-z0-9._%+-]+@([A-Za-z0-9-]+(?:\.[A-Za-z0-9-]+)*\.[A-Za-z]{2,})")
 URL = re.compile(r"https?://([^/\s\"'<>\\]+)", re.I)

@@ -50,7 +50,104 @@ def cmd_project(args) -> int:
     return 1 if probs else 0
 
 
+def cmd_slices(args) -> int:
+    from . import project, slices
+    repo = _repo(args)
+    fixtures = project.project_all(repo.cases, repo.ruleset)
+    report = slices.compute(repo.cases, fixtures, repo.targets)
+    probs = slices.check_targets(report)
+    for p in probs:
+        print(p)
+    print(f"slices: {report['cases']} cases, {report['fixtures']} fixtures, {len(report['unmet_targets'])} unmet, {len(report['waived_targets'])} waived")
+    return 1 if probs else 0
+
+
+def cmd_report(args) -> int:
+    from . import project, slices
+    repo = _repo(args)
+    md = slices.render_markdown(slices.compute(repo.cases, project.project_all(repo.cases, repo.ruleset), repo.targets))
+    path = repo.root / "docs" / "evidence-coverage.md"
+    if args.write:
+        path.write_text(md, encoding="utf-8")
+        print(f"wrote {path.relative_to(repo.root)}")
+        return 0
+    if not path.exists() or path.read_text(encoding="utf-8") != md:
+        print("[REPORT] docs/evidence-coverage.md is stale; run `python -m ner_evidence report --write`")
+        return 1
+    print("report: up to date")
+    return 0
+
+
+def cmd_snapshot(args) -> int:
+    from . import snapshot
+    repo = _repo(args)
+    out = repo.root / "snapshots"
+    if args.action == "build":
+        if not args.label:
+            print("snapshot build requires --label")
+            return 2
+        try:
+            m = snapshot.build(repo, out, args.scope, args.label, args.stage)
+        except snapshot.SnapshotError as exc:
+            print(exc)
+            return 1
+        print(f"snapshot: {m['snapshot_id']} content_digest {m['content_digest']} cases {m['counts']['cases']} fixtures {m['counts']['fixtures']}")
+        return 0
+    if args.action == "verify":
+        probs = snapshot.verify(Path(args.path)) if args.path else snapshot.verify_all(out)
+        for p in probs:
+            print(p)
+        print(f"snapshot verify: {len(probs)} problems")
+        return 1 if probs else 0
+    probs, note = snapshot.check_immutability(repo.root, args.base)
+    for p in probs:
+        print(p)
+    print(f"snapshot immutability: {len(probs)} problems ({note})")
+    return 1 if probs else 0
+
+
+def cmd_check(args) -> int:
+    """Every repository gate, in one command. This is what CI runs."""
+    from argparse import Namespace
+    from . import cli
+    base = dict(root=args.root, public_release=False, out=None, write=False, check=True,
+                action=None, scope="person-en-ko", label=None, stage="alpha", path=None, base=args.base)
+    steps = [
+        ("validate", cli.cmd_validate, {}),
+        ("fmt", cli.cmd_fmt, {}),
+        ("provenance", cmd_provenance, {}),
+        ("privacy", cmd_privacy, {}),
+        ("project", cmd_project, {}),
+        ("slices", cmd_slices, {}),
+        ("report", cmd_report, {}),
+        ("snapshot verify", cmd_snapshot, {"action": "verify"}),
+        ("snapshot immutability", cmd_snapshot, {"action": "immutability"}),
+    ]
+    failed = []
+    for name, fn, extra in steps:
+        print(f"== {name}")
+        if fn(Namespace(**{**base, **extra})) != 0:
+            failed.append(name)
+    print("\ncheck:", "FAILED: " + ", ".join(failed) if failed else "all gates passed")
+    return 1 if failed else 0
+
+
 def register(sub) -> None:
+    c = sub.add_parser("check", help="run every repository gate (CI entry point)")
+    c.add_argument("--base", help="git ref for the snapshot immutability comparison")
+    c.set_defaults(fn=cmd_check)
+    sub.add_parser("slices", help="slice counts and target evaluation").set_defaults(fn=cmd_slices)
+    r = sub.add_parser("report", help="render or check docs/evidence-coverage.md")
+    r.add_argument("--write", action="store_true")
+    r.set_defaults(fn=cmd_report)
+    s = sub.add_parser("snapshot", help="build / verify / immutability-check snapshots")
+    s.add_argument("action", choices=["build", "verify", "immutability"])
+    s.add_argument("--scope", default="person-en-ko")
+    s.add_argument("--label", help="release label, e.g. alpha.1")
+    s.add_argument("--stage", default="alpha", choices=["alpha", "beta", "stable"])
+    s.add_argument("--path", help="verify a single snapshot directory (works on a downloaded copy)")
+    s.add_argument("--base", help="git ref to compare against for immutability (default origin/main, main)")
+    s.set_defaults(fn=cmd_snapshot)
     p = sub.add_parser("project", help="project cases to fixtures, verify lineage and determinism")
     p.add_argument("--out", help="write fixtures.jsonl here")
     p.set_defaults(fn=cmd_project)
