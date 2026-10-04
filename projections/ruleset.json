@@ -1,0 +1,64 @@
+{
+  "ruleset_version": "1.0.0",
+  "offset_units": [
+    "codepoint",
+    "utf8-byte",
+    "utf16-code-unit"
+  ],
+  "projections": [
+    {
+      "id": "plain",
+      "version": 1,
+      "description": "The authored text unchanged. Always applies and can never be excluded.",
+      "prefix": "",
+      "suffix": "",
+      "segment_transform": "identity",
+      "applies_when": "always"
+    },
+    {
+      "id": "quoted",
+      "version": 1,
+      "description": "The text wrapped in ASCII double quotes, as a quoted string or message body.",
+      "prefix": "\"",
+      "suffix": "\"",
+      "segment_transform": "identity",
+      "applies_when": "always"
+    },
+    {
+      "id": "log-line",
+      "version": 1,
+      "description": "The text as the message of a key=value log line.",
+      "prefix": "ts=2026-01-01T00:00:00Z level=info msg: ",
+      "suffix": " ctx=none",
+      "segment_transform": "identity",
+      "applies_when": "always"
+    },
+    {
+      "id": "json-string",
+      "version": 1,
+      "description": "The text as a JSON string value; each text segment is JSON-escaped, so spans index the serialized document.",
+      "prefix": "{\"message\": \"",
+      "suffix": "\"}",
+      "segment_transform": "json-escape",
+      "applies_when": "always"
+    },
+    {
+      "id": "email-like",
+      "version": 1,
+      "description": "The text as the body of a plain-text notification email with a fixed header and footer.",
+      "prefix": "From: noreply@example.invalid\nSubject: Notification\n\n",
+      "suffix": "\n\n-- \nAutomated message\n",
+      "segment_transform": "identity",
+      "applies_when": "always"
+    },
+    {
+      "id": "nfd-decomposed",
+      "version": 1,
+      "description": "The text in Unicode NFD form (Hangul syllables decompose to conjoining jamo; accented Latin to base plus combining mark). Applies only when NFD differs from the authored NFC text.",
+      "prefix": "",
+      "suffix": "",
+      "segment_transform": "nfd",
+      "applies_when": "text-changes-under-nfd"
+    }
+  ]
+}
