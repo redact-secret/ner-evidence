@@ -637,7 +637,7 @@
     },
     {
       "id": "plural-and-family-references-undefined",
-      "description": "Plural and family references (the Joneses, two Johns, the Smiths' house) have no span convention in taxonomy 0.1.0. The 3 cases that use them, plus 1 ampersand-couple case, are marked either; they are not a test of correctness until a convention exists."
+      "description": "Plural and family references (the Joneses, two Johns, the Smiths' house, 'the Okafor family') have no span convention in taxonomy 0.1.0. The 5 cases that use them, plus 1 ampersand-couple case, are marked either; they are not a test of correctness until a convention exists."
     },
     {
       "id": "scripts-beyond-latin-hangul-han",

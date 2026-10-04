@@ -194,7 +194,7 @@
       "language": "en",
       "title": "Sentence-initial name 'Dawn' and lowercase noun 'dawn'",
       "why": "Two occurrences of the same letters in one sentence with opposite expectations: person first, time-of-day noun second.",
-      "text": "Dawn arrived before dawn.",
+      "text": "Dawn arrived by taxi before dawn.",
       "expectations": [
         {
           "start": 0,
@@ -203,8 +203,8 @@
           "expect": "person"
         },
         {
-          "start": 20,
-          "end": 24,
+          "start": 28,
+          "end": 32,
           "surface": "dawn",
           "expect": "not-person"
         }
@@ -227,7 +227,7 @@
       },
       "ambiguity": {
         "level": "context-resolvable",
-        "note": "The first word is the subject of 'arrived'; after the preposition 'before' the lowercase word is the time of day."
+        "note": "The first word is the subject of 'arrived by taxi', which only a person can do; after 'before' the lowercase word is the time of day."
       },
       "evidence_class": "authored-adversarial",
       "source_ids": [
@@ -504,7 +504,7 @@
       },
       "ambiguity": {
         "level": "genuinely-ambiguous",
-        "note": "A tool can be missing from a toolbox, and so can a person if the toolbox is a figurative group."
+        "note": "A tool can be missing from a toolbox; a person could be missing from a group figuratively called the toolbox. The text does not exclude either, though the tool reading is likelier."
       },
       "evidence_class": "authored-adversarial",
       "source_ids": [
@@ -661,7 +661,7 @@
       "language": "en",
       "title": "June as a person arriving in the month of June",
       "why": "A name and a month with the same spelling in one sentence.",
-      "text": "June arrives in June.",
+      "text": "June arrives in June with her sister.",
       "expectations": [
         {
           "start": 0,
@@ -694,7 +694,7 @@
       },
       "ambiguity": {
         "level": "context-resolvable",
-        "note": "The first word is the subject of 'arrives'; after 'in' the second is a month."
+        "note": "'With her sister' needs a person as the first subject; after 'in' the second word is a month."
       },
       "evidence_class": "authored-adversarial",
       "source_ids": [
@@ -764,7 +764,7 @@
       "entity_type": "PERSON",
       "language": "en",
       "title": "Same surface form 'May' as a month and as a person in one sentence",
-      "why": "The canonical example from the project README: context, not the word, determines whether PERSON is emitted. Both readings appear in one sentence so a single global decision cannot be right.",
+      "why": "The canonical example from the project docs: context, not the word, determines whether PERSON is emitted. Both readings appear in one sentence so a single global decision cannot be right.",
       "text": "The meeting is in May and May will attend.",
       "expectations": [
         {

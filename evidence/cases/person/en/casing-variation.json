@@ -169,8 +169,7 @@
         ],
         "context_types": [
           "plain-prose",
-          "casing-variation",
-          "sentence-initial"
+          "casing-variation"
         ],
         "name_features": [],
         "boundary_tags": []
@@ -307,8 +306,7 @@
         ],
         "context_types": [
           "plain-prose",
-          "casing-variation",
-          "sentence-initial"
+          "casing-variation"
         ],
         "name_features": [
           "full-name"
@@ -356,7 +354,6 @@
         "context_types": [
           "plain-prose",
           "casing-variation",
-          "sentence-initial",
           "no-person"
         ],
         "name_features": [],

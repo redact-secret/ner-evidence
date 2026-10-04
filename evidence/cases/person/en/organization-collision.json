@@ -418,7 +418,7 @@
       "language": "en",
       "title": "Mercedes as a car brand",
       "why": "Mercedes is a car brand and a given name; selling cars is a company action.",
-      "text": "Mercedes sold fewer cars this year.",
+      "text": "Mercedes reported lower sales this year.",
       "expectations": [
         {
           "start": 0,
@@ -447,7 +447,7 @@
       },
       "ambiguity": {
         "level": "context-resolvable",
-        "note": "Selling cars (in volume) is something a company does."
+        "note": "'Reported lower sales' is a corporate disclosure; the bare brand name stands for the company."
       },
       "evidence_class": "authored-adversarial",
       "source_ids": [
@@ -562,7 +562,7 @@
       "entity_type": "PERSON",
       "language": "en",
       "title": "Rose Garden as a venue",
-      "why": "The README lists 'Rose Garden' as a canonical negative: a given name plus a common noun forming a place.",
+      "why": "The project architecture notes list 'Rose Garden' as a canonical negative: a given name plus a common noun forming a place.",
       "text": "The wedding was held in the Rose Garden behind the museum.",
       "expectations": [
         {

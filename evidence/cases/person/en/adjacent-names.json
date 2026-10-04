@@ -288,7 +288,8 @@
         ]
       },
       "ambiguity": {
-        "level": "unambiguous"
+        "level": "context-resolvable",
+        "note": "Adjacent two-token names could be re-segmented (for example a double surname), but three repeated given-plus-surname pairs make the intended three-person reading the natural one."
       },
       "evidence_class": "authored-baseline",
       "source_ids": [
@@ -330,7 +331,7 @@
       ],
       "focus_span": 0,
       "dimensions": {
-        "familiarity": "common",
+        "familiarity": "rare",
         "script": "latin",
         "token_class": "single",
         "collision_classes": [],
@@ -390,15 +391,13 @@
         "token_class": "single",
         "collision_classes": [],
         "context_types": [
-          "plain-prose",
-          "parenthetical"
+          "plain-prose"
         ],
         "name_features": [
           "surname-only"
         ],
         "boundary_tags": [
           "adjacent-names",
-          "parenthetical-boundary",
           "digit-adjacent"
         ]
       },

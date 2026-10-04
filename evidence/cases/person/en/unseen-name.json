@@ -464,7 +464,7 @@
       "entity_type": "PERSON",
       "language": "en",
       "title": "Short Igbo given name with short surname",
-      "why": "Short three- and two-letter tokens (Ngozi Eze) leave little orthographic material for a detector to use.",
+      "why": "Short tokens (five-letter Ngozi, three-letter Eze) leave little orthographic material for a detector to use.",
       "text": "Ngozi Eze joined the audit team.",
       "expectations": [
         {
@@ -641,7 +641,7 @@
       "entity_type": "PERSON",
       "language": "en",
       "title": "Rare given name that is a bird name",
-      "why": "Wren is a rare given name and a common noun for a bird. As a lowercase noun it is not a person; as a capitalized name after a verb of speaking it is.",
+      "why": "Wren is a rare given name and a common noun for a bird. As the subject of a speaking verb with a reported statement it can only be a person.",
       "text": "Wren said the report was late.",
       "expectations": [
         {
@@ -688,7 +688,7 @@
       "entity_type": "PERSON",
       "language": "en",
       "title": "Rare given name that is a plant name",
-      "why": "Thistle is a rare given name and a plant; the two readings split on whether the thing can speak.",
+      "why": "Thistle is a rare surname and a plant; the two readings split on whether the thing can speak.",
       "text": "Mr. Thistle called to confirm the order.",
       "expectations": [
         {
@@ -782,7 +782,7 @@
       "language": "en",
       "title": "Constructed single-token name that ends in -ix",
       "why": "A constructed token with a suffix (-ix) typical of brand or fantasy names, which can pull a detector toward an organization or product reading.",
-      "text": "Tavrix approved the budget yesterday.",
+      "text": "Tavrix cooked dinner for the whole team yesterday.",
       "expectations": [
         {
           "start": 0,
@@ -810,7 +810,7 @@
       },
       "ambiguity": {
         "level": "context-resolvable",
-        "note": "The suffix -ix resembles brand names; the verb 'approved' needs a human agent."
+        "note": "The suffix -ix resembles brand names; cooking dinner for a team needs a human agent."
       },
       "evidence_class": "authored-adversarial",
       "source_ids": [
@@ -829,11 +829,11 @@
       "language": "en",
       "title": "Constructed single-token name in an object position",
       "why": "A constructed token with a vowel-initial spelling in a post-verbal position where proper nouns of any kind are possible.",
-      "text": "The manager thanked Elorvane for the quick turnaround.",
+      "text": "The manager hugged Elorvane at the farewell party.",
       "expectations": [
         {
-          "start": 20,
-          "end": 28,
+          "start": 19,
+          "end": 27,
           "surface": "Elorvane",
           "expect": "person"
         }
@@ -2037,7 +2037,7 @@
       "entity_type": "PERSON",
       "language": "en",
       "title": "Rare given name that is a common noun",
-      "why": "Echo is a rare given name and an ordinary noun. After a title-free verb of speaking it is a person.",
+      "why": "Echo is a rare given name and an ordinary noun. As the subject of a speaking verb it is a person.",
       "text": "Echo told us the room was ready.",
       "expectations": [
         {
@@ -2280,7 +2280,8 @@
         "script": "latin",
         "token_class": "multi",
         "collision_classes": [
-          "location"
+          "location",
+          "common-word"
         ],
         "context_types": [
           "plain-prose"
@@ -2400,7 +2401,7 @@
       "entity_type": "PERSON",
       "language": "en",
       "title": "Very short constructed two-token name",
-      "why": "Two- and three-letter constructed tokens are easily treated as abbreviations or noise.",
+      "why": "Short constructed tokens (three-letter Vex) are easily treated as abbreviations or noise.",
       "text": "Vex Ondar was promoted last week.",
       "expectations": [
         {
@@ -2548,7 +2549,9 @@
         "familiarity": "rare",
         "script": "latin",
         "token_class": "multi",
-        "collision_classes": [],
+        "collision_classes": [
+          "common-word"
+        ],
         "context_types": [
           "plain-prose"
         ],
@@ -2558,7 +2561,8 @@
         "boundary_tags": []
       },
       "ambiguity": {
-        "level": "unambiguous"
+        "level": "context-resolvable",
+        "note": "Kestrel is also a bird name; the given-name position before a surname and the human verb 'filed' resolve it."
       },
       "evidence_class": "authored-baseline",
       "source_ids": [

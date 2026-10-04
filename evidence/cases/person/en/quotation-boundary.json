@@ -239,8 +239,7 @@
         "collision_classes": [],
         "context_types": [
           "plain-prose",
-          "quotation",
-          "dialogue"
+          "quotation"
         ],
         "name_features": [
           "full-name"
@@ -301,8 +300,7 @@
         "context_types": [
           "plain-prose",
           "quotation",
-          "dialogue",
-          "sentence-initial"
+          "dialogue"
         ],
         "name_features": [
           "full-name"
@@ -410,8 +408,7 @@
         "collision_classes": [],
         "context_types": [
           "plain-prose",
-          "quotation",
-          "dialogue"
+          "quotation"
         ],
         "name_features": [
           "given-only"

@@ -350,14 +350,14 @@
       "entity_type": "PERSON",
       "language": "en",
       "title": "Hyphenated double surname used for a family",
-      "why": "A family reference by hyphenated surname. The hyphen is inside the name; the expectation is one span, and 'family' is outside it.",
+      "why": "A surname used as a modifier of 'family' (a family reference). The taxonomy has no convention for family references yet, so the case is recorded as honest ambiguity and as a known gap.",
       "text": "The Smith-Jones family arrived early.",
       "expectations": [
         {
           "start": 4,
           "end": 15,
           "surface": "Smith-Jones",
-          "expect": "person"
+          "expect": "either"
         }
       ],
       "focus_span": 0,
@@ -378,7 +378,8 @@
         ]
       },
       "ambiguity": {
-        "level": "unambiguous"
+        "level": "genuinely-ambiguous",
+        "note": "A surname used as a modifier of 'family' has no span convention in taxonomy 0.1.0 (same gap as 'the Joneses'); whether it is a PERSON mention is undecided."
       },
       "evidence_class": "authored-baseline",
       "source_ids": [

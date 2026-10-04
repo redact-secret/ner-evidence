@@ -51,7 +51,7 @@
       "entity_type": "PERSON",
       "language": "en",
       "title": "Sentence-initial 'Bill' as a person",
-      "why": "Minimal pair partner of bill-imperative-verb with a finite past-tense verb.",
+      "why": "Contrast partner of bill-imperative-verb with a finite past-tense verb.",
       "text": "Bill called the client at the end of the month.",
       "expectations": [
         {
@@ -188,7 +188,7 @@
       "entity_type": "PERSON",
       "language": "en",
       "title": "Sentence-initial 'Grant' as a person who approves",
-      "why": "Minimal pair partner of grant-noun-subject. Only an animate agent can approve a request, which is the sole disambiguating cue.",
+      "why": "Contrast partner of grant-noun-subject. Only an animate agent can approve a request, which is the sole disambiguating cue.",
       "text": "Grant approved the request on Friday.",
       "expectations": [
         {
@@ -279,7 +279,7 @@
       "entity_type": "PERSON",
       "language": "en",
       "title": "Sentence-initial 'Hope' as a person",
-      "why": "Minimal pair partner of hope-abstract-noun: a predicate that only a person can satisfy.",
+      "why": "Contrast partner of hope-abstract-noun: a predicate that only a person can satisfy.",
       "text": "Hope is not available on Friday.",
       "expectations": [
         {
@@ -324,7 +324,7 @@
       "entity_type": "PERSON",
       "language": "en",
       "title": "Sentence-initial 'Mark' as the subject-agent",
-      "why": "Minimal pair partner of mark-imperative-verb; here the same word is the subject of a finite verb.",
+      "why": "Contrast partner of mark-imperative-verb; here the same word is the subject of a finite verb.",
       "text": "Mark labelled the boxes before loading them.",
       "expectations": [
         {
@@ -415,7 +415,7 @@
       "entity_type": "PERSON",
       "language": "en",
       "title": "Sentence-initial 'May' as a given name",
-      "why": "Partner of may-modal-question. The following verb phrase 'will attend' needs a human subject, not a month or modal.",
+      "why": "Contrast partner of may-modal-question. The following verb phrase 'will attend' needs a human subject, not a month or modal.",
       "text": "May will attend the review next week.",
       "expectations": [
         {
@@ -599,7 +599,7 @@
       "entity_type": "PERSON",
       "language": "en",
       "title": "Sentence-initial 'Will' as a given name",
-      "why": "Minimal pair partner of will-modal-question: identical surface form and position, opposite expectation, resolved by the following past-tense verb phrase.",
+      "why": "Contrast partner of will-modal-question: the same surface form in the same position with the opposite expectation, resolved by the following past-tense verb phrase (the surrounding frames differ).",
       "text": "Will reviewed the draft yesterday.",
       "expectations": [
         {
@@ -644,7 +644,7 @@
       "entity_type": "PERSON",
       "language": "en",
       "title": "Sentence-initial 'Will' as a modal verb",
-      "why": "At sentence start capitalization is uninformative: 'Will' here is a modal verb, not the given name. Paired with will-given-name to expose capitalization-only logic.",
+      "why": "At sentence start capitalization is uninformative: 'Will' here is a modal verb, not the given name. Contrast pair with will-given-name to expose capitalization-only logic.",
       "text": "Will you review the draft today?",
       "expectations": [
         {
