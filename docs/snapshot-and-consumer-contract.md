@@ -71,6 +71,9 @@ python -m ner_evidence snapshot verify --path snapshots/<snapshot_id>     # work
 python -m ner_evidence snapshot verify                                   # every released snapshot
 ```
 
+A dependency-free reference consumer implementing steps 1-5 and the fixture/case join is in
+`examples/consume_snapshot.py`; it imports nothing from this package and is exercised by the test suite.
+
 ## Reading the data
 
 * A **fixture** is the unit to run a model on: `text` plus `spans`. Join to its Case by `case_id` in

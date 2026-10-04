@@ -125,6 +125,12 @@ class PrivacyLint(unittest.TestCase):
         ]:
             self.assertEqual(privacy.scan_text(text), [], text)
 
+    def test_sha256_digests_are_not_flagged_but_digit_runs_still_are(self):
+        digest = "1234567890123" + "a" * 51  # 64 hex chars containing a 13-digit run
+        self.assertEqual(len(digest), 64)
+        self.assertEqual(privacy.scan_text('{"case_digest": "%s"}' % digest), [])
+        self.assertIn("phone-like-number", privacy.scan_text("call " + "010-1234-" + "5678"))
+
     def test_tree_rejects_dump_file_types_and_size(self):
         with tempfile.TemporaryDirectory() as d:
             root = Path(d)

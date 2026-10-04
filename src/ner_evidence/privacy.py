@@ -20,6 +20,7 @@ SAFE_EMAIL_DOMAINS = re.compile(r"(^|\.)(example\.(com|org|net)|[a-z0-9-]+\.(inv
 # json-schema.org appears only as the standard `$schema` dialect identifier in embedded schemas.
 SAFE_URL_HOSTS = re.compile(SAFE_EMAIL_DOMAINS.pattern + r"|^json-schema\.org$", re.I)
 
+HEX_DIGEST = re.compile(r"(?<![0-9a-fA-F])[0-9a-f]{64}(?![0-9a-fA-F])")
 EMAIL = re.compile(r"[A-Za-z0-9._%+-]+@([A-Za-z0-9-]+(?:\.[A-Za-z0-9-]+)*\.[A-Za-z]{2,})")
 URL = re.compile(r"https?://([^/\s\"'<>\\]+)", re.I)
 PHONE = re.compile(r"(?<![\w.])\+?\d[\d ().-]{7,}\d(?![\w])")
@@ -73,6 +74,7 @@ def _public_ipv4(addr: str) -> bool:
 def scan_text(text: str) -> list[str]:
     """Return rule names triggered by ``text`` (no matched values)."""
     rules: list[str] = []
+    text = HEX_DIGEST.sub(" ", text)  # SHA-256 digests are not personal data but contain digit runs
     for m in EMAIL.finditer(text):
         if not SAFE_EMAIL_DOMAINS.search(m.group(1)):
             rules.append("email-address")

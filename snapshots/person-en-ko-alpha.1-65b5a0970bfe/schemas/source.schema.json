@@ -1,0 +1,169 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:ner-evidence:schema:source:1.0.0",
+  "title": "Evidence source record",
+  "description": "Provenance, licensing and privacy facts for one body of evidence. Imported corpora require more fields; see docs/provenance-and-privacy-policy.md.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "id",
+    "kind",
+    "title",
+    "description",
+    "version",
+    "as_of",
+    "origin",
+    "license",
+    "personal_data",
+    "transformations",
+    "known_bias",
+    "review"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^src/[a-z0-9]+(-[a-z0-9]+)*$"
+    },
+    "kind": {
+      "enum": [
+        "project-authored",
+        "public-corpus",
+        "licensed-corpus",
+        "reference"
+      ]
+    },
+    "title": {
+      "type": "string",
+      "minLength": 5
+    },
+    "description": {
+      "type": "string",
+      "minLength": 20
+    },
+    "version": {
+      "type": "string",
+      "minLength": 1
+    },
+    "as_of": {
+      "type": "string",
+      "format": "date"
+    },
+    "origin": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "type"
+      ],
+      "properties": {
+        "type": {
+          "enum": [
+            "authored",
+            "url",
+            "citation"
+          ]
+        },
+        "locator": {
+          "type": "string",
+          "minLength": 3
+        },
+        "artifact_sha256": {
+          "type": "string",
+          "format": "sha256"
+        },
+        "retrieved_on": {
+          "type": "string",
+          "format": "date"
+        }
+      }
+    },
+    "license": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "spdx",
+        "redistribution",
+        "terms_note"
+      ],
+      "properties": {
+        "spdx": {
+          "type": "string",
+          "pattern": "^(LicenseRef-[A-Za-z0-9.-]+|[A-Za-z0-9.+-]+)$"
+        },
+        "redistribution": {
+          "enum": [
+            "allowed",
+            "internal-only",
+            "cite-only"
+          ]
+        },
+        "terms_note": {
+          "type": "string",
+          "minLength": 10
+        }
+      }
+    },
+    "personal_data": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "contains_personal_data",
+        "name_origin",
+        "notes"
+      ],
+      "properties": {
+        "contains_personal_data": {
+          "type": "boolean"
+        },
+        "name_origin": {
+          "enum": [
+            "synthetic",
+            "generic-composed",
+            "public-figure",
+            "naturally-occurring"
+          ]
+        },
+        "notes": {
+          "type": "string",
+          "minLength": 10
+        }
+      }
+    },
+    "transformations": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 3
+      }
+    },
+    "known_bias": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string",
+        "minLength": 10
+      }
+    },
+    "review": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "provenance",
+        "legal"
+      ],
+      "properties": {
+        "provenance": {
+          "enum": [
+            "author-only",
+            "independently-reviewed"
+          ]
+        },
+        "legal": {
+          "enum": [
+            "pending",
+            "independently-reviewed"
+          ]
+        }
+      }
+    }
+  }
+}
