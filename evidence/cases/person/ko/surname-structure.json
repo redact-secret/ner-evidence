@@ -1,0 +1,345 @@
+{
+  "cases": [
+    {
+      "id": "person/ko/surname-structure/two-syllable-name-kim-sol",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "ko",
+      "title": "Two-syllable name (surname plus one-syllable given name)",
+      "why": "Two-syllable names are uncommon but real; a detector expecting three syllables may under-extend the span or reject it as a noun.",
+      "text": "김솔은 일찍 퇴근했다.",
+      "expectations": [
+        {
+          "start": 0,
+          "end": 2,
+          "surface": "김솔",
+          "expect": "person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "hangul",
+        "token_class": "single",
+        "collision_classes": [],
+        "context_types": [
+          "plain-prose",
+          "particle-attached"
+        ],
+        "name_features": [
+          "full-name",
+          "ko-surname-given",
+          "ko-2-syllable"
+        ],
+        "boundary_tags": [
+          "particle-excluded"
+        ]
+      },
+      "ambiguity": {
+        "level": "unambiguous"
+      },
+      "evidence_class": "authored-baseline",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/ko/surname-structure/two-syllable-surname-dokgo",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "ko",
+      "title": "Four-syllable name with the two-syllable surname 독고",
+      "why": "독고 is a rare two-syllable surname; 독 alone means 'poison', adding a lexical decoy inside the name.",
+      "text": "독고영재가 상을 받았다.",
+      "expectations": [
+        {
+          "start": 0,
+          "end": 4,
+          "surface": "독고영재",
+          "expect": "person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "rare",
+        "script": "hangul",
+        "token_class": "single",
+        "collision_classes": [],
+        "context_types": [
+          "plain-prose",
+          "particle-attached"
+        ],
+        "name_features": [
+          "full-name",
+          "ko-4-syllable",
+          "ko-two-syllable-surname",
+          "ko-rare-surname"
+        ],
+        "boundary_tags": [
+          "particle-excluded"
+        ]
+      },
+      "ambiguity": {
+        "level": "unambiguous"
+      },
+      "evidence_class": "authored-baseline",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/ko/surname-structure/two-syllable-surname-hwangbo",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "ko",
+      "title": "Four-syllable name with the two-syllable surname 황보",
+      "why": "Another two-syllable surname; 황보 could be segmented as 황 (a common surname) plus 보서연.",
+      "text": "황보서연이 회의를 주재했다.",
+      "expectations": [
+        {
+          "start": 0,
+          "end": 4,
+          "surface": "황보서연",
+          "expect": "person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "rare",
+        "script": "hangul",
+        "token_class": "single",
+        "collision_classes": [],
+        "context_types": [
+          "plain-prose",
+          "particle-attached"
+        ],
+        "name_features": [
+          "full-name",
+          "ko-4-syllable",
+          "ko-two-syllable-surname",
+          "ko-rare-surname"
+        ],
+        "boundary_tags": [
+          "particle-excluded"
+        ]
+      },
+      "ambiguity": {
+        "level": "unambiguous"
+      },
+      "evidence_class": "authored-baseline",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/ko/surname-structure/two-syllable-surname-jegal-one-syllable-given",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "ko",
+      "title": "Three-syllable name with a two-syllable surname and one-syllable given name",
+      "why": "Three syllables look like the common shape but the structure is different (surname 제갈 plus given 민). A segmenter assuming the 1+2 split gets it wrong.",
+      "text": "제갈민은 먼저 일어났다.",
+      "expectations": [
+        {
+          "start": 0,
+          "end": 3,
+          "surface": "제갈민",
+          "expect": "person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "rare",
+        "script": "hangul",
+        "token_class": "single",
+        "collision_classes": [],
+        "context_types": [
+          "plain-prose",
+          "particle-attached"
+        ],
+        "name_features": [
+          "full-name",
+          "ko-3-syllable",
+          "ko-two-syllable-surname",
+          "ko-rare-surname"
+        ],
+        "boundary_tags": [
+          "particle-excluded"
+        ]
+      },
+      "ambiguity": {
+        "level": "unambiguous"
+      },
+      "evidence_class": "authored-baseline",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/ko/surname-structure/two-syllable-surname-namgung",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "ko",
+      "title": "Four-syllable name with the two-syllable surname 남궁",
+      "why": "A two-syllable surname makes the full name four syllables; the span must include all four, and a three-syllable assumption would cut the last syllable.",
+      "text": "남궁민수는 발표를 맡았다.",
+      "expectations": [
+        {
+          "start": 0,
+          "end": 4,
+          "surface": "남궁민수",
+          "expect": "person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "rare",
+        "script": "hangul",
+        "token_class": "single",
+        "collision_classes": [],
+        "context_types": [
+          "plain-prose",
+          "particle-attached"
+        ],
+        "name_features": [
+          "full-name",
+          "ko-4-syllable",
+          "ko-two-syllable-surname",
+          "ko-rare-surname"
+        ],
+        "boundary_tags": [
+          "particle-excluded"
+        ]
+      },
+      "ambiguity": {
+        "level": "unambiguous"
+      },
+      "evidence_class": "authored-baseline",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/ko/surname-structure/two-syllable-surname-seonu",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "ko",
+      "title": "Four-syllable name with the two-syllable surname 선우",
+      "why": "선우 is a two-syllable surname that is also a given name, so the same syllables can be read as a given name alone.",
+      "text": "선우진아는 신입 사원이다.",
+      "expectations": [
+        {
+          "start": 0,
+          "end": 4,
+          "surface": "선우진아",
+          "expect": "person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "rare",
+        "script": "hangul",
+        "token_class": "single",
+        "collision_classes": [],
+        "context_types": [
+          "plain-prose",
+          "particle-attached"
+        ],
+        "name_features": [
+          "full-name",
+          "ko-4-syllable",
+          "ko-two-syllable-surname",
+          "ko-rare-surname"
+        ],
+        "boundary_tags": [
+          "particle-excluded"
+        ]
+      },
+      "ambiguity": {
+        "level": "unambiguous"
+      },
+      "evidence_class": "authored-baseline",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/ko/surname-structure/very-common-surname-choi",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "ko",
+      "title": "Very common one-syllable surname with common given name",
+      "why": "Frequency-dense baseline for the surname-given structure with a surname (최) that also begins everyday words such as 최고 'best'.",
+      "text": "최민준이 발표 순서를 정했다.",
+      "expectations": [
+        {
+          "start": 0,
+          "end": 3,
+          "surface": "최민준",
+          "expect": "person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "hangul",
+        "token_class": "single",
+        "collision_classes": [],
+        "context_types": [
+          "plain-prose",
+          "particle-attached"
+        ],
+        "name_features": [
+          "full-name",
+          "ko-surname-given",
+          "ko-3-syllable"
+        ],
+        "boundary_tags": [
+          "particle-excluded"
+        ]
+      },
+      "ambiguity": {
+        "level": "unambiguous"
+      },
+      "evidence_class": "authored-baseline",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    }
+  ]
+}

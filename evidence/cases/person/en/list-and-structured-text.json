@@ -1,0 +1,381 @@
+{
+  "cases": [
+    {
+      "id": "person/en/list-and-structured-text/csv-like-row",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "en",
+      "title": "Comma-separated record with a name field",
+      "why": "Comma-separated values without spaces; the name is the first field and the commas are delimiters.",
+      "text": "Maria Lopez,Auditor,2021",
+      "expectations": [
+        {
+          "start": 0,
+          "end": 11,
+          "surface": "Maria Lopez",
+          "expect": "person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "latin",
+        "token_class": "multi",
+        "collision_classes": [],
+        "context_types": [
+          "structured-text"
+        ],
+        "name_features": [
+          "full-name"
+        ],
+        "boundary_tags": [
+          "punctuation-adjacent",
+          "digit-adjacent",
+          "no-space"
+        ]
+      },
+      "ambiguity": {
+        "level": "unambiguous"
+      },
+      "evidence_class": "authored-baseline",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/en/list-and-structured-text/json-like-name-field",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "en",
+      "title": "Name inside a JSON-style object",
+      "why": "Quotes and braces around a name in a key-value structure; the quotes are delimiters and not part of the span.",
+      "text": "{\"name\": \"Maria Lopez\", \"role\": \"auditor\"}",
+      "expectations": [
+        {
+          "start": 10,
+          "end": 21,
+          "surface": "Maria Lopez",
+          "expect": "person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "latin",
+        "token_class": "multi",
+        "collision_classes": [],
+        "context_types": [
+          "structured-text",
+          "quotation"
+        ],
+        "name_features": [
+          "full-name"
+        ],
+        "boundary_tags": [
+          "quote-boundary",
+          "punctuation-adjacent"
+        ]
+      },
+      "ambiguity": {
+        "level": "unambiguous"
+      },
+      "evidence_class": "authored-baseline",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      },
+      "projections_excluded": [
+        {
+          "projection_id": "quoted",
+          "reason": "The projection wraps the text in another pair of quotation marks, which would nest with the quotes this case is about and change what it tests."
+        }
+      ]
+    },
+    {
+      "id": "person/en/list-and-structured-text/label-value-name",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "en",
+      "title": "Label-value line with a name",
+      "why": "Form-style 'Name: value' text with no sentence around the value.",
+      "text": "Name: Maria Lopez",
+      "expectations": [
+        {
+          "start": 6,
+          "end": 17,
+          "surface": "Maria Lopez",
+          "expect": "person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "latin",
+        "token_class": "multi",
+        "collision_classes": [],
+        "context_types": [
+          "structured-text"
+        ],
+        "name_features": [
+          "full-name"
+        ],
+        "boundary_tags": [
+          "punctuation-adjacent"
+        ]
+      },
+      "ambiguity": {
+        "level": "unambiguous"
+      },
+      "evidence_class": "authored-baseline",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/en/list-and-structured-text/label-value-with-role",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "en",
+      "title": "Name and role in a semicolon-separated record",
+      "why": "A record with several fields; only the first field is a person and the second is a job title that looks like a surname-ish word.",
+      "text": "Name: Olivia Brandt; Role: Baker",
+      "expectations": [
+        {
+          "start": 6,
+          "end": 19,
+          "surface": "Olivia Brandt",
+          "expect": "person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "latin",
+        "token_class": "multi",
+        "collision_classes": [],
+        "context_types": [
+          "structured-text"
+        ],
+        "name_features": [
+          "full-name"
+        ],
+        "boundary_tags": [
+          "punctuation-adjacent"
+        ]
+      },
+      "ambiguity": {
+        "level": "unambiguous"
+      },
+      "evidence_class": "authored-baseline",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/en/list-and-structured-text/numbered-list-names",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "en",
+      "title": "Numbered list of names",
+      "why": "Item numbers with periods precede each name; the numbers and periods are not part of any span.",
+      "text": "1. Maria Lopez 2. Ahmed Hassan",
+      "expectations": [
+        {
+          "start": 3,
+          "end": 14,
+          "surface": "Maria Lopez",
+          "expect": "person"
+        },
+        {
+          "start": 18,
+          "end": 30,
+          "surface": "Ahmed Hassan",
+          "expect": "person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "latin",
+        "token_class": "multi",
+        "collision_classes": [],
+        "context_types": [
+          "structured-text",
+          "list-or-enumeration"
+        ],
+        "name_features": [
+          "full-name"
+        ],
+        "boundary_tags": [
+          "digit-adjacent",
+          "adjacent-names"
+        ]
+      },
+      "ambiguity": {
+        "level": "unambiguous"
+      },
+      "evidence_class": "authored-baseline",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/en/list-and-structured-text/reported-by-field",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "en",
+      "title": "Reported-by field in a ticket",
+      "why": "A ticketing-system style field with a label and a full name.",
+      "text": "Reported by: Chen Wei",
+      "expectations": [
+        {
+          "start": 13,
+          "end": 21,
+          "surface": "Chen Wei",
+          "expect": "person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "latin",
+        "token_class": "multi",
+        "collision_classes": [],
+        "context_types": [
+          "structured-text"
+        ],
+        "name_features": [
+          "full-name"
+        ],
+        "boundary_tags": [
+          "punctuation-adjacent"
+        ]
+      },
+      "ambiguity": {
+        "level": "unambiguous"
+      },
+      "evidence_class": "authored-baseline",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/en/list-and-structured-text/salutation-with-comma",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "en",
+      "title": "Greeting line with a name",
+      "why": "A salutation 'Dear X,' where the comma is part of the greeting format.",
+      "text": "Dear Maria,",
+      "expectations": [
+        {
+          "start": 5,
+          "end": 10,
+          "surface": "Maria",
+          "expect": "person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "latin",
+        "token_class": "single",
+        "collision_classes": [],
+        "context_types": [
+          "structured-text",
+          "vocative"
+        ],
+        "name_features": [
+          "given-only"
+        ],
+        "boundary_tags": [
+          "punctuation-adjacent"
+        ]
+      },
+      "ambiguity": {
+        "level": "unambiguous"
+      },
+      "evidence_class": "authored-baseline",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/en/list-and-structured-text/sign-off-name",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "en",
+      "title": "Sign-off with only a name on the final line",
+      "why": "A name alone on a line after a closing phrase: the only cue is its position in the message layout.",
+      "text": "Best regards,\nOlivia Brandt",
+      "expectations": [
+        {
+          "start": 14,
+          "end": 27,
+          "surface": "Olivia Brandt",
+          "expect": "person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "latin",
+        "token_class": "multi",
+        "collision_classes": [],
+        "context_types": [
+          "structured-text"
+        ],
+        "name_features": [
+          "full-name"
+        ],
+        "boundary_tags": []
+      },
+      "ambiguity": {
+        "level": "unambiguous"
+      },
+      "evidence_class": "authored-baseline",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    }
+  ]
+}

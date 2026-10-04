@@ -1,0 +1,324 @@
+{
+  "cases": [
+    {
+      "id": "person/en/possessive-and-plural/family-singular-surname",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "en",
+      "title": "Singular surname modifying 'family'",
+      "why": "A surname used as a modifier of 'family' (a family reference). The taxonomy has no convention for family references yet, so the case is recorded as honest ambiguity and as a known gap.",
+      "text": "The Okafor family arrived early.",
+      "expectations": [
+        {
+          "start": 4,
+          "end": 10,
+          "surface": "Okafor",
+          "expect": "either"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "rare",
+        "script": "latin",
+        "token_class": "single",
+        "collision_classes": [],
+        "context_types": [
+          "plain-prose"
+        ],
+        "name_features": [
+          "surname-only"
+        ],
+        "boundary_tags": []
+      },
+      "ambiguity": {
+        "level": "genuinely-ambiguous",
+        "note": "A surname used as a modifier of 'family' has no span convention in taxonomy 0.1.0 (same gap as 'the Joneses'); whether it is a PERSON mention is undecided."
+      },
+      "evidence_class": "authored-baseline",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/en/possessive-and-plural/name-ending-in-s-possessive",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "en",
+      "title": "Name ending in s with a bare apostrophe possessive",
+      "why": "For a name ending in s, the possessive is a bare apostrophe: Charles' notes. The apostrophe is excluded.",
+      "text": "We read Charles' notes carefully.",
+      "expectations": [
+        {
+          "start": 8,
+          "end": 15,
+          "surface": "Charles",
+          "expect": "person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "latin",
+        "token_class": "single",
+        "collision_classes": [],
+        "context_types": [
+          "plain-prose",
+          "possessive"
+        ],
+        "name_features": [
+          "given-only"
+        ],
+        "boundary_tags": [
+          "apostrophe-boundary"
+        ]
+      },
+      "ambiguity": {
+        "level": "unambiguous"
+      },
+      "evidence_class": "authored-baseline",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/en/possessive-and-plural/plural-s-possessive",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "en",
+      "title": "Plural-possessive apostrophe after a family surname",
+      "why": "A plural possessive (the Smiths' house) puts the apostrophe after the plural s. By taxonomy 0.1.0 family-plural references have no convention, so the case is recorded as ambiguous.",
+      "text": "We visited the Smiths' house on Sunday.",
+      "expectations": [
+        {
+          "start": 15,
+          "end": 21,
+          "surface": "Smiths",
+          "expect": "either"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "latin",
+        "token_class": "single",
+        "collision_classes": [],
+        "context_types": [
+          "plain-prose",
+          "possessive"
+        ],
+        "name_features": [
+          "surname-only"
+        ],
+        "boundary_tags": [
+          "apostrophe-boundary"
+        ]
+      },
+      "ambiguity": {
+        "level": "genuinely-ambiguous",
+        "note": "The plural surname names a family; whether that is a PERSON mention is a convention not yet defined."
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/en/possessive-and-plural/possessive-of-multi-token-name",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "en",
+      "title": "Possessive after a two-token name",
+      "why": "The possessive attaches to the last token; the span is the full name without the 's.",
+      "text": "We reviewed Olivia Brandt's proposal.",
+      "expectations": [
+        {
+          "start": 12,
+          "end": 25,
+          "surface": "Olivia Brandt",
+          "expect": "person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "latin",
+        "token_class": "multi",
+        "collision_classes": [],
+        "context_types": [
+          "plain-prose",
+          "possessive"
+        ],
+        "name_features": [
+          "full-name"
+        ],
+        "boundary_tags": [
+          "apostrophe-boundary"
+        ]
+      },
+      "ambiguity": {
+        "level": "unambiguous"
+      },
+      "evidence_class": "authored-baseline",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/en/possessive-and-plural/surname-possessive-after-title",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "en",
+      "title": "Surname with possessive after a title in subject position",
+      "why": "Possessive on a surname inside a noun phrase ('Whitfield's garden').",
+      "text": "Mrs. Whitfield's garden won the local prize.",
+      "expectations": [
+        {
+          "start": 5,
+          "end": 14,
+          "surface": "Whitfield",
+          "expect": "person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "latin",
+        "token_class": "single",
+        "collision_classes": [],
+        "context_types": [
+          "plain-prose",
+          "possessive",
+          "title-honorific"
+        ],
+        "name_features": [
+          "surname-only"
+        ],
+        "boundary_tags": [
+          "apostrophe-boundary",
+          "honorific-excluded",
+          "abbreviation-period"
+        ]
+      },
+      "ambiguity": {
+        "level": "unambiguous"
+      },
+      "evidence_class": "authored-baseline",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/en/possessive-and-plural/the-joneses",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "en",
+      "title": "The Joneses used for a family of neighbours",
+      "why": "A plural surname with a definite article refers to a family. The taxonomy has no convention yet, so this is recorded as honest ambiguity and as a known gap.",
+      "text": "We moved next door to the Joneses last year.",
+      "expectations": [
+        {
+          "start": 22,
+          "end": 33,
+          "surface": "the Joneses",
+          "expect": "either"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "latin",
+        "token_class": "multi",
+        "collision_classes": [],
+        "context_types": [
+          "plain-prose"
+        ],
+        "name_features": [
+          "surname-only"
+        ],
+        "boundary_tags": []
+      },
+      "ambiguity": {
+        "level": "genuinely-ambiguous",
+        "note": "A collective family reference has no span convention yet: the span could be 'Joneses' or 'the Joneses', or no PERSON at all."
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/en/possessive-and-plural/two-johns-plural-given-name",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "en",
+      "title": "Plural of a given name for two namesakes",
+      "why": "Two people sharing a first name are referred to by a plural of it. As with family plurals, no convention exists yet, so this is recorded as ambiguity.",
+      "text": "There were two Johns in the room.",
+      "expectations": [
+        {
+          "start": 15,
+          "end": 20,
+          "surface": "Johns",
+          "expect": "either"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "latin",
+        "token_class": "single",
+        "collision_classes": [],
+        "context_types": [
+          "plain-prose"
+        ],
+        "name_features": [
+          "given-only"
+        ],
+        "boundary_tags": []
+      },
+      "ambiguity": {
+        "level": "genuinely-ambiguous",
+        "note": "A plural given name refers to individuals, but whether the plural form is a PERSON mention is undefined in taxonomy 0.1.0."
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    }
+  ]
+}

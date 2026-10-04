@@ -1,0 +1,780 @@
+{
+  "cases": [
+    {
+      "id": "person/en/negative-no-person/album-title-surname",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "en",
+      "title": "An album whose title is a bare surname",
+      "why": "A quoted album title that is a bare common surname; the head noun 'album' makes it a work.",
+      "text": "Her second album, \"Whitaker\", sold well.",
+      "expectations": [
+        {
+          "start": 19,
+          "end": 27,
+          "surface": "Whitaker",
+          "expect": "not-person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "latin",
+        "token_class": "single",
+        "collision_classes": [
+          "work-title"
+        ],
+        "context_types": [
+          "plain-prose",
+          "quotation",
+          "no-person"
+        ],
+        "name_features": [],
+        "boundary_tags": [
+          "quote-boundary",
+          "punctuation-adjacent"
+        ]
+      },
+      "ambiguity": {
+        "level": "context-resolvable",
+        "note": "'Her second album' followed by a quoted word marks a work title."
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      },
+      "projections_excluded": [
+        {
+          "projection_id": "quoted",
+          "reason": "The projection wraps the text in another pair of quotation marks, which would nest with the quotes this case is about and change what it tests."
+        }
+      ]
+    },
+    {
+      "id": "person/en/negative-no-person/alzheimers-disease-eponym",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "en",
+      "title": "Alzheimer's disease as an eponymous term",
+      "why": "Another medical eponym with a possessive; the surname is inside a disease name.",
+      "text": "The clinic studies Alzheimer's disease in older adults.",
+      "expectations": [
+        {
+          "start": 19,
+          "end": 38,
+          "surface": "Alzheimer's disease",
+          "expect": "not-person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "not-applicable",
+        "script": "latin",
+        "token_class": "multi",
+        "collision_classes": [
+          "eponym"
+        ],
+        "context_types": [
+          "plain-prose",
+          "possessive",
+          "no-person"
+        ],
+        "name_features": [],
+        "boundary_tags": [
+          "apostrophe-boundary"
+        ]
+      },
+      "ambiguity": {
+        "level": "context-resolvable",
+        "note": "The possessive plus 'disease' forms a medical term."
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/en/negative-no-person/fahrenheit-scale-eponym",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "en",
+      "title": "Fahrenheit as a temperature scale",
+      "why": "An eponymous scale name derived from a surname; by convention not a PERSON mention.",
+      "text": "Water boils at 212 degrees Fahrenheit.",
+      "expectations": [
+        {
+          "start": 27,
+          "end": 37,
+          "surface": "Fahrenheit",
+          "expect": "not-person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "not-applicable",
+        "script": "latin",
+        "token_class": "single",
+        "collision_classes": [
+          "eponym"
+        ],
+        "context_types": [
+          "plain-prose",
+          "no-person"
+        ],
+        "name_features": [],
+        "boundary_tags": [
+          "digit-adjacent"
+        ]
+      },
+      "ambiguity": {
+        "level": "context-resolvable",
+        "note": "A number of degrees before the word marks a temperature scale."
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/en/negative-no-person/film-title-given-name",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "en",
+      "title": "A film whose title is a given name",
+      "why": "A quoted film title that is a bare given name denotes a work, not a person.",
+      "text": "The film \"Clementine\" won an award.",
+      "expectations": [
+        {
+          "start": 10,
+          "end": 20,
+          "surface": "Clementine",
+          "expect": "not-person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "latin",
+        "token_class": "single",
+        "collision_classes": [
+          "work-title"
+        ],
+        "context_types": [
+          "plain-prose",
+          "quotation",
+          "no-person"
+        ],
+        "name_features": [],
+        "boundary_tags": [
+          "quote-boundary"
+        ]
+      },
+      "ambiguity": {
+        "level": "context-resolvable",
+        "note": "The noun 'film' before the quoted word and 'won an award' mark a work."
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      },
+      "projections_excluded": [
+        {
+          "projection_id": "quoted",
+          "reason": "The projection wraps the text in another pair of quotation marks, which would nest with the quotes this case is about and change what it tests."
+        }
+      ]
+    },
+    {
+      "id": "person/en/negative-no-person/grace-period-term",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "en",
+      "title": "Grace Period as a fixed term",
+      "why": "A given name inside a fixed contract term.",
+      "text": "The Grace Period ends on Friday.",
+      "expectations": [
+        {
+          "start": 4,
+          "end": 16,
+          "surface": "Grace Period",
+          "expect": "not-person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "latin",
+        "token_class": "multi",
+        "collision_classes": [
+          "common-word"
+        ],
+        "context_types": [
+          "plain-prose",
+          "no-person"
+        ],
+        "name_features": [],
+        "boundary_tags": []
+      },
+      "ambiguity": {
+        "level": "context-resolvable",
+        "note": "'Period' and 'ends on Friday' mark a term in time."
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/en/negative-no-person/hunter-green-colour",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "en",
+      "title": "Hunter Green as a colour name",
+      "why": "Hunter is a given name and surname; with 'Green' it is a named colour.",
+      "text": "Hunter Green is the colour of the cover.",
+      "expectations": [
+        {
+          "start": 0,
+          "end": 12,
+          "surface": "Hunter Green",
+          "expect": "not-person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "latin",
+        "token_class": "multi",
+        "collision_classes": [
+          "common-word"
+        ],
+        "context_types": [
+          "plain-prose",
+          "sentence-initial",
+          "no-person"
+        ],
+        "name_features": [],
+        "boundary_tags": []
+      },
+      "ambiguity": {
+        "level": "context-resolvable",
+        "note": "'The colour of the cover' marks it as a colour name."
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/en/negative-no-person/johnson-report-document",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "en",
+      "title": "Johnson Report as a named document",
+      "why": "A document named after an author or chair; the surname is inside the title of the report, not a mention of the person.",
+      "text": "The Johnson Report was released on Monday.",
+      "expectations": [
+        {
+          "start": 4,
+          "end": 18,
+          "surface": "Johnson Report",
+          "expect": "not-person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "latin",
+        "token_class": "multi",
+        "collision_classes": [
+          "work-title"
+        ],
+        "context_types": [
+          "plain-prose",
+          "no-person"
+        ],
+        "name_features": [],
+        "boundary_tags": []
+      },
+      "ambiguity": {
+        "level": "context-resolvable",
+        "note": "'Report' is a document head noun and documents are released."
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/en/negative-no-person/newton-unit-lowercase",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "en",
+      "title": "Lowercase newtons as a unit",
+      "why": "A unit named after a person, written lowercase and pluralized in running text.",
+      "text": "The force was five newtons at the handle.",
+      "expectations": [
+        {
+          "start": 19,
+          "end": 26,
+          "surface": "newtons",
+          "expect": "not-person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "not-applicable",
+        "script": "latin",
+        "token_class": "single",
+        "collision_classes": [
+          "eponym"
+        ],
+        "context_types": [
+          "plain-prose",
+          "no-person"
+        ],
+        "name_features": [],
+        "boundary_tags": []
+      },
+      "ambiguity": {
+        "level": "context-resolvable",
+        "note": "A numeral before the plural noun marks a unit of measure."
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/en/negative-no-person/nobel-prize-eponym",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "en",
+      "title": "Nobel Prize as an eponymous award",
+      "why": "Another eponym: a prize named after a person, not a mention of the person.",
+      "text": "She won the Nobel Prize in 2019.",
+      "expectations": [
+        {
+          "start": 12,
+          "end": 23,
+          "surface": "Nobel Prize",
+          "expect": "not-person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "not-applicable",
+        "script": "latin",
+        "token_class": "multi",
+        "collision_classes": [
+          "eponym"
+        ],
+        "context_types": [
+          "plain-prose",
+          "no-person"
+        ],
+        "name_features": [],
+        "boundary_tags": [
+          "digit-adjacent"
+        ]
+      },
+      "ambiguity": {
+        "level": "context-resolvable",
+        "note": "'Won the ... Prize' selects an award."
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/en/negative-no-person/novel-title-quoted-ordinary-name",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "en",
+      "title": "A novel whose title is a plain given name followed by a surname",
+      "why": "A quoted title in the form of a full name (a biography-style novel title). The title is a work, even though the string is a perfectly good person name.",
+      "text": "The novel \"Clara Whitmore\" was a bestseller.",
+      "expectations": [
+        {
+          "start": 11,
+          "end": 25,
+          "surface": "Clara Whitmore",
+          "expect": "not-person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "latin",
+        "token_class": "multi",
+        "collision_classes": [
+          "work-title"
+        ],
+        "context_types": [
+          "plain-prose",
+          "quotation",
+          "no-person"
+        ],
+        "name_features": [],
+        "boundary_tags": [
+          "quote-boundary"
+        ]
+      },
+      "ambiguity": {
+        "level": "context-resolvable",
+        "note": "'The novel' before a quoted string marks a work title."
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      },
+      "projections_excluded": [
+        {
+          "projection_id": "quoted",
+          "reason": "The projection wraps the text in another pair of quotation marks, which would nest with the quotes this case is about and change what it tests."
+        }
+      ]
+    },
+    {
+      "id": "person/en/negative-no-person/ohms-law-eponym",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "en",
+      "title": "Ohm's law as an eponymous term",
+      "why": "Taxonomy convention: eponymous terms are not PERSON mentions, so 'Ohm's law' is a whole not-person span even though Ohm was a person.",
+      "text": "Ohm's law relates voltage and current.",
+      "expectations": [
+        {
+          "start": 0,
+          "end": 9,
+          "surface": "Ohm's law",
+          "expect": "not-person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "not-applicable",
+        "script": "latin",
+        "token_class": "multi",
+        "collision_classes": [
+          "eponym"
+        ],
+        "context_types": [
+          "plain-prose",
+          "sentence-initial",
+          "possessive",
+          "no-person"
+        ],
+        "name_features": [],
+        "boundary_tags": [
+          "apostrophe-boundary"
+        ]
+      },
+      "ambiguity": {
+        "level": "context-resolvable",
+        "note": "The possessive plus the noun 'law' forms an eponymous term for a physical law."
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/en/negative-no-person/parkinsons-disease-eponym",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "en",
+      "title": "Parkinson's disease as an eponymous term",
+      "why": "An eponymous disease name; the surname inside it is not a mention of a person.",
+      "text": "Her father was diagnosed with Parkinson's disease.",
+      "expectations": [
+        {
+          "start": 30,
+          "end": 49,
+          "surface": "Parkinson's disease",
+          "expect": "not-person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "not-applicable",
+        "script": "latin",
+        "token_class": "multi",
+        "collision_classes": [
+          "eponym"
+        ],
+        "context_types": [
+          "plain-prose",
+          "possessive",
+          "no-person"
+        ],
+        "name_features": [],
+        "boundary_tags": [
+          "apostrophe-boundary"
+        ]
+      },
+      "ambiguity": {
+        "level": "context-resolvable",
+        "note": "The possessive plus 'disease' is a medical term; the diagnosis frame selects it."
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/en/negative-no-person/pythagorean-theorem-eponym",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "en",
+      "title": "Pythagorean theorem as an eponymous term",
+      "why": "An adjectival eponym built from a surname; the derived adjective plus 'theorem' is a mathematical term, not a person.",
+      "text": "Students proved the Pythagorean theorem in class.",
+      "expectations": [
+        {
+          "start": 20,
+          "end": 39,
+          "surface": "Pythagorean theorem",
+          "expect": "not-person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "not-applicable",
+        "script": "latin",
+        "token_class": "multi",
+        "collision_classes": [
+          "eponym"
+        ],
+        "context_types": [
+          "plain-prose",
+          "no-person"
+        ],
+        "name_features": [],
+        "boundary_tags": []
+      },
+      "ambiguity": {
+        "level": "context-resolvable",
+        "note": "'Proved the ... theorem' selects a mathematical result."
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/en/negative-no-person/rose-bowl-event",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "en",
+      "title": "Rose Bowl as an event",
+      "why": "A given name plus a common noun that denotes a sporting event.",
+      "text": "The Rose Bowl game starts at noon.",
+      "expectations": [
+        {
+          "start": 4,
+          "end": 13,
+          "surface": "Rose Bowl",
+          "expect": "not-person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "latin",
+        "token_class": "multi",
+        "collision_classes": [
+          "location",
+          "common-word"
+        ],
+        "context_types": [
+          "plain-prose",
+          "no-person"
+        ],
+        "name_features": [],
+        "boundary_tags": []
+      },
+      "ambiguity": {
+        "level": "context-resolvable",
+        "note": "'Bowl' and 'game' mark an event."
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/en/negative-no-person/song-title-given-name",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "en",
+      "title": "A song whose title is a given name",
+      "why": "A song title that is a bare given name, in italics-free plain text with quotes.",
+      "text": "The band closed with \"Marigold\" last night.",
+      "expectations": [
+        {
+          "start": 22,
+          "end": 30,
+          "surface": "Marigold",
+          "expect": "not-person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "latin",
+        "token_class": "single",
+        "collision_classes": [
+          "work-title",
+          "common-word"
+        ],
+        "context_types": [
+          "plain-prose",
+          "quotation",
+          "no-person"
+        ],
+        "name_features": [],
+        "boundary_tags": [
+          "quote-boundary"
+        ]
+      },
+      "ambiguity": {
+        "level": "context-resolvable",
+        "note": "'Closed with' a quoted word selects a song title."
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      },
+      "projections_excluded": [
+        {
+          "projection_id": "quoted",
+          "reason": "The projection wraps the text in another pair of quotation marks, which would nest with the quotes this case is about and change what it tests."
+        }
+      ]
+    },
+    {
+      "id": "person/en/negative-no-person/summer-collection",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "en",
+      "title": "Summer Collection as a product line",
+      "why": "A season word that is also a given name inside a product-line name.",
+      "text": "Her new Summer Collection sold out.",
+      "expectations": [
+        {
+          "start": 8,
+          "end": 25,
+          "surface": "Summer Collection",
+          "expect": "not-person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "latin",
+        "token_class": "multi",
+        "collision_classes": [
+          "temporal",
+          "product-brand",
+          "common-word"
+        ],
+        "context_types": [
+          "plain-prose",
+          "no-person"
+        ],
+        "name_features": [],
+        "boundary_tags": []
+      },
+      "ambiguity": {
+        "level": "context-resolvable",
+        "note": "'Collection' marks a product line."
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    }
+  ]
+}

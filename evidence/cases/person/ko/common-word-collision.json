@@ -1,0 +1,1836 @@
+{
+  "cases": [
+    {
+      "id": "person/ko/common-word-collision/areum-derived-adjective",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "ko",
+      "title": "아름다운 as an adjective",
+      "why": "The adjective 'beautiful' shares its stem with the name 아름. A stem-prefix match would be a false positive.",
+      "text": "아름다운 풍경이 펼쳐졌다.",
+      "expectations": [
+        {
+          "start": 0,
+          "end": 4,
+          "surface": "아름다운",
+          "expect": "not-person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "not-applicable",
+        "script": "hangul",
+        "token_class": "single",
+        "collision_classes": [
+          "common-word"
+        ],
+        "context_types": [
+          "plain-prose",
+          "no-person"
+        ],
+        "name_features": [],
+        "boundary_tags": []
+      },
+      "ambiguity": {
+        "level": "context-resolvable",
+        "note": "The adjective ending 다운 and the noun 풍경 make it a modifier."
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/ko/common-word-collision/areum-given-name",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "ko",
+      "title": "Given name 아름 with informal suffix 이",
+      "why": "아름 means 'beauty' (as in 아름답다) and is a given name; the informal suffix and an action predicate select a person.",
+      "text": "아름이가 문을 열었다.",
+      "expectations": [
+        {
+          "start": 0,
+          "end": 2,
+          "surface": "아름",
+          "expect": "person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "hangul",
+        "token_class": "single",
+        "collision_classes": [
+          "common-word"
+        ],
+        "context_types": [
+          "plain-prose",
+          "particle-attached"
+        ],
+        "name_features": [
+          "given-only",
+          "ko-given-only",
+          "ko-given-name-is-common-noun"
+        ],
+        "boundary_tags": [
+          "suffix-excluded",
+          "particle-excluded"
+        ]
+      },
+      "ambiguity": {
+        "level": "context-resolvable",
+        "note": "Opening a door is a human action."
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/ko/common-word-collision/bada-like",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "ko",
+      "title": "바다가 좋다: like the sea or like Bada",
+      "why": "좋다 ('is good/likes') fits both a noun (the sea is nice) and a person (Bada is nice); nothing in the text resolves it.",
+      "text": "바다가 좋다.",
+      "expectations": [
+        {
+          "start": 0,
+          "end": 2,
+          "surface": "바다",
+          "expect": "either"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "hangul",
+        "token_class": "single",
+        "collision_classes": [
+          "common-word"
+        ],
+        "context_types": [
+          "plain-prose",
+          "sentence-initial",
+          "particle-attached"
+        ],
+        "name_features": [
+          "given-only",
+          "ko-given-only",
+          "ko-given-name-is-common-noun"
+        ],
+        "boundary_tags": [
+          "particle-excluded"
+        ]
+      },
+      "ambiguity": {
+        "level": "genuinely-ambiguous",
+        "note": "Both a sea and a person named Bada can be 'good', and the sentence is context-free."
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/ko/common-word-collision/bada-name-and-sea",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "ko",
+      "title": "Given name 바다 as a person arriving",
+      "why": "바다 means 'sea' and is also used as a given name. An arrival predicate selects a person.",
+      "text": "바다가 먼저 도착했다.",
+      "expectations": [
+        {
+          "start": 0,
+          "end": 2,
+          "surface": "바다",
+          "expect": "person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "hangul",
+        "token_class": "single",
+        "collision_classes": [
+          "common-word"
+        ],
+        "context_types": [
+          "plain-prose",
+          "particle-attached"
+        ],
+        "name_features": [
+          "given-only",
+          "ko-given-only",
+          "ko-given-name-is-common-noun"
+        ],
+        "boundary_tags": [
+          "particle-excluded"
+        ]
+      },
+      "ambiguity": {
+        "level": "context-resolvable",
+        "note": "'Arrived first' requires an animate subject."
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/ko/common-word-collision/bada-noun-sea-view",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "ko",
+      "title": "Noun 바다 in a view description",
+      "why": "Partner of bada-name-and-sea: the same syllables with a view predicate denote the sea.",
+      "text": "창밖으로 바다가 보였다.",
+      "expectations": [
+        {
+          "start": 5,
+          "end": 7,
+          "surface": "바다",
+          "expect": "not-person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "not-applicable",
+        "script": "hangul",
+        "token_class": "single",
+        "collision_classes": [
+          "common-word"
+        ],
+        "context_types": [
+          "plain-prose",
+          "particle-attached",
+          "no-person"
+        ],
+        "name_features": [],
+        "boundary_tags": [
+          "particle-excluded"
+        ]
+      },
+      "ambiguity": {
+        "level": "context-resolvable",
+        "note": "'Was visible through the window' describes a landscape feature."
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/ko/common-word-collision/bom-came",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "ko",
+      "title": "봄이 왔다: spring came or Bom came",
+      "why": "봄이 왔다 is the standard idiom for 'spring has come' but is grammatical for a person named 봄 arriving.",
+      "text": "봄이 왔다.",
+      "expectations": [
+        {
+          "start": 0,
+          "end": 1,
+          "surface": "봄",
+          "expect": "either"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "hangul",
+        "token_class": "single",
+        "collision_classes": [
+          "temporal",
+          "common-word"
+        ],
+        "context_types": [
+          "plain-prose",
+          "sentence-initial",
+          "particle-attached"
+        ],
+        "name_features": [
+          "given-only",
+          "ko-given-only",
+          "ko-given-name-is-common-noun"
+        ],
+        "boundary_tags": [
+          "particle-excluded"
+        ]
+      },
+      "ambiguity": {
+        "level": "genuinely-ambiguous",
+        "note": "The idiom reads as the season arriving; a person named Bom arriving is equally well-formed in isolation."
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/ko/common-word-collision/bom-name-and-spring",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "ko",
+      "title": "Name 이봄 beside the season 봄 (spring)",
+      "why": "봄 means 'spring' and is a given name; a two-syllable name (surname plus 봄).",
+      "text": "이봄은 봄에 태어났다.",
+      "expectations": [
+        {
+          "start": 0,
+          "end": 2,
+          "surface": "이봄",
+          "expect": "person"
+        },
+        {
+          "start": 4,
+          "end": 5,
+          "surface": "봄",
+          "expect": "not-person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "hangul",
+        "token_class": "single",
+        "collision_classes": [
+          "temporal",
+          "common-word"
+        ],
+        "context_types": [
+          "plain-prose",
+          "particle-attached"
+        ],
+        "name_features": [
+          "full-name",
+          "ko-surname-given",
+          "ko-2-syllable",
+          "ko-given-name-is-common-noun"
+        ],
+        "boundary_tags": [
+          "particle-excluded"
+        ]
+      },
+      "ambiguity": {
+        "level": "context-resolvable",
+        "note": "A person is born in a season; the first token takes the topic marker as the subject."
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/ko/common-word-collision/boram-name",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "ko",
+      "title": "Full name 이보람 who has finished a presentation",
+      "why": "보람 means 'worth/reward' and is a given name; a presentation predicate selects a person.",
+      "text": "이보람이 발표를 마쳤다.",
+      "expectations": [
+        {
+          "start": 0,
+          "end": 3,
+          "surface": "이보람",
+          "expect": "person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "hangul",
+        "token_class": "single",
+        "collision_classes": [
+          "common-word"
+        ],
+        "context_types": [
+          "plain-prose",
+          "particle-attached"
+        ],
+        "name_features": [
+          "full-name",
+          "ko-surname-given",
+          "ko-3-syllable",
+          "ko-given-name-is-common-noun"
+        ],
+        "boundary_tags": [
+          "particle-excluded"
+        ]
+      },
+      "ambiguity": {
+        "level": "context-resolvable",
+        "note": "Finishing a presentation is a human action."
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/ko/common-word-collision/boram-noun-worth",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "ko",
+      "title": "Noun 보람 in 'it was worth it'",
+      "why": "Partner of boram-name: the abstract noun in an idiomatic phrase, with no human referent.",
+      "text": "일한 보람이 있었다.",
+      "expectations": [
+        {
+          "start": 3,
+          "end": 5,
+          "surface": "보람",
+          "expect": "not-person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "not-applicable",
+        "script": "hangul",
+        "token_class": "single",
+        "collision_classes": [
+          "common-word"
+        ],
+        "context_types": [
+          "plain-prose",
+          "particle-attached",
+          "no-person"
+        ],
+        "name_features": [],
+        "boundary_tags": [
+          "particle-excluded"
+        ]
+      },
+      "ambiguity": {
+        "level": "context-resolvable",
+        "note": "'There was worth in having worked' uses the noun in a fixed expression."
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/ko/common-word-collision/byeol-name-and-star",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "ko",
+      "title": "Name 김별 beside the noun 별 (star)",
+      "why": "별 means 'star' and is also a given name; the full name is a person and the bare noun is a celestial body.",
+      "text": "김별은 밤하늘의 별을 좋아한다.",
+      "expectations": [
+        {
+          "start": 0,
+          "end": 2,
+          "surface": "김별",
+          "expect": "person"
+        },
+        {
+          "start": 9,
+          "end": 10,
+          "surface": "별",
+          "expect": "not-person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "hangul",
+        "token_class": "single",
+        "collision_classes": [
+          "common-word"
+        ],
+        "context_types": [
+          "plain-prose",
+          "particle-attached"
+        ],
+        "name_features": [
+          "full-name",
+          "ko-surname-given",
+          "ko-2-syllable",
+          "ko-given-name-is-common-noun"
+        ],
+        "boundary_tags": [
+          "particle-excluded"
+        ]
+      },
+      "ambiguity": {
+        "level": "context-resolvable",
+        "note": "'Likes the stars in the night sky' marks the noun; the first token is a full name."
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/ko/common-word-collision/byeol-pretty",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "ko",
+      "title": "별이 예쁘다: the star is pretty or Byeol is pretty",
+      "why": "예쁘다 ('is pretty') fits a star (별) or a person named 별.",
+      "text": "별이 예쁘다.",
+      "expectations": [
+        {
+          "start": 0,
+          "end": 1,
+          "surface": "별",
+          "expect": "either"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "hangul",
+        "token_class": "single",
+        "collision_classes": [
+          "common-word"
+        ],
+        "context_types": [
+          "plain-prose",
+          "sentence-initial",
+          "particle-attached"
+        ],
+        "name_features": [
+          "given-only",
+          "ko-given-only",
+          "ko-given-name-is-common-noun"
+        ],
+        "boundary_tags": [
+          "particle-excluded"
+        ]
+      },
+      "ambiguity": {
+        "level": "genuinely-ambiguous",
+        "note": "A star can be pretty and so can a person called Byeol; no disambiguating context exists."
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/ko/common-word-collision/gaeul-miss-or-see",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "ko",
+      "title": "가을이 보고 싶다: miss Gaeul or want to see autumn",
+      "why": "As with 하늘이 보고 싶다, the verb fits both a season and a person named 가을.",
+      "text": "가을이 보고 싶다.",
+      "expectations": [
+        {
+          "start": 0,
+          "end": 2,
+          "surface": "가을",
+          "expect": "either"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "hangul",
+        "token_class": "single",
+        "collision_classes": [
+          "temporal",
+          "common-word"
+        ],
+        "context_types": [
+          "plain-prose",
+          "sentence-initial",
+          "particle-attached"
+        ],
+        "name_features": [
+          "given-only",
+          "ko-given-only",
+          "ko-given-name-is-common-noun"
+        ],
+        "boundary_tags": [
+          "particle-excluded"
+        ]
+      },
+      "ambiguity": {
+        "level": "genuinely-ambiguous",
+        "note": "Both 'I want to see autumn' and 'I miss Gaeul' are natural readings."
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/ko/common-word-collision/gaeul-name-and-autumn",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "ko",
+      "title": "Name 김가을 beside the season 가을 (autumn)",
+      "why": "가을 means 'autumn' and is a given name; one sentence has the full name and the season.",
+      "text": "김가을은 가을을 가장 좋아한다.",
+      "expectations": [
+        {
+          "start": 0,
+          "end": 3,
+          "surface": "김가을",
+          "expect": "person"
+        },
+        {
+          "start": 5,
+          "end": 7,
+          "surface": "가을",
+          "expect": "not-person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "hangul",
+        "token_class": "single",
+        "collision_classes": [
+          "temporal",
+          "common-word"
+        ],
+        "context_types": [
+          "plain-prose",
+          "particle-attached"
+        ],
+        "name_features": [
+          "full-name",
+          "ko-surname-given",
+          "ko-3-syllable",
+          "ko-given-name-is-common-noun"
+        ],
+        "boundary_tags": [
+          "particle-excluded"
+        ]
+      },
+      "ambiguity": {
+        "level": "context-resolvable",
+        "note": "The first token is a full name with a topic marker; the second is the season as the object of 'likes most'."
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/ko/common-word-collision/gim-chi-wu-split",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "ko",
+      "title": "김치우는: 김치 우는 vs 김치우 는 in a context-free fragment",
+      "why": "In spacing-free text, 김치우는 can be the name 김치우 plus the topic marker 는 or the words 김치 and 우는; as a bare fragment it is undecidable.",
+      "text": "김치우는 모습이 이상했다.",
+      "expectations": [
+        {
+          "start": 0,
+          "end": 3,
+          "surface": "김치우",
+          "expect": "either"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "hangul",
+        "token_class": "single",
+        "collision_classes": [
+          "common-word"
+        ],
+        "context_types": [
+          "plain-prose",
+          "sentence-initial",
+          "particle-attached"
+        ],
+        "name_features": [
+          "full-name",
+          "ko-surname-given",
+          "ko-3-syllable"
+        ],
+        "boundary_tags": [
+          "particle-excluded"
+        ]
+      },
+      "ambiguity": {
+        "level": "genuinely-ambiguous",
+        "note": "'김치우는 모습이' parses as a person's appearance or as 'kimchi's crying look'; the second reading is odd but the text does not exclude it."
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/ko/common-word-collision/haneul-given-name-informal",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "ko",
+      "title": "Given name 하늘 with informal suffix 이",
+      "why": "The bare given name 하늘 appears with the euphonic suffix 이 and topic marker 는; the noun 'sky' would not take a person-referring predicate like 전학을 왔다.",
+      "text": "하늘이는 어제 전학을 왔다.",
+      "expectations": [
+        {
+          "start": 0,
+          "end": 2,
+          "surface": "하늘",
+          "expect": "person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "hangul",
+        "token_class": "single",
+        "collision_classes": [
+          "common-word"
+        ],
+        "context_types": [
+          "plain-prose",
+          "particle-attached"
+        ],
+        "name_features": [
+          "given-only",
+          "ko-given-only",
+          "ko-given-name-is-common-noun"
+        ],
+        "boundary_tags": [
+          "suffix-excluded",
+          "particle-excluded"
+        ]
+      },
+      "ambiguity": {
+        "level": "context-resolvable",
+        "note": "'Transferred to a new school' needs an animate subject, so the otherwise-common noun is a person."
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/ko/common-word-collision/haneul-miss-or-see",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "ko",
+      "title": "하늘이 보고 싶다: miss Haneul or want to see the sky",
+      "why": "보고 싶다 means both 'want to see' and 'miss'. With 하늘 (sky, and a given name) as subject marker holder, the sentence is undecidable from text alone.",
+      "text": "하늘이 보고 싶다.",
+      "expectations": [
+        {
+          "start": 0,
+          "end": 2,
+          "surface": "하늘",
+          "expect": "either"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "hangul",
+        "token_class": "single",
+        "collision_classes": [
+          "common-word"
+        ],
+        "context_types": [
+          "plain-prose",
+          "sentence-initial",
+          "particle-attached"
+        ],
+        "name_features": [
+          "given-only",
+          "ko-given-only",
+          "ko-given-name-is-common-noun"
+        ],
+        "boundary_tags": [
+          "particle-excluded"
+        ]
+      },
+      "ambiguity": {
+        "level": "genuinely-ambiguous",
+        "note": "Both 'I want to see the sky' and 'I miss Haneul' are natural; no other context is given."
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/ko/common-word-collision/haneul-name-and-sky",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "ko",
+      "title": "Name 김하늘 beside the noun 하늘 (sky)",
+      "why": "The given name 하늘 is also the word for sky. One sentence contains both: the full name is a person, the bare noun is not.",
+      "text": "김하늘은 하늘을 보았다.",
+      "expectations": [
+        {
+          "start": 0,
+          "end": 3,
+          "surface": "김하늘",
+          "expect": "person"
+        },
+        {
+          "start": 5,
+          "end": 7,
+          "surface": "하늘",
+          "expect": "not-person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "hangul",
+        "token_class": "single",
+        "collision_classes": [
+          "common-word"
+        ],
+        "context_types": [
+          "plain-prose",
+          "particle-attached"
+        ],
+        "name_features": [
+          "full-name",
+          "ko-surname-given",
+          "ko-3-syllable",
+          "ko-given-name-is-common-noun"
+        ],
+        "boundary_tags": [
+          "particle-excluded"
+        ]
+      },
+      "ambiguity": {
+        "level": "context-resolvable",
+        "note": "The first token includes a surname and takes a topic marker; the second is the object of 'saw' and is the sky."
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/ko/common-word-collision/hangyeol-adverb",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "ko",
+      "title": "한결 as the adverb 'much more'",
+      "why": "Partner of hangyeol-given-name: the adverb modifies a verb.",
+      "text": "날씨가 한결 나아졌다.",
+      "expectations": [
+        {
+          "start": 4,
+          "end": 6,
+          "surface": "한결",
+          "expect": "not-person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "not-applicable",
+        "script": "hangul",
+        "token_class": "single",
+        "collision_classes": [
+          "common-word"
+        ],
+        "context_types": [
+          "plain-prose",
+          "no-person"
+        ],
+        "name_features": [],
+        "boundary_tags": []
+      },
+      "ambiguity": {
+        "level": "context-resolvable",
+        "note": "'The weather got better' is modified by the adverb 한결; no person is referred to."
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/ko/common-word-collision/hangyeol-given-name",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "ko",
+      "title": "Given name 한결 with informal suffix",
+      "why": "한결 means 'consistently/much more' as an adverb and is a given name; the euphonic suffix and an arrival predicate select a person.",
+      "text": "한결이가 제일 먼저 왔다.",
+      "expectations": [
+        {
+          "start": 0,
+          "end": 2,
+          "surface": "한결",
+          "expect": "person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "hangul",
+        "token_class": "single",
+        "collision_classes": [
+          "common-word"
+        ],
+        "context_types": [
+          "plain-prose",
+          "particle-attached"
+        ],
+        "name_features": [
+          "given-only",
+          "ko-given-only",
+          "ko-given-name-is-common-noun"
+        ],
+        "boundary_tags": [
+          "suffix-excluded",
+          "particle-excluded"
+        ]
+      },
+      "ambiguity": {
+        "level": "context-resolvable",
+        "note": "Being the first to arrive requires an animate subject."
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/ko/common-word-collision/haru-given-name",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "ko",
+      "title": "Given name 하루 alone",
+      "why": "하루 means 'one day' and is a given name; an arrival predicate selects a person.",
+      "text": "하루가 먼저 도착했다.",
+      "expectations": [
+        {
+          "start": 0,
+          "end": 2,
+          "surface": "하루",
+          "expect": "person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "hangul",
+        "token_class": "single",
+        "collision_classes": [
+          "temporal",
+          "common-word"
+        ],
+        "context_types": [
+          "plain-prose",
+          "particle-attached"
+        ],
+        "name_features": [
+          "given-only",
+          "ko-given-only",
+          "ko-given-name-is-common-noun"
+        ],
+        "boundary_tags": [
+          "particle-excluded"
+        ]
+      },
+      "ambiguity": {
+        "level": "context-resolvable",
+        "note": "Arriving first requires an animate subject."
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/ko/common-word-collision/haru-noun-one-day",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "ko",
+      "title": "하루 as 'one day'",
+      "why": "Partner of haru-given-name: the same syllables as a time noun.",
+      "text": "하루가 너무 길었다.",
+      "expectations": [
+        {
+          "start": 0,
+          "end": 2,
+          "surface": "하루",
+          "expect": "not-person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "not-applicable",
+        "script": "hangul",
+        "token_class": "single",
+        "collision_classes": [
+          "temporal",
+          "common-word"
+        ],
+        "context_types": [
+          "plain-prose",
+          "particle-attached",
+          "no-person"
+        ],
+        "name_features": [],
+        "boundary_tags": [
+          "particle-excluded"
+        ]
+      },
+      "ambiguity": {
+        "level": "context-resolvable",
+        "note": "A day that was too long; the noun is the subject of an evaluation."
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/ko/common-word-collision/iseul-name-and-dew",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "ko",
+      "title": "Name 김이슬 beside the noun 이슬 (dew)",
+      "why": "이슬 means 'dew' and is also a given name; one sentence contains the full name and the noun.",
+      "text": "김이슬은 풀잎의 이슬을 보았다.",
+      "expectations": [
+        {
+          "start": 0,
+          "end": 3,
+          "surface": "김이슬",
+          "expect": "person"
+        },
+        {
+          "start": 9,
+          "end": 11,
+          "surface": "이슬",
+          "expect": "not-person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "hangul",
+        "token_class": "single",
+        "collision_classes": [
+          "common-word"
+        ],
+        "context_types": [
+          "plain-prose",
+          "particle-attached"
+        ],
+        "name_features": [
+          "full-name",
+          "ko-surname-given",
+          "ko-3-syllable",
+          "ko-given-name-is-common-noun"
+        ],
+        "boundary_tags": [
+          "particle-excluded"
+        ]
+      },
+      "ambiguity": {
+        "level": "context-resolvable",
+        "note": "'Saw the dew on the grass blade' is a nature description; the first token is a full name."
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/ko/common-word-collision/jeongwon-pretty",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "ko",
+      "title": "정원이 예쁘다: the garden is pretty or Jeongwon is pretty",
+      "why": "정원 means garden and is a common given name; an evaluative predicate does not resolve it.",
+      "text": "정원이 예쁘다.",
+      "expectations": [
+        {
+          "start": 0,
+          "end": 2,
+          "surface": "정원",
+          "expect": "either"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "hangul",
+        "token_class": "single",
+        "collision_classes": [
+          "common-word"
+        ],
+        "context_types": [
+          "plain-prose",
+          "sentence-initial",
+          "particle-attached"
+        ],
+        "name_features": [
+          "given-only",
+          "ko-given-only",
+          "ko-given-name-is-common-noun"
+        ],
+        "boundary_tags": [
+          "particle-excluded"
+        ]
+      },
+      "ambiguity": {
+        "level": "genuinely-ambiguous",
+        "note": "A garden can be pretty and so can a person named Jeongwon."
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/ko/common-word-collision/marul-floor-noun",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "ko",
+      "title": "마루 as a wooden floor",
+      "why": "마루 means 'wooden floor' and is a given name; the locative 에 and a sitting predicate select the noun.",
+      "text": "마루에 앉아 쉬었다.",
+      "expectations": [
+        {
+          "start": 0,
+          "end": 2,
+          "surface": "마루",
+          "expect": "not-person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "not-applicable",
+        "script": "hangul",
+        "token_class": "single",
+        "collision_classes": [
+          "common-word"
+        ],
+        "context_types": [
+          "plain-prose",
+          "particle-attached",
+          "no-person"
+        ],
+        "name_features": [],
+        "boundary_tags": [
+          "particle-excluded"
+        ]
+      },
+      "ambiguity": {
+        "level": "context-resolvable",
+        "note": "Sitting and resting 'on' a surface selects the floor."
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/ko/common-word-collision/marul-given-name",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "ko",
+      "title": "Given name 마루 with a particle",
+      "why": "Partner of marul-floor-noun: a person who is late.",
+      "text": "마루는 오늘도 지각했다.",
+      "expectations": [
+        {
+          "start": 0,
+          "end": 2,
+          "surface": "마루",
+          "expect": "person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "hangul",
+        "token_class": "single",
+        "collision_classes": [
+          "common-word"
+        ],
+        "context_types": [
+          "plain-prose",
+          "particle-attached"
+        ],
+        "name_features": [
+          "given-only",
+          "ko-given-only",
+          "ko-given-name-is-common-noun"
+        ],
+        "boundary_tags": [
+          "particle-excluded"
+        ]
+      },
+      "ambiguity": {
+        "level": "context-resolvable",
+        "note": "Being late is a human behavior."
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/ko/common-word-collision/sarang-name-and-love",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "ko",
+      "title": "Name 최사랑 beside the noun 사랑 (love)",
+      "why": "사랑 means 'love' and is used as a given name; both appear in one sentence.",
+      "text": "최사랑이 말한 사랑은 쉽지 않았다.",
+      "expectations": [
+        {
+          "start": 0,
+          "end": 3,
+          "surface": "최사랑",
+          "expect": "person"
+        },
+        {
+          "start": 8,
+          "end": 10,
+          "surface": "사랑",
+          "expect": "not-person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "hangul",
+        "token_class": "single",
+        "collision_classes": [
+          "common-word"
+        ],
+        "context_types": [
+          "plain-prose",
+          "particle-attached"
+        ],
+        "name_features": [
+          "full-name",
+          "ko-surname-given",
+          "ko-3-syllable",
+          "ko-given-name-is-common-noun"
+        ],
+        "boundary_tags": [
+          "particle-excluded"
+        ]
+      },
+      "ambiguity": {
+        "level": "context-resolvable",
+        "note": "'The love that X spoke of' contains the abstract noun; the first token is a full name."
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/ko/common-word-collision/seulgi-derived-adverb",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "ko",
+      "title": "슬기롭게 derived from the noun 슬기",
+      "why": "A derived adverb ('wisely') built on the same syllables; the whole word is not a person mention and a prefix match on 슬기 would be a false positive.",
+      "text": "문제를 슬기롭게 해결했다.",
+      "expectations": [
+        {
+          "start": 4,
+          "end": 8,
+          "surface": "슬기롭게",
+          "expect": "not-person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "not-applicable",
+        "script": "hangul",
+        "token_class": "single",
+        "collision_classes": [
+          "common-word"
+        ],
+        "context_types": [
+          "plain-prose",
+          "particle-attached",
+          "no-person"
+        ],
+        "name_features": [],
+        "boundary_tags": [
+          "particle-excluded"
+        ]
+      },
+      "ambiguity": {
+        "level": "context-resolvable",
+        "note": "The adverb suffix 롭게 turns the noun into 'wisely'."
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/ko/common-word-collision/seulgi-given-name",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "ko",
+      "title": "Given name 슬기 with topic marker 는",
+      "why": "슬기 means 'wisdom' and is a very common given name for women; an early-arrival predicate selects a person.",
+      "text": "슬기는 일찍 왔다.",
+      "expectations": [
+        {
+          "start": 0,
+          "end": 2,
+          "surface": "슬기",
+          "expect": "person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "hangul",
+        "token_class": "single",
+        "collision_classes": [
+          "common-word"
+        ],
+        "context_types": [
+          "plain-prose",
+          "particle-attached"
+        ],
+        "name_features": [
+          "given-only",
+          "ko-given-only",
+          "ko-given-name-is-common-noun"
+        ],
+        "boundary_tags": [
+          "particle-excluded"
+        ]
+      },
+      "ambiguity": {
+        "level": "context-resolvable",
+        "note": "Arriving early is a human action."
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/ko/common-word-collision/songi-counter-grapes",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "ko",
+      "title": "송이 as a counter for grapes",
+      "why": "Partner of songi-name: the same syllables as a counter noun for clusters (a bunch of grapes).",
+      "text": "포도 한 송이를 샀다.",
+      "expectations": [
+        {
+          "start": 5,
+          "end": 7,
+          "surface": "송이",
+          "expect": "not-person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "not-applicable",
+        "script": "hangul",
+        "token_class": "single",
+        "collision_classes": [
+          "common-word"
+        ],
+        "context_types": [
+          "plain-prose",
+          "particle-attached",
+          "no-person"
+        ],
+        "name_features": [],
+        "boundary_tags": [
+          "particle-excluded"
+        ]
+      },
+      "ambiguity": {
+        "level": "context-resolvable",
+        "note": "The counter follows the noun 포도 'grape' and the numeral 한."
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/ko/common-word-collision/songi-name",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "ko",
+      "title": "Given name 송이 as a person",
+      "why": "송이 is a given name; as 'cluster' it is a counter and as 송이버섯 a mushroom. An arrival predicate selects a person.",
+      "text": "송이는 일찍 도착했다.",
+      "expectations": [
+        {
+          "start": 0,
+          "end": 2,
+          "surface": "송이",
+          "expect": "person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "hangul",
+        "token_class": "single",
+        "collision_classes": [
+          "common-word"
+        ],
+        "context_types": [
+          "plain-prose",
+          "particle-attached"
+        ],
+        "name_features": [
+          "given-only",
+          "ko-given-only",
+          "ko-given-name-is-common-noun"
+        ],
+        "boundary_tags": [
+          "particle-excluded"
+        ]
+      },
+      "ambiguity": {
+        "level": "context-resolvable",
+        "note": "Arriving early is a human action."
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/ko/common-word-collision/sori-name",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "ko",
+      "title": "Given name 소리 beside the noun 소리 (sound)",
+      "why": "소리 means 'sound' and is used as a given name; one sentence holds both.",
+      "text": "김소리는 소리를 듣고 놀랐다.",
+      "expectations": [
+        {
+          "start": 0,
+          "end": 3,
+          "surface": "김소리",
+          "expect": "person"
+        },
+        {
+          "start": 5,
+          "end": 7,
+          "surface": "소리",
+          "expect": "not-person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "hangul",
+        "token_class": "single",
+        "collision_classes": [
+          "common-word"
+        ],
+        "context_types": [
+          "plain-prose",
+          "particle-attached"
+        ],
+        "name_features": [
+          "full-name",
+          "ko-surname-given",
+          "ko-3-syllable",
+          "ko-given-name-is-common-noun"
+        ],
+        "boundary_tags": [
+          "particle-excluded"
+        ]
+      },
+      "ambiguity": {
+        "level": "context-resolvable",
+        "note": "The first token is a full name; the second is the object of 'heard'."
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/ko/common-word-collision/yeoreum-name-and-summer",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "ko",
+      "title": "Name 박여름 beside the season 여름 (summer)",
+      "why": "여름 means 'summer' and is a given name; both occur in one sentence with opposite roles.",
+      "text": "박여름이 여름에 입사했다.",
+      "expectations": [
+        {
+          "start": 0,
+          "end": 3,
+          "surface": "박여름",
+          "expect": "person"
+        },
+        {
+          "start": 5,
+          "end": 7,
+          "surface": "여름",
+          "expect": "not-person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "hangul",
+        "token_class": "single",
+        "collision_classes": [
+          "temporal",
+          "common-word"
+        ],
+        "context_types": [
+          "plain-prose",
+          "particle-attached"
+        ],
+        "name_features": [
+          "full-name",
+          "ko-surname-given",
+          "ko-3-syllable",
+          "ko-given-name-is-common-noun"
+        ],
+        "boundary_tags": [
+          "particle-excluded"
+        ]
+      },
+      "ambiguity": {
+        "level": "context-resolvable",
+        "note": "The full name is the subject; the season is a time adverbial with the locative 에."
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/ko/common-word-collision/yi-daeri-this-or-lee",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "ko",
+      "title": "이 대리가 왔다: this deputy or Deputy Lee",
+      "why": "이 is both the demonstrative 'this' and the surname 이; 이 대리 is therefore 'this assistant manager' or 'Assistant Manager Lee'.",
+      "text": "이 대리가 왔다.",
+      "expectations": [
+        {
+          "start": 0,
+          "end": 1,
+          "surface": "이",
+          "expect": "either"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "hangul",
+        "token_class": "single",
+        "collision_classes": [
+          "common-word"
+        ],
+        "context_types": [
+          "plain-prose",
+          "sentence-initial",
+          "particle-attached",
+          "title-honorific"
+        ],
+        "name_features": [
+          "surname-only"
+        ],
+        "boundary_tags": [
+          "honorific-excluded",
+          "particle-excluded"
+        ]
+      },
+      "ambiguity": {
+        "level": "genuinely-ambiguous",
+        "note": "Without prior mention of a deputy, 이 may be the demonstrative or the surname."
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/ko/common-word-collision/yi-gwajangnim-vacation",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "ko",
+      "title": "이 과장님은 휴가다: this manager or Manager Lee",
+      "why": "Another 이 + title pattern where demonstrative and surname readings are both grammatical.",
+      "text": "이 과장님은 휴가 중이시다.",
+      "expectations": [
+        {
+          "start": 0,
+          "end": 1,
+          "surface": "이",
+          "expect": "either"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "hangul",
+        "token_class": "single",
+        "collision_classes": [
+          "common-word"
+        ],
+        "context_types": [
+          "plain-prose",
+          "sentence-initial",
+          "particle-attached",
+          "title-honorific"
+        ],
+        "name_features": [
+          "surname-only"
+        ],
+        "boundary_tags": [
+          "honorific-excluded",
+          "particle-excluded"
+        ]
+      },
+      "ambiguity": {
+        "level": "genuinely-ambiguous",
+        "note": "A section chief is on vacation: the demonstrative 'this' and the surname Lee both parse."
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/ko/common-word-collision/yunseul-sparkled",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "ko",
+      "title": "윤슬이 반짝였다: the water glitter sparkled or Yunseul sparkled",
+      "why": "윤슬 means sunlight glittering on water and is a recent given name; 반짝이다 ('sparkle') fits the noun literally and a person figuratively.",
+      "text": "윤슬이 반짝였다.",
+      "expectations": [
+        {
+          "start": 0,
+          "end": 2,
+          "surface": "윤슬",
+          "expect": "either"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "hangul",
+        "token_class": "single",
+        "collision_classes": [
+          "common-word"
+        ],
+        "context_types": [
+          "plain-prose",
+          "sentence-initial",
+          "particle-attached"
+        ],
+        "name_features": [
+          "given-only",
+          "ko-given-only",
+          "ko-given-name-is-common-noun"
+        ],
+        "boundary_tags": [
+          "particle-excluded"
+        ]
+      },
+      "ambiguity": {
+        "level": "genuinely-ambiguous",
+        "note": "The literal reading is the water glitter; a person sparkling figuratively is possible, and no context decides."
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    }
+  ]
+}

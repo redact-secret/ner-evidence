@@ -1,0 +1,165 @@
+{
+  "manifest_version": "0.1.0",
+  "snapshot_id": "person-en-ko-alpha.1-65b5a0970bfe",
+  "scope": "person-en-ko",
+  "release_label": "alpha.1",
+  "stage": "alpha",
+  "entity_types": [
+    "PERSON"
+  ],
+  "languages": [
+    "en",
+    "ko"
+  ],
+  "schema_version": "1.0.0",
+  "taxonomy_version": "0.1.0",
+  "projection_ruleset_version": "1.0.0",
+  "consumer_contract_version": "0.1.0",
+  "counts": {
+    "cases": 545,
+    "fixtures": 2987,
+    "sources": 1,
+    "cases_by_language": {
+      "en": 244,
+      "ko": 301
+    },
+    "fixtures_by_language": {
+      "en": 1212,
+      "ko": 1775
+    }
+  },
+  "source_manifest_digest": "7efa86e4f80e1e78533666ff0321374bedabde0dd40105562ddba7f29503dd00",
+  "digest_spec": "ner-evidence-snapshot-digest/1",
+  "content_digest": "65b5a0970bfe9307d4c5fb4c0ad5dbdd11546ce3d591e0afe583249955757415",
+  "files": [
+    {
+      "path": "cases.jsonl",
+      "sha256": "f9a5c97bd2f0d33c51a72603a95114bffb26175777d3252e2b47b4ef2d37a250",
+      "bytes": 517249
+    },
+    {
+      "path": "fixtures.jsonl",
+      "sha256": "a009a921c274ef4400f373a1b0233d64fb217abc8016b556a48bbbe898cb524d",
+      "bytes": 2025259
+    },
+    {
+      "path": "projections.json",
+      "sha256": "183ad1b95b6cbf3e46c5726044cb90fd6079b75289c609627d456cf69d46cf8a",
+      "bytes": 2032
+    },
+    {
+      "path": "schemas/case.schema.json",
+      "sha256": "f75f94642eebe8d0f3257f1c439a5b50f21211cea63bb93d7356806b3378085f",
+      "bytes": 6235
+    },
+    {
+      "path": "schemas/fixture.schema.json",
+      "sha256": "704b20b1583517853deb275dd856c963f9798884da69ecbe4c33ea136c076b00",
+      "bytes": 2978
+    },
+    {
+      "path": "schemas/projection-ruleset.schema.json",
+      "sha256": "0e51ce512a127db574fcbb06570836cfe8d3beb03fb4a222503034f2b487fb54",
+      "bytes": 1738
+    },
+    {
+      "path": "schemas/snapshot-manifest.schema.json",
+      "sha256": "6fec0bca222210f494d23cba9b5a61fc324070f6ecc19f97c32efe77977716bc",
+      "bytes": 4754
+    },
+    {
+      "path": "schemas/source.schema.json",
+      "sha256": "5e32ef62b526c70cca7b9b13a69f48b8c26fc4a065d1492c45c235ad9fee24c6",
+      "bytes": 3517
+    },
+    {
+      "path": "slice-report.json",
+      "sha256": "0e9f8597fd8334fc27ac4a55861477e21a26974746a88cd3a7ce2465652310d4",
+      "bytes": 27799
+    },
+    {
+      "path": "sources.json",
+      "sha256": "7efa86e4f80e1e78533666ff0321374bedabde0dd40105562ddba7f29503dd00",
+      "bytes": 1764
+    },
+    {
+      "path": "taxonomy.json",
+      "sha256": "22363e7c0f43655b170dddd0def343a0ce0ca7f848a2a5cba65f6cc148bd90bb",
+      "bytes": 18510
+    }
+  ],
+  "generation": {
+    "tool": "ner-evidence-tools",
+    "tool_version": "0.1.0",
+    "tool_source_digest": "b3784bc83f7da24941a55c37982bd0ac5eccd468dad0932b92b0ad49088f230d"
+  },
+  "redistribution": "internal-only",
+  "review_summary": {
+    "factual": {
+      "author-only": 545
+    },
+    "linguistic": {
+      "author-only": 545
+    }
+  },
+  "waived_targets": [
+    {
+      "id": "linguistic-independent-review",
+      "waiver": "No independent reviewer was available while the Alpha corpus was authored by a single author session, so every case is author-only. This is reported in the snapshot review_summary; Beta must close it."
+    },
+    {
+      "id": "factual-independent-review",
+      "waiver": "No independent reviewer was available while the Alpha corpus was authored by a single author session, so every case is author-only. This is reported in the snapshot review_summary; Beta must close it."
+    }
+  ],
+  "known_gaps": [
+    {
+      "id": "no-independent-review",
+      "description": "Every case has linguistic and factual review status author-only. Korean cases in particular need review by a native speaker or linguist, and English boundary conventions need a second annotator."
+    },
+    {
+      "id": "synthetic-only-no-corpus-backing",
+      "description": "All evidence is project-authored. No naturally occurring text is included, so the distribution of contexts, name frequencies and noise in real documents is not represented. Results on this corpus must not be read as real-world accuracy."
+    },
+    {
+      "id": "familiarity-labels-unverified",
+      "description": "The common/rare/novel familiarity labels are author judgments, not checked against national name-frequency tables. The seen/unseen slices are proxies; they say nothing about any model's training data."
+    },
+    {
+      "id": "single-author-selection-bias",
+      "description": "Cases reflect one author's view of what is confusable. Collision breadth (months, flowers, brands, districts) is illustrative, not a sampled or exhaustive list."
+    },
+    {
+      "id": "no-inter-annotator-agreement",
+      "description": "Span boundary conventions (titles, possessives, Korean particles and honorifics) were applied consistently by one author; agreement with an independent annotator has not been measured."
+    },
+    {
+      "id": "plural-and-family-references-undefined",
+      "description": "Plural and family references (the Joneses, two Johns, the Smiths' house, 'the Okafor family') have no span convention in taxonomy 0.1.0. The 5 cases that use them, plus 1 ampersand-couple case, are marked either; they are not a test of correctness until a convention exists."
+    },
+    {
+      "id": "scripts-beyond-latin-hangul-han",
+      "description": "No Cyrillic, Arabic, Devanagari, Thai or other scripts, and no Japanese kana. Han coverage is limited to Korean hanja notation; Chinese and Japanese naming is out of scope."
+    },
+    {
+      "id": "north-korean-and-diaspora-orthography",
+      "description": "Korean cases follow contemporary South Korean spelling and spacing. North Korean orthography, older spellings and diaspora romanization variants are not covered."
+    },
+    {
+      "id": "handles-usernames-email-local-parts",
+      "description": "Usernames, social handles and email local parts that embed names are out of scope for taxonomy 0.1.0."
+    },
+    {
+      "id": "small-eponym-and-work-title-slices",
+      "description": "Eponym (Ohm's law, Nobel Prize) and work-title (novel, song, film) slices are present but small (single digits per language). They flag the problem but do not support per-slice conclusions."
+    },
+    {
+      "id": "wrapper-projections-only",
+      "description": "Fixtures are structural wrappers of the authored sentence (quote, log line, JSON, email, NFD). There are no noisy-text projections (typos, OCR errors, casing mutations) because each needs per-case semantic review."
+    },
+    {
+      "id": "fixture-correlation",
+      "description": "Fixtures derived from one case are correlated. Counting fixtures instead of cases overweights cases that accept more projections (Korean cases accept the NFD projection; English mostly do not)."
+    }
+  ]
+}

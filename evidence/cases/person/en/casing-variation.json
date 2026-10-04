@@ -1,0 +1,377 @@
+{
+  "cases": [
+    {
+      "id": "person/en/casing-variation/all-caps-headline-full-name",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "en",
+      "title": "Full name inside an ALL-CAPS headline",
+      "why": "ALL CAPS removes the initial-capital cue for every word, so names are indistinguishable from other words by case.",
+      "text": "MARIA LOPEZ WINS REGIONAL AWARD",
+      "expectations": [
+        {
+          "start": 0,
+          "end": 11,
+          "surface": "MARIA LOPEZ",
+          "expect": "person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "latin",
+        "token_class": "multi",
+        "collision_classes": [],
+        "context_types": [
+          "plain-prose",
+          "casing-variation",
+          "sentence-initial"
+        ],
+        "name_features": [
+          "full-name"
+        ],
+        "boundary_tags": []
+      },
+      "ambiguity": {
+        "level": "unambiguous"
+      },
+      "evidence_class": "authored-baseline",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/en/casing-variation/lowercase-chat-full-name",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "en",
+      "title": "Full name written entirely in lowercase",
+      "why": "Informal messages drop capitalization, removing the cue most simple name detectors depend on.",
+      "text": "ok so maria lopez signed it yesterday",
+      "expectations": [
+        {
+          "start": 6,
+          "end": 17,
+          "surface": "maria lopez",
+          "expect": "person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "latin",
+        "token_class": "multi",
+        "collision_classes": [],
+        "context_types": [
+          "plain-prose",
+          "casing-variation"
+        ],
+        "name_features": [
+          "full-name"
+        ],
+        "boundary_tags": []
+      },
+      "ambiguity": {
+        "level": "unambiguous"
+      },
+      "evidence_class": "authored-baseline",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/en/casing-variation/lowercase-given-name-vocative",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "en",
+      "title": "Lowercase given name as an addressee",
+      "why": "A lowercase vocative in chat text, where the only cues are the greeting word and the comma.",
+      "text": "thanks emily, that works",
+      "expectations": [
+        {
+          "start": 7,
+          "end": 12,
+          "surface": "emily",
+          "expect": "person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "latin",
+        "token_class": "single",
+        "collision_classes": [],
+        "context_types": [
+          "plain-prose",
+          "casing-variation",
+          "vocative"
+        ],
+        "name_features": [
+          "given-only"
+        ],
+        "boundary_tags": [
+          "punctuation-adjacent"
+        ]
+      },
+      "ambiguity": {
+        "level": "unambiguous"
+      },
+      "evidence_class": "authored-baseline",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/en/casing-variation/lowercase-month-and-name-pair",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "en",
+      "title": "Lowercase 'may' as both modal and name candidate",
+      "why": "In lowercase chat, 'may' as a modal and 'may' as a person cannot be told apart by case; only syntax separates them.",
+      "text": "may i ask may about it",
+      "expectations": [
+        {
+          "start": 0,
+          "end": 3,
+          "surface": "may",
+          "expect": "not-person"
+        },
+        {
+          "start": 10,
+          "end": 13,
+          "surface": "may",
+          "expect": "person"
+        }
+      ],
+      "focus_span": 1,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "latin",
+        "token_class": "single",
+        "collision_classes": [
+          "temporal",
+          "common-word"
+        ],
+        "context_types": [
+          "plain-prose",
+          "casing-variation"
+        ],
+        "name_features": [],
+        "boundary_tags": []
+      },
+      "ambiguity": {
+        "level": "context-resolvable",
+        "note": "The first 'may' opens a polite question (modal); the second follows the verb 'ask' as its addressee."
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/en/casing-variation/lowercase-name-after-title",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "en",
+      "title": "Lowercase surname after a title in casual text",
+      "why": "A lowercase surname after 'dr' in chat text; the lowercase title is excluded like its capitalized form.",
+      "text": "ask dr nakamura about the scans",
+      "expectations": [
+        {
+          "start": 7,
+          "end": 15,
+          "surface": "nakamura",
+          "expect": "person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "latin",
+        "token_class": "single",
+        "collision_classes": [],
+        "context_types": [
+          "plain-prose",
+          "casing-variation",
+          "title-honorific"
+        ],
+        "name_features": [
+          "surname-only"
+        ],
+        "boundary_tags": [
+          "honorific-excluded"
+        ]
+      },
+      "ambiguity": {
+        "level": "unambiguous"
+      },
+      "evidence_class": "authored-baseline",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/en/casing-variation/mixed-case-brand-like-name",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "en",
+      "title": "Name with an internal capital in the middle of a word",
+      "why": "A name with unusual internal capitalization (DeShawn). Tokenizers that lowercase or split at capitals alter the name.",
+      "text": "DeShawn Whitaker filed the paperwork.",
+      "expectations": [
+        {
+          "start": 0,
+          "end": 16,
+          "surface": "DeShawn Whitaker",
+          "expect": "person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "latin",
+        "token_class": "multi",
+        "collision_classes": [],
+        "context_types": [
+          "plain-prose",
+          "casing-variation",
+          "sentence-initial"
+        ],
+        "name_features": [
+          "full-name"
+        ],
+        "boundary_tags": []
+      },
+      "ambiguity": {
+        "level": "unambiguous"
+      },
+      "evidence_class": "authored-baseline",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/en/casing-variation/title-case-headline-with-person",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "en",
+      "title": "Title Case headline that names a person",
+      "why": "Partner of the Baker headline: a given name plus surname in Title Case among other capitalized words.",
+      "text": "Local Baker Olivia Brandt Wins National Award",
+      "expectations": [
+        {
+          "start": 12,
+          "end": 25,
+          "surface": "Olivia Brandt",
+          "expect": "person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "latin",
+        "token_class": "multi",
+        "collision_classes": [
+          "common-word"
+        ],
+        "context_types": [
+          "plain-prose",
+          "casing-variation"
+        ],
+        "name_features": [
+          "full-name"
+        ],
+        "boundary_tags": []
+      },
+      "ambiguity": {
+        "level": "context-resolvable",
+        "note": "Here the given name precedes a surname-like token, which together name a person; 'Baker' is the occupation before the name."
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/en/casing-variation/title-case-headline-with-surname-decoy",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "en",
+      "title": "Title Case headline where an occupation noun looks like a surname",
+      "why": "In headline Title Case every content word is capitalized, so Baker (occupation) looks like a surname. There is no person in this headline.",
+      "text": "Local Baker Wins National Award",
+      "expectations": [
+        {
+          "start": 6,
+          "end": 11,
+          "surface": "Baker",
+          "expect": "not-person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "latin",
+        "token_class": "single",
+        "collision_classes": [
+          "common-word"
+        ],
+        "context_types": [
+          "plain-prose",
+          "casing-variation",
+          "no-person"
+        ],
+        "name_features": [],
+        "boundary_tags": []
+      },
+      "ambiguity": {
+        "level": "context-resolvable",
+        "note": "The adjective 'Local' before it marks the occupation noun; no given name accompanies it."
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    }
+  ]
+}

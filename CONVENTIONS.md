@@ -50,3 +50,14 @@ Do not add FastNER thresholds, FastNER support statuses, competitor ranking, or 
 ## Public-readiness
 
 Before public release, contribution rules must explicitly address personal data, license/provenance checks must run in CI, examples must be safe to redistribute, and unresolved evidence must be marked honestly.
+
+## Tooling gates
+
+`python -m ner_evidence check` runs every repository gate and is what CI runs. Do not weaken a lint, a target
+or a schema to make a change pass: fix the evidence, or record the shortfall as a written waiver or known gap
+in `evidence/slice-targets.json`.
+
+## Review honesty
+
+`review.*` fields describe who looked, not how sure the author is. Use `author-only` until someone other than the
+author has reviewed that facet. Never use a model's output, or agreement between models, as a review.

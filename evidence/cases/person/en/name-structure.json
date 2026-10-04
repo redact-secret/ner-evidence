@@ -1,0 +1,413 @@
+{
+  "cases": [
+    {
+      "id": "person/en/name-structure/all-initials-before-surname",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "en",
+      "title": "Two initials before a surname",
+      "why": "Initial-only given names produce short, punctuation-heavy tokens that look like abbreviations rather than a person.",
+      "text": "The volume was edited by A. B. Hallowell.",
+      "expectations": [
+        {
+          "start": 25,
+          "end": 40,
+          "surface": "A. B. Hallowell",
+          "expect": "person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "rare",
+        "script": "latin",
+        "token_class": "multi",
+        "collision_classes": [],
+        "context_types": [
+          "plain-prose"
+        ],
+        "name_features": [
+          "full-name",
+          "initials"
+        ],
+        "boundary_tags": [
+          "abbreviation-period",
+          "punctuation-adjacent"
+        ]
+      },
+      "ambiguity": {
+        "level": "unambiguous"
+      },
+      "evidence_class": "authored-baseline",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/en/name-structure/generational-suffix",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "en",
+      "title": "Full name with a generational suffix",
+      "why": "By convention in this taxonomy the suffix 'Jr.' is part of the PERSON span, unlike titles. This case pins that boundary decision.",
+      "text": "Thomas Kline Jr. attended the hearing.",
+      "expectations": [
+        {
+          "start": 0,
+          "end": 16,
+          "surface": "Thomas Kline Jr.",
+          "expect": "person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "latin",
+        "token_class": "multi",
+        "collision_classes": [],
+        "context_types": [
+          "plain-prose"
+        ],
+        "name_features": [
+          "full-name",
+          "generational-suffix"
+        ],
+        "boundary_tags": [
+          "abbreviation-period"
+        ]
+      },
+      "ambiguity": {
+        "level": "unambiguous"
+      },
+      "evidence_class": "authored-baseline",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/en/name-structure/hyphenated-given-name",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "en",
+      "title": "Hyphenated given name with surname",
+      "why": "A hyphen between given-name parts; a split would produce 'Anne' and 'Marie Laurent'.",
+      "text": "Anne-Marie Laurent translated the text.",
+      "expectations": [
+        {
+          "start": 0,
+          "end": 18,
+          "surface": "Anne-Marie Laurent",
+          "expect": "person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "latin",
+        "token_class": "multi",
+        "collision_classes": [],
+        "context_types": [
+          "plain-prose"
+        ],
+        "name_features": [
+          "full-name",
+          "hyphenated"
+        ],
+        "boundary_tags": [
+          "hyphen-boundary"
+        ]
+      },
+      "ambiguity": {
+        "level": "unambiguous"
+      },
+      "evidence_class": "authored-baseline",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/en/name-structure/inverted-surname-comma-given",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "en",
+      "title": "Surname, comma, given name",
+      "why": "Index-style inverted order. The comma is inside the span because the whole inverted form denotes one person.",
+      "text": "Alvarez, Carmen is listed first in the index.",
+      "expectations": [
+        {
+          "start": 0,
+          "end": 15,
+          "surface": "Alvarez, Carmen",
+          "expect": "person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "latin",
+        "token_class": "multi",
+        "collision_classes": [],
+        "context_types": [
+          "plain-prose",
+          "structured-text"
+        ],
+        "name_features": [
+          "full-name",
+          "inverted-order"
+        ],
+        "boundary_tags": [
+          "comma-inverted",
+          "punctuation-adjacent"
+        ]
+      },
+      "ambiguity": {
+        "level": "unambiguous"
+      },
+      "evidence_class": "authored-baseline",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/en/name-structure/mc-prefix-surname",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "en",
+      "title": "Surname with an internal capital (Mc- prefix)",
+      "why": "Mid-word capitalization (McAllister) breaks naive title-case token rules.",
+      "text": "Ewan McAllister served as treasurer.",
+      "expectations": [
+        {
+          "start": 0,
+          "end": 15,
+          "surface": "Ewan McAllister",
+          "expect": "person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "latin",
+        "token_class": "multi",
+        "collision_classes": [],
+        "context_types": [
+          "plain-prose"
+        ],
+        "name_features": [
+          "full-name"
+        ],
+        "boundary_tags": []
+      },
+      "ambiguity": {
+        "level": "unambiguous"
+      },
+      "evidence_class": "authored-baseline",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/en/name-structure/middle-initial",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "en",
+      "title": "Given name, middle initial with period, surname",
+      "why": "The period inside the span belongs to the initial. Sentence-splitters that break at every period cut the name in two.",
+      "text": "Jonathan R. Whitaker gave the keynote.",
+      "expectations": [
+        {
+          "start": 0,
+          "end": 20,
+          "surface": "Jonathan R. Whitaker",
+          "expect": "person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "latin",
+        "token_class": "multi",
+        "collision_classes": [],
+        "context_types": [
+          "plain-prose"
+        ],
+        "name_features": [
+          "full-name",
+          "middle-name",
+          "initials"
+        ],
+        "boundary_tags": [
+          "abbreviation-period"
+        ]
+      },
+      "ambiguity": {
+        "level": "unambiguous"
+      },
+      "evidence_class": "authored-baseline",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/en/name-structure/mononym-given-only",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "en",
+      "title": "Single-name performer-style mononym",
+      "why": "A mononym used as the entire name, with no surname to anchor it as a person.",
+      "text": "Marisol performs tonight.",
+      "expectations": [
+        {
+          "start": 0,
+          "end": 7,
+          "surface": "Marisol",
+          "expect": "person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "rare",
+        "script": "latin",
+        "token_class": "single",
+        "collision_classes": [],
+        "context_types": [
+          "plain-prose",
+          "sentence-initial"
+        ],
+        "name_features": [
+          "mononym"
+        ],
+        "boundary_tags": []
+      },
+      "ambiguity": {
+        "level": "unambiguous"
+      },
+      "evidence_class": "authored-baseline",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/en/name-structure/surname-particle-de-la",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "en",
+      "title": "Multi-word surname with lowercase particles",
+      "why": "Lowercase 'de la' inside a name defeats the 'each token is capitalized' heuristic.",
+      "text": "Mara de la Cruz approved the budget.",
+      "expectations": [
+        {
+          "start": 0,
+          "end": 15,
+          "surface": "Mara de la Cruz",
+          "expect": "person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "latin",
+        "token_class": "multi",
+        "collision_classes": [],
+        "context_types": [
+          "plain-prose"
+        ],
+        "name_features": [
+          "full-name",
+          "surname-particle"
+        ],
+        "boundary_tags": []
+      },
+      "ambiguity": {
+        "level": "unambiguous"
+      },
+      "evidence_class": "authored-baseline",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/en/name-structure/surname-particle-van-der",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "en",
+      "title": "Dutch surname with lowercase 'van der'",
+      "why": "Lowercase nobiliary particles inside a name; the span must include them.",
+      "text": "Pieter van der Berg chaired the board.",
+      "expectations": [
+        {
+          "start": 0,
+          "end": 19,
+          "surface": "Pieter van der Berg",
+          "expect": "person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "rare",
+        "script": "latin",
+        "token_class": "multi",
+        "collision_classes": [],
+        "context_types": [
+          "plain-prose"
+        ],
+        "name_features": [
+          "full-name",
+          "surname-particle"
+        ],
+        "boundary_tags": []
+      },
+      "ambiguity": {
+        "level": "unambiguous"
+      },
+      "evidence_class": "authored-baseline",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    }
+  ]
+}

@@ -1,0 +1,688 @@
+{
+  "cases": [
+    {
+      "id": "person/en/sentence-initial-trap/amber-underdetermined",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "en",
+      "title": "Sentence-initial colour/material word that is also a name",
+      "why": "A genuinely underdetermined sentence: 'was visible from the road' fits a person, a lit sign, or amber-coloured light. Recorded as honest ambiguity rather than forced to a label.",
+      "text": "Amber was visible from the road.",
+      "expectations": [
+        {
+          "start": 0,
+          "end": 5,
+          "surface": "Amber",
+          "expect": "either"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "latin",
+        "token_class": "single",
+        "collision_classes": [
+          "common-word"
+        ],
+        "context_types": [
+          "plain-prose",
+          "sentence-initial"
+        ],
+        "name_features": [],
+        "boundary_tags": []
+      },
+      "ambiguity": {
+        "level": "genuinely-ambiguous",
+        "note": "Nothing in the sentence excludes either reading: a person or an amber-coloured thing could both be 'visible from the road'."
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/en/sentence-initial-trap/bill-given-name-agent",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "en",
+      "title": "Sentence-initial 'Bill' as a person",
+      "why": "Contrast partner of bill-imperative-verb with a finite past-tense verb.",
+      "text": "Bill called the client at the end of the month.",
+      "expectations": [
+        {
+          "start": 0,
+          "end": 4,
+          "surface": "Bill",
+          "expect": "person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "latin",
+        "token_class": "single",
+        "collision_classes": [
+          "common-word"
+        ],
+        "context_types": [
+          "plain-prose",
+          "sentence-initial"
+        ],
+        "name_features": [],
+        "boundary_tags": []
+      },
+      "ambiguity": {
+        "level": "context-resolvable",
+        "note": "A finite past-tense verb with a human action ('called the client') makes the first word the agent."
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/en/sentence-initial-trap/bill-imperative-verb",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "en",
+      "title": "Sentence-initial 'Bill' as an imperative verb",
+      "why": "'Bill' as a verb (to invoice) at sentence start; also an extremely common given name.",
+      "text": "Bill the client at the end of the month.",
+      "expectations": [
+        {
+          "start": 0,
+          "end": 4,
+          "surface": "Bill",
+          "expect": "not-person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "latin",
+        "token_class": "single",
+        "collision_classes": [
+          "common-word"
+        ],
+        "context_types": [
+          "plain-prose",
+          "sentence-initial",
+          "no-person"
+        ],
+        "name_features": [],
+        "boundary_tags": []
+      },
+      "ambiguity": {
+        "level": "context-resolvable",
+        "note": "Imperative with an object noun phrase ('the client'); the word is the verb to invoice."
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/en/sentence-initial-trap/grant-noun-subject",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "en",
+      "title": "Sentence-initial 'Grant' as a common noun",
+      "why": "Funding 'grant' as the head of a noun phrase at sentence start; 'Grant' is also a given name and surname.",
+      "text": "Grant applications close on Friday.",
+      "expectations": [
+        {
+          "start": 0,
+          "end": 5,
+          "surface": "Grant",
+          "expect": "not-person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "latin",
+        "token_class": "single",
+        "collision_classes": [
+          "common-word"
+        ],
+        "context_types": [
+          "plain-prose",
+          "sentence-initial",
+          "no-person"
+        ],
+        "name_features": [],
+        "boundary_tags": []
+      },
+      "ambiguity": {
+        "level": "context-resolvable",
+        "note": "'Grant applications' is a noun compound; the plural noun 'applications' is the head and Grant modifies it."
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/en/sentence-initial-trap/grant-person-approved",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "en",
+      "title": "Sentence-initial 'Grant' as a person who approves",
+      "why": "Contrast partner of grant-noun-subject. Only an animate agent can approve a request, which is the sole disambiguating cue.",
+      "text": "Grant approved the request on Friday.",
+      "expectations": [
+        {
+          "start": 0,
+          "end": 5,
+          "surface": "Grant",
+          "expect": "person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "latin",
+        "token_class": "single",
+        "collision_classes": [
+          "common-word"
+        ],
+        "context_types": [
+          "plain-prose",
+          "sentence-initial"
+        ],
+        "name_features": [],
+        "boundary_tags": []
+      },
+      "ambiguity": {
+        "level": "context-resolvable",
+        "note": "A funding grant cannot approve a request, so the subject must be a person."
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/en/sentence-initial-trap/hope-abstract-noun",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "en",
+      "title": "Sentence-initial 'Hope' as an abstract noun",
+      "why": "Abstract noun at sentence start, capitalized only by position; Hope is also a given name.",
+      "text": "Hope is not a strategy.",
+      "expectations": [
+        {
+          "start": 0,
+          "end": 4,
+          "surface": "Hope",
+          "expect": "not-person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "latin",
+        "token_class": "single",
+        "collision_classes": [
+          "common-word"
+        ],
+        "context_types": [
+          "plain-prose",
+          "sentence-initial",
+          "no-person"
+        ],
+        "name_features": [],
+        "boundary_tags": []
+      },
+      "ambiguity": {
+        "level": "context-resolvable",
+        "note": "The predicate 'is not a strategy' classifies the subject as a concept, not an individual."
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/en/sentence-initial-trap/hope-person-unavailable",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "en",
+      "title": "Sentence-initial 'Hope' as a person",
+      "why": "Contrast partner of hope-abstract-noun: a predicate that only a person can satisfy.",
+      "text": "Hope is not available on Friday.",
+      "expectations": [
+        {
+          "start": 0,
+          "end": 4,
+          "surface": "Hope",
+          "expect": "person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "latin",
+        "token_class": "single",
+        "collision_classes": [
+          "common-word"
+        ],
+        "context_types": [
+          "plain-prose",
+          "sentence-initial"
+        ],
+        "name_features": [],
+        "boundary_tags": []
+      },
+      "ambiguity": {
+        "level": "context-resolvable",
+        "note": "'Not available on Friday' is a scheduling predicate that selects an individual."
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/en/sentence-initial-trap/mark-given-name-agent",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "en",
+      "title": "Sentence-initial 'Mark' as the subject-agent",
+      "why": "Contrast partner of mark-imperative-verb; here the same word is the subject of a finite verb.",
+      "text": "Mark labelled the boxes before loading them.",
+      "expectations": [
+        {
+          "start": 0,
+          "end": 4,
+          "surface": "Mark",
+          "expect": "person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "latin",
+        "token_class": "single",
+        "collision_classes": [
+          "common-word"
+        ],
+        "context_types": [
+          "plain-prose",
+          "sentence-initial"
+        ],
+        "name_features": [],
+        "boundary_tags": []
+      },
+      "ambiguity": {
+        "level": "context-resolvable",
+        "note": "A finite verb follows, so the first word is the grammatical subject and an agent: a person."
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/en/sentence-initial-trap/mark-imperative-verb",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "en",
+      "title": "Sentence-initial 'Mark' as an imperative verb",
+      "why": "Imperative sentences start with a capitalized verb. 'Mark' is also a very common given name, so the position gives no help.",
+      "text": "Mark the boxes before loading them.",
+      "expectations": [
+        {
+          "start": 0,
+          "end": 4,
+          "surface": "Mark",
+          "expect": "not-person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "latin",
+        "token_class": "single",
+        "collision_classes": [
+          "common-word"
+        ],
+        "context_types": [
+          "plain-prose",
+          "sentence-initial",
+          "no-person"
+        ],
+        "name_features": [],
+        "boundary_tags": []
+      },
+      "ambiguity": {
+        "level": "context-resolvable",
+        "note": "Imperative mood: the bare verb opens the sentence and the boxes are its object, so no person is addressed by name."
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/en/sentence-initial-trap/may-given-name-subject",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "en",
+      "title": "Sentence-initial 'May' as a given name",
+      "why": "Contrast partner of may-modal-question. The following verb phrase 'will attend' needs a human subject, not a month or modal.",
+      "text": "May will attend the review next week.",
+      "expectations": [
+        {
+          "start": 0,
+          "end": 3,
+          "surface": "May",
+          "expect": "person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "latin",
+        "token_class": "single",
+        "collision_classes": [
+          "common-word",
+          "temporal"
+        ],
+        "context_types": [
+          "plain-prose",
+          "sentence-initial"
+        ],
+        "name_features": [],
+        "boundary_tags": []
+      },
+      "ambiguity": {
+        "level": "context-resolvable",
+        "note": "The subject of 'will attend' must be an attendee, which selects the person reading over month and modal."
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/en/sentence-initial-trap/may-modal-question",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "en",
+      "title": "Sentence-initial 'May' as a modal verb",
+      "why": "'May' is simultaneously a month, a modal verb and a given name. At sentence start the modal reading dominates in a polite question.",
+      "text": "May I borrow your pen?",
+      "expectations": [
+        {
+          "start": 0,
+          "end": 3,
+          "surface": "May",
+          "expect": "not-person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "latin",
+        "token_class": "single",
+        "collision_classes": [
+          "common-word",
+          "temporal"
+        ],
+        "context_types": [
+          "plain-prose",
+          "sentence-initial",
+          "no-person"
+        ],
+        "name_features": [],
+        "boundary_tags": []
+      },
+      "ambiguity": {
+        "level": "context-resolvable",
+        "note": "The inverted polite question structure makes 'May' the modal verb, not a month or a name."
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/en/sentence-initial-trap/rose-flower-plural-subject",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "en",
+      "title": "Sentence-initial 'Rose' as a plant noun",
+      "why": "Capitalized by position only; the plural 'bushes' marks it as a noun modifier.",
+      "text": "Rose bushes need pruning in winter.",
+      "expectations": [
+        {
+          "start": 0,
+          "end": 4,
+          "surface": "Rose",
+          "expect": "not-person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "latin",
+        "token_class": "single",
+        "collision_classes": [
+          "common-word"
+        ],
+        "context_types": [
+          "plain-prose",
+          "sentence-initial",
+          "no-person"
+        ],
+        "name_features": [],
+        "boundary_tags": []
+      },
+      "ambiguity": {
+        "level": "context-resolvable",
+        "note": "'Rose bushes' is a noun compound whose head is the plural 'bushes'; Rose is the flower."
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/en/sentence-initial-trap/rose-underdetermined",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "en",
+      "title": "Sentence-initial flower/name with a context-free predicate",
+      "why": "Another honest ambiguity: 'was there' selects neither a person nor a plant. Included so that not every collision case is secretly resolvable.",
+      "text": "Rose was there.",
+      "expectations": [
+        {
+          "start": 0,
+          "end": 4,
+          "surface": "Rose",
+          "expect": "either"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "latin",
+        "token_class": "single",
+        "collision_classes": [
+          "common-word"
+        ],
+        "context_types": [
+          "plain-prose",
+          "sentence-initial"
+        ],
+        "name_features": [],
+        "boundary_tags": []
+      },
+      "ambiguity": {
+        "level": "genuinely-ambiguous",
+        "note": "'Was there' is satisfied equally by a person or a flower; no other context is available."
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/en/sentence-initial-trap/will-given-name",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "en",
+      "title": "Sentence-initial 'Will' as a given name",
+      "why": "Contrast partner of will-modal-question: the same surface form in the same position with the opposite expectation, resolved by the following past-tense verb phrase (the surrounding frames differ).",
+      "text": "Will reviewed the draft yesterday.",
+      "expectations": [
+        {
+          "start": 0,
+          "end": 4,
+          "surface": "Will",
+          "expect": "person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "latin",
+        "token_class": "single",
+        "collision_classes": [
+          "common-word"
+        ],
+        "context_types": [
+          "plain-prose",
+          "sentence-initial"
+        ],
+        "name_features": [],
+        "boundary_tags": []
+      },
+      "ambiguity": {
+        "level": "context-resolvable",
+        "note": "The same surface form as the modal; 'reviewed the draft' requires an agent, which resolves it to a person."
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/en/sentence-initial-trap/will-modal-question",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "en",
+      "title": "Sentence-initial 'Will' as a modal verb",
+      "why": "At sentence start capitalization is uninformative: 'Will' here is a modal verb, not the given name. Contrast pair with will-given-name to expose capitalization-only logic.",
+      "text": "Will you review the draft today?",
+      "expectations": [
+        {
+          "start": 0,
+          "end": 4,
+          "surface": "Will",
+          "expect": "not-person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "latin",
+        "token_class": "single",
+        "collision_classes": [
+          "common-word"
+        ],
+        "context_types": [
+          "plain-prose",
+          "sentence-initial",
+          "no-person"
+        ],
+        "name_features": [],
+        "boundary_tags": []
+      },
+      "ambiguity": {
+        "level": "context-resolvable",
+        "note": "Will is both a common given name and a modal verb; the inverted question syntax makes it the verb."
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    }
+  ]
+}

@@ -1,0 +1,227 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:ner-evidence:schema:snapshot-manifest:0.1.0",
+  "title": "Snapshot manifest",
+  "description": "The artifact contract consumed by ner-eval. No timestamps: a snapshot is a pure function of its content.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "manifest_version",
+    "snapshot_id",
+    "scope",
+    "release_label",
+    "stage",
+    "entity_types",
+    "languages",
+    "schema_version",
+    "taxonomy_version",
+    "projection_ruleset_version",
+    "consumer_contract_version",
+    "counts",
+    "source_manifest_digest",
+    "digest_spec",
+    "content_digest",
+    "files",
+    "generation",
+    "redistribution",
+    "review_summary",
+    "waived_targets",
+    "known_gaps"
+  ],
+  "properties": {
+    "manifest_version": {
+      "const": "0.1.0"
+    },
+    "snapshot_id": {
+      "type": "string",
+      "pattern": "^[a-z0-9]+(-[a-z0-9]+)*-[a-z0-9.]+-[0-9a-f]{12}$"
+    },
+    "scope": {
+      "type": "string",
+      "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$"
+    },
+    "release_label": {
+      "type": "string",
+      "pattern": "^[a-z0-9.]+$"
+    },
+    "stage": {
+      "enum": [
+        "alpha",
+        "beta",
+        "stable"
+      ]
+    },
+    "entity_types": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "languages": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "schema_version": {
+      "type": "string"
+    },
+    "taxonomy_version": {
+      "type": "string"
+    },
+    "projection_ruleset_version": {
+      "type": "string"
+    },
+    "consumer_contract_version": {
+      "type": "string"
+    },
+    "counts": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "cases",
+        "fixtures",
+        "sources",
+        "cases_by_language",
+        "fixtures_by_language"
+      ],
+      "properties": {
+        "cases": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "fixtures": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "sources": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "cases_by_language": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "integer"
+          }
+        },
+        "fixtures_by_language": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "integer"
+          }
+        }
+      }
+    },
+    "source_manifest_digest": {
+      "type": "string",
+      "format": "sha256"
+    },
+    "digest_spec": {
+      "const": "ner-evidence-snapshot-digest/1"
+    },
+    "content_digest": {
+      "type": "string",
+      "format": "sha256"
+    },
+    "files": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "path",
+          "sha256",
+          "bytes"
+        ],
+        "properties": {
+          "path": {
+            "type": "string"
+          },
+          "sha256": {
+            "type": "string",
+            "format": "sha256"
+          },
+          "bytes": {
+            "type": "integer",
+            "minimum": 0
+          }
+        }
+      }
+    },
+    "generation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "tool",
+        "tool_version",
+        "tool_source_digest"
+      ],
+      "properties": {
+        "tool": {
+          "type": "string"
+        },
+        "tool_version": {
+          "type": "string"
+        },
+        "tool_source_digest": {
+          "type": "string",
+          "format": "sha256"
+        }
+      }
+    },
+    "redistribution": {
+      "enum": [
+        "allowed",
+        "internal-only"
+      ]
+    },
+    "review_summary": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "object",
+        "additionalProperties": {
+          "type": "integer"
+        }
+      }
+    },
+    "waived_targets": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "waiver"
+        ],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "waiver": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "known_gaps": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "description"
+        ],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}

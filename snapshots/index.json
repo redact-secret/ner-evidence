@@ -1,0 +1,12 @@
+{
+  "snapshots": [
+    {
+      "snapshot_id": "person-en-ko-alpha.1-65b5a0970bfe",
+      "scope": "person-en-ko",
+      "release_label": "alpha.1",
+      "stage": "alpha",
+      "content_digest": "65b5a0970bfe9307d4c5fb4c0ad5dbdd11546ce3d591e0afe583249955757415",
+      "path": "person-en-ko-alpha.1-65b5a0970bfe"
+    }
+  ]
+}
