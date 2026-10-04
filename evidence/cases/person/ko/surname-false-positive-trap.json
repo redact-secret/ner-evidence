@@ -1,6 +1,104 @@
 {
   "cases": [
     {
+      "id": "person/ko/surname-false-positive-trap/an-glasses",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "ko",
+      "title": "안경 beginning with the surname 안",
+      "why": "안경 ('glasses') starts with the surname 안.",
+      "text": "안경을 벗으니 눈이 편하다.",
+      "expectations": [
+        {
+          "start": 0,
+          "end": 2,
+          "surface": "안경",
+          "expect": "not-person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "not-applicable",
+        "script": "hangul",
+        "token_class": "single",
+        "collision_classes": [
+          "common-word"
+        ],
+        "context_types": [
+          "plain-prose",
+          "sentence-initial",
+          "particle-attached",
+          "no-person"
+        ],
+        "name_features": [],
+        "boundary_tags": [
+          "particle-excluded"
+        ]
+      },
+      "ambiguity": {
+        "level": "context-resolvable",
+        "note": "An accessory that is taken off."
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/ko/surname-false-positive-trap/bak-museum",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "ko",
+      "title": "박물관 beginning with the surname 박",
+      "why": "박물관 ('museum') starts with the common surname 박 and is a long word, so a prefix lookup of two or three syllables misfires.",
+      "text": "박물관은 월요일에 문을 닫는다.",
+      "expectations": [
+        {
+          "start": 0,
+          "end": 3,
+          "surface": "박물관",
+          "expect": "not-person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "not-applicable",
+        "script": "hangul",
+        "token_class": "single",
+        "collision_classes": [
+          "common-word"
+        ],
+        "context_types": [
+          "plain-prose",
+          "sentence-initial",
+          "particle-attached",
+          "no-person"
+        ],
+        "name_features": [],
+        "boundary_tags": [
+          "particle-excluded"
+        ]
+      },
+      "ambiguity": {
+        "level": "context-resolvable",
+        "note": "A museum is a venue that closes on a given day."
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
       "id": "person/ko/surname-false-positive-trap/choi-best-modifier",
       "schema_version": "1.0.0",
       "entity_type": "PERSON",
@@ -37,6 +135,104 @@
       "ambiguity": {
         "level": "context-resolvable",
         "note": "'The best in the industry' is a superlative."
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/ko/surname-false-positive-trap/choi-recently",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "ko",
+      "title": "최근 beginning with the surname 최",
+      "why": "최근 ('recently') starts with the surname 최 and is one of the most frequent adverbs.",
+      "text": "최근에 새 가게가 문을 열었다.",
+      "expectations": [
+        {
+          "start": 0,
+          "end": 2,
+          "surface": "최근",
+          "expect": "not-person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "not-applicable",
+        "script": "hangul",
+        "token_class": "single",
+        "collision_classes": [
+          "common-word"
+        ],
+        "context_types": [
+          "plain-prose",
+          "sentence-initial",
+          "particle-attached",
+          "no-person"
+        ],
+        "name_features": [],
+        "boundary_tags": [
+          "particle-excluded"
+        ]
+      },
+      "ambiguity": {
+        "level": "context-resolvable",
+        "note": "A time adverb followed by the locative-like particle 에."
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/ko/surname-false-positive-trap/gang-puppy",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "ko",
+      "title": "강아지 beginning with the surname 강",
+      "why": "강아지 ('puppy') starts with the surname 강.",
+      "text": "강아지가 마당에서 뛰어놀았다.",
+      "expectations": [
+        {
+          "start": 0,
+          "end": 3,
+          "surface": "강아지",
+          "expect": "not-person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "not-applicable",
+        "script": "hangul",
+        "token_class": "single",
+        "collision_classes": [
+          "common-word"
+        ],
+        "context_types": [
+          "plain-prose",
+          "sentence-initial",
+          "particle-attached",
+          "no-person"
+        ],
+        "name_features": [],
+        "boundary_tags": [
+          "particle-excluded"
+        ]
+      },
+      "ambiguity": {
+        "level": "context-resolvable",
+        "note": "A puppy playing in a yard is an animal."
       },
       "evidence_class": "authored-adversarial",
       "source_ids": [
@@ -196,6 +392,55 @@
       }
     },
     {
+      "id": "person/ko/surname-false-positive-trap/gim-kimjang-season",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "ko",
+      "title": "김장 beginning with the surname 김",
+      "why": "김장 ('making kimchi for winter') starts with the most common surname 김.",
+      "text": "김장은 늦가을에 한다.",
+      "expectations": [
+        {
+          "start": 0,
+          "end": 2,
+          "surface": "김장",
+          "expect": "not-person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "not-applicable",
+        "script": "hangul",
+        "token_class": "single",
+        "collision_classes": [
+          "common-word"
+        ],
+        "context_types": [
+          "plain-prose",
+          "sentence-initial",
+          "particle-attached",
+          "no-person"
+        ],
+        "name_features": [],
+        "boundary_tags": [
+          "particle-excluded"
+        ]
+      },
+      "ambiguity": {
+        "level": "context-resolvable",
+        "note": "김장 is a seasonal household activity described with a seasonal predicate."
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
       "id": "person/ko/surname-false-positive-trap/gim-laver-object",
       "schema_version": "1.0.0",
       "entity_type": "PERSON",
@@ -280,6 +525,100 @@
       "ambiguity": {
         "level": "context-resolvable",
         "note": "'Steam rising from the soup' is a physical phenomenon; the noun 김 takes the subject particle 이."
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/ko/surname-false-positive-trap/gwon-right",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "ko",
+      "title": "권리 beginning with the surname 권",
+      "why": "권리 ('right/entitlement') starts with the surname 권.",
+      "text": "모든 사람은 평등할 권리가 있다.",
+      "expectations": [
+        {
+          "start": 11,
+          "end": 13,
+          "surface": "권리",
+          "expect": "not-person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "not-applicable",
+        "script": "hangul",
+        "token_class": "single",
+        "collision_classes": [
+          "common-word"
+        ],
+        "context_types": [
+          "plain-prose",
+          "particle-attached",
+          "no-person"
+        ],
+        "name_features": [],
+        "boundary_tags": [
+          "particle-excluded"
+        ]
+      },
+      "ambiguity": {
+        "level": "context-resolvable",
+        "note": "An abstract noun in a legal-style statement."
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/ko/surname-false-positive-trap/han-once-adverb",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "ko",
+      "title": "한번 beginning with the surname 한",
+      "why": "한번 ('once, for a time') starts with the surname 한.",
+      "text": "한번 해 보세요.",
+      "expectations": [
+        {
+          "start": 0,
+          "end": 2,
+          "surface": "한번",
+          "expect": "not-person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "not-applicable",
+        "script": "hangul",
+        "token_class": "single",
+        "collision_classes": [
+          "common-word"
+        ],
+        "context_types": [
+          "plain-prose",
+          "sentence-initial",
+          "no-person"
+        ],
+        "name_features": [],
+        "boundary_tags": []
+      },
+      "ambiguity": {
+        "level": "context-resolvable",
+        "note": "An adverb attached to an imperative verb."
       },
       "evidence_class": "authored-adversarial",
       "source_ids": [
@@ -435,6 +774,55 @@
       }
     },
     {
+      "id": "person/ko/surname-false-positive-trap/jeongwon-garden-noun",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "ko",
+      "title": "정원 as a garden",
+      "why": "정원 means 'garden' (and also 'capacity') and is a given name; a plant description selects the noun.",
+      "text": "정원에 장미가 피었다.",
+      "expectations": [
+        {
+          "start": 0,
+          "end": 2,
+          "surface": "정원",
+          "expect": "not-person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "not-applicable",
+        "script": "hangul",
+        "token_class": "single",
+        "collision_classes": [
+          "common-word"
+        ],
+        "context_types": [
+          "plain-prose",
+          "sentence-initial",
+          "particle-attached",
+          "no-person"
+        ],
+        "name_features": [],
+        "boundary_tags": [
+          "particle-excluded"
+        ]
+      },
+      "ambiguity": {
+        "level": "context-resolvable",
+        "note": "Flowers bloom in a garden."
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
       "id": "person/ko/surname-false-positive-trap/jo-little-adverb",
       "schema_version": "1.0.0",
       "entity_type": "PERSON",
@@ -472,6 +860,147 @@
       "ambiguity": {
         "level": "context-resolvable",
         "note": "조금 is a quantity adverb followed by the restrictive 만."
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/ko/surname-false-positive-trap/jo-quietly-adverb",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "ko",
+      "title": "조용히 beginning with the surname 조",
+      "why": "조용히 ('quietly') starts with the surname 조.",
+      "text": "아이들이 조용히 앉아 있었다.",
+      "expectations": [
+        {
+          "start": 5,
+          "end": 8,
+          "surface": "조용히",
+          "expect": "not-person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "not-applicable",
+        "script": "hangul",
+        "token_class": "single",
+        "collision_classes": [
+          "common-word"
+        ],
+        "context_types": [
+          "plain-prose",
+          "no-person"
+        ],
+        "name_features": [],
+        "boundary_tags": []
+      },
+      "ambiguity": {
+        "level": "context-resolvable",
+        "note": "An adverb of manner describing how the children sat."
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/ko/surname-false-positive-trap/mun-problem",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "ko",
+      "title": "문제 beginning with the surname 문",
+      "why": "문제 ('problem') starts with the surname 문 and is extremely frequent.",
+      "text": "이 문제는 아직 해결되지 않았다.",
+      "expectations": [
+        {
+          "start": 2,
+          "end": 4,
+          "surface": "문제",
+          "expect": "not-person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "not-applicable",
+        "script": "hangul",
+        "token_class": "single",
+        "collision_classes": [
+          "common-word"
+        ],
+        "context_types": [
+          "plain-prose",
+          "particle-attached",
+          "no-person"
+        ],
+        "name_features": [],
+        "boundary_tags": [
+          "particle-excluded"
+        ]
+      },
+      "ambiguity": {
+        "level": "context-resolvable",
+        "note": "A problem that is unresolved, preceded by the demonstrative 이."
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/ko/surname-false-positive-trap/nam-man",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "ko",
+      "title": "남자 beginning with the surname 남",
+      "why": "남자 ('man') starts with the surname 남 and is a very frequent generic noun.",
+      "text": "저 남자는 우리 학교 선생님이다.",
+      "expectations": [
+        {
+          "start": 2,
+          "end": 4,
+          "surface": "남자",
+          "expect": "not-person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "not-applicable",
+        "script": "hangul",
+        "token_class": "single",
+        "collision_classes": [
+          "common-word"
+        ],
+        "context_types": [
+          "plain-prose",
+          "particle-attached",
+          "no-person"
+        ],
+        "name_features": [],
+        "boundary_tags": [
+          "particle-excluded"
+        ]
+      },
+      "ambiguity": {
+        "level": "context-resolvable",
+        "note": "A generic noun for a man modified by a demonstrative."
       },
       "evidence_class": "authored-adversarial",
       "source_ids": [
@@ -696,6 +1225,104 @@
       }
     },
     {
+      "id": "person/ko/surname-false-positive-trap/sin-shoes",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "ko",
+      "title": "신발 beginning with the surname 신",
+      "why": "신발 ('shoes') starts with the surname 신 and is a very frequent everyday noun.",
+      "text": "신발을 벗고 들어오세요.",
+      "expectations": [
+        {
+          "start": 0,
+          "end": 2,
+          "surface": "신발",
+          "expect": "not-person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "not-applicable",
+        "script": "hangul",
+        "token_class": "single",
+        "collision_classes": [
+          "common-word"
+        ],
+        "context_types": [
+          "plain-prose",
+          "sentence-initial",
+          "particle-attached",
+          "no-person"
+        ],
+        "name_features": [],
+        "boundary_tags": [
+          "particle-excluded"
+        ]
+      },
+      "ambiguity": {
+        "level": "context-resolvable",
+        "note": "Shoes are taken off when entering."
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/ko/surname-false-positive-trap/song-calf",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "ko",
+      "title": "송아지 beginning with the surname 송",
+      "why": "송아지 ('calf') starts with the surname 송 and is an ordinary animal noun.",
+      "text": "농장에서 송아지가 태어났다.",
+      "expectations": [
+        {
+          "start": 5,
+          "end": 8,
+          "surface": "송아지",
+          "expect": "not-person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "not-applicable",
+        "script": "hangul",
+        "token_class": "single",
+        "collision_classes": [
+          "common-word"
+        ],
+        "context_types": [
+          "plain-prose",
+          "sentence-initial",
+          "particle-attached",
+          "no-person"
+        ],
+        "name_features": [],
+        "boundary_tags": [
+          "particle-excluded"
+        ]
+      },
+      "ambiguity": {
+        "level": "context-resolvable",
+        "note": "An animal born on a farm."
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
       "id": "person/ko/surname-false-positive-trap/yi-demonstrative-person-noun",
       "schema_version": "1.0.0",
       "entity_type": "PERSON",
@@ -824,6 +1451,55 @@
       "ambiguity": {
         "level": "context-resolvable",
         "note": "연구 윤리 is a noun phrase; 윤리 is an abstract noun."
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/ko/surname-false-positive-trap/yungi-gloss-noun",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "ko",
+      "title": "윤기: a gloss noun that is also a given name",
+      "why": "윤기 ('shine/gloss') is also a given name. In a description of hair it is a noun.",
+      "text": "머릿결에 윤기가 흐른다.",
+      "expectations": [
+        {
+          "start": 5,
+          "end": 7,
+          "surface": "윤기",
+          "expect": "not-person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "not-applicable",
+        "script": "hangul",
+        "token_class": "single",
+        "collision_classes": [
+          "common-word"
+        ],
+        "context_types": [
+          "plain-prose",
+          "sentence-initial",
+          "particle-attached",
+          "no-person"
+        ],
+        "name_features": [],
+        "boundary_tags": [
+          "particle-excluded"
+        ]
+      },
+      "ambiguity": {
+        "level": "context-resolvable",
+        "note": "A physical property of hair; the noun is the subject of 'flows'."
       },
       "evidence_class": "authored-adversarial",
       "source_ids": [

@@ -187,6 +187,95 @@
       }
     },
     {
+      "id": "person/en/location-collision/charlotte-city",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "en",
+      "title": "Charlotte as a city",
+      "why": "Charlotte is a US city and a given name; 'moved to' selects a place.",
+      "text": "They moved to Charlotte for work.",
+      "expectations": [
+        {
+          "start": 14,
+          "end": 23,
+          "surface": "Charlotte",
+          "expect": "not-person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "latin",
+        "token_class": "single",
+        "collision_classes": [
+          "location"
+        ],
+        "context_types": [
+          "plain-prose",
+          "no-person"
+        ],
+        "name_features": [],
+        "boundary_tags": []
+      },
+      "ambiguity": {
+        "level": "context-resolvable",
+        "note": "The destination of 'moved to' is a place."
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/en/location-collision/charlotte-person",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "en",
+      "title": "Charlotte as a person receiving a note",
+      "why": "Partner of charlotte-city: an addressee.",
+      "text": "Leave the note for Charlotte on the desk.",
+      "expectations": [
+        {
+          "start": 19,
+          "end": 28,
+          "surface": "Charlotte",
+          "expect": "person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "latin",
+        "token_class": "single",
+        "collision_classes": [
+          "location"
+        ],
+        "context_types": [
+          "plain-prose"
+        ],
+        "name_features": [],
+        "boundary_tags": []
+      },
+      "ambiguity": {
+        "level": "context-resolvable",
+        "note": "A note is left for a person."
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
       "id": "person/en/location-collision/florence-city",
       "schema_version": "1.0.0",
       "entity_type": "PERSON",
@@ -455,6 +544,51 @@
       }
     },
     {
+      "id": "person/en/location-collision/lake-victoria",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "en",
+      "title": "Lake Victoria as a lake",
+      "why": "Victoria is a given name; 'Lake Victoria' names a lake and no person is inside the span.",
+      "text": "The ferry crosses Lake Victoria twice daily.",
+      "expectations": [
+        {
+          "start": 18,
+          "end": 31,
+          "surface": "Lake Victoria",
+          "expect": "not-person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "latin",
+        "token_class": "multi",
+        "collision_classes": [
+          "location"
+        ],
+        "context_types": [
+          "plain-prose",
+          "no-person"
+        ],
+        "name_features": [],
+        "boundary_tags": []
+      },
+      "ambiguity": {
+        "level": "context-resolvable",
+        "note": "'Lake' is a geographic head noun and ferries cross lakes."
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
       "id": "person/en/location-collision/lincoln-park",
       "schema_version": "1.0.0",
       "entity_type": "PERSON",
@@ -488,6 +622,51 @@
       "ambiguity": {
         "level": "context-resolvable",
         "note": "'Jogged around X' selects a place, and 'Park' is the head noun."
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/en/location-collision/mount-washington",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "en",
+      "title": "Mount Washington as a mountain",
+      "why": "A mountain named with a surname-like word; a prefix noun marks it as a place.",
+      "text": "We hiked Mount Washington at dawn.",
+      "expectations": [
+        {
+          "start": 9,
+          "end": 25,
+          "surface": "Mount Washington",
+          "expect": "not-person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "latin",
+        "token_class": "multi",
+        "collision_classes": [
+          "location"
+        ],
+        "context_types": [
+          "plain-prose",
+          "no-person"
+        ],
+        "name_features": [],
+        "boundary_tags": []
+      },
+      "ambiguity": {
+        "level": "context-resolvable",
+        "note": "'Mount' is a geographic head noun and one hikes a mountain."
       },
       "evidence_class": "authored-adversarial",
       "source_ids": [
@@ -580,6 +759,102 @@
       "ambiguity": {
         "level": "context-resolvable",
         "note": "A surname-like second token and a person-subject verb select the person reading."
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/en/location-collision/phoenix-city",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "en",
+      "title": "Phoenix as a city",
+      "why": "Phoenix is a city, a mythical bird and a given name.",
+      "text": "Flights to Phoenix were delayed.",
+      "expectations": [
+        {
+          "start": 11,
+          "end": 18,
+          "surface": "Phoenix",
+          "expect": "not-person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "latin",
+        "token_class": "single",
+        "collision_classes": [
+          "location"
+        ],
+        "context_types": [
+          "plain-prose",
+          "no-person"
+        ],
+        "name_features": [],
+        "boundary_tags": []
+      },
+      "ambiguity": {
+        "level": "context-resolvable",
+        "note": "Flights go to places."
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/en/location-collision/savannah-person-and-city",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "en",
+      "title": "Savannah as a person who lives in Savannah",
+      "why": "A given name and a city with the same spelling in one sentence.",
+      "text": "Savannah has lived in Savannah all her life.",
+      "expectations": [
+        {
+          "start": 0,
+          "end": 8,
+          "surface": "Savannah",
+          "expect": "person"
+        },
+        {
+          "start": 22,
+          "end": 30,
+          "surface": "Savannah",
+          "expect": "not-person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "latin",
+        "token_class": "single",
+        "collision_classes": [
+          "location"
+        ],
+        "context_types": [
+          "plain-prose",
+          "sentence-initial"
+        ],
+        "name_features": [],
+        "boundary_tags": []
+      },
+      "ambiguity": {
+        "level": "context-resolvable",
+        "note": "The first is the subject of 'has lived'; after 'in' the second is the city."
       },
       "evidence_class": "authored-adversarial",
       "source_ids": [

@@ -1,6 +1,55 @@
 {
   "cases": [
     {
+      "id": "person/ko/organization-collision/bacchus-drink",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "ko",
+      "title": "박카스 starting with the surname 박",
+      "why": "A drink brand beginning with 박; the brand is a product, not a person.",
+      "text": "박카스를 한 병 마셨다.",
+      "expectations": [
+        {
+          "start": 0,
+          "end": 3,
+          "surface": "박카스",
+          "expect": "not-person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "not-applicable",
+        "script": "hangul",
+        "token_class": "single",
+        "collision_classes": [
+          "product-brand"
+        ],
+        "context_types": [
+          "plain-prose",
+          "sentence-initial",
+          "particle-attached",
+          "no-person"
+        ],
+        "name_features": [],
+        "boundary_tags": [
+          "particle-excluded"
+        ]
+      },
+      "ambiguity": {
+        "level": "context-resolvable",
+        "note": "Drinking a bottle of a beverage."
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
       "id": "person/ko/organization-collision/choegang-chicken-brand",
       "schema_version": "1.0.0",
       "entity_type": "PERSON",
@@ -136,6 +185,55 @@
       "ambiguity": {
         "level": "context-resolvable",
         "note": "'Called from X' with the business descriptor 세무회계 marks an office."
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/ko/organization-collision/hanssem-company",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "ko",
+      "title": "한샘 starting with the surname 한",
+      "why": "A furniture company whose name begins with the common surname syllable 한 plus a noun.",
+      "text": "한샘에서 소파를 주문했다.",
+      "expectations": [
+        {
+          "start": 0,
+          "end": 2,
+          "surface": "한샘",
+          "expect": "not-person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "not-applicable",
+        "script": "hangul",
+        "token_class": "single",
+        "collision_classes": [
+          "organization"
+        ],
+        "context_types": [
+          "plain-prose",
+          "sentence-initial",
+          "particle-attached",
+          "no-person"
+        ],
+        "name_features": [],
+        "boundary_tags": [
+          "particle-excluded"
+        ]
+      },
+      "ambiguity": {
+        "level": "context-resolvable",
+        "note": "Ordering a sofa from a company."
       },
       "evidence_class": "authored-adversarial",
       "source_ids": [
@@ -296,6 +394,208 @@
       }
     },
     {
+      "id": "person/ko/organization-collision/jeonggwanjang-brand",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "ko",
+      "title": "정관장 starting with the surname 정",
+      "why": "A ginseng brand beginning with 정 and ending in 관장 ('director').",
+      "text": "선물로 정관장 세트를 샀다.",
+      "expectations": [
+        {
+          "start": 4,
+          "end": 7,
+          "surface": "정관장",
+          "expect": "not-person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "not-applicable",
+        "script": "hangul",
+        "token_class": "single",
+        "collision_classes": [
+          "product-brand",
+          "organization"
+        ],
+        "context_types": [
+          "plain-prose",
+          "sentence-initial",
+          "particle-attached",
+          "no-person"
+        ],
+        "name_features": [],
+        "boundary_tags": [
+          "particle-excluded"
+        ]
+      },
+      "ambiguity": {
+        "level": "context-resolvable",
+        "note": "A gift set is a product."
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/ko/organization-collision/jin-ramyun-brand",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "ko",
+      "title": "진라면 starting with the surname 진",
+      "why": "A noodle brand beginning with 진 plus 라면.",
+      "text": "진라면이 할인 중이다.",
+      "expectations": [
+        {
+          "start": 0,
+          "end": 3,
+          "surface": "진라면",
+          "expect": "not-person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "not-applicable",
+        "script": "hangul",
+        "token_class": "single",
+        "collision_classes": [
+          "product-brand"
+        ],
+        "context_types": [
+          "plain-prose",
+          "sentence-initial",
+          "particle-attached",
+          "no-person"
+        ],
+        "name_features": [],
+        "boundary_tags": [
+          "particle-excluded"
+        ]
+      },
+      "ambiguity": {
+        "level": "context-resolvable",
+        "note": "A packaged food discounted in a store."
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/ko/organization-collision/ottogi-company",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "ko",
+      "title": "오뚜기 starting with the surname 오",
+      "why": "A food company whose name begins with 오 and means a roly-poly toy.",
+      "text": "오뚜기는 새 제품을 출시했다.",
+      "expectations": [
+        {
+          "start": 0,
+          "end": 3,
+          "surface": "오뚜기",
+          "expect": "not-person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "not-applicable",
+        "script": "hangul",
+        "token_class": "single",
+        "collision_classes": [
+          "organization"
+        ],
+        "context_types": [
+          "plain-prose",
+          "sentence-initial",
+          "particle-attached",
+          "no-person"
+        ],
+        "name_features": [],
+        "boundary_tags": [
+          "particle-excluded"
+        ]
+      },
+      "ambiguity": {
+        "level": "context-resolvable",
+        "note": "'Launched a new product' is a company action."
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/ko/organization-collision/person-and-namesake-cafe",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "ko",
+      "title": "A person named 윤슬 who owns a cafe called 윤슬 카페",
+      "why": "A given name and a business named after it in one sentence: the first is the owner, the second the business.",
+      "text": "윤슬은 윤슬 카페를 운영한다.",
+      "expectations": [
+        {
+          "start": 0,
+          "end": 2,
+          "surface": "윤슬",
+          "expect": "person"
+        },
+        {
+          "start": 4,
+          "end": 9,
+          "surface": "윤슬 카페",
+          "expect": "not-person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "not-applicable",
+        "script": "hangul",
+        "token_class": "single",
+        "collision_classes": [
+          "organization",
+          "common-word"
+        ],
+        "context_types": [
+          "plain-prose",
+          "particle-attached"
+        ],
+        "name_features": [],
+        "boundary_tags": [
+          "particle-excluded"
+        ]
+      },
+      "ambiguity": {
+        "level": "context-resolvable",
+        "note": "'Runs X' selects a business; the first token takes the topic marker as the subject."
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
       "id": "person/ko/organization-collision/person-works-at-namesake-firm",
       "schema_version": "1.0.0",
       "entity_type": "PERSON",
@@ -390,6 +690,56 @@
       "ambiguity": {
         "level": "context-resolvable",
         "note": "Boiling and eating selects a food product."
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/ko/organization-collision/yunseul-cafe-fictional",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "ko",
+      "title": "Fictional cafe 윤슬 카페 containing the name-like word 윤슬",
+      "why": "윤슬 is both a given name and a word for water glitter; as the name of a fictional cafe no person is meant.",
+      "text": "윤슬 카페에서 만나기로 했다.",
+      "expectations": [
+        {
+          "start": 0,
+          "end": 5,
+          "surface": "윤슬 카페",
+          "expect": "not-person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "not-applicable",
+        "script": "hangul",
+        "token_class": "multi",
+        "collision_classes": [
+          "organization",
+          "common-word"
+        ],
+        "context_types": [
+          "plain-prose",
+          "sentence-initial",
+          "particle-attached",
+          "no-person"
+        ],
+        "name_features": [],
+        "boundary_tags": [
+          "particle-excluded"
+        ]
+      },
+      "ambiguity": {
+        "level": "context-resolvable",
+        "note": "'Meet at X' with the head noun 카페 ('cafe') selects a venue."
       },
       "evidence_class": "authored-adversarial",
       "source_ids": [

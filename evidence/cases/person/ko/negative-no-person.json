@@ -1,0 +1,465 @@
+{
+  "cases": [
+    {
+      "id": "person/ko/negative-no-person/multi-decoy-food",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "ko",
+      "title": "A sentence listing foods that begin with surnames",
+      "why": "Foods whose names begin with surnames (김밥, 오이, 신라면 as a product) in one list.",
+      "text": "점심으로 김밥과 오이와 신라면을 먹었다.",
+      "expectations": [
+        {
+          "start": 5,
+          "end": 7,
+          "surface": "김밥",
+          "expect": "not-person"
+        },
+        {
+          "start": 9,
+          "end": 11,
+          "surface": "오이",
+          "expect": "not-person"
+        },
+        {
+          "start": 13,
+          "end": 16,
+          "surface": "신라면",
+          "expect": "not-person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "not-applicable",
+        "script": "hangul",
+        "token_class": "single",
+        "collision_classes": [
+          "common-word",
+          "product-brand"
+        ],
+        "context_types": [
+          "plain-prose",
+          "sentence-initial",
+          "particle-attached",
+          "list-or-enumeration",
+          "no-person"
+        ],
+        "name_features": [],
+        "boundary_tags": [
+          "adjacent-names",
+          "particle-excluded"
+        ]
+      },
+      "ambiguity": {
+        "level": "context-resolvable",
+        "note": "A list of foods after 'for lunch'; each item is an edible object."
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/ko/negative-no-person/multi-decoy-places-and-animals",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "ko",
+      "title": "Places and animals whose names begin with surnames",
+      "why": "A mixed sentence with a district (강남) and an animal (강아지), both starting with 강.",
+      "text": "강남에서 강아지를 산책시켰다.",
+      "expectations": [
+        {
+          "start": 0,
+          "end": 2,
+          "surface": "강남",
+          "expect": "not-person"
+        },
+        {
+          "start": 5,
+          "end": 8,
+          "surface": "강아지",
+          "expect": "not-person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "not-applicable",
+        "script": "hangul",
+        "token_class": "single",
+        "collision_classes": [
+          "common-word",
+          "location"
+        ],
+        "context_types": [
+          "plain-prose",
+          "sentence-initial",
+          "particle-attached",
+          "no-person"
+        ],
+        "name_features": [],
+        "boundary_tags": [
+          "particle-excluded"
+        ]
+      },
+      "ambiguity": {
+        "level": "context-resolvable",
+        "note": "A place named with the locative 에서 and an animal as the object of 'walked'."
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/ko/negative-no-person/multi-decoy-recent-government-problem",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "ko",
+      "title": "A sentence with several surname-initial common words",
+      "why": "A single sentence stacked with common words that begin with surnames (최근, 정부, 문제, 조금); none is a person. A detector keyed on first syllable fires repeatedly.",
+      "text": "최근 정부가 문제를 조금 해결했다.",
+      "expectations": [
+        {
+          "start": 0,
+          "end": 2,
+          "surface": "최근",
+          "expect": "not-person"
+        },
+        {
+          "start": 3,
+          "end": 5,
+          "surface": "정부",
+          "expect": "not-person"
+        },
+        {
+          "start": 7,
+          "end": 9,
+          "surface": "문제",
+          "expect": "not-person"
+        },
+        {
+          "start": 11,
+          "end": 13,
+          "surface": "조금",
+          "expect": "not-person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "not-applicable",
+        "script": "hangul",
+        "token_class": "single",
+        "collision_classes": [
+          "common-word",
+          "organization"
+        ],
+        "context_types": [
+          "plain-prose",
+          "sentence-initial",
+          "particle-attached",
+          "no-person"
+        ],
+        "name_features": [],
+        "boundary_tags": [
+          "particle-excluded"
+        ]
+      },
+      "ambiguity": {
+        "level": "context-resolvable",
+        "note": "Every highlighted word is an ordinary common noun or adverb; none is followed by a name-like second token."
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/ko/negative-no-person/nobel-prize-eponym-ko",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "ko",
+      "title": "노벨상 as an eponymous prize",
+      "why": "A transliterated eponym for an award; the surname is inside the prize name.",
+      "text": "그는 올해 노벨상을 받았다.",
+      "expectations": [
+        {
+          "start": 6,
+          "end": 9,
+          "surface": "노벨상",
+          "expect": "not-person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "not-applicable",
+        "script": "hangul",
+        "token_class": "single",
+        "collision_classes": [
+          "eponym"
+        ],
+        "context_types": [
+          "plain-prose",
+          "particle-attached",
+          "no-person"
+        ],
+        "name_features": [],
+        "boundary_tags": [
+          "particle-excluded"
+        ]
+      },
+      "ambiguity": {
+        "level": "context-resolvable",
+        "note": "'Received X this year' selects an award."
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/ko/negative-no-person/novel-title-given-name-ko",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "ko",
+      "title": "A novel whose title is a plain given name",
+      "why": "A quoted novel title that is a bare common given name; the head noun 소설 marks a work.",
+      "text": "소설 『미영』은 베스트셀러였다.",
+      "expectations": [
+        {
+          "start": 4,
+          "end": 6,
+          "surface": "미영",
+          "expect": "not-person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "not-applicable",
+        "script": "hangul",
+        "token_class": "single",
+        "collision_classes": [
+          "work-title"
+        ],
+        "context_types": [
+          "plain-prose",
+          "quotation",
+          "particle-attached",
+          "no-person"
+        ],
+        "name_features": [],
+        "boundary_tags": [
+          "quote-boundary",
+          "particle-excluded"
+        ]
+      },
+      "ambiguity": {
+        "level": "context-resolvable",
+        "note": "'The novel X was a bestseller' marks a work title."
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      },
+      "projections_excluded": [
+        {
+          "projection_id": "quoted",
+          "reason": "The projection wraps the text in another pair of quotation marks, which would nest with the quotes this case is about and change what it tests."
+        }
+      ]
+    },
+    {
+      "id": "person/ko/negative-no-person/parkinson-disease-eponym-ko",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "ko",
+      "title": "파킨슨병 as an eponymous term",
+      "why": "A transliterated eponym: the Hangul string contains a foreign surname but denotes a disease.",
+      "text": "할아버지는 파킨슨병으로 치료를 받고 있다.",
+      "expectations": [
+        {
+          "start": 6,
+          "end": 10,
+          "surface": "파킨슨병",
+          "expect": "not-person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "not-applicable",
+        "script": "hangul",
+        "token_class": "single",
+        "collision_classes": [
+          "eponym"
+        ],
+        "context_types": [
+          "plain-prose",
+          "particle-attached",
+          "no-person"
+        ],
+        "name_features": [],
+        "boundary_tags": [
+          "particle-excluded"
+        ]
+      },
+      "ambiguity": {
+        "level": "context-resolvable",
+        "note": "'Receiving treatment for X' selects a disease."
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/ko/negative-no-person/song-title-full-name-ko",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "ko",
+      "title": "A song whose title is a full name",
+      "why": "A quoted song title in the form of a full name; the head noun 노래 marks a work.",
+      "text": "그 밴드는 「김영희」라는 노래로 유명해졌다.",
+      "expectations": [
+        {
+          "start": 7,
+          "end": 10,
+          "surface": "김영희",
+          "expect": "not-person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "not-applicable",
+        "script": "hangul",
+        "token_class": "single",
+        "collision_classes": [
+          "work-title"
+        ],
+        "context_types": [
+          "plain-prose",
+          "quotation",
+          "particle-attached",
+          "no-person"
+        ],
+        "name_features": [],
+        "boundary_tags": [
+          "quote-boundary",
+          "particle-excluded"
+        ]
+      },
+      "ambiguity": {
+        "level": "context-resolvable",
+        "note": "'A song called X' marks a work title."
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      },
+      "projections_excluded": [
+        {
+          "projection_id": "quoted",
+          "reason": "The projection wraps the text in another pair of quotation marks, which would nest with the quotes this case is about and change what it tests."
+        }
+      ]
+    },
+    {
+      "id": "person/ko/negative-no-person/year-and-numbers-with-surname-syllables",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "ko",
+      "title": "Sino-Korean numerals that are also surnames",
+      "why": "Numerals 이 (two), 오 (five), 육 (six), 구 (nine) spelled in Hangul are surname syllables. Reading digits aloud is not naming people.",
+      "text": "전화번호는 이 오 육 구 순서로 읽는다.",
+      "expectations": [
+        {
+          "start": 6,
+          "end": 7,
+          "surface": "이",
+          "expect": "not-person"
+        },
+        {
+          "start": 8,
+          "end": 9,
+          "surface": "오",
+          "expect": "not-person"
+        },
+        {
+          "start": 10,
+          "end": 11,
+          "surface": "육",
+          "expect": "not-person"
+        },
+        {
+          "start": 12,
+          "end": 13,
+          "surface": "구",
+          "expect": "not-person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "not-applicable",
+        "script": "hangul",
+        "token_class": "single",
+        "collision_classes": [
+          "common-word"
+        ],
+        "context_types": [
+          "plain-prose",
+          "no-person"
+        ],
+        "name_features": [],
+        "boundary_tags": [
+          "adjacent-names"
+        ]
+      },
+      "ambiguity": {
+        "level": "context-resolvable",
+        "note": "Four numerals read in sequence as part of reading out a phone-number-like pattern."
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    }
+  ]
+}

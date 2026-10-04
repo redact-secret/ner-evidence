@@ -1,0 +1,667 @@
+{
+  "targets_version": "1.0.0",
+  "count_targets": [
+    {
+      "id": "en-cases",
+      "description": "EN cases in total",
+      "where": {
+        "language": "en"
+      },
+      "min": 200
+    },
+    {
+      "id": "ko-cases",
+      "description": "KO cases in total",
+      "where": {
+        "language": "ko"
+      },
+      "min": 200
+    },
+    {
+      "id": "en-unseen",
+      "description": "EN cases whose focus name is rare or novel (unseen proxy)",
+      "where": {
+        "language": "en",
+        "seen": "unseen"
+      },
+      "min": 60
+    },
+    {
+      "id": "en-seen",
+      "description": "EN cases whose focus name is common (seen proxy)",
+      "where": {
+        "language": "en",
+        "seen": "seen"
+      },
+      "min": 100
+    },
+    {
+      "id": "en-ambiguous",
+      "description": "EN cases that are context-resolvable or genuinely ambiguous",
+      "where": {
+        "language": "en",
+        "ambiguity": "ambiguous"
+      },
+      "min": 80
+    },
+    {
+      "id": "ko-unseen",
+      "description": "KO cases whose focus name is rare or novel (unseen proxy)",
+      "where": {
+        "language": "ko",
+        "seen": "unseen"
+      },
+      "min": 55
+    },
+    {
+      "id": "ko-seen",
+      "description": "KO cases whose focus name is common (seen proxy)",
+      "where": {
+        "language": "ko",
+        "seen": "seen"
+      },
+      "min": 100
+    },
+    {
+      "id": "ko-ambiguous",
+      "description": "KO cases that are context-resolvable or genuinely ambiguous",
+      "where": {
+        "language": "ko",
+        "ambiguity": "ambiguous"
+      },
+      "min": 80
+    },
+    {
+      "id": "en-genuinely-ambiguous",
+      "description": "EN honest-ambiguity cases (either)",
+      "where": {
+        "language": "en",
+        "ambiguity_level": "genuinely-ambiguous"
+      },
+      "min": 12
+    },
+    {
+      "id": "ko-genuinely-ambiguous",
+      "description": "KO honest-ambiguity cases (either)",
+      "where": {
+        "language": "ko",
+        "ambiguity_level": "genuinely-ambiguous"
+      },
+      "min": 10
+    },
+    {
+      "id": "en-single-token",
+      "description": "EN cases with a single-token focus span",
+      "where": {
+        "language": "en",
+        "token_class": "single"
+      },
+      "min": 80
+    },
+    {
+      "id": "en-multi-token",
+      "description": "EN cases with a multi-token focus span",
+      "where": {
+        "language": "en",
+        "token_class": "multi"
+      },
+      "min": 80
+    },
+    {
+      "id": "ko-single-token",
+      "description": "KO cases with a single-token focus span",
+      "where": {
+        "language": "ko",
+        "token_class": "single"
+      },
+      "min": 80
+    },
+    {
+      "id": "ko-multi-token",
+      "description": "KO cases with a multi-token focus span",
+      "where": {
+        "language": "ko",
+        "token_class": "multi"
+      },
+      "min": 40
+    },
+    {
+      "id": "en-collision-common-word",
+      "description": "EN cases with a common-word collision",
+      "where": {
+        "language": "en",
+        "collision_classes": "common-word"
+      },
+      "min": 40
+    },
+    {
+      "id": "ko-collision-common-word",
+      "description": "KO cases with a common-word collision",
+      "where": {
+        "language": "ko",
+        "collision_classes": "common-word"
+      },
+      "min": 40
+    },
+    {
+      "id": "en-collision-organization",
+      "description": "EN cases with an organization collision",
+      "where": {
+        "language": "en",
+        "collision_classes": "organization"
+      },
+      "min": 15
+    },
+    {
+      "id": "ko-collision-organization",
+      "description": "KO cases with an organization collision",
+      "where": {
+        "language": "ko",
+        "collision_classes": "organization"
+      },
+      "min": 15
+    },
+    {
+      "id": "en-collision-location",
+      "description": "EN cases with a location collision",
+      "where": {
+        "language": "en",
+        "collision_classes": "location"
+      },
+      "min": 25
+    },
+    {
+      "id": "ko-collision-location",
+      "description": "KO cases with a location collision",
+      "where": {
+        "language": "ko",
+        "collision_classes": "location"
+      },
+      "min": 15
+    },
+    {
+      "id": "en-collision-temporal",
+      "description": "EN cases with a temporal collision",
+      "where": {
+        "language": "en",
+        "collision_classes": "temporal"
+      },
+      "min": 10
+    },
+    {
+      "id": "ko-collision-temporal",
+      "description": "KO cases with a temporal collision",
+      "where": {
+        "language": "ko",
+        "collision_classes": "temporal"
+      },
+      "min": 5
+    },
+    {
+      "id": "en-collision-product-brand",
+      "description": "EN cases with a product-brand collision",
+      "where": {
+        "language": "en",
+        "collision_classes": "product-brand"
+      },
+      "min": 6
+    },
+    {
+      "id": "ko-collision-product-brand",
+      "description": "KO cases with a product-brand collision",
+      "where": {
+        "language": "ko",
+        "collision_classes": "product-brand"
+      },
+      "min": 4
+    },
+    {
+      "id": "en-collision-eponym",
+      "description": "EN cases with an eponym collision",
+      "where": {
+        "language": "en",
+        "collision_classes": "eponym"
+      },
+      "min": 6
+    },
+    {
+      "id": "ko-collision-eponym",
+      "description": "KO cases with an eponym collision",
+      "where": {
+        "language": "ko",
+        "collision_classes": "eponym"
+      },
+      "min": 2
+    },
+    {
+      "id": "en-collision-work-title",
+      "description": "EN cases with a work-title collision",
+      "where": {
+        "language": "en",
+        "collision_classes": "work-title"
+      },
+      "min": 4
+    },
+    {
+      "id": "ko-collision-work-title",
+      "description": "KO cases with a work-title collision",
+      "where": {
+        "language": "ko",
+        "collision_classes": "work-title"
+      },
+      "min": 2
+    },
+    {
+      "id": "mixed-script-context",
+      "description": "Cases whose sentence mixes scripts",
+      "where": {
+        "context_types": "mixed-script-sentence"
+      },
+      "min": 20
+    },
+    {
+      "id": "en-mixed-script-context",
+      "description": "EN-profile cases whose sentence mixes scripts",
+      "where": {
+        "language": "en",
+        "context_types": "mixed-script-sentence"
+      },
+      "min": 5
+    },
+    {
+      "id": "hanja-focus",
+      "description": "Cases whose focus span is written in hanja",
+      "where": {
+        "script": "han"
+      },
+      "min": 8
+    },
+    {
+      "id": "mixed-script-focus",
+      "description": "Cases whose focus span itself mixes scripts",
+      "where": {
+        "script": "mixed"
+      },
+      "min": 8
+    },
+    {
+      "id": "en-list-or-structured",
+      "description": "EN cases in lists or structured text",
+      "where": {
+        "language": "en",
+        "context_types": [
+          "list-or-enumeration",
+          "structured-text"
+        ]
+      },
+      "min": 10
+    },
+    {
+      "id": "en-adjacent-names",
+      "description": "EN cases with adjacent names",
+      "where": {
+        "language": "en",
+        "boundary_tags": "adjacent-names"
+      },
+      "min": 6
+    },
+    {
+      "id": "en-title-honorific",
+      "description": "EN cases with a title or honorific",
+      "where": {
+        "language": "en",
+        "context_types": "title-honorific"
+      },
+      "min": 20
+    },
+    {
+      "id": "en-no-person",
+      "description": "EN negative cases with no person at all",
+      "where": {
+        "language": "en",
+        "context_types": "no-person"
+      },
+      "min": 40
+    },
+    {
+      "id": "en-sentence-initial",
+      "description": "EN cases with the focus span at sentence start",
+      "where": {
+        "language": "en",
+        "context_types": "sentence-initial"
+      },
+      "min": 30
+    },
+    {
+      "id": "ko-list-or-structured",
+      "description": "KO cases in lists or structured text",
+      "where": {
+        "language": "ko",
+        "context_types": [
+          "list-or-enumeration",
+          "structured-text"
+        ]
+      },
+      "min": 10
+    },
+    {
+      "id": "ko-adjacent-names",
+      "description": "KO cases with adjacent names",
+      "where": {
+        "language": "ko",
+        "boundary_tags": "adjacent-names"
+      },
+      "min": 6
+    },
+    {
+      "id": "ko-title-honorific",
+      "description": "KO cases with a title or honorific",
+      "where": {
+        "language": "ko",
+        "context_types": "title-honorific"
+      },
+      "min": 20
+    },
+    {
+      "id": "ko-no-person",
+      "description": "KO negative cases with no person at all",
+      "where": {
+        "language": "ko",
+        "context_types": "no-person"
+      },
+      "min": 40
+    },
+    {
+      "id": "ko-sentence-initial",
+      "description": "KO cases with the focus span at sentence start",
+      "where": {
+        "language": "ko",
+        "context_types": "sentence-initial"
+      },
+      "min": 30
+    },
+    {
+      "id": "en-casing-variation",
+      "description": "EN cases in lowercase, ALL CAPS or Title Case text",
+      "where": {
+        "language": "en",
+        "context_types": "casing-variation"
+      },
+      "min": 8
+    },
+    {
+      "id": "en-possessive-or-plural",
+      "description": "EN cases with possessive or plural name references",
+      "where": {
+        "language": "en",
+        "context_types": "possessive"
+      },
+      "min": 8
+    },
+    {
+      "id": "ko-particle-attached",
+      "description": "KO cases with a particle attached to the focus span",
+      "where": {
+        "language": "ko",
+        "context_types": "particle-attached"
+      },
+      "min": 150
+    },
+    {
+      "id": "ko-romanized",
+      "description": "KO-profile cases written in romanization",
+      "where": {
+        "language": "ko",
+        "name_features": "ko-romanized"
+      },
+      "min": 25
+    },
+    {
+      "id": "ko-two-syllable-surname",
+      "description": "KO cases with a two-syllable surname",
+      "where": {
+        "language": "ko",
+        "name_features": "ko-two-syllable-surname"
+      },
+      "min": 8
+    },
+    {
+      "id": "boundary-tagged-en",
+      "description": "EN cases with at least one non-trivial boundary tag",
+      "where": {
+        "language": "en",
+        "boundary_tags": [
+          "punctuation-adjacent",
+          "quote-boundary",
+          "hyphen-boundary",
+          "apostrophe-boundary",
+          "honorific-excluded",
+          "adjacent-names",
+          "no-space",
+          "comma-inverted",
+          "parenthetical-boundary",
+          "abbreviation-period",
+          "digit-adjacent",
+          "decomposition-sensitive"
+        ]
+      },
+      "min": 80
+    },
+    {
+      "id": "boundary-tagged-ko",
+      "description": "KO cases with at least one non-trivial boundary tag",
+      "where": {
+        "language": "ko",
+        "boundary_tags": [
+          "particle-excluded",
+          "suffix-excluded",
+          "honorific-excluded",
+          "adjacent-names",
+          "no-space",
+          "extra-spacing",
+          "hyphen-boundary",
+          "punctuation-adjacent",
+          "quote-boundary",
+          "parenthetical-boundary",
+          "mixed-script-boundary",
+          "digit-adjacent"
+        ]
+      },
+      "min": 150
+    },
+    {
+      "id": "linguistic-independent-review",
+      "description": "Cases whose linguistic expectation was independently reviewed",
+      "where": {
+        "review_linguistic": "independently-reviewed"
+      },
+      "min": 100,
+      "waiver": "No independent reviewer was available while the Alpha corpus was authored by a single author session, so every case is author-only. This is reported in the snapshot review_summary; Beta must close it."
+    },
+    {
+      "id": "factual-independent-review",
+      "description": "Cases whose factual claims were independently reviewed",
+      "where": {
+        "review_factual": "independently-reviewed"
+      },
+      "min": 100,
+      "waiver": "No independent reviewer was available while the Alpha corpus was authored by a single author session, so every case is author-only. This is reported in the snapshot review_summary; Beta must close it."
+    }
+  ],
+  "ratio_targets": [
+    {
+      "id": "en-share",
+      "description": "English share of all cases stays between 40% and 60%",
+      "numerator": {
+        "language": "en"
+      },
+      "denominator": {},
+      "min": 0.4,
+      "max": 0.6
+    },
+    {
+      "id": "en-unseen-share",
+      "description": "Unseen share of EN name-bearing cases (rare+novel over common+rare+novel)",
+      "numerator": {
+        "language": "en",
+        "seen": "unseen"
+      },
+      "denominator": {
+        "language": "en",
+        "seen": [
+          "seen",
+          "unseen"
+        ]
+      },
+      "min": 0.25
+    },
+    {
+      "id": "en-ambiguous-share",
+      "description": "Ambiguous share of EN cases",
+      "numerator": {
+        "language": "en",
+        "ambiguity": "ambiguous"
+      },
+      "denominator": {
+        "language": "en"
+      },
+      "min": 0.35
+    },
+    {
+      "id": "en-not-person-share",
+      "description": "Share of EN cases containing a not-person span",
+      "numerator": {
+        "language": "en",
+        "kinds": "not-person"
+      },
+      "denominator": {
+        "language": "en"
+      },
+      "min": 0.25
+    },
+    {
+      "id": "ko-unseen-share",
+      "description": "Unseen share of KO name-bearing cases (rare+novel over common+rare+novel)",
+      "numerator": {
+        "language": "ko",
+        "seen": "unseen"
+      },
+      "denominator": {
+        "language": "ko",
+        "seen": [
+          "seen",
+          "unseen"
+        ]
+      },
+      "min": 0.25
+    },
+    {
+      "id": "ko-ambiguous-share",
+      "description": "Ambiguous share of KO cases",
+      "numerator": {
+        "language": "ko",
+        "ambiguity": "ambiguous"
+      },
+      "denominator": {
+        "language": "ko"
+      },
+      "min": 0.35
+    },
+    {
+      "id": "ko-not-person-share",
+      "description": "Share of KO cases containing a not-person span",
+      "numerator": {
+        "language": "ko",
+        "kinds": "not-person"
+      },
+      "denominator": {
+        "language": "ko"
+      },
+      "min": 0.25
+    },
+    {
+      "id": "en-multi-share",
+      "description": "Multi-token share of EN cases",
+      "numerator": {
+        "language": "en",
+        "token_class": "multi"
+      },
+      "denominator": {
+        "language": "en"
+      },
+      "min": 0.25
+    },
+    {
+      "id": "ko-multi-share",
+      "description": "Multi-token share of KO cases (Korean names are usually written without spaces, so the floor is structural)",
+      "numerator": {
+        "language": "ko",
+        "token_class": "multi"
+      },
+      "denominator": {
+        "language": "ko"
+      },
+      "min": 0.12
+    },
+    {
+      "id": "easy-control-ceiling",
+      "description": "Easy controls (common, unambiguous) must not dominate: at most 35% of all cases",
+      "numerator": {
+        "familiarity": "common",
+        "ambiguity": "unambiguous"
+      },
+      "denominator": {},
+      "max": 0.35
+    }
+  ],
+  "known_gaps": [
+    {
+      "id": "no-independent-review",
+      "description": "Every case has linguistic and factual review status author-only. Korean cases in particular need review by a native speaker or linguist, and English boundary conventions need a second annotator."
+    },
+    {
+      "id": "synthetic-only-no-corpus-backing",
+      "description": "All evidence is project-authored. No naturally occurring text is included, so the distribution of contexts, name frequencies and noise in real documents is not represented. Results on this corpus must not be read as real-world accuracy."
+    },
+    {
+      "id": "familiarity-labels-unverified",
+      "description": "The common/rare/novel familiarity labels are author judgments, not checked against national name-frequency tables. The seen/unseen slices are proxies; they say nothing about any model's training data."
+    },
+    {
+      "id": "single-author-selection-bias",
+      "description": "Cases reflect one author's view of what is confusable. Collision breadth (months, flowers, brands, districts) is illustrative, not a sampled or exhaustive list."
+    },
+    {
+      "id": "no-inter-annotator-agreement",
+      "description": "Span boundary conventions (titles, possessives, Korean particles and honorifics) were applied consistently by one author; agreement with an independent annotator has not been measured."
+    },
+    {
+      "id": "plural-and-family-references-undefined",
+      "description": "Plural and family references (the Joneses, two Johns, the Smiths' house) have no span convention in taxonomy 0.1.0. The 3 cases that use them, plus 1 ampersand-couple case, are marked either; they are not a test of correctness until a convention exists."
+    },
+    {
+      "id": "scripts-beyond-latin-hangul-han",
+      "description": "No Cyrillic, Arabic, Devanagari, Thai or other scripts, and no Japanese kana. Han coverage is limited to Korean hanja notation; Chinese and Japanese naming is out of scope."
+    },
+    {
+      "id": "north-korean-and-diaspora-orthography",
+      "description": "Korean cases follow contemporary South Korean spelling and spacing. North Korean orthography, older spellings and diaspora romanization variants are not covered."
+    },
+    {
+      "id": "handles-usernames-email-local-parts",
+      "description": "Usernames, social handles and email local parts that embed names are out of scope for taxonomy 0.1.0."
+    },
+    {
+      "id": "small-eponym-and-work-title-slices",
+      "description": "Eponym (Ohm's law, Nobel Prize) and work-title (novel, song, film) slices are present but small (single digits per language). They flag the problem but do not support per-slice conclusions."
+    },
+    {
+      "id": "wrapper-projections-only",
+      "description": "Fixtures are structural wrappers of the authored sentence (quote, log line, JSON, email, NFD). There are no noisy-text projections (typos, OCR errors, casing mutations) because each needs per-case semantic review."
+    },
+    {
+      "id": "fixture-correlation",
+      "description": "Fixtures derived from one case are correlated. Counting fixtures instead of cases overweights cases that accept more projections (Korean cases accept the NFD projection; English mostly do not)."
+    }
+  ]
+}

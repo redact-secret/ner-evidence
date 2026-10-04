@@ -1,384 +1,222 @@
 {
   "cases": [
     {
-      "id": "person/en/organization-collision/architects-two-surnames",
+      "id": "person/en/negative-no-person/album-title-surname",
       "schema_version": "1.0.0",
       "entity_type": "PERSON",
       "language": "en",
-      "title": "Architecture firm named with two surnames",
-      "why": "A fictional firm name made of two surnames and 'Architects'.",
-      "text": "Hale & Brandt Architects designed the library.",
-      "expectations": [
-        {
-          "start": 0,
-          "end": 24,
-          "surface": "Hale & Brandt Architects",
-          "expect": "not-person"
-        }
-      ],
-      "focus_span": 0,
-      "dimensions": {
-        "familiarity": "common",
-        "script": "latin",
-        "token_class": "multi",
-        "collision_classes": [
-          "organization"
-        ],
-        "context_types": [
-          "plain-prose",
-          "sentence-initial",
-          "no-person"
-        ],
-        "name_features": [],
-        "boundary_tags": []
-      },
-      "ambiguity": {
-        "level": "context-resolvable",
-        "note": "'Architects' and 'designed the library' mark a firm."
-      },
-      "evidence_class": "authored-adversarial",
-      "source_ids": [
-        "src/project-authored-synthetic"
-      ],
-      "review": {
-        "factual": "author-only",
-        "linguistic": "author-only",
-        "schema": "machine-validated"
-      }
-    },
-    {
-      "id": "person/en/organization-collision/company-named-with-given-name",
-      "schema_version": "1.0.0",
-      "entity_type": "PERSON",
-      "language": "en",
-      "title": "Company named with a given name",
-      "why": "A fictional motor company whose first token is a very common given name.",
-      "text": "Jordan Motors recalled the model.",
-      "expectations": [
-        {
-          "start": 0,
-          "end": 13,
-          "surface": "Jordan Motors",
-          "expect": "not-person"
-        }
-      ],
-      "focus_span": 0,
-      "dimensions": {
-        "familiarity": "common",
-        "script": "latin",
-        "token_class": "multi",
-        "collision_classes": [
-          "organization",
-          "location"
-        ],
-        "context_types": [
-          "plain-prose",
-          "sentence-initial",
-          "no-person"
-        ],
-        "name_features": [],
-        "boundary_tags": []
-      },
-      "ambiguity": {
-        "level": "context-resolvable",
-        "note": "'Motors' and 'recalled the model' indicate a manufacturer."
-      },
-      "evidence_class": "authored-adversarial",
-      "source_ids": [
-        "src/project-authored-synthetic"
-      ],
-      "review": {
-        "factual": "author-only",
-        "linguistic": "author-only",
-        "schema": "machine-validated"
-      }
-    },
-    {
-      "id": "person/en/organization-collision/dr-martens-brand",
-      "schema_version": "1.0.0",
-      "entity_type": "PERSON",
-      "language": "en",
-      "title": "Title-plus-surname that is a footwear brand",
-      "why": "'Dr. Martens' has the surface pattern of title plus surname but is a brand; a second title-pattern trap beside the beverage example.",
-      "text": "Her Dr. Martens boots were covered in mud.",
-      "expectations": [
-        {
-          "start": 4,
-          "end": 15,
-          "surface": "Dr. Martens",
-          "expect": "not-person"
-        }
-      ],
-      "focus_span": 0,
-      "dimensions": {
-        "familiarity": "common",
-        "script": "latin",
-        "token_class": "multi",
-        "collision_classes": [
-          "product-brand"
-        ],
-        "context_types": [
-          "plain-prose",
-          "title-honorific",
-          "no-person"
-        ],
-        "name_features": [],
-        "boundary_tags": []
-      },
-      "ambiguity": {
-        "level": "context-resolvable",
-        "note": "The possessive 'Her' and the noun 'boots' mark a product."
-      },
-      "evidence_class": "authored-adversarial",
-      "source_ids": [
-        "src/project-authored-synthetic"
-      ],
-      "review": {
-        "factual": "author-only",
-        "linguistic": "author-only",
-        "schema": "machine-validated"
-      }
-    },
-    {
-      "id": "person/en/organization-collision/family-business-and-sons",
-      "schema_version": "1.0.0",
-      "entity_type": "PERSON",
-      "language": "en",
-      "title": "Family business with surname and 'Sons'",
-      "why": "A trade business named with a surname plus '& Sons'.",
-      "text": "Johnson & Sons Plumbing sent the invoice.",
-      "expectations": [
-        {
-          "start": 0,
-          "end": 23,
-          "surface": "Johnson & Sons Plumbing",
-          "expect": "not-person"
-        }
-      ],
-      "focus_span": 0,
-      "dimensions": {
-        "familiarity": "common",
-        "script": "latin",
-        "token_class": "multi",
-        "collision_classes": [
-          "organization"
-        ],
-        "context_types": [
-          "plain-prose",
-          "sentence-initial",
-          "no-person"
-        ],
-        "name_features": [],
-        "boundary_tags": []
-      },
-      "ambiguity": {
-        "level": "context-resolvable",
-        "note": "'& Sons Plumbing' denotes a trade business."
-      },
-      "evidence_class": "authored-adversarial",
-      "source_ids": [
-        "src/project-authored-synthetic"
-      ],
-      "review": {
-        "factual": "author-only",
-        "linguistic": "author-only",
-        "schema": "machine-validated"
-      }
-    },
-    {
-      "id": "person/en/organization-collision/fictional-firm-with-surnames",
-      "schema_version": "1.0.0",
-      "entity_type": "PERSON",
-      "language": "en",
-      "title": "Law-firm-style organization made of two surnames",
-      "why": "A fictional firm name made of two surnames joined by an ampersand. Both surnames are person-like but the whole string is an organization.",
-      "text": "Carter & Lowe Associates won the contract.",
-      "expectations": [
-        {
-          "start": 0,
-          "end": 24,
-          "surface": "Carter & Lowe Associates",
-          "expect": "not-person"
-        }
-      ],
-      "focus_span": 0,
-      "dimensions": {
-        "familiarity": "common",
-        "script": "latin",
-        "token_class": "multi",
-        "collision_classes": [
-          "organization"
-        ],
-        "context_types": [
-          "plain-prose",
-          "no-person"
-        ],
-        "name_features": [],
-        "boundary_tags": []
-      },
-      "ambiguity": {
-        "level": "context-resolvable",
-        "note": "The ampersand pattern and 'Associates' mark a firm, not two people."
-      },
-      "evidence_class": "authored-adversarial",
-      "source_ids": [
-        "src/project-authored-synthetic"
-      ],
-      "review": {
-        "factual": "author-only",
-        "linguistic": "author-only",
-        "schema": "machine-validated"
-      }
-    },
-    {
-      "id": "person/en/organization-collision/ford-foundation-org",
-      "schema_version": "1.0.0",
-      "entity_type": "PERSON",
-      "language": "en",
-      "title": "Ford Foundation as an organization",
-      "why": "An organization named after a family surname.",
-      "text": "The Ford Foundation funded the study.",
-      "expectations": [
-        {
-          "start": 4,
-          "end": 19,
-          "surface": "Ford Foundation",
-          "expect": "not-person"
-        }
-      ],
-      "focus_span": 0,
-      "dimensions": {
-        "familiarity": "common",
-        "script": "latin",
-        "token_class": "multi",
-        "collision_classes": [
-          "organization"
-        ],
-        "context_types": [
-          "plain-prose",
-          "no-person"
-        ],
-        "name_features": [],
-        "boundary_tags": []
-      },
-      "ambiguity": {
-        "level": "context-resolvable",
-        "note": "'Foundation' is an organization head noun and it is the funder."
-      },
-      "evidence_class": "authored-adversarial",
-      "source_ids": [
-        "src/project-authored-synthetic"
-      ],
-      "review": {
-        "factual": "author-only",
-        "linguistic": "author-only",
-        "schema": "machine-validated"
-      }
-    },
-    {
-      "id": "person/en/organization-collision/ford-mustang-product",
-      "schema_version": "1.0.0",
-      "entity_type": "PERSON",
-      "language": "en",
-      "title": "Ford Mustang as a vehicle model",
-      "why": "Architecture-level example: a surname-plus-noun brand and model; no PERSON is expected inside the span even though Ford is a surname.",
-      "text": "He bought a Ford Mustang last spring.",
-      "expectations": [
-        {
-          "start": 12,
-          "end": 24,
-          "surface": "Ford Mustang",
-          "expect": "not-person"
-        }
-      ],
-      "focus_span": 0,
-      "dimensions": {
-        "familiarity": "common",
-        "script": "latin",
-        "token_class": "multi",
-        "collision_classes": [
-          "product-brand",
-          "organization"
-        ],
-        "context_types": [
-          "plain-prose",
-          "no-person"
-        ],
-        "name_features": [],
-        "boundary_tags": []
-      },
-      "ambiguity": {
-        "level": "context-resolvable",
-        "note": "'Bought a X' selects a product; Ford here is the brand, not a person."
-      },
-      "evidence_class": "authored-adversarial",
-      "source_ids": [
-        "src/project-authored-synthetic"
-      ],
-      "review": {
-        "factual": "author-only",
-        "linguistic": "author-only",
-        "schema": "machine-validated"
-      }
-    },
-    {
-      "id": "person/en/organization-collision/hardware-store-surname",
-      "schema_version": "1.0.0",
-      "entity_type": "PERSON",
-      "language": "en",
-      "title": "Shop named after a surname",
-      "why": "A shop name made of a very common surname plus a trade noun.",
-      "text": "He bought a hammer at Adams Hardware.",
-      "expectations": [
-        {
-          "start": 22,
-          "end": 36,
-          "surface": "Adams Hardware",
-          "expect": "not-person"
-        }
-      ],
-      "focus_span": 0,
-      "dimensions": {
-        "familiarity": "common",
-        "script": "latin",
-        "token_class": "multi",
-        "collision_classes": [
-          "organization"
-        ],
-        "context_types": [
-          "plain-prose",
-          "no-person"
-        ],
-        "name_features": [],
-        "boundary_tags": []
-      },
-      "ambiguity": {
-        "level": "context-resolvable",
-        "note": "'Bought a hammer at X' selects a store."
-      },
-      "evidence_class": "authored-adversarial",
-      "source_ids": [
-        "src/project-authored-synthetic"
-      ],
-      "review": {
-        "factual": "author-only",
-        "linguistic": "author-only",
-        "schema": "machine-validated"
-      }
-    },
-    {
-      "id": "person/en/organization-collision/hospital-named-after-surname",
-      "schema_version": "1.0.0",
-      "entity_type": "PERSON",
-      "language": "en",
-      "title": "Hospital named after a surname",
-      "why": "Institutional names that begin with a surname are everywhere; the institution is not a person.",
-      "text": "She was treated at Whitfield Memorial Hospital.",
+      "title": "An album whose title is a bare surname",
+      "why": "A quoted album title that is a bare common surname; the head noun 'album' makes it a work.",
+      "text": "Her second album, \"Whitaker\", sold well.",
       "expectations": [
         {
           "start": 19,
-          "end": 46,
-          "surface": "Whitfield Memorial Hospital",
+          "end": 27,
+          "surface": "Whitaker",
+          "expect": "not-person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "latin",
+        "token_class": "single",
+        "collision_classes": [
+          "work-title"
+        ],
+        "context_types": [
+          "plain-prose",
+          "quotation",
+          "no-person"
+        ],
+        "name_features": [],
+        "boundary_tags": [
+          "quote-boundary",
+          "punctuation-adjacent"
+        ]
+      },
+      "ambiguity": {
+        "level": "context-resolvable",
+        "note": "'Her second album' followed by a quoted word marks a work title."
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      },
+      "projections_excluded": [
+        {
+          "projection_id": "quoted",
+          "reason": "The projection wraps the text in another pair of quotation marks, which would nest with the quotes this case is about and change what it tests."
+        }
+      ]
+    },
+    {
+      "id": "person/en/negative-no-person/alzheimers-disease-eponym",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "en",
+      "title": "Alzheimer's disease as an eponymous term",
+      "why": "Another medical eponym with a possessive; the surname is inside a disease name.",
+      "text": "The clinic studies Alzheimer's disease in older adults.",
+      "expectations": [
+        {
+          "start": 19,
+          "end": 38,
+          "surface": "Alzheimer's disease",
+          "expect": "not-person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "not-applicable",
+        "script": "latin",
+        "token_class": "multi",
+        "collision_classes": [
+          "eponym"
+        ],
+        "context_types": [
+          "plain-prose",
+          "possessive",
+          "no-person"
+        ],
+        "name_features": [],
+        "boundary_tags": [
+          "apostrophe-boundary"
+        ]
+      },
+      "ambiguity": {
+        "level": "context-resolvable",
+        "note": "The possessive plus 'disease' forms a medical term."
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/en/negative-no-person/fahrenheit-scale-eponym",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "en",
+      "title": "Fahrenheit as a temperature scale",
+      "why": "An eponymous scale name derived from a surname; by convention not a PERSON mention.",
+      "text": "Water boils at 212 degrees Fahrenheit.",
+      "expectations": [
+        {
+          "start": 27,
+          "end": 37,
+          "surface": "Fahrenheit",
+          "expect": "not-person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "not-applicable",
+        "script": "latin",
+        "token_class": "single",
+        "collision_classes": [
+          "eponym"
+        ],
+        "context_types": [
+          "plain-prose",
+          "no-person"
+        ],
+        "name_features": [],
+        "boundary_tags": [
+          "digit-adjacent"
+        ]
+      },
+      "ambiguity": {
+        "level": "context-resolvable",
+        "note": "A number of degrees before the word marks a temperature scale."
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/en/negative-no-person/film-title-given-name",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "en",
+      "title": "A film whose title is a given name",
+      "why": "A quoted film title that is a bare given name denotes a work, not a person.",
+      "text": "The film \"Clementine\" won an award.",
+      "expectations": [
+        {
+          "start": 10,
+          "end": 20,
+          "surface": "Clementine",
+          "expect": "not-person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "latin",
+        "token_class": "single",
+        "collision_classes": [
+          "work-title"
+        ],
+        "context_types": [
+          "plain-prose",
+          "quotation",
+          "no-person"
+        ],
+        "name_features": [],
+        "boundary_tags": [
+          "quote-boundary"
+        ]
+      },
+      "ambiguity": {
+        "level": "context-resolvable",
+        "note": "The noun 'film' before the quoted word and 'won an award' mark a work."
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      },
+      "projections_excluded": [
+        {
+          "projection_id": "quoted",
+          "reason": "The projection wraps the text in another pair of quotation marks, which would nest with the quotes this case is about and change what it tests."
+        }
+      ]
+    },
+    {
+      "id": "person/en/negative-no-person/grace-period-term",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "en",
+      "title": "Grace Period as a fixed term",
+      "why": "A given name inside a fixed contract term.",
+      "text": "The Grace Period ends on Friday.",
+      "expectations": [
+        {
+          "start": 4,
+          "end": 16,
+          "surface": "Grace Period",
           "expect": "not-person"
         }
       ],
@@ -388,7 +226,7 @@
         "script": "latin",
         "token_class": "multi",
         "collision_classes": [
-          "organization"
+          "common-word"
         ],
         "context_types": [
           "plain-prose",
@@ -399,7 +237,7 @@
       },
       "ambiguity": {
         "level": "context-resolvable",
-        "note": "'Treated at X' with 'Hospital' as head noun is an institution."
+        "note": "'Period' and 'ends on Friday' mark a term in time."
       },
       "evidence_class": "authored-adversarial",
       "source_ids": [
@@ -412,117 +250,443 @@
       }
     },
     {
-      "id": "person/en/organization-collision/mercedes-brand-subject",
+      "id": "person/en/negative-no-person/hunter-green-colour",
       "schema_version": "1.0.0",
       "entity_type": "PERSON",
       "language": "en",
-      "title": "Mercedes as a car brand",
-      "why": "Mercedes is a car brand and a given name; selling cars is a company action.",
-      "text": "Mercedes sold fewer cars this year.",
-      "expectations": [
-        {
-          "start": 0,
-          "end": 8,
-          "surface": "Mercedes",
-          "expect": "not-person"
-        }
-      ],
-      "focus_span": 0,
-      "dimensions": {
-        "familiarity": "common",
-        "script": "latin",
-        "token_class": "single",
-        "collision_classes": [
-          "product-brand",
-          "organization",
-          "common-word"
-        ],
-        "context_types": [
-          "plain-prose",
-          "sentence-initial",
-          "no-person"
-        ],
-        "name_features": [],
-        "boundary_tags": []
-      },
-      "ambiguity": {
-        "level": "context-resolvable",
-        "note": "Selling cars (in volume) is something a company does."
-      },
-      "evidence_class": "authored-adversarial",
-      "source_ids": [
-        "src/project-authored-synthetic"
-      ],
-      "review": {
-        "factual": "author-only",
-        "linguistic": "author-only",
-        "schema": "machine-validated"
-      }
-    },
-    {
-      "id": "person/en/organization-collision/mercedes-given-name",
-      "schema_version": "1.0.0",
-      "entity_type": "PERSON",
-      "language": "en",
-      "title": "Mercedes as a person to be phoned",
-      "why": "Partner of mercedes-brand-subject: the recipient of a phone call about a schedule.",
-      "text": "Please call Mercedes about the schedule.",
-      "expectations": [
-        {
-          "start": 12,
-          "end": 20,
-          "surface": "Mercedes",
-          "expect": "person"
-        }
-      ],
-      "focus_span": 0,
-      "dimensions": {
-        "familiarity": "common",
-        "script": "latin",
-        "token_class": "single",
-        "collision_classes": [
-          "product-brand",
-          "common-word"
-        ],
-        "context_types": [
-          "plain-prose"
-        ],
-        "name_features": [],
-        "boundary_tags": []
-      },
-      "ambiguity": {
-        "level": "context-resolvable",
-        "note": "A person is called about a schedule; a company brand would need a department or role."
-      },
-      "evidence_class": "authored-adversarial",
-      "source_ids": [
-        "src/project-authored-synthetic"
-      ],
-      "review": {
-        "factual": "author-only",
-        "linguistic": "author-only",
-        "schema": "machine-validated"
-      }
-    },
-    {
-      "id": "person/en/organization-collision/person-and-namesake-firm",
-      "schema_version": "1.0.0",
-      "entity_type": "PERSON",
-      "language": "en",
-      "title": "A person and a firm that share the surname",
-      "why": "Both an organization and a person contain 'Carter'. Only the span covering the person is PERSON; the firm span must not contain a PERSON prediction.",
-      "text": "Helen Carter works at Carter & Lowe Associates.",
+      "title": "Hunter Green as a colour name",
+      "why": "Hunter is a given name and surname; with 'Green' it is a named colour.",
+      "text": "Hunter Green is the colour of the cover.",
       "expectations": [
         {
           "start": 0,
           "end": 12,
-          "surface": "Helen Carter",
-          "expect": "person"
-        },
+          "surface": "Hunter Green",
+          "expect": "not-person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "latin",
+        "token_class": "multi",
+        "collision_classes": [
+          "common-word"
+        ],
+        "context_types": [
+          "plain-prose",
+          "sentence-initial",
+          "no-person"
+        ],
+        "name_features": [],
+        "boundary_tags": []
+      },
+      "ambiguity": {
+        "level": "context-resolvable",
+        "note": "'The colour of the cover' marks it as a colour name."
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/en/negative-no-person/johnson-report-document",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "en",
+      "title": "Johnson Report as a named document",
+      "why": "A document named after an author or chair; the surname is inside the title of the report, not a mention of the person.",
+      "text": "The Johnson Report was released on Monday.",
+      "expectations": [
+        {
+          "start": 4,
+          "end": 18,
+          "surface": "Johnson Report",
+          "expect": "not-person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "latin",
+        "token_class": "multi",
+        "collision_classes": [
+          "work-title"
+        ],
+        "context_types": [
+          "plain-prose",
+          "no-person"
+        ],
+        "name_features": [],
+        "boundary_tags": []
+      },
+      "ambiguity": {
+        "level": "context-resolvable",
+        "note": "'Report' is a document head noun and documents are released."
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/en/negative-no-person/newton-unit-lowercase",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "en",
+      "title": "Lowercase newtons as a unit",
+      "why": "A unit named after a person, written lowercase and pluralized in running text.",
+      "text": "The force was five newtons at the handle.",
+      "expectations": [
+        {
+          "start": 19,
+          "end": 26,
+          "surface": "newtons",
+          "expect": "not-person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "not-applicable",
+        "script": "latin",
+        "token_class": "single",
+        "collision_classes": [
+          "eponym"
+        ],
+        "context_types": [
+          "plain-prose",
+          "no-person"
+        ],
+        "name_features": [],
+        "boundary_tags": []
+      },
+      "ambiguity": {
+        "level": "context-resolvable",
+        "note": "A numeral before the plural noun marks a unit of measure."
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/en/negative-no-person/nobel-prize-eponym",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "en",
+      "title": "Nobel Prize as an eponymous award",
+      "why": "Another eponym: a prize named after a person, not a mention of the person.",
+      "text": "She won the Nobel Prize in 2019.",
+      "expectations": [
+        {
+          "start": 12,
+          "end": 23,
+          "surface": "Nobel Prize",
+          "expect": "not-person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "not-applicable",
+        "script": "latin",
+        "token_class": "multi",
+        "collision_classes": [
+          "eponym"
+        ],
+        "context_types": [
+          "plain-prose",
+          "no-person"
+        ],
+        "name_features": [],
+        "boundary_tags": [
+          "digit-adjacent"
+        ]
+      },
+      "ambiguity": {
+        "level": "context-resolvable",
+        "note": "'Won the ... Prize' selects an award."
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/en/negative-no-person/novel-title-quoted-ordinary-name",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "en",
+      "title": "A novel whose title is a plain given name followed by a surname",
+      "why": "A quoted title in the form of a full name (a biography-style novel title). The title is a work, even though the string is a perfectly good person name.",
+      "text": "The novel \"Clara Whitmore\" was a bestseller.",
+      "expectations": [
+        {
+          "start": 11,
+          "end": 25,
+          "surface": "Clara Whitmore",
+          "expect": "not-person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "latin",
+        "token_class": "multi",
+        "collision_classes": [
+          "work-title"
+        ],
+        "context_types": [
+          "plain-prose",
+          "quotation",
+          "no-person"
+        ],
+        "name_features": [],
+        "boundary_tags": [
+          "quote-boundary"
+        ]
+      },
+      "ambiguity": {
+        "level": "context-resolvable",
+        "note": "'The novel' before a quoted string marks a work title."
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      },
+      "projections_excluded": [
+        {
+          "projection_id": "quoted",
+          "reason": "The projection wraps the text in another pair of quotation marks, which would nest with the quotes this case is about and change what it tests."
+        }
+      ]
+    },
+    {
+      "id": "person/en/negative-no-person/ohms-law-eponym",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "en",
+      "title": "Ohm's law as an eponymous term",
+      "why": "Taxonomy convention: eponymous terms are not PERSON mentions, so 'Ohm's law' is a whole not-person span even though Ohm was a person.",
+      "text": "Ohm's law relates voltage and current.",
+      "expectations": [
+        {
+          "start": 0,
+          "end": 9,
+          "surface": "Ohm's law",
+          "expect": "not-person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "not-applicable",
+        "script": "latin",
+        "token_class": "multi",
+        "collision_classes": [
+          "eponym"
+        ],
+        "context_types": [
+          "plain-prose",
+          "sentence-initial",
+          "possessive",
+          "no-person"
+        ],
+        "name_features": [],
+        "boundary_tags": [
+          "apostrophe-boundary"
+        ]
+      },
+      "ambiguity": {
+        "level": "context-resolvable",
+        "note": "The possessive plus the noun 'law' forms an eponymous term for a physical law."
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/en/negative-no-person/parkinsons-disease-eponym",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "en",
+      "title": "Parkinson's disease as an eponymous term",
+      "why": "An eponymous disease name; the surname inside it is not a mention of a person.",
+      "text": "Her father was diagnosed with Parkinson's disease.",
+      "expectations": [
+        {
+          "start": 30,
+          "end": 49,
+          "surface": "Parkinson's disease",
+          "expect": "not-person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "not-applicable",
+        "script": "latin",
+        "token_class": "multi",
+        "collision_classes": [
+          "eponym"
+        ],
+        "context_types": [
+          "plain-prose",
+          "possessive",
+          "no-person"
+        ],
+        "name_features": [],
+        "boundary_tags": [
+          "apostrophe-boundary"
+        ]
+      },
+      "ambiguity": {
+        "level": "context-resolvable",
+        "note": "The possessive plus 'disease' is a medical term; the diagnosis frame selects it."
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/en/negative-no-person/pythagorean-theorem-eponym",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "en",
+      "title": "Pythagorean theorem as an eponymous term",
+      "why": "An adjectival eponym built from a surname; the derived adjective plus 'theorem' is a mathematical term, not a person.",
+      "text": "Students proved the Pythagorean theorem in class.",
+      "expectations": [
+        {
+          "start": 20,
+          "end": 39,
+          "surface": "Pythagorean theorem",
+          "expect": "not-person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "not-applicable",
+        "script": "latin",
+        "token_class": "multi",
+        "collision_classes": [
+          "eponym"
+        ],
+        "context_types": [
+          "plain-prose",
+          "no-person"
+        ],
+        "name_features": [],
+        "boundary_tags": []
+      },
+      "ambiguity": {
+        "level": "context-resolvable",
+        "note": "'Proved the ... theorem' selects a mathematical result."
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/en/negative-no-person/rose-bowl-event",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "en",
+      "title": "Rose Bowl as an event",
+      "why": "A given name plus a common noun that denotes a sporting event.",
+      "text": "The Rose Bowl game starts at noon.",
+      "expectations": [
+        {
+          "start": 4,
+          "end": 13,
+          "surface": "Rose Bowl",
+          "expect": "not-person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "latin",
+        "token_class": "multi",
+        "collision_classes": [
+          "location",
+          "common-word"
+        ],
+        "context_types": [
+          "plain-prose",
+          "no-person"
+        ],
+        "name_features": [],
+        "boundary_tags": []
+      },
+      "ambiguity": {
+        "level": "context-resolvable",
+        "note": "'Bowl' and 'game' mark an event."
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/en/negative-no-person/song-title-given-name",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "en",
+      "title": "A song whose title is a given name",
+      "why": "A song title that is a bare given name, in italics-free plain text with quotes.",
+      "text": "The band closed with \"Marigold\" last night.",
+      "expectations": [
         {
           "start": 22,
-          "end": 46,
-          "surface": "Carter & Lowe Associates",
+          "end": 30,
+          "surface": "Marigold",
           "expect": "not-person"
         }
       ],
@@ -530,67 +694,24 @@
       "dimensions": {
         "familiarity": "common",
         "script": "latin",
-        "token_class": "multi",
+        "token_class": "single",
         "collision_classes": [
-          "organization"
-        ],
-        "context_types": [
-          "plain-prose"
-        ],
-        "name_features": [
-          "full-name"
-        ],
-        "boundary_tags": []
-      },
-      "ambiguity": {
-        "level": "context-resolvable",
-        "note": "'Works at X' places the firm as the employer; the first name is the employee."
-      },
-      "evidence_class": "authored-adversarial",
-      "source_ids": [
-        "src/project-authored-synthetic"
-      ],
-      "review": {
-        "factual": "author-only",
-        "linguistic": "author-only",
-        "schema": "machine-validated"
-      }
-    },
-    {
-      "id": "person/en/organization-collision/rose-garden-venue",
-      "schema_version": "1.0.0",
-      "entity_type": "PERSON",
-      "language": "en",
-      "title": "Rose Garden as a venue",
-      "why": "The README lists 'Rose Garden' as a canonical negative: a given name plus a common noun forming a place.",
-      "text": "The wedding was held in the Rose Garden behind the museum.",
-      "expectations": [
-        {
-          "start": 28,
-          "end": 39,
-          "surface": "Rose Garden",
-          "expect": "not-person"
-        }
-      ],
-      "focus_span": 0,
-      "dimensions": {
-        "familiarity": "common",
-        "script": "latin",
-        "token_class": "multi",
-        "collision_classes": [
-          "location",
+          "work-title",
           "common-word"
         ],
         "context_types": [
           "plain-prose",
+          "quotation",
           "no-person"
         ],
         "name_features": [],
-        "boundary_tags": []
+        "boundary_tags": [
+          "quote-boundary"
+        ]
       },
       "ambiguity": {
         "level": "context-resolvable",
-        "note": "'Garden' as head noun after 'held in the' marks a venue."
+        "note": "'Closed with' a quoted word selects a song title."
       },
       "evidence_class": "authored-adversarial",
       "source_ids": [
@@ -600,21 +721,27 @@
         "factual": "author-only",
         "linguistic": "author-only",
         "schema": "machine-validated"
-      }
+      },
+      "projections_excluded": [
+        {
+          "projection_id": "quoted",
+          "reason": "The projection wraps the text in another pair of quotation marks, which would nest with the quotes this case is about and change what it tests."
+        }
+      ]
     },
     {
-      "id": "person/en/organization-collision/school-named-after-surname",
+      "id": "person/en/negative-no-person/summer-collection",
       "schema_version": "1.0.0",
       "entity_type": "PERSON",
       "language": "en",
-      "title": "School named after a surname",
-      "why": "Institution names built from a historical surname plus a school noun.",
-      "text": "Lincoln Elementary School closes early on Fridays.",
+      "title": "Summer Collection as a product line",
+      "why": "A season word that is also a given name inside a product-line name.",
+      "text": "Her new Summer Collection sold out.",
       "expectations": [
         {
-          "start": 0,
+          "start": 8,
           "end": 25,
-          "surface": "Lincoln Elementary School",
+          "surface": "Summer Collection",
           "expect": "not-person"
         }
       ],
@@ -624,100 +751,8 @@
         "script": "latin",
         "token_class": "multi",
         "collision_classes": [
-          "organization",
-          "location"
-        ],
-        "context_types": [
-          "plain-prose",
-          "sentence-initial",
-          "no-person"
-        ],
-        "name_features": [],
-        "boundary_tags": []
-      },
-      "ambiguity": {
-        "level": "context-resolvable",
-        "note": "'Elementary School' as head noun is an institution."
-      },
-      "evidence_class": "authored-adversarial",
-      "source_ids": [
-        "src/project-authored-synthetic"
-      ],
-      "review": {
-        "factual": "author-only",
-        "linguistic": "author-only",
-        "schema": "machine-validated"
-      }
-    },
-    {
-      "id": "person/en/organization-collision/smith-and-jones-llp",
-      "schema_version": "1.0.0",
-      "entity_type": "PERSON",
-      "language": "en",
-      "title": "Law firm named with two surnames",
-      "why": "A fictional law firm in the same pattern as two-person names joined by 'and'.",
-      "text": "Smith and Jones LLP represented the buyer.",
-      "expectations": [
-        {
-          "start": 0,
-          "end": 19,
-          "surface": "Smith and Jones LLP",
-          "expect": "not-person"
-        }
-      ],
-      "focus_span": 0,
-      "dimensions": {
-        "familiarity": "common",
-        "script": "latin",
-        "token_class": "multi",
-        "collision_classes": [
-          "organization"
-        ],
-        "context_types": [
-          "plain-prose",
-          "sentence-initial",
-          "no-person"
-        ],
-        "name_features": [],
-        "boundary_tags": []
-      },
-      "ambiguity": {
-        "level": "context-resolvable",
-        "note": "'LLP' marks a legal partnership."
-      },
-      "evidence_class": "authored-adversarial",
-      "source_ids": [
-        "src/project-authored-synthetic"
-      ],
-      "review": {
-        "factual": "author-only",
-        "linguistic": "author-only",
-        "schema": "machine-validated"
-      }
-    },
-    {
-      "id": "person/en/organization-collision/subway-station-name",
-      "schema_version": "1.0.0",
-      "entity_type": "PERSON",
-      "language": "en",
-      "title": "Station named with a common surname",
-      "why": "A transit stop built from a surname plus 'Street Station'.",
-      "text": "Take the red line to Park Street Station and walk north.",
-      "expectations": [
-        {
-          "start": 21,
-          "end": 40,
-          "surface": "Park Street Station",
-          "expect": "not-person"
-        }
-      ],
-      "focus_span": 0,
-      "dimensions": {
-        "familiarity": "common",
-        "script": "latin",
-        "token_class": "multi",
-        "collision_classes": [
-          "location",
+          "temporal",
+          "product-brand",
           "common-word"
         ],
         "context_types": [
@@ -729,54 +764,7 @@
       },
       "ambiguity": {
         "level": "context-resolvable",
-        "note": "'Take the red line to X' selects a station."
-      },
-      "evidence_class": "authored-adversarial",
-      "source_ids": [
-        "src/project-authored-synthetic"
-      ],
-      "review": {
-        "factual": "author-only",
-        "linguistic": "author-only",
-        "schema": "machine-validated"
-      }
-    },
-    {
-      "id": "person/en/organization-collision/young-adults-group",
-      "schema_version": "1.0.0",
-      "entity_type": "PERSON",
-      "language": "en",
-      "title": "Young Adults Ministry as an organization",
-      "why": "Contains the surname/adjective 'Young' as part of a group name.",
-      "text": "Young Adults Ministry meets on Thursdays.",
-      "expectations": [
-        {
-          "start": 0,
-          "end": 21,
-          "surface": "Young Adults Ministry",
-          "expect": "not-person"
-        }
-      ],
-      "focus_span": 0,
-      "dimensions": {
-        "familiarity": "common",
-        "script": "latin",
-        "token_class": "multi",
-        "collision_classes": [
-          "organization",
-          "common-word"
-        ],
-        "context_types": [
-          "plain-prose",
-          "sentence-initial",
-          "no-person"
-        ],
-        "name_features": [],
-        "boundary_tags": []
-      },
-      "ambiguity": {
-        "level": "context-resolvable",
-        "note": "'Ministry' marks an organization, and 'meets on Thursdays' is a group schedule."
+        "note": "'Collection' marks a product line."
       },
       "evidence_class": "authored-adversarial",
       "source_ids": [

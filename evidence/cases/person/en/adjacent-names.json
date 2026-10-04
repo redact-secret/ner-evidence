@@ -1,0 +1,419 @@
+{
+  "cases": [
+    {
+      "id": "person/en/adjacent-names/couple-with-ampersand",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "en",
+      "title": "Two given names joined by an ampersand before a shared surname",
+      "why": "'John & Mary Smith' leaves 'Smith' attached only to the second name in a strict reading; the span convention treats the sequence as ambiguous in segmentation.",
+      "text": "Invitations were sent to John & Mary Smith last week.",
+      "expectations": [
+        {
+          "start": 25,
+          "end": 42,
+          "surface": "John & Mary Smith",
+          "expect": "either"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "latin",
+        "token_class": "multi",
+        "collision_classes": [],
+        "context_types": [
+          "plain-prose"
+        ],
+        "name_features": [
+          "full-name"
+        ],
+        "boundary_tags": [
+          "adjacent-names"
+        ]
+      },
+      "ambiguity": {
+        "level": "genuinely-ambiguous",
+        "note": "The ampersand construction can mean John Smith and Mary Smith, or John (no surname) and Mary Smith; segmentation is undecided."
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/en/adjacent-names/et-al-citation",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "en",
+      "title": "Surname followed by 'et al.'",
+      "why": "'et al.' is a Latin abbreviation, not part of the name, and its period is part of the abbreviation.",
+      "text": "As shown by Nguyen et al., the effect persists.",
+      "expectations": [
+        {
+          "start": 12,
+          "end": 18,
+          "surface": "Nguyen",
+          "expect": "person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "latin",
+        "token_class": "single",
+        "collision_classes": [],
+        "context_types": [
+          "plain-prose"
+        ],
+        "name_features": [
+          "surname-only"
+        ],
+        "boundary_tags": [
+          "abbreviation-period",
+          "punctuation-adjacent"
+        ]
+      },
+      "ambiguity": {
+        "level": "unambiguous"
+      },
+      "evidence_class": "authored-baseline",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/en/adjacent-names/newline-separated-signatures",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "en",
+      "title": "Two names on consecutive lines in a signature block",
+      "why": "A newline is the only separator between two names; sentence- or line-based preprocessing must not merge them into one span.",
+      "text": "Regards,\nMaria Lopez\nAhmed Hassan",
+      "expectations": [
+        {
+          "start": 9,
+          "end": 20,
+          "surface": "Maria Lopez",
+          "expect": "person"
+        },
+        {
+          "start": 21,
+          "end": 33,
+          "surface": "Ahmed Hassan",
+          "expect": "person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "latin",
+        "token_class": "multi",
+        "collision_classes": [],
+        "context_types": [
+          "structured-text"
+        ],
+        "name_features": [
+          "full-name"
+        ],
+        "boundary_tags": [
+          "adjacent-names"
+        ]
+      },
+      "ambiguity": {
+        "level": "unambiguous"
+      },
+      "evidence_class": "authored-baseline",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/en/adjacent-names/pipe-separated-table-row",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "en",
+      "title": "Two names in a pipe-separated table row",
+      "why": "A text table row where the pipe character is the only delimiter.",
+      "text": "Owner | Maria Lopez | Ahmed Hassan",
+      "expectations": [
+        {
+          "start": 8,
+          "end": 19,
+          "surface": "Maria Lopez",
+          "expect": "person"
+        },
+        {
+          "start": 22,
+          "end": 34,
+          "surface": "Ahmed Hassan",
+          "expect": "person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "latin",
+        "token_class": "multi",
+        "collision_classes": [],
+        "context_types": [
+          "structured-text",
+          "list-or-enumeration"
+        ],
+        "name_features": [
+          "full-name"
+        ],
+        "boundary_tags": [
+          "adjacent-names",
+          "punctuation-adjacent"
+        ]
+      },
+      "ambiguity": {
+        "level": "unambiguous"
+      },
+      "evidence_class": "authored-baseline",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/en/adjacent-names/sam-lee-kim-one-or-three",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "en",
+      "title": "Three adjacent tokens that may be one, two or three people",
+      "why": "'Sam Lee Kim' can be a single person with a middle name, 'Sam Lee' plus 'Kim', or three people. The text does not decide; the case is recorded as honest ambiguity of segmentation.",
+      "text": "Please contact Sam Lee Kim for tickets.",
+      "expectations": [
+        {
+          "start": 15,
+          "end": 26,
+          "surface": "Sam Lee Kim",
+          "expect": "either"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "latin",
+        "token_class": "multi",
+        "collision_classes": [],
+        "context_types": [
+          "plain-prose"
+        ],
+        "name_features": [
+          "full-name"
+        ],
+        "boundary_tags": [
+          "adjacent-names"
+        ]
+      },
+      "ambiguity": {
+        "level": "genuinely-ambiguous",
+        "note": "Nothing indicates whether this is one three-token name or several adjacent names."
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/en/adjacent-names/three-names-no-separator",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "en",
+      "title": "Three full names written one after another without separators",
+      "why": "Attendee lists sometimes run names together separated only by spaces. The boundaries between names must be inferred, not read from punctuation.",
+      "text": "Present were Maria Lopez Ahmed Hassan Chen Wei at the table.",
+      "expectations": [
+        {
+          "start": 13,
+          "end": 24,
+          "surface": "Maria Lopez",
+          "expect": "person"
+        },
+        {
+          "start": 25,
+          "end": 37,
+          "surface": "Ahmed Hassan",
+          "expect": "person"
+        },
+        {
+          "start": 38,
+          "end": 46,
+          "surface": "Chen Wei",
+          "expect": "person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "latin",
+        "token_class": "multi",
+        "collision_classes": [],
+        "context_types": [
+          "plain-prose",
+          "list-or-enumeration"
+        ],
+        "name_features": [
+          "full-name"
+        ],
+        "boundary_tags": [
+          "adjacent-names"
+        ]
+      },
+      "ambiguity": {
+        "level": "unambiguous"
+      },
+      "evidence_class": "authored-baseline",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/en/adjacent-names/titles-in-a-list",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "en",
+      "title": "Several titled surnames in a list",
+      "why": "Each title is excluded and each surname is its own span, with commas and 'and' between them.",
+      "text": "Dr. Nakamura, Prof. Aaltonen, and Mr. Pierce signed the letter.",
+      "expectations": [
+        {
+          "start": 4,
+          "end": 12,
+          "surface": "Nakamura",
+          "expect": "person"
+        },
+        {
+          "start": 20,
+          "end": 28,
+          "surface": "Aaltonen",
+          "expect": "person"
+        },
+        {
+          "start": 38,
+          "end": 44,
+          "surface": "Pierce",
+          "expect": "person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "latin",
+        "token_class": "single",
+        "collision_classes": [],
+        "context_types": [
+          "plain-prose",
+          "list-or-enumeration",
+          "title-honorific"
+        ],
+        "name_features": [
+          "surname-only"
+        ],
+        "boundary_tags": [
+          "honorific-excluded",
+          "adjacent-names",
+          "abbreviation-period"
+        ]
+      },
+      "ambiguity": {
+        "level": "unambiguous"
+      },
+      "evidence_class": "authored-baseline",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/en/adjacent-names/two-surnames-citation",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "en",
+      "title": "Two surnames joined by 'and' in a citation",
+      "why": "In scholarly text, authors are cited by surname alone; the year after is not part of either span.",
+      "text": "This follows Garcia and Patel (2019).",
+      "expectations": [
+        {
+          "start": 13,
+          "end": 19,
+          "surface": "Garcia",
+          "expect": "person"
+        },
+        {
+          "start": 24,
+          "end": 29,
+          "surface": "Patel",
+          "expect": "person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "latin",
+        "token_class": "single",
+        "collision_classes": [],
+        "context_types": [
+          "plain-prose",
+          "parenthetical"
+        ],
+        "name_features": [
+          "surname-only"
+        ],
+        "boundary_tags": [
+          "adjacent-names",
+          "parenthetical-boundary",
+          "digit-adjacent"
+        ]
+      },
+      "ambiguity": {
+        "level": "unambiguous"
+      },
+      "evidence_class": "authored-baseline",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    }
+  ]
+}

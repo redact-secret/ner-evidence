@@ -1,6 +1,193 @@
 {
   "cases": [
     {
+      "id": "person/en/common-word-collision/april-person-subject",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "en",
+      "title": "April as a person who made a call",
+      "why": "Partner of april-showers-month: April as a given name with a human-action predicate.",
+      "text": "April Reyes called the supplier this morning.",
+      "expectations": [
+        {
+          "start": 0,
+          "end": 11,
+          "surface": "April Reyes",
+          "expect": "person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "latin",
+        "token_class": "multi",
+        "collision_classes": [
+          "temporal",
+          "common-word"
+        ],
+        "context_types": [
+          "plain-prose",
+          "sentence-initial"
+        ],
+        "name_features": [
+          "full-name"
+        ],
+        "boundary_tags": []
+      },
+      "ambiguity": {
+        "level": "context-resolvable",
+        "note": "A surname-like second token and the phone-call predicate select a person."
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/en/common-word-collision/april-showers-month",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "en",
+      "title": "April in an idiom about weather",
+      "why": "April is a month and a given name; in the idiom 'April showers' it is the month.",
+      "text": "April showers bring flowers.",
+      "expectations": [
+        {
+          "start": 0,
+          "end": 5,
+          "surface": "April",
+          "expect": "not-person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "latin",
+        "token_class": "single",
+        "collision_classes": [
+          "temporal",
+          "common-word"
+        ],
+        "context_types": [
+          "plain-prose",
+          "sentence-initial",
+          "no-person"
+        ],
+        "name_features": [],
+        "boundary_tags": []
+      },
+      "ambiguity": {
+        "level": "context-resolvable",
+        "note": "The idiom 'April showers' is a fixed phrase about weather in the month."
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/en/common-word-collision/august-adjective",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "en",
+      "title": "Lowercase august as an adjective",
+      "why": "'August' is a month, a given name, and (lowercase) an adjective meaning dignified.",
+      "text": "The august hall fell silent.",
+      "expectations": [
+        {
+          "start": 4,
+          "end": 10,
+          "surface": "august",
+          "expect": "not-person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "not-applicable",
+        "script": "latin",
+        "token_class": "single",
+        "collision_classes": [
+          "temporal",
+          "common-word"
+        ],
+        "context_types": [
+          "plain-prose",
+          "no-person"
+        ],
+        "name_features": [],
+        "boundary_tags": []
+      },
+      "ambiguity": {
+        "level": "context-resolvable",
+        "note": "The lowercase word modifies the noun 'hall' and means dignified."
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/en/common-word-collision/chase-bank-or-person",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "en",
+      "title": "Chase as a bank or a person",
+      "why": "Chase is a bank name and a given name; 'contacted us this morning' fits both a person and an institution.",
+      "text": "Chase contacted us this morning.",
+      "expectations": [
+        {
+          "start": 0,
+          "end": 5,
+          "surface": "Chase",
+          "expect": "either"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "latin",
+        "token_class": "single",
+        "collision_classes": [
+          "organization",
+          "common-word"
+        ],
+        "context_types": [
+          "plain-prose",
+          "sentence-initial"
+        ],
+        "name_features": [],
+        "boundary_tags": []
+      },
+      "ambiguity": {
+        "level": "genuinely-ambiguous",
+        "note": "Both a person and a bank can contact someone, and the sentence adds no further cue."
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
       "id": "person/en/common-word-collision/dawn-name-then-noun",
       "schema_version": "1.0.0",
       "entity_type": "PERSON",
@@ -149,6 +336,187 @@
       }
     },
     {
+      "id": "person/en/common-word-collision/georgia-won-election",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "en",
+      "title": "Georgia in a sentence about winning",
+      "why": "Georgia is a state, a country and a given name; 'won the election' fits a place (as metonym for its voters) and a person.",
+      "text": "Georgia won the election.",
+      "expectations": [
+        {
+          "start": 0,
+          "end": 7,
+          "surface": "Georgia",
+          "expect": "either"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "latin",
+        "token_class": "single",
+        "collision_classes": [
+          "location",
+          "common-word"
+        ],
+        "context_types": [
+          "plain-prose",
+          "sentence-initial"
+        ],
+        "name_features": [],
+        "boundary_tags": []
+      },
+      "ambiguity": {
+        "level": "genuinely-ambiguous",
+        "note": "A state or country can be said to win an election, as can a person named Georgia."
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/en/common-word-collision/heather-plant-or-person",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "en",
+      "title": "Heather as a plant or a person",
+      "why": "Heather is a plant and a given name; 'was everywhere that summer' fits both.",
+      "text": "Heather was everywhere that summer.",
+      "expectations": [
+        {
+          "start": 0,
+          "end": 7,
+          "surface": "Heather",
+          "expect": "either"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "latin",
+        "token_class": "single",
+        "collision_classes": [
+          "common-word"
+        ],
+        "context_types": [
+          "plain-prose",
+          "sentence-initial"
+        ],
+        "name_features": [],
+        "boundary_tags": []
+      },
+      "ambiguity": {
+        "level": "genuinely-ambiguous",
+        "note": "A plant can be everywhere on a hillside and a person can be everywhere socially."
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/en/common-word-collision/ivy-plant-or-person",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "en",
+      "title": "Ivy as a plant or a person",
+      "why": "Ivy is a plant and a given name; being by the north wall fits both.",
+      "text": "Ivy was by the north wall.",
+      "expectations": [
+        {
+          "start": 0,
+          "end": 3,
+          "surface": "Ivy",
+          "expect": "either"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "latin",
+        "token_class": "single",
+        "collision_classes": [
+          "common-word"
+        ],
+        "context_types": [
+          "plain-prose",
+          "sentence-initial"
+        ],
+        "name_features": [],
+        "boundary_tags": []
+      },
+      "ambiguity": {
+        "level": "genuinely-ambiguous",
+        "note": "A climbing plant and a person can both be by a wall."
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/en/common-word-collision/jack-tool-or-person",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "en",
+      "title": "Jack as a tool or a person",
+      "why": "Jack is a tool and a very common given name; 'missing from the toolbox' fits both.",
+      "text": "Jack was missing from the toolbox.",
+      "expectations": [
+        {
+          "start": 0,
+          "end": 4,
+          "surface": "Jack",
+          "expect": "either"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "latin",
+        "token_class": "single",
+        "collision_classes": [
+          "common-word"
+        ],
+        "context_types": [
+          "plain-prose",
+          "sentence-initial"
+        ],
+        "name_features": [],
+        "boundary_tags": []
+      },
+      "ambiguity": {
+        "level": "genuinely-ambiguous",
+        "note": "A tool can be missing from a toolbox, and so can a person if the toolbox is a figurative group."
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
       "id": "person/en/common-word-collision/jordan-full-name",
       "schema_version": "1.0.0",
       "entity_type": "PERSON",
@@ -229,6 +597,104 @@
       "ambiguity": {
         "level": "context-resolvable",
         "note": "Only a person can be asked to bring a laptop."
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/en/common-word-collision/jordan-mentioned-twice",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "en",
+      "title": "Jordan mentioned in a report with no other cue",
+      "why": "'Jordan' is a country, a river and a person; 'was mentioned twice in the report' fits any of them. Recorded as honest ambiguity.",
+      "text": "Jordan was mentioned twice in the report.",
+      "expectations": [
+        {
+          "start": 0,
+          "end": 6,
+          "surface": "Jordan",
+          "expect": "either"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "latin",
+        "token_class": "single",
+        "collision_classes": [
+          "location",
+          "common-word"
+        ],
+        "context_types": [
+          "plain-prose",
+          "sentence-initial"
+        ],
+        "name_features": [],
+        "boundary_tags": []
+      },
+      "ambiguity": {
+        "level": "genuinely-ambiguous",
+        "note": "A report can mention a country, a river or a person equally well."
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/en/common-word-collision/june-name-and-month",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "en",
+      "title": "June as a person arriving in the month of June",
+      "why": "A name and a month with the same spelling in one sentence.",
+      "text": "June arrives in June.",
+      "expectations": [
+        {
+          "start": 0,
+          "end": 4,
+          "surface": "June",
+          "expect": "person"
+        },
+        {
+          "start": 16,
+          "end": 20,
+          "surface": "June",
+          "expect": "not-person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "latin",
+        "token_class": "single",
+        "collision_classes": [
+          "temporal",
+          "common-word"
+        ],
+        "context_types": [
+          "plain-prose",
+          "sentence-initial"
+        ],
+        "name_features": [],
+        "boundary_tags": []
+      },
+      "ambiguity": {
+        "level": "context-resolvable",
+        "note": "The first word is the subject of 'arrives'; after 'in' the second is a month."
       },
       "evidence_class": "authored-adversarial",
       "source_ids": [
@@ -681,6 +1147,52 @@
       }
     },
     {
+      "id": "person/en/common-word-collision/sage-herb-or-person",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "en",
+      "title": "Sage as an herb, software or person",
+      "why": "Sage is an herb, a software product and a given name; a recommendation fits any.",
+      "text": "Sage was recommended by several reviewers.",
+      "expectations": [
+        {
+          "start": 0,
+          "end": 4,
+          "surface": "Sage",
+          "expect": "either"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "latin",
+        "token_class": "single",
+        "collision_classes": [
+          "common-word",
+          "product-brand"
+        ],
+        "context_types": [
+          "plain-prose",
+          "sentence-initial"
+        ],
+        "name_features": [],
+        "boundary_tags": []
+      },
+      "ambiguity": {
+        "level": "genuinely-ambiguous",
+        "note": "Reviewers can recommend a product, an herb or a person."
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
       "id": "person/en/common-word-collision/song-noun-compound",
       "schema_version": "1.0.0",
       "entity_type": "PERSON",
@@ -812,6 +1324,63 @@
       "ambiguity": {
         "level": "context-resolvable",
         "note": "Welcoming someone to a team is an action directed at a person."
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/en/common-word-collision/winter-name-and-season",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "en",
+      "title": "Winter as a surname and as a season",
+      "why": "A surname and a season with the same spelling in one sentence.",
+      "text": "Mr. Winter dislikes winter.",
+      "expectations": [
+        {
+          "start": 4,
+          "end": 10,
+          "surface": "Winter",
+          "expect": "person"
+        },
+        {
+          "start": 20,
+          "end": 26,
+          "surface": "winter",
+          "expect": "not-person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "latin",
+        "token_class": "single",
+        "collision_classes": [
+          "temporal",
+          "common-word"
+        ],
+        "context_types": [
+          "plain-prose",
+          "title-honorific"
+        ],
+        "name_features": [
+          "surname-only"
+        ],
+        "boundary_tags": [
+          "honorific-excluded",
+          "abbreviation-period"
+        ]
+      },
+      "ambiguity": {
+        "level": "context-resolvable",
+        "note": "After the title Mr. the word is a surname; the lowercase second is the season."
       },
       "evidence_class": "authored-adversarial",
       "source_ids": [

@@ -35,7 +35,9 @@
         "A possessive 's is excluded from the PERSON span.",
         "Generational suffixes (Jr., Sr., III) are included in the PERSON span.",
         "Initials and their periods are included when they are part of the name.",
-        "Surrounding punctuation and quotation marks are excluded."
+        "Surrounding punctuation and quotation marks are excluded.",
+        "Eponymous terms (Ohm's law, Parkinson's disease, Nobel Prize) are not PERSON mentions; the whole term is a not-person span.",
+        "Plural or collective references to families or namesakes (the Joneses, two Johns) have no convention in taxonomy 0.1.0; cases using them are marked 'either' and recorded as a known gap."
       ]
     },
     {
@@ -206,6 +208,10 @@
       {
         "id": "work-title",
         "definition": "The surface form is also the title of a book, song, film or similar work."
+      },
+      {
+        "id": "eponym",
+        "definition": "The surface form is a person's name used inside a term for a law, disease, unit, prize or similar (Ohm's law, Parkinson's disease)."
       }
     ],
     "context_types": [
@@ -256,6 +262,10 @@
       {
         "id": "mixed-script-sentence",
         "definition": "Sentence mixes scripts around the focus span."
+      },
+      {
+        "id": "casing-variation",
+        "definition": "Text is all lowercase, ALL CAPS or headline Title Case, so capitalization carries no or misleading information."
       },
       {
         "id": "no-person",
@@ -529,6 +539,13 @@
       ]
     },
     {
+      "id": "casing-variation",
+      "definition": "Lowercase, ALL CAPS and headline Title Case text.",
+      "languages": [
+        "en"
+      ]
+    },
+    {
       "id": "negative-no-person",
       "definition": "Texts with name-like tokens and no person at all.",
       "languages": [
@@ -573,8 +590,9 @@
     },
     {
       "id": "mixed-script",
-      "definition": "Names written across or with multiple scripts.",
+      "definition": "Names written across or with multiple scripts, or names next to text in another script.",
       "languages": [
+        "en",
         "ko"
       ]
     },

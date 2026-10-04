@@ -146,6 +146,55 @@
       }
     },
     {
+      "id": "person/ko/location-collision/goyang-city",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "ko",
+      "title": "고양시 starting with the surname 고",
+      "why": "A city name with the surname syllable 고 plus 양시.",
+      "text": "고양시에 새 도서관이 생겼다.",
+      "expectations": [
+        {
+          "start": 0,
+          "end": 3,
+          "surface": "고양시",
+          "expect": "not-person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "not-applicable",
+        "script": "hangul",
+        "token_class": "single",
+        "collision_classes": [
+          "location"
+        ],
+        "context_types": [
+          "plain-prose",
+          "sentence-initial",
+          "particle-attached",
+          "no-person"
+        ],
+        "name_features": [],
+        "boundary_tags": [
+          "particle-excluded"
+        ]
+      },
+      "ambiguity": {
+        "level": "context-resolvable",
+        "note": "A library built in a city."
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
       "id": "person/ko/location-collision/hangang-river",
       "schema_version": "1.0.0",
       "entity_type": "PERSON",
@@ -293,6 +342,55 @@
       }
     },
     {
+      "id": "person/ko/location-collision/jeongseon-county",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "ko",
+      "title": "정선 starting with the surname 정",
+      "why": "A county name with the surname syllable 정.",
+      "text": "정선에서 오일장이 열린다.",
+      "expectations": [
+        {
+          "start": 0,
+          "end": 2,
+          "surface": "정선",
+          "expect": "not-person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "not-applicable",
+        "script": "hangul",
+        "token_class": "single",
+        "collision_classes": [
+          "location"
+        ],
+        "context_types": [
+          "plain-prose",
+          "sentence-initial",
+          "particle-attached",
+          "no-person"
+        ],
+        "name_features": [],
+        "boundary_tags": [
+          "particle-excluded"
+        ]
+      },
+      "ambiguity": {
+        "level": "context-resolvable",
+        "note": "A market opens at a place."
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
       "id": "person/ko/location-collision/jeonju-city",
       "schema_version": "1.0.0",
       "entity_type": "PERSON",
@@ -329,6 +427,103 @@
       "ambiguity": {
         "level": "context-resolvable",
         "note": "'We met in X' with the locative 에서 selects a place."
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/ko/location-collision/mungyeong-city",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "ko",
+      "title": "문경 starting with the surname 문",
+      "why": "A city name equal to the surname 문 plus 경.",
+      "text": "문경에 케이블카가 생겼다.",
+      "expectations": [
+        {
+          "start": 0,
+          "end": 2,
+          "surface": "문경",
+          "expect": "not-person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "not-applicable",
+        "script": "hangul",
+        "token_class": "single",
+        "collision_classes": [
+          "location"
+        ],
+        "context_types": [
+          "plain-prose",
+          "sentence-initial",
+          "particle-attached",
+          "no-person"
+        ],
+        "name_features": [],
+        "boundary_tags": [
+          "particle-excluded"
+        ]
+      },
+      "ambiguity": {
+        "level": "context-resolvable",
+        "note": "A cable car built in a place."
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/ko/location-collision/namwon-city",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "ko",
+      "title": "남원 starting with the surname 남",
+      "why": "A city name equal to the surname 남 plus 원.",
+      "text": "우리는 남원에 다녀왔다.",
+      "expectations": [
+        {
+          "start": 4,
+          "end": 6,
+          "surface": "남원",
+          "expect": "not-person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "not-applicable",
+        "script": "hangul",
+        "token_class": "single",
+        "collision_classes": [
+          "location"
+        ],
+        "context_types": [
+          "plain-prose",
+          "particle-attached",
+          "no-person"
+        ],
+        "name_features": [],
+        "boundary_tags": [
+          "particle-excluded"
+        ]
+      },
+      "ambiguity": {
+        "level": "context-resolvable",
+        "note": "'Went to X' with the locative 에 selects a destination."
       },
       "evidence_class": "authored-adversarial",
       "source_ids": [
@@ -386,6 +581,55 @@
       "ambiguity": {
         "level": "context-resolvable",
         "note": "'Was born in X' with the locative 에서 marks the second token as a place; the first token takes a topic marker as the subject."
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/ko/location-collision/sinan-county",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "ko",
+      "title": "신안 starting with the surname 신",
+      "why": "A county name with the surname syllable 신.",
+      "text": "신안은 섬이 많기로 유명하다.",
+      "expectations": [
+        {
+          "start": 0,
+          "end": 2,
+          "surface": "신안",
+          "expect": "not-person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "not-applicable",
+        "script": "hangul",
+        "token_class": "single",
+        "collision_classes": [
+          "location"
+        ],
+        "context_types": [
+          "plain-prose",
+          "sentence-initial",
+          "particle-attached",
+          "no-person"
+        ],
+        "name_features": [],
+        "boundary_tags": [
+          "particle-excluded"
+        ]
+      },
+      "ambiguity": {
+        "level": "context-resolvable",
+        "note": "A county famous for having many islands."
       },
       "evidence_class": "authored-adversarial",
       "source_ids": [
@@ -481,6 +725,54 @@
       "ambiguity": {
         "level": "context-resolvable",
         "note": "An event 'was held in X' selects a place."
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/ko/location-collision/yangpyeong-county",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "ko",
+      "title": "양평 starting with the surname 양",
+      "why": "A county name with the surname syllable 양.",
+      "text": "주말에 양평으로 놀러 갔다.",
+      "expectations": [
+        {
+          "start": 4,
+          "end": 6,
+          "surface": "양평",
+          "expect": "not-person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "not-applicable",
+        "script": "hangul",
+        "token_class": "single",
+        "collision_classes": [
+          "location"
+        ],
+        "context_types": [
+          "plain-prose",
+          "particle-attached",
+          "no-person"
+        ],
+        "name_features": [],
+        "boundary_tags": [
+          "particle-excluded"
+        ]
+      },
+      "ambiguity": {
+        "level": "context-resolvable",
+        "note": "A weekend trip to a place."
       },
       "evidence_class": "authored-adversarial",
       "source_ids": [

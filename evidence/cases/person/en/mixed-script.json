@@ -1,0 +1,274 @@
+{
+  "cases": [
+    {
+      "id": "person/en/mixed-script/english-greeting-with-hangul-hello",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "en",
+      "title": "English greeting with an English name followed by a Hangul greeting",
+      "why": "An English salutation with a name, then a Hangul 'hello'; the script switch occurs right after the comma following the name.",
+      "text": "Dear Maria, 안녕하세요! Please see the attached.",
+      "expectations": [
+        {
+          "start": 5,
+          "end": 10,
+          "surface": "Maria",
+          "expect": "person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "latin",
+        "token_class": "single",
+        "collision_classes": [],
+        "context_types": [
+          "plain-prose",
+          "mixed-script-sentence",
+          "vocative"
+        ],
+        "name_features": [
+          "given-only"
+        ],
+        "boundary_tags": [
+          "mixed-script-boundary",
+          "punctuation-adjacent"
+        ]
+      },
+      "ambiguity": {
+        "level": "unambiguous"
+      },
+      "evidence_class": "authored-baseline",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/en/mixed-script/english-name-with-hangul-transliteration",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "en",
+      "title": "English name followed by its Hangul transliteration",
+      "why": "A Latin-script name glossed in parentheses with its Hangul transliteration; both are PERSON mentions of the same individual.",
+      "text": "Maria Lopez (마리아 로페즈) signed the form.",
+      "expectations": [
+        {
+          "start": 0,
+          "end": 11,
+          "surface": "Maria Lopez",
+          "expect": "person"
+        },
+        {
+          "start": 13,
+          "end": 20,
+          "surface": "마리아 로페즈",
+          "expect": "person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "latin",
+        "token_class": "multi",
+        "collision_classes": [],
+        "context_types": [
+          "plain-prose",
+          "mixed-script-sentence",
+          "parenthetical"
+        ],
+        "name_features": [
+          "full-name"
+        ],
+        "boundary_tags": [
+          "mixed-script-boundary",
+          "parenthetical-boundary"
+        ]
+      },
+      "ambiguity": {
+        "level": "unambiguous"
+      },
+      "evidence_class": "authored-baseline",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/en/mixed-script/english-quote-containing-hangul-thanks",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "en",
+      "title": "English name introducing a Hangul quotation",
+      "why": "An English sentence where a person's reported speech is Hangul; the quote marks and the script change meet.",
+      "text": "Mr. Alan Pierce told the team \"감사합니다\" after the demo.",
+      "expectations": [
+        {
+          "start": 4,
+          "end": 15,
+          "surface": "Alan Pierce",
+          "expect": "person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "latin",
+        "token_class": "multi",
+        "collision_classes": [],
+        "context_types": [
+          "plain-prose",
+          "mixed-script-sentence",
+          "title-honorific",
+          "quotation",
+          "dialogue"
+        ],
+        "name_features": [
+          "full-name"
+        ],
+        "boundary_tags": [
+          "mixed-script-boundary",
+          "honorific-excluded",
+          "abbreviation-period",
+          "quote-boundary"
+        ]
+      },
+      "ambiguity": {
+        "level": "unambiguous"
+      },
+      "evidence_class": "authored-baseline",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      },
+      "projections_excluded": [
+        {
+          "projection_id": "quoted",
+          "reason": "The projection wraps the text in another pair of quotation marks, which would nest with the quotes this case is about and change what it tests."
+        }
+      ]
+    },
+    {
+      "id": "person/en/mixed-script/hangul-museum-word-and-english-guide",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "en",
+      "title": "A Hangul word starting with a surname syllable beside an English name",
+      "why": "박물관 ('museum') begins with the common surname 박; an English sentence mentions it before naming a guide. The Hangul word is not a person.",
+      "text": "The 박물관 guide, Olivia Brandt, spoke Korean.",
+      "expectations": [
+        {
+          "start": 4,
+          "end": 7,
+          "surface": "박물관",
+          "expect": "not-person"
+        },
+        {
+          "start": 15,
+          "end": 28,
+          "surface": "Olivia Brandt",
+          "expect": "person"
+        }
+      ],
+      "focus_span": 1,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "latin",
+        "token_class": "multi",
+        "collision_classes": [
+          "common-word"
+        ],
+        "context_types": [
+          "plain-prose",
+          "mixed-script-sentence"
+        ],
+        "name_features": [
+          "full-name"
+        ],
+        "boundary_tags": [
+          "mixed-script-boundary"
+        ]
+      },
+      "ambiguity": {
+        "level": "context-resolvable",
+        "note": "'The ... guide' with a following appositive name makes the Hangul word the venue noun."
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/en/mixed-script/hangul-place-sign-and-english-name",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "en",
+      "title": "A Hangul place name in an English sentence beside an English name",
+      "why": "The Hangul word 서울 (Seoul) occurs as a sign text; it is not a person, while the English name that follows is.",
+      "text": "The sign read 서울 but Olivia Brandt pointed to the other door.",
+      "expectations": [
+        {
+          "start": 14,
+          "end": 16,
+          "surface": "서울",
+          "expect": "not-person"
+        },
+        {
+          "start": 21,
+          "end": 34,
+          "surface": "Olivia Brandt",
+          "expect": "person"
+        }
+      ],
+      "focus_span": 1,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "latin",
+        "token_class": "multi",
+        "collision_classes": [
+          "location"
+        ],
+        "context_types": [
+          "plain-prose",
+          "mixed-script-sentence"
+        ],
+        "name_features": [
+          "full-name"
+        ],
+        "boundary_tags": [
+          "mixed-script-boundary"
+        ]
+      },
+      "ambiguity": {
+        "level": "context-resolvable",
+        "note": "A sign that 'read' a word names a place, as the Hangul text spells Seoul."
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    }
+  ]
+}
