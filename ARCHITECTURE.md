@@ -29,7 +29,7 @@ ReviewEvent
 SnapshotManifest
 ```
 
-The schemas are not yet frozen.
+Schemas are defined (`schemas/`, versioned) but not yet frozen; see `docs/taxonomy-and-case-schema.md`. `Scenario` is realised as a projection wrapper in the ruleset rather than a separate record (`docs/fixture-projection.md`). `ReviewEvent` is recorded as per-case review facets (`review.factual/linguistic/schema`) rather than an event log.
 
 ## 4. Cases before fixtures
 
@@ -85,15 +85,15 @@ Raw private/customer data is prohibited.
 
 Released snapshots are immutable inputs to evaluation. Changes require a new snapshot identity.
 
-A snapshot manifest should identify taxonomy version, case count, fixture count, source manifest digest, content digest, and generation tooling version where relevant.
+A snapshot manifest identifies taxonomy/schema versions, case and fixture counts, source manifest digest, content digest, generation tooling identity and the snapshot identity, which is derived from the content digest (`docs/snapshot-and-consumer-contract.md`). Released snapshots live under `snapshots/<id>/`; `snapshot immutability` fails CI if one is altered.
 
 ## 9. Generated content
 
-Generated fixtures should normally be build output rather than hand-edited canonical knowledge. Canonical authored reasoning must remain reviewable.
+Generated fixtures are build output, never hand-edited, and are only committed inside snapshots. Canonical authored reasoning stays reviewable in `evidence/cases/`. Projection rules: `docs/fixture-projection.md`.
 
 ## 10. Consumer contract
 
-Primary downstream consumer is `ner-eval`. Consumers should rely on snapshot schemas/artifacts, not private source-tree layout.
+Primary downstream consumer is `ner-eval`. Consumers rely on snapshot schemas/artifacts, not private source-tree layout. What the contract deliberately does not provide is listed in `docs/handoff-ner-eval.md`.
 
 ## 11. Public-release gate
 

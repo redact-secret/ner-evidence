@@ -2,7 +2,9 @@
 
 Canonical, model-neutral NER knowledge and evidence for the FastNER ecosystem.
 
-> **Status:** Private research and architecture phase.
+> **Status:** Private research phase, Alpha 1. Contracts are defined but not stable (schema `1.0.0`,
+> taxonomy `0.1.0`, manifest/consumer contract `0.1.0`). Content is `internal-only` until the repository license
+> is chosen.
 
 This repository is intended to become the long-term source of truth for named-entity evidence, corpus provenance, taxonomy, authored cases, ambiguity cases, and evaluation-ready projections.
 
@@ -82,7 +84,8 @@ surface-form lookup alone cannot resolve the ambiguity
 
 ## Evidence classes
 
-The exact scheme is not frozen, but evidence should distinguish at least corpus-backed, linguistic/reference-backed, tool-corroborated, project-authored adversarial, and unresolved/research-needed cases.
+`corpus-backed`, `reference-backed`, `tool-corroborated`, `authored-baseline`, `authored-adversarial` and
+`research-needed` (see `taxonomy/person.taxonomy.json`). The Alpha corpus is entirely project-authored.
 
 A majority vote among NER models is not ground truth.
 
@@ -94,7 +97,29 @@ Allowed evidence should be synthetic, properly licensed public corpus material, 
 
 ## Snapshot model
 
-Downstream consumers should pin immutable evidence snapshots containing snapshot identity, corpus digest, taxonomy version, case/fixture lineage, and provenance manifest.
+Downstream consumers pin immutable evidence snapshots under `snapshots/` containing snapshot identity, content
+digest, taxonomy/schema versions, case-to-fixture lineage and the provenance manifest. See
+[`docs/snapshot-and-consumer-contract.md`](docs/snapshot-and-consumer-contract.md).
+
+## Working in this repository
+
+```bash
+PYTHONPATH=src python -m unittest discover -s tests   # unit tests
+PYTHONPATH=src python -m ner_evidence check            # every gate: schema, provenance, privacy, lineage,
+                                                       # determinism, slice targets, snapshots, immutability
+PYTHONPATH=src python -m ner_evidence annotate '[[p:Name]] ...'   # compute spans for a new case
+```
+
+Standard-library Python only (3.10+). Start with [`docs/authoring-guide.md`](docs/authoring-guide.md).
+
+| Document | Contents |
+| --- | --- |
+| [`docs/taxonomy-and-case-schema.md`](docs/taxonomy-and-case-schema.md) | PERSON taxonomy, language profiles, Case schema |
+| [`docs/provenance-and-privacy-policy.md`](docs/provenance-and-privacy-policy.md) | Provenance, licensing, privacy, safe-data policy |
+| [`docs/fixture-projection.md`](docs/fixture-projection.md) | Deterministic projection and lineage rules |
+| [`docs/snapshot-and-consumer-contract.md`](docs/snapshot-and-consumer-contract.md) | Snapshot manifest, digests, consumer contract |
+| [`docs/slice-tracking.md`](docs/slice-tracking.md), [`docs/evidence-coverage.md`](docs/evidence-coverage.md) | Slice targets, counts, known gaps |
+| [`docs/handoff-ner-eval.md`](docs/handoff-ner-eval.md) | What `ner-eval` must decide itself |
 
 ## Relationship to `ner-eval`
 
@@ -106,10 +131,11 @@ FastNER qualification may use this evidence plus product-owned regression, adver
 
 ## Public-release gate
 
-Before public release:
+Before public release (status at Alpha 1):
 
-- licensing/provenance policy complete;
-- privacy contribution policy explicit;
-- snapshot/release format defined;
-- EN/KR PERSON taxonomy reviewed;
-- sensitive-data checks running in CI.
+- licensing/provenance policy complete: **policy written and enforced; repository license not yet chosen, and the
+  authored source has no independent legal review** (`python -m ner_evidence provenance --public-release` fails on purpose);
+- privacy contribution policy explicit: **done**;
+- snapshot/release format defined: **done (version `0.1.0`)**;
+- EN/KR PERSON taxonomy reviewed: **not done; every case is author-only reviewed**;
+- sensitive-data checks running in CI: **done** (`.github/workflows/ci.yml`).
