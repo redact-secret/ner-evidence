@@ -1,0 +1,37 @@
+{
+  "sources": [
+    {
+      "id": "src/project-authored-synthetic",
+      "kind": "project-authored",
+      "title": "Project-authored synthetic and generic-name cases",
+      "description": "Sentences written by the project to probe specific PERSON ambiguities. Names are compositions of generic given names and surnames, constructed names, or ordinary words; no sentence quotes, paraphrases or derives from any existing text.",
+      "version": "1",
+      "as_of": "2026-10-04",
+      "origin": {
+        "type": "authored"
+      },
+      "license": {
+        "spdx": "LicenseRef-ner-evidence-license-pending",
+        "redistribution": "internal-only",
+        "terms_note": "The repository has no license yet. Content is internal-only until the owner selects one; the public-release gate fails while this is true."
+      },
+      "personal_data": {
+        "contains_personal_data": false,
+        "name_origin": "generic-composed",
+        "notes": "Generic or constructed names only. Resemblance to a real individual is coincidental and unavoidable for common names; no case is meant to depict a specific real person."
+      },
+      "transformations": [
+        "none: authored directly as canonical Case records"
+      ],
+      "known_bias": [
+        "Authored by a single author session: coverage reflects that author's judgment of what is confusable.",
+        "English cases favour US/UK naming conventions; Korean cases favour contemporary South Korean naming and do not cover North Korean or diaspora orthography.",
+        "Familiarity labels (common/rare/novel) are authored judgments, not measured against a name-frequency reference."
+      ],
+      "review": {
+        "provenance": "author-only",
+        "legal": "pending"
+      }
+    }
+  ]
+}

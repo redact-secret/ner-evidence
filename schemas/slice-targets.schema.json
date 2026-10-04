@@ -1,0 +1,115 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:ner-evidence:schema:slice-targets:1.0.0",
+  "title": "Slice coverage targets",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "targets_version",
+    "count_targets",
+    "ratio_targets",
+    "known_gaps"
+  ],
+  "properties": {
+    "targets_version": {
+      "type": "string",
+      "pattern": "^\\d+\\.\\d+\\.\\d+$"
+    },
+    "count_targets": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "description",
+          "where",
+          "min"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$"
+          },
+          "description": {
+            "type": "string"
+          },
+          "where": {
+            "type": "object"
+          },
+          "min": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "waiver": {
+            "type": "string",
+            "minLength": 20
+          }
+        }
+      }
+    },
+    "ratio_targets": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "description",
+          "numerator",
+          "denominator"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$"
+          },
+          "description": {
+            "type": "string"
+          },
+          "numerator": {
+            "type": "object"
+          },
+          "denominator": {
+            "type": "object"
+          },
+          "min": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 1
+          },
+          "max": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 1
+          },
+          "waiver": {
+            "type": "string",
+            "minLength": 20
+          }
+        }
+      }
+    },
+    "known_gaps": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "description"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$"
+          },
+          "description": {
+            "type": "string",
+            "minLength": 20
+          }
+        }
+      }
+    }
+  }
+}

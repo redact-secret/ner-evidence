@@ -1,0 +1,128 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:ner-evidence:schema:fixture:1.0.0",
+  "title": "Fixture (executable projection of a Case)",
+  "description": "Self-contained executable input plus expectations. Expectations are copied from the Case unchanged; lineage names the Case, its digest, and the projection used.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "fixture_id",
+    "case_id",
+    "language",
+    "projection_id",
+    "text",
+    "spans",
+    "lineage"
+  ],
+  "properties": {
+    "fixture_id": {
+      "type": "string",
+      "pattern": "^person/(en|ko)/[a-z0-9]+(-[a-z0-9]+)*/[a-z0-9]+(-[a-z0-9]+)*@[a-z0-9]+(-[a-z0-9]+)*$"
+    },
+    "case_id": {
+      "type": "string"
+    },
+    "language": {
+      "enum": [
+        "en",
+        "ko"
+      ]
+    },
+    "projection_id": {
+      "type": "string",
+      "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$"
+    },
+    "text": {
+      "type": "string",
+      "minLength": 1
+    },
+    "spans": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "case_span_index",
+          "start",
+          "end",
+          "utf8_start",
+          "utf8_end",
+          "utf16_start",
+          "utf16_end",
+          "surface",
+          "expect"
+        ],
+        "properties": {
+          "case_span_index": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "start": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "end": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "utf8_start": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "utf8_end": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "utf16_start": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "utf16_end": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "surface": {
+            "type": "string",
+            "minLength": 1
+          },
+          "expect": {
+            "type": "string",
+            "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$"
+          }
+        }
+      }
+    },
+    "lineage": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "case_id",
+        "case_digest",
+        "projection_id",
+        "projection_version",
+        "ruleset_version"
+      ],
+      "properties": {
+        "case_id": {
+          "type": "string"
+        },
+        "case_digest": {
+          "type": "string",
+          "format": "sha256"
+        },
+        "projection_id": {
+          "type": "string",
+          "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$"
+        },
+        "projection_version": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "ruleset_version": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

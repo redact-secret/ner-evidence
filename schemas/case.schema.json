@@ -1,0 +1,252 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:ner-evidence:schema:case:1.0.0",
+  "title": "Authored Case",
+  "description": "The reasoning unit. Fixtures are projections of Cases and never carry independent expectations. Vocabularies are enforced against taxonomy/person.taxonomy.json by the repository validator.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "id",
+    "schema_version",
+    "entity_type",
+    "language",
+    "title",
+    "why",
+    "text",
+    "expectations",
+    "focus_span",
+    "dimensions",
+    "ambiguity",
+    "evidence_class",
+    "source_ids",
+    "review"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^person/(en|ko)/[a-z0-9]+(-[a-z0-9]+)*/[a-z0-9]+(-[a-z0-9]+)*$",
+      "description": "person/<language>/<group>/<slug>; semantic, never contains issue numbers, model names or scores."
+    },
+    "schema_version": {
+      "const": "1.0.0"
+    },
+    "entity_type": {
+      "const": "PERSON"
+    },
+    "language": {
+      "enum": [
+        "en",
+        "ko"
+      ]
+    },
+    "title": {
+      "type": "string",
+      "minLength": 8,
+      "maxLength": 140,
+      "description": "What is tested."
+    },
+    "why": {
+      "type": "string",
+      "minLength": 40,
+      "maxLength": 900,
+      "description": "Why this case exists: the failure mode or ambiguity it probes."
+    },
+    "text": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 600,
+      "description": "NFC-normalized context text."
+    },
+    "expectations": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/expectation"
+      }
+    },
+    "focus_span": {
+      "type": "integer",
+      "minimum": 0,
+      "description": "Index into expectations of the span the case is primarily about; script and token_class derive from it."
+    },
+    "dimensions": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "familiarity",
+        "script",
+        "token_class",
+        "collision_classes",
+        "context_types",
+        "name_features",
+        "boundary_tags"
+      ],
+      "properties": {
+        "familiarity": {
+          "type": "string",
+          "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$"
+        },
+        "script": {
+          "type": "string",
+          "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$"
+        },
+        "token_class": {
+          "type": "string",
+          "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$"
+        },
+        "collision_classes": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$"
+          },
+          "uniqueItems": true,
+          "minItems": 0
+        },
+        "context_types": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$"
+          },
+          "uniqueItems": true,
+          "minItems": 1
+        },
+        "name_features": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$"
+          },
+          "uniqueItems": true,
+          "minItems": 0
+        },
+        "boundary_tags": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$"
+          },
+          "uniqueItems": true,
+          "minItems": 0
+        }
+      }
+    },
+    "ambiguity": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "level"
+      ],
+      "properties": {
+        "level": {
+          "type": "string",
+          "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$"
+        },
+        "note": {
+          "type": "string",
+          "minLength": 20,
+          "maxLength": 600,
+          "description": "Required unless level is unambiguous: what makes it ambiguous and what resolves it."
+        }
+      }
+    },
+    "evidence_class": {
+      "type": "string",
+      "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$"
+    },
+    "source_ids": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "pattern": "^src/[a-z0-9]+(-[a-z0-9]+)*$"
+      }
+    },
+    "review": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "factual",
+        "linguistic",
+        "schema"
+      ],
+      "properties": {
+        "factual": {
+          "type": "string",
+          "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$"
+        },
+        "linguistic": {
+          "type": "string",
+          "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$"
+        },
+        "schema": {
+          "type": "string",
+          "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$"
+        }
+      }
+    },
+    "projections_excluded": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "projection_id",
+          "reason"
+        ],
+        "properties": {
+          "projection_id": {
+            "type": "string",
+            "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$"
+          },
+          "reason": {
+            "type": "string",
+            "minLength": 20,
+            "maxLength": 300
+          }
+        }
+      }
+    },
+    "notes": {
+      "type": "string",
+      "maxLength": 900
+    }
+  },
+  "$defs": {
+    "expectation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "start",
+        "end",
+        "surface",
+        "expect"
+      ],
+      "properties": {
+        "start": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "end": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "surface": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 200
+        },
+        "expect": {
+          "type": "string",
+          "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$"
+        },
+        "note": {
+          "type": "string",
+          "maxLength": 300
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,594 @@
+{
+  "taxonomy_version": "0.1.0",
+  "entity_types": [
+    {
+      "id": "PERSON",
+      "definition": "A mention that refers to an individual human being (real or fictional) by name: given name, surname, full name, mononym, or romanization/transliteration of such a name.",
+      "includes": [
+        "given names",
+        "surnames",
+        "full names",
+        "mononyms",
+        "initials used as part of a name",
+        "fictional-character names"
+      ],
+      "excludes": [
+        "titles and honorifics standing alone",
+        "organizations named after people",
+        "places and products named after people",
+        "generic references such as 'the manager'",
+        "pronouns",
+        "usernames/handles (not evaluated in this taxonomy version)"
+      ]
+    }
+  ],
+  "language_profiles": [
+    {
+      "id": "en",
+      "name": "English",
+      "primary_script": "latin",
+      "scripts": [
+        "latin"
+      ],
+      "conventions": [
+        "Titles and honorifics (Dr., Mr., Ms., Prof., Sir, Judge) are excluded from the PERSON span.",
+        "A possessive 's is excluded from the PERSON span.",
+        "Generational suffixes (Jr., Sr., III) are included in the PERSON span.",
+        "Initials and their periods are included when they are part of the name.",
+        "Surrounding punctuation and quotation marks are excluded."
+      ]
+    },
+    {
+      "id": "ko",
+      "name": "Korean",
+      "primary_script": "hangul",
+      "scripts": [
+        "hangul",
+        "latin",
+        "han"
+      ],
+      "conventions": [
+        "Josa (particles such as 은/는/이/가/을/를/에게/한테/께서/의/와/과/도/만) are excluded from the PERSON span.",
+        "Honorific suffixes and titles (씨, 님, 선생님, 교수님, 부장, 대표) are excluded from the PERSON span.",
+        "A vocative or informal suffix (야/아, 이 after a consonant-final given name) is excluded from the PERSON span.",
+        "A surname alone (e.g. 김 씨) is a PERSON mention when it refers to a person; the following 씨 is excluded.",
+        "Romanized names are one PERSON span including internal hyphens (Kim Min-su).",
+        "A name followed by a parenthesized alternate-script form yields two PERSON spans, one per form.",
+        "Spacing inside a name (김 민수) does not change the span: the whole spaced name is one span."
+      ]
+    }
+  ],
+  "span_conventions": {
+    "offset_unit": "Unicode code points over NFC-normalized text; fixtures additionally carry UTF-8 byte and UTF-16 code unit offsets.",
+    "interval": "half-open [start, end)",
+    "overlap": "Expectation spans in one case never overlap.",
+    "whitespace": "Spans never begin or end with whitespace."
+  },
+  "expectation_kinds": [
+    {
+      "id": "person",
+      "definition": "The span is a PERSON mention in this context. A PERSON prediction that matches the span is correct."
+    },
+    {
+      "id": "not-person",
+      "definition": "The span looks name-like but is not a PERSON mention in this context. No PERSON prediction should overlap it."
+    },
+    {
+      "id": "either",
+      "definition": "Both readings are defensible given only this text. The case is an honest ambiguity; consumers must not score it as a hard positive or hard negative."
+    }
+  ],
+  "evidence_classes": [
+    {
+      "id": "corpus-backed",
+      "definition": "Derived from an imported corpus with a registered source record."
+    },
+    {
+      "id": "reference-backed",
+      "definition": "Expectation justified by a cited linguistic or naming reference."
+    },
+    {
+      "id": "tool-corroborated",
+      "definition": "An external tool agreed with the authored expectation. Never sufficient on its own; model agreement is not ground truth."
+    },
+    {
+      "id": "authored-adversarial",
+      "definition": "Written by the project to probe a specific ambiguity; expectation rests on linguistic reasoning stated in the case."
+    },
+    {
+      "id": "research-needed",
+      "definition": "Expectation is provisional and needs independent review."
+    }
+  ],
+  "review_statuses": {
+    "factual": [
+      "not-required",
+      "author-only",
+      "independently-reviewed",
+      "disputed"
+    ],
+    "linguistic": [
+      "not-required",
+      "author-only",
+      "independently-reviewed",
+      "disputed"
+    ],
+    "schema": [
+      "machine-validated"
+    ]
+  },
+  "dimensions": {
+    "familiarity": [
+      {
+        "id": "common",
+        "definition": "The name is in routine public use in the language community (it would appear in any national top-names or surname list). Proxy for 'seen'."
+      },
+      {
+        "id": "rare",
+        "definition": "A genuine name that is uncommon in the language community or uncommon in this language's text. Proxy for 'unseen'."
+      },
+      {
+        "id": "novel",
+        "definition": "A constructed or very unusual name unlikely to appear in name lists by construction. Proxy for 'unseen'."
+      },
+      {
+        "id": "not-applicable",
+        "definition": "The focus span is not a name candidate that has a meaningful familiarity (for example a plain common noun)."
+      }
+    ],
+    "script": [
+      {
+        "id": "latin",
+        "definition": "Focus span letters are all Latin."
+      },
+      {
+        "id": "hangul",
+        "definition": "Focus span letters are all Hangul."
+      },
+      {
+        "id": "han",
+        "definition": "Focus span letters are all Han (hanja/kanji/hanzi)."
+      },
+      {
+        "id": "mixed",
+        "definition": "Focus span mixes scripts."
+      }
+    ],
+    "token_class": [
+      {
+        "id": "single",
+        "definition": "Focus span is one whitespace-delimited token."
+      },
+      {
+        "id": "multi",
+        "definition": "Focus span contains whitespace."
+      }
+    ],
+    "ambiguity_level": [
+      {
+        "id": "unambiguous",
+        "definition": "The surface form is not credibly confusable with another reading."
+      },
+      {
+        "id": "context-resolvable",
+        "definition": "The surface form alone is ambiguous but the sentence context resolves it."
+      },
+      {
+        "id": "genuinely-ambiguous",
+        "definition": "The context does not resolve it; both readings are defensible."
+      }
+    ],
+    "collision_classes": [
+      {
+        "id": "common-word",
+        "definition": "The surface form is also an ordinary vocabulary item (Rose, Young, 하늘)."
+      },
+      {
+        "id": "organization",
+        "definition": "The surface form is also or is inside an organization name."
+      },
+      {
+        "id": "location",
+        "definition": "The surface form is also or is inside a place name."
+      },
+      {
+        "id": "temporal",
+        "definition": "The surface form is also a month, day or season (May, June)."
+      },
+      {
+        "id": "product-brand",
+        "definition": "The surface form is also or is inside a product or brand name (Ford Mustang)."
+      }
+    ],
+    "context_types": [
+      {
+        "id": "plain-prose",
+        "definition": "Ordinary declarative sentence."
+      },
+      {
+        "id": "sentence-initial",
+        "definition": "Focus span is at sentence start where capitalization carries no information."
+      },
+      {
+        "id": "title-honorific",
+        "definition": "Focus span is accompanied by a title or honorific."
+      },
+      {
+        "id": "quotation",
+        "definition": "Focus span is inside or adjacent to quotation marks."
+      },
+      {
+        "id": "list-or-enumeration",
+        "definition": "Focus span occurs in a list or comma/slash separated sequence."
+      },
+      {
+        "id": "possessive",
+        "definition": "Focus span carries a possessive marker."
+      },
+      {
+        "id": "particle-attached",
+        "definition": "Korean particle is attached directly to the focus span."
+      },
+      {
+        "id": "structured-text",
+        "definition": "Label/value or table-like text such as 'Name: ...'."
+      },
+      {
+        "id": "dialogue",
+        "definition": "Reported or direct speech."
+      },
+      {
+        "id": "vocative",
+        "definition": "Direct address."
+      },
+      {
+        "id": "parenthetical",
+        "definition": "Focus span is inside parentheses or dashes."
+      },
+      {
+        "id": "mixed-script-sentence",
+        "definition": "Sentence mixes scripts around the focus span."
+      },
+      {
+        "id": "no-person",
+        "definition": "The text contains no PERSON mention at all."
+      }
+    ],
+    "name_features": [
+      {
+        "id": "full-name",
+        "definition": "Given name plus surname (or surname plus given name)."
+      },
+      {
+        "id": "given-only",
+        "definition": "Given name only."
+      },
+      {
+        "id": "surname-only",
+        "definition": "Surname only."
+      },
+      {
+        "id": "mononym",
+        "definition": "A single name used as the whole name."
+      },
+      {
+        "id": "middle-name",
+        "definition": "A middle name or middle initial is present."
+      },
+      {
+        "id": "initials",
+        "definition": "One or more initials stand for name parts."
+      },
+      {
+        "id": "generational-suffix",
+        "definition": "Jr., Sr., II, III and similar."
+      },
+      {
+        "id": "hyphenated",
+        "definition": "Hyphen inside the name."
+      },
+      {
+        "id": "apostrophe",
+        "definition": "Apostrophe inside the name (O'Neil)."
+      },
+      {
+        "id": "surname-particle",
+        "definition": "Nobiliary or locative particle (de la, van der)."
+      },
+      {
+        "id": "diacritics",
+        "definition": "Name contains combining or precomposed diacritics."
+      },
+      {
+        "id": "inverted-order",
+        "definition": "Surname-comma-given order."
+      },
+      {
+        "id": "ko-surname-given",
+        "definition": "Korean surname followed by a given name."
+      },
+      {
+        "id": "ko-2-syllable",
+        "definition": "Two-syllable Korean name (one-syllable surname plus one-syllable given name)."
+      },
+      {
+        "id": "ko-3-syllable",
+        "definition": "Three-syllable Korean name (the dominant pattern)."
+      },
+      {
+        "id": "ko-4-syllable",
+        "definition": "Four-syllable Korean name (two-syllable surname plus two-syllable given name, or similar)."
+      },
+      {
+        "id": "ko-two-syllable-surname",
+        "definition": "Korean two-syllable surname such as 남궁, 황보, 선우, 독고, 제갈, 사공."
+      },
+      {
+        "id": "ko-rare-surname",
+        "definition": "Korean surname that is uncommon."
+      },
+      {
+        "id": "ko-given-only",
+        "definition": "Korean given name without surname."
+      },
+      {
+        "id": "ko-given-name-is-common-noun",
+        "definition": "Korean given name that is also an ordinary noun."
+      },
+      {
+        "id": "ko-romanized",
+        "definition": "Korean name written in Latin script."
+      },
+      {
+        "id": "ko-romanized-western-order",
+        "definition": "Romanized Korean name in given-then-surname order."
+      },
+      {
+        "id": "ko-hanja",
+        "definition": "Korean name written or annotated in hanja."
+      },
+      {
+        "id": "ko-spaced",
+        "definition": "Korean name written with internal spacing."
+      }
+    ],
+    "boundary_tags": [
+      {
+        "id": "punctuation-adjacent",
+        "definition": "Punctuation touches the span."
+      },
+      {
+        "id": "quote-boundary",
+        "definition": "A quotation mark touches the span."
+      },
+      {
+        "id": "hyphen-boundary",
+        "definition": "A hyphen at or inside the span edge could split the name."
+      },
+      {
+        "id": "apostrophe-boundary",
+        "definition": "An apostrophe or possessive at the span edge."
+      },
+      {
+        "id": "honorific-excluded",
+        "definition": "A title or honorific adjacent to the span must be excluded."
+      },
+      {
+        "id": "particle-excluded",
+        "definition": "A Korean particle adjacent to the span must be excluded."
+      },
+      {
+        "id": "suffix-excluded",
+        "definition": "A vocative or informal suffix adjacent to the span must be excluded."
+      },
+      {
+        "id": "adjacent-names",
+        "definition": "Two or more names are adjacent."
+      },
+      {
+        "id": "no-space",
+        "definition": "Names or particles are written without separating whitespace."
+      },
+      {
+        "id": "extra-spacing",
+        "definition": "Unusual or irregular spacing around or inside the span."
+      },
+      {
+        "id": "comma-inverted",
+        "definition": "Surname, Given order with a comma."
+      },
+      {
+        "id": "parenthetical-boundary",
+        "definition": "Span adjacent to parentheses or brackets."
+      },
+      {
+        "id": "abbreviation-period",
+        "definition": "A period belongs to an abbreviation or initial."
+      },
+      {
+        "id": "mixed-script-boundary",
+        "definition": "Script changes at the span edge."
+      },
+      {
+        "id": "digit-adjacent",
+        "definition": "Digits touch the span."
+      },
+      {
+        "id": "decomposition-sensitive",
+        "definition": "Meaning of offsets depends on Unicode normalization."
+      }
+    ]
+  },
+  "case_groups": [
+    {
+      "id": "common-name",
+      "definition": "Plain mentions of very common names.",
+      "languages": [
+        "en",
+        "ko"
+      ]
+    },
+    {
+      "id": "unseen-name",
+      "definition": "Rare or constructed names that no name list would contain.",
+      "languages": [
+        "en",
+        "ko"
+      ]
+    },
+    {
+      "id": "name-structure",
+      "definition": "Structural variety: middle names, initials, particles, suffixes.",
+      "languages": [
+        "en"
+      ]
+    },
+    {
+      "id": "title-honorific",
+      "definition": "Names accompanied by titles or honorifics.",
+      "languages": [
+        "en",
+        "ko"
+      ]
+    },
+    {
+      "id": "sentence-initial-trap",
+      "definition": "Capitalization at sentence start hides or fakes name-ness.",
+      "languages": [
+        "en"
+      ]
+    },
+    {
+      "id": "common-word-collision",
+      "definition": "Names that are also ordinary words.",
+      "languages": [
+        "en",
+        "ko"
+      ]
+    },
+    {
+      "id": "location-collision",
+      "definition": "Names that are also place names.",
+      "languages": [
+        "en",
+        "ko"
+      ]
+    },
+    {
+      "id": "organization-collision",
+      "definition": "Names inside organization, product or brand names.",
+      "languages": [
+        "en",
+        "ko"
+      ]
+    },
+    {
+      "id": "punctuation-boundary",
+      "definition": "Punctuation touching or inside names.",
+      "languages": [
+        "en",
+        "ko"
+      ]
+    },
+    {
+      "id": "quotation-boundary",
+      "definition": "Quotation marks and reported speech around names.",
+      "languages": [
+        "en"
+      ]
+    },
+    {
+      "id": "adjacent-names",
+      "definition": "Several names next to each other.",
+      "languages": [
+        "en",
+        "ko"
+      ]
+    },
+    {
+      "id": "list-and-structured-text",
+      "definition": "Names in lists, labels and table-like text.",
+      "languages": [
+        "en",
+        "ko"
+      ]
+    },
+    {
+      "id": "possessive-and-plural",
+      "definition": "Possessives, plurals and family references.",
+      "languages": [
+        "en"
+      ]
+    },
+    {
+      "id": "negative-no-person",
+      "definition": "Texts with name-like tokens and no person at all.",
+      "languages": [
+        "en",
+        "ko"
+      ]
+    },
+    {
+      "id": "surname-structure",
+      "definition": "Surname and name-length structure.",
+      "languages": [
+        "ko"
+      ]
+    },
+    {
+      "id": "informal-given-name",
+      "definition": "Given-name-only, vocative and informal suffix usage.",
+      "languages": [
+        "ko"
+      ]
+    },
+    {
+      "id": "particle-context",
+      "definition": "Korean particles attached to names.",
+      "languages": [
+        "ko"
+      ]
+    },
+    {
+      "id": "surname-false-positive-trap",
+      "definition": "Surname characters that begin or form ordinary words.",
+      "languages": [
+        "ko"
+      ]
+    },
+    {
+      "id": "romanization",
+      "definition": "Romanized Korean names and their English collisions.",
+      "languages": [
+        "ko"
+      ]
+    },
+    {
+      "id": "mixed-script",
+      "definition": "Names written across or with multiple scripts.",
+      "languages": [
+        "ko"
+      ]
+    },
+    {
+      "id": "spacing-variation",
+      "definition": "Irregular spacing and separators.",
+      "languages": [
+        "ko"
+      ]
+    }
+  ],
+  "model_neutrality": {
+    "forbidden_metadata_terms": [
+      "FastNER",
+      "GLiNER",
+      "spaCy",
+      "Presidio",
+      "RoBERTa",
+      "threshold",
+      "support status",
+      "release blocker"
+    ],
+    "note": "Authored metadata (title, why, notes, source text) must not mention specific models, thresholds or product status. Case text itself is exempt."
+  }
+}
