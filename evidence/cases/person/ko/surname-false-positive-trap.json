@@ -2,7 +2,7 @@
   "cases": [
     {
       "id": "person/ko/surname-false-positive-trap/an-glasses",
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "ko",
       "title": "안경 beginning with the surname 안",
@@ -51,7 +51,7 @@
     },
     {
       "id": "person/ko/surname-false-positive-trap/bak-museum",
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "ko",
       "title": "박물관 beginning with the surname 박",
@@ -100,7 +100,7 @@
     },
     {
       "id": "person/ko/surname-false-positive-trap/choi-best-modifier",
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "ko",
       "title": "최고 beginning with the surname 최",
@@ -148,7 +148,7 @@
     },
     {
       "id": "person/ko/surname-false-positive-trap/choi-recently",
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "ko",
       "title": "최근 beginning with the surname 최",
@@ -196,8 +196,328 @@
       }
     },
     {
+      "id": "person/ko/surname-false-positive-trap/final-syllable-do-then-also",
+      "schema_version": "1.1.0",
+      "entity_type": "PERSON",
+      "language": "ko",
+      "title": "Name ending in 도 followed by the additive particle 도",
+      "why": "Names ending in 도 followed by the additive particle 도 produce 도도; only the second is the particle.",
+      "text": "정유도도 회의에 참석했다.",
+      "expectations": [
+        {
+          "start": 0,
+          "end": 3,
+          "surface": "정유도",
+          "expect": "person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "hangul",
+        "token_class": "single",
+        "collision_classes": [],
+        "context_types": [
+          "plain-prose",
+          "sentence-initial",
+          "particle-attached"
+        ],
+        "name_features": [
+          "full-name",
+          "ko-surname-given",
+          "ko-3-syllable"
+        ],
+        "boundary_tags": [
+          "particle-excluded"
+        ],
+        "contrast_classes": [
+          "ko-name-final-syllable-trap"
+        ],
+        "familiarity_basis": "author-judgment"
+      },
+      "ambiguity": {
+        "level": "unambiguous"
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/ko/surname-false-positive-trap/final-syllable-eun-then-subject",
+      "schema_version": "1.1.0",
+      "entity_type": "PERSON",
+      "language": "ko",
+      "title": "Name ending in 은 followed by the subject marker 이",
+      "why": "A name ending in 은 takes the consonant-final subject marker 이; the 은 inside the name stays in the span.",
+      "text": "최다은이 책상을 정리했다.",
+      "expectations": [
+        {
+          "start": 0,
+          "end": 3,
+          "surface": "최다은",
+          "expect": "person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "hangul",
+        "token_class": "single",
+        "collision_classes": [],
+        "context_types": [
+          "plain-prose",
+          "sentence-initial",
+          "particle-attached"
+        ],
+        "name_features": [
+          "full-name",
+          "ko-surname-given",
+          "ko-3-syllable"
+        ],
+        "boundary_tags": [
+          "particle-excluded"
+        ],
+        "contrast_classes": [
+          "ko-name-final-syllable-trap",
+          "ko-particle-allomorph"
+        ],
+        "familiarity_basis": "author-judgment"
+      },
+      "ambiguity": {
+        "level": "unambiguous"
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/ko/surname-false-positive-trap/final-syllable-eun-then-topic-eun",
+      "schema_version": "1.1.0",
+      "entity_type": "PERSON",
+      "language": "ko",
+      "title": "Name ending in 은 followed by the topic marker 은",
+      "why": "The name 최아은 ends in the syllable 은, which is also the topic marker. Dropping a final 은 as a particle removes a real name syllable; the span must be 최아은 and only the second 은 is the particle.",
+      "text": "최아은은 먼저 도착했다.",
+      "expectations": [
+        {
+          "start": 0,
+          "end": 3,
+          "surface": "최아은",
+          "expect": "person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "hangul",
+        "token_class": "single",
+        "collision_classes": [],
+        "context_types": [
+          "plain-prose",
+          "sentence-initial",
+          "particle-attached"
+        ],
+        "name_features": [
+          "full-name",
+          "ko-surname-given",
+          "ko-3-syllable"
+        ],
+        "boundary_tags": [
+          "particle-excluded"
+        ],
+        "contrast_classes": [
+          "ko-name-final-syllable-trap",
+          "ko-particle-allomorph"
+        ],
+        "familiarity_basis": "author-judgment"
+      },
+      "ambiguity": {
+        "level": "unambiguous"
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/ko/surname-false-positive-trap/final-syllable-ga-then-subject",
+      "schema_version": "1.1.0",
+      "entity_type": "PERSON",
+      "language": "ko",
+      "title": "Name ending in 가 followed by the subject marker 가",
+      "why": "A name ending in 가 takes 가 as a subject marker, leaving 가가; only the second 가 is the particle.",
+      "text": "박나가가 발표를 맡았다.",
+      "expectations": [
+        {
+          "start": 0,
+          "end": 3,
+          "surface": "박나가",
+          "expect": "person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "hangul",
+        "token_class": "single",
+        "collision_classes": [],
+        "context_types": [
+          "plain-prose",
+          "sentence-initial",
+          "particle-attached"
+        ],
+        "name_features": [
+          "full-name",
+          "ko-surname-given",
+          "ko-3-syllable"
+        ],
+        "boundary_tags": [
+          "particle-excluded"
+        ],
+        "contrast_classes": [
+          "ko-name-final-syllable-trap"
+        ],
+        "familiarity_basis": "author-judgment"
+      },
+      "ambiguity": {
+        "level": "unambiguous"
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/ko/surname-false-positive-trap/final-syllable-i-then-subject-ga",
+      "schema_version": "1.1.0",
+      "entity_type": "PERSON",
+      "language": "ko",
+      "title": "Name ending in 이 followed by the subject marker 가",
+      "why": "The name 김하이 ends in 이, which is also a subject marker; the vowel-final name takes 가 and 이 stays in the span.",
+      "text": "김하이가 책상을 정리했다.",
+      "expectations": [
+        {
+          "start": 0,
+          "end": 3,
+          "surface": "김하이",
+          "expect": "person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "hangul",
+        "token_class": "single",
+        "collision_classes": [],
+        "context_types": [
+          "plain-prose",
+          "sentence-initial",
+          "particle-attached"
+        ],
+        "name_features": [
+          "full-name",
+          "ko-surname-given",
+          "ko-3-syllable"
+        ],
+        "boundary_tags": [
+          "particle-excluded"
+        ],
+        "contrast_classes": [
+          "ko-name-final-syllable-trap",
+          "ko-particle-allomorph"
+        ],
+        "familiarity_basis": "author-judgment"
+      },
+      "ambiguity": {
+        "level": "unambiguous"
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/ko/surname-false-positive-trap/final-syllable-i-then-topic",
+      "schema_version": "1.1.0",
+      "entity_type": "PERSON",
+      "language": "ko",
+      "title": "Name ending in 이 followed by the topic marker 는",
+      "why": "Same trap with a different particle: 이 inside the name, 는 as the particle.",
+      "text": "서이는 아직 오지 않았다.",
+      "expectations": [
+        {
+          "start": 0,
+          "end": 2,
+          "surface": "서이",
+          "expect": "person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "hangul",
+        "token_class": "single",
+        "collision_classes": [],
+        "context_types": [
+          "plain-prose",
+          "sentence-initial",
+          "particle-attached"
+        ],
+        "name_features": [
+          "given-only",
+          "ko-given-only"
+        ],
+        "boundary_tags": [
+          "particle-excluded"
+        ],
+        "contrast_classes": [
+          "ko-name-final-syllable-trap"
+        ],
+        "familiarity_basis": "author-judgment"
+      },
+      "ambiguity": {
+        "level": "unambiguous"
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
       "id": "person/ko/surname-false-positive-trap/gang-puppy",
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "ko",
       "title": "강아지 beginning with the surname 강",
@@ -246,7 +566,7 @@
     },
     {
       "id": "person/ko/surname-false-positive-trap/gim-chiu-person",
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "ko",
       "title": "Full name 김치우 whose first two syllables spell 김치",
@@ -279,7 +599,8 @@
         ],
         "boundary_tags": [
           "particle-excluded"
-        ]
+        ],
+        "familiarity_basis": "author-judgment"
       },
       "ambiguity": {
         "level": "context-resolvable",
@@ -297,7 +618,7 @@
     },
     {
       "id": "person/ko/surname-false-positive-trap/gim-gimbap-lunch",
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "ko",
       "title": "김밥 as lunch",
@@ -345,7 +666,7 @@
     },
     {
       "id": "person/ko/surname-false-positive-trap/gim-kimchi-stew",
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "ko",
       "title": "김치찌개 begins with the most common surname 김",
@@ -393,7 +714,7 @@
     },
     {
       "id": "person/ko/surname-false-positive-trap/gim-kimjang-season",
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "ko",
       "title": "김장 beginning with the surname 김",
@@ -442,7 +763,7 @@
     },
     {
       "id": "person/ko/surname-false-positive-trap/gim-laver-object",
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "ko",
       "title": "김 meaning dried seaweed (laver)",
@@ -490,7 +811,7 @@
     },
     {
       "id": "person/ko/surname-false-positive-trap/gim-steam-subject",
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "ko",
       "title": "김 meaning steam, followed by the subject marker 이",
@@ -538,7 +859,7 @@
     },
     {
       "id": "person/ko/surname-false-positive-trap/gwon-right",
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "ko",
       "title": "권리 beginning with the surname 권",
@@ -586,7 +907,7 @@
     },
     {
       "id": "person/ko/surname-false-positive-trap/han-once-adverb",
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "ko",
       "title": "한번 beginning with the surname 한",
@@ -632,7 +953,7 @@
     },
     {
       "id": "person/ko/surname-false-positive-trap/im-wage-subject",
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "ko",
       "title": "임금 beginning with the surname 임",
@@ -680,7 +1001,7 @@
     },
     {
       "id": "person/ko/surname-false-positive-trap/jeong-government-subject",
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "ko",
       "title": "정부 beginning with the surname 정",
@@ -729,7 +1050,7 @@
     },
     {
       "id": "person/ko/surname-false-positive-trap/jeong-really-adverb",
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "ko",
       "title": "정말 beginning with the surname 정",
@@ -775,7 +1096,7 @@
     },
     {
       "id": "person/ko/surname-false-positive-trap/jeongwon-garden-noun",
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "ko",
       "title": "정원 as a garden",
@@ -824,7 +1145,7 @@
     },
     {
       "id": "person/ko/surname-false-positive-trap/jo-little-adverb",
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "ko",
       "title": "조금 beginning with the surname 조",
@@ -873,7 +1194,7 @@
     },
     {
       "id": "person/ko/surname-false-positive-trap/jo-quietly-adverb",
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "ko",
       "title": "조용히 beginning with the surname 조",
@@ -918,7 +1239,7 @@
     },
     {
       "id": "person/ko/surname-false-positive-trap/mun-problem",
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "ko",
       "title": "문제 beginning with the surname 문",
@@ -966,7 +1287,7 @@
     },
     {
       "id": "person/ko/surname-false-positive-trap/nam-man",
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "ko",
       "title": "남자 beginning with the surname 남",
@@ -1013,8 +1334,193 @@
       }
     },
     {
+      "id": "person/ko/surname-false-positive-trap/name-begins-like-actor",
+      "schema_version": "1.1.0",
+      "entity_type": "PERSON",
+      "language": "ko",
+      "title": "배우진 as a person name",
+      "why": "Partner of word-actor-versus-name-baeu: a person name that begins with 배우.",
+      "text": "배우진 씨가 무대에 올랐다.",
+      "expectations": [
+        {
+          "start": 0,
+          "end": 3,
+          "surface": "배우진",
+          "expect": "person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "hangul",
+        "token_class": "single",
+        "collision_classes": [
+          "common-word"
+        ],
+        "context_types": [
+          "plain-prose",
+          "sentence-initial",
+          "title-honorific",
+          "particle-attached"
+        ],
+        "name_features": [
+          "full-name",
+          "ko-surname-given",
+          "ko-3-syllable"
+        ],
+        "boundary_tags": [
+          "honorific-excluded",
+          "particle-excluded"
+        ],
+        "contrast_classes": [
+          "ko-surname-prefix-trap"
+        ],
+        "familiarity_basis": "author-judgment"
+      },
+      "ambiguity": {
+        "level": "context-resolvable",
+        "kind": "lexical-homograph",
+        "alternative_reading": "common-noun",
+        "resolved_by": [
+          "title-or-honorific"
+        ],
+        "note": "배우진 alone is the ordinary noun for a cast; the honorific 씨 after it selects a person, and the subject marker 가 follows 씨."
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/ko/surname-false-positive-trap/name-begins-like-government",
+      "schema_version": "1.1.0",
+      "entity_type": "PERSON",
+      "language": "ko",
+      "title": "정부영 as a person name",
+      "why": "Partner of word-government-versus-name-jeongbu: a person whose name starts with the same two syllables; the full three-syllable string is the span.",
+      "text": "정부영이 새 정책을 발표했다.",
+      "expectations": [
+        {
+          "start": 0,
+          "end": 3,
+          "surface": "정부영",
+          "expect": "person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "hangul",
+        "token_class": "single",
+        "collision_classes": [
+          "common-word"
+        ],
+        "context_types": [
+          "plain-prose",
+          "sentence-initial",
+          "particle-attached"
+        ],
+        "name_features": [
+          "full-name",
+          "ko-surname-given",
+          "ko-3-syllable"
+        ],
+        "boundary_tags": [
+          "particle-excluded"
+        ],
+        "contrast_classes": [
+          "ko-surname-prefix-trap"
+        ],
+        "familiarity_basis": "author-judgment"
+      },
+      "ambiguity": {
+        "level": "context-resolvable",
+        "kind": "lexical-homograph",
+        "alternative_reading": "common-noun",
+        "resolved_by": [
+          "particle-or-suffix"
+        ],
+        "note": "The three-syllable string followed by the subject marker 이 is a person; 정부 alone would take 가."
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/ko/surname-false-positive-trap/name-begins-like-survey",
+      "schema_version": "1.1.0",
+      "entity_type": "PERSON",
+      "language": "ko",
+      "title": "조사랑 as a person name",
+      "why": "Partner of word-survey-versus-name-josa: a three-syllable name starting with 조사.",
+      "text": "조사랑이 결과를 발표했다.",
+      "expectations": [
+        {
+          "start": 0,
+          "end": 3,
+          "surface": "조사랑",
+          "expect": "person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "hangul",
+        "token_class": "single",
+        "collision_classes": [
+          "common-word"
+        ],
+        "context_types": [
+          "plain-prose",
+          "sentence-initial",
+          "particle-attached"
+        ],
+        "name_features": [
+          "full-name",
+          "ko-surname-given",
+          "ko-3-syllable"
+        ],
+        "boundary_tags": [
+          "particle-excluded"
+        ],
+        "contrast_classes": [
+          "ko-surname-prefix-trap"
+        ],
+        "familiarity_basis": "author-judgment"
+      },
+      "ambiguity": {
+        "level": "context-resolvable",
+        "kind": "lexical-homograph",
+        "alternative_reading": "common-noun",
+        "resolved_by": [
+          "particle-or-suffix"
+        ],
+        "note": "The subject marker 이 attaches to the three-syllable name; 조사 as a noun would not take 이 here."
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
       "id": "person/ko/surname-false-positive-trap/no-song-object",
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "ko",
       "title": "노래 beginning with the surname 노",
@@ -1063,7 +1569,7 @@
     },
     {
       "id": "person/ko/surname-false-positive-trap/o-cucumber-object",
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "ko",
       "title": "오이 as the vegetable 'cucumber'",
@@ -1112,7 +1618,7 @@
     },
     {
       "id": "person/ko/surname-false-positive-trap/park-applause-and-park-sujin",
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "ko",
       "title": "A person receiving applause",
@@ -1151,7 +1657,8 @@
         ],
         "boundary_tags": [
           "particle-excluded"
-        ]
+        ],
+        "familiarity_basis": "author-judgment"
       },
       "ambiguity": {
         "level": "context-resolvable",
@@ -1169,7 +1676,7 @@
     },
     {
       "id": "person/ko/surname-false-positive-trap/person-and-food-same-sentence",
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "ko",
       "title": "A person who bought gimbap",
@@ -1208,7 +1715,8 @@
         ],
         "boundary_tags": [
           "particle-excluded"
-        ]
+        ],
+        "familiarity_basis": "author-judgment"
       },
       "ambiguity": {
         "level": "context-resolvable",
@@ -1226,7 +1734,7 @@
     },
     {
       "id": "person/ko/surname-false-positive-trap/sin-shoes",
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "ko",
       "title": "신발 beginning with the surname 신",
@@ -1275,7 +1783,7 @@
     },
     {
       "id": "person/ko/surname-false-positive-trap/song-calf",
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "ko",
       "title": "송아지 beginning with the surname 송",
@@ -1323,8 +1831,176 @@
       }
     },
     {
+      "id": "person/ko/surname-false-positive-trap/word-actor-versus-name-baeu",
+      "schema_version": "1.1.0",
+      "entity_type": "PERSON",
+      "language": "ko",
+      "title": "배우 as 'actor'",
+      "why": "배 is a surname and 배우 is the ordinary word 'actor'.",
+      "text": "배우가 무대에 올랐다.",
+      "expectations": [
+        {
+          "start": 0,
+          "end": 2,
+          "surface": "배우",
+          "expect": "not-person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "not-applicable",
+        "script": "hangul",
+        "token_class": "single",
+        "collision_classes": [
+          "common-word"
+        ],
+        "context_types": [
+          "plain-prose",
+          "sentence-initial",
+          "particle-attached",
+          "no-person"
+        ],
+        "name_features": [],
+        "boundary_tags": [
+          "particle-excluded"
+        ],
+        "contrast_classes": [
+          "ko-surname-prefix-trap"
+        ]
+      },
+      "ambiguity": {
+        "level": "context-resolvable",
+        "kind": "lexical-homograph",
+        "alternative_reading": "common-noun",
+        "resolved_by": [
+          "predicate-or-argument"
+        ],
+        "note": "Going on stage is predicated of a performer; 배우 is the occupation noun."
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/ko/surname-false-positive-trap/word-government-versus-name-jeongbu",
+      "schema_version": "1.1.0",
+      "entity_type": "PERSON",
+      "language": "ko",
+      "title": "정부 as 'government'",
+      "why": "정 is a surname and 정부 is the ordinary word 'government'. A surname-initial heuristic fires here.",
+      "text": "정부가 새 정책을 발표했다.",
+      "expectations": [
+        {
+          "start": 0,
+          "end": 2,
+          "surface": "정부",
+          "expect": "not-person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "not-applicable",
+        "script": "hangul",
+        "token_class": "single",
+        "collision_classes": [
+          "common-word"
+        ],
+        "context_types": [
+          "plain-prose",
+          "sentence-initial",
+          "particle-attached",
+          "no-person"
+        ],
+        "name_features": [],
+        "boundary_tags": [
+          "particle-excluded"
+        ],
+        "contrast_classes": [
+          "ko-surname-prefix-trap"
+        ]
+      },
+      "ambiguity": {
+        "level": "context-resolvable",
+        "kind": "lexical-homograph",
+        "alternative_reading": "common-noun",
+        "resolved_by": [
+          "predicate-or-argument"
+        ],
+        "note": "Announcing a policy is predicated of a state institution."
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/ko/surname-false-positive-trap/word-survey-versus-name-josa",
+      "schema_version": "1.1.0",
+      "entity_type": "PERSON",
+      "language": "ko",
+      "title": "조사 as 'survey'",
+      "why": "조 is a surname and 조사 is the ordinary word 'survey/investigation'.",
+      "text": "조사 결과가 나왔다.",
+      "expectations": [
+        {
+          "start": 0,
+          "end": 2,
+          "surface": "조사",
+          "expect": "not-person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "not-applicable",
+        "script": "hangul",
+        "token_class": "single",
+        "collision_classes": [
+          "common-word"
+        ],
+        "context_types": [
+          "plain-prose",
+          "sentence-initial",
+          "no-person"
+        ],
+        "name_features": [],
+        "boundary_tags": [],
+        "contrast_classes": [
+          "ko-surname-prefix-trap"
+        ]
+      },
+      "ambiguity": {
+        "level": "context-resolvable",
+        "kind": "lexical-homograph",
+        "alternative_reading": "common-noun",
+        "resolved_by": [
+          "modifier-or-determiner"
+        ],
+        "note": "A result of a survey is a nominal compound with 결과."
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
       "id": "person/ko/surname-false-positive-trap/yi-demonstrative-person-noun",
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "ko",
       "title": "이 as the demonstrative 'this' before 사람",
@@ -1370,7 +2046,7 @@
     },
     {
       "id": "person/ko/surname-false-positive-trap/yi-number-two",
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "ko",
       "title": "이 as the numeral two",
@@ -1416,7 +2092,7 @@
     },
     {
       "id": "person/ko/surname-false-positive-trap/yun-ethics-object",
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "ko",
       "title": "윤리 beginning with the surname 윤",
@@ -1464,7 +2140,7 @@
     },
     {
       "id": "person/ko/surname-false-positive-trap/yungi-gloss-noun",
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "ko",
       "title": "윤기: a gloss noun that is also a given name",

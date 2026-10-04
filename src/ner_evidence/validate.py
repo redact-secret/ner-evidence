@@ -124,10 +124,16 @@ def check_case(case: dict, repo: Repo) -> list[Problem]:
         for v in dims[dim]:
             if v not in vocab_ids(tax, dim):
                 bad("VOCAB", f"dimensions.{dim} value {v!r} unknown")
+    for v in dims.get("contrast_classes", []):
+        if v not in vocab_ids(tax, "contrast_class"):
+            bad("VOCAB", f"dimensions.contrast_classes value {v!r} unknown")
+        elif not v.startswith(case["language"] + "-"):
+            bad("VOCAB", f"contrast class {v!r} is not defined for language {case['language']!r}")
     for v in dims["name_features"]:
         if v.startswith("ko-") and case["language"] != "ko":
             bad("VOCAB", f"name feature {v!r} is Korean-specific")
 
+    probs.extend(check_familiarity(case, repo))
     level = case["ambiguity"]["level"]
     if level not in vocab_ids(tax, "ambiguity_level"):
         bad("VOCAB", f"ambiguity.level {level!r} unknown")
@@ -138,6 +144,30 @@ def check_case(case: dict, repo: Repo) -> list[Problem]:
         bad("AMBIGUITY", "a case with collision classes cannot be 'unambiguous' (the surface form is confusable by definition)")
     if has_either != (level == "genuinely-ambiguous"):
         bad("AMBIGUITY", "an 'either' expectation must exist if and only if ambiguity.level is genuinely-ambiguous")
+    amb = case["ambiguity"]
+    structured = [k for k in ("kind", "alternative_reading", "resolved_by") if k in amb]
+    if level == "unambiguous":
+        if structured or "acceptable_outcomes" in amb:
+            bad("AMBIGUITY", "structured ambiguity fields are only allowed on ambiguous cases")
+    elif structured or "acceptable_outcomes" in amb:
+        if len(structured) != 3:
+            bad("AMBIGUITY", "kind, alternative_reading and resolved_by must be given together")
+        else:
+            for key, dim in (("kind", "ambiguity_kind"), ("alternative_reading", "alternative_reading")):
+                if amb[key] not in vocab_ids(tax, dim):
+                    bad("VOCAB", f"ambiguity.{key} {amb[key]!r} unknown")
+            for v in amb["resolved_by"]:
+                if v not in vocab_ids(tax, "resolving_context"):
+                    bad("VOCAB", f"ambiguity.resolved_by value {v!r} unknown")
+            nothing = "nothing" in amb["resolved_by"]
+            if nothing and amb["resolved_by"] != ["nothing"]:
+                bad("AMBIGUITY", "'nothing' cannot be combined with other resolving contexts")
+            if nothing != (level == "genuinely-ambiguous"):
+                bad("AMBIGUITY", "resolved_by is ['nothing'] if and only if ambiguity.level is genuinely-ambiguous")
+            if (level == "genuinely-ambiguous") != ("acceptable_outcomes" in amb):
+                bad("AMBIGUITY", "acceptable_outcomes is required on, and only on, genuinely-ambiguous cases")
+            elif "acceptable_outcomes" in amb and set(amb["acceptable_outcomes"]) != {"person", "not-person"}:
+                bad("AMBIGUITY", "acceptable_outcomes must list both person and not-person")
     may_have_person = any(s["expect"] in {"person", "either"} for s in spans)
     if ("no-person" in dims["context_types"]) == may_have_person:
         bad("CONTEXT", "context type 'no-person' must be present exactly when no span expects 'person' or 'either'")
@@ -163,6 +193,62 @@ def check_case(case: dict, repo: Repo) -> list[Problem]:
             bad("MODEL_TERM", f"{where} mentions {m.group(0)!r}; evidence metadata must stay model-neutral")
     if case["why"].strip().lower() == case["title"].strip().lower():
         bad("WHY", "'why' must explain, not repeat the title")
+    return probs
+
+
+def band_for(repo: Repo, source_id: str, component: str) -> str | None:
+    for ref in repo.bands.get("references", []):
+        if ref["source_id"] == source_id:
+            return ref["entries"].get(component)
+    return None
+
+
+def check_familiarity(case: dict, repo: Repo) -> list[Problem]:
+    """Familiarity label, its documented basis and (when claimed) the mechanical reference check."""
+    cid = case["id"]
+    if "familiarity_basis" not in repo.taxonomy["dimensions"]:
+        return []  # taxonomy that predates familiarity bases (released snapshots)
+    dims = case["dimensions"]
+    fam = dims["familiarity"]
+    basis = dims.get("familiarity_basis")
+    ref = dims.get("familiarity_reference")
+    probs: list[Problem] = []
+
+    def bad(code: str, msg: str) -> None:
+        probs.append(Problem(code, cid, msg))
+
+    if fam == "not-applicable":
+        if basis or ref:
+            bad("FAMILIARITY", "familiarity_basis/familiarity_reference are only allowed when a familiarity label applies")
+        return probs
+    if basis is None:
+        bad("FAMILIARITY", "familiarity_basis is required when familiarity is common, rare or novel")
+        return probs
+    if basis not in vocab_ids(repo.taxonomy, "familiarity_basis"):
+        bad("VOCAB", f"familiarity_basis {basis!r} unknown")
+        return probs
+    if basis == "constructed" and fam != "novel":
+        bad("FAMILIARITY", "'constructed' only supports familiarity 'novel'")
+    if basis != "reference-frequency":
+        if ref:
+            bad("FAMILIARITY", "familiarity_reference requires familiarity_basis 'reference-frequency'")
+        return probs
+    if not ref:
+        bad("FAMILIARITY", "familiarity_basis 'reference-frequency' requires familiarity_reference")
+        return probs
+    focus = case["expectations"][case["focus_span"]]["surface"]
+    if ref["component"] not in focus:
+        bad("FAMILIARITY", f"reference component {ref['component']!r} does not occur in the focus span {focus!r}")
+    if ref["source_id"] not in case["source_ids"]:
+        bad("PROVENANCE", f"reference source {ref['source_id']!r} must also be listed in source_ids")
+    band = band_for(repo, ref["source_id"], ref["component"])
+    if band is None:
+        bad("FAMILIARITY", f"no derived band for {ref['component']!r} in {ref['source_id']!r} (evidence/references/name-frequency-bands.json)")
+    elif band != fam:
+        bad("FAMILIARITY", f"familiarity {fam!r} but the reference band of {ref['component']!r} is {band!r}")
+    for r in repo.bands.get("references", []):
+        if r["source_id"] == ref["source_id"] and r["language"] != case["language"]:
+            bad("FAMILIARITY", f"reference {ref['source_id']!r} is defined for language {r['language']!r}, not {case['language']!r}")
     return probs
 
 

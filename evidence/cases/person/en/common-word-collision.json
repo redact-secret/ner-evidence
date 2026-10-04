@@ -2,7 +2,7 @@
   "cases": [
     {
       "id": "person/en/common-word-collision/april-person-subject",
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "en",
       "title": "April as a person who made a call",
@@ -32,7 +32,8 @@
         "name_features": [
           "full-name"
         ],
-        "boundary_tags": []
+        "boundary_tags": [],
+        "familiarity_basis": "author-judgment"
       },
       "ambiguity": {
         "level": "context-resolvable",
@@ -50,7 +51,7 @@
     },
     {
       "id": "person/en/common-word-collision/april-showers-month",
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "en",
       "title": "April in an idiom about weather",
@@ -79,7 +80,8 @@
           "no-person"
         ],
         "name_features": [],
-        "boundary_tags": []
+        "boundary_tags": [],
+        "familiarity_basis": "author-judgment"
       },
       "ambiguity": {
         "level": "context-resolvable",
@@ -97,7 +99,7 @@
     },
     {
       "id": "person/en/common-word-collision/august-adjective",
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "en",
       "title": "Lowercase august as an adjective",
@@ -142,8 +144,71 @@
       }
     },
     {
+      "id": "person/en/common-word-collision/bill-paid-the-bill",
+      "schema_version": "1.1.0",
+      "entity_type": "PERSON",
+      "language": "en",
+      "title": "Person and invoice spelled Bill",
+      "why": "A person and an invoice with the same spelling: the first is the subject of 'paid', the second the object after a determiner.",
+      "text": "Bill paid the bill on Friday.",
+      "expectations": [
+        {
+          "start": 0,
+          "end": 4,
+          "surface": "Bill",
+          "expect": "person"
+        },
+        {
+          "start": 14,
+          "end": 18,
+          "surface": "bill",
+          "expect": "not-person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "latin",
+        "token_class": "single",
+        "collision_classes": [
+          "common-word"
+        ],
+        "context_types": [
+          "plain-prose",
+          "sentence-initial"
+        ],
+        "name_features": [
+          "given-only"
+        ],
+        "boundary_tags": [],
+        "contrast_classes": [
+          "en-common-word-name"
+        ],
+        "familiarity_basis": "author-judgment"
+      },
+      "ambiguity": {
+        "level": "context-resolvable",
+        "kind": "lexical-homograph",
+        "alternative_reading": "common-noun",
+        "resolved_by": [
+          "syntactic-position",
+          "modifier-or-determiner"
+        ],
+        "note": "The determiner 'the' and lowercase spelling make the second occurrence a noun."
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
       "id": "person/en/common-word-collision/chase-bank-or-person",
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "en",
       "title": "Chase as a bank or a person",
@@ -171,7 +236,8 @@
           "sentence-initial"
         ],
         "name_features": [],
-        "boundary_tags": []
+        "boundary_tags": [],
+        "familiarity_basis": "author-judgment"
       },
       "ambiguity": {
         "level": "genuinely-ambiguous",
@@ -189,7 +255,7 @@
     },
     {
       "id": "person/en/common-word-collision/dawn-name-then-noun",
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "en",
       "title": "Sentence-initial name 'Dawn' and lowercase noun 'dawn'",
@@ -223,7 +289,8 @@
           "sentence-initial"
         ],
         "name_features": [],
-        "boundary_tags": []
+        "boundary_tags": [],
+        "familiarity_basis": "author-judgment"
       },
       "ambiguity": {
         "level": "context-resolvable",
@@ -240,8 +307,72 @@
       }
     },
     {
+      "id": "person/en/common-word-collision/faith-and-hope-as-recipients",
+      "schema_version": "1.1.0",
+      "entity_type": "PERSON",
+      "language": "en",
+      "title": "Virtue-noun names as recipients",
+      "why": "Two virtue nouns that are also names, used as recipients of a message.",
+      "text": "Send the draft to Faith and Hope tonight.",
+      "expectations": [
+        {
+          "start": 18,
+          "end": 23,
+          "surface": "Faith",
+          "expect": "person"
+        },
+        {
+          "start": 28,
+          "end": 32,
+          "surface": "Hope",
+          "expect": "person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "latin",
+        "token_class": "single",
+        "collision_classes": [
+          "common-word"
+        ],
+        "context_types": [
+          "plain-prose",
+          "list-or-enumeration"
+        ],
+        "name_features": [
+          "given-only"
+        ],
+        "boundary_tags": [
+          "adjacent-names"
+        ],
+        "contrast_classes": [
+          "en-common-word-name"
+        ],
+        "familiarity_basis": "author-judgment"
+      },
+      "ambiguity": {
+        "level": "context-resolvable",
+        "kind": "lexical-homograph",
+        "alternative_reading": "common-noun",
+        "resolved_by": [
+          "predicate-or-argument"
+        ],
+        "note": "Sending a draft to X takes human recipients."
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
       "id": "person/en/common-word-collision/ford-lowercase-verb",
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "en",
       "title": "Lowercase 'ford' as a verb",
@@ -286,7 +417,7 @@
     },
     {
       "id": "person/en/common-word-collision/ford-surname-with-title",
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "en",
       "title": "Ford as a surname after Mrs.",
@@ -319,7 +450,8 @@
         "boundary_tags": [
           "honorific-excluded",
           "abbreviation-period"
-        ]
+        ],
+        "familiarity_basis": "author-judgment"
       },
       "ambiguity": {
         "level": "context-resolvable",
@@ -336,8 +468,73 @@
       }
     },
     {
+      "id": "person/en/common-word-collision/forward-to-two-occupation-names",
+      "schema_version": "1.1.0",
+      "entity_type": "PERSON",
+      "language": "en",
+      "title": "Two occupation-word names as recipients",
+      "why": "'forward this to X and Y' needs two recipients; both capitalized words are occupation nouns that are also names.",
+      "text": "Please forward this to Hunter and Mason.",
+      "expectations": [
+        {
+          "start": 23,
+          "end": 29,
+          "surface": "Hunter",
+          "expect": "person"
+        },
+        {
+          "start": 34,
+          "end": 39,
+          "surface": "Mason",
+          "expect": "person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "latin",
+        "token_class": "single",
+        "collision_classes": [
+          "common-word"
+        ],
+        "context_types": [
+          "plain-prose",
+          "list-or-enumeration"
+        ],
+        "name_features": [
+          "given-only"
+        ],
+        "boundary_tags": [
+          "adjacent-names"
+        ],
+        "contrast_classes": [
+          "en-common-word-name"
+        ],
+        "familiarity_basis": "author-judgment"
+      },
+      "ambiguity": {
+        "level": "context-resolvable",
+        "kind": "lexical-homograph",
+        "alternative_reading": "common-noun",
+        "resolved_by": [
+          "predicate-or-argument",
+          "syntactic-position"
+        ],
+        "note": "'forward to' takes recipients and the bare capitalized words are in the recipient position."
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
       "id": "person/en/common-word-collision/georgia-won-election",
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "en",
       "title": "Georgia in a sentence about winning",
@@ -365,7 +562,8 @@
           "sentence-initial"
         ],
         "name_features": [],
-        "boundary_tags": []
+        "boundary_tags": [],
+        "familiarity_basis": "author-judgment"
       },
       "ambiguity": {
         "level": "genuinely-ambiguous",
@@ -382,8 +580,60 @@
       }
     },
     {
+      "id": "person/en/common-word-collision/headline-frank-talks",
+      "schema_version": "1.1.0",
+      "entity_type": "PERSON",
+      "language": "en",
+      "title": "Title Case headline starting with an adjective that is a name",
+      "why": "In Title Case every word is capitalized, so 'Frank' carries no name evidence; 'Frank Talks Resume After Delay' is a noun phrase and a verb phrase about negotiations.",
+      "text": "Frank Talks Resume After Delay",
+      "expectations": [
+        {
+          "start": 0,
+          "end": 5,
+          "surface": "Frank",
+          "expect": "not-person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "latin",
+        "token_class": "single",
+        "collision_classes": [
+          "common-word"
+        ],
+        "context_types": [
+          "casing-variation",
+          "sentence-initial",
+          "no-person"
+        ],
+        "name_features": [],
+        "boundary_tags": [],
+        "familiarity_basis": "author-judgment"
+      },
+      "ambiguity": {
+        "level": "context-resolvable",
+        "kind": "lexical-homograph",
+        "alternative_reading": "adjective-or-verb",
+        "resolved_by": [
+          "syntactic-position"
+        ],
+        "note": "The only verb is 'Resume'; 'Frank Talks' is its subject noun phrase with an adjective modifier."
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
       "id": "person/en/common-word-collision/heather-plant-or-person",
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "en",
       "title": "Heather as a plant or a person",
@@ -410,7 +660,8 @@
           "sentence-initial"
         ],
         "name_features": [],
-        "boundary_tags": []
+        "boundary_tags": [],
+        "familiarity_basis": "author-judgment"
       },
       "ambiguity": {
         "level": "genuinely-ambiguous",
@@ -427,8 +678,117 @@
       }
     },
     {
+      "id": "person/en/common-word-collision/hunter-appositive-clause",
+      "schema_version": "1.1.0",
+      "entity_type": "PERSON",
+      "language": "en",
+      "title": "Hunter with an appositive relative clause",
+      "why": "A name that is also an occupation noun, followed by a comma and a relative clause, which is the standard shape of a named referent.",
+      "text": "Hunter, who tracked the deer all night, finally rested.",
+      "expectations": [
+        {
+          "start": 0,
+          "end": 6,
+          "surface": "Hunter",
+          "expect": "person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "latin",
+        "token_class": "single",
+        "collision_classes": [
+          "common-word"
+        ],
+        "context_types": [
+          "plain-prose",
+          "sentence-initial"
+        ],
+        "name_features": [
+          "given-only"
+        ],
+        "boundary_tags": [
+          "punctuation-adjacent"
+        ],
+        "familiarity_basis": "author-judgment"
+      },
+      "ambiguity": {
+        "level": "context-resolvable",
+        "kind": "lexical-homograph",
+        "alternative_reading": "common-noun",
+        "resolved_by": [
+          "punctuation-or-format",
+          "syntactic-position"
+        ],
+        "note": "A comma-set non-restrictive clause attaches to a definite referent; a bare singular count noun without a determiner is not grammatical as a common noun here, so the word is a name."
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/en/common-word-collision/hunters-plural-noun",
+      "schema_version": "1.1.0",
+      "entity_type": "PERSON",
+      "language": "en",
+      "title": "Hunters as a plural occupation noun",
+      "why": "Partner of hunter-appositive-clause: the plural -s makes a generic noun, so the capitalized first word is not a person.",
+      "text": "Hunters who tracked the deer all night finally rested.",
+      "expectations": [
+        {
+          "start": 0,
+          "end": 7,
+          "surface": "Hunters",
+          "expect": "not-person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "latin",
+        "token_class": "single",
+        "collision_classes": [
+          "common-word"
+        ],
+        "context_types": [
+          "plain-prose",
+          "sentence-initial",
+          "no-person"
+        ],
+        "name_features": [],
+        "boundary_tags": [],
+        "familiarity_basis": "author-judgment"
+      },
+      "ambiguity": {
+        "level": "context-resolvable",
+        "kind": "lexical-homograph",
+        "alternative_reading": "common-noun",
+        "resolved_by": [
+          "modifier-or-determiner",
+          "syntactic-position"
+        ],
+        "note": "The plural ending and the restrictive relative clause without a comma mark a generic noun phrase."
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
       "id": "person/en/common-word-collision/ivy-plant-or-person",
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "en",
       "title": "Ivy as a plant or a person",
@@ -455,7 +815,8 @@
           "sentence-initial"
         ],
         "name_features": [],
-        "boundary_tags": []
+        "boundary_tags": [],
+        "familiarity_basis": "author-judgment"
       },
       "ambiguity": {
         "level": "genuinely-ambiguous",
@@ -472,8 +833,70 @@
       }
     },
     {
+      "id": "person/en/common-word-collision/jack-thanked-sage",
+      "schema_version": "1.1.0",
+      "entity_type": "PERSON",
+      "language": "en",
+      "title": "Two tool or herb words as the subject and object of thanking",
+      "why": "'thanked' requires an animate subject and object, so both capitalized words are names even though each is also an ordinary noun.",
+      "text": "Jack thanked Sage for the lift.",
+      "expectations": [
+        {
+          "start": 0,
+          "end": 4,
+          "surface": "Jack",
+          "expect": "person"
+        },
+        {
+          "start": 13,
+          "end": 17,
+          "surface": "Sage",
+          "expect": "person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "latin",
+        "token_class": "single",
+        "collision_classes": [
+          "common-word"
+        ],
+        "context_types": [
+          "plain-prose",
+          "sentence-initial"
+        ],
+        "name_features": [
+          "given-only"
+        ],
+        "boundary_tags": [],
+        "contrast_classes": [
+          "en-common-word-name"
+        ],
+        "familiarity_basis": "author-judgment"
+      },
+      "ambiguity": {
+        "level": "context-resolvable",
+        "kind": "lexical-homograph",
+        "alternative_reading": "common-noun",
+        "resolved_by": [
+          "predicate-or-argument"
+        ],
+        "note": "Thanking and giving a lift are human actions."
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
       "id": "person/en/common-word-collision/jack-tool-or-person",
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "en",
       "title": "Jack as a tool or a person",
@@ -500,7 +923,8 @@
           "sentence-initial"
         ],
         "name_features": [],
-        "boundary_tags": []
+        "boundary_tags": [],
+        "familiarity_basis": "author-judgment"
       },
       "ambiguity": {
         "level": "genuinely-ambiguous",
@@ -518,7 +942,7 @@
     },
     {
       "id": "person/en/common-word-collision/jordan-full-name",
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "en",
       "title": "Jordan as the given name in a full name",
@@ -547,7 +971,8 @@
         "name_features": [
           "full-name"
         ],
-        "boundary_tags": []
+        "boundary_tags": [],
+        "familiarity_basis": "author-judgment"
       },
       "ambiguity": {
         "level": "context-resolvable",
@@ -565,7 +990,7 @@
     },
     {
       "id": "person/en/common-word-collision/jordan-given-name",
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "en",
       "title": "Jordan as a given name used alone",
@@ -592,7 +1017,8 @@
           "plain-prose"
         ],
         "name_features": [],
-        "boundary_tags": []
+        "boundary_tags": [],
+        "familiarity_basis": "author-judgment"
       },
       "ambiguity": {
         "level": "context-resolvable",
@@ -610,7 +1036,7 @@
     },
     {
       "id": "person/en/common-word-collision/jordan-mentioned-twice",
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "en",
       "title": "Jordan mentioned in a report with no other cue",
@@ -638,7 +1064,8 @@
           "sentence-initial"
         ],
         "name_features": [],
-        "boundary_tags": []
+        "boundary_tags": [],
+        "familiarity_basis": "author-judgment"
       },
       "ambiguity": {
         "level": "genuinely-ambiguous",
@@ -656,7 +1083,7 @@
     },
     {
       "id": "person/en/common-word-collision/june-name-and-month",
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "en",
       "title": "June as a person arriving in the month of June",
@@ -690,7 +1117,8 @@
           "sentence-initial"
         ],
         "name_features": [],
-        "boundary_tags": []
+        "boundary_tags": [],
+        "familiarity_basis": "author-judgment"
       },
       "ambiguity": {
         "level": "context-resolvable",
@@ -707,8 +1135,175 @@
       }
     },
     {
+      "id": "person/en/common-word-collision/lowercase-name-sandwiched-chat",
+      "schema_version": "1.1.0",
+      "entity_type": "PERSON",
+      "language": "en",
+      "title": "Common-word name in lowercase chat",
+      "why": "In lowercase chat 'hunter' is a name only if the verb frame asks for a person.",
+      "text": "can you ask hunter to send the file",
+      "expectations": [
+        {
+          "start": 12,
+          "end": 18,
+          "surface": "hunter",
+          "expect": "person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "latin",
+        "token_class": "single",
+        "collision_classes": [
+          "common-word"
+        ],
+        "context_types": [
+          "plain-prose",
+          "casing-variation"
+        ],
+        "name_features": [
+          "given-only"
+        ],
+        "boundary_tags": [],
+        "contrast_classes": [
+          "en-common-word-name"
+        ],
+        "familiarity_basis": "author-judgment"
+      },
+      "ambiguity": {
+        "level": "context-resolvable",
+        "kind": "lexical-homograph",
+        "alternative_reading": "common-noun",
+        "resolved_by": [
+          "predicate-or-argument",
+          "syntactic-position"
+        ],
+        "note": "'ask X to send the file' takes a person as X."
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/en/common-word-collision/mark-imperative-verb",
+      "schema_version": "1.1.0",
+      "entity_type": "PERSON",
+      "language": "en",
+      "title": "Mark as an imperative verb",
+      "why": "'Mark the boxes before they ship' is an instruction. A sentence-initial capitalized imperative verb has the shape of a name.",
+      "text": "Mark the boxes before they ship.",
+      "expectations": [
+        {
+          "start": 0,
+          "end": 4,
+          "surface": "Mark",
+          "expect": "not-person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "latin",
+        "token_class": "single",
+        "collision_classes": [
+          "common-word"
+        ],
+        "context_types": [
+          "plain-prose",
+          "sentence-initial",
+          "no-person"
+        ],
+        "name_features": [],
+        "boundary_tags": [],
+        "familiarity_basis": "author-judgment"
+      },
+      "ambiguity": {
+        "level": "context-resolvable",
+        "kind": "lexical-homograph",
+        "alternative_reading": "adjective-or-verb",
+        "resolved_by": [
+          "syntactic-position",
+          "predicate-or-argument"
+        ],
+        "note": "No comma follows 'Mark' and the next words form a verb phrase with an object, so it is an imperative."
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/en/common-word-collision/mark-vocative-comma",
+      "schema_version": "1.1.0",
+      "entity_type": "PERSON",
+      "language": "en",
+      "title": "Mark as a vocative",
+      "why": "Partner of mark-imperative-verb: the comma after the word and a following independent clause make it a vocative.",
+      "text": "Mark, the boxes are ready.",
+      "expectations": [
+        {
+          "start": 0,
+          "end": 4,
+          "surface": "Mark",
+          "expect": "person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "latin",
+        "token_class": "single",
+        "collision_classes": [
+          "common-word"
+        ],
+        "context_types": [
+          "plain-prose",
+          "sentence-initial",
+          "vocative"
+        ],
+        "name_features": [
+          "given-only"
+        ],
+        "boundary_tags": [
+          "punctuation-adjacent"
+        ],
+        "familiarity_basis": "author-judgment"
+      },
+      "ambiguity": {
+        "level": "context-resolvable",
+        "kind": "lexical-homograph",
+        "alternative_reading": "adjective-or-verb",
+        "resolved_by": [
+          "punctuation-or-format",
+          "syntactic-position"
+        ],
+        "note": "A comma separates the address term from a full clause."
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
       "id": "person/en/common-word-collision/may-june-months",
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "en",
       "title": "May and June both used as months",
@@ -742,7 +1337,8 @@
           "no-person"
         ],
         "name_features": [],
-        "boundary_tags": []
+        "boundary_tags": [],
+        "familiarity_basis": "author-judgment"
       },
       "ambiguity": {
         "level": "context-resolvable",
@@ -760,7 +1356,7 @@
     },
     {
       "id": "person/en/common-word-collision/may-month-and-person",
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "en",
       "title": "Same surface form 'May' as a month and as a person in one sentence",
@@ -793,7 +1389,8 @@
           "plain-prose"
         ],
         "name_features": [],
-        "boundary_tags": []
+        "boundary_tags": [],
+        "familiarity_basis": "author-judgment"
       },
       "ambiguity": {
         "level": "context-resolvable",
@@ -811,7 +1408,7 @@
     },
     {
       "id": "person/en/common-word-collision/may-person-addressee",
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "en",
       "title": "May as a person being asked a question",
@@ -838,7 +1435,8 @@
           "plain-prose"
         ],
         "name_features": [],
-        "boundary_tags": []
+        "boundary_tags": [],
+        "familiarity_basis": "author-judgment"
       },
       "ambiguity": {
         "level": "context-resolvable",
@@ -856,7 +1454,7 @@
     },
     {
       "id": "person/en/common-word-collision/may-with-day-number",
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "en",
       "title": "May followed by a day number",
@@ -886,7 +1484,8 @@
         "name_features": [],
         "boundary_tags": [
           "digit-adjacent"
-        ]
+        ],
+        "familiarity_basis": "author-judgment"
       },
       "ambiguity": {
         "level": "context-resolvable",
@@ -904,7 +1503,7 @@
     },
     {
       "id": "person/en/common-word-collision/miles-name-and-unit",
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "en",
       "title": "Given name 'Miles' next to the common noun 'miles'",
@@ -939,7 +1538,8 @@
         "name_features": [
           "full-name"
         ],
-        "boundary_tags": []
+        "boundary_tags": [],
+        "familiarity_basis": "author-judgment"
       },
       "ambiguity": {
         "level": "context-resolvable",
@@ -957,7 +1557,7 @@
     },
     {
       "id": "person/en/common-word-collision/occupational-surname-baker",
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "en",
       "title": "Occupation noun 'baker' beside the surname 'Baker'",
@@ -991,7 +1591,8 @@
         "name_features": [
           "full-name"
         ],
-        "boundary_tags": []
+        "boundary_tags": [],
+        "familiarity_basis": "author-judgment"
       },
       "ambiguity": {
         "level": "context-resolvable",
@@ -1009,7 +1610,7 @@
     },
     {
       "id": "person/en/common-word-collision/park-surname-with-title",
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "en",
       "title": "Park as a surname after Ms.",
@@ -1041,7 +1642,8 @@
         "boundary_tags": [
           "honorific-excluded",
           "abbreviation-period"
-        ]
+        ],
+        "familiarity_basis": "author-judgment"
       },
       "ambiguity": {
         "level": "context-resolvable",
@@ -1058,8 +1660,123 @@
       }
     },
     {
+      "id": "person/en/common-word-collision/passive-by-agents",
+      "schema_version": "1.1.0",
+      "entity_type": "PERSON",
+      "language": "en",
+      "title": "Two occupation-word surnames as passive agents",
+      "why": "'by Hunter and signed by Mason' places two capitalized words after 'by', the agent position of a passive clause.",
+      "text": "The report was reviewed by Hunter and signed by Mason.",
+      "expectations": [
+        {
+          "start": 27,
+          "end": 33,
+          "surface": "Hunter",
+          "expect": "person"
+        },
+        {
+          "start": 48,
+          "end": 53,
+          "surface": "Mason",
+          "expect": "person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "latin",
+        "token_class": "single",
+        "collision_classes": [
+          "common-word"
+        ],
+        "context_types": [
+          "plain-prose"
+        ],
+        "name_features": [
+          "surname-only"
+        ],
+        "boundary_tags": [],
+        "familiarity_basis": "author-judgment"
+      },
+      "ambiguity": {
+        "level": "context-resolvable",
+        "kind": "lexical-homograph",
+        "alternative_reading": "common-noun",
+        "resolved_by": [
+          "syntactic-position",
+          "predicate-or-argument"
+        ],
+        "note": "'reviewed by' and 'signed by' take agents, and a trade noun without a determiner is not grammatical there."
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/en/common-word-collision/quoted-title-rose",
+      "schema_version": "1.1.0",
+      "entity_type": "PERSON",
+      "language": "en",
+      "title": "Quoted work title that is also a given name",
+      "why": "A word in quotation marks introduced as a title names a poem, not a person.",
+      "text": "\"Rose\" is the title of her first poem.",
+      "expectations": [
+        {
+          "start": 1,
+          "end": 5,
+          "surface": "Rose",
+          "expect": "not-person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "latin",
+        "token_class": "single",
+        "collision_classes": [
+          "common-word",
+          "work-title"
+        ],
+        "context_types": [
+          "plain-prose",
+          "quotation",
+          "no-person"
+        ],
+        "name_features": [],
+        "boundary_tags": [
+          "quote-boundary"
+        ],
+        "familiarity_basis": "author-judgment"
+      },
+      "ambiguity": {
+        "level": "context-resolvable",
+        "kind": "category-collision",
+        "alternative_reading": "work-title",
+        "resolved_by": [
+          "fixed-phrase",
+          "punctuation-or-format"
+        ],
+        "note": "'is the title of her first poem' defines the quoted word as a title."
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
       "id": "person/en/common-word-collision/rose-given-name",
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "en",
       "title": "Rose as a person invited to an event",
@@ -1085,7 +1802,8 @@
           "plain-prose"
         ],
         "name_features": [],
-        "boundary_tags": []
+        "boundary_tags": [],
+        "familiarity_basis": "author-judgment"
       },
       "ambiguity": {
         "level": "context-resolvable",
@@ -1102,8 +1820,61 @@
       }
     },
     {
+      "id": "person/en/common-word-collision/rose-in-question",
+      "schema_version": "1.1.0",
+      "entity_type": "PERSON",
+      "language": "en",
+      "title": "Rose as the subject of a polar question",
+      "why": "A name that is also a flower appears after the auxiliary of a yes/no question, a structure in which a capitalized word cannot be read as sentence-initial.",
+      "text": "Did Rose call before the meeting?",
+      "expectations": [
+        {
+          "start": 4,
+          "end": 8,
+          "surface": "Rose",
+          "expect": "person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "latin",
+        "token_class": "single",
+        "collision_classes": [
+          "common-word"
+        ],
+        "context_types": [
+          "plain-prose"
+        ],
+        "name_features": [
+          "given-only"
+        ],
+        "boundary_tags": [],
+        "familiarity_basis": "author-judgment"
+      },
+      "ambiguity": {
+        "level": "context-resolvable",
+        "kind": "lexical-homograph",
+        "alternative_reading": "common-noun",
+        "resolved_by": [
+          "predicate-or-argument",
+          "syntactic-position"
+        ],
+        "note": "'Did X call' takes an agent subject; the capital letter survives because it is not sentence-initial."
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
       "id": "person/en/common-word-collision/rose-lowercase-verb",
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "en",
       "title": "Lowercase 'rose' as a past-tense verb",
@@ -1148,7 +1919,7 @@
     },
     {
       "id": "person/en/common-word-collision/sage-herb-or-person",
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "en",
       "title": "Sage as an herb, software or person",
@@ -1176,7 +1947,8 @@
           "sentence-initial"
         ],
         "name_features": [],
-        "boundary_tags": []
+        "boundary_tags": [],
+        "familiarity_basis": "author-judgment"
       },
       "ambiguity": {
         "level": "genuinely-ambiguous",
@@ -1194,7 +1966,7 @@
     },
     {
       "id": "person/en/common-word-collision/song-noun-compound",
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "en",
       "title": "Capitalized 'Song' as a noun at sentence start",
@@ -1222,7 +1994,8 @@
           "no-person"
         ],
         "name_features": [],
-        "boundary_tags": []
+        "boundary_tags": [],
+        "familiarity_basis": "author-judgment"
       },
       "ambiguity": {
         "level": "context-resolvable",
@@ -1240,7 +2013,7 @@
     },
     {
       "id": "person/en/common-word-collision/song-surname-with-title",
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "en",
       "title": "Song as a surname after Dr.",
@@ -1272,7 +2045,8 @@
         "boundary_tags": [
           "honorific-excluded",
           "abbreviation-period"
-        ]
+        ],
+        "familiarity_basis": "author-judgment"
       },
       "ambiguity": {
         "level": "context-resolvable",
@@ -1290,7 +2064,7 @@
     },
     {
       "id": "person/en/common-word-collision/summer-given-name-full",
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "en",
       "title": "Summer as a given name in a full name",
@@ -1319,7 +2093,8 @@
         "name_features": [
           "full-name"
         ],
-        "boundary_tags": []
+        "boundary_tags": [],
+        "familiarity_basis": "author-judgment"
       },
       "ambiguity": {
         "level": "context-resolvable",
@@ -1336,8 +2111,79 @@
       }
     },
     {
+      "id": "person/en/common-word-collision/virtue-nouns-in-abstract-list",
+      "schema_version": "1.1.0",
+      "entity_type": "PERSON",
+      "language": "en",
+      "title": "The same virtue nouns in an abstract list",
+      "why": "Partner of faith-and-hope-as-recipients: here the nouns are abstract terms in a list of values, not recipients.",
+      "text": "The charter lists Faith, Hope and Charity as virtues.",
+      "expectations": [
+        {
+          "start": 18,
+          "end": 23,
+          "surface": "Faith",
+          "expect": "not-person"
+        },
+        {
+          "start": 25,
+          "end": 29,
+          "surface": "Hope",
+          "expect": "not-person"
+        },
+        {
+          "start": 34,
+          "end": 41,
+          "surface": "Charity",
+          "expect": "not-person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "latin",
+        "token_class": "single",
+        "collision_classes": [
+          "common-word"
+        ],
+        "context_types": [
+          "plain-prose",
+          "list-or-enumeration",
+          "no-person"
+        ],
+        "name_features": [],
+        "boundary_tags": [
+          "punctuation-adjacent",
+          "adjacent-names"
+        ],
+        "contrast_classes": [
+          "en-common-word-name"
+        ],
+        "familiarity_basis": "author-judgment"
+      },
+      "ambiguity": {
+        "level": "context-resolvable",
+        "kind": "lexical-homograph",
+        "alternative_reading": "common-noun",
+        "resolved_by": [
+          "predicate-or-argument",
+          "fixed-phrase"
+        ],
+        "note": "'lists X as virtues' defines the words as abstract nouns."
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
       "id": "person/en/common-word-collision/winter-name-and-season",
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "en",
       "title": "Winter as a surname and as a season",
@@ -1376,7 +2222,8 @@
         "boundary_tags": [
           "honorific-excluded",
           "abbreviation-period"
-        ]
+        ],
+        "familiarity_basis": "author-judgment"
       },
       "ambiguity": {
         "level": "context-resolvable",
@@ -1394,7 +2241,7 @@
     },
     {
       "id": "person/en/common-word-collision/young-sentence-initial-adjective",
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "en",
       "title": "Capitalized 'Young' as an adjective at sentence start",
@@ -1422,7 +2269,8 @@
           "no-person"
         ],
         "name_features": [],
-        "boundary_tags": []
+        "boundary_tags": [],
+        "familiarity_basis": "author-judgment"
       },
       "ambiguity": {
         "level": "context-resolvable",
@@ -1440,7 +2288,7 @@
     },
     {
       "id": "person/en/common-word-collision/young-surname-with-title",
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "en",
       "title": "Young as a surname after Mr.",
@@ -1472,7 +2320,8 @@
         "boundary_tags": [
           "honorific-excluded",
           "abbreviation-period"
-        ]
+        ],
+        "familiarity_basis": "author-judgment"
       },
       "ambiguity": {
         "level": "context-resolvable",

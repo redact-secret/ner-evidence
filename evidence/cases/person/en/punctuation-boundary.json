@@ -2,7 +2,7 @@
   "cases": [
     {
       "id": "person/en/punctuation-boundary/age-in-commas",
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "en",
       "title": "Name followed by an age between commas",
@@ -32,7 +32,8 @@
         "boundary_tags": [
           "punctuation-adjacent",
           "digit-adjacent"
-        ]
+        ],
+        "familiarity_basis": "author-judgment"
       },
       "ambiguity": {
         "level": "unambiguous"
@@ -49,7 +50,7 @@
     },
     {
       "id": "person/en/punctuation-boundary/bibliography-style-authors",
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "en",
       "title": "Bibliography-style authors with initials",
@@ -88,7 +89,8 @@
           "comma-inverted",
           "abbreviation-period",
           "punctuation-adjacent"
-        ]
+        ],
+        "familiarity_basis": "author-judgment"
       },
       "ambiguity": {
         "level": "unambiguous"
@@ -105,7 +107,7 @@
     },
     {
       "id": "person/en/punctuation-boundary/comma-separated-list",
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "en",
       "title": "Three full names in a comma-separated list with 'and'",
@@ -146,7 +148,8 @@
         ],
         "boundary_tags": [
           "punctuation-adjacent"
-        ]
+        ],
+        "familiarity_basis": "author-judgment"
       },
       "ambiguity": {
         "level": "unambiguous"
@@ -163,7 +166,7 @@
     },
     {
       "id": "person/en/punctuation-boundary/ellipsis-around-name",
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "en",
       "title": "Name surrounded by ellipses",
@@ -192,7 +195,8 @@
         ],
         "boundary_tags": [
           "punctuation-adjacent"
-        ]
+        ],
+        "familiarity_basis": "author-judgment"
       },
       "ambiguity": {
         "level": "unambiguous"
@@ -209,7 +213,7 @@
     },
     {
       "id": "person/en/punctuation-boundary/email-header-display-name",
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "en",
       "title": "Display name before an angle-bracketed address",
@@ -237,7 +241,8 @@
         ],
         "boundary_tags": [
           "punctuation-adjacent"
-        ]
+        ],
+        "familiarity_basis": "author-judgment"
       },
       "ambiguity": {
         "level": "unambiguous"
@@ -254,7 +259,7 @@
     },
     {
       "id": "person/en/punctuation-boundary/exclamation-after-given-name",
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "en",
       "title": "Given name followed by an exclamation mark",
@@ -283,7 +288,8 @@
         ],
         "boundary_tags": [
           "punctuation-adjacent"
-        ]
+        ],
+        "familiarity_basis": "author-judgment"
       },
       "ambiguity": {
         "level": "unambiguous"
@@ -300,7 +306,7 @@
     },
     {
       "id": "person/en/punctuation-boundary/given-name-possessive",
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "en",
       "title": "Possessive after a given name",
@@ -329,7 +335,8 @@
         ],
         "boundary_tags": [
           "apostrophe-boundary"
-        ]
+        ],
+        "familiarity_basis": "author-judgment"
       },
       "ambiguity": {
         "level": "unambiguous"
@@ -345,8 +352,58 @@
       }
     },
     {
+      "id": "person/en/punctuation-boundary/html-bold-tag-name",
+      "schema_version": "1.1.0",
+      "entity_type": "PERSON",
+      "language": "en",
+      "title": "Name inside an HTML-style tag pair",
+      "why": "Angle-bracket tags touch the name; the tag text is markup and not part of the span.",
+      "text": "<b>Priya Raman</b> replied first.",
+      "expectations": [
+        {
+          "start": 3,
+          "end": 14,
+          "surface": "Priya Raman",
+          "expect": "person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "latin",
+        "token_class": "multi",
+        "collision_classes": [],
+        "context_types": [
+          "plain-prose",
+          "sentence-initial"
+        ],
+        "name_features": [
+          "full-name"
+        ],
+        "boundary_tags": [
+          "punctuation-adjacent"
+        ],
+        "contrast_classes": [
+          "en-markup-embedded"
+        ],
+        "familiarity_basis": "author-judgment"
+      },
+      "ambiguity": {
+        "level": "unambiguous"
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
       "id": "person/en/punctuation-boundary/hyphenated-surname-family",
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "en",
       "title": "Hyphenated double surname used for a family",
@@ -375,7 +432,8 @@
         ],
         "boundary_tags": [
           "hyphen-boundary"
-        ]
+        ],
+        "familiarity_basis": "author-judgment"
       },
       "ambiguity": {
         "level": "genuinely-ambiguous",
@@ -393,7 +451,7 @@
     },
     {
       "id": "person/en/punctuation-boundary/initials-before-sentence-period",
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "en",
       "title": "Initials end in a period that is followed by the sentence period",
@@ -423,7 +481,8 @@
         "boundary_tags": [
           "abbreviation-period",
           "punctuation-adjacent"
-        ]
+        ],
+        "familiarity_basis": "author-judgment"
       },
       "ambiguity": {
         "level": "unambiguous"
@@ -439,8 +498,209 @@
       }
     },
     {
+      "id": "person/en/punctuation-boundary/markdown-bold-name",
+      "schema_version": "1.1.0",
+      "entity_type": "PERSON",
+      "language": "en",
+      "title": "Name inside Markdown bold markers",
+      "why": "Emphasis markers sit directly against the name and are not part of it.",
+      "text": "**Dana Whitlow** approved the plan.",
+      "expectations": [
+        {
+          "start": 2,
+          "end": 14,
+          "surface": "Dana Whitlow",
+          "expect": "person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "rare",
+        "script": "latin",
+        "token_class": "multi",
+        "collision_classes": [],
+        "context_types": [
+          "plain-prose",
+          "sentence-initial"
+        ],
+        "name_features": [
+          "full-name"
+        ],
+        "boundary_tags": [
+          "punctuation-adjacent"
+        ],
+        "contrast_classes": [
+          "en-markup-embedded"
+        ],
+        "familiarity_basis": "author-judgment"
+      },
+      "ambiguity": {
+        "level": "unambiguous"
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/en/punctuation-boundary/markdown-italic-name",
+      "schema_version": "1.1.0",
+      "entity_type": "PERSON",
+      "language": "en",
+      "title": "Name inside Markdown italics",
+      "why": "Underscore emphasis markers touch the name on both sides and are not part of it.",
+      "text": "_Amina Okafor_ replied first.",
+      "expectations": [
+        {
+          "start": 1,
+          "end": 13,
+          "surface": "Amina Okafor",
+          "expect": "person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "rare",
+        "script": "latin",
+        "token_class": "multi",
+        "collision_classes": [],
+        "context_types": [
+          "plain-prose",
+          "sentence-initial"
+        ],
+        "name_features": [
+          "full-name"
+        ],
+        "boundary_tags": [
+          "punctuation-adjacent"
+        ],
+        "contrast_classes": [
+          "en-markup-embedded"
+        ],
+        "familiarity_basis": "author-judgment"
+      },
+      "ambiguity": {
+        "level": "unambiguous"
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/en/punctuation-boundary/markdown-link-text-name",
+      "schema_version": "1.1.0",
+      "entity_type": "PERSON",
+      "language": "en",
+      "title": "Name as Markdown link text",
+      "why": "Square brackets and a fragment target surround the link text; only the text is the name.",
+      "text": "See [Dana Whitlow](#profile) for details.",
+      "expectations": [
+        {
+          "start": 5,
+          "end": 17,
+          "surface": "Dana Whitlow",
+          "expect": "person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "rare",
+        "script": "latin",
+        "token_class": "multi",
+        "collision_classes": [],
+        "context_types": [
+          "plain-prose",
+          "parenthetical"
+        ],
+        "name_features": [
+          "full-name"
+        ],
+        "boundary_tags": [
+          "punctuation-adjacent",
+          "parenthetical-boundary"
+        ],
+        "contrast_classes": [
+          "en-markup-embedded"
+        ],
+        "familiarity_basis": "author-judgment"
+      },
+      "ambiguity": {
+        "level": "unambiguous"
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/en/punctuation-boundary/name-before-repeated-exclamation",
+      "schema_version": "1.1.0",
+      "entity_type": "PERSON",
+      "language": "en",
+      "title": "Name before repeated exclamation marks",
+      "why": "Repeated terminal punctuation directly after a given name is not part of the name.",
+      "text": "Thanks, Dana!!!",
+      "expectations": [
+        {
+          "start": 8,
+          "end": 12,
+          "surface": "Dana",
+          "expect": "person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "latin",
+        "token_class": "single",
+        "collision_classes": [],
+        "context_types": [
+          "plain-prose",
+          "vocative"
+        ],
+        "name_features": [
+          "given-only"
+        ],
+        "boundary_tags": [
+          "punctuation-adjacent"
+        ],
+        "contrast_classes": [
+          "en-punctuation-dense"
+        ],
+        "familiarity_basis": "author-judgment"
+      },
+      "ambiguity": {
+        "level": "unambiguous"
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
       "id": "person/en/punctuation-boundary/name-between-em-dashes",
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "en",
       "title": "Full name set off by em dashes",
@@ -470,7 +730,8 @@
         "boundary_tags": [
           "punctuation-adjacent",
           "parenthetical-boundary"
-        ]
+        ],
+        "familiarity_basis": "author-judgment"
       },
       "ambiguity": {
         "level": "unambiguous"
@@ -487,7 +748,7 @@
     },
     {
       "id": "person/en/punctuation-boundary/name-in-parentheses",
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "en",
       "title": "Full name wrapped in parentheses",
@@ -516,7 +777,8 @@
         ],
         "boundary_tags": [
           "parenthetical-boundary"
-        ]
+        ],
+        "familiarity_basis": "author-judgment"
       },
       "ambiguity": {
         "level": "unambiguous"
@@ -532,8 +794,246 @@
       }
     },
     {
+      "id": "person/en/punctuation-boundary/nested-quotes-around-name",
+      "schema_version": "1.1.0",
+      "entity_type": "PERSON",
+      "language": "en",
+      "title": "Name inside nested quotation marks",
+      "why": "Single quotes inside double quotes touch the name; neither pair belongs to the span.",
+      "text": "He said, \"Ask 'Priya Raman' first.\"",
+      "expectations": [
+        {
+          "start": 15,
+          "end": 26,
+          "surface": "Priya Raman",
+          "expect": "person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "latin",
+        "token_class": "multi",
+        "collision_classes": [],
+        "context_types": [
+          "plain-prose",
+          "quotation",
+          "dialogue"
+        ],
+        "name_features": [
+          "full-name"
+        ],
+        "boundary_tags": [
+          "quote-boundary",
+          "punctuation-adjacent"
+        ],
+        "contrast_classes": [
+          "en-punctuation-dense"
+        ],
+        "familiarity_basis": "author-judgment"
+      },
+      "ambiguity": {
+        "level": "unambiguous"
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/en/punctuation-boundary/parenthetical-contact-roles",
+      "schema_version": "1.1.0",
+      "entity_type": "PERSON",
+      "language": "en",
+      "title": "Two names in a parenthetical with role labels and a slash",
+      "why": "Brackets, labels, colons and a slash around two names; the slash separates the contacts.",
+      "text": "Contacts (primary: Dana Whitlow / backup: Amina Okafor).",
+      "expectations": [
+        {
+          "start": 19,
+          "end": 31,
+          "surface": "Dana Whitlow",
+          "expect": "person"
+        },
+        {
+          "start": 42,
+          "end": 54,
+          "surface": "Amina Okafor",
+          "expect": "person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "rare",
+        "script": "latin",
+        "token_class": "multi",
+        "collision_classes": [],
+        "context_types": [
+          "plain-prose",
+          "parenthetical",
+          "list-or-enumeration"
+        ],
+        "name_features": [
+          "full-name"
+        ],
+        "boundary_tags": [
+          "parenthetical-boundary",
+          "punctuation-adjacent",
+          "adjacent-names"
+        ],
+        "contrast_classes": [
+          "en-punctuation-dense",
+          "en-key-value-label"
+        ],
+        "familiarity_basis": "author-judgment"
+      },
+      "ambiguity": {
+        "level": "unambiguous"
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/en/punctuation-boundary/possessive-coordination",
+      "schema_version": "1.1.0",
+      "entity_type": "PERSON",
+      "language": "en",
+      "title": "Two possessive given names in coordination",
+      "why": "Two possessives joined by 'and': each apostrophe-s is excluded from its span.",
+      "text": "Dana's and Amina's reports were merged.",
+      "expectations": [
+        {
+          "start": 0,
+          "end": 4,
+          "surface": "Dana",
+          "expect": "person"
+        },
+        {
+          "start": 11,
+          "end": 16,
+          "surface": "Amina",
+          "expect": "person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "latin",
+        "token_class": "single",
+        "collision_classes": [],
+        "context_types": [
+          "plain-prose",
+          "possessive",
+          "list-or-enumeration"
+        ],
+        "name_features": [
+          "given-only"
+        ],
+        "boundary_tags": [
+          "apostrophe-boundary",
+          "adjacent-names"
+        ],
+        "contrast_classes": [
+          "en-punctuation-dense"
+        ],
+        "familiarity_basis": "author-judgment"
+      },
+      "ambiguity": {
+        "level": "unambiguous"
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/en/punctuation-boundary/semicolon-inverted-author-list",
+      "schema_version": "1.1.0",
+      "entity_type": "PERSON",
+      "language": "en",
+      "title": "Semicolon-separated inverted author list with initials",
+      "why": "Inverted names with initials separated by semicolons; each initial's period is part of its span and the semicolon is not.",
+      "text": "Authors: Whitlow, D.; Okafor, A.; Raman, P.",
+      "expectations": [
+        {
+          "start": 9,
+          "end": 20,
+          "surface": "Whitlow, D.",
+          "expect": "person"
+        },
+        {
+          "start": 22,
+          "end": 32,
+          "surface": "Okafor, A.",
+          "expect": "person"
+        },
+        {
+          "start": 34,
+          "end": 43,
+          "surface": "Raman, P.",
+          "expect": "person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "rare",
+        "script": "latin",
+        "token_class": "multi",
+        "collision_classes": [],
+        "context_types": [
+          "list-or-enumeration",
+          "structured-text"
+        ],
+        "name_features": [
+          "full-name",
+          "inverted-order",
+          "initials"
+        ],
+        "boundary_tags": [
+          "comma-inverted",
+          "abbreviation-period",
+          "punctuation-adjacent",
+          "adjacent-names"
+        ],
+        "contrast_classes": [
+          "en-punctuation-dense",
+          "en-delimited-row"
+        ],
+        "familiarity_basis": "author-judgment"
+      },
+      "ambiguity": {
+        "level": "unambiguous"
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
       "id": "person/en/punctuation-boundary/slash-separated-reviewers",
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "en",
       "title": "Two surnames separated by a slash",
@@ -569,7 +1069,8 @@
         "boundary_tags": [
           "punctuation-adjacent",
           "no-space"
-        ]
+        ],
+        "familiarity_basis": "author-judgment"
       },
       "ambiguity": {
         "level": "unambiguous"
@@ -586,7 +1087,7 @@
     },
     {
       "id": "person/en/punctuation-boundary/speaker-label-colon",
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "en",
       "title": "Speaker label ending in a colon",
@@ -616,7 +1117,8 @@
         ],
         "boundary_tags": [
           "punctuation-adjacent"
-        ]
+        ],
+        "familiarity_basis": "author-judgment"
       },
       "ambiguity": {
         "level": "unambiguous"
@@ -633,7 +1135,7 @@
     },
     {
       "id": "person/en/punctuation-boundary/title-surname-possessive",
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "en",
       "title": "Title, surname and possessive 's",
@@ -665,7 +1167,8 @@
           "honorific-excluded",
           "apostrophe-boundary",
           "abbreviation-period"
-        ]
+        ],
+        "familiarity_basis": "author-judgment"
       },
       "ambiguity": {
         "level": "unambiguous"

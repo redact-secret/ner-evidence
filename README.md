@@ -2,9 +2,10 @@
 
 Canonical, model-neutral NER knowledge and evidence for the FastNER ecosystem.
 
-> **Status:** Private research phase, Alpha 1. Contracts are defined but not stable (schema `1.0.0`,
-> taxonomy `0.1.0`, manifest/consumer contract `0.1.0`). Content is `internal-only` until the repository license
-> is chosen.
+> **Status:** Private research phase, Beta 1. Pinned release: `person-en-ko-beta.1-1dc0b13fe0ff` (digest
+> `1dc0b13fe0ff13e24616fef6d9c4b7aec3b9ab9672e531a2a02bcfffdac46ba9`; see `docs/releases/beta.1.md`). Contracts are defined but not stable (case schema `1.1.0`, taxonomy `0.2.0`,
+> manifest/consumer contract `0.1.0`). Content is `internal-only` until the repository license is chosen. What changed
+> since Alpha 1: [`docs/beta-1-changes.md`](docs/beta-1-changes.md).
 
 This repository is intended to become the long-term source of truth for named-entity evidence, corpus provenance, taxonomy, authored cases, ambiguity cases, and evaluation-ready projections.
 
@@ -85,7 +86,8 @@ surface-form lookup alone cannot resolve the ambiguity
 ## Evidence classes
 
 `corpus-backed`, `reference-backed`, `tool-corroborated`, `authored-baseline`, `authored-adversarial` and
-`research-needed` (see `taxonomy/person.taxonomy.json`). The Alpha corpus is entirely project-authored.
+`research-needed` (see `taxonomy/person.taxonomy.json`). The Alpha corpus was entirely project-authored; Beta 1 adds `reference-backed` cases (cited public rules) and
+reference-checked familiarity labels, and still contains no corpus-backed case.
 
 A majority vote among NER models is not ground truth.
 
@@ -118,6 +120,10 @@ Standard-library Python only (3.10+). Start with [`docs/authoring-guide.md`](doc
 | [`docs/provenance-and-privacy-policy.md`](docs/provenance-and-privacy-policy.md) | Provenance, licensing, privacy, safe-data policy |
 | [`docs/fixture-projection.md`](docs/fixture-projection.md) | Deterministic projection and lineage rules |
 | [`docs/snapshot-and-consumer-contract.md`](docs/snapshot-and-consumer-contract.md) | Snapshot manifest, digests, consumer contract |
+| [`docs/corpus-candidates.md`](docs/corpus-candidates.md) | Corpora considered for import and what blocks them |
+| [`docs/review-workflow.md`](docs/review-workflow.md) | Independent review: registry, ledger, derived status, blind packets |
+| [`docs/contrast-classes.md`](docs/contrast-classes.md) | Authored contrast classes and their rationale |
+| [`docs/familiarity-and-rarity.md`](docs/familiarity-and-rarity.md) | What `common` / `rare` / `novel` mean, their documented basis, reference bands |
 | [`docs/slice-tracking.md`](docs/slice-tracking.md), [`docs/evidence-coverage.md`](docs/evidence-coverage.md) | Slice targets, counts, known gaps |
 | [`docs/handoff-ner-eval.md`](docs/handoff-ner-eval.md) | What `ner-eval` must decide itself |
 
@@ -131,11 +137,13 @@ FastNER qualification may use this evidence plus product-owned regression, adver
 
 ## Public-release gate
 
-Before public release (status at Alpha 1):
+Before public release (status at Beta 1 content):
 
 - licensing/provenance policy complete: **policy written and enforced; repository license not yet chosen, and the
   authored source has no independent legal review** (`python -m ner_evidence provenance --public-release` fails on purpose);
 - privacy contribution policy explicit: **done**;
 - snapshot/release format defined: **done (version `0.1.0`)**;
-- EN/KR PERSON taxonomy reviewed: **not done; every case is author-only reviewed**;
+- EN/KR PERSON taxonomy reviewed: **not done; the independent review workflow exists and reviews are requested, but no
+  independent verdict is recorded, so every case is still author-only** (`docs/review-workflow.md`);
+- reference sources legally reviewed: **not done; every reference source has legal review `pending`**;
 - sensitive-data checks running in CI: **done** (`.github/workflows/ci.yml`).

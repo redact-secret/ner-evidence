@@ -2,7 +2,7 @@
   "cases": [
     {
       "id": "person/en/negative-no-person/album-title-surname",
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "en",
       "title": "An album whose title is a bare surname",
@@ -33,7 +33,8 @@
         "boundary_tags": [
           "quote-boundary",
           "punctuation-adjacent"
-        ]
+        ],
+        "familiarity_basis": "author-judgment"
       },
       "ambiguity": {
         "level": "context-resolvable",
@@ -57,7 +58,7 @@
     },
     {
       "id": "person/en/negative-no-person/alzheimers-disease-eponym",
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "en",
       "title": "Alzheimer's disease as an eponymous term",
@@ -105,7 +106,7 @@
     },
     {
       "id": "person/en/negative-no-person/fahrenheit-scale-eponym",
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "en",
       "title": "Fahrenheit as a temperature scale",
@@ -152,7 +153,7 @@
     },
     {
       "id": "person/en/negative-no-person/film-title-given-name",
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "en",
       "title": "A film whose title is a given name",
@@ -182,7 +183,8 @@
         "name_features": [],
         "boundary_tags": [
           "quote-boundary"
-        ]
+        ],
+        "familiarity_basis": "author-judgment"
       },
       "ambiguity": {
         "level": "context-resolvable",
@@ -206,7 +208,7 @@
     },
     {
       "id": "person/en/negative-no-person/grace-period-term",
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "en",
       "title": "Grace Period as a fixed term",
@@ -233,7 +235,8 @@
           "no-person"
         ],
         "name_features": [],
-        "boundary_tags": []
+        "boundary_tags": [],
+        "familiarity_basis": "author-judgment"
       },
       "ambiguity": {
         "level": "context-resolvable",
@@ -251,7 +254,7 @@
     },
     {
       "id": "person/en/negative-no-person/hunter-green-colour",
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "en",
       "title": "Hunter Green as a colour name",
@@ -279,7 +282,8 @@
           "no-person"
         ],
         "name_features": [],
-        "boundary_tags": []
+        "boundary_tags": [],
+        "familiarity_basis": "author-judgment"
       },
       "ambiguity": {
         "level": "context-resolvable",
@@ -297,7 +301,7 @@
     },
     {
       "id": "person/en/negative-no-person/johnson-report-document",
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "en",
       "title": "Johnson Report as a named document",
@@ -324,7 +328,8 @@
           "no-person"
         ],
         "name_features": [],
-        "boundary_tags": []
+        "boundary_tags": [],
+        "familiarity_basis": "author-judgment"
       },
       "ambiguity": {
         "level": "context-resolvable",
@@ -342,7 +347,7 @@
     },
     {
       "id": "person/en/negative-no-person/newton-unit-lowercase",
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "en",
       "title": "Lowercase newtons as a unit",
@@ -387,7 +392,7 @@
     },
     {
       "id": "person/en/negative-no-person/nobel-prize-eponym",
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "en",
       "title": "Nobel Prize as an eponymous award",
@@ -434,7 +439,7 @@
     },
     {
       "id": "person/en/negative-no-person/novel-title-quoted-ordinary-name",
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "en",
       "title": "A novel whose title is a plain given name followed by a surname",
@@ -464,7 +469,8 @@
         "name_features": [],
         "boundary_tags": [
           "quote-boundary"
-        ]
+        ],
+        "familiarity_basis": "author-judgment"
       },
       "ambiguity": {
         "level": "context-resolvable",
@@ -488,7 +494,7 @@
     },
     {
       "id": "person/en/negative-no-person/ohms-law-eponym",
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "en",
       "title": "Ohm's law as an eponymous term",
@@ -537,7 +543,7 @@
     },
     {
       "id": "person/en/negative-no-person/parkinsons-disease-eponym",
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "en",
       "title": "Parkinson's disease as an eponymous term",
@@ -585,7 +591,7 @@
     },
     {
       "id": "person/en/negative-no-person/pythagorean-theorem-eponym",
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "en",
       "title": "Pythagorean theorem as an eponymous term",
@@ -630,7 +636,7 @@
     },
     {
       "id": "person/en/negative-no-person/rose-bowl-event",
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "en",
       "title": "Rose Bowl as an event",
@@ -658,7 +664,8 @@
           "no-person"
         ],
         "name_features": [],
-        "boundary_tags": []
+        "boundary_tags": [],
+        "familiarity_basis": "author-judgment"
       },
       "ambiguity": {
         "level": "context-resolvable",
@@ -676,7 +683,7 @@
     },
     {
       "id": "person/en/negative-no-person/song-title-given-name",
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "en",
       "title": "A song whose title is a given name",
@@ -707,7 +714,8 @@
         "name_features": [],
         "boundary_tags": [
           "quote-boundary"
-        ]
+        ],
+        "familiarity_basis": "author-judgment"
       },
       "ambiguity": {
         "level": "context-resolvable",
@@ -731,7 +739,7 @@
     },
     {
       "id": "person/en/negative-no-person/summer-collection",
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "en",
       "title": "Summer Collection as a product line",
@@ -760,7 +768,8 @@
           "no-person"
         ],
         "name_features": [],
-        "boundary_tags": []
+        "boundary_tags": [],
+        "familiarity_basis": "author-judgment"
       },
       "ambiguity": {
         "level": "context-resolvable",

@@ -2,7 +2,7 @@
   "cases": [
     {
       "id": "person/en/casing-variation/all-caps-headline-full-name",
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "en",
       "title": "Full name inside an ALL-CAPS headline",
@@ -30,7 +30,8 @@
         "name_features": [
           "full-name"
         ],
-        "boundary_tags": []
+        "boundary_tags": [],
+        "familiarity_basis": "author-judgment"
       },
       "ambiguity": {
         "level": "unambiguous"
@@ -47,7 +48,7 @@
     },
     {
       "id": "person/en/casing-variation/lowercase-chat-full-name",
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "en",
       "title": "Full name written entirely in lowercase",
@@ -74,7 +75,8 @@
         "name_features": [
           "full-name"
         ],
-        "boundary_tags": []
+        "boundary_tags": [],
+        "familiarity_basis": "author-judgment"
       },
       "ambiguity": {
         "level": "unambiguous"
@@ -91,7 +93,7 @@
     },
     {
       "id": "person/en/casing-variation/lowercase-given-name-vocative",
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "en",
       "title": "Lowercase given name as an addressee",
@@ -121,7 +123,8 @@
         ],
         "boundary_tags": [
           "punctuation-adjacent"
-        ]
+        ],
+        "familiarity_basis": "author-judgment"
       },
       "ambiguity": {
         "level": "unambiguous"
@@ -138,7 +141,7 @@
     },
     {
       "id": "person/en/casing-variation/lowercase-month-and-name-pair",
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "en",
       "title": "Lowercase 'may' as both modal and name candidate",
@@ -172,7 +175,8 @@
           "casing-variation"
         ],
         "name_features": [],
-        "boundary_tags": []
+        "boundary_tags": [],
+        "familiarity_basis": "author-judgment"
       },
       "ambiguity": {
         "level": "context-resolvable",
@@ -190,7 +194,7 @@
     },
     {
       "id": "person/en/casing-variation/lowercase-name-after-title",
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "en",
       "title": "Lowercase surname after a title in casual text",
@@ -220,7 +224,8 @@
         ],
         "boundary_tags": [
           "honorific-excluded"
-        ]
+        ],
+        "familiarity_basis": "author-judgment"
       },
       "ambiguity": {
         "level": "unambiguous"
@@ -237,7 +242,7 @@
     },
     {
       "id": "person/en/casing-variation/mixed-case-brand-like-name",
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "en",
       "title": "Name with an internal capital in the middle of a word",
@@ -265,7 +270,8 @@
         "name_features": [
           "full-name"
         ],
-        "boundary_tags": []
+        "boundary_tags": [],
+        "familiarity_basis": "author-judgment"
       },
       "ambiguity": {
         "level": "unambiguous"
@@ -282,7 +288,7 @@
     },
     {
       "id": "person/en/casing-variation/title-case-headline-with-person",
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "en",
       "title": "Title Case headline that names a person",
@@ -311,7 +317,8 @@
         "name_features": [
           "full-name"
         ],
-        "boundary_tags": []
+        "boundary_tags": [],
+        "familiarity_basis": "author-judgment"
       },
       "ambiguity": {
         "level": "context-resolvable",
@@ -329,7 +336,7 @@
     },
     {
       "id": "person/en/casing-variation/title-case-headline-with-surname-decoy",
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "en",
       "title": "Title Case headline where an occupation noun looks like a surname",
@@ -357,7 +364,8 @@
           "no-person"
         ],
         "name_features": [],
-        "boundary_tags": []
+        "boundary_tags": [],
+        "familiarity_basis": "author-judgment"
       },
       "ambiguity": {
         "level": "context-resolvable",

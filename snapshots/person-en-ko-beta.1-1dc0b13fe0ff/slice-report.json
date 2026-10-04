@@ -1,0 +1,2052 @@
+{
+  "review_ledger": {
+    "events": 364,
+    "independent_reviewers": {
+      "en": 0,
+      "ko": 0
+    },
+    "reviewed_cases": {
+      "factual": {
+        "en": 0,
+        "ko": 0
+      },
+      "linguistic": {
+        "en": 0,
+        "ko": 0
+      }
+    },
+    "open_requests": {
+      "factual": {
+        "en": 34,
+        "ko": 30
+      },
+      "linguistic": {
+        "en": 113,
+        "ko": 179
+      }
+    },
+    "disputed": [],
+    "stale_events": 8,
+    "uncounted_verdicts": 0
+  },
+  "cases": 872,
+  "fixtures": 4803,
+  "cases_by_language": {
+    "en": 390,
+    "ko": 482
+  },
+  "fixtures_by_language": {
+    "en": 1945,
+    "ko": 2858
+  },
+  "mentions": {
+    "all": {
+      "either": 42,
+      "person": 727,
+      "not-person": 279
+    },
+    "en": {
+      "either": 25,
+      "person": 300,
+      "not-person": 135
+    },
+    "ko": {
+      "person": 427,
+      "not-person": 144,
+      "either": 17
+    }
+  },
+  "dimensions": {
+    "language": {
+      "en": {
+        "all": 390,
+        "en": 390,
+        "ko": 0
+      },
+      "ko": {
+        "all": 482,
+        "en": 0,
+        "ko": 482
+      }
+    },
+    "name_commonness": {
+      "common": {
+        "all": 525,
+        "en": 244,
+        "ko": 281
+      },
+      "not-applicable": {
+        "all": 98,
+        "en": 10,
+        "ko": 88
+      },
+      "uncommon": {
+        "all": 249,
+        "en": 136,
+        "ko": 113
+      }
+    },
+    "familiarity": {
+      "common": {
+        "all": 525,
+        "en": 244,
+        "ko": 281
+      },
+      "not-applicable": {
+        "all": 98,
+        "en": 10,
+        "ko": 88
+      },
+      "novel": {
+        "all": 60,
+        "en": 40,
+        "ko": 20
+      },
+      "rare": {
+        "all": 189,
+        "en": 96,
+        "ko": 93
+      }
+    },
+    "script": {
+      "han": {
+        "all": 9,
+        "en": 0,
+        "ko": 9
+      },
+      "hangul": {
+        "all": 429,
+        "en": 0,
+        "ko": 429
+      },
+      "latin": {
+        "all": 426,
+        "en": 390,
+        "ko": 36
+      },
+      "mixed": {
+        "all": 8,
+        "en": 0,
+        "ko": 8
+      }
+    },
+    "token_class": {
+      "multi": {
+        "all": 279,
+        "en": 218,
+        "ko": 61
+      },
+      "single": {
+        "all": 593,
+        "en": 172,
+        "ko": 421
+      }
+    },
+    "ambiguity": {
+      "ambiguous": {
+        "all": 407,
+        "en": 212,
+        "ko": 195
+      },
+      "unambiguous": {
+        "all": 465,
+        "en": 178,
+        "ko": 287
+      }
+    },
+    "ambiguity_level": {
+      "context-resolvable": {
+        "all": 365,
+        "en": 187,
+        "ko": 178
+      },
+      "genuinely-ambiguous": {
+        "all": 42,
+        "en": 25,
+        "ko": 17
+      },
+      "unambiguous": {
+        "all": 465,
+        "en": 178,
+        "ko": 287
+      }
+    },
+    "collision_classes": {
+      "common-word": {
+        "all": 226,
+        "en": 100,
+        "ko": 126
+      },
+      "eponym": {
+        "all": 11,
+        "en": 9,
+        "ko": 2
+      },
+      "location": {
+        "all": 89,
+        "en": 54,
+        "ko": 35
+      },
+      "none": {
+        "all": 485,
+        "en": 194,
+        "ko": 291
+      },
+      "organization": {
+        "all": 72,
+        "en": 41,
+        "ko": 31
+      },
+      "product-brand": {
+        "all": 31,
+        "en": 19,
+        "ko": 12
+      },
+      "temporal": {
+        "all": 23,
+        "en": 16,
+        "ko": 7
+      },
+      "work-title": {
+        "all": 9,
+        "en": 7,
+        "ko": 2
+      }
+    },
+    "context_types": {
+      "casing-variation": {
+        "all": 14,
+        "en": 14,
+        "ko": 0
+      },
+      "dialogue": {
+        "all": 30,
+        "en": 13,
+        "ko": 17
+      },
+      "list-or-enumeration": {
+        "all": 55,
+        "en": 23,
+        "ko": 32
+      },
+      "mixed-script-sentence": {
+        "all": 49,
+        "en": 5,
+        "ko": 44
+      },
+      "no-person": {
+        "all": 196,
+        "en": 97,
+        "ko": 99
+      },
+      "parenthetical": {
+        "all": 24,
+        "en": 7,
+        "ko": 17
+      },
+      "particle-attached": {
+        "all": 395,
+        "en": 0,
+        "ko": 395
+      },
+      "plain-prose": {
+        "all": 792,
+        "en": 338,
+        "ko": 454
+      },
+      "possessive": {
+        "all": 15,
+        "en": 15,
+        "ko": 0
+      },
+      "quotation": {
+        "all": 32,
+        "en": 21,
+        "ko": 11
+      },
+      "sentence-initial": {
+        "all": 352,
+        "en": 122,
+        "ko": 230
+      },
+      "structured-text": {
+        "all": 76,
+        "en": 55,
+        "ko": 21
+      },
+      "title-honorific": {
+        "all": 102,
+        "en": 44,
+        "ko": 58
+      },
+      "vocative": {
+        "all": 19,
+        "en": 9,
+        "ko": 10
+      }
+    },
+    "name_features": {
+      "apostrophe": {
+        "all": 3,
+        "en": 3,
+        "ko": 0
+      },
+      "diacritics": {
+        "all": 4,
+        "en": 4,
+        "ko": 0
+      },
+      "full-name": {
+        "all": 465,
+        "en": 163,
+        "ko": 302
+      },
+      "generational-suffix": {
+        "all": 3,
+        "en": 3,
+        "ko": 0
+      },
+      "given-only": {
+        "all": 123,
+        "en": 56,
+        "ko": 67
+      },
+      "hyphenated": {
+        "all": 32,
+        "en": 12,
+        "ko": 20
+      },
+      "initials": {
+        "all": 9,
+        "en": 8,
+        "ko": 1
+      },
+      "inverted-order": {
+        "all": 6,
+        "en": 6,
+        "ko": 0
+      },
+      "ko-2-syllable": {
+        "all": 6,
+        "en": 0,
+        "ko": 6
+      },
+      "ko-3-syllable": {
+        "all": 224,
+        "en": 0,
+        "ko": 224
+      },
+      "ko-4-syllable": {
+        "all": 17,
+        "en": 0,
+        "ko": 17
+      },
+      "ko-given-name-is-common-noun": {
+        "all": 39,
+        "en": 0,
+        "ko": 39
+      },
+      "ko-given-only": {
+        "all": 62,
+        "en": 0,
+        "ko": 62
+      },
+      "ko-hanja": {
+        "all": 11,
+        "en": 0,
+        "ko": 11
+      },
+      "ko-rare-surname": {
+        "all": 72,
+        "en": 0,
+        "ko": 72
+      },
+      "ko-romanized": {
+        "all": 32,
+        "en": 0,
+        "ko": 32
+      },
+      "ko-romanized-western-order": {
+        "all": 7,
+        "en": 0,
+        "ko": 7
+      },
+      "ko-spaced": {
+        "all": 8,
+        "en": 0,
+        "ko": 8
+      },
+      "ko-surname-given": {
+        "all": 242,
+        "en": 0,
+        "ko": 242
+      },
+      "ko-two-syllable-surname": {
+        "all": 19,
+        "en": 0,
+        "ko": 19
+      },
+      "middle-name": {
+        "all": 4,
+        "en": 4,
+        "ko": 0
+      },
+      "mononym": {
+        "all": 1,
+        "en": 1,
+        "ko": 0
+      },
+      "none": {
+        "all": 224,
+        "en": 125,
+        "ko": 99
+      },
+      "surname-only": {
+        "all": 58,
+        "en": 44,
+        "ko": 14
+      },
+      "surname-particle": {
+        "all": 9,
+        "en": 9,
+        "ko": 0
+      }
+    },
+    "boundary_tags": {
+      "abbreviation-period": {
+        "all": 45,
+        "en": 39,
+        "ko": 6
+      },
+      "adjacent-names": {
+        "all": 52,
+        "en": 22,
+        "ko": 30
+      },
+      "apostrophe-boundary": {
+        "all": 19,
+        "en": 19,
+        "ko": 0
+      },
+      "comma-inverted": {
+        "all": 6,
+        "en": 6,
+        "ko": 0
+      },
+      "decomposition-sensitive": {
+        "all": 7,
+        "en": 7,
+        "ko": 0
+      },
+      "digit-adjacent": {
+        "all": 14,
+        "en": 8,
+        "ko": 6
+      },
+      "extra-spacing": {
+        "all": 11,
+        "en": 0,
+        "ko": 11
+      },
+      "honorific-excluded": {
+        "all": 98,
+        "en": 42,
+        "ko": 56
+      },
+      "hyphen-boundary": {
+        "all": 37,
+        "en": 15,
+        "ko": 22
+      },
+      "mixed-script-boundary": {
+        "all": 50,
+        "en": 5,
+        "ko": 45
+      },
+      "no-space": {
+        "all": 30,
+        "en": 8,
+        "ko": 22
+      },
+      "none": {
+        "all": 209,
+        "en": 195,
+        "ko": 14
+      },
+      "parenthetical-boundary": {
+        "all": 25,
+        "en": 7,
+        "ko": 18
+      },
+      "particle-excluded": {
+        "all": 389,
+        "en": 0,
+        "ko": 389
+      },
+      "punctuation-adjacent": {
+        "all": 138,
+        "en": 88,
+        "ko": 50
+      },
+      "quote-boundary": {
+        "all": 32,
+        "en": 21,
+        "ko": 11
+      },
+      "suffix-excluded": {
+        "all": 20,
+        "en": 1,
+        "ko": 19
+      }
+    },
+    "kinds": {
+      "either": {
+        "all": 42,
+        "en": 25,
+        "ko": 17
+      },
+      "not-person": {
+        "all": 262,
+        "en": 128,
+        "ko": 134
+      },
+      "person": {
+        "all": 634,
+        "en": 268,
+        "ko": 366
+      }
+    },
+    "group": {
+      "adjacent-names": {
+        "all": 14,
+        "en": 8,
+        "ko": 6
+      },
+      "casing-variation": {
+        "all": 8,
+        "en": 8,
+        "ko": 0
+      },
+      "common-name": {
+        "all": 16,
+        "en": 8,
+        "ko": 8
+      },
+      "common-word-collision": {
+        "all": 93,
+        "en": 45,
+        "ko": 48
+      },
+      "context-ambiguity": {
+        "all": 32,
+        "en": 15,
+        "ko": 17
+      },
+      "informal-given-name": {
+        "all": 7,
+        "en": 0,
+        "ko": 7
+      },
+      "list-and-structured-text": {
+        "all": 45,
+        "en": 37,
+        "ko": 8
+      },
+      "location-collision": {
+        "all": 58,
+        "en": 30,
+        "ko": 28
+      },
+      "mixed-script": {
+        "all": 48,
+        "en": 5,
+        "ko": 43
+      },
+      "name-structure": {
+        "all": 22,
+        "en": 22,
+        "ko": 0
+      },
+      "negative-no-person": {
+        "all": 24,
+        "en": 16,
+        "ko": 8
+      },
+      "organization-collision": {
+        "all": 77,
+        "en": 45,
+        "ko": 32
+      },
+      "particle-context": {
+        "all": 72,
+        "en": 0,
+        "ko": 72
+      },
+      "possessive-and-plural": {
+        "all": 7,
+        "en": 7,
+        "ko": 0
+      },
+      "punctuation-boundary": {
+        "all": 37,
+        "en": 23,
+        "ko": 14
+      },
+      "quotation-boundary": {
+        "all": 8,
+        "en": 8,
+        "ko": 0
+      },
+      "romanization": {
+        "all": 20,
+        "en": 0,
+        "ko": 20
+      },
+      "sentence-initial-trap": {
+        "all": 16,
+        "en": 16,
+        "ko": 0
+      },
+      "spacing-variation": {
+        "all": 24,
+        "en": 0,
+        "ko": 24
+      },
+      "surname-false-positive-trap": {
+        "all": 43,
+        "en": 0,
+        "ko": 43
+      },
+      "surname-structure": {
+        "all": 7,
+        "en": 0,
+        "ko": 7
+      },
+      "title-honorific": {
+        "all": 42,
+        "en": 19,
+        "ko": 23
+      },
+      "uncommon-name": {
+        "all": 152,
+        "en": 78,
+        "ko": 74
+      }
+    },
+    "structured_ambiguity": {
+      "no": {
+        "all": 252,
+        "en": 123,
+        "ko": 129
+      },
+      "not-applicable": {
+        "all": 465,
+        "en": 178,
+        "ko": 287
+      },
+      "yes": {
+        "all": 155,
+        "en": 89,
+        "ko": 66
+      }
+    },
+    "ambiguity_kind": {
+      "boundary-extent": {
+        "all": 4,
+        "en": 4,
+        "ko": 0
+      },
+      "category-collision": {
+        "all": 78,
+        "en": 47,
+        "ko": 31
+      },
+      "format-dependence": {
+        "all": 16,
+        "en": 16,
+        "ko": 0
+      },
+      "lexical-homograph": {
+        "all": 57,
+        "en": 22,
+        "ko": 35
+      },
+      "none": {
+        "all": 717,
+        "en": 301,
+        "ko": 416
+      }
+    },
+    "alternative_reading": {
+      "adjective-or-verb": {
+        "all": 5,
+        "en": 5,
+        "ko": 0
+      },
+      "animal-or-object-name": {
+        "all": 3,
+        "en": 3,
+        "ko": 0
+      },
+      "brand-or-product": {
+        "all": 16,
+        "en": 10,
+        "ko": 6
+      },
+      "common-noun": {
+        "all": 51,
+        "en": 18,
+        "ko": 33
+      },
+      "eponymous-term": {
+        "all": 2,
+        "en": 2,
+        "ko": 0
+      },
+      "event-name": {
+        "all": 1,
+        "en": 1,
+        "ko": 0
+      },
+      "fixed-expression": {
+        "all": 1,
+        "en": 1,
+        "ko": 0
+      },
+      "non-name-field": {
+        "all": 2,
+        "en": 2,
+        "ko": 0
+      },
+      "none": {
+        "all": 717,
+        "en": 301,
+        "ko": 416
+      },
+      "organization-name": {
+        "all": 34,
+        "en": 20,
+        "ko": 14
+      },
+      "place-name": {
+        "all": 35,
+        "en": 22,
+        "ko": 13
+      },
+      "shorter-or-longer-name-span": {
+        "all": 4,
+        "en": 4,
+        "ko": 0
+      },
+      "work-title": {
+        "all": 1,
+        "en": 1,
+        "ko": 0
+      }
+    },
+    "resolved_by": {
+      "co-occurring-entity": {
+        "all": 12,
+        "en": 6,
+        "ko": 6
+      },
+      "fixed-phrase": {
+        "all": 8,
+        "en": 3,
+        "ko": 5
+      },
+      "head-noun-or-suffix": {
+        "all": 48,
+        "en": 29,
+        "ko": 19
+      },
+      "label-or-key": {
+        "all": 11,
+        "en": 11,
+        "ko": 0
+      },
+      "modifier-or-determiner": {
+        "all": 11,
+        "en": 8,
+        "ko": 3
+      },
+      "none": {
+        "all": 717,
+        "en": 301,
+        "ko": 416
+      },
+      "nothing": {
+        "all": 14,
+        "en": 8,
+        "ko": 6
+      },
+      "particle-or-suffix": {
+        "all": 29,
+        "en": 0,
+        "ko": 29
+      },
+      "predicate-or-argument": {
+        "all": 54,
+        "en": 33,
+        "ko": 21
+      },
+      "punctuation-or-format": {
+        "all": 12,
+        "en": 10,
+        "ko": 2
+      },
+      "syntactic-position": {
+        "all": 23,
+        "en": 20,
+        "ko": 3
+      },
+      "title-or-honorific": {
+        "all": 11,
+        "en": 7,
+        "ko": 4
+      },
+      "world-knowledge": {
+        "all": 4,
+        "en": 4,
+        "ko": 0
+      }
+    },
+    "contrast_classes": {
+      "en-common-word-name": {
+        "all": 7,
+        "en": 7,
+        "ko": 0
+      },
+      "en-delimited-row": {
+        "all": 5,
+        "en": 5,
+        "ko": 0
+      },
+      "en-honorific-variant": {
+        "all": 10,
+        "en": 10,
+        "ko": 0
+      },
+      "en-key-value-label": {
+        "all": 16,
+        "en": 16,
+        "ko": 0
+      },
+      "en-log-line": {
+        "all": 9,
+        "en": 9,
+        "ko": 0
+      },
+      "en-lookalike-entity": {
+        "all": 4,
+        "en": 4,
+        "ko": 0
+      },
+      "en-markup-embedded": {
+        "all": 4,
+        "en": 4,
+        "ko": 0
+      },
+      "en-punctuation-dense": {
+        "all": 6,
+        "en": 6,
+        "ko": 0
+      },
+      "en-table-or-columns": {
+        "all": 5,
+        "en": 5,
+        "ko": 0
+      },
+      "ko-copula-quotative": {
+        "all": 11,
+        "en": 0,
+        "ko": 11
+      },
+      "ko-genitive-apposition": {
+        "all": 5,
+        "en": 0,
+        "ko": 5
+      },
+      "ko-hanja-annotation": {
+        "all": 3,
+        "en": 0,
+        "ko": 3
+      },
+      "ko-honorific-suffix": {
+        "all": 15,
+        "en": 0,
+        "ko": 15
+      },
+      "ko-name-final-syllable-trap": {
+        "all": 7,
+        "en": 0,
+        "ko": 7
+      },
+      "ko-noun-name-homograph": {
+        "all": 4,
+        "en": 0,
+        "ko": 4
+      },
+      "ko-particle-allomorph": {
+        "all": 23,
+        "en": 0,
+        "ko": 23
+      },
+      "ko-particle-stacking": {
+        "all": 12,
+        "en": 0,
+        "ko": 12
+      },
+      "ko-romanized-hangul-mixture": {
+        "all": 7,
+        "en": 0,
+        "ko": 7
+      },
+      "ko-script-boundary": {
+        "all": 5,
+        "en": 0,
+        "ko": 5
+      },
+      "ko-separator-punctuation": {
+        "all": 6,
+        "en": 0,
+        "ko": 6
+      },
+      "ko-spacing-variation": {
+        "all": 11,
+        "en": 0,
+        "ko": 11
+      },
+      "ko-surname-prefix-trap": {
+        "all": 8,
+        "en": 0,
+        "ko": 8
+      },
+      "none": {
+        "all": 714,
+        "en": 333,
+        "ko": 381
+      }
+    },
+    "familiarity_basis": {
+      "author-judgment": {
+        "all": 688,
+        "en": 330,
+        "ko": 358
+      },
+      "constructed": {
+        "all": 51,
+        "en": 31,
+        "ko": 20
+      },
+      "none": {
+        "all": 98,
+        "en": 10,
+        "ko": 88
+      },
+      "reference-frequency": {
+        "all": 35,
+        "en": 19,
+        "ko": 16
+      }
+    },
+    "provenance_basis": {
+      "reference-backed": {
+        "all": 29,
+        "en": 15,
+        "ko": 14
+      },
+      "synthetic-authored": {
+        "all": 843,
+        "en": 375,
+        "ko": 468
+      }
+    },
+    "evidence_class": {
+      "authored-adversarial": {
+        "all": 546,
+        "en": 250,
+        "ko": 296
+      },
+      "authored-baseline": {
+        "all": 297,
+        "en": 125,
+        "ko": 172
+      },
+      "reference-backed": {
+        "all": 29,
+        "en": 15,
+        "ko": 14
+      }
+    },
+    "review_factual": {
+      "author-only": {
+        "all": 872,
+        "en": 390,
+        "ko": 482
+      }
+    },
+    "review_linguistic": {
+      "author-only": {
+        "all": 872,
+        "en": 390,
+        "ko": 482
+      }
+    }
+  },
+  "review": {
+    "factual": {
+      "author-only": 872
+    },
+    "linguistic": {
+      "author-only": 872
+    }
+  },
+  "targets_version": "1.0.0",
+  "targets": [
+    {
+      "id": "en-cases",
+      "kind": "count",
+      "description": "EN cases in total",
+      "value": 390,
+      "min": 200,
+      "status": "met"
+    },
+    {
+      "id": "ko-cases",
+      "kind": "count",
+      "description": "KO cases in total",
+      "value": 482,
+      "min": 200,
+      "status": "met"
+    },
+    {
+      "id": "en-uncommon-name",
+      "kind": "count",
+      "description": "EN cases whose focus name is rare or novel",
+      "value": 136,
+      "min": 100,
+      "status": "met"
+    },
+    {
+      "id": "en-common-name",
+      "kind": "count",
+      "description": "EN cases whose focus name is common",
+      "value": 244,
+      "min": 100,
+      "status": "met"
+    },
+    {
+      "id": "en-ambiguous",
+      "kind": "count",
+      "description": "EN cases that are context-resolvable or genuinely ambiguous",
+      "value": 212,
+      "min": 80,
+      "status": "met"
+    },
+    {
+      "id": "ko-uncommon-name",
+      "kind": "count",
+      "description": "KO cases whose focus name is rare or novel",
+      "value": 113,
+      "min": 90,
+      "status": "met"
+    },
+    {
+      "id": "ko-common-name",
+      "kind": "count",
+      "description": "KO cases whose focus name is common",
+      "value": 281,
+      "min": 100,
+      "status": "met"
+    },
+    {
+      "id": "ko-ambiguous",
+      "kind": "count",
+      "description": "KO cases that are context-resolvable or genuinely ambiguous",
+      "value": 195,
+      "min": 80,
+      "status": "met"
+    },
+    {
+      "id": "en-genuinely-ambiguous",
+      "kind": "count",
+      "description": "EN honest-ambiguity cases (either)",
+      "value": 25,
+      "min": 12,
+      "status": "met"
+    },
+    {
+      "id": "ko-genuinely-ambiguous",
+      "kind": "count",
+      "description": "KO honest-ambiguity cases (either)",
+      "value": 17,
+      "min": 10,
+      "status": "met"
+    },
+    {
+      "id": "en-single-token",
+      "kind": "count",
+      "description": "EN cases with a single-token focus span",
+      "value": 172,
+      "min": 80,
+      "status": "met"
+    },
+    {
+      "id": "en-multi-token",
+      "kind": "count",
+      "description": "EN cases with a multi-token focus span",
+      "value": 218,
+      "min": 80,
+      "status": "met"
+    },
+    {
+      "id": "ko-single-token",
+      "kind": "count",
+      "description": "KO cases with a single-token focus span",
+      "value": 421,
+      "min": 80,
+      "status": "met"
+    },
+    {
+      "id": "ko-multi-token",
+      "kind": "count",
+      "description": "KO cases with a multi-token focus span",
+      "value": 61,
+      "min": 40,
+      "status": "met"
+    },
+    {
+      "id": "en-collision-common-word",
+      "kind": "count",
+      "description": "EN cases with a common-word collision",
+      "value": 100,
+      "min": 40,
+      "status": "met"
+    },
+    {
+      "id": "ko-collision-common-word",
+      "kind": "count",
+      "description": "KO cases with a common-word collision",
+      "value": 126,
+      "min": 40,
+      "status": "met"
+    },
+    {
+      "id": "en-collision-organization",
+      "kind": "count",
+      "description": "EN cases with an organization collision",
+      "value": 41,
+      "min": 30,
+      "status": "met"
+    },
+    {
+      "id": "ko-collision-organization",
+      "kind": "count",
+      "description": "KO cases with an organization collision",
+      "value": 31,
+      "min": 24,
+      "status": "met"
+    },
+    {
+      "id": "en-collision-location",
+      "kind": "count",
+      "description": "EN cases with a location collision",
+      "value": 54,
+      "min": 40,
+      "status": "met"
+    },
+    {
+      "id": "ko-collision-location",
+      "kind": "count",
+      "description": "KO cases with a location collision",
+      "value": 35,
+      "min": 30,
+      "status": "met"
+    },
+    {
+      "id": "en-collision-temporal",
+      "kind": "count",
+      "description": "EN cases with a temporal collision",
+      "value": 16,
+      "min": 10,
+      "status": "met"
+    },
+    {
+      "id": "ko-collision-temporal",
+      "kind": "count",
+      "description": "KO cases with a temporal collision",
+      "value": 7,
+      "min": 5,
+      "status": "met"
+    },
+    {
+      "id": "en-collision-product-brand",
+      "kind": "count",
+      "description": "EN cases with a product-brand collision",
+      "value": 19,
+      "min": 14,
+      "status": "met"
+    },
+    {
+      "id": "ko-collision-product-brand",
+      "kind": "count",
+      "description": "KO cases with a product-brand collision",
+      "value": 12,
+      "min": 10,
+      "status": "met"
+    },
+    {
+      "id": "en-collision-eponym",
+      "kind": "count",
+      "description": "EN cases with an eponym collision",
+      "value": 9,
+      "min": 6,
+      "status": "met"
+    },
+    {
+      "id": "ko-collision-eponym",
+      "kind": "count",
+      "description": "KO cases with an eponym collision",
+      "value": 2,
+      "min": 2,
+      "status": "met"
+    },
+    {
+      "id": "en-collision-work-title",
+      "kind": "count",
+      "description": "EN cases with a work-title collision",
+      "value": 7,
+      "min": 4,
+      "status": "met"
+    },
+    {
+      "id": "ko-collision-work-title",
+      "kind": "count",
+      "description": "KO cases with a work-title collision",
+      "value": 2,
+      "min": 2,
+      "status": "met"
+    },
+    {
+      "id": "mixed-script-context",
+      "kind": "count",
+      "description": "Cases whose sentence mixes scripts",
+      "value": 49,
+      "min": 20,
+      "status": "met"
+    },
+    {
+      "id": "en-mixed-script-context",
+      "kind": "count",
+      "description": "EN-profile cases whose sentence mixes scripts",
+      "value": 5,
+      "min": 5,
+      "status": "met"
+    },
+    {
+      "id": "hanja-focus",
+      "kind": "count",
+      "description": "Cases whose focus span is written in hanja",
+      "value": 9,
+      "min": 8,
+      "status": "met"
+    },
+    {
+      "id": "mixed-script-focus",
+      "kind": "count",
+      "description": "Cases whose focus span itself mixes scripts",
+      "value": 8,
+      "min": 8,
+      "status": "met"
+    },
+    {
+      "id": "en-list-or-structured",
+      "kind": "count",
+      "description": "EN cases in lists or structured text",
+      "value": 70,
+      "min": 10,
+      "status": "met"
+    },
+    {
+      "id": "en-adjacent-names",
+      "kind": "count",
+      "description": "EN cases with adjacent names",
+      "value": 22,
+      "min": 6,
+      "status": "met"
+    },
+    {
+      "id": "en-title-honorific",
+      "kind": "count",
+      "description": "EN cases with a title or honorific",
+      "value": 44,
+      "min": 20,
+      "status": "met"
+    },
+    {
+      "id": "en-no-person",
+      "kind": "count",
+      "description": "EN negative cases with no person at all",
+      "value": 97,
+      "min": 40,
+      "status": "met"
+    },
+    {
+      "id": "en-sentence-initial",
+      "kind": "count",
+      "description": "EN cases with the focus span at sentence start",
+      "value": 122,
+      "min": 30,
+      "status": "met"
+    },
+    {
+      "id": "ko-list-or-structured",
+      "kind": "count",
+      "description": "KO cases in lists or structured text",
+      "value": 45,
+      "min": 10,
+      "status": "met"
+    },
+    {
+      "id": "ko-adjacent-names",
+      "kind": "count",
+      "description": "KO cases with adjacent names",
+      "value": 30,
+      "min": 6,
+      "status": "met"
+    },
+    {
+      "id": "ko-title-honorific",
+      "kind": "count",
+      "description": "KO cases with a title or honorific",
+      "value": 58,
+      "min": 20,
+      "status": "met"
+    },
+    {
+      "id": "ko-no-person",
+      "kind": "count",
+      "description": "KO negative cases with no person at all",
+      "value": 99,
+      "min": 40,
+      "status": "met"
+    },
+    {
+      "id": "ko-sentence-initial",
+      "kind": "count",
+      "description": "KO cases with the focus span at sentence start",
+      "value": 230,
+      "min": 30,
+      "status": "met"
+    },
+    {
+      "id": "en-casing-variation",
+      "kind": "count",
+      "description": "EN cases in lowercase, ALL CAPS or Title Case text",
+      "value": 14,
+      "min": 8,
+      "status": "met"
+    },
+    {
+      "id": "en-possessive-or-plural",
+      "kind": "count",
+      "description": "EN cases with possessive or plural name references",
+      "value": 15,
+      "min": 8,
+      "status": "met"
+    },
+    {
+      "id": "ko-particle-attached",
+      "kind": "count",
+      "description": "KO cases with a particle attached to the focus span",
+      "value": 395,
+      "min": 150,
+      "status": "met"
+    },
+    {
+      "id": "ko-romanized",
+      "kind": "count",
+      "description": "KO-profile cases written in romanization",
+      "value": 32,
+      "min": 25,
+      "status": "met"
+    },
+    {
+      "id": "ko-two-syllable-surname",
+      "kind": "count",
+      "description": "KO cases with a two-syllable surname",
+      "value": 19,
+      "min": 8,
+      "status": "met"
+    },
+    {
+      "id": "boundary-tagged-en",
+      "kind": "count",
+      "description": "EN cases with at least one non-trivial boundary tag",
+      "value": 193,
+      "min": 80,
+      "status": "met"
+    },
+    {
+      "id": "boundary-tagged-ko",
+      "kind": "count",
+      "description": "KO cases with at least one non-trivial boundary tag",
+      "value": 467,
+      "min": 150,
+      "status": "met"
+    },
+    {
+      "id": "linguistic-independent-review",
+      "kind": "count",
+      "description": "Cases whose linguistic expectation was independently reviewed",
+      "value": 0,
+      "min": 100,
+      "status": "waived",
+      "waiver": "The independent review workflow exists (docs/review-workflow.md) and English and Korean linguistic reviews have been requested in the ledger, but no independent reviewer is registered yet and no verdict is recorded, so every case is still author-only. The floor stays waived until independent verdicts exist; the review ledger summary in the coverage report shows the live numbers."
+    },
+    {
+      "id": "factual-independent-review",
+      "kind": "count",
+      "description": "Cases whose factual claims were independently reviewed",
+      "value": 0,
+      "min": 100,
+      "status": "waived",
+      "waiver": "The independent review workflow exists (docs/review-workflow.md) and English and Korean linguistic reviews have been requested in the ledger, but no independent reviewer is registered yet and no verdict is recorded, so every case is still author-only. The floor stays waived until independent verdicts exist; the review ledger summary in the coverage report shows the live numbers."
+    },
+    {
+      "id": "en-structured-ambiguity",
+      "kind": "count",
+      "description": "EN ambiguous cases carrying machine-readable ambiguity kind, alternative reading and resolving context",
+      "value": 89,
+      "min": 15,
+      "status": "met"
+    },
+    {
+      "id": "ko-structured-ambiguity",
+      "kind": "count",
+      "description": "KO ambiguous cases carrying machine-readable ambiguity kind, alternative reading and resolving context",
+      "value": 66,
+      "min": 15,
+      "status": "met"
+    },
+    {
+      "id": "en-structured-genuinely-ambiguous",
+      "kind": "count",
+      "description": "EN honest-ambiguity cases with structured ambiguity",
+      "value": 8,
+      "min": 4,
+      "status": "met"
+    },
+    {
+      "id": "ko-structured-genuinely-ambiguous",
+      "kind": "count",
+      "description": "KO honest-ambiguity cases with structured ambiguity",
+      "value": 6,
+      "min": 2,
+      "status": "met"
+    },
+    {
+      "id": "en-collision-organization-person",
+      "kind": "count",
+      "description": "EN organization collision cases containing a PERSON span (balance of contrasts)",
+      "value": 14,
+      "min": 10,
+      "status": "met"
+    },
+    {
+      "id": "ko-collision-organization-person",
+      "kind": "count",
+      "description": "KO organization collision cases containing a PERSON span (balance of contrasts)",
+      "value": 11,
+      "min": 9,
+      "status": "met"
+    },
+    {
+      "id": "en-collision-organization-not-person",
+      "kind": "count",
+      "description": "EN organization collision cases containing a not-person span (balance of contrasts)",
+      "value": 29,
+      "min": 20,
+      "status": "met"
+    },
+    {
+      "id": "ko-collision-organization-not-person",
+      "kind": "count",
+      "description": "KO organization collision cases containing a not-person span (balance of contrasts)",
+      "value": 27,
+      "min": 20,
+      "status": "met"
+    },
+    {
+      "id": "en-collision-organization-either",
+      "kind": "count",
+      "description": "EN organization collision cases containing an honest-ambiguity (either) span (balance of contrasts)",
+      "value": 6,
+      "min": 4,
+      "status": "met"
+    },
+    {
+      "id": "ko-collision-organization-either",
+      "kind": "count",
+      "description": "KO organization collision cases containing an honest-ambiguity (either) span (balance of contrasts)",
+      "value": 3,
+      "min": 2,
+      "status": "met"
+    },
+    {
+      "id": "en-collision-location-person",
+      "kind": "count",
+      "description": "EN location collision cases containing a PERSON span (balance of contrasts)",
+      "value": 24,
+      "min": 15,
+      "status": "met"
+    },
+    {
+      "id": "ko-collision-location-person",
+      "kind": "count",
+      "description": "KO location collision cases containing a PERSON span (balance of contrasts)",
+      "value": 12,
+      "min": 10,
+      "status": "met"
+    },
+    {
+      "id": "en-collision-location-not-person",
+      "kind": "count",
+      "description": "EN location collision cases containing a not-person span (balance of contrasts)",
+      "value": 35,
+      "min": 25,
+      "status": "met"
+    },
+    {
+      "id": "ko-collision-location-not-person",
+      "kind": "count",
+      "description": "KO location collision cases containing a not-person span (balance of contrasts)",
+      "value": 32,
+      "min": 28,
+      "status": "met"
+    },
+    {
+      "id": "en-collision-location-either",
+      "kind": "count",
+      "description": "EN location collision cases containing an honest-ambiguity (either) span (balance of contrasts)",
+      "value": 5,
+      "min": 4,
+      "status": "met"
+    },
+    {
+      "id": "ko-collision-location-either",
+      "kind": "count",
+      "description": "KO location collision cases containing an honest-ambiguity (either) span (balance of contrasts)",
+      "value": 1,
+      "min": 1,
+      "status": "met"
+    },
+    {
+      "id": "en-collision-product-brand-person",
+      "kind": "count",
+      "description": "EN product-brand collision cases containing a PERSON span (balance of contrasts)",
+      "value": 6,
+      "min": 5,
+      "status": "met"
+    },
+    {
+      "id": "ko-collision-product-brand-person",
+      "kind": "count",
+      "description": "KO product-brand collision cases containing a PERSON span (balance of contrasts)",
+      "value": 4,
+      "min": 3,
+      "status": "met"
+    },
+    {
+      "id": "en-collision-product-brand-not-person",
+      "kind": "count",
+      "description": "EN product-brand collision cases containing a not-person span (balance of contrasts)",
+      "value": 14,
+      "min": 10,
+      "status": "met"
+    },
+    {
+      "id": "ko-collision-product-brand-not-person",
+      "kind": "count",
+      "description": "KO product-brand collision cases containing a not-person span (balance of contrasts)",
+      "value": 10,
+      "min": 8,
+      "status": "met"
+    },
+    {
+      "id": "en-collision-product-brand-either",
+      "kind": "count",
+      "description": "EN product-brand collision cases containing an honest-ambiguity (either) span (balance of contrasts)",
+      "value": 1,
+      "min": 1,
+      "status": "met"
+    },
+    {
+      "id": "ko-collision-product-brand-either",
+      "kind": "count",
+      "description": "KO product-brand collision cases containing an honest-ambiguity (either) span (balance of contrasts)",
+      "value": 1,
+      "min": 1,
+      "status": "met"
+    },
+    {
+      "id": "contrast-ko-particle-allomorph",
+      "kind": "count",
+      "description": "Cases in the ko-particle-allomorph contrast class",
+      "value": 23,
+      "min": 18,
+      "status": "met"
+    },
+    {
+      "id": "contrast-ko-name-final-syllable-trap",
+      "kind": "count",
+      "description": "Cases in the ko-name-final-syllable-trap contrast class",
+      "value": 7,
+      "min": 6,
+      "status": "met"
+    },
+    {
+      "id": "contrast-ko-particle-stacking",
+      "kind": "count",
+      "description": "Cases in the ko-particle-stacking contrast class",
+      "value": 12,
+      "min": 8,
+      "status": "met"
+    },
+    {
+      "id": "contrast-ko-copula-quotative",
+      "kind": "count",
+      "description": "Cases in the ko-copula-quotative contrast class",
+      "value": 11,
+      "min": 8,
+      "status": "met"
+    },
+    {
+      "id": "contrast-ko-genitive-apposition",
+      "kind": "count",
+      "description": "Cases in the ko-genitive-apposition contrast class",
+      "value": 5,
+      "min": 4,
+      "status": "met"
+    },
+    {
+      "id": "contrast-ko-honorific-suffix",
+      "kind": "count",
+      "description": "Cases in the ko-honorific-suffix contrast class",
+      "value": 15,
+      "min": 8,
+      "status": "met"
+    },
+    {
+      "id": "contrast-ko-surname-prefix-trap",
+      "kind": "count",
+      "description": "Cases in the ko-surname-prefix-trap contrast class",
+      "value": 8,
+      "min": 6,
+      "status": "met"
+    },
+    {
+      "id": "contrast-ko-noun-name-homograph",
+      "kind": "count",
+      "description": "Cases in the ko-noun-name-homograph contrast class",
+      "value": 4,
+      "min": 4,
+      "status": "met"
+    },
+    {
+      "id": "contrast-ko-spacing-variation",
+      "kind": "count",
+      "description": "Cases in the ko-spacing-variation contrast class",
+      "value": 11,
+      "min": 8,
+      "status": "met"
+    },
+    {
+      "id": "contrast-ko-separator-punctuation",
+      "kind": "count",
+      "description": "Cases in the ko-separator-punctuation contrast class",
+      "value": 6,
+      "min": 5,
+      "status": "met"
+    },
+    {
+      "id": "contrast-ko-romanized-hangul-mixture",
+      "kind": "count",
+      "description": "Cases in the ko-romanized-hangul-mixture contrast class",
+      "value": 7,
+      "min": 5,
+      "status": "met"
+    },
+    {
+      "id": "contrast-ko-script-boundary",
+      "kind": "count",
+      "description": "Cases in the ko-script-boundary contrast class",
+      "value": 5,
+      "min": 4,
+      "status": "met"
+    },
+    {
+      "id": "contrast-ko-hanja-annotation",
+      "kind": "count",
+      "description": "Cases in the ko-hanja-annotation contrast class",
+      "value": 3,
+      "min": 3,
+      "status": "met"
+    },
+    {
+      "id": "contrast-en-key-value-label",
+      "kind": "count",
+      "description": "Cases in the en-key-value-label contrast class",
+      "value": 16,
+      "min": 14,
+      "status": "met"
+    },
+    {
+      "id": "contrast-en-log-line",
+      "kind": "count",
+      "description": "Cases in the en-log-line contrast class",
+      "value": 9,
+      "min": 8,
+      "status": "met"
+    },
+    {
+      "id": "contrast-en-honorific-variant",
+      "kind": "count",
+      "description": "Cases in the en-honorific-variant contrast class",
+      "value": 10,
+      "min": 7,
+      "status": "met"
+    },
+    {
+      "id": "contrast-en-punctuation-dense",
+      "kind": "count",
+      "description": "Cases in the en-punctuation-dense contrast class",
+      "value": 6,
+      "min": 5,
+      "status": "met"
+    },
+    {
+      "id": "contrast-en-common-word-name",
+      "kind": "count",
+      "description": "Cases in the en-common-word-name contrast class",
+      "value": 7,
+      "min": 6,
+      "status": "met"
+    },
+    {
+      "id": "contrast-en-table-or-columns",
+      "kind": "count",
+      "description": "Cases in the en-table-or-columns contrast class",
+      "value": 5,
+      "min": 5,
+      "status": "met"
+    },
+    {
+      "id": "contrast-en-lookalike-entity",
+      "kind": "count",
+      "description": "Cases in the en-lookalike-entity contrast class",
+      "value": 4,
+      "min": 4,
+      "status": "met"
+    },
+    {
+      "id": "contrast-en-delimited-row",
+      "kind": "count",
+      "description": "Cases in the en-delimited-row contrast class",
+      "value": 5,
+      "min": 5,
+      "status": "met"
+    },
+    {
+      "id": "contrast-en-markup-embedded",
+      "kind": "count",
+      "description": "Cases in the en-markup-embedded contrast class",
+      "value": 4,
+      "min": 4,
+      "status": "met"
+    },
+    {
+      "id": "en-structured-text-total",
+      "kind": "count",
+      "description": "EN cases in structured text (logs, labels, tables, delimited rows)",
+      "value": 55,
+      "min": 45,
+      "status": "met"
+    },
+    {
+      "id": "en-reference-checked-familiarity",
+      "kind": "count",
+      "description": "EN cases whose familiarity label is mechanically checked against a registered surname-frequency reference",
+      "value": 19,
+      "min": 15,
+      "status": "met"
+    },
+    {
+      "id": "ko-reference-checked-familiarity",
+      "kind": "count",
+      "description": "KO cases whose familiarity label is mechanically checked against a registered surname-frequency reference",
+      "value": 16,
+      "min": 12,
+      "status": "met"
+    },
+    {
+      "id": "en-constructed-names",
+      "kind": "count",
+      "description": "EN cases with a constructed (novel) name",
+      "value": 31,
+      "min": 25,
+      "status": "met"
+    },
+    {
+      "id": "ko-constructed-names",
+      "kind": "count",
+      "description": "KO cases with a constructed (novel) name",
+      "value": 20,
+      "min": 10,
+      "status": "met"
+    },
+    {
+      "id": "en-reference-backed",
+      "kind": "count",
+      "description": "EN cases whose expectation rests on a cited reference rule (evidence_class reference-backed)",
+      "value": 15,
+      "min": 12,
+      "status": "met"
+    },
+    {
+      "id": "ko-reference-backed",
+      "kind": "count",
+      "description": "KO cases whose expectation rests on a cited reference rule (evidence_class reference-backed)",
+      "value": 14,
+      "min": 13,
+      "status": "met"
+    },
+    {
+      "id": "en-share",
+      "kind": "ratio",
+      "description": "English share of all cases stays between 40% and 60%",
+      "value": 0.4472,
+      "numerator": 390,
+      "denominator": 872,
+      "status": "met",
+      "min": 0.4,
+      "max": 0.6
+    },
+    {
+      "id": "en-uncommon-name-share",
+      "kind": "ratio",
+      "description": "Uncommon-name share of EN name-bearing cases (rare+novel over common+rare+novel)",
+      "value": 0.3579,
+      "numerator": 136,
+      "denominator": 380,
+      "status": "met",
+      "min": 0.25
+    },
+    {
+      "id": "en-ambiguous-share",
+      "kind": "ratio",
+      "description": "Ambiguous share of EN cases",
+      "value": 0.5436,
+      "numerator": 212,
+      "denominator": 390,
+      "status": "met",
+      "min": 0.35
+    },
+    {
+      "id": "en-not-person-share",
+      "kind": "ratio",
+      "description": "Share of EN cases containing a not-person span",
+      "value": 0.3282,
+      "numerator": 128,
+      "denominator": 390,
+      "status": "met",
+      "min": 0.25
+    },
+    {
+      "id": "ko-uncommon-name-share",
+      "kind": "ratio",
+      "description": "Uncommon-name share of KO name-bearing cases (rare+novel over common+rare+novel)",
+      "value": 0.2868,
+      "numerator": 113,
+      "denominator": 394,
+      "status": "met",
+      "min": 0.25
+    },
+    {
+      "id": "ko-ambiguous-share",
+      "kind": "ratio",
+      "description": "Ambiguous share of KO cases",
+      "value": 0.4046,
+      "numerator": 195,
+      "denominator": 482,
+      "status": "met",
+      "min": 0.35
+    },
+    {
+      "id": "ko-not-person-share",
+      "kind": "ratio",
+      "description": "Share of KO cases containing a not-person span",
+      "value": 0.278,
+      "numerator": 134,
+      "denominator": 482,
+      "status": "met",
+      "min": 0.25
+    },
+    {
+      "id": "en-multi-share",
+      "kind": "ratio",
+      "description": "Multi-token share of EN cases",
+      "value": 0.559,
+      "numerator": 218,
+      "denominator": 390,
+      "status": "met",
+      "min": 0.25
+    },
+    {
+      "id": "ko-multi-share",
+      "kind": "ratio",
+      "description": "Multi-token share of KO cases (Korean names are usually written without spaces, so the floor is structural)",
+      "value": 0.1266,
+      "numerator": 61,
+      "denominator": 482,
+      "status": "met",
+      "min": 0.12
+    },
+    {
+      "id": "easy-control-ceiling",
+      "kind": "ratio",
+      "description": "Easy controls (common, unambiguous) must not dominate: at most 35% of all cases",
+      "value": 0.3096,
+      "numerator": 270,
+      "denominator": 872,
+      "status": "met",
+      "max": 0.35
+    }
+  ],
+  "unmet_targets": [],
+  "waived_targets": [
+    {
+      "id": "linguistic-independent-review",
+      "waiver": "The independent review workflow exists (docs/review-workflow.md) and English and Korean linguistic reviews have been requested in the ledger, but no independent reviewer is registered yet and no verdict is recorded, so every case is still author-only. The floor stays waived until independent verdicts exist; the review ledger summary in the coverage report shows the live numbers."
+    },
+    {
+      "id": "factual-independent-review",
+      "waiver": "The independent review workflow exists (docs/review-workflow.md) and English and Korean linguistic reviews have been requested in the ledger, but no independent reviewer is registered yet and no verdict is recorded, so every case is still author-only. The floor stays waived until independent verdicts exist; the review ledger summary in the coverage report shows the live numbers."
+    }
+  ],
+  "known_gaps": [
+    {
+      "id": "synthetic-only-no-corpus-backing",
+      "description": "All evidence is project-authored. No naturally occurring text is included, so the distribution of contexts, name frequencies and noise in real documents is not represented. Results on this corpus must not be read as real-world accuracy."
+    },
+    {
+      "id": "familiarity-labels-unverified",
+      "description": "The common/rare/novel familiarity labels are author judgments against written criteria (docs/familiarity-and-rarity.md). Only cases whose familiarity_basis is reference-frequency are checked against a public name-frequency table, and only for the surname component; given-name frequency is not reference-checked. The labels describe the name in its language community and say nothing about any model's training data."
+    },
+    {
+      "id": "single-author-selection-bias",
+      "description": "Cases reflect one author's view of what is confusable. Collision breadth (months, flowers, brands, districts) is illustrative, not a sampled or exhaustive list."
+    },
+    {
+      "id": "no-inter-annotator-agreement",
+      "description": "Span boundary conventions (titles, possessives, Korean particles and honorifics) were applied consistently by one author; agreement with an independent annotator has not been measured."
+    },
+    {
+      "id": "plural-and-family-references-undefined",
+      "description": "Plural and family references (the Joneses, two Johns, the Smiths' house, 'the Okafor family') have no span convention in taxonomy 0.1.0. The 5 cases that use them, plus 1 ampersand-couple case, are marked either; they are not a test of correctness until a convention exists."
+    },
+    {
+      "id": "scripts-beyond-latin-hangul-han",
+      "description": "No Cyrillic, Arabic, Devanagari, Thai or other scripts, and no Japanese kana. Han coverage is limited to Korean hanja notation; Chinese and Japanese naming is out of scope."
+    },
+    {
+      "id": "north-korean-and-diaspora-orthography",
+      "description": "Korean cases follow contemporary South Korean spelling and spacing. North Korean orthography, older spellings and diaspora romanization variants are not covered."
+    },
+    {
+      "id": "handles-usernames-email-local-parts",
+      "description": "Usernames, social handles and email local parts that embed names are out of scope for taxonomy 0.1.0."
+    },
+    {
+      "id": "small-eponym-and-work-title-slices",
+      "description": "Eponym (Ohm's law, Nobel Prize) and work-title (novel, song, film) slices are present but small (single digits per language). They flag the problem but do not support per-slice conclusions."
+    },
+    {
+      "id": "wrapper-projections-only",
+      "description": "Fixtures are structural wrappers of the authored sentence (quote, log line, JSON, email, NFD). There are no noisy-text projections (typos, OCR errors, casing mutations) because each needs per-case semantic review."
+    },
+    {
+      "id": "fixture-correlation",
+      "description": "Fixtures derived from one case are correlated. Counting fixtures instead of cases overweights cases that accept more projections (Korean cases accept the NFD projection; English mostly do not)."
+    },
+    {
+      "id": "legacy-ambiguity-unstructured",
+      "description": "Ambiguous cases authored before schema 1.1.0 carry only a free-text ambiguity note; their kind, alternative reading and resolving context are not machine-readable. Backfilling needs per-case linguistic judgment and is deliberately not derived by script."
+    },
+    {
+      "id": "contrast-classes-beta-cases-only",
+      "description": "Contrast classes (dimensions.contrast_classes) are assigned only to cases authored from Beta 1 on. Alpha-era Korean particle, spacing and mixed-script cases are not retro-tagged, so per-class counts understate the true coverage and must not be read as the whole corpus."
+    },
+    {
+      "id": "ko-small-contrast-classes",
+      "description": "Genitive/apposition, hanja annotation, script boundary and noun/name homograph classes have single-digit case counts: they show the class exists but support no per-class conclusions."
+    },
+    {
+      "id": "ko-particle-coverage-incomplete",
+      "description": "Not yet covered: the archaic vocative 이여/여, 이여서/이시여 forms, contracted particle forms in chat text (-ㄴ/-ㅇ clipped endings), quotative 이라며/이라고는 chains, and particle usage after four-syllable and two-syllable-surname names beyond the allomorph cases."
+    },
+    {
+      "id": "ko-spacing-and-separators-incomplete",
+      "description": "Not yet covered: NBSP and full-width spaces, zero-width characters, spaces inside hanja names, and name lists in table or CSV cells with Korean separators."
+    },
+    {
+      "id": "en-contrast-small-classes",
+      "description": "Markup-embedded, delimited-row, table and lookalike-entity classes have single-digit case counts: they show the class exists but support no per-class conclusions."
+    },
+    {
+      "id": "en-structured-text-synthetic-formats",
+      "description": "Log, label, table and delimited-row cases are synthetic one-line or two-line records written for the contrast. Real log files contain longer context, timestamps, ids and repeated fields that these cases do not reproduce; no real logs are included because they would carry personal data."
+    },
+    {
+      "id": "en-usernames-and-emails-out-of-scope",
+      "description": "Handles, usernames and email local parts that embed names remain out of scope; log-style cases deliberately use display names only."
+    },
+    {
+      "id": "familiarity-reference-surname-only",
+      "description": "Only the surname component is reference-checked (US 2010 Census surnames for English; the 2015 Statistics Korea surname table, read through a pinned Wikipedia transcription, for Korean). Given-name frequency is not reference-checked: the reference-frequency basis asserts, by author judgment, that the given name is a very common one."
+    },
+    {
+      "id": "familiarity-reference-us-centric",
+      "description": "The English reference is the US 2010 Census, so surnames frequent in the UK, India, Africa or East Asia can be 'rare' by the reference although routine in their communities. English 'common' labels that disagree with the reference band are listed by `python -m ner_evidence references audit`; they are not changed because the audit is informational."
+    },
+    {
+      "id": "familiarity-korean-novel-not-reference-derivable",
+      "description": "No Korean 'novel' band is reference-derived: the parsed surname table is partial, so absence proves nothing. Korean novel names rest on the constructed basis (author-assembled given names)."
+    },
+    {
+      "id": "familiarity-labels-not-model-evidence",
+      "description": "Familiarity says how routinely a name is used in its language community. It is not a claim about, and cannot be used as a proxy for, any model's training data."
+    },
+    {
+      "id": "no-independent-review",
+      "description": "No case has a counted independent review. The workflow, reviewer registry, append-only ledger, blind packets and review requests exist, but no independent reviewer has been registered and no verdict recorded. Korean cases in particular need a native speaker or linguist, and English boundary conventions need a second annotator. Factual review has not been requested at all."
+    },
+    {
+      "id": "review-independence-is-attested",
+      "description": "A reviewer's independence from the authors is a maintainer attestation in evidence/reviews/reviewers.json; tooling cannot verify it. Verdicts from reviewers not marked independent are kept and reported but never counted."
+    },
+    {
+      "id": "no-corpus-backed-evidence",
+      "description": "No case is corpus-backed. The policy, schema and gates for importing a public or licensed corpus exist and are tested, but an import needs an independent legal review of the exact corpus version and a name-replacement step, neither of which has been done. Candidates considered are in docs/corpus-candidates.md. Until then results on this evidence say nothing about real-world text."
+    },
+    {
+      "id": "reference-backed-cases-cite-conventions-not-text",
+      "description": "Reference-backed cases rest on orthography and naming conventions (Hangul Spelling Rules Articles 41 and 48, Romanization of Korean Articles 3 and 4, a W3C article on personal names). They justify how a name is written and where its boundary lies, not that a detector must find it, and they are small in number. The citations name the article or section; no source text is copied."
+    },
+    {
+      "id": "reference-sources-legal-review-pending",
+      "description": "Every reference source has legal review 'pending'. The reading that a government notice, a W3C article or derived band labels may be cited without copying is the author's, not a legal opinion. The public-release gate fails on this on purpose."
+    }
+  ]
+}

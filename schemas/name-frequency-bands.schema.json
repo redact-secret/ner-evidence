@@ -1,0 +1,41 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:ner-evidence:schema:name-frequency-bands:1.0.0",
+  "title": "Derived name-frequency bands",
+  "description": "Minimized, derived facts from registered reference tables: only the band of each surname component that a case cites. No counts, ranks or table rows are stored.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["bands_version", "references"],
+  "properties": {
+    "bands_version": {"const": "1.0.0"},
+    "references": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["source_id", "language", "component_type", "rules", "entries"],
+        "properties": {
+          "source_id": {"type": "string", "pattern": "^src/[a-z0-9]+(-[a-z0-9]+)*$"},
+          "language": {"enum": ["en", "ko"]},
+          "component_type": {"enum": ["surname"]},
+          "rules": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["common", "rare", "novel", "normalization"],
+            "properties": {
+              "common": {"type": "string", "minLength": 10},
+              "rare": {"type": "string", "minLength": 10},
+              "novel": {"type": "string", "minLength": 10},
+              "normalization": {"type": "string", "minLength": 10}
+            }
+          },
+          "entries": {
+            "type": "object",
+            "additionalProperties": {"enum": ["common", "rare", "novel"]}
+          }
+        }
+      }
+    }
+  }
+}

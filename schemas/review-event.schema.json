@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:ner-evidence:schema:review-event:1.0.0",
+  "title": "Review ledger event",
+  "description": "One append-only line of evidence/reviews/ledger.jsonl. A request asks for a review; a verdict records one reviewer's opinion about one facet of one case, bound to the exact case content by subject_digest. Events never change a case.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["event_id", "event_type", "case_id", "subject_digest", "facet", "recorded_on"],
+  "properties": {
+    "event_id": {"type": "string", "pattern": "^ev-[0-9a-f]{16}$"},
+    "event_type": {"enum": ["request", "verdict"]},
+    "case_id": {"type": "string", "pattern": "^person/(en|ko)/[a-z0-9]+(-[a-z0-9]+)*/[a-z0-9]+(-[a-z0-9]+)*$"},
+    "subject_digest": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "facet": {"enum": ["factual", "linguistic"]},
+    "recorded_on": {"type": "string", "format": "date"},
+    "requested_role": {"enum": ["en-annotator", "ko-native-linguist", "factual-checker"]},
+    "reviewer_id": {"type": "string", "pattern": "^rev/[a-z0-9]+(-[a-z0-9]+)*$"},
+    "verdict": {"enum": ["agree", "disagree", "abstain"]},
+    "comment": {"type": "string", "minLength": 20, "maxLength": 1200},
+    "proposed_change": {"type": "string", "minLength": 10, "maxLength": 1200}
+  }
+}

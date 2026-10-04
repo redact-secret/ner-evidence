@@ -1,8 +1,61 @@
 {
   "cases": [
     {
+      "id": "person/en/title-honorific/clergy-title-the-rev-dr",
+      "schema_version": "1.1.0",
+      "entity_type": "PERSON",
+      "language": "en",
+      "title": "Clergy title stack with a generational suffix",
+      "why": "A definite article, abbreviated clergy title and academic title precede the name, which ends in a generational suffix; the suffix stays in the span.",
+      "text": "The Rev. Dr. Thomas Kline Jr. spoke first.",
+      "expectations": [
+        {
+          "start": 13,
+          "end": 29,
+          "surface": "Thomas Kline Jr.",
+          "expect": "person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "latin",
+        "token_class": "multi",
+        "collision_classes": [],
+        "context_types": [
+          "plain-prose",
+          "title-honorific",
+          "sentence-initial"
+        ],
+        "name_features": [
+          "full-name",
+          "generational-suffix"
+        ],
+        "boundary_tags": [
+          "honorific-excluded",
+          "abbreviation-period"
+        ],
+        "contrast_classes": [
+          "en-honorific-variant"
+        ],
+        "familiarity_basis": "author-judgment"
+      },
+      "ambiguity": {
+        "level": "unambiguous"
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
       "id": "person/en/title-honorific/dr-surname",
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "en",
       "title": "Dr. followed by a surname",
@@ -32,7 +85,8 @@
         "boundary_tags": [
           "honorific-excluded",
           "abbreviation-period"
-        ]
+        ],
+        "familiarity_basis": "author-judgment"
       },
       "ambiguity": {
         "level": "unambiguous"
@@ -48,8 +102,67 @@
       }
     },
     {
+      "id": "person/en/title-honorific/gender-neutral-title-mx",
+      "schema_version": "1.1.0",
+      "entity_type": "PERSON",
+      "language": "en",
+      "title": "Gender-neutral title Mx.",
+      "why": "Mx. is a less frequent title; a short title list built from Mr/Ms/Mrs/Dr misses it.",
+      "text": "Mx. Jordan Reyes joined the panel.",
+      "expectations": [
+        {
+          "start": 4,
+          "end": 16,
+          "surface": "Jordan Reyes",
+          "expect": "person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "latin",
+        "token_class": "multi",
+        "collision_classes": [
+          "location"
+        ],
+        "context_types": [
+          "plain-prose",
+          "title-honorific"
+        ],
+        "name_features": [
+          "full-name"
+        ],
+        "boundary_tags": [
+          "honorific-excluded",
+          "abbreviation-period"
+        ],
+        "contrast_classes": [
+          "en-honorific-variant"
+        ],
+        "familiarity_basis": "author-judgment"
+      },
+      "ambiguity": {
+        "level": "context-resolvable",
+        "kind": "category-collision",
+        "alternative_reading": "place-name",
+        "resolved_by": [
+          "title-or-honorific"
+        ],
+        "note": "The title Mx. selects a person; Jordan alone is also a country."
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
       "id": "person/en/title-honorific/judge-title-word",
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "en",
       "title": "Occupational title 'Judge' before a surname",
@@ -78,7 +191,8 @@
         ],
         "boundary_tags": [
           "honorific-excluded"
-        ]
+        ],
+        "familiarity_basis": "author-judgment"
       },
       "ambiguity": {
         "level": "unambiguous"
@@ -95,7 +209,7 @@
     },
     {
       "id": "person/en/title-honorific/mr-full-name",
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "en",
       "title": "Mr. followed by a full name",
@@ -125,7 +239,8 @@
         "boundary_tags": [
           "honorific-excluded",
           "abbreviation-period"
-        ]
+        ],
+        "familiarity_basis": "author-judgment"
       },
       "ambiguity": {
         "level": "unambiguous"
@@ -142,7 +257,7 @@
     },
     {
       "id": "person/en/title-honorific/mrs-surname-long-tenure",
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "en",
       "title": "Mrs. followed by a surname of non-English origin",
@@ -172,7 +287,8 @@
         "boundary_tags": [
           "honorific-excluded",
           "abbreviation-period"
-        ]
+        ],
+        "familiarity_basis": "author-judgment"
       },
       "ambiguity": {
         "level": "unambiguous"
@@ -189,7 +305,7 @@
     },
     {
       "id": "person/en/title-honorific/ms-hyphenated-surname",
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "en",
       "title": "Ms. followed by a hyphenated surname",
@@ -221,7 +337,8 @@
           "honorific-excluded",
           "abbreviation-period",
           "hyphen-boundary"
-        ]
+        ],
+        "familiarity_basis": "author-judgment"
       },
       "ambiguity": {
         "level": "unambiguous"
@@ -237,8 +354,162 @@
       }
     },
     {
+      "id": "person/en/title-honorific/official-title-hon-abbreviated",
+      "schema_version": "1.1.0",
+      "entity_type": "PERSON",
+      "language": "en",
+      "title": "Abbreviated honorific Hon. with a period",
+      "why": "Hon. is an abbreviated form of 'Honourable'; its period and letters stay outside the span.",
+      "text": "Hon. Priya Raman chaired the hearing.",
+      "expectations": [
+        {
+          "start": 5,
+          "end": 16,
+          "surface": "Priya Raman",
+          "expect": "person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "latin",
+        "token_class": "multi",
+        "collision_classes": [],
+        "context_types": [
+          "plain-prose",
+          "title-honorific"
+        ],
+        "name_features": [
+          "full-name"
+        ],
+        "boundary_tags": [
+          "honorific-excluded",
+          "abbreviation-period"
+        ],
+        "contrast_classes": [
+          "en-honorific-variant"
+        ],
+        "familiarity_basis": "author-judgment"
+      },
+      "ambiguity": {
+        "level": "unambiguous"
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/en/title-honorific/peerage-title-dame",
+      "schema_version": "1.1.0",
+      "entity_type": "PERSON",
+      "language": "en",
+      "title": "Honorific Dame before a full name",
+      "why": "A British honorific written as a word; excluded from the span.",
+      "text": "Dame Elspeth Marlowe opened the hall.",
+      "expectations": [
+        {
+          "start": 5,
+          "end": 20,
+          "surface": "Elspeth Marlowe",
+          "expect": "person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "rare",
+        "script": "latin",
+        "token_class": "multi",
+        "collision_classes": [],
+        "context_types": [
+          "plain-prose",
+          "title-honorific"
+        ],
+        "name_features": [
+          "full-name"
+        ],
+        "boundary_tags": [
+          "honorific-excluded"
+        ],
+        "contrast_classes": [
+          "en-honorific-variant"
+        ],
+        "familiarity_basis": "author-judgment"
+      },
+      "ambiguity": {
+        "level": "unambiguous"
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/en/title-honorific/post-nominal-degree-excluded",
+      "schema_version": "1.1.0",
+      "entity_type": "PERSON",
+      "language": "en",
+      "title": "Post-nominal degree after a full name",
+      "why": "A post-nominal degree after a comma is a credential, not part of the name; the comma and degree are outside the span.",
+      "text": "Dana Whitlow, PhD, presented the results.",
+      "expectations": [
+        {
+          "start": 0,
+          "end": 12,
+          "surface": "Dana Whitlow",
+          "expect": "person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "rare",
+        "script": "latin",
+        "token_class": "multi",
+        "collision_classes": [],
+        "context_types": [
+          "plain-prose",
+          "sentence-initial",
+          "title-honorific"
+        ],
+        "name_features": [
+          "full-name"
+        ],
+        "boundary_tags": [
+          "honorific-excluded",
+          "punctuation-adjacent"
+        ],
+        "contrast_classes": [
+          "en-honorific-variant",
+          "en-punctuation-dense"
+        ],
+        "familiarity_basis": "author-judgment"
+      },
+      "ambiguity": {
+        "level": "unambiguous"
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
       "id": "person/en/title-honorific/prof-rare-name",
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "en",
       "title": "Prof. followed by a rare full name",
@@ -268,7 +539,8 @@
         "boundary_tags": [
           "honorific-excluded",
           "abbreviation-period"
-        ]
+        ],
+        "familiarity_basis": "author-judgment"
       },
       "ambiguity": {
         "level": "unambiguous"
@@ -285,7 +557,7 @@
     },
     {
       "id": "person/en/title-honorific/reverend-title",
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "en",
       "title": "Spelled-out clerical title before a surname",
@@ -314,7 +586,8 @@
         ],
         "boundary_tags": [
           "honorific-excluded"
-        ]
+        ],
+        "familiarity_basis": "author-judgment"
       },
       "ambiguity": {
         "level": "unambiguous"
@@ -330,8 +603,124 @@
       }
     },
     {
+      "id": "person/en/title-honorific/rule-attached-japanese-honorific",
+      "schema_version": "1.1.0",
+      "entity_type": "PERSON",
+      "language": "en",
+      "title": "Japanese honorific -san attached to a surname",
+      "why": "The reference describes the honorifics -san and -sama added to a name; the hyphenated honorific is outside the span, like a title.",
+      "text": "Please greet Sato-san at the door.",
+      "expectations": [
+        {
+          "start": 13,
+          "end": 17,
+          "surface": "Sato",
+          "expect": "person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "latin",
+        "token_class": "single",
+        "collision_classes": [],
+        "context_types": [
+          "plain-prose",
+          "title-honorific"
+        ],
+        "name_features": [
+          "surname-only"
+        ],
+        "boundary_tags": [
+          "honorific-excluded",
+          "hyphen-boundary",
+          "suffix-excluded"
+        ],
+        "contrast_classes": [
+          "en-honorific-variant"
+        ],
+        "familiarity_basis": "author-judgment"
+      },
+      "ambiguity": {
+        "level": "unambiguous"
+      },
+      "evidence_class": "reference-backed",
+      "source_ids": [
+        "src/project-authored-synthetic",
+        "src/ref-w3c-personal-names"
+      ],
+      "citations": [
+        {
+          "source_id": "src/ref-w3c-personal-names",
+          "locator": "Formality and honorifics"
+        }
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/en/title-honorific/rule-stacked-german-titles",
+      "schema_version": "1.1.0",
+      "entity_type": "PERSON",
+      "language": "en",
+      "title": "Stacked German titles before a surname",
+      "why": "The reference notes that German address stacks titles (Herr Professor Doktor ...); every title is outside the span.",
+      "text": "Herr Professor Doktor Braun spoke first.",
+      "expectations": [
+        {
+          "start": 22,
+          "end": 27,
+          "surface": "Braun",
+          "expect": "person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "latin",
+        "token_class": "single",
+        "collision_classes": [],
+        "context_types": [
+          "plain-prose",
+          "title-honorific"
+        ],
+        "name_features": [
+          "surname-only"
+        ],
+        "boundary_tags": [
+          "honorific-excluded"
+        ],
+        "contrast_classes": [
+          "en-honorific-variant"
+        ],
+        "familiarity_basis": "author-judgment"
+      },
+      "ambiguity": {
+        "level": "unambiguous"
+      },
+      "evidence_class": "reference-backed",
+      "source_ids": [
+        "src/project-authored-synthetic",
+        "src/ref-w3c-personal-names"
+      ],
+      "citations": [
+        {
+          "source_id": "src/ref-w3c-personal-names",
+          "locator": "Formality and honorifics"
+        }
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
       "id": "person/en/title-honorific/sir-given-and-surname",
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "en",
       "title": "Honorific 'Sir' before a full name",
@@ -360,7 +749,8 @@
         ],
         "boundary_tags": [
           "honorific-excluded"
-        ]
+        ],
+        "familiarity_basis": "author-judgment"
       },
       "ambiguity": {
         "level": "unambiguous"
@@ -377,7 +767,7 @@
     },
     {
       "id": "person/en/title-honorific/spelled-out-title-captain",
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "en",
       "title": "Spelled-out military title before a surname",
@@ -406,7 +796,8 @@
         ],
         "boundary_tags": [
           "honorific-excluded"
-        ]
+        ],
+        "familiarity_basis": "author-judgment"
       },
       "ambiguity": {
         "level": "unambiguous"
@@ -422,8 +813,59 @@
       }
     },
     {
+      "id": "person/en/title-honorific/stacked-prof-dr-title",
+      "schema_version": "1.1.0",
+      "entity_type": "PERSON",
+      "language": "en",
+      "title": "Two stacked titles before a name",
+      "why": "Two prefixed titles in a row; both are excluded and the span starts at the first name.",
+      "text": "Prof. Dr. Amina Okafor presented the results.",
+      "expectations": [
+        {
+          "start": 10,
+          "end": 22,
+          "surface": "Amina Okafor",
+          "expect": "person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "rare",
+        "script": "latin",
+        "token_class": "multi",
+        "collision_classes": [],
+        "context_types": [
+          "plain-prose",
+          "title-honorific"
+        ],
+        "name_features": [
+          "full-name"
+        ],
+        "boundary_tags": [
+          "honorific-excluded",
+          "abbreviation-period"
+        ],
+        "contrast_classes": [
+          "en-honorific-variant"
+        ],
+        "familiarity_basis": "author-judgment"
+      },
+      "ambiguity": {
+        "level": "unambiguous"
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
       "id": "person/en/title-honorific/title-forms-brand",
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "en",
       "title": "Title-plus-name that is actually a beverage brand",
@@ -451,11 +893,62 @@
           "no-person"
         ],
         "name_features": [],
-        "boundary_tags": []
+        "boundary_tags": [],
+        "familiarity_basis": "author-judgment"
       },
       "ambiguity": {
         "level": "context-resolvable",
         "note": "The title-plus-surname pattern is shared with real people; only the product context (ordering a drink) resolves it."
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/en/title-honorific/title-without-period-ms",
+      "schema_version": "1.1.0",
+      "entity_type": "PERSON",
+      "language": "en",
+      "title": "Ms written without a period",
+      "why": "A title written without a period is still a title; only the surname is the span.",
+      "text": "Ms Raman signed the form.",
+      "expectations": [
+        {
+          "start": 3,
+          "end": 8,
+          "surface": "Raman",
+          "expect": "person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "latin",
+        "token_class": "single",
+        "collision_classes": [],
+        "context_types": [
+          "plain-prose",
+          "title-honorific"
+        ],
+        "name_features": [
+          "surname-only"
+        ],
+        "boundary_tags": [
+          "honorific-excluded"
+        ],
+        "contrast_classes": [
+          "en-honorific-variant"
+        ],
+        "familiarity_basis": "author-judgment"
+      },
+      "ambiguity": {
+        "level": "unambiguous"
       },
       "evidence_class": "authored-adversarial",
       "source_ids": [

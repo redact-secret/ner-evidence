@@ -1,8 +1,65 @@
 {
   "cases": [
     {
+      "id": "person/ko/organization-collision/apartment-brand-house",
+      "schema_version": "1.1.0",
+      "entity_type": "PERSON",
+      "language": "ko",
+      "title": "Apartment complex brand with a given-name element",
+      "why": "A residential brand built from a given name and 하우스 ('house'); moving in is predicated of a building.",
+      "text": "수빈 하우스에 입주했다.",
+      "expectations": [
+        {
+          "start": 0,
+          "end": 6,
+          "surface": "수빈 하우스",
+          "expect": "not-person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "hangul",
+        "token_class": "multi",
+        "collision_classes": [
+          "product-brand",
+          "location"
+        ],
+        "context_types": [
+          "plain-prose",
+          "sentence-initial",
+          "particle-attached",
+          "no-person"
+        ],
+        "name_features": [],
+        "boundary_tags": [
+          "particle-excluded"
+        ],
+        "familiarity_basis": "author-judgment"
+      },
+      "ambiguity": {
+        "level": "context-resolvable",
+        "kind": "category-collision",
+        "alternative_reading": "brand-or-product",
+        "resolved_by": [
+          "head-noun-or-suffix",
+          "predicate-or-argument"
+        ],
+        "note": "입주하다 ('move in') takes a building as its place complement."
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
       "id": "person/ko/organization-collision/bacchus-drink",
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "ko",
       "title": "박카스 starting with the surname 박",
@@ -50,8 +107,188 @@
       }
     },
     {
+      "id": "person/ko/organization-collision/bare-harin-announcement-either",
+      "schema_version": "1.1.0",
+      "entity_type": "PERSON",
+      "language": "ko",
+      "title": "하린이 신제품을 소개했다: a brand or a person",
+      "why": "하린 is a given name and a plausible brand; introducing a new product is something a company or an individual presenter does.",
+      "text": "하린이 신제품을 소개했다.",
+      "expectations": [
+        {
+          "start": 0,
+          "end": 2,
+          "surface": "하린",
+          "expect": "either"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "rare",
+        "script": "hangul",
+        "token_class": "single",
+        "collision_classes": [
+          "product-brand",
+          "organization"
+        ],
+        "context_types": [
+          "plain-prose",
+          "sentence-initial",
+          "particle-attached"
+        ],
+        "name_features": [
+          "given-only",
+          "ko-given-only"
+        ],
+        "boundary_tags": [
+          "particle-excluded"
+        ],
+        "familiarity_basis": "author-judgment"
+      },
+      "ambiguity": {
+        "level": "genuinely-ambiguous",
+        "kind": "category-collision",
+        "alternative_reading": "brand-or-product",
+        "resolved_by": [
+          "nothing"
+        ],
+        "acceptable_outcomes": [
+          "person",
+          "not-person"
+        ],
+        "note": "Presenting a product fits both a person on stage and a company; there is no head noun or honorific."
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/ko/organization-collision/bare-raon-either",
+      "schema_version": "1.1.0",
+      "entity_type": "PERSON",
+      "language": "ko",
+      "title": "라온 as a company or a person, bare subject",
+      "why": "라온 is a modern given name and a very common company-name element; bidding is something a firm or an individual can do.",
+      "text": "라온이 입찰에 참여했다.",
+      "expectations": [
+        {
+          "start": 0,
+          "end": 2,
+          "surface": "라온",
+          "expect": "either"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "rare",
+        "script": "hangul",
+        "token_class": "single",
+        "collision_classes": [
+          "organization",
+          "common-word"
+        ],
+        "context_types": [
+          "plain-prose",
+          "sentence-initial",
+          "particle-attached"
+        ],
+        "name_features": [
+          "given-only",
+          "ko-given-only"
+        ],
+        "boundary_tags": [
+          "particle-excluded"
+        ],
+        "familiarity_basis": "author-judgment"
+      },
+      "ambiguity": {
+        "level": "genuinely-ambiguous",
+        "kind": "category-collision",
+        "alternative_reading": "organization-name",
+        "resolved_by": [
+          "nothing"
+        ],
+        "acceptable_outcomes": [
+          "person",
+          "not-person"
+        ],
+        "note": "No 건설, 주식회사 or 씨 follows 라온, so a firm and an individual bidder are both defensible."
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/ko/organization-collision/brand-appliance-without-particle",
+      "schema_version": "1.1.0",
+      "entity_type": "PERSON",
+      "language": "ko",
+      "title": "Brand name directly before a product noun",
+      "why": "A given-name-like word directly before a product noun is a brand name.",
+      "text": "서진 에어프라이어를 샀다.",
+      "expectations": [
+        {
+          "start": 0,
+          "end": 9,
+          "surface": "서진 에어프라이어",
+          "expect": "not-person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "rare",
+        "script": "hangul",
+        "token_class": "multi",
+        "collision_classes": [
+          "product-brand"
+        ],
+        "context_types": [
+          "plain-prose",
+          "sentence-initial",
+          "particle-attached",
+          "no-person"
+        ],
+        "name_features": [],
+        "boundary_tags": [
+          "particle-excluded"
+        ],
+        "familiarity_basis": "author-judgment"
+      },
+      "ambiguity": {
+        "level": "context-resolvable",
+        "kind": "category-collision",
+        "alternative_reading": "brand-or-product",
+        "resolved_by": [
+          "head-noun-or-suffix",
+          "particle-or-suffix"
+        ],
+        "note": "No topic marker follows 서진 and the product noun 에어프라이어 completes the name."
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
       "id": "person/ko/organization-collision/choegang-chicken-brand",
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "ko",
       "title": "Fictional brand 최강 치킨 containing two surname syllables",
@@ -101,7 +338,7 @@
     },
     {
       "id": "person/ko/organization-collision/emart-store",
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "ko",
       "title": "이마트 starting with the surname 이",
@@ -150,7 +387,7 @@
     },
     {
       "id": "person/ko/organization-collision/fictional-accounting-firm",
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "ko",
       "title": "Fictional firm 박앤이 세무회계 made of two surnames",
@@ -198,7 +435,7 @@
     },
     {
       "id": "person/ko/organization-collision/hanssem-company",
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "ko",
       "title": "한샘 starting with the surname 한",
@@ -247,7 +484,7 @@
     },
     {
       "id": "person/ko/organization-collision/hanwha-company-subject",
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "ko",
       "title": "한화 starting with the surname 한",
@@ -296,7 +533,7 @@
     },
     {
       "id": "person/ko/organization-collision/honest-pharmacy-name",
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "ko",
       "title": "Fictional pharmacy 정직한 약국 starting with the surname syllable 정",
@@ -346,7 +583,7 @@
     },
     {
       "id": "person/ko/organization-collision/hyundai-motor-company",
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "ko",
       "title": "현대자동차 starting with the syllable 현",
@@ -395,7 +632,7 @@
     },
     {
       "id": "person/ko/organization-collision/jeonggwanjang-brand",
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "ko",
       "title": "정관장 starting with the surname 정",
@@ -445,7 +682,7 @@
     },
     {
       "id": "person/ko/organization-collision/jin-ramyun-brand",
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "ko",
       "title": "진라면 starting with the surname 진",
@@ -493,8 +730,63 @@
       }
     },
     {
+      "id": "person/ko/organization-collision/law-office-fictional",
+      "schema_version": "1.1.0",
+      "entity_type": "PERSON",
+      "language": "ko",
+      "title": "Law office whose name begins with surname-like syllables",
+      "why": "A firm name made of surname syllables joined by 앤 and ending in 법률사무소 ('law office') is an organization.",
+      "text": "오앤박 법률사무소가 의견서를 제출했다.",
+      "expectations": [
+        {
+          "start": 0,
+          "end": 9,
+          "surface": "오앤박 법률사무소",
+          "expect": "not-person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "novel",
+        "script": "hangul",
+        "token_class": "multi",
+        "collision_classes": [
+          "organization"
+        ],
+        "context_types": [
+          "plain-prose",
+          "sentence-initial",
+          "particle-attached",
+          "no-person"
+        ],
+        "name_features": [],
+        "boundary_tags": [
+          "particle-excluded"
+        ],
+        "familiarity_basis": "constructed"
+      },
+      "ambiguity": {
+        "level": "context-resolvable",
+        "kind": "category-collision",
+        "alternative_reading": "organization-name",
+        "resolved_by": [
+          "head-noun-or-suffix"
+        ],
+        "note": "법률사무소 is an institutional head noun, so the string is an organization."
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
       "id": "person/ko/organization-collision/ottogi-company",
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "ko",
       "title": "오뚜기 starting with the surname 오",
@@ -542,8 +834,72 @@
       }
     },
     {
+      "id": "person/ko/organization-collision/person-acquires-namesake-foods",
+      "schema_version": "1.1.0",
+      "entity_type": "PERSON",
+      "language": "ko",
+      "title": "Person acquiring a food company with her given name",
+      "why": "A person and a food company sharing a given name, linked by an acquisition predicate.",
+      "text": "채원이 채원 식품을 인수했다.",
+      "expectations": [
+        {
+          "start": 0,
+          "end": 2,
+          "surface": "채원",
+          "expect": "person"
+        },
+        {
+          "start": 4,
+          "end": 9,
+          "surface": "채원 식품",
+          "expect": "not-person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "hangul",
+        "token_class": "single",
+        "collision_classes": [
+          "organization"
+        ],
+        "context_types": [
+          "plain-prose",
+          "sentence-initial",
+          "particle-attached"
+        ],
+        "name_features": [
+          "given-only",
+          "ko-given-only"
+        ],
+        "boundary_tags": [
+          "particle-excluded"
+        ],
+        "familiarity_basis": "author-judgment"
+      },
+      "ambiguity": {
+        "level": "context-resolvable",
+        "kind": "category-collision",
+        "alternative_reading": "organization-name",
+        "resolved_by": [
+          "particle-or-suffix",
+          "head-noun-or-suffix"
+        ],
+        "note": "Acquiring a company takes an organization object; 식품 is an industry head noun."
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
       "id": "person/ko/organization-collision/person-and-namesake-cafe",
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "ko",
       "title": "A person named 윤슬 who owns a cafe called 윤슬 카페",
@@ -583,7 +939,8 @@
         ],
         "boundary_tags": [
           "particle-excluded"
-        ]
+        ],
+        "familiarity_basis": "author-judgment"
       },
       "ambiguity": {
         "level": "context-resolvable",
@@ -600,8 +957,519 @@
       }
     },
     {
+      "id": "person/ko/organization-collision/person-buys-appliance-topic",
+      "schema_version": "1.1.0",
+      "entity_type": "PERSON",
+      "language": "ko",
+      "title": "Given name with a topic marker before a product noun",
+      "why": "Partner of brand-appliance-without-particle: the topic particle 은 after the name separates the person from the product.",
+      "text": "서진은 에어프라이어를 샀다.",
+      "expectations": [
+        {
+          "start": 0,
+          "end": 2,
+          "surface": "서진",
+          "expect": "person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "rare",
+        "script": "hangul",
+        "token_class": "single",
+        "collision_classes": [
+          "product-brand"
+        ],
+        "context_types": [
+          "plain-prose",
+          "sentence-initial",
+          "particle-attached"
+        ],
+        "name_features": [
+          "given-only",
+          "ko-given-only"
+        ],
+        "boundary_tags": [
+          "particle-excluded"
+        ],
+        "familiarity_basis": "author-judgment"
+      },
+      "ambiguity": {
+        "level": "context-resolvable",
+        "kind": "category-collision",
+        "alternative_reading": "brand-or-product",
+        "resolved_by": [
+          "particle-or-suffix",
+          "syntactic-position"
+        ],
+        "note": "은 marks 서진 as the topic and buyer."
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/ko/organization-collision/person-honorific-runs-pharmacy",
+      "schema_version": "1.1.0",
+      "entity_type": "PERSON",
+      "language": "ko",
+      "title": "Person with 씨 running a pharmacy with the same given name",
+      "why": "The honorific 씨 selects the person; the pharmacy is a business named after the same syllables.",
+      "text": "윤재 씨는 윤재 약국을 운영한다.",
+      "expectations": [
+        {
+          "start": 0,
+          "end": 2,
+          "surface": "윤재",
+          "expect": "person"
+        },
+        {
+          "start": 6,
+          "end": 11,
+          "surface": "윤재 약국",
+          "expect": "not-person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "hangul",
+        "token_class": "single",
+        "collision_classes": [
+          "organization"
+        ],
+        "context_types": [
+          "plain-prose",
+          "sentence-initial",
+          "particle-attached",
+          "title-honorific"
+        ],
+        "name_features": [
+          "given-only",
+          "ko-given-only"
+        ],
+        "boundary_tags": [
+          "honorific-excluded",
+          "particle-excluded"
+        ],
+        "familiarity_basis": "author-judgment"
+      },
+      "ambiguity": {
+        "level": "context-resolvable",
+        "kind": "category-collision",
+        "alternative_reading": "organization-name",
+        "resolved_by": [
+          "particle-or-suffix",
+          "head-noun-or-suffix"
+        ],
+        "note": "씨 attaches to a person and 약국 is a business head noun."
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/ko/organization-collision/person-orders-namesake-salad",
+      "schema_version": "1.1.0",
+      "entity_type": "PERSON",
+      "language": "ko",
+      "title": "Person and a salad brand with the same given name",
+      "why": "A given name followed by 은 and a salad brand named after the same given name.",
+      "text": "도현은 도현 샐러드를 주문했다.",
+      "expectations": [
+        {
+          "start": 0,
+          "end": 2,
+          "surface": "도현",
+          "expect": "person"
+        },
+        {
+          "start": 4,
+          "end": 10,
+          "surface": "도현 샐러드",
+          "expect": "not-person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "hangul",
+        "token_class": "single",
+        "collision_classes": [
+          "product-brand"
+        ],
+        "context_types": [
+          "plain-prose",
+          "sentence-initial",
+          "particle-attached"
+        ],
+        "name_features": [
+          "given-only",
+          "ko-given-only"
+        ],
+        "boundary_tags": [
+          "particle-excluded"
+        ],
+        "familiarity_basis": "author-judgment"
+      },
+      "ambiguity": {
+        "level": "context-resolvable",
+        "kind": "category-collision",
+        "alternative_reading": "brand-or-product",
+        "resolved_by": [
+          "particle-or-suffix",
+          "head-noun-or-suffix"
+        ],
+        "note": "The topic-marked name is the orderer; the name followed directly by a menu noun is a brand."
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/ko/organization-collision/person-reviews-namesake-bakery",
+      "schema_version": "1.1.0",
+      "entity_type": "PERSON",
+      "language": "ko",
+      "title": "Person reviewing a bakery with the same given name",
+      "why": "A given name and a bakery brand with the same syllables.",
+      "text": "하윤이 하윤 베이커리를 칭찬했다.",
+      "expectations": [
+        {
+          "start": 0,
+          "end": 2,
+          "surface": "하윤",
+          "expect": "person"
+        },
+        {
+          "start": 4,
+          "end": 11,
+          "surface": "하윤 베이커리",
+          "expect": "not-person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "hangul",
+        "token_class": "single",
+        "collision_classes": [
+          "product-brand"
+        ],
+        "context_types": [
+          "plain-prose",
+          "sentence-initial",
+          "particle-attached"
+        ],
+        "name_features": [
+          "given-only",
+          "ko-given-only"
+        ],
+        "boundary_tags": [
+          "particle-excluded"
+        ],
+        "familiarity_basis": "author-judgment"
+      },
+      "ambiguity": {
+        "level": "context-resolvable",
+        "kind": "category-collision",
+        "alternative_reading": "brand-or-product",
+        "resolved_by": [
+          "particle-or-suffix",
+          "head-noun-or-suffix"
+        ],
+        "note": "The subject-marked name is the one who praises; 베이커리 is a business head noun, so the name before it is a bakery brand."
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/ko/organization-collision/person-runs-namesake-electronics",
+      "schema_version": "1.1.0",
+      "entity_type": "PERSON",
+      "language": "ko",
+      "title": "Person and an electronics company with the same given name",
+      "why": "A person and a company named with his given name plus 전자 ('electronics').",
+      "text": "민석은 민석 전자의 대표다.",
+      "expectations": [
+        {
+          "start": 0,
+          "end": 2,
+          "surface": "민석",
+          "expect": "person"
+        },
+        {
+          "start": 4,
+          "end": 9,
+          "surface": "민석 전자",
+          "expect": "not-person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "hangul",
+        "token_class": "single",
+        "collision_classes": [
+          "organization"
+        ],
+        "context_types": [
+          "plain-prose",
+          "sentence-initial",
+          "particle-attached"
+        ],
+        "name_features": [
+          "given-only",
+          "ko-given-only"
+        ],
+        "boundary_tags": [
+          "particle-excluded"
+        ],
+        "familiarity_basis": "author-judgment"
+      },
+      "ambiguity": {
+        "level": "context-resolvable",
+        "kind": "category-collision",
+        "alternative_reading": "organization-name",
+        "resolved_by": [
+          "particle-or-suffix",
+          "head-noun-or-suffix"
+        ],
+        "note": "The topic-marked name is the representative; 전자 is a company head noun."
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/ko/organization-collision/person-teaches-namesake-academy",
+      "schema_version": "1.1.0",
+      "entity_type": "PERSON",
+      "language": "ko",
+      "title": "Person teaching at an academy with his given name",
+      "why": "A person and a private academy with the same given name.",
+      "text": "한결은 한결 학원에서 강의한다.",
+      "expectations": [
+        {
+          "start": 0,
+          "end": 2,
+          "surface": "한결",
+          "expect": "person"
+        },
+        {
+          "start": 4,
+          "end": 9,
+          "surface": "한결 학원",
+          "expect": "not-person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "hangul",
+        "token_class": "single",
+        "collision_classes": [
+          "organization"
+        ],
+        "context_types": [
+          "plain-prose",
+          "sentence-initial",
+          "particle-attached"
+        ],
+        "name_features": [
+          "given-only",
+          "ko-given-only"
+        ],
+        "boundary_tags": [
+          "particle-excluded"
+        ],
+        "familiarity_basis": "author-judgment"
+      },
+      "ambiguity": {
+        "level": "context-resolvable",
+        "kind": "category-collision",
+        "alternative_reading": "organization-name",
+        "resolved_by": [
+          "particle-or-suffix",
+          "head-noun-or-suffix"
+        ],
+        "note": "학원 is an institution head noun and 에서 강의한다 marks a workplace."
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/ko/organization-collision/person-works-at-namesake-chicken",
+      "schema_version": "1.1.0",
+      "entity_type": "PERSON",
+      "language": "ko",
+      "title": "Person and chicken restaurant with the same given name",
+      "why": "A restaurant brand named after a given name and the person with that name in one sentence.",
+      "text": "민준이가 민준 치킨에서 일한다.",
+      "expectations": [
+        {
+          "start": 0,
+          "end": 2,
+          "surface": "민준",
+          "expect": "person"
+        },
+        {
+          "start": 5,
+          "end": 10,
+          "surface": "민준 치킨",
+          "expect": "not-person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "hangul",
+        "token_class": "single",
+        "collision_classes": [
+          "organization",
+          "product-brand"
+        ],
+        "context_types": [
+          "plain-prose",
+          "sentence-initial",
+          "particle-attached"
+        ],
+        "name_features": [
+          "given-only",
+          "ko-given-only"
+        ],
+        "boundary_tags": [
+          "particle-excluded",
+          "suffix-excluded"
+        ],
+        "familiarity_basis": "author-judgment"
+      },
+      "ambiguity": {
+        "level": "context-resolvable",
+        "kind": "category-collision",
+        "alternative_reading": "organization-name",
+        "resolved_by": [
+          "particle-or-suffix",
+          "head-noun-or-suffix"
+        ],
+        "note": "민준이가 is the name plus the informal name suffix 이 plus the subject marker 가; 치킨 is a business head noun, so 민준 치킨 is a restaurant."
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/ko/organization-collision/person-works-at-namesake-construction",
+      "schema_version": "1.1.0",
+      "entity_type": "PERSON",
+      "language": "ko",
+      "title": "Person and construction firm with the same given name",
+      "why": "A given name and a company built on that name appear together; only the first is a person.",
+      "text": "박서연은 서연 건설에서 근무한다.",
+      "expectations": [
+        {
+          "start": 0,
+          "end": 3,
+          "surface": "박서연",
+          "expect": "person"
+        },
+        {
+          "start": 5,
+          "end": 10,
+          "surface": "서연 건설",
+          "expect": "not-person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "hangul",
+        "token_class": "single",
+        "collision_classes": [
+          "organization"
+        ],
+        "context_types": [
+          "plain-prose",
+          "sentence-initial",
+          "particle-attached"
+        ],
+        "name_features": [
+          "full-name",
+          "ko-surname-given",
+          "ko-3-syllable"
+        ],
+        "boundary_tags": [
+          "particle-excluded"
+        ],
+        "familiarity_basis": "author-judgment"
+      },
+      "ambiguity": {
+        "level": "context-resolvable",
+        "kind": "category-collision",
+        "alternative_reading": "organization-name",
+        "resolved_by": [
+          "head-noun-or-suffix",
+          "particle-or-suffix"
+        ],
+        "note": "건설 ('construction') is a company head noun and 에서 근무한다 marks the workplace."
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
       "id": "person/ko/organization-collision/person-works-at-namesake-firm",
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "ko",
       "title": "A person working at a firm named with two surnames",
@@ -640,7 +1508,8 @@
         ],
         "boundary_tags": [
           "particle-excluded"
-        ]
+        ],
+        "familiarity_basis": "author-judgment"
       },
       "ambiguity": {
         "level": "context-resolvable",
@@ -657,8 +1526,63 @@
       }
     },
     {
+      "id": "person/ko/organization-collision/school-named-with-given-name",
+      "schema_version": "1.1.0",
+      "entity_type": "PERSON",
+      "language": "ko",
+      "title": "Elementary school named with a given name",
+      "why": "A school name that begins with a given-name-like word is an organization.",
+      "text": "정민 초등학교는 금요일에 단축 수업을 한다.",
+      "expectations": [
+        {
+          "start": 0,
+          "end": 7,
+          "surface": "정민 초등학교",
+          "expect": "not-person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "hangul",
+        "token_class": "multi",
+        "collision_classes": [
+          "organization"
+        ],
+        "context_types": [
+          "plain-prose",
+          "sentence-initial",
+          "particle-attached",
+          "no-person"
+        ],
+        "name_features": [],
+        "boundary_tags": [
+          "particle-excluded"
+        ],
+        "familiarity_basis": "author-judgment"
+      },
+      "ambiguity": {
+        "level": "context-resolvable",
+        "kind": "category-collision",
+        "alternative_reading": "organization-name",
+        "resolved_by": [
+          "head-noun-or-suffix"
+        ],
+        "note": "초등학교 is an institutional head noun."
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
       "id": "person/ko/organization-collision/shin-ramyun-product",
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "ko",
       "title": "신라면 starting with the surname 신",
@@ -706,8 +1630,122 @@
       }
     },
     {
+      "id": "person/ko/organization-collision/teacher-same-given-name",
+      "schema_version": "1.1.0",
+      "entity_type": "PERSON",
+      "language": "ko",
+      "title": "Given name with 선생님",
+      "why": "Partner of school-named-with-given-name: the same two syllables followed by 선생님 are a person.",
+      "text": "정민 선생님이 수업을 시작했다.",
+      "expectations": [
+        {
+          "start": 0,
+          "end": 2,
+          "surface": "정민",
+          "expect": "person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "hangul",
+        "token_class": "single",
+        "collision_classes": [
+          "organization"
+        ],
+        "context_types": [
+          "plain-prose",
+          "sentence-initial",
+          "particle-attached",
+          "title-honorific"
+        ],
+        "name_features": [
+          "given-only",
+          "ko-given-only"
+        ],
+        "boundary_tags": [
+          "honorific-excluded"
+        ],
+        "familiarity_basis": "author-judgment"
+      },
+      "ambiguity": {
+        "level": "context-resolvable",
+        "kind": "category-collision",
+        "alternative_reading": "organization-name",
+        "resolved_by": [
+          "title-or-honorific"
+        ],
+        "note": "선생님 attaches to a person; the title stays outside the span."
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/ko/organization-collision/trading-company-with-given-name",
+      "schema_version": "1.1.0",
+      "entity_type": "PERSON",
+      "language": "ko",
+      "title": "Trading company named with two-syllable name",
+      "why": "A two-syllable name followed by 물산 ('trading company') is a company.",
+      "text": "한승 물산이 신제품을 발표했다.",
+      "expectations": [
+        {
+          "start": 0,
+          "end": 5,
+          "surface": "한승 물산",
+          "expect": "not-person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "rare",
+        "script": "hangul",
+        "token_class": "multi",
+        "collision_classes": [
+          "organization"
+        ],
+        "context_types": [
+          "plain-prose",
+          "sentence-initial",
+          "particle-attached",
+          "no-person"
+        ],
+        "name_features": [],
+        "boundary_tags": [
+          "particle-excluded"
+        ],
+        "familiarity_basis": "author-judgment"
+      },
+      "ambiguity": {
+        "level": "context-resolvable",
+        "kind": "category-collision",
+        "alternative_reading": "organization-name",
+        "resolved_by": [
+          "head-noun-or-suffix",
+          "predicate-or-argument"
+        ],
+        "note": "물산 is a company head noun and announcing a product is predicated of a company."
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
       "id": "person/ko/organization-collision/yunseul-cafe-fictional",
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "ko",
       "title": "Fictional cafe 윤슬 카페 containing the name-like word 윤슬",

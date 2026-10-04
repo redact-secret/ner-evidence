@@ -1,8 +1,64 @@
 {
   "cases": [
     {
+      "id": "person/ko/mixed-script/digit-prefixed-team-then-name",
+      "schema_version": "1.1.0",
+      "entity_type": "PERSON",
+      "language": "ko",
+      "title": "Team number glued to a name",
+      "why": "'3팀김하나' glues a team label to the name; the digit boundary is the only cue that the name starts after 팀.",
+      "text": "3팀김하나가 보고서를 올렸다.",
+      "expectations": [
+        {
+          "start": 2,
+          "end": 5,
+          "surface": "김하나",
+          "expect": "person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "hangul",
+        "token_class": "single",
+        "collision_classes": [],
+        "context_types": [
+          "plain-prose",
+          "sentence-initial",
+          "particle-attached"
+        ],
+        "name_features": [
+          "full-name",
+          "ko-surname-given",
+          "ko-3-syllable"
+        ],
+        "boundary_tags": [
+          "digit-adjacent",
+          "no-space",
+          "mixed-script-boundary",
+          "particle-excluded"
+        ],
+        "contrast_classes": [
+          "ko-script-boundary"
+        ],
+        "familiarity_basis": "author-judgment"
+      },
+      "ambiguity": {
+        "level": "unambiguous"
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
       "id": "person/ko/mixed-script/given-name-then-latin-surname",
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "ko",
       "title": "Hangul given name followed by a Latin surname",
@@ -34,7 +90,8 @@
         "boundary_tags": [
           "mixed-script-boundary",
           "punctuation-adjacent"
-        ]
+        ],
+        "familiarity_basis": "author-judgment"
       },
       "ambiguity": {
         "level": "unambiguous"
@@ -51,7 +108,7 @@
     },
     {
       "id": "person/ko/mixed-script/hangul-and-hanja-parenthetical",
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "ko",
       "title": "Hangul name annotated with its hanja form",
@@ -93,7 +150,8 @@
           "parenthetical-boundary",
           "mixed-script-boundary",
           "particle-excluded"
-        ]
+        ],
+        "familiarity_basis": "author-judgment"
       },
       "ambiguity": {
         "level": "unambiguous"
@@ -109,8 +167,69 @@
       }
     },
     {
+      "id": "person/ko/mixed-script/hangul-and-latin-name-same-sentence",
+      "schema_version": "1.1.0",
+      "entity_type": "PERSON",
+      "language": "ko",
+      "title": "Same given name in Hangul and Latin in one sentence",
+      "why": "Two mentions of one person written in two scripts, joined by 과; each is a separate PERSON span.",
+      "text": "회의록에는 Seo-yeon과 서연이 모두 나온다.",
+      "expectations": [
+        {
+          "start": 6,
+          "end": 14,
+          "surface": "Seo-yeon",
+          "expect": "person"
+        },
+        {
+          "start": 16,
+          "end": 18,
+          "surface": "서연",
+          "expect": "person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "latin",
+        "token_class": "single",
+        "collision_classes": [],
+        "context_types": [
+          "plain-prose",
+          "sentence-initial",
+          "particle-attached",
+          "mixed-script-sentence",
+          "list-or-enumeration"
+        ],
+        "name_features": [
+          "given-only",
+          "ko-romanized"
+        ],
+        "boundary_tags": [
+          "mixed-script-boundary",
+          "particle-excluded"
+        ],
+        "contrast_classes": [
+          "ko-romanized-hangul-mixture"
+        ],
+        "familiarity_basis": "author-judgment"
+      },
+      "ambiguity": {
+        "level": "unambiguous"
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
       "id": "person/ko/mixed-script/hangul-and-latin-names-adjacent",
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "ko",
       "title": "A Hangul name and a Latin name in one list",
@@ -157,7 +276,8 @@
           "mixed-script-boundary",
           "punctuation-adjacent",
           "adjacent-names"
-        ]
+        ],
+        "familiarity_basis": "author-judgment"
       },
       "ambiguity": {
         "level": "unambiguous"
@@ -174,7 +294,7 @@
     },
     {
       "id": "person/ko/mixed-script/hangul-given-then-latin-surname-parenthetical",
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "ko",
       "title": "Mixed-script name followed by a parenthetical",
@@ -208,7 +328,8 @@
           "mixed-script-boundary",
           "parenthetical-boundary",
           "particle-excluded"
-        ]
+        ],
+        "familiarity_basis": "author-judgment"
       },
       "ambiguity": {
         "level": "unambiguous"
@@ -225,7 +346,7 @@
     },
     {
       "id": "person/ko/mixed-script/hangul-name-after-latin-title-dr",
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "ko",
       "title": "Hangul surname after the Latin title Dr.",
@@ -261,7 +382,8 @@
           "honorific-excluded",
           "abbreviation-period",
           "particle-excluded"
-        ]
+        ],
+        "familiarity_basis": "author-judgment"
       },
       "ambiguity": {
         "level": "context-resolvable",
@@ -279,7 +401,7 @@
     },
     {
       "id": "person/ko/mixed-script/hangul-name-in-english-quote",
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "ko",
       "title": "Hangul name inside an English quotation",
@@ -313,7 +435,8 @@
         "boundary_tags": [
           "mixed-script-boundary",
           "quote-boundary"
-        ]
+        ],
+        "familiarity_basis": "author-judgment"
       },
       "ambiguity": {
         "level": "unambiguous"
@@ -336,7 +459,7 @@
     },
     {
       "id": "person/ko/mixed-script/hangul-name-in-english-sentence",
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "ko",
       "title": "Hangul name inside an English sentence after a title",
@@ -370,7 +493,8 @@
           "honorific-excluded",
           "abbreviation-period",
           "mixed-script-boundary"
-        ]
+        ],
+        "familiarity_basis": "author-judgment"
       },
       "ambiguity": {
         "level": "unambiguous"
@@ -387,7 +511,7 @@
     },
     {
       "id": "person/ko/mixed-script/hangul-person-with-korean-and-english-orgs",
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "ko",
       "title": "Hangul person between a Latin acronym company and a Hangul company",
@@ -436,7 +560,8 @@
           "mixed-script-boundary",
           "honorific-excluded",
           "particle-excluded"
-        ]
+        ],
+        "familiarity_basis": "author-judgment"
       },
       "ambiguity": {
         "level": "context-resolvable",
@@ -453,8 +578,70 @@
       }
     },
     {
+      "id": "person/ko/mixed-script/hangul-then-hanja-annotation",
+      "schema_version": "1.1.0",
+      "entity_type": "PERSON",
+      "language": "ko",
+      "title": "Hangul name followed by hanja in parentheses",
+      "why": "Hanja annotation after the Hangul name; both are PERSON spans for one individual.",
+      "text": "김민수(金敏秀)가 서명했다.",
+      "expectations": [
+        {
+          "start": 0,
+          "end": 3,
+          "surface": "김민수",
+          "expect": "person"
+        },
+        {
+          "start": 4,
+          "end": 7,
+          "surface": "金敏秀",
+          "expect": "person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "hangul",
+        "token_class": "single",
+        "collision_classes": [],
+        "context_types": [
+          "plain-prose",
+          "parenthetical",
+          "mixed-script-sentence",
+          "particle-attached"
+        ],
+        "name_features": [
+          "full-name",
+          "ko-surname-given",
+          "ko-3-syllable"
+        ],
+        "boundary_tags": [
+          "parenthetical-boundary",
+          "mixed-script-boundary",
+          "particle-excluded"
+        ],
+        "contrast_classes": [
+          "ko-hanja-annotation"
+        ],
+        "familiarity_basis": "author-judgment"
+      },
+      "ambiguity": {
+        "level": "unambiguous"
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
       "id": "person/ko/mixed-script/hangul-then-parenthetical-romanization",
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "ko",
       "title": "Hangul name with a parenthesized romanization",
@@ -495,7 +682,8 @@
           "parenthetical-boundary",
           "mixed-script-boundary",
           "particle-excluded"
-        ]
+        ],
+        "familiarity_basis": "author-judgment"
       },
       "ambiguity": {
         "level": "unambiguous"
@@ -511,8 +699,70 @@
       }
     },
     {
+      "id": "person/ko/mixed-script/hangul-then-romanization-parenthesis",
+      "schema_version": "1.1.0",
+      "entity_type": "PERSON",
+      "language": "ko",
+      "title": "Hangul name followed by its romanization in parentheses",
+      "why": "The same individual appears twice, once in Hangul and once in Latin inside parentheses; both are PERSON spans.",
+      "text": "정다온(Jeong Daon)이 발표했다.",
+      "expectations": [
+        {
+          "start": 0,
+          "end": 3,
+          "surface": "정다온",
+          "expect": "person"
+        },
+        {
+          "start": 4,
+          "end": 14,
+          "surface": "Jeong Daon",
+          "expect": "person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "hangul",
+        "token_class": "single",
+        "collision_classes": [],
+        "context_types": [
+          "plain-prose",
+          "parenthetical",
+          "mixed-script-sentence",
+          "particle-attached"
+        ],
+        "name_features": [
+          "full-name",
+          "ko-surname-given",
+          "ko-3-syllable"
+        ],
+        "boundary_tags": [
+          "parenthetical-boundary",
+          "mixed-script-boundary",
+          "particle-excluded"
+        ],
+        "contrast_classes": [
+          "ko-romanized-hangul-mixture"
+        ],
+        "familiarity_basis": "author-judgment"
+      },
+      "ambiguity": {
+        "level": "unambiguous"
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
       "id": "person/ko/mixed-script/hanja-full-name-in-parentheses",
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "ko",
       "title": "Hanja full name inside parentheses after a Hangul gloss word",
@@ -546,7 +796,8 @@
           "mixed-script-boundary",
           "parenthetical-boundary",
           "particle-excluded"
-        ]
+        ],
+        "familiarity_basis": "author-judgment"
       },
       "ambiguity": {
         "level": "unambiguous"
@@ -563,7 +814,7 @@
     },
     {
       "id": "person/ko/mixed-script/hanja-full-name-with-eul",
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "ko",
       "title": "Hanja full name followed by the object marker 을",
@@ -595,7 +846,8 @@
         "boundary_tags": [
           "mixed-script-boundary",
           "particle-excluded"
-        ]
+        ],
+        "familiarity_basis": "author-judgment"
       },
       "ambiguity": {
         "level": "unambiguous"
@@ -612,7 +864,7 @@
     },
     {
       "id": "person/ko/mixed-script/hanja-given-name-only",
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "ko",
       "title": "Hanja given name written alone",
@@ -646,7 +898,8 @@
         "boundary_tags": [
           "mixed-script-boundary",
           "particle-excluded"
-        ]
+        ],
+        "familiarity_basis": "author-judgment"
       },
       "ambiguity": {
         "level": "unambiguous"
@@ -663,7 +916,7 @@
     },
     {
       "id": "person/ko/mixed-script/hanja-name-with-particle",
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "ko",
       "title": "Han-script (hanja) name with a Hangul particle",
@@ -695,7 +948,8 @@
         "boundary_tags": [
           "particle-excluded",
           "mixed-script-boundary"
-        ]
+        ],
+        "familiarity_basis": "author-judgment"
       },
       "ambiguity": {
         "level": "unambiguous"
@@ -712,7 +966,7 @@
     },
     {
       "id": "person/ko/mixed-script/hanja-name-with-title",
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "ko",
       "title": "Hanja name followed by a hanja-style title",
@@ -747,7 +1001,8 @@
           "mixed-script-boundary",
           "honorific-excluded",
           "particle-excluded"
-        ]
+        ],
+        "familiarity_basis": "author-judgment"
       },
       "ambiguity": {
         "level": "unambiguous"
@@ -764,7 +1019,7 @@
     },
     {
       "id": "person/ko/mixed-script/hanja-surname-with-hangul-given",
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "ko",
       "title": "Hanja surname with Hangul given name",
@@ -796,7 +1051,8 @@
         "boundary_tags": [
           "mixed-script-boundary",
           "particle-excluded"
-        ]
+        ],
+        "familiarity_basis": "author-judgment"
       },
       "ambiguity": {
         "level": "unambiguous"
@@ -812,8 +1068,69 @@
       }
     },
     {
+      "id": "person/ko/mixed-script/hanja-then-hangul-annotation",
+      "schema_version": "1.1.0",
+      "entity_type": "PERSON",
+      "language": "ko",
+      "title": "Hanja name followed by Hangul reading in parentheses",
+      "why": "Reverse order: hanja first, Hangul reading in parentheses.",
+      "text": "李瑞俊(이서준)이 서명했다.",
+      "expectations": [
+        {
+          "start": 0,
+          "end": 3,
+          "surface": "李瑞俊",
+          "expect": "person"
+        },
+        {
+          "start": 4,
+          "end": 7,
+          "surface": "이서준",
+          "expect": "person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "han",
+        "token_class": "single",
+        "collision_classes": [],
+        "context_types": [
+          "plain-prose",
+          "parenthetical",
+          "mixed-script-sentence",
+          "particle-attached"
+        ],
+        "name_features": [
+          "full-name",
+          "ko-hanja"
+        ],
+        "boundary_tags": [
+          "parenthetical-boundary",
+          "mixed-script-boundary",
+          "particle-excluded"
+        ],
+        "contrast_classes": [
+          "ko-hanja-annotation"
+        ],
+        "familiarity_basis": "author-judgment"
+      },
+      "ambiguity": {
+        "level": "unambiguous"
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
       "id": "person/ko/mixed-script/hanja-two-names-in-list",
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "ko",
       "title": "Two hanja names in a list",
@@ -853,7 +1170,8 @@
           "adjacent-names",
           "no-space",
           "punctuation-adjacent"
-        ]
+        ],
+        "familiarity_basis": "author-judgment"
       },
       "ambiguity": {
         "level": "unambiguous"
@@ -870,7 +1188,7 @@
     },
     {
       "id": "person/ko/mixed-script/korean-person-and-english-company",
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "ko",
       "title": "Hangul name next to a fictional Latin-script company",
@@ -911,7 +1229,8 @@
         "boundary_tags": [
           "particle-excluded",
           "mixed-script-boundary"
-        ]
+        ],
+        "familiarity_basis": "author-judgment"
       },
       "ambiguity": {
         "level": "context-resolvable",
@@ -928,8 +1247,62 @@
       }
     },
     {
+      "id": "person/ko/mixed-script/latin-given-name-with-subject-marker",
+      "schema_version": "1.1.0",
+      "entity_type": "PERSON",
+      "language": "ko",
+      "title": "Latin given name with a Korean subject marker",
+      "why": "A romanized single-token name with 가: Latin script gives no information about which Korean particle follows.",
+      "text": "Jiwoo가 먼저 발표했다.",
+      "expectations": [
+        {
+          "start": 0,
+          "end": 5,
+          "surface": "Jiwoo",
+          "expect": "person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "latin",
+        "token_class": "single",
+        "collision_classes": [],
+        "context_types": [
+          "plain-prose",
+          "sentence-initial",
+          "particle-attached",
+          "mixed-script-sentence"
+        ],
+        "name_features": [
+          "given-only",
+          "ko-romanized"
+        ],
+        "boundary_tags": [
+          "mixed-script-boundary",
+          "particle-excluded"
+        ],
+        "contrast_classes": [
+          "ko-romanized-hangul-mixture"
+        ],
+        "familiarity_basis": "author-judgment"
+      },
+      "ambiguity": {
+        "level": "unambiguous"
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
       "id": "person/ko/mixed-script/latin-given-then-hangul-surname",
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "ko",
       "title": "Latin given name followed by a Hangul surname",
@@ -960,7 +1333,8 @@
         "boundary_tags": [
           "mixed-script-boundary",
           "punctuation-adjacent"
-        ]
+        ],
+        "familiarity_basis": "author-judgment"
       },
       "ambiguity": {
         "level": "unambiguous"
@@ -976,8 +1350,124 @@
       }
     },
     {
+      "id": "person/ko/mixed-script/latin-letter-team-possessive",
+      "schema_version": "1.1.0",
+      "entity_type": "PERSON",
+      "language": "ko",
+      "title": "Latin team letter before a name",
+      "why": "'A팀의 최지훈' mixes a Latin letter with Hangul before the name.",
+      "text": "A팀의 최지훈이 동점골을 넣었다.",
+      "expectations": [
+        {
+          "start": 4,
+          "end": 7,
+          "surface": "최지훈",
+          "expect": "person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "hangul",
+        "token_class": "single",
+        "collision_classes": [],
+        "context_types": [
+          "plain-prose",
+          "sentence-initial",
+          "particle-attached",
+          "mixed-script-sentence"
+        ],
+        "name_features": [
+          "full-name",
+          "ko-surname-given",
+          "ko-3-syllable"
+        ],
+        "boundary_tags": [
+          "mixed-script-boundary",
+          "particle-excluded"
+        ],
+        "contrast_classes": [
+          "ko-script-boundary"
+        ],
+        "familiarity_basis": "author-judgment"
+      },
+      "ambiguity": {
+        "level": "unambiguous"
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/ko/mixed-script/latin-name-parenthetical-hangul",
+      "schema_version": "1.1.0",
+      "entity_type": "PERSON",
+      "language": "ko",
+      "title": "Latin name followed by Hangul in parentheses",
+      "why": "Reverse order of the parenthetical pattern: Latin first, Hangul in parentheses.",
+      "text": "Minsu Kim(김민수) 연구원이 발표했다.",
+      "expectations": [
+        {
+          "start": 0,
+          "end": 9,
+          "surface": "Minsu Kim",
+          "expect": "person"
+        },
+        {
+          "start": 10,
+          "end": 13,
+          "surface": "김민수",
+          "expect": "person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "latin",
+        "token_class": "multi",
+        "collision_classes": [],
+        "context_types": [
+          "plain-prose",
+          "parenthetical",
+          "mixed-script-sentence",
+          "title-honorific"
+        ],
+        "name_features": [
+          "full-name",
+          "ko-romanized-western-order"
+        ],
+        "boundary_tags": [
+          "parenthetical-boundary",
+          "mixed-script-boundary",
+          "honorific-excluded"
+        ],
+        "contrast_classes": [
+          "ko-romanized-hangul-mixture"
+        ],
+        "familiarity_basis": "author-judgment"
+      },
+      "ambiguity": {
+        "level": "unambiguous"
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
       "id": "person/ko/mixed-script/latin-name-with-honorific-nim",
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "ko",
       "title": "Latin name followed by the Korean honorific 님",
@@ -1010,7 +1500,8 @@
           "mixed-script-boundary",
           "honorific-excluded",
           "particle-excluded"
-        ]
+        ],
+        "familiarity_basis": "author-judgment"
       },
       "ambiguity": {
         "level": "unambiguous"
@@ -1027,7 +1518,7 @@
     },
     {
       "id": "person/ko/mixed-script/latin-name-with-korean-particle",
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "ko",
       "title": "Latin-script foreign name followed by a Hangul particle",
@@ -1058,7 +1549,8 @@
         "boundary_tags": [
           "particle-excluded",
           "mixed-script-boundary"
-        ]
+        ],
+        "familiarity_basis": "author-judgment"
       },
       "ambiguity": {
         "level": "unambiguous"
@@ -1074,8 +1566,63 @@
       }
     },
     {
+      "id": "person/ko/mixed-script/latin-name-with-korean-topic-marker",
+      "schema_version": "1.1.0",
+      "entity_type": "PERSON",
+      "language": "ko",
+      "title": "Latin-script name carrying a Korean topic marker",
+      "why": "A romanized name takes a Hangul particle; the particle is outside the span even though it follows Latin letters.",
+      "text": "Kim Minsu는 서울에 산다.",
+      "expectations": [
+        {
+          "start": 0,
+          "end": 9,
+          "surface": "Kim Minsu",
+          "expect": "person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "latin",
+        "token_class": "multi",
+        "collision_classes": [],
+        "context_types": [
+          "plain-prose",
+          "sentence-initial",
+          "particle-attached",
+          "mixed-script-sentence"
+        ],
+        "name_features": [
+          "full-name",
+          "ko-romanized"
+        ],
+        "boundary_tags": [
+          "mixed-script-boundary",
+          "particle-excluded"
+        ],
+        "contrast_classes": [
+          "ko-romanized-hangul-mixture",
+          "ko-particle-allomorph"
+        ],
+        "familiarity_basis": "author-judgment"
+      },
+      "ambiguity": {
+        "level": "unambiguous"
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
       "id": "person/ko/mixed-script/latin-surname-then-hangul-given",
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "ko",
       "title": "Latin surname followed by a Hangul given name",
@@ -1107,7 +1654,8 @@
         "boundary_tags": [
           "mixed-script-boundary",
           "particle-excluded"
-        ]
+        ],
+        "familiarity_basis": "author-judgment"
       },
       "ambiguity": {
         "level": "unambiguous"
@@ -1124,7 +1672,7 @@
     },
     {
       "id": "person/ko/mixed-script/mixed-name-in-list",
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "ko",
       "title": "Mixed-script names in a comma list",
@@ -1163,7 +1711,8 @@
           "mixed-script-boundary",
           "punctuation-adjacent",
           "adjacent-names"
-        ]
+        ],
+        "familiarity_basis": "author-judgment"
       },
       "ambiguity": {
         "level": "unambiguous"
@@ -1180,7 +1729,7 @@
     },
     {
       "id": "person/ko/mixed-script/mixed-script-single-name",
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "ko",
       "title": "Single name that mixes Latin and Hangul",
@@ -1209,7 +1758,8 @@
         ],
         "boundary_tags": [
           "mixed-script-boundary"
-        ]
+        ],
+        "familiarity_basis": "author-judgment"
       },
       "ambiguity": {
         "level": "unambiguous"
@@ -1225,8 +1775,246 @@
       }
     },
     {
+      "id": "person/ko/mixed-script/name-then-latin-abbreviation",
+      "schema_version": "1.1.0",
+      "entity_type": "PERSON",
+      "language": "ko",
+      "title": "Name directly followed by a Latin abbreviation in parentheses",
+      "why": "The Latin abbreviation in parentheses is a country code, not a romanization of the name.",
+      "text": "이하준(KR) 선수가 우승했다.",
+      "expectations": [
+        {
+          "start": 0,
+          "end": 3,
+          "surface": "이하준",
+          "expect": "person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "hangul",
+        "token_class": "single",
+        "collision_classes": [],
+        "context_types": [
+          "plain-prose",
+          "parenthetical",
+          "mixed-script-sentence",
+          "title-honorific"
+        ],
+        "name_features": [
+          "full-name",
+          "ko-surname-given",
+          "ko-3-syllable"
+        ],
+        "boundary_tags": [
+          "parenthetical-boundary",
+          "mixed-script-boundary",
+          "honorific-excluded"
+        ],
+        "contrast_classes": [
+          "ko-script-boundary"
+        ],
+        "familiarity_basis": "author-judgment"
+      },
+      "ambiguity": {
+        "level": "unambiguous"
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/ko/mixed-script/rare-name-glued-to-team-number",
+      "schema_version": "1.1.0",
+      "entity_type": "PERSON",
+      "language": "ko",
+      "title": "Rare name glued to a team number",
+      "why": "A digit boundary before a rare name. The surname is uncommon in Korean, so name frequency gives no cue and the boundary must come from the structure.",
+      "text": "4팀편도하가 보고서를 올렸다.",
+      "expectations": [
+        {
+          "start": 2,
+          "end": 5,
+          "surface": "편도하",
+          "expect": "person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "rare",
+        "script": "hangul",
+        "token_class": "single",
+        "collision_classes": [],
+        "context_types": [
+          "plain-prose",
+          "sentence-initial",
+          "particle-attached"
+        ],
+        "name_features": [
+          "full-name",
+          "ko-surname-given",
+          "ko-3-syllable",
+          "ko-rare-surname"
+        ],
+        "boundary_tags": [
+          "digit-adjacent",
+          "no-space",
+          "mixed-script-boundary",
+          "particle-excluded"
+        ],
+        "contrast_classes": [
+          "ko-script-boundary"
+        ],
+        "familiarity_basis": "author-judgment"
+      },
+      "ambiguity": {
+        "level": "unambiguous"
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/ko/mixed-script/rare-name-hanja-annotation",
+      "schema_version": "1.1.0",
+      "entity_type": "PERSON",
+      "language": "ko",
+      "title": "Rare name followed by hanja",
+      "why": "Hangul plus hanja annotation for a rare surname. The surname is uncommon in Korean, so name frequency gives no cue and the boundary must come from the structure.",
+      "text": "염하린(廉夏璘)이 서명했다.",
+      "expectations": [
+        {
+          "start": 0,
+          "end": 3,
+          "surface": "염하린",
+          "expect": "person"
+        },
+        {
+          "start": 4,
+          "end": 7,
+          "surface": "廉夏璘",
+          "expect": "person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "rare",
+        "script": "hangul",
+        "token_class": "single",
+        "collision_classes": [],
+        "context_types": [
+          "plain-prose",
+          "parenthetical",
+          "mixed-script-sentence",
+          "particle-attached"
+        ],
+        "name_features": [
+          "full-name",
+          "ko-surname-given",
+          "ko-3-syllable",
+          "ko-rare-surname"
+        ],
+        "boundary_tags": [
+          "parenthetical-boundary",
+          "mixed-script-boundary",
+          "particle-excluded"
+        ],
+        "contrast_classes": [
+          "ko-hanja-annotation"
+        ],
+        "familiarity_basis": "author-judgment"
+      },
+      "ambiguity": {
+        "level": "unambiguous"
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/ko/mixed-script/rare-name-latin-and-hangul",
+      "schema_version": "1.1.0",
+      "entity_type": "PERSON",
+      "language": "ko",
+      "title": "Rare name in Latin and Hangul in one sentence",
+      "why": "Two mentions of one person with a rare surname written in two scripts. The surname is uncommon in Korean, so name frequency gives no cue and the boundary must come from the structure.",
+      "text": "회의록에는 Ong Jihu와 옹지후가 모두 나온다.",
+      "expectations": [
+        {
+          "start": 6,
+          "end": 14,
+          "surface": "Ong Jihu",
+          "expect": "person"
+        },
+        {
+          "start": 16,
+          "end": 19,
+          "surface": "옹지후",
+          "expect": "person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "rare",
+        "script": "latin",
+        "token_class": "multi",
+        "collision_classes": [],
+        "context_types": [
+          "plain-prose",
+          "sentence-initial",
+          "particle-attached",
+          "mixed-script-sentence",
+          "list-or-enumeration"
+        ],
+        "name_features": [
+          "full-name",
+          "ko-romanized",
+          "ko-rare-surname"
+        ],
+        "boundary_tags": [
+          "mixed-script-boundary",
+          "particle-excluded"
+        ],
+        "contrast_classes": [
+          "ko-romanized-hangul-mixture"
+        ],
+        "familiarity_basis": "author-judgment"
+      },
+      "ambiguity": {
+        "level": "unambiguous"
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
       "id": "person/ko/mixed-script/romanization-then-parenthetical-hangul",
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "ko",
       "title": "Romanized name with a parenthesized Hangul form in an English sentence",
@@ -1265,7 +2053,8 @@
         "boundary_tags": [
           "parenthetical-boundary",
           "mixed-script-boundary"
-        ]
+        ],
+        "familiarity_basis": "author-judgment"
       },
       "ambiguity": {
         "level": "unambiguous"
@@ -1282,7 +2071,7 @@
     },
     {
       "id": "person/ko/mixed-script/romanized-city-in-korean-sentence",
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "ko",
       "title": "Latin place name inside a Korean sentence next to a Hangul person",
@@ -1323,7 +2112,8 @@
         "boundary_tags": [
           "mixed-script-boundary",
           "particle-excluded"
-        ]
+        ],
+        "familiarity_basis": "author-judgment"
       },
       "ambiguity": {
         "level": "context-resolvable",
@@ -1341,7 +2131,7 @@
     },
     {
       "id": "person/ko/mixed-script/romanized-korean-name-with-particle",
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "ko",
       "title": "Romanized Korean name followed by the topic particle 은",
@@ -1377,7 +2167,8 @@
           "particle-excluded",
           "mixed-script-boundary",
           "hyphen-boundary"
-        ]
+        ],
+        "familiarity_basis": "author-judgment"
       },
       "ambiguity": {
         "level": "unambiguous"
@@ -1393,8 +2184,77 @@
       }
     },
     {
+      "id": "person/ko/mixed-script/rule-hangul-name-and-romanization",
+      "schema_version": "1.1.0",
+      "entity_type": "PERSON",
+      "language": "ko",
+      "title": "Hangul name with its romanization in parentheses",
+      "why": "Article 4 gives the romanized form of a Hangul name; the parenthesized romanization is a second mention of the same person, so there are two PERSON spans.",
+      "text": "한도현(Han Dohyeon)이 발표했다.",
+      "expectations": [
+        {
+          "start": 0,
+          "end": 3,
+          "surface": "한도현",
+          "expect": "person"
+        },
+        {
+          "start": 4,
+          "end": 15,
+          "surface": "Han Dohyeon",
+          "expect": "person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "hangul",
+        "token_class": "single",
+        "collision_classes": [],
+        "context_types": [
+          "plain-prose",
+          "parenthetical",
+          "mixed-script-sentence",
+          "particle-attached"
+        ],
+        "name_features": [
+          "full-name",
+          "ko-surname-given",
+          "ko-3-syllable"
+        ],
+        "boundary_tags": [
+          "parenthetical-boundary",
+          "mixed-script-boundary",
+          "particle-excluded"
+        ],
+        "contrast_classes": [
+          "ko-romanized-hangul-mixture"
+        ],
+        "familiarity_basis": "author-judgment"
+      },
+      "ambiguity": {
+        "level": "unambiguous"
+      },
+      "evidence_class": "reference-backed",
+      "source_ids": [
+        "src/project-authored-synthetic",
+        "src/ref-ko-romanization-rules"
+      ],
+      "citations": [
+        {
+          "source_id": "src/ref-ko-romanization-rules",
+          "locator": "Romanization of Korean, chapter 3, Article 4"
+        }
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
       "id": "person/ko/mixed-script/three-forms-in-parentheses",
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "ko",
       "title": "One person written in Hangul, romanized and hanja forms",
@@ -1441,7 +2301,8 @@
           "mixed-script-boundary",
           "parenthetical-boundary",
           "particle-excluded"
-        ]
+        ],
+        "familiarity_basis": "author-judgment"
       },
       "ambiguity": {
         "level": "unambiguous"
@@ -1458,7 +2319,7 @@
     },
     {
       "id": "person/ko/mixed-script/upper-case-surname-hangul-given",
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "ko",
       "title": "ALL-CAPS Latin surname followed by a Hangul given name",
@@ -1490,12 +2351,69 @@
         "boundary_tags": [
           "mixed-script-boundary",
           "particle-excluded"
-        ]
+        ],
+        "familiarity_basis": "author-judgment"
       },
       "ambiguity": {
         "level": "unambiguous"
       },
       "evidence_class": "authored-baseline",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/ko/mixed-script/year-glued-to-name",
+      "schema_version": "1.1.0",
+      "entity_type": "PERSON",
+      "language": "ko",
+      "title": "Year marker glued to a name",
+      "why": "'2024년박서연' without a space: the digit and 년 precede the name.",
+      "text": "2024년박서연이 입사했다.",
+      "expectations": [
+        {
+          "start": 5,
+          "end": 8,
+          "surface": "박서연",
+          "expect": "person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "hangul",
+        "token_class": "single",
+        "collision_classes": [],
+        "context_types": [
+          "plain-prose",
+          "sentence-initial",
+          "particle-attached",
+          "mixed-script-sentence"
+        ],
+        "name_features": [
+          "full-name",
+          "ko-surname-given",
+          "ko-3-syllable"
+        ],
+        "boundary_tags": [
+          "digit-adjacent",
+          "no-space",
+          "particle-excluded"
+        ],
+        "contrast_classes": [
+          "ko-script-boundary"
+        ],
+        "familiarity_basis": "author-judgment"
+      },
+      "ambiguity": {
+        "level": "unambiguous"
+      },
+      "evidence_class": "authored-adversarial",
       "source_ids": [
         "src/project-authored-synthetic"
       ],

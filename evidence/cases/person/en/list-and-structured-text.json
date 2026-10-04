@@ -2,7 +2,7 @@
   "cases": [
     {
       "id": "person/en/list-and-structured-text/csv-like-row",
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "en",
       "title": "Comma-separated record with a name field",
@@ -32,7 +32,8 @@
           "punctuation-adjacent",
           "digit-adjacent",
           "no-space"
-        ]
+        ],
+        "familiarity_basis": "author-judgment"
       },
       "ambiguity": {
         "level": "unambiguous"
@@ -48,8 +49,127 @@
       }
     },
     {
+      "id": "person/en/list-and-structured-text/csv-name-then-role-mason",
+      "schema_version": "1.1.0",
+      "entity_type": "PERSON",
+      "language": "en",
+      "title": "Name and trade role under a header row",
+      "why": "A header row labels the columns Name and Role, so the second cell of the data row is the role even though it is also a surname.",
+      "text": "Name,Role\nDana Whitlow,Mason",
+      "expectations": [
+        {
+          "start": 10,
+          "end": 22,
+          "surface": "Dana Whitlow",
+          "expect": "person"
+        },
+        {
+          "start": 23,
+          "end": 28,
+          "surface": "Mason",
+          "expect": "not-person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "rare",
+        "script": "latin",
+        "token_class": "multi",
+        "collision_classes": [
+          "common-word"
+        ],
+        "context_types": [
+          "structured-text"
+        ],
+        "name_features": [
+          "full-name"
+        ],
+        "boundary_tags": [
+          "punctuation-adjacent",
+          "no-space",
+          "adjacent-names"
+        ],
+        "contrast_classes": [
+          "en-delimited-row"
+        ],
+        "familiarity_basis": "author-judgment"
+      },
+      "ambiguity": {
+        "level": "context-resolvable",
+        "kind": "format-dependence",
+        "alternative_reading": "common-noun",
+        "resolved_by": [
+          "label-or-key",
+          "punctuation-or-format"
+        ],
+        "note": "The Name,Role header assigns the second cell to the role column."
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/en/list-and-structured-text/csv-quoted-inverted-name",
+      "schema_version": "1.1.0",
+      "entity_type": "PERSON",
+      "language": "en",
+      "title": "Quoted inverted name in a CSV row",
+      "why": "A CSV cell in quotes holds a surname-comma-given name; the comma inside the quotes is part of the name, the quotes are not.",
+      "text": "\"Whitlow, Dana\",Editor,2021",
+      "expectations": [
+        {
+          "start": 1,
+          "end": 14,
+          "surface": "Whitlow, Dana",
+          "expect": "person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "rare",
+        "script": "latin",
+        "token_class": "multi",
+        "collision_classes": [],
+        "context_types": [
+          "structured-text",
+          "quotation"
+        ],
+        "name_features": [
+          "full-name",
+          "inverted-order"
+        ],
+        "boundary_tags": [
+          "quote-boundary",
+          "comma-inverted",
+          "no-space"
+        ],
+        "contrast_classes": [
+          "en-delimited-row"
+        ],
+        "familiarity_basis": "author-judgment"
+      },
+      "ambiguity": {
+        "level": "unambiguous"
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
       "id": "person/en/list-and-structured-text/json-like-name-field",
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "en",
       "title": "Name inside a JSON-style object",
@@ -79,7 +199,8 @@
         "boundary_tags": [
           "quote-boundary",
           "punctuation-adjacent"
-        ]
+        ],
+        "familiarity_basis": "author-judgment"
       },
       "ambiguity": {
         "level": "unambiguous"
@@ -101,8 +222,612 @@
       ]
     },
     {
+      "id": "person/en/list-and-structured-text/label-assignee-chase-either",
+      "schema_version": "1.1.0",
+      "entity_type": "PERSON",
+      "language": "en",
+      "title": "Assignee label with a value that is also a bank",
+      "why": "An 'Assignee:' label usually holds a person, but the value 'Chase' is also a financial brand and the field could hold a team or vendor.",
+      "text": "Assignee: Chase",
+      "expectations": [
+        {
+          "start": 10,
+          "end": 15,
+          "surface": "Chase",
+          "expect": "either"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "latin",
+        "token_class": "single",
+        "collision_classes": [
+          "organization",
+          "common-word"
+        ],
+        "context_types": [
+          "structured-text"
+        ],
+        "name_features": [
+          "given-only"
+        ],
+        "boundary_tags": [
+          "punctuation-adjacent"
+        ],
+        "contrast_classes": [
+          "en-key-value-label"
+        ],
+        "familiarity_basis": "author-judgment"
+      },
+      "ambiguity": {
+        "level": "genuinely-ambiguous",
+        "kind": "format-dependence",
+        "alternative_reading": "organization-name",
+        "resolved_by": [
+          "nothing"
+        ],
+        "acceptable_outcomes": [
+          "person",
+          "not-person"
+        ],
+        "note": "Assignee fields hold people, teams and vendors; the single capitalized value carries no further cue."
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/en/list-and-structured-text/label-attn-committee-decoy",
+      "schema_version": "1.1.0",
+      "entity_type": "PERSON",
+      "language": "en",
+      "title": "Attn label with a committee whose name starts with a given name",
+      "why": "Partner of label-attn-person: the same label with a committee name that begins with a common given name.",
+      "text": "Attn: Grant Committee",
+      "expectations": [
+        {
+          "start": 6,
+          "end": 21,
+          "surface": "Grant Committee",
+          "expect": "not-person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "latin",
+        "token_class": "multi",
+        "collision_classes": [
+          "common-word",
+          "organization"
+        ],
+        "context_types": [
+          "structured-text",
+          "no-person"
+        ],
+        "name_features": [],
+        "boundary_tags": [
+          "punctuation-adjacent"
+        ],
+        "contrast_classes": [
+          "en-key-value-label"
+        ],
+        "familiarity_basis": "author-judgment"
+      },
+      "ambiguity": {
+        "level": "context-resolvable",
+        "kind": "format-dependence",
+        "alternative_reading": "organization-name",
+        "resolved_by": [
+          "head-noun-or-suffix"
+        ],
+        "note": "'Committee' is a group head noun, so 'Grant' is a modifier of the committee, not a person."
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/en/list-and-structured-text/label-attn-person",
+      "schema_version": "1.1.0",
+      "entity_type": "PERSON",
+      "language": "en",
+      "title": "Attn label with a person",
+      "why": "An 'Attn:' line is addressed to a person (or a department); here the two-token value is a person.",
+      "text": "Attn: Priya Raman",
+      "expectations": [
+        {
+          "start": 6,
+          "end": 17,
+          "surface": "Priya Raman",
+          "expect": "person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "latin",
+        "token_class": "multi",
+        "collision_classes": [],
+        "context_types": [
+          "structured-text"
+        ],
+        "name_features": [
+          "full-name"
+        ],
+        "boundary_tags": [
+          "punctuation-adjacent"
+        ],
+        "contrast_classes": [
+          "en-key-value-label"
+        ],
+        "familiarity_basis": "author-judgment"
+      },
+      "ambiguity": {
+        "level": "unambiguous"
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/en/list-and-structured-text/label-city-charlotte",
+      "schema_version": "1.1.0",
+      "entity_type": "PERSON",
+      "language": "en",
+      "title": "City label with Charlotte as the value",
+      "why": "Partner of label-name-charlotte: the identical value under a City: label is the city.",
+      "text": "City: Charlotte",
+      "expectations": [
+        {
+          "start": 6,
+          "end": 15,
+          "surface": "Charlotte",
+          "expect": "not-person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "latin",
+        "token_class": "single",
+        "collision_classes": [
+          "location"
+        ],
+        "context_types": [
+          "structured-text",
+          "no-person"
+        ],
+        "name_features": [],
+        "boundary_tags": [
+          "punctuation-adjacent"
+        ],
+        "contrast_classes": [
+          "en-key-value-label"
+        ],
+        "familiarity_basis": "author-judgment"
+      },
+      "ambiguity": {
+        "level": "context-resolvable",
+        "kind": "format-dependence",
+        "alternative_reading": "place-name",
+        "resolved_by": [
+          "label-or-key"
+        ],
+        "note": "The key 'City' selects a place."
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/en/list-and-structured-text/label-country-jordan",
+      "schema_version": "1.1.0",
+      "entity_type": "PERSON",
+      "language": "en",
+      "title": "Country label with Jordan as the value",
+      "why": "Partner of label-name-jordan: the identical value under a Country: label is the country.",
+      "text": "Country: Jordan",
+      "expectations": [
+        {
+          "start": 9,
+          "end": 15,
+          "surface": "Jordan",
+          "expect": "not-person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "latin",
+        "token_class": "single",
+        "collision_classes": [
+          "location"
+        ],
+        "context_types": [
+          "structured-text",
+          "no-person"
+        ],
+        "name_features": [],
+        "boundary_tags": [
+          "punctuation-adjacent"
+        ],
+        "contrast_classes": [
+          "en-key-value-label"
+        ],
+        "familiarity_basis": "author-judgment"
+      },
+      "ambiguity": {
+        "level": "context-resolvable",
+        "kind": "format-dependence",
+        "alternative_reading": "place-name",
+        "resolved_by": [
+          "label-or-key"
+        ],
+        "note": "The key 'Country' selects a place."
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/en/list-and-structured-text/label-lowercase-applicant",
+      "schema_version": "1.1.0",
+      "entity_type": "PERSON",
+      "language": "en",
+      "title": "Lowercase applicant line with a hyphen label",
+      "why": "A plain-text form line with a hyphen as the separator and all-lowercase content.",
+      "text": "applicant name - amina okafor",
+      "expectations": [
+        {
+          "start": 17,
+          "end": 29,
+          "surface": "amina okafor",
+          "expect": "person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "rare",
+        "script": "latin",
+        "token_class": "multi",
+        "collision_classes": [],
+        "context_types": [
+          "structured-text",
+          "casing-variation"
+        ],
+        "name_features": [
+          "full-name"
+        ],
+        "boundary_tags": [
+          "punctuation-adjacent"
+        ],
+        "contrast_classes": [
+          "en-key-value-label"
+        ],
+        "familiarity_basis": "author-judgment"
+      },
+      "ambiguity": {
+        "level": "unambiguous"
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/en/list-and-structured-text/label-name-charlotte",
+      "schema_version": "1.1.0",
+      "entity_type": "PERSON",
+      "language": "en",
+      "title": "Name label with Charlotte as the value",
+      "why": "The value Charlotte is also a city; the 'Name:' label says it is a person.",
+      "text": "Name: Charlotte",
+      "expectations": [
+        {
+          "start": 6,
+          "end": 15,
+          "surface": "Charlotte",
+          "expect": "person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "latin",
+        "token_class": "single",
+        "collision_classes": [
+          "location"
+        ],
+        "context_types": [
+          "structured-text"
+        ],
+        "name_features": [
+          "given-only"
+        ],
+        "boundary_tags": [
+          "punctuation-adjacent"
+        ],
+        "contrast_classes": [
+          "en-key-value-label"
+        ],
+        "familiarity_basis": "author-judgment"
+      },
+      "ambiguity": {
+        "level": "context-resolvable",
+        "kind": "format-dependence",
+        "alternative_reading": "place-name",
+        "resolved_by": [
+          "label-or-key"
+        ],
+        "note": "The key 'Name' selects a personal name."
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/en/list-and-structured-text/label-name-jordan",
+      "schema_version": "1.1.0",
+      "entity_type": "PERSON",
+      "language": "en",
+      "title": "Name label with Jordan as the value",
+      "why": "The value Jordan is also a country; the 'Name:' label says it is a person's name.",
+      "text": "Name: Jordan",
+      "expectations": [
+        {
+          "start": 6,
+          "end": 12,
+          "surface": "Jordan",
+          "expect": "person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "latin",
+        "token_class": "single",
+        "collision_classes": [
+          "location"
+        ],
+        "context_types": [
+          "structured-text"
+        ],
+        "name_features": [
+          "given-only"
+        ],
+        "boundary_tags": [
+          "punctuation-adjacent"
+        ],
+        "contrast_classes": [
+          "en-key-value-label"
+        ],
+        "familiarity_basis": "author-judgment"
+      },
+      "ambiguity": {
+        "level": "context-resolvable",
+        "kind": "format-dependence",
+        "alternative_reading": "place-name",
+        "resolved_by": [
+          "label-or-key"
+        ],
+        "note": "The key 'Name' selects a personal name."
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/en/list-and-structured-text/label-owner-team-decoy",
+      "schema_version": "1.1.0",
+      "entity_type": "PERSON",
+      "language": "en",
+      "title": "Owner label whose value is a team named after a surname",
+      "why": "An Owner: label usually takes a person, but a value ending in 'Team' is a group; the head noun decides.",
+      "text": "Owner: Marlowe Team",
+      "expectations": [
+        {
+          "start": 7,
+          "end": 19,
+          "surface": "Marlowe Team",
+          "expect": "not-person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "rare",
+        "script": "latin",
+        "token_class": "multi",
+        "collision_classes": [
+          "organization"
+        ],
+        "context_types": [
+          "structured-text",
+          "no-person"
+        ],
+        "name_features": [],
+        "boundary_tags": [
+          "punctuation-adjacent"
+        ],
+        "contrast_classes": [
+          "en-key-value-label"
+        ],
+        "familiarity_basis": "author-judgment"
+      },
+      "ambiguity": {
+        "level": "context-resolvable",
+        "kind": "format-dependence",
+        "alternative_reading": "organization-name",
+        "resolved_by": [
+          "head-noun-or-suffix",
+          "label-or-key"
+        ],
+        "note": "'Team' is a group head noun; the label alone would not decide."
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/en/list-and-structured-text/label-reviewer-with-title",
+      "schema_version": "1.1.0",
+      "entity_type": "PERSON",
+      "language": "en",
+      "title": "Reviewer label with a title and name",
+      "why": "A label, a title and a name: the title is excluded and the label is not part of the span.",
+      "text": "Reviewer: Dr. Amina Okafor",
+      "expectations": [
+        {
+          "start": 14,
+          "end": 26,
+          "surface": "Amina Okafor",
+          "expect": "person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "rare",
+        "script": "latin",
+        "token_class": "multi",
+        "collision_classes": [],
+        "context_types": [
+          "structured-text",
+          "title-honorific"
+        ],
+        "name_features": [
+          "full-name"
+        ],
+        "boundary_tags": [
+          "punctuation-adjacent",
+          "honorific-excluded",
+          "abbreviation-period"
+        ],
+        "contrast_classes": [
+          "en-key-value-label",
+          "en-honorific-variant"
+        ],
+        "familiarity_basis": "author-judgment"
+      },
+      "ambiguity": {
+        "level": "unambiguous"
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/en/list-and-structured-text/label-signed-by-initials",
+      "schema_version": "1.1.0",
+      "entity_type": "PERSON",
+      "language": "en",
+      "title": "Signature label with initials and surname",
+      "why": "A name written with initials, as on signature lines; the periods are part of the name span.",
+      "text": "Signed by: J. R. Tolliver",
+      "expectations": [
+        {
+          "start": 11,
+          "end": 25,
+          "surface": "J. R. Tolliver",
+          "expect": "person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "rare",
+        "script": "latin",
+        "token_class": "multi",
+        "collision_classes": [],
+        "context_types": [
+          "structured-text"
+        ],
+        "name_features": [
+          "initials"
+        ],
+        "boundary_tags": [
+          "punctuation-adjacent",
+          "abbreviation-period"
+        ],
+        "contrast_classes": [
+          "en-key-value-label"
+        ],
+        "familiarity_basis": "author-judgment"
+      },
+      "ambiguity": {
+        "level": "unambiguous"
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
       "id": "person/en/list-and-structured-text/label-value-name",
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "en",
       "title": "Label-value line with a name",
@@ -130,7 +855,8 @@
         ],
         "boundary_tags": [
           "punctuation-adjacent"
-        ]
+        ],
+        "familiarity_basis": "author-judgment"
       },
       "ambiguity": {
         "level": "unambiguous"
@@ -147,7 +873,7 @@
     },
     {
       "id": "person/en/list-and-structured-text/label-value-with-role",
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "en",
       "title": "Name and role in a semicolon-separated record",
@@ -175,7 +901,8 @@
         ],
         "boundary_tags": [
           "punctuation-adjacent"
-        ]
+        ],
+        "familiarity_basis": "author-judgment"
       },
       "ambiguity": {
         "level": "unambiguous"
@@ -191,8 +918,551 @@
       }
     },
     {
+      "id": "person/en/list-and-structured-text/legal-caption-person-versus-company",
+      "schema_version": "1.1.0",
+      "entity_type": "PERSON",
+      "language": "en",
+      "title": "Court caption with a person and a company",
+      "why": "A court caption separates parties with 'v.'; the first is a person, the second a company that reuses a surname.",
+      "text": "Reyes v. Hollis Holdings",
+      "expectations": [
+        {
+          "start": 0,
+          "end": 5,
+          "surface": "Reyes",
+          "expect": "person"
+        },
+        {
+          "start": 9,
+          "end": 24,
+          "surface": "Hollis Holdings",
+          "expect": "not-person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "latin",
+        "token_class": "single",
+        "collision_classes": [
+          "organization"
+        ],
+        "context_types": [
+          "structured-text"
+        ],
+        "name_features": [
+          "surname-only"
+        ],
+        "boundary_tags": [
+          "abbreviation-period",
+          "adjacent-names"
+        ],
+        "familiarity_basis": "author-judgment"
+      },
+      "ambiguity": {
+        "level": "context-resolvable",
+        "kind": "format-dependence",
+        "alternative_reading": "organization-name",
+        "resolved_by": [
+          "head-noun-or-suffix",
+          "punctuation-or-format"
+        ],
+        "note": "'Holdings' is a company head noun; 'v.' separates the parties."
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/en/list-and-structured-text/log-actor-key-value",
+      "schema_version": "1.1.0",
+      "entity_type": "PERSON",
+      "language": "en",
+      "title": "Actor name in a key=value log record",
+      "why": "A log line has no sentence grammar; the key 'actor=' and the two-token capitalized value are the only cues, and the value ends at the next key.",
+      "text": "actor=Dana Whitlow action=approve target=invoice",
+      "expectations": [
+        {
+          "start": 6,
+          "end": 18,
+          "surface": "Dana Whitlow",
+          "expect": "person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "rare",
+        "script": "latin",
+        "token_class": "multi",
+        "collision_classes": [],
+        "context_types": [
+          "structured-text"
+        ],
+        "name_features": [
+          "full-name"
+        ],
+        "boundary_tags": [
+          "punctuation-adjacent"
+        ],
+        "contrast_classes": [
+          "en-log-line"
+        ],
+        "familiarity_basis": "author-judgment"
+      },
+      "ambiguity": {
+        "level": "unambiguous"
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/en/list-and-structured-text/log-approved-by-ticket",
+      "schema_version": "1.1.0",
+      "entity_type": "PERSON",
+      "language": "en",
+      "title": "Approver name before a ticket reference",
+      "why": "A semicolon-delimited record where the approver name is followed by a ticket id with a hyphen and digits.",
+      "text": "approved_by=Priya Raman; ticket=T-1042",
+      "expectations": [
+        {
+          "start": 12,
+          "end": 23,
+          "surface": "Priya Raman",
+          "expect": "person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "latin",
+        "token_class": "multi",
+        "collision_classes": [],
+        "context_types": [
+          "structured-text"
+        ],
+        "name_features": [
+          "full-name"
+        ],
+        "boundary_tags": [
+          "punctuation-adjacent",
+          "hyphen-boundary"
+        ],
+        "contrast_classes": [
+          "en-log-line"
+        ],
+        "familiarity_basis": "author-judgment"
+      },
+      "ambiguity": {
+        "level": "unambiguous"
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/en/list-and-structured-text/log-bracket-level-prefix",
+      "schema_version": "1.1.0",
+      "entity_type": "PERSON",
+      "language": "en",
+      "title": "Name after a bracketed severity prefix",
+      "why": "A bracketed severity tag precedes a normal sentence; the capitalized tag must not be pulled into the name and the name starts after it.",
+      "text": "[WARN] Priya Raman retried the upload.",
+      "expectations": [
+        {
+          "start": 7,
+          "end": 18,
+          "surface": "Priya Raman",
+          "expect": "person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "latin",
+        "token_class": "multi",
+        "collision_classes": [],
+        "context_types": [
+          "plain-prose",
+          "structured-text"
+        ],
+        "name_features": [
+          "full-name"
+        ],
+        "boundary_tags": [
+          "punctuation-adjacent"
+        ],
+        "contrast_classes": [
+          "en-log-line"
+        ],
+        "familiarity_basis": "author-judgment"
+      },
+      "ambiguity": {
+        "level": "unambiguous"
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/en/list-and-structured-text/log-lowercase-assignee",
+      "schema_version": "1.1.0",
+      "entity_type": "PERSON",
+      "language": "en",
+      "title": "Lowercase name in a key=value record",
+      "why": "Machine-written records often lowercase everything; the key 'assignee=' says the value is a person even though capitalization carries no information.",
+      "text": "assignee=priya raman priority=high",
+      "expectations": [
+        {
+          "start": 9,
+          "end": 20,
+          "surface": "priya raman",
+          "expect": "person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "latin",
+        "token_class": "multi",
+        "collision_classes": [],
+        "context_types": [
+          "structured-text",
+          "casing-variation"
+        ],
+        "name_features": [
+          "full-name"
+        ],
+        "boundary_tags": [
+          "punctuation-adjacent"
+        ],
+        "contrast_classes": [
+          "en-log-line",
+          "en-key-value-label"
+        ],
+        "familiarity_basis": "author-judgment"
+      },
+      "ambiguity": {
+        "level": "unambiguous"
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/en/list-and-structured-text/log-quoted-message-subject",
+      "schema_version": "1.1.0",
+      "entity_type": "PERSON",
+      "language": "en",
+      "title": "Name as the subject of a quoted log message",
+      "why": "A name inside a quoted msg field of a log line; the quotes delimit the message and are not part of the span.",
+      "text": "level=warn msg=\"Dana Whitlow failed login twice\"",
+      "expectations": [
+        {
+          "start": 16,
+          "end": 28,
+          "surface": "Dana Whitlow",
+          "expect": "person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "rare",
+        "script": "latin",
+        "token_class": "multi",
+        "collision_classes": [],
+        "context_types": [
+          "structured-text",
+          "quotation"
+        ],
+        "name_features": [
+          "full-name"
+        ],
+        "boundary_tags": [
+          "quote-boundary",
+          "punctuation-adjacent"
+        ],
+        "contrast_classes": [
+          "en-log-line"
+        ],
+        "familiarity_basis": "author-judgment"
+      },
+      "ambiguity": {
+        "level": "unambiguous"
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/en/list-and-structured-text/log-service-name-decoy",
+      "schema_version": "1.1.0",
+      "entity_type": "PERSON",
+      "language": "en",
+      "title": "Service name built from a surname",
+      "why": "A service= field whose value is a surname plus a component noun; the key marks a software component, not a person.",
+      "text": "service=Marlowe Gateway status=ok",
+      "expectations": [
+        {
+          "start": 8,
+          "end": 23,
+          "surface": "Marlowe Gateway",
+          "expect": "not-person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "rare",
+        "script": "latin",
+        "token_class": "multi",
+        "collision_classes": [
+          "product-brand",
+          "organization"
+        ],
+        "context_types": [
+          "structured-text",
+          "no-person"
+        ],
+        "name_features": [],
+        "boundary_tags": [
+          "punctuation-adjacent"
+        ],
+        "contrast_classes": [
+          "en-log-line",
+          "en-key-value-label"
+        ],
+        "familiarity_basis": "author-judgment"
+      },
+      "ambiguity": {
+        "level": "context-resolvable",
+        "kind": "format-dependence",
+        "alternative_reading": "brand-or-product",
+        "resolved_by": [
+          "label-or-key",
+          "head-noun-or-suffix"
+        ],
+        "note": "The key 'service' and the head noun 'Gateway' mark a software component."
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/en/list-and-structured-text/log-stack-frame-class-decoy",
+      "schema_version": "1.1.0",
+      "entity_type": "PERSON",
+      "language": "en",
+      "title": "Class and method names in a stack frame",
+      "why": "A stack frame names classes and methods that look like surnames; dotted identifiers inside a frame are code, not people.",
+      "text": "at Hollis.Parser.parse(Parser.java:42)",
+      "expectations": [
+        {
+          "start": 3,
+          "end": 22,
+          "surface": "Hollis.Parser.parse",
+          "expect": "not-person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "rare",
+        "script": "latin",
+        "token_class": "single",
+        "collision_classes": [
+          "common-word"
+        ],
+        "context_types": [
+          "structured-text",
+          "no-person"
+        ],
+        "name_features": [],
+        "boundary_tags": [
+          "punctuation-adjacent"
+        ],
+        "contrast_classes": [
+          "en-log-line"
+        ],
+        "familiarity_basis": "author-judgment"
+      },
+      "ambiguity": {
+        "level": "context-resolvable",
+        "kind": "format-dependence",
+        "alternative_reading": "non-name-field",
+        "resolved_by": [
+          "punctuation-or-format",
+          "label-or-key"
+        ],
+        "note": "A dotted identifier followed by a file:line pair in parentheses is a code reference."
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/en/list-and-structured-text/log-thread-name-decoy",
+      "schema_version": "1.1.0",
+      "entity_type": "PERSON",
+      "language": "en",
+      "title": "Thread named like a person",
+      "why": "A thread= field holding a capitalized common-word name; the key marks a worker thread, not a person.",
+      "text": "thread=Hunter msg=\"retrying\"",
+      "expectations": [
+        {
+          "start": 7,
+          "end": 13,
+          "surface": "Hunter",
+          "expect": "not-person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "latin",
+        "token_class": "single",
+        "collision_classes": [
+          "common-word"
+        ],
+        "context_types": [
+          "structured-text",
+          "no-person"
+        ],
+        "name_features": [],
+        "boundary_tags": [
+          "punctuation-adjacent"
+        ],
+        "contrast_classes": [
+          "en-log-line",
+          "en-key-value-label"
+        ],
+        "familiarity_basis": "author-judgment"
+      },
+      "ambiguity": {
+        "level": "context-resolvable",
+        "kind": "format-dependence",
+        "alternative_reading": "non-name-field",
+        "resolved_by": [
+          "label-or-key"
+        ],
+        "note": "The key 'thread' says the value identifies a worker, not a person."
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/en/list-and-structured-text/log-two-actors-adjacent-keys",
+      "schema_version": "1.1.0",
+      "entity_type": "PERSON",
+      "language": "en",
+      "title": "Two names in adjacent key=value pairs",
+      "why": "Two names separated only by the next key; the first span must end before 'reviewer=' and not absorb the neighbour.",
+      "text": "actor=Dana Whitlow reviewer=Amina Okafor",
+      "expectations": [
+        {
+          "start": 6,
+          "end": 18,
+          "surface": "Dana Whitlow",
+          "expect": "person"
+        },
+        {
+          "start": 28,
+          "end": 40,
+          "surface": "Amina Okafor",
+          "expect": "person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "rare",
+        "script": "latin",
+        "token_class": "multi",
+        "collision_classes": [],
+        "context_types": [
+          "structured-text",
+          "list-or-enumeration"
+        ],
+        "name_features": [
+          "full-name"
+        ],
+        "boundary_tags": [
+          "punctuation-adjacent",
+          "adjacent-names"
+        ],
+        "contrast_classes": [
+          "en-log-line"
+        ],
+        "familiarity_basis": "author-judgment"
+      },
+      "ambiguity": {
+        "level": "unambiguous"
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
       "id": "person/en/list-and-structured-text/numbered-list-names",
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "en",
       "title": "Numbered list of names",
@@ -228,7 +1498,8 @@
         "boundary_tags": [
           "digit-adjacent",
           "adjacent-names"
-        ]
+        ],
+        "familiarity_basis": "author-judgment"
       },
       "ambiguity": {
         "level": "unambiguous"
@@ -244,8 +1515,60 @@
       }
     },
     {
+      "id": "person/en/list-and-structured-text/pipe-inverted-name-cell",
+      "schema_version": "1.1.0",
+      "entity_type": "PERSON",
+      "language": "en",
+      "title": "Inverted name in a pipe-delimited cell without spaces",
+      "why": "A surname-comma-given name between pipes with no surrounding space.",
+      "text": "Raman, Priya|Editor|2021",
+      "expectations": [
+        {
+          "start": 0,
+          "end": 12,
+          "surface": "Raman, Priya",
+          "expect": "person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "latin",
+        "token_class": "multi",
+        "collision_classes": [],
+        "context_types": [
+          "structured-text"
+        ],
+        "name_features": [
+          "full-name",
+          "inverted-order"
+        ],
+        "boundary_tags": [
+          "comma-inverted",
+          "punctuation-adjacent",
+          "no-space"
+        ],
+        "contrast_classes": [
+          "en-delimited-row"
+        ],
+        "familiarity_basis": "author-judgment"
+      },
+      "ambiguity": {
+        "level": "unambiguous"
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
       "id": "person/en/list-and-structured-text/reported-by-field",
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "en",
       "title": "Reported-by field in a ticket",
@@ -273,7 +1596,8 @@
         ],
         "boundary_tags": [
           "punctuation-adjacent"
-        ]
+        ],
+        "familiarity_basis": "author-judgment"
       },
       "ambiguity": {
         "level": "unambiguous"
@@ -290,7 +1614,7 @@
     },
     {
       "id": "person/en/list-and-structured-text/salutation-with-comma",
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "en",
       "title": "Greeting line with a name",
@@ -319,7 +1643,8 @@
         ],
         "boundary_tags": [
           "punctuation-adjacent"
-        ]
+        ],
+        "familiarity_basis": "author-judgment"
       },
       "ambiguity": {
         "level": "unambiguous"
@@ -335,8 +1660,75 @@
       }
     },
     {
+      "id": "person/en/list-and-structured-text/semicolon-row-name-city-role",
+      "schema_version": "1.1.0",
+      "entity_type": "PERSON",
+      "language": "en",
+      "title": "Semicolon-delimited row with a city cell",
+      "why": "A name;city;role row where the city is a given name too; the semicolons carry no spaces.",
+      "text": "Amina Okafor;Savannah;Editor",
+      "expectations": [
+        {
+          "start": 0,
+          "end": 12,
+          "surface": "Amina Okafor",
+          "expect": "person"
+        },
+        {
+          "start": 13,
+          "end": 21,
+          "surface": "Savannah",
+          "expect": "not-person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "rare",
+        "script": "latin",
+        "token_class": "multi",
+        "collision_classes": [
+          "location"
+        ],
+        "context_types": [
+          "structured-text"
+        ],
+        "name_features": [
+          "full-name"
+        ],
+        "boundary_tags": [
+          "punctuation-adjacent",
+          "no-space",
+          "adjacent-names"
+        ],
+        "contrast_classes": [
+          "en-delimited-row",
+          "en-table-or-columns"
+        ],
+        "familiarity_basis": "author-judgment"
+      },
+      "ambiguity": {
+        "level": "context-resolvable",
+        "kind": "format-dependence",
+        "alternative_reading": "place-name",
+        "resolved_by": [
+          "co-occurring-entity",
+          "punctuation-or-format"
+        ],
+        "note": "In a name;place;role row the middle cell is the place."
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
       "id": "person/en/list-and-structured-text/sign-off-name",
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "en",
       "title": "Sign-off with only a name on the final line",
@@ -362,12 +1754,238 @@
         "name_features": [
           "full-name"
         ],
-        "boundary_tags": []
+        "boundary_tags": [],
+        "familiarity_basis": "author-judgment"
       },
       "ambiguity": {
         "level": "unambiguous"
       },
       "evidence_class": "authored-baseline",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/en/list-and-structured-text/table-name-city-role",
+      "schema_version": "1.1.0",
+      "entity_type": "PERSON",
+      "language": "en",
+      "title": "Name beside a city cell",
+      "why": "A row where the second cell is a city that is also a given name; cells of the same visual shape carry different types.",
+      "text": "Amina Okafor | Charlotte | Editor",
+      "expectations": [
+        {
+          "start": 0,
+          "end": 12,
+          "surface": "Amina Okafor",
+          "expect": "person"
+        },
+        {
+          "start": 15,
+          "end": 24,
+          "surface": "Charlotte",
+          "expect": "not-person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "rare",
+        "script": "latin",
+        "token_class": "multi",
+        "collision_classes": [
+          "location"
+        ],
+        "context_types": [
+          "structured-text"
+        ],
+        "name_features": [
+          "full-name"
+        ],
+        "boundary_tags": [
+          "punctuation-adjacent",
+          "adjacent-names"
+        ],
+        "contrast_classes": [
+          "en-table-or-columns"
+        ],
+        "familiarity_basis": "author-judgment"
+      },
+      "ambiguity": {
+        "level": "context-resolvable",
+        "kind": "format-dependence",
+        "alternative_reading": "place-name",
+        "resolved_by": [
+          "co-occurring-entity",
+          "punctuation-or-format"
+        ],
+        "note": "Column position and the full-name cell next to it make the second cell a city."
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/en/list-and-structured-text/table-name-city-swapped-column",
+      "schema_version": "1.1.0",
+      "entity_type": "PERSON",
+      "language": "en",
+      "title": "City column holding a city-like value",
+      "why": "A header row followed by a data row whose first cell is a city that is also a given name; the header names the column as a city.",
+      "text": "City | Owner\nSavannah | Priya Raman",
+      "expectations": [
+        {
+          "start": 13,
+          "end": 21,
+          "surface": "Savannah",
+          "expect": "not-person"
+        },
+        {
+          "start": 24,
+          "end": 35,
+          "surface": "Priya Raman",
+          "expect": "person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "latin",
+        "token_class": "single",
+        "collision_classes": [
+          "location"
+        ],
+        "context_types": [
+          "structured-text"
+        ],
+        "name_features": [],
+        "boundary_tags": [
+          "punctuation-adjacent"
+        ],
+        "contrast_classes": [
+          "en-table-or-columns",
+          "en-key-value-label"
+        ],
+        "familiarity_basis": "author-judgment"
+      },
+      "ambiguity": {
+        "level": "context-resolvable",
+        "kind": "format-dependence",
+        "alternative_reading": "place-name",
+        "resolved_by": [
+          "label-or-key"
+        ],
+        "note": "The header 'City' labels the first column, so Savannah is a place and the Owner cell is a person."
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/en/list-and-structured-text/table-pipe-row",
+      "schema_version": "1.1.0",
+      "entity_type": "PERSON",
+      "language": "en",
+      "title": "Name in a pipe-delimited table row",
+      "why": "A markdown-style row: a name cell, a role cell and a year cell. Pipes sit directly beside the span edges.",
+      "text": "| Dana Whitlow | Editor | 2021 |",
+      "expectations": [
+        {
+          "start": 2,
+          "end": 14,
+          "surface": "Dana Whitlow",
+          "expect": "person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "rare",
+        "script": "latin",
+        "token_class": "multi",
+        "collision_classes": [],
+        "context_types": [
+          "structured-text"
+        ],
+        "name_features": [
+          "full-name"
+        ],
+        "boundary_tags": [
+          "punctuation-adjacent"
+        ],
+        "contrast_classes": [
+          "en-table-or-columns"
+        ],
+        "familiarity_basis": "author-judgment"
+      },
+      "ambiguity": {
+        "level": "unambiguous"
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/en/list-and-structured-text/table-tab-separated-row",
+      "schema_version": "1.1.0",
+      "entity_type": "PERSON",
+      "language": "en",
+      "title": "Tab-separated row",
+      "why": "Tab-delimited cells have no space around the span; the tab is the only boundary.",
+      "text": "Dana Whitlow\tEditor\t2021",
+      "expectations": [
+        {
+          "start": 0,
+          "end": 12,
+          "surface": "Dana Whitlow",
+          "expect": "person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "rare",
+        "script": "latin",
+        "token_class": "multi",
+        "collision_classes": [],
+        "context_types": [
+          "structured-text"
+        ],
+        "name_features": [
+          "full-name"
+        ],
+        "boundary_tags": [
+          "no-space"
+        ],
+        "contrast_classes": [
+          "en-table-or-columns"
+        ],
+        "familiarity_basis": "author-judgment"
+      },
+      "ambiguity": {
+        "level": "unambiguous"
+      },
+      "evidence_class": "authored-adversarial",
       "source_ids": [
         "src/project-authored-synthetic"
       ],

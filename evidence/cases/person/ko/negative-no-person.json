@@ -2,7 +2,7 @@
   "cases": [
     {
       "id": "person/ko/negative-no-person/multi-decoy-food",
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "ko",
       "title": "A sentence listing foods that begin with surnames",
@@ -66,7 +66,7 @@
     },
     {
       "id": "person/ko/negative-no-person/multi-decoy-places-and-animals",
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "ko",
       "title": "Places and animals whose names begin with surnames",
@@ -122,7 +122,7 @@
     },
     {
       "id": "person/ko/negative-no-person/multi-decoy-recent-government-problem",
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "ko",
       "title": "A sentence with several surname-initial common words",
@@ -190,7 +190,7 @@
     },
     {
       "id": "person/ko/negative-no-person/nobel-prize-eponym-ko",
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "ko",
       "title": "노벨상 as an eponymous prize",
@@ -238,7 +238,7 @@
     },
     {
       "id": "person/ko/negative-no-person/novel-title-given-name-ko",
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "ko",
       "title": "A novel whose title is a plain given name",
@@ -294,7 +294,7 @@
     },
     {
       "id": "person/ko/negative-no-person/parkinson-disease-eponym-ko",
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "ko",
       "title": "파킨슨병 as an eponymous term",
@@ -342,7 +342,7 @@
     },
     {
       "id": "person/ko/negative-no-person/song-title-full-name-ko",
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "ko",
       "title": "A song whose title is a full name",
@@ -398,7 +398,7 @@
     },
     {
       "id": "person/ko/negative-no-person/year-and-numbers-with-surname-syllables",
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "ko",
       "title": "Sino-Korean numerals that are also surnames",

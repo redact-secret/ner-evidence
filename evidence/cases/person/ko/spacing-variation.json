@@ -2,7 +2,7 @@
   "cases": [
     {
       "id": "person/ko/spacing-variation/age-in-parentheses",
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "ko",
       "title": "Name followed by an age in parentheses",
@@ -36,7 +36,8 @@
           "parenthetical-boundary",
           "digit-adjacent",
           "particle-excluded"
-        ]
+        ],
+        "familiarity_basis": "author-judgment"
       },
       "ambiguity": {
         "level": "unambiguous"
@@ -53,7 +54,7 @@
     },
     {
       "id": "person/ko/spacing-variation/comma-list-without-spaces",
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "ko",
       "title": "Three names separated by commas without spaces",
@@ -99,7 +100,8 @@
           "no-space",
           "punctuation-adjacent",
           "particle-excluded"
-        ]
+        ],
+        "familiarity_basis": "author-judgment"
       },
       "ambiguity": {
         "level": "unambiguous"
@@ -116,7 +118,7 @@
     },
     {
       "id": "person/ko/spacing-variation/corner-brackets-around-name",
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "ko",
       "title": "Name inside Japanese-style corner brackets",
@@ -149,7 +151,8 @@
           "quote-boundary",
           "punctuation-adjacent",
           "particle-excluded"
-        ]
+        ],
+        "familiarity_basis": "author-judgment"
       },
       "ambiguity": {
         "level": "unambiguous"
@@ -166,7 +169,7 @@
     },
     {
       "id": "person/ko/spacing-variation/crying-jamo-attached",
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "ko",
       "title": "Name followed directly by the crying jamo ㅠㅠ",
@@ -198,7 +201,8 @@
         "boundary_tags": [
           "no-space",
           "suffix-excluded"
-        ]
+        ],
+        "familiarity_basis": "author-judgment"
       },
       "ambiguity": {
         "level": "unambiguous"
@@ -215,7 +219,7 @@
     },
     {
       "id": "person/ko/spacing-variation/double-space-inside-name",
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "ko",
       "title": "Name with a double ASCII space inside",
@@ -247,7 +251,8 @@
         "boundary_tags": [
           "extra-spacing",
           "particle-excluded"
-        ]
+        ],
+        "familiarity_basis": "author-judgment"
       },
       "ambiguity": {
         "level": "unambiguous"
@@ -264,7 +269,7 @@
     },
     {
       "id": "person/ko/spacing-variation/emoji-before-name",
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "ko",
       "title": "Emoji directly before a name with an honorific",
@@ -296,7 +301,8 @@
         "boundary_tags": [
           "honorific-excluded",
           "no-space"
-        ]
+        ],
+        "familiarity_basis": "author-judgment"
       },
       "ambiguity": {
         "level": "unambiguous"
@@ -313,7 +319,7 @@
     },
     {
       "id": "person/ko/spacing-variation/ideographic-space-inside-name",
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "ko",
       "title": "Name with an ideographic (full-width) space between surname and given name",
@@ -345,7 +351,8 @@
         "boundary_tags": [
           "extra-spacing",
           "particle-excluded"
-        ]
+        ],
+        "familiarity_basis": "author-judgment"
       },
       "ambiguity": {
         "level": "unambiguous"
@@ -362,7 +369,7 @@
     },
     {
       "id": "person/ko/spacing-variation/laughter-jamo-attached",
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "ko",
       "title": "Name followed directly by the laughter jamo ㅋㅋ",
@@ -393,7 +400,8 @@
         "boundary_tags": [
           "no-space",
           "suffix-excluded"
-        ]
+        ],
+        "familiarity_basis": "author-judgment"
       },
       "ambiguity": {
         "level": "unambiguous"
@@ -410,7 +418,7 @@
     },
     {
       "id": "person/ko/spacing-variation/middle-dot-between-names",
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "ko",
       "title": "Two names joined by the middle dot ·",
@@ -448,7 +456,8 @@
         "boundary_tags": [
           "no-space",
           "punctuation-adjacent"
-        ]
+        ],
+        "familiarity_basis": "author-judgment"
       },
       "ambiguity": {
         "level": "unambiguous"
@@ -464,8 +473,596 @@
       }
     },
     {
+      "id": "person/ko/spacing-variation/name-title-fused",
+      "schema_version": "1.1.0",
+      "entity_type": "PERSON",
+      "language": "ko",
+      "title": "Name and title written without a space",
+      "why": "A title written attached to the name with no space (한지온씨는); the span stops before 씨.",
+      "text": "한지온씨는 지금 외출 중이다.",
+      "expectations": [
+        {
+          "start": 0,
+          "end": 3,
+          "surface": "한지온",
+          "expect": "person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "hangul",
+        "token_class": "single",
+        "collision_classes": [],
+        "context_types": [
+          "plain-prose",
+          "sentence-initial",
+          "particle-attached",
+          "title-honorific"
+        ],
+        "name_features": [
+          "full-name",
+          "ko-surname-given",
+          "ko-3-syllable"
+        ],
+        "boundary_tags": [
+          "suffix-excluded",
+          "no-space",
+          "particle-excluded"
+        ],
+        "contrast_classes": [
+          "ko-spacing-variation",
+          "ko-honorific-suffix"
+        ],
+        "familiarity_basis": "author-judgment"
+      },
+      "ambiguity": {
+        "level": "unambiguous"
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/ko/spacing-variation/names-comma-without-space",
+      "schema_version": "1.1.0",
+      "entity_type": "PERSON",
+      "language": "ko",
+      "title": "Names separated by a comma without a space",
+      "why": "A list written with commas and no spaces puts several names in one whitespace token.",
+      "text": "참석자는 김민수,이서준,박하윤이다.",
+      "expectations": [
+        {
+          "start": 5,
+          "end": 8,
+          "surface": "김민수",
+          "expect": "person"
+        },
+        {
+          "start": 9,
+          "end": 12,
+          "surface": "이서준",
+          "expect": "person"
+        },
+        {
+          "start": 13,
+          "end": 16,
+          "surface": "박하윤",
+          "expect": "person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "hangul",
+        "token_class": "single",
+        "collision_classes": [],
+        "context_types": [
+          "plain-prose",
+          "sentence-initial",
+          "particle-attached",
+          "list-or-enumeration"
+        ],
+        "name_features": [
+          "full-name",
+          "ko-surname-given",
+          "ko-3-syllable"
+        ],
+        "boundary_tags": [
+          "no-space",
+          "punctuation-adjacent",
+          "adjacent-names",
+          "particle-excluded"
+        ],
+        "contrast_classes": [
+          "ko-spacing-variation",
+          "ko-separator-punctuation"
+        ],
+        "familiarity_basis": "author-judgment"
+      },
+      "ambiguity": {
+        "level": "unambiguous"
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/ko/spacing-variation/names-in-one-token-slash",
+      "schema_version": "1.1.0",
+      "entity_type": "PERSON",
+      "language": "ko",
+      "title": "Names separated by a slash without spaces",
+      "why": "A slash between two names glues them into one whitespace token.",
+      "text": "담당자: 박지우/최아인",
+      "expectations": [
+        {
+          "start": 5,
+          "end": 8,
+          "surface": "박지우",
+          "expect": "person"
+        },
+        {
+          "start": 9,
+          "end": 12,
+          "surface": "최아인",
+          "expect": "person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "hangul",
+        "token_class": "single",
+        "collision_classes": [],
+        "context_types": [
+          "structured-text",
+          "list-or-enumeration"
+        ],
+        "name_features": [
+          "full-name",
+          "ko-surname-given",
+          "ko-3-syllable"
+        ],
+        "boundary_tags": [
+          "no-space",
+          "punctuation-adjacent",
+          "adjacent-names"
+        ],
+        "contrast_classes": [
+          "ko-separator-punctuation",
+          "ko-spacing-variation"
+        ],
+        "familiarity_basis": "author-judgment"
+      },
+      "ambiguity": {
+        "level": "unambiguous"
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/ko/spacing-variation/particle-detached-subject",
+      "schema_version": "1.1.0",
+      "entity_type": "PERSON",
+      "language": "ko",
+      "title": "Subject marker written detached from the name",
+      "why": "A detached subject marker after a vowel-final name.",
+      "text": "박소미 가 보고서를 제출했다.",
+      "expectations": [
+        {
+          "start": 0,
+          "end": 3,
+          "surface": "박소미",
+          "expect": "person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "hangul",
+        "token_class": "single",
+        "collision_classes": [],
+        "context_types": [
+          "plain-prose",
+          "sentence-initial",
+          "particle-attached"
+        ],
+        "name_features": [
+          "full-name",
+          "ko-surname-given",
+          "ko-3-syllable"
+        ],
+        "boundary_tags": [
+          "extra-spacing",
+          "particle-excluded"
+        ],
+        "contrast_classes": [
+          "ko-spacing-variation"
+        ],
+        "familiarity_basis": "author-judgment"
+      },
+      "ambiguity": {
+        "level": "unambiguous"
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/ko/spacing-variation/particle-detached-topic",
+      "schema_version": "1.1.0",
+      "entity_type": "PERSON",
+      "language": "ko",
+      "title": "Topic marker written detached from the name",
+      "why": "A spacing error puts a space between the name and its particle; the particle is still outside the span and the name does not absorb the space.",
+      "text": "김민수 는 어제 퇴사했다.",
+      "expectations": [
+        {
+          "start": 0,
+          "end": 3,
+          "surface": "김민수",
+          "expect": "person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "hangul",
+        "token_class": "single",
+        "collision_classes": [],
+        "context_types": [
+          "plain-prose",
+          "sentence-initial",
+          "particle-attached"
+        ],
+        "name_features": [
+          "full-name",
+          "ko-surname-given",
+          "ko-3-syllable"
+        ],
+        "boundary_tags": [
+          "extra-spacing",
+          "particle-excluded"
+        ],
+        "contrast_classes": [
+          "ko-spacing-variation"
+        ],
+        "familiarity_basis": "author-judgment"
+      },
+      "ambiguity": {
+        "level": "unambiguous"
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/ko/spacing-variation/rare-surname-detached-particle",
+      "schema_version": "1.1.0",
+      "entity_type": "PERSON",
+      "language": "ko",
+      "title": "Rare surname with a detached particle",
+      "why": "Spacing error between a rare name and its particle. The surname is uncommon in Korean, so name frequency gives no cue and the boundary must come from the structure.",
+      "text": "감수아 가 보고서를 제출했다.",
+      "expectations": [
+        {
+          "start": 0,
+          "end": 3,
+          "surface": "감수아",
+          "expect": "person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "rare",
+        "script": "hangul",
+        "token_class": "single",
+        "collision_classes": [],
+        "context_types": [
+          "plain-prose",
+          "sentence-initial",
+          "particle-attached"
+        ],
+        "name_features": [
+          "full-name",
+          "ko-surname-given",
+          "ko-3-syllable",
+          "ko-rare-surname"
+        ],
+        "boundary_tags": [
+          "extra-spacing",
+          "particle-excluded"
+        ],
+        "contrast_classes": [
+          "ko-spacing-variation"
+        ],
+        "familiarity_basis": "author-judgment"
+      },
+      "ambiguity": {
+        "level": "unambiguous"
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/ko/spacing-variation/rare-surname-given-spaced",
+      "schema_version": "1.1.0",
+      "entity_type": "PERSON",
+      "language": "ko",
+      "title": "Rare surname written apart from the given name",
+      "why": "Spaced surname and given name for a rare surname. The surname is uncommon in Korean, so name frequency gives no cue and the boundary must come from the structure.",
+      "text": "옹 서연이 서류를 접수했다.",
+      "expectations": [
+        {
+          "start": 0,
+          "end": 4,
+          "surface": "옹 서연",
+          "expect": "person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "rare",
+        "script": "hangul",
+        "token_class": "multi",
+        "collision_classes": [],
+        "context_types": [
+          "plain-prose",
+          "sentence-initial",
+          "particle-attached"
+        ],
+        "name_features": [
+          "full-name",
+          "ko-surname-given",
+          "ko-spaced",
+          "ko-rare-surname"
+        ],
+        "boundary_tags": [
+          "extra-spacing",
+          "particle-excluded"
+        ],
+        "contrast_classes": [
+          "ko-spacing-variation"
+        ],
+        "familiarity_basis": "author-judgment"
+      },
+      "ambiguity": {
+        "level": "unambiguous"
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/ko/spacing-variation/rule-surname-given-written-together",
+      "schema_version": "1.1.0",
+      "entity_type": "PERSON",
+      "language": "ko",
+      "title": "Surname and given name written together",
+      "why": "Article 48 writes a surname and a given name together, so the three-syllable string is one name and is not split into surname and given name.",
+      "text": "오지안이 문을 열었다.",
+      "expectations": [
+        {
+          "start": 0,
+          "end": 3,
+          "surface": "오지안",
+          "expect": "person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "hangul",
+        "token_class": "single",
+        "collision_classes": [],
+        "context_types": [
+          "plain-prose",
+          "sentence-initial",
+          "particle-attached"
+        ],
+        "name_features": [
+          "full-name",
+          "ko-surname-given",
+          "ko-3-syllable"
+        ],
+        "boundary_tags": [
+          "particle-excluded"
+        ],
+        "familiarity_basis": "author-judgment"
+      },
+      "ambiguity": {
+        "level": "unambiguous"
+      },
+      "evidence_class": "reference-backed",
+      "source_ids": [
+        "src/project-authored-synthetic",
+        "src/ref-ko-hangul-matchumbeop"
+      ],
+      "citations": [
+        {
+          "source_id": "src/ref-ko-hangul-matchumbeop",
+          "locator": "Hangul Spelling Rules, chapter 5, Article 48"
+        }
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/ko/spacing-variation/rule-two-syllable-surname-spaced",
+      "schema_version": "1.1.0",
+      "entity_type": "PERSON",
+      "language": "ko",
+      "title": "Two-syllable surname spaced from the given name",
+      "why": "The exception in Article 48 allows a space between a surname and given name where the boundary needs to be clear, as with two-syllable surnames; the spaced pair is still one name.",
+      "text": "선우 하윤이 연락했다.",
+      "expectations": [
+        {
+          "start": 0,
+          "end": 5,
+          "surface": "선우 하윤",
+          "expect": "person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "rare",
+        "script": "hangul",
+        "token_class": "multi",
+        "collision_classes": [],
+        "context_types": [
+          "plain-prose",
+          "sentence-initial",
+          "particle-attached"
+        ],
+        "name_features": [
+          "full-name",
+          "ko-rare-surname",
+          "ko-spaced",
+          "ko-surname-given",
+          "ko-two-syllable-surname"
+        ],
+        "boundary_tags": [
+          "extra-spacing",
+          "particle-excluded"
+        ],
+        "contrast_classes": [
+          "ko-spacing-variation"
+        ],
+        "familiarity_basis": "author-judgment"
+      },
+      "ambiguity": {
+        "level": "unambiguous"
+      },
+      "evidence_class": "reference-backed",
+      "source_ids": [
+        "src/project-authored-synthetic",
+        "src/ref-ko-hangul-matchumbeop"
+      ],
+      "citations": [
+        {
+          "source_id": "src/ref-ko-hangul-matchumbeop",
+          "locator": "Hangul Spelling Rules, chapter 5, Article 48"
+        }
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/ko/spacing-variation/rule-two-syllable-surname-together",
+      "schema_version": "1.1.0",
+      "entity_type": "PERSON",
+      "language": "ko",
+      "title": "Two-syllable surname written together",
+      "why": "Partner of rule-two-syllable-surname-spaced: the default of Article 48 writes the same name together.",
+      "text": "선우하윤이 연락했다.",
+      "expectations": [
+        {
+          "start": 0,
+          "end": 4,
+          "surface": "선우하윤",
+          "expect": "person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "rare",
+        "script": "hangul",
+        "token_class": "single",
+        "collision_classes": [],
+        "context_types": [
+          "plain-prose",
+          "sentence-initial",
+          "particle-attached"
+        ],
+        "name_features": [
+          "full-name",
+          "ko-4-syllable",
+          "ko-rare-surname",
+          "ko-surname-given",
+          "ko-two-syllable-surname"
+        ],
+        "boundary_tags": [
+          "particle-excluded"
+        ],
+        "contrast_classes": [
+          "ko-spacing-variation"
+        ],
+        "familiarity_basis": "author-judgment"
+      },
+      "ambiguity": {
+        "level": "unambiguous"
+      },
+      "evidence_class": "reference-backed",
+      "source_ids": [
+        "src/project-authored-synthetic",
+        "src/ref-ko-hangul-matchumbeop"
+      ],
+      "citations": [
+        {
+          "source_id": "src/ref-ko-hangul-matchumbeop",
+          "locator": "Hangul Spelling Rules, chapter 5, Article 48"
+        }
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
       "id": "person/ko/spacing-variation/single-quotes-with-quotative",
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "ko",
       "title": "Name in single quotes followed by the quotative 라고",
@@ -498,7 +1095,8 @@
           "quote-boundary",
           "punctuation-adjacent",
           "particle-excluded"
-        ]
+        ],
+        "familiarity_basis": "author-judgment"
       },
       "ambiguity": {
         "level": "unambiguous"
@@ -521,7 +1119,7 @@
     },
     {
       "id": "person/ko/spacing-variation/slash-between-names",
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "ko",
       "title": "Two names separated by a slash",
@@ -559,7 +1157,8 @@
         "boundary_tags": [
           "no-space",
           "punctuation-adjacent"
-        ]
+        ],
+        "familiarity_basis": "author-judgment"
       },
       "ambiguity": {
         "level": "unambiguous"
@@ -576,7 +1175,7 @@
     },
     {
       "id": "person/ko/spacing-variation/space-between-surname-and-given",
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "ko",
       "title": "Spaced name with a space after the surname",
@@ -608,7 +1207,8 @@
         "boundary_tags": [
           "extra-spacing",
           "particle-excluded"
-        ]
+        ],
+        "familiarity_basis": "author-judgment"
       },
       "ambiguity": {
         "level": "unambiguous"
@@ -625,7 +1225,7 @@
     },
     {
       "id": "person/ko/spacing-variation/space-in-the-middle-of-given-name",
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "ko",
       "title": "Irregular space inside the given name",
@@ -656,11 +1256,66 @@
         "boundary_tags": [
           "extra-spacing",
           "particle-excluded"
-        ]
+        ],
+        "familiarity_basis": "author-judgment"
       },
       "ambiguity": {
         "level": "context-resolvable",
         "note": "A space inside a three-syllable name is a typing variant; the following topic particle and verb show it is one referent."
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/ko/spacing-variation/surname-given-spaced-full",
+      "schema_version": "1.1.0",
+      "entity_type": "PERSON",
+      "language": "ko",
+      "title": "Surname and given name written with a space",
+      "why": "Orthography joins surname and given name, but spaced forms are common in forms and lists; the whole spaced pair is one span.",
+      "text": "박 도윤이 서류를 접수했다.",
+      "expectations": [
+        {
+          "start": 0,
+          "end": 4,
+          "surface": "박 도윤",
+          "expect": "person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "hangul",
+        "token_class": "multi",
+        "collision_classes": [],
+        "context_types": [
+          "plain-prose",
+          "sentence-initial",
+          "particle-attached"
+        ],
+        "name_features": [
+          "full-name",
+          "ko-surname-given",
+          "ko-spaced"
+        ],
+        "boundary_tags": [
+          "extra-spacing",
+          "particle-excluded"
+        ],
+        "contrast_classes": [
+          "ko-spacing-variation"
+        ],
+        "familiarity_basis": "author-judgment"
+      },
+      "ambiguity": {
+        "level": "unambiguous"
       },
       "evidence_class": "authored-adversarial",
       "source_ids": [

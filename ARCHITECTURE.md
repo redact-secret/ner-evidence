@@ -54,7 +54,7 @@ Generated fixtures must retain lineage to the authored Case or Scenario.
 Initial corpus should explicitly cover:
 
 - common given names/surnames;
-- rare/unseen names;
+- rare and novel names (community-relative, never model-relative);
 - single-token and multi-token names;
 - honorific/title contexts;
 - person/location collisions;

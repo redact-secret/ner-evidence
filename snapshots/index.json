@@ -7,6 +7,14 @@
       "stage": "alpha",
       "content_digest": "65b5a0970bfe9307d4c5fb4c0ad5dbdd11546ce3d591e0afe583249955757415",
       "path": "person-en-ko-alpha.1-65b5a0970bfe"
+    },
+    {
+      "snapshot_id": "person-en-ko-beta.1-1dc0b13fe0ff",
+      "scope": "person-en-ko",
+      "release_label": "beta.1",
+      "stage": "beta",
+      "content_digest": "1dc0b13fe0ff13e24616fef6d9c4b7aec3b9ab9672e531a2a02bcfffdac46ba9",
+      "path": "person-en-ko-beta.1-1dc0b13fe0ff"
     }
   ]
 }

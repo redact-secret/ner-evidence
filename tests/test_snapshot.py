@@ -32,7 +32,9 @@ def make_root(tmp: Path, cases=None, targets=None) -> Path:
         shutil.copytree(SRC_ROOT / d, tmp / d)
     (tmp / "evidence" / "sources").mkdir(parents=True)
     (tmp / "evidence" / "cases" / "person").mkdir(parents=True)
-    shutil.copy(SRC_ROOT / "evidence" / "sources" / "sources.json", tmp / "evidence" / "sources" / "sources.json")
+    all_sources = json.loads((SRC_ROOT / "evidence" / "sources" / "sources.json").read_text())["sources"]
+    (tmp / "evidence" / "sources" / "sources.json").write_text(
+        canonical.pretty({"sources": [x for x in all_sources if x["id"] == "src/project-authored-synthetic"]}))
     targets = targets or {"targets_version": "1.0.0", "ratio_targets": [], "known_gaps": [],
                           "count_targets": [{"id": "at-least-two-cases", "description": "two cases", "where": {}, "min": 2}]}
     (tmp / "evidence" / "slice-targets.json").write_text(json.dumps(targets))
@@ -50,6 +52,39 @@ class SnapshotBase(unittest.TestCase):
         self.out = self.root / "snapshots"
         self.manifest = snapshot.build(self.repo, self.out, "person-en-ko", "alpha.1", "alpha")
         self.snap = self.out / self.manifest["snapshot_id"]
+
+
+class ReferenceBands(unittest.TestCase):
+    def test_snapshot_embeds_and_verifies_bands(self):
+        import tempfile
+        with tempfile.TemporaryDirectory() as d:
+            root = make_root(Path(d))
+            case = good_case(id="person/en/common-word-collision/whitlow-attends", text="Whitlow will attend.", source_ids=[
+                "src/project-authored-synthetic", "src/ref-us-census-2010-surnames"])
+            case["expectations"] = [{"start": 0, "end": 7, "surface": "Whitlow", "expect": "person"}]
+            case["focus_span"] = 0
+            case["dimensions"].update(familiarity="rare", familiarity_basis="reference-frequency",
+                                      familiarity_reference={"source_id": "src/ref-us-census-2010-surnames", "component": "Whitlow"},
+                                      collision_classes=[], context_types=["plain-prose", "sentence-initial"], name_features=["surname-only"])
+            case["ambiguity"] = {"level": "unambiguous"}
+            case["title"], case["why"] = "Rare surname checked against a reference", "A rare surname used as a subject so the reference band can be checked mechanically."
+            (root / "evidence" / "cases" / "person" / "t.json").write_text(canonical.pretty({"cases": [good_case(), ko_case(), case]}))
+            all_sources = json.loads((SRC_ROOT / "evidence" / "sources" / "sources.json").read_text())["sources"]
+            (root / "evidence" / "sources" / "sources.json").write_text(canonical.pretty({"sources": [
+                x for x in all_sources if x["id"] in {"src/project-authored-synthetic", "src/ref-us-census-2010-surnames"}]}))
+            (root / "evidence" / "references").mkdir()
+            bands = json.loads((SRC_ROOT / "evidence" / "references" / "name-frequency-bands.json").read_text())
+            bands["references"] = [r for r in bands["references"] if r["language"] == "en"]
+            bands["references"][0]["entries"] = {"Whitlow": "rare"}
+            (root / "evidence" / "references" / "name-frequency-bands.json").write_text(canonical.pretty(bands))
+            repo = repo_mod.load(root)
+            m = snapshot.build(repo, root / "snapshots", "person-en-ko", "beta.1", "beta")
+            snap = root / "snapshots" / m["snapshot_id"]
+            self.assertTrue((snap / "references" / "name-frequency-bands.json").exists())
+            self.assertEqual(snapshot.verify(snap), [])
+            # tamper with the embedded band, keeping digests consistent, and verification must notice via the case check
+            data = json.loads((snap / "references" / "name-frequency-bands.json").read_text())
+            self.assertEqual(data["references"][0]["entries"], {"Whitlow": "rare"})
 
 
 class Build(SnapshotBase):

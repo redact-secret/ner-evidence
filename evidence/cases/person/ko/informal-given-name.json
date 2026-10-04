@@ -2,7 +2,7 @@
   "cases": [
     {
       "id": "person/ko/informal-given-name/given-name-possessive-ui",
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "ko",
       "title": "Given name with the possessive 의",
@@ -32,7 +32,8 @@
         ],
         "boundary_tags": [
           "particle-excluded"
-        ]
+        ],
+        "familiarity_basis": "author-judgment"
       },
       "ambiguity": {
         "level": "unambiguous"
@@ -49,7 +50,7 @@
     },
     {
       "id": "person/ko/informal-given-name/given-name-topic-chulsu",
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "ko",
       "title": "Very common given name alone with the topic marker",
@@ -79,7 +80,8 @@
         ],
         "boundary_tags": [
           "particle-excluded"
-        ]
+        ],
+        "familiarity_basis": "author-judgment"
       },
       "ambiguity": {
         "level": "unambiguous"
@@ -96,7 +98,7 @@
     },
     {
       "id": "person/ko/informal-given-name/given-name-with-hante",
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "ko",
       "title": "Given name with the colloquial dative 한테",
@@ -126,7 +128,8 @@
         ],
         "boundary_tags": [
           "particle-excluded"
-        ]
+        ],
+        "familiarity_basis": "author-judgment"
       },
       "ambiguity": {
         "level": "unambiguous"
@@ -143,7 +146,7 @@
     },
     {
       "id": "person/ko/informal-given-name/informal-suffix-i-then-ga",
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "ko",
       "title": "Consonant-final given name with informal suffix 이 plus subject marker 가",
@@ -174,7 +177,8 @@
         "boundary_tags": [
           "suffix-excluded",
           "particle-excluded"
-        ]
+        ],
+        "familiarity_basis": "author-judgment"
       },
       "ambiguity": {
         "level": "context-resolvable",
@@ -192,7 +196,7 @@
     },
     {
       "id": "person/ko/informal-given-name/quoted-vocative-with-quotation-verb",
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "ko",
       "title": "Quoted vocative followed by a reporting verb",
@@ -226,7 +230,8 @@
           "quote-boundary",
           "suffix-excluded",
           "punctuation-adjacent"
-        ]
+        ],
+        "familiarity_basis": "author-judgment"
       },
       "ambiguity": {
         "level": "unambiguous"
@@ -249,7 +254,7 @@
     },
     {
       "id": "person/ko/informal-given-name/vocative-a",
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "ko",
       "title": "Consonant-final given name with the vocative 아",
@@ -281,7 +286,8 @@
         "boundary_tags": [
           "suffix-excluded",
           "punctuation-adjacent"
-        ]
+        ],
+        "familiarity_basis": "author-judgment"
       },
       "ambiguity": {
         "level": "unambiguous"
@@ -298,7 +304,7 @@
     },
     {
       "id": "person/ko/informal-given-name/vocative-ya",
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "ko",
       "title": "Given name with the vocative 야",
@@ -330,7 +336,8 @@
         "boundary_tags": [
           "suffix-excluded",
           "punctuation-adjacent"
-        ]
+        ],
+        "familiarity_basis": "author-judgment"
       },
       "ambiguity": {
         "level": "unambiguous"

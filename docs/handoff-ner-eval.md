@@ -11,6 +11,9 @@ grows around it. Nothing here is implemented in this repository, and this reposi
 * Cases with dimensions, ambiguity level and rationale, joined by `case_id`.
 * Span-boundary conventions per language (`taxonomy.json`).
 * Provenance, redistribution level, review status per case, known gaps, waived targets.
+* From Beta 1: structured ambiguity (`kind`, `alternative_reading`, `resolved_by`, `acceptable_outcomes`), the documented basis of the
+  familiarity label, contrast classes, `provenance_basis` (synthetic, reference-backed, corpus-backed), the review ledger with
+  disputes, and the derived name-frequency bands the labels cite. None of it is a scoring preference.
 * Pinning by `snapshot_id` and `content_digest`, plus a verification recipe.
 
 ## Not provided; decisions `ner-eval` must make and document on its side

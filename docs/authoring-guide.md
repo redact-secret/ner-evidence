@@ -13,6 +13,14 @@ Read `taxonomy-and-case-schema.md` and `provenance-and-privacy-policy.md` first.
 4. Fill in dimensions. `script` and `token_class` are checked against the focus span; the rest is your judgment.
 5. Run `python -m ner_evidence fmt` (canonical formatting) then `python -m ner_evidence check`.
 
+## Writing an ambiguous case
+
+For any case that is not `unambiguous`, fill in `ambiguity.kind`, `alternative_reading` and `resolved_by`
+(vocabularies in `taxonomy/person.taxonomy.json`), and write the `note` as: what is confusable, what resolves it,
+and (if `either`) what is missing from the text. Prefer a minimal pair: one case where a predicate, title or
+neighbour selects the person, one where it selects the other reading. If nothing in the text decides it, use
+`either`, `resolved_by: ["nothing"]` and `acceptable_outcomes: ["person", "not-person"]`.
+
 ## What a good `why` says
 
 * Names the failure mode ("a lookup on surface form cannot tell the month from the name").

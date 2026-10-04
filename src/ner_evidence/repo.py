@@ -35,6 +35,9 @@ class Repo:
     sources: list[dict] = field(default_factory=list)
     ruleset: dict = field(default_factory=dict)
     targets: dict = field(default_factory=dict)
+    reviewers: dict = field(default_factory=lambda: {"reviewers": []})
+    ledger: list[dict] = field(default_factory=list)  # evidence/reviews/ledger.jsonl, append-only
+    bands: dict = field(default_factory=dict)  # evidence/references/name-frequency-bands.json (derived, minimized)
     cases: list[dict] = field(default_factory=list)
     case_files: dict[str, str] = field(default_factory=dict)  # case id -> relative file
     problems: list[Problem] = field(default_factory=list)
@@ -64,6 +67,23 @@ def load(root: Path | None = None) -> Repo:
         setattr(repo, attr, read_json(path))
         for e in validate(getattr(repo, attr), repo.schema(schema)):
             repo.problems.append(Problem("SCHEMA", rel, e))
+
+    bands_path = root / "evidence" / "references" / "name-frequency-bands.json"
+    if bands_path.exists():
+        repo.bands = read_json(bands_path)
+        for e in validate(repo.bands, repo.schema("name-frequency-bands")):
+            repo.problems.append(Problem("SCHEMA", "evidence/references/name-frequency-bands.json", e))
+
+    rev_path = root / "evidence" / "reviews" / "reviewers.json"
+    if rev_path.exists():
+        repo.reviewers = read_json(rev_path)
+    ledger_path = root / "evidence" / "reviews" / "ledger.jsonl"
+    if ledger_path.exists():
+        for n, line in enumerate(ledger_path.read_text(encoding="utf-8").splitlines(), 1):
+            try:
+                repo.ledger.append(json.loads(line))
+            except json.JSONDecodeError as exc:
+                repo.problems.append(Problem("PARSE", f"evidence/reviews/ledger.jsonl:{n}", str(exc)))
 
     src_path = root / "evidence" / "sources" / "sources.json"
     src_file = read_json(src_path)
@@ -95,10 +115,11 @@ def load(root: Path | None = None) -> Repo:
 
 CASE_KEY_ORDER = [
     "id", "schema_version", "entity_type", "language", "title", "why", "text", "expectations", "focus_span",
-    "dimensions", "ambiguity", "evidence_class", "source_ids", "review", "projections_excluded", "notes",
+    "dimensions", "ambiguity", "evidence_class", "source_ids", "citations", "review", "projections_excluded", "notes",
 ]
 EXPECT_KEY_ORDER = ["start", "end", "surface", "expect", "note"]
-DIM_KEY_ORDER = ["familiarity", "script", "token_class", "collision_classes", "context_types", "name_features", "boundary_tags"]
+AMB_KEY_ORDER = ["level", "kind", "alternative_reading", "resolved_by", "acceptable_outcomes", "note"]
+DIM_KEY_ORDER = ["familiarity", "script", "token_class", "collision_classes", "context_types", "name_features", "boundary_tags", "contrast_classes", "familiarity_basis", "familiarity_reference"]
 
 
 def ordered_case(case: dict) -> dict:
@@ -114,6 +135,8 @@ def ordered_case(case: dict) -> dict:
     ]
     dims = case["dimensions"]
     out["dimensions"] = {**{k: dims[k] for k in DIM_KEY_ORDER if k in dims}, **{k: dims[k] for k in sorted(set(dims) - set(DIM_KEY_ORDER))}}
+    amb = case["ambiguity"]
+    out["ambiguity"] = {**{k: amb[k] for k in AMB_KEY_ORDER if k in amb}, **{k: amb[k] for k in sorted(set(amb) - set(AMB_KEY_ORDER))}}
     return out
 
 

@@ -18,20 +18,20 @@
       "min": 200
     },
     {
-      "id": "en-unseen",
-      "description": "EN cases whose focus name is rare or novel (unseen proxy)",
+      "id": "en-uncommon-name",
+      "description": "EN cases whose focus name is rare or novel",
       "where": {
         "language": "en",
-        "seen": "unseen"
+        "name_commonness": "uncommon"
       },
-      "min": 60
+      "min": 100
     },
     {
-      "id": "en-seen",
-      "description": "EN cases whose focus name is common (seen proxy)",
+      "id": "en-common-name",
+      "description": "EN cases whose focus name is common",
       "where": {
         "language": "en",
-        "seen": "seen"
+        "name_commonness": "common"
       },
       "min": 100
     },
@@ -45,20 +45,20 @@
       "min": 80
     },
     {
-      "id": "ko-unseen",
-      "description": "KO cases whose focus name is rare or novel (unseen proxy)",
+      "id": "ko-uncommon-name",
+      "description": "KO cases whose focus name is rare or novel",
       "where": {
         "language": "ko",
-        "seen": "unseen"
+        "name_commonness": "uncommon"
       },
-      "min": 55
+      "min": 90
     },
     {
-      "id": "ko-seen",
-      "description": "KO cases whose focus name is common (seen proxy)",
+      "id": "ko-common-name",
+      "description": "KO cases whose focus name is common",
       "where": {
         "language": "ko",
-        "seen": "seen"
+        "name_commonness": "common"
       },
       "min": 100
     },
@@ -150,7 +150,7 @@
         "language": "en",
         "collision_classes": "organization"
       },
-      "min": 15
+      "min": 30
     },
     {
       "id": "ko-collision-organization",
@@ -159,7 +159,7 @@
         "language": "ko",
         "collision_classes": "organization"
       },
-      "min": 15
+      "min": 24
     },
     {
       "id": "en-collision-location",
@@ -168,7 +168,7 @@
         "language": "en",
         "collision_classes": "location"
       },
-      "min": 25
+      "min": 40
     },
     {
       "id": "ko-collision-location",
@@ -177,7 +177,7 @@
         "language": "ko",
         "collision_classes": "location"
       },
-      "min": 15
+      "min": 30
     },
     {
       "id": "en-collision-temporal",
@@ -204,7 +204,7 @@
         "language": "en",
         "collision_classes": "product-brand"
       },
-      "min": 6
+      "min": 14
     },
     {
       "id": "ko-collision-product-brand",
@@ -213,7 +213,7 @@
         "language": "ko",
         "collision_classes": "product-brand"
       },
-      "min": 4
+      "min": 10
     },
     {
       "id": "en-collision-eponym",
@@ -476,7 +476,7 @@
         "review_linguistic": "independently-reviewed"
       },
       "min": 100,
-      "waiver": "No independent reviewer was available while the Alpha corpus was authored by a single author session, so every case is author-only. This is reported in the snapshot review_summary; Beta must close it."
+      "waiver": "The independent review workflow exists (docs/review-workflow.md) and English and Korean linguistic reviews have been requested in the ledger, but no independent reviewer is registered yet and no verdict is recorded, so every case is still author-only. The floor stays waived until independent verdicts exist; the review ledger summary in the coverage report shows the live numbers."
     },
     {
       "id": "factual-independent-review",
@@ -485,7 +485,464 @@
         "review_factual": "independently-reviewed"
       },
       "min": 100,
-      "waiver": "No independent reviewer was available while the Alpha corpus was authored by a single author session, so every case is author-only. This is reported in the snapshot review_summary; Beta must close it."
+      "waiver": "The independent review workflow exists (docs/review-workflow.md) and English and Korean linguistic reviews have been requested in the ledger, but no independent reviewer is registered yet and no verdict is recorded, so every case is still author-only. The floor stays waived until independent verdicts exist; the review ledger summary in the coverage report shows the live numbers."
+    },
+    {
+      "id": "en-structured-ambiguity",
+      "description": "EN ambiguous cases carrying machine-readable ambiguity kind, alternative reading and resolving context",
+      "where": {
+        "language": "en",
+        "structured_ambiguity": "yes"
+      },
+      "min": 15
+    },
+    {
+      "id": "ko-structured-ambiguity",
+      "description": "KO ambiguous cases carrying machine-readable ambiguity kind, alternative reading and resolving context",
+      "where": {
+        "language": "ko",
+        "structured_ambiguity": "yes"
+      },
+      "min": 15
+    },
+    {
+      "id": "en-structured-genuinely-ambiguous",
+      "description": "EN honest-ambiguity cases with structured ambiguity",
+      "where": {
+        "language": "en",
+        "ambiguity_level": "genuinely-ambiguous",
+        "structured_ambiguity": "yes"
+      },
+      "min": 4
+    },
+    {
+      "id": "ko-structured-genuinely-ambiguous",
+      "description": "KO honest-ambiguity cases with structured ambiguity",
+      "where": {
+        "language": "ko",
+        "ambiguity_level": "genuinely-ambiguous",
+        "structured_ambiguity": "yes"
+      },
+      "min": 2
+    },
+    {
+      "id": "en-collision-organization-person",
+      "description": "EN organization collision cases containing a PERSON span (balance of contrasts)",
+      "where": {
+        "language": "en",
+        "collision_classes": "organization",
+        "kinds": "person"
+      },
+      "min": 10
+    },
+    {
+      "id": "ko-collision-organization-person",
+      "description": "KO organization collision cases containing a PERSON span (balance of contrasts)",
+      "where": {
+        "language": "ko",
+        "collision_classes": "organization",
+        "kinds": "person"
+      },
+      "min": 9
+    },
+    {
+      "id": "en-collision-organization-not-person",
+      "description": "EN organization collision cases containing a not-person span (balance of contrasts)",
+      "where": {
+        "language": "en",
+        "collision_classes": "organization",
+        "kinds": "not-person"
+      },
+      "min": 20
+    },
+    {
+      "id": "ko-collision-organization-not-person",
+      "description": "KO organization collision cases containing a not-person span (balance of contrasts)",
+      "where": {
+        "language": "ko",
+        "collision_classes": "organization",
+        "kinds": "not-person"
+      },
+      "min": 20
+    },
+    {
+      "id": "en-collision-organization-either",
+      "description": "EN organization collision cases containing an honest-ambiguity (either) span (balance of contrasts)",
+      "where": {
+        "language": "en",
+        "collision_classes": "organization",
+        "kinds": "either"
+      },
+      "min": 4
+    },
+    {
+      "id": "ko-collision-organization-either",
+      "description": "KO organization collision cases containing an honest-ambiguity (either) span (balance of contrasts)",
+      "where": {
+        "language": "ko",
+        "collision_classes": "organization",
+        "kinds": "either"
+      },
+      "min": 2
+    },
+    {
+      "id": "en-collision-location-person",
+      "description": "EN location collision cases containing a PERSON span (balance of contrasts)",
+      "where": {
+        "language": "en",
+        "collision_classes": "location",
+        "kinds": "person"
+      },
+      "min": 15
+    },
+    {
+      "id": "ko-collision-location-person",
+      "description": "KO location collision cases containing a PERSON span (balance of contrasts)",
+      "where": {
+        "language": "ko",
+        "collision_classes": "location",
+        "kinds": "person"
+      },
+      "min": 10
+    },
+    {
+      "id": "en-collision-location-not-person",
+      "description": "EN location collision cases containing a not-person span (balance of contrasts)",
+      "where": {
+        "language": "en",
+        "collision_classes": "location",
+        "kinds": "not-person"
+      },
+      "min": 25
+    },
+    {
+      "id": "ko-collision-location-not-person",
+      "description": "KO location collision cases containing a not-person span (balance of contrasts)",
+      "where": {
+        "language": "ko",
+        "collision_classes": "location",
+        "kinds": "not-person"
+      },
+      "min": 28
+    },
+    {
+      "id": "en-collision-location-either",
+      "description": "EN location collision cases containing an honest-ambiguity (either) span (balance of contrasts)",
+      "where": {
+        "language": "en",
+        "collision_classes": "location",
+        "kinds": "either"
+      },
+      "min": 4
+    },
+    {
+      "id": "ko-collision-location-either",
+      "description": "KO location collision cases containing an honest-ambiguity (either) span (balance of contrasts)",
+      "where": {
+        "language": "ko",
+        "collision_classes": "location",
+        "kinds": "either"
+      },
+      "min": 1
+    },
+    {
+      "id": "en-collision-product-brand-person",
+      "description": "EN product-brand collision cases containing a PERSON span (balance of contrasts)",
+      "where": {
+        "language": "en",
+        "collision_classes": "product-brand",
+        "kinds": "person"
+      },
+      "min": 5
+    },
+    {
+      "id": "ko-collision-product-brand-person",
+      "description": "KO product-brand collision cases containing a PERSON span (balance of contrasts)",
+      "where": {
+        "language": "ko",
+        "collision_classes": "product-brand",
+        "kinds": "person"
+      },
+      "min": 3
+    },
+    {
+      "id": "en-collision-product-brand-not-person",
+      "description": "EN product-brand collision cases containing a not-person span (balance of contrasts)",
+      "where": {
+        "language": "en",
+        "collision_classes": "product-brand",
+        "kinds": "not-person"
+      },
+      "min": 10
+    },
+    {
+      "id": "ko-collision-product-brand-not-person",
+      "description": "KO product-brand collision cases containing a not-person span (balance of contrasts)",
+      "where": {
+        "language": "ko",
+        "collision_classes": "product-brand",
+        "kinds": "not-person"
+      },
+      "min": 8
+    },
+    {
+      "id": "en-collision-product-brand-either",
+      "description": "EN product-brand collision cases containing an honest-ambiguity (either) span (balance of contrasts)",
+      "where": {
+        "language": "en",
+        "collision_classes": "product-brand",
+        "kinds": "either"
+      },
+      "min": 1
+    },
+    {
+      "id": "ko-collision-product-brand-either",
+      "description": "KO product-brand collision cases containing an honest-ambiguity (either) span (balance of contrasts)",
+      "where": {
+        "language": "ko",
+        "collision_classes": "product-brand",
+        "kinds": "either"
+      },
+      "min": 1
+    },
+    {
+      "id": "contrast-ko-particle-allomorph",
+      "description": "Cases in the ko-particle-allomorph contrast class",
+      "where": {
+        "contrast_classes": "ko-particle-allomorph"
+      },
+      "min": 18
+    },
+    {
+      "id": "contrast-ko-name-final-syllable-trap",
+      "description": "Cases in the ko-name-final-syllable-trap contrast class",
+      "where": {
+        "contrast_classes": "ko-name-final-syllable-trap"
+      },
+      "min": 6
+    },
+    {
+      "id": "contrast-ko-particle-stacking",
+      "description": "Cases in the ko-particle-stacking contrast class",
+      "where": {
+        "contrast_classes": "ko-particle-stacking"
+      },
+      "min": 8
+    },
+    {
+      "id": "contrast-ko-copula-quotative",
+      "description": "Cases in the ko-copula-quotative contrast class",
+      "where": {
+        "contrast_classes": "ko-copula-quotative"
+      },
+      "min": 8
+    },
+    {
+      "id": "contrast-ko-genitive-apposition",
+      "description": "Cases in the ko-genitive-apposition contrast class",
+      "where": {
+        "contrast_classes": "ko-genitive-apposition"
+      },
+      "min": 4
+    },
+    {
+      "id": "contrast-ko-honorific-suffix",
+      "description": "Cases in the ko-honorific-suffix contrast class",
+      "where": {
+        "contrast_classes": "ko-honorific-suffix"
+      },
+      "min": 8
+    },
+    {
+      "id": "contrast-ko-surname-prefix-trap",
+      "description": "Cases in the ko-surname-prefix-trap contrast class",
+      "where": {
+        "contrast_classes": "ko-surname-prefix-trap"
+      },
+      "min": 6
+    },
+    {
+      "id": "contrast-ko-noun-name-homograph",
+      "description": "Cases in the ko-noun-name-homograph contrast class",
+      "where": {
+        "contrast_classes": "ko-noun-name-homograph"
+      },
+      "min": 4
+    },
+    {
+      "id": "contrast-ko-spacing-variation",
+      "description": "Cases in the ko-spacing-variation contrast class",
+      "where": {
+        "contrast_classes": "ko-spacing-variation"
+      },
+      "min": 8
+    },
+    {
+      "id": "contrast-ko-separator-punctuation",
+      "description": "Cases in the ko-separator-punctuation contrast class",
+      "where": {
+        "contrast_classes": "ko-separator-punctuation"
+      },
+      "min": 5
+    },
+    {
+      "id": "contrast-ko-romanized-hangul-mixture",
+      "description": "Cases in the ko-romanized-hangul-mixture contrast class",
+      "where": {
+        "contrast_classes": "ko-romanized-hangul-mixture"
+      },
+      "min": 5
+    },
+    {
+      "id": "contrast-ko-script-boundary",
+      "description": "Cases in the ko-script-boundary contrast class",
+      "where": {
+        "contrast_classes": "ko-script-boundary"
+      },
+      "min": 4
+    },
+    {
+      "id": "contrast-ko-hanja-annotation",
+      "description": "Cases in the ko-hanja-annotation contrast class",
+      "where": {
+        "contrast_classes": "ko-hanja-annotation"
+      },
+      "min": 3
+    },
+    {
+      "id": "contrast-en-key-value-label",
+      "description": "Cases in the en-key-value-label contrast class",
+      "where": {
+        "contrast_classes": "en-key-value-label"
+      },
+      "min": 14
+    },
+    {
+      "id": "contrast-en-log-line",
+      "description": "Cases in the en-log-line contrast class",
+      "where": {
+        "contrast_classes": "en-log-line"
+      },
+      "min": 8
+    },
+    {
+      "id": "contrast-en-honorific-variant",
+      "description": "Cases in the en-honorific-variant contrast class",
+      "where": {
+        "contrast_classes": "en-honorific-variant"
+      },
+      "min": 7
+    },
+    {
+      "id": "contrast-en-punctuation-dense",
+      "description": "Cases in the en-punctuation-dense contrast class",
+      "where": {
+        "contrast_classes": "en-punctuation-dense"
+      },
+      "min": 5
+    },
+    {
+      "id": "contrast-en-common-word-name",
+      "description": "Cases in the en-common-word-name contrast class",
+      "where": {
+        "contrast_classes": "en-common-word-name"
+      },
+      "min": 6
+    },
+    {
+      "id": "contrast-en-table-or-columns",
+      "description": "Cases in the en-table-or-columns contrast class",
+      "where": {
+        "contrast_classes": "en-table-or-columns"
+      },
+      "min": 5
+    },
+    {
+      "id": "contrast-en-lookalike-entity",
+      "description": "Cases in the en-lookalike-entity contrast class",
+      "where": {
+        "contrast_classes": "en-lookalike-entity"
+      },
+      "min": 4
+    },
+    {
+      "id": "contrast-en-delimited-row",
+      "description": "Cases in the en-delimited-row contrast class",
+      "where": {
+        "contrast_classes": "en-delimited-row"
+      },
+      "min": 5
+    },
+    {
+      "id": "contrast-en-markup-embedded",
+      "description": "Cases in the en-markup-embedded contrast class",
+      "where": {
+        "contrast_classes": "en-markup-embedded"
+      },
+      "min": 4
+    },
+    {
+      "id": "en-structured-text-total",
+      "description": "EN cases in structured text (logs, labels, tables, delimited rows)",
+      "where": {
+        "language": "en",
+        "context_types": "structured-text"
+      },
+      "min": 45
+    },
+    {
+      "id": "en-reference-checked-familiarity",
+      "description": "EN cases whose familiarity label is mechanically checked against a registered surname-frequency reference",
+      "where": {
+        "language": "en",
+        "familiarity_basis": "reference-frequency"
+      },
+      "min": 15
+    },
+    {
+      "id": "ko-reference-checked-familiarity",
+      "description": "KO cases whose familiarity label is mechanically checked against a registered surname-frequency reference",
+      "where": {
+        "language": "ko",
+        "familiarity_basis": "reference-frequency"
+      },
+      "min": 12
+    },
+    {
+      "id": "en-constructed-names",
+      "description": "EN cases with a constructed (novel) name",
+      "where": {
+        "language": "en",
+        "familiarity_basis": "constructed"
+      },
+      "min": 25
+    },
+    {
+      "id": "ko-constructed-names",
+      "description": "KO cases with a constructed (novel) name",
+      "where": {
+        "language": "ko",
+        "familiarity_basis": "constructed"
+      },
+      "min": 10
+    },
+    {
+      "id": "en-reference-backed",
+      "description": "EN cases whose expectation rests on a cited reference rule (evidence_class reference-backed)",
+      "where": {
+        "language": "en",
+        "provenance_basis": "reference-backed"
+      },
+      "min": 12
+    },
+    {
+      "id": "ko-reference-backed",
+      "description": "KO cases whose expectation rests on a cited reference rule (evidence_class reference-backed)",
+      "where": {
+        "language": "ko",
+        "provenance_basis": "reference-backed"
+      },
+      "min": 13
     }
   ],
   "ratio_targets": [
@@ -500,17 +957,17 @@
       "max": 0.6
     },
     {
-      "id": "en-unseen-share",
-      "description": "Unseen share of EN name-bearing cases (rare+novel over common+rare+novel)",
+      "id": "en-uncommon-name-share",
+      "description": "Uncommon-name share of EN name-bearing cases (rare+novel over common+rare+novel)",
       "numerator": {
         "language": "en",
-        "seen": "unseen"
+        "name_commonness": "uncommon"
       },
       "denominator": {
         "language": "en",
-        "seen": [
-          "seen",
-          "unseen"
+        "name_commonness": [
+          "common",
+          "uncommon"
         ]
       },
       "min": 0.25
@@ -540,17 +997,17 @@
       "min": 0.25
     },
     {
-      "id": "ko-unseen-share",
-      "description": "Unseen share of KO name-bearing cases (rare+novel over common+rare+novel)",
+      "id": "ko-uncommon-name-share",
+      "description": "Uncommon-name share of KO name-bearing cases (rare+novel over common+rare+novel)",
       "numerator": {
         "language": "ko",
-        "seen": "unseen"
+        "name_commonness": "uncommon"
       },
       "denominator": {
         "language": "ko",
-        "seen": [
-          "seen",
-          "unseen"
+        "name_commonness": [
+          "common",
+          "uncommon"
         ]
       },
       "min": 0.25
@@ -616,16 +1073,12 @@
   ],
   "known_gaps": [
     {
-      "id": "no-independent-review",
-      "description": "Every case has linguistic and factual review status author-only. Korean cases in particular need review by a native speaker or linguist, and English boundary conventions need a second annotator."
-    },
-    {
       "id": "synthetic-only-no-corpus-backing",
       "description": "All evidence is project-authored. No naturally occurring text is included, so the distribution of contexts, name frequencies and noise in real documents is not represented. Results on this corpus must not be read as real-world accuracy."
     },
     {
       "id": "familiarity-labels-unverified",
-      "description": "The common/rare/novel familiarity labels are author judgments, not checked against national name-frequency tables. The seen/unseen slices are proxies; they say nothing about any model's training data."
+      "description": "The common/rare/novel familiarity labels are author judgments against written criteria (docs/familiarity-and-rarity.md). Only cases whose familiarity_basis is reference-frequency are checked against a public name-frequency table, and only for the surname component; given-name frequency is not reference-checked. The labels describe the name in its language community and say nothing about any model's training data."
     },
     {
       "id": "single-author-selection-bias",
@@ -662,6 +1115,74 @@
     {
       "id": "fixture-correlation",
       "description": "Fixtures derived from one case are correlated. Counting fixtures instead of cases overweights cases that accept more projections (Korean cases accept the NFD projection; English mostly do not)."
+    },
+    {
+      "id": "legacy-ambiguity-unstructured",
+      "description": "Ambiguous cases authored before schema 1.1.0 carry only a free-text ambiguity note; their kind, alternative reading and resolving context are not machine-readable. Backfilling needs per-case linguistic judgment and is deliberately not derived by script."
+    },
+    {
+      "id": "contrast-classes-beta-cases-only",
+      "description": "Contrast classes (dimensions.contrast_classes) are assigned only to cases authored from Beta 1 on. Alpha-era Korean particle, spacing and mixed-script cases are not retro-tagged, so per-class counts understate the true coverage and must not be read as the whole corpus."
+    },
+    {
+      "id": "ko-small-contrast-classes",
+      "description": "Genitive/apposition, hanja annotation, script boundary and noun/name homograph classes have single-digit case counts: they show the class exists but support no per-class conclusions."
+    },
+    {
+      "id": "ko-particle-coverage-incomplete",
+      "description": "Not yet covered: the archaic vocative 이여/여, 이여서/이시여 forms, contracted particle forms in chat text (-ㄴ/-ㅇ clipped endings), quotative 이라며/이라고는 chains, and particle usage after four-syllable and two-syllable-surname names beyond the allomorph cases."
+    },
+    {
+      "id": "ko-spacing-and-separators-incomplete",
+      "description": "Not yet covered: NBSP and full-width spaces, zero-width characters, spaces inside hanja names, and name lists in table or CSV cells with Korean separators."
+    },
+    {
+      "id": "en-contrast-small-classes",
+      "description": "Markup-embedded, delimited-row, table and lookalike-entity classes have single-digit case counts: they show the class exists but support no per-class conclusions."
+    },
+    {
+      "id": "en-structured-text-synthetic-formats",
+      "description": "Log, label, table and delimited-row cases are synthetic one-line or two-line records written for the contrast. Real log files contain longer context, timestamps, ids and repeated fields that these cases do not reproduce; no real logs are included because they would carry personal data."
+    },
+    {
+      "id": "en-usernames-and-emails-out-of-scope",
+      "description": "Handles, usernames and email local parts that embed names remain out of scope; log-style cases deliberately use display names only."
+    },
+    {
+      "id": "familiarity-reference-surname-only",
+      "description": "Only the surname component is reference-checked (US 2010 Census surnames for English; the 2015 Statistics Korea surname table, read through a pinned Wikipedia transcription, for Korean). Given-name frequency is not reference-checked: the reference-frequency basis asserts, by author judgment, that the given name is a very common one."
+    },
+    {
+      "id": "familiarity-reference-us-centric",
+      "description": "The English reference is the US 2010 Census, so surnames frequent in the UK, India, Africa or East Asia can be 'rare' by the reference although routine in their communities. English 'common' labels that disagree with the reference band are listed by `python -m ner_evidence references audit`; they are not changed because the audit is informational."
+    },
+    {
+      "id": "familiarity-korean-novel-not-reference-derivable",
+      "description": "No Korean 'novel' band is reference-derived: the parsed surname table is partial, so absence proves nothing. Korean novel names rest on the constructed basis (author-assembled given names)."
+    },
+    {
+      "id": "familiarity-labels-not-model-evidence",
+      "description": "Familiarity says how routinely a name is used in its language community. It is not a claim about, and cannot be used as a proxy for, any model's training data."
+    },
+    {
+      "id": "no-independent-review",
+      "description": "No case has a counted independent review. The workflow, reviewer registry, append-only ledger, blind packets and review requests exist, but no independent reviewer has been registered and no verdict recorded. Korean cases in particular need a native speaker or linguist, and English boundary conventions need a second annotator. Factual review has not been requested at all."
+    },
+    {
+      "id": "review-independence-is-attested",
+      "description": "A reviewer's independence from the authors is a maintainer attestation in evidence/reviews/reviewers.json; tooling cannot verify it. Verdicts from reviewers not marked independent are kept and reported but never counted."
+    },
+    {
+      "id": "no-corpus-backed-evidence",
+      "description": "No case is corpus-backed. The policy, schema and gates for importing a public or licensed corpus exist and are tested, but an import needs an independent legal review of the exact corpus version and a name-replacement step, neither of which has been done. Candidates considered are in docs/corpus-candidates.md. Until then results on this evidence say nothing about real-world text."
+    },
+    {
+      "id": "reference-backed-cases-cite-conventions-not-text",
+      "description": "Reference-backed cases rest on orthography and naming conventions (Hangul Spelling Rules Articles 41 and 48, Romanization of Korean Articles 3 and 4, a W3C article on personal names). They justify how a name is written and where its boundary lies, not that a detector must find it, and they are small in number. The citations name the article or section; no source text is copied."
+    },
+    {
+      "id": "reference-sources-legal-review-pending",
+      "description": "Every reference source has legal review 'pending'. The reading that a government notice, a W3C article or derived band labels may be cited without copying is the author's, not a legal opinion. The public-release gate fails on this on purpose."
     }
   ]
 }

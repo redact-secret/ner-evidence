@@ -1,0 +1,824 @@
+{
+  "cases": [
+    {
+      "id": "person/en/context-ambiguity/bill-hands-salt",
+      "schema_version": "1.1.0",
+      "entity_type": "PERSON",
+      "language": "en",
+      "title": "Bill as the agent of a physical handover",
+      "why": "Partner of bill-legislation-either: a physical, table-side action requires an animate agent, so the same word is a person.",
+      "text": "Bill passed the salt across the table.",
+      "expectations": [
+        {
+          "start": 0,
+          "end": 4,
+          "surface": "Bill",
+          "expect": "person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "latin",
+        "token_class": "single",
+        "collision_classes": [
+          "common-word"
+        ],
+        "context_types": [
+          "plain-prose",
+          "sentence-initial"
+        ],
+        "name_features": [
+          "given-only"
+        ],
+        "boundary_tags": [],
+        "familiarity_basis": "author-judgment"
+      },
+      "ambiguity": {
+        "level": "context-resolvable",
+        "kind": "lexical-homograph",
+        "alternative_reading": "common-noun",
+        "resolved_by": [
+          "predicate-or-argument"
+        ],
+        "note": "Passing salt is something only a person does, which selects the given name."
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/en/context-ambiguity/bill-legislation-either",
+      "schema_version": "1.1.0",
+      "entity_type": "PERSON",
+      "language": "en",
+      "title": "Bill as a legislative proposal or a person, transitive passing",
+      "why": "'Bill passed the committee' is a standard news-style sentence about legislation and is equally well-formed with a person as the subject; without a determiner the text cannot decide.",
+      "text": "Bill passed the committee on Tuesday.",
+      "expectations": [
+        {
+          "start": 0,
+          "end": 4,
+          "surface": "Bill",
+          "expect": "either"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "latin",
+        "token_class": "single",
+        "collision_classes": [
+          "common-word"
+        ],
+        "context_types": [
+          "plain-prose",
+          "sentence-initial"
+        ],
+        "name_features": [
+          "given-only"
+        ],
+        "boundary_tags": [],
+        "familiarity_basis": "author-judgment"
+      },
+      "ambiguity": {
+        "level": "genuinely-ambiguous",
+        "kind": "lexical-homograph",
+        "alternative_reading": "common-noun",
+        "resolved_by": [
+          "nothing"
+        ],
+        "acceptable_outcomes": [
+          "person",
+          "not-person"
+        ],
+        "note": "In headline or committee-minutes register a bare 'Bill' names a legislative proposal; in running prose it is a given name. Nothing in the sentence marks the register, so both readings stand."
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/en/context-ambiguity/grant-agent-person",
+      "schema_version": "1.1.0",
+      "entity_type": "PERSON",
+      "language": "en",
+      "title": "Grant as the agent of an approval",
+      "why": "Partner of grant-passive-either: the same word in subject position of an active verb of approving, which selects an animate agent.",
+      "text": "Grant approved the budget after the second review.",
+      "expectations": [
+        {
+          "start": 0,
+          "end": 5,
+          "surface": "Grant",
+          "expect": "person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "latin",
+        "token_class": "single",
+        "collision_classes": [
+          "common-word"
+        ],
+        "context_types": [
+          "plain-prose",
+          "sentence-initial"
+        ],
+        "name_features": [
+          "given-only"
+        ],
+        "boundary_tags": [],
+        "familiarity_basis": "author-judgment"
+      },
+      "ambiguity": {
+        "level": "context-resolvable",
+        "kind": "lexical-homograph",
+        "alternative_reading": "common-noun",
+        "resolved_by": [
+          "predicate-or-argument"
+        ],
+        "note": "Approving a budget takes an agent; an award cannot approve, so the active clause selects the person."
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/en/context-ambiguity/grant-passive-either",
+      "schema_version": "1.1.0",
+      "entity_type": "PERSON",
+      "language": "en",
+      "title": "Grant as a funding award or a person, passive clause",
+      "why": "Sentence-initial capitalization hides whether 'Grant' is a noun or a name, and a passive 'was approved' fits an award and a person. Nothing in the text separates them, so the case records an honest ambiguity.",
+      "text": "Grant was approved after the second review.",
+      "expectations": [
+        {
+          "start": 0,
+          "end": 5,
+          "surface": "Grant",
+          "expect": "either"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "latin",
+        "token_class": "single",
+        "collision_classes": [
+          "common-word"
+        ],
+        "context_types": [
+          "plain-prose",
+          "sentence-initial"
+        ],
+        "name_features": [
+          "given-only"
+        ],
+        "boundary_tags": [],
+        "familiarity_basis": "author-judgment"
+      },
+      "ambiguity": {
+        "level": "genuinely-ambiguous",
+        "kind": "lexical-homograph",
+        "alternative_reading": "common-noun",
+        "resolved_by": [
+          "nothing"
+        ],
+        "acceptable_outcomes": [
+          "person",
+          "not-person"
+        ],
+        "note": "In headline or news register a bare 'Grant' names an award that can be approved; in running prose it is a given name whose holder can be approved (for a post or a loan). The text does not mark the register."
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/en/context-ambiguity/hope-fading-noun",
+      "schema_version": "1.1.0",
+      "entity_type": "PERSON",
+      "language": "en",
+      "title": "Hope as an abstract noun fading",
+      "why": "Partner of hope-person-arrival: 'faded' is predicated of abstract feelings, so the same capitalized word is a noun and not a mention of a person.",
+      "text": "Hope faded as the speech dragged on.",
+      "expectations": [
+        {
+          "start": 0,
+          "end": 4,
+          "surface": "Hope",
+          "expect": "not-person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "latin",
+        "token_class": "single",
+        "collision_classes": [
+          "common-word"
+        ],
+        "context_types": [
+          "plain-prose",
+          "sentence-initial",
+          "no-person"
+        ],
+        "name_features": [],
+        "boundary_tags": [],
+        "familiarity_basis": "author-judgment"
+      },
+      "ambiguity": {
+        "level": "context-resolvable",
+        "kind": "lexical-homograph",
+        "alternative_reading": "common-noun",
+        "resolved_by": [
+          "predicate-or-argument"
+        ],
+        "note": "Fading is predicated of feelings and light; a person is not said to fade in this sense."
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/en/context-ambiguity/hope-person-arrival",
+      "schema_version": "1.1.0",
+      "entity_type": "PERSON",
+      "language": "en",
+      "title": "Hope as a person arriving",
+      "why": "'Hope' is an abstract noun and a given name. An arrival predicate selects an animate subject; without it the capitalized sentence-initial word would be a noun.",
+      "text": "Hope arrived late, and the speech had already begun.",
+      "expectations": [
+        {
+          "start": 0,
+          "end": 4,
+          "surface": "Hope",
+          "expect": "person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "latin",
+        "token_class": "single",
+        "collision_classes": [
+          "common-word"
+        ],
+        "context_types": [
+          "plain-prose",
+          "sentence-initial"
+        ],
+        "name_features": [
+          "given-only"
+        ],
+        "boundary_tags": [],
+        "familiarity_basis": "author-judgment"
+      },
+      "ambiguity": {
+        "level": "context-resolvable",
+        "kind": "lexical-homograph",
+        "alternative_reading": "common-noun",
+        "resolved_by": [
+          "predicate-or-argument"
+        ],
+        "note": "Arriving late is predicated of people, and 'the speech had already begun' sets a scene with attendees."
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/en/context-ambiguity/jordan-with-country",
+      "schema_version": "1.1.0",
+      "entity_type": "PERSON",
+      "language": "en",
+      "title": "Jordan next to another country",
+      "why": "Coordination with a country name makes the parallel structure political, so 'Jordan' reads as a country.",
+      "text": "Jordan and Egypt signed the agreement.",
+      "expectations": [
+        {
+          "start": 0,
+          "end": 6,
+          "surface": "Jordan",
+          "expect": "not-person"
+        },
+        {
+          "start": 11,
+          "end": 16,
+          "surface": "Egypt",
+          "expect": "not-person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "latin",
+        "token_class": "single",
+        "collision_classes": [
+          "location"
+        ],
+        "context_types": [
+          "plain-prose",
+          "sentence-initial",
+          "no-person"
+        ],
+        "name_features": [],
+        "boundary_tags": [],
+        "familiarity_basis": "author-judgment"
+      },
+      "ambiguity": {
+        "level": "context-resolvable",
+        "kind": "category-collision",
+        "alternative_reading": "place-name",
+        "resolved_by": [
+          "co-occurring-entity"
+        ],
+        "note": "Coordinated with 'Egypt', both are most naturally countries signing a treaty."
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/en/context-ambiguity/jordan-with-given-name",
+      "schema_version": "1.1.0",
+      "entity_type": "PERSON",
+      "language": "en",
+      "title": "Jordan next to another given name",
+      "why": "Partner of jordan-with-country: coordination with a given name makes the parallel structure two people.",
+      "text": "Jordan and Casey signed the agreement.",
+      "expectations": [
+        {
+          "start": 0,
+          "end": 6,
+          "surface": "Jordan",
+          "expect": "person"
+        },
+        {
+          "start": 11,
+          "end": 16,
+          "surface": "Casey",
+          "expect": "person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "latin",
+        "token_class": "single",
+        "collision_classes": [
+          "location"
+        ],
+        "context_types": [
+          "plain-prose",
+          "sentence-initial"
+        ],
+        "name_features": [
+          "given-only"
+        ],
+        "boundary_tags": [],
+        "familiarity_basis": "author-judgment"
+      },
+      "ambiguity": {
+        "level": "context-resolvable",
+        "kind": "category-collision",
+        "alternative_reading": "place-name",
+        "resolved_by": [
+          "co-occurring-entity"
+        ],
+        "note": "Coordinated with 'Casey', both are most naturally individuals signing for themselves."
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/en/context-ambiguity/lincoln-bare-either",
+      "schema_version": "1.1.0",
+      "entity_type": "PERSON",
+      "language": "en",
+      "title": "Lincoln as a person, city or institution, bare subject",
+      "why": "A bare capitalized surname-or-place as subject of an approval can denote a person or a metonymic institution; the text carries no title, first name or place cue.",
+      "text": "Lincoln approved the draft.",
+      "expectations": [
+        {
+          "start": 0,
+          "end": 7,
+          "surface": "Lincoln",
+          "expect": "either"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "latin",
+        "token_class": "single",
+        "collision_classes": [
+          "location",
+          "organization"
+        ],
+        "context_types": [
+          "plain-prose",
+          "sentence-initial"
+        ],
+        "name_features": [
+          "surname-only"
+        ],
+        "boundary_tags": [],
+        "familiarity_basis": "author-judgment"
+      },
+      "ambiguity": {
+        "level": "genuinely-ambiguous",
+        "kind": "category-collision",
+        "alternative_reading": "place-name",
+        "resolved_by": [
+          "nothing"
+        ],
+        "acceptable_outcomes": [
+          "person",
+          "not-person"
+        ],
+        "note": "Metonymy lets a city or institution 'approve' a draft; a person may do so too. No title or first name appears."
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/en/context-ambiguity/lincoln-with-title",
+      "schema_version": "1.1.0",
+      "entity_type": "PERSON",
+      "language": "en",
+      "title": "Lincoln resolved by a title",
+      "why": "Partner of lincoln-bare-either: a preceding title selects a person even though the surname is also a place and an institution.",
+      "text": "Professor Lincoln approved the draft.",
+      "expectations": [
+        {
+          "start": 10,
+          "end": 17,
+          "surface": "Lincoln",
+          "expect": "person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "latin",
+        "token_class": "single",
+        "collision_classes": [
+          "location",
+          "organization"
+        ],
+        "context_types": [
+          "plain-prose",
+          "title-honorific"
+        ],
+        "name_features": [
+          "surname-only"
+        ],
+        "boundary_tags": [
+          "honorific-excluded"
+        ],
+        "familiarity_basis": "author-judgment"
+      },
+      "ambiguity": {
+        "level": "context-resolvable",
+        "kind": "category-collision",
+        "alternative_reading": "place-name",
+        "resolved_by": [
+          "title-or-honorific"
+        ],
+        "note": "'Professor' attaches to people; the surname after it is the person, and the title stays outside the span."
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/en/context-ambiguity/max-person-waving",
+      "schema_version": "1.1.0",
+      "entity_type": "PERSON",
+      "language": "en",
+      "title": "Max as a person at the door",
+      "why": "Partner of max-pet-barking: a human gesture at the same door selects a person.",
+      "text": "Max waved at the door.",
+      "expectations": [
+        {
+          "start": 0,
+          "end": 3,
+          "surface": "Max",
+          "expect": "person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "latin",
+        "token_class": "single",
+        "collision_classes": [],
+        "context_types": [
+          "plain-prose",
+          "sentence-initial"
+        ],
+        "name_features": [
+          "given-only"
+        ],
+        "boundary_tags": [],
+        "familiarity_basis": "author-judgment"
+      },
+      "ambiguity": {
+        "level": "context-resolvable",
+        "kind": "category-collision",
+        "alternative_reading": "animal-or-object-name",
+        "resolved_by": [
+          "predicate-or-argument"
+        ],
+        "note": "Waving is a human gesture; the same name with that predicate denotes a person."
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/en/context-ambiguity/max-pet-barking",
+      "schema_version": "1.1.0",
+      "entity_type": "PERSON",
+      "language": "en",
+      "title": "Max as the name of an animal",
+      "why": "A name-shaped token that names an animal is not a PERSON mention; the tail-wagging predicate selects an animal referent.",
+      "text": "Max wagged his tail at the door.",
+      "expectations": [
+        {
+          "start": 0,
+          "end": 3,
+          "surface": "Max",
+          "expect": "not-person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "latin",
+        "token_class": "single",
+        "collision_classes": [],
+        "context_types": [
+          "plain-prose",
+          "sentence-initial",
+          "no-person"
+        ],
+        "name_features": [
+          "given-only"
+        ],
+        "boundary_tags": [],
+        "familiarity_basis": "author-judgment"
+      },
+      "ambiguity": {
+        "level": "context-resolvable",
+        "kind": "category-collision",
+        "alternative_reading": "animal-or-object-name",
+        "resolved_by": [
+          "predicate-or-argument"
+        ],
+        "note": "Wagging a tail selects an animal; the span is name-like but not a person in this context."
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/en/context-ambiguity/tom-dick-harry-idiom",
+      "schema_version": "1.1.0",
+      "entity_type": "PERSON",
+      "language": "en",
+      "title": "Tom, Dick and Harry as a fixed expression",
+      "why": "Three given names in a fixed idiom mean 'anyone at all'. Each token is a name, but the expression refers to no individual; the whole idiom is one not-person span.",
+      "text": "Every Tom, Dick and Harry seems to have an opinion.",
+      "expectations": [
+        {
+          "start": 6,
+          "end": 25,
+          "surface": "Tom, Dick and Harry",
+          "expect": "not-person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "latin",
+        "token_class": "multi",
+        "collision_classes": [],
+        "context_types": [
+          "plain-prose",
+          "list-or-enumeration",
+          "no-person"
+        ],
+        "name_features": [],
+        "boundary_tags": [],
+        "familiarity_basis": "author-judgment"
+      },
+      "ambiguity": {
+        "level": "context-resolvable",
+        "kind": "category-collision",
+        "alternative_reading": "fixed-expression",
+        "resolved_by": [
+          "fixed-phrase"
+        ],
+        "note": "The idiom 'every Tom, Dick and Harry' is generic and does not denote three individuals."
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/en/context-ambiguity/will-reader-person",
+      "schema_version": "1.1.0",
+      "entity_type": "PERSON",
+      "language": "en",
+      "title": "Will as the subject of an active reading verb",
+      "why": "Partner of will-testament-either: an active transitive verb with an inanimate object makes 'Will' the reader. The modal reading is blocked because a modal would need a subject before it.",
+      "text": "Will read the testament aloud to the family.",
+      "expectations": [
+        {
+          "start": 0,
+          "end": 4,
+          "surface": "Will",
+          "expect": "person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "latin",
+        "token_class": "single",
+        "collision_classes": [
+          "common-word"
+        ],
+        "context_types": [
+          "plain-prose",
+          "sentence-initial"
+        ],
+        "name_features": [
+          "given-only"
+        ],
+        "boundary_tags": [],
+        "familiarity_basis": "author-judgment"
+      },
+      "ambiguity": {
+        "level": "context-resolvable",
+        "kind": "lexical-homograph",
+        "alternative_reading": "adjective-or-verb",
+        "resolved_by": [
+          "syntactic-position",
+          "predicate-or-argument"
+        ],
+        "note": "A sentence-initial modal 'will' would need a subject, so 'Will read' with a bare verb after it is a subject-verb sequence."
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/en/context-ambiguity/will-testament-either",
+      "schema_version": "1.1.0",
+      "entity_type": "PERSON",
+      "language": "en",
+      "title": "Will as a testament or a person, passive announcement",
+      "why": "'Will' is a noun (testament), a modal and a given name; sentence-initial position removes the capitalization cue and 'was announced to the family' fits an announced document and an announced person.",
+      "text": "Will was announced to the family on Friday.",
+      "expectations": [
+        {
+          "start": 0,
+          "end": 4,
+          "surface": "Will",
+          "expect": "either"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "latin",
+        "token_class": "single",
+        "collision_classes": [
+          "common-word"
+        ],
+        "context_types": [
+          "plain-prose",
+          "sentence-initial"
+        ],
+        "name_features": [
+          "given-only"
+        ],
+        "boundary_tags": [],
+        "familiarity_basis": "author-judgment"
+      },
+      "ambiguity": {
+        "level": "genuinely-ambiguous",
+        "kind": "lexical-homograph",
+        "alternative_reading": "common-noun",
+        "resolved_by": [
+          "nothing"
+        ],
+        "acceptable_outcomes": [
+          "person",
+          "not-person"
+        ],
+        "note": "A testament can be announced to a family, and so can a person (for example an arrival or appointment). The text carries no determiner or register cue."
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    }
+  ]
+}

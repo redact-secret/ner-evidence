@@ -1,0 +1,972 @@
+{
+  "cases": [
+    {
+      "id": "person/ko/context-ambiguity/bora-and-purple",
+      "schema_version": "1.1.0",
+      "entity_type": "PERSON",
+      "language": "ko",
+      "title": "보라 as a name next to 보라색",
+      "why": "보라 is a given name and also 'purple'; the compound 보라색 ('purple colour') is a whole common noun that begins with the name's syllables.",
+      "text": "보라는 보라색 가방을 샀다.",
+      "expectations": [
+        {
+          "start": 0,
+          "end": 2,
+          "surface": "보라",
+          "expect": "person"
+        },
+        {
+          "start": 4,
+          "end": 7,
+          "surface": "보라색",
+          "expect": "not-person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "hangul",
+        "token_class": "single",
+        "collision_classes": [
+          "common-word"
+        ],
+        "context_types": [
+          "plain-prose",
+          "sentence-initial",
+          "particle-attached"
+        ],
+        "name_features": [
+          "given-only",
+          "ko-given-only",
+          "ko-given-name-is-common-noun"
+        ],
+        "boundary_tags": [
+          "particle-excluded"
+        ],
+        "familiarity_basis": "author-judgment"
+      },
+      "ambiguity": {
+        "level": "context-resolvable",
+        "kind": "lexical-homograph",
+        "alternative_reading": "common-noun",
+        "resolved_by": [
+          "particle-or-suffix",
+          "syntactic-position"
+        ],
+        "note": "The topic particle 는 marks the first 보라 as a subject who buys a bag; 보라색 is the colour noun modifying the bag."
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/ko/context-ambiguity/eunhye-grace",
+      "schema_version": "1.1.0",
+      "entity_type": "PERSON",
+      "language": "ko",
+      "title": "은혜 as 'grace' received",
+      "why": "은혜 ('favour, grace') is a frequent given name. An object-marked noun with the verb 입다 ('receive a favour') is the noun idiom.",
+      "text": "은혜를 입었다.",
+      "expectations": [
+        {
+          "start": 0,
+          "end": 2,
+          "surface": "은혜",
+          "expect": "not-person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "not-applicable",
+        "script": "hangul",
+        "token_class": "single",
+        "collision_classes": [
+          "common-word"
+        ],
+        "context_types": [
+          "plain-prose",
+          "sentence-initial",
+          "particle-attached",
+          "no-person"
+        ],
+        "name_features": [],
+        "boundary_tags": [
+          "particle-excluded"
+        ]
+      },
+      "ambiguity": {
+        "level": "context-resolvable",
+        "kind": "lexical-homograph",
+        "alternative_reading": "common-noun",
+        "resolved_by": [
+          "fixed-phrase",
+          "particle-or-suffix"
+        ],
+        "note": "은혜를 입다 is a collocation meaning to receive a kindness."
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/ko/context-ambiguity/eunhye-tall-either",
+      "schema_version": "1.1.0",
+      "entity_type": "PERSON",
+      "language": "ko",
+      "title": "은혜가 크다: great grace or tall Eunhye",
+      "why": "크다 means both 'is big/great' and 'is tall'; 은혜 is both an abstract noun and a name. The sentence supports 'Grace is great' and 'Eunhye is tall'.",
+      "text": "은혜가 크다.",
+      "expectations": [
+        {
+          "start": 0,
+          "end": 2,
+          "surface": "은혜",
+          "expect": "either"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "hangul",
+        "token_class": "single",
+        "collision_classes": [
+          "common-word"
+        ],
+        "context_types": [
+          "plain-prose",
+          "sentence-initial",
+          "particle-attached"
+        ],
+        "name_features": [
+          "given-only",
+          "ko-given-only",
+          "ko-given-name-is-common-noun"
+        ],
+        "boundary_tags": [
+          "particle-excluded"
+        ],
+        "familiarity_basis": "author-judgment"
+      },
+      "ambiguity": {
+        "level": "genuinely-ambiguous",
+        "kind": "lexical-homograph",
+        "alternative_reading": "common-noun",
+        "resolved_by": [
+          "nothing"
+        ],
+        "acceptable_outcomes": [
+          "person",
+          "not-person"
+        ],
+        "note": "The adjective 크다 fits both an abstract favour and a tall person, and no context disambiguates."
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/ko/context-ambiguity/hana-counter-remaining",
+      "schema_version": "1.1.0",
+      "entity_type": "PERSON",
+      "language": "ko",
+      "title": "하나 as the numeral 'one'",
+      "why": "하나 is the native Korean numeral 'one' and a given name. As the count of remaining items it is the numeral.",
+      "text": "책이 하나 남았다.",
+      "expectations": [
+        {
+          "start": 3,
+          "end": 5,
+          "surface": "하나",
+          "expect": "not-person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "not-applicable",
+        "script": "hangul",
+        "token_class": "single",
+        "collision_classes": [
+          "common-word"
+        ],
+        "context_types": [
+          "plain-prose",
+          "no-person"
+        ],
+        "name_features": [],
+        "boundary_tags": []
+      },
+      "ambiguity": {
+        "level": "context-resolvable",
+        "kind": "lexical-homograph",
+        "alternative_reading": "common-noun",
+        "resolved_by": [
+          "syntactic-position",
+          "predicate-or-argument"
+        ],
+        "note": "Noun + numeral + 남다 is the counting pattern; the numeral follows its noun."
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/ko/context-ambiguity/hana-with-honorific-ssi",
+      "schema_version": "1.1.0",
+      "entity_type": "PERSON",
+      "language": "ko",
+      "title": "하나 as a name before 씨",
+      "why": "Partner of hana-counter-remaining: the honorific 씨 attaches only to a person, so 하나 is a given name.",
+      "text": "하나 씨가 손을 들었다.",
+      "expectations": [
+        {
+          "start": 0,
+          "end": 2,
+          "surface": "하나",
+          "expect": "person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "hangul",
+        "token_class": "single",
+        "collision_classes": [
+          "common-word"
+        ],
+        "context_types": [
+          "plain-prose",
+          "sentence-initial",
+          "title-honorific"
+        ],
+        "name_features": [
+          "given-only",
+          "ko-given-only",
+          "ko-given-name-is-common-noun"
+        ],
+        "boundary_tags": [
+          "honorific-excluded"
+        ],
+        "familiarity_basis": "author-judgment"
+      },
+      "ambiguity": {
+        "level": "context-resolvable",
+        "kind": "lexical-homograph",
+        "alternative_reading": "common-noun",
+        "resolved_by": [
+          "title-or-honorific"
+        ],
+        "note": "씨 is a person-address suffix and is excluded from the span."
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/ko/context-ambiguity/hansol-company-suffix",
+      "schema_version": "1.1.0",
+      "entity_type": "PERSON",
+      "language": "ko",
+      "title": "한솔 completed to an organization name",
+      "why": "Partner of hansol-either: the extended string 한솔제지 is a company name in which the name-like part is not a person.",
+      "text": "한솔제지가 공지를 올렸다.",
+      "expectations": [
+        {
+          "start": 0,
+          "end": 4,
+          "surface": "한솔제지",
+          "expect": "not-person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "hangul",
+        "token_class": "single",
+        "collision_classes": [
+          "organization"
+        ],
+        "context_types": [
+          "plain-prose",
+          "sentence-initial",
+          "particle-attached",
+          "no-person"
+        ],
+        "name_features": [],
+        "boundary_tags": [
+          "particle-excluded"
+        ],
+        "familiarity_basis": "author-judgment"
+      },
+      "ambiguity": {
+        "level": "context-resolvable",
+        "kind": "category-collision",
+        "alternative_reading": "organization-name",
+        "resolved_by": [
+          "head-noun-or-suffix"
+        ],
+        "note": "제지 ('paper manufacturing') is an industry suffix that turns the string into a company."
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/ko/context-ambiguity/hansol-either",
+      "schema_version": "1.1.0",
+      "entity_type": "PERSON",
+      "language": "ko",
+      "title": "한솔 as a company or a person, bare subject",
+      "why": "한솔 is a given name and a well-known company element. As a bare sentence-initial subject of an announcement it can denote either.",
+      "text": "한솔이 공지를 올렸다.",
+      "expectations": [
+        {
+          "start": 0,
+          "end": 2,
+          "surface": "한솔",
+          "expect": "either"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "hangul",
+        "token_class": "single",
+        "collision_classes": [
+          "organization"
+        ],
+        "context_types": [
+          "plain-prose",
+          "sentence-initial",
+          "particle-attached"
+        ],
+        "name_features": [
+          "given-only",
+          "ko-given-only"
+        ],
+        "boundary_tags": [
+          "particle-excluded"
+        ],
+        "familiarity_basis": "author-judgment"
+      },
+      "ambiguity": {
+        "level": "genuinely-ambiguous",
+        "kind": "category-collision",
+        "alternative_reading": "organization-name",
+        "resolved_by": [
+          "nothing"
+        ],
+        "acceptable_outcomes": [
+          "person",
+          "not-person"
+        ],
+        "note": "Both an organization and a person can post a notice; no suffix such as 제지 or 씨 appears."
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/ko/context-ambiguity/jeong-affection",
+      "schema_version": "1.1.0",
+      "entity_type": "PERSON",
+      "language": "ko",
+      "title": "정 as 'affection'",
+      "why": "정 is both a common noun ('affection') and a surname. With 많은 ('abundant') it is the noun.",
+      "text": "정이 많은 사람이다.",
+      "expectations": [
+        {
+          "start": 0,
+          "end": 1,
+          "surface": "정",
+          "expect": "not-person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "not-applicable",
+        "script": "hangul",
+        "token_class": "single",
+        "collision_classes": [
+          "common-word"
+        ],
+        "context_types": [
+          "plain-prose",
+          "sentence-initial",
+          "particle-attached",
+          "no-person"
+        ],
+        "name_features": [],
+        "boundary_tags": [
+          "particle-excluded"
+        ]
+      },
+      "ambiguity": {
+        "level": "context-resolvable",
+        "kind": "lexical-homograph",
+        "alternative_reading": "common-noun",
+        "resolved_by": [
+          "modifier-or-determiner",
+          "fixed-phrase"
+        ],
+        "note": "정이 많다 ('be warm-hearted') is a set expression."
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/ko/context-ambiguity/jeong-surname-title",
+      "schema_version": "1.1.0",
+      "entity_type": "PERSON",
+      "language": "ko",
+      "title": "정 as a surname before a job title",
+      "why": "Partner of jeong-affection: a job title after a bare surname is the standard address form, so 정 is a surname.",
+      "text": "정 대리가 보고서를 제출했다.",
+      "expectations": [
+        {
+          "start": 0,
+          "end": 1,
+          "surface": "정",
+          "expect": "person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "hangul",
+        "token_class": "single",
+        "collision_classes": [
+          "common-word"
+        ],
+        "context_types": [
+          "plain-prose",
+          "sentence-initial",
+          "title-honorific"
+        ],
+        "name_features": [
+          "surname-only"
+        ],
+        "boundary_tags": [
+          "honorific-excluded"
+        ],
+        "familiarity_basis": "author-judgment"
+      },
+      "ambiguity": {
+        "level": "context-resolvable",
+        "kind": "lexical-homograph",
+        "alternative_reading": "common-noun",
+        "resolved_by": [
+          "title-or-honorific"
+        ],
+        "note": "Surname + 대리 (assistant manager) is a conventional address pattern; the title stays outside the span."
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/ko/context-ambiguity/jiwon-passed-exam",
+      "schema_version": "1.1.0",
+      "entity_type": "PERSON",
+      "language": "ko",
+      "title": "지원 as a person who passed",
+      "why": "Partner of jiwon-support-needed: a pass/fail predicate selects an examinee.",
+      "text": "지원이 시험에 합격했다.",
+      "expectations": [
+        {
+          "start": 0,
+          "end": 2,
+          "surface": "지원",
+          "expect": "person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "hangul",
+        "token_class": "single",
+        "collision_classes": [
+          "common-word"
+        ],
+        "context_types": [
+          "plain-prose",
+          "sentence-initial",
+          "particle-attached"
+        ],
+        "name_features": [
+          "given-only",
+          "ko-given-only",
+          "ko-given-name-is-common-noun"
+        ],
+        "boundary_tags": [
+          "particle-excluded"
+        ],
+        "familiarity_basis": "author-judgment"
+      },
+      "ambiguity": {
+        "level": "context-resolvable",
+        "kind": "lexical-homograph",
+        "alternative_reading": "common-noun",
+        "resolved_by": [
+          "predicate-or-argument"
+        ],
+        "note": "Passing an exam is predicated of a person."
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/ko/context-ambiguity/jiwon-support-needed",
+      "schema_version": "1.1.0",
+      "entity_type": "PERSON",
+      "language": "ko",
+      "title": "지원 as 'support' needed",
+      "why": "지원 is a common noun ('support', 'application') and a frequent given name. 'Is needed' with a bare noun subject is the noun reading.",
+      "text": "지원이 필요하다.",
+      "expectations": [
+        {
+          "start": 0,
+          "end": 2,
+          "surface": "지원",
+          "expect": "not-person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "not-applicable",
+        "script": "hangul",
+        "token_class": "single",
+        "collision_classes": [
+          "common-word"
+        ],
+        "context_types": [
+          "plain-prose",
+          "sentence-initial",
+          "particle-attached",
+          "no-person"
+        ],
+        "name_features": [],
+        "boundary_tags": [
+          "particle-excluded"
+        ]
+      },
+      "ambiguity": {
+        "level": "context-resolvable",
+        "kind": "lexical-homograph",
+        "alternative_reading": "common-noun",
+        "resolved_by": [
+          "predicate-or-argument",
+          "particle-or-suffix"
+        ],
+        "note": "'Is necessary' predicates a need of an abstract resource; the particle 이 after a final consonant does not select a name by itself."
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/ko/context-ambiguity/nara-country-crisis",
+      "schema_version": "1.1.0",
+      "entity_type": "PERSON",
+      "language": "ko",
+      "title": "나라 as a country in crisis",
+      "why": "나라 means 'country' and is a given name. A national-crisis predicate selects the noun.",
+      "text": "나라가 위기에 처했다.",
+      "expectations": [
+        {
+          "start": 0,
+          "end": 2,
+          "surface": "나라",
+          "expect": "not-person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "not-applicable",
+        "script": "hangul",
+        "token_class": "single",
+        "collision_classes": [
+          "common-word"
+        ],
+        "context_types": [
+          "plain-prose",
+          "sentence-initial",
+          "particle-attached",
+          "no-person"
+        ],
+        "name_features": [],
+        "boundary_tags": [
+          "particle-excluded"
+        ]
+      },
+      "ambiguity": {
+        "level": "context-resolvable",
+        "kind": "lexical-homograph",
+        "alternative_reading": "common-noun",
+        "resolved_by": [
+          "predicate-or-argument"
+        ],
+        "note": "'Fell into crisis' is predicated of states and organizations, not of a girl called Nara."
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/ko/context-ambiguity/nara-homework",
+      "schema_version": "1.1.0",
+      "entity_type": "PERSON",
+      "language": "ko",
+      "title": "나라 as a person finishing homework",
+      "why": "Partner of nara-country-crisis: a homework predicate requires a student, so 나라 is a given name.",
+      "text": "나라가 숙제를 마쳤다.",
+      "expectations": [
+        {
+          "start": 0,
+          "end": 2,
+          "surface": "나라",
+          "expect": "person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "hangul",
+        "token_class": "single",
+        "collision_classes": [
+          "common-word"
+        ],
+        "context_types": [
+          "plain-prose",
+          "sentence-initial",
+          "particle-attached"
+        ],
+        "name_features": [
+          "given-only",
+          "ko-given-only",
+          "ko-given-name-is-common-noun"
+        ],
+        "boundary_tags": [
+          "particle-excluded"
+        ],
+        "familiarity_basis": "author-judgment"
+      },
+      "ambiguity": {
+        "level": "context-resolvable",
+        "kind": "lexical-homograph",
+        "alternative_reading": "common-noun",
+        "resolved_by": [
+          "predicate-or-argument"
+        ],
+        "note": "Finishing homework is done by a person."
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/ko/context-ambiguity/narae-presenter",
+      "schema_version": "1.1.0",
+      "entity_type": "PERSON",
+      "language": "ko",
+      "title": "나래 as an uncommon given name",
+      "why": "Partner of narae-wing-poetic: a presentation duty selects a person. The name is uncommon, so a name list is unlikely to contain it.",
+      "text": "나래가 발표를 맡았다.",
+      "expectations": [
+        {
+          "start": 0,
+          "end": 2,
+          "surface": "나래",
+          "expect": "person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "rare",
+        "script": "hangul",
+        "token_class": "single",
+        "collision_classes": [
+          "common-word"
+        ],
+        "context_types": [
+          "plain-prose",
+          "sentence-initial",
+          "particle-attached"
+        ],
+        "name_features": [
+          "given-only",
+          "ko-given-only",
+          "ko-given-name-is-common-noun"
+        ],
+        "boundary_tags": [
+          "particle-excluded"
+        ],
+        "familiarity_basis": "author-judgment"
+      },
+      "ambiguity": {
+        "level": "context-resolvable",
+        "kind": "lexical-homograph",
+        "alternative_reading": "common-noun",
+        "resolved_by": [
+          "predicate-or-argument"
+        ],
+        "note": "Taking charge of a presentation is a role for a person."
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/ko/context-ambiguity/narae-wing-poetic",
+      "schema_version": "1.1.0",
+      "entity_type": "PERSON",
+      "language": "ko",
+      "title": "나래 as a poetic 'wing'",
+      "why": "나래 is a poetic word for 'wing' and an uncommon given name; the idiom 나래를 펼치다 ('spread wings') selects the noun.",
+      "text": "나래를 펼치고 날아올랐다.",
+      "expectations": [
+        {
+          "start": 0,
+          "end": 2,
+          "surface": "나래",
+          "expect": "not-person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "not-applicable",
+        "script": "hangul",
+        "token_class": "single",
+        "collision_classes": [
+          "common-word"
+        ],
+        "context_types": [
+          "plain-prose",
+          "sentence-initial",
+          "particle-attached",
+          "no-person"
+        ],
+        "name_features": [],
+        "boundary_tags": [
+          "particle-excluded"
+        ]
+      },
+      "ambiguity": {
+        "level": "context-resolvable",
+        "kind": "lexical-homograph",
+        "alternative_reading": "common-noun",
+        "resolved_by": [
+          "fixed-phrase",
+          "predicate-or-argument"
+        ],
+        "note": "Spreading and flying up are predicated of a bird or a poetic subject, not of a named student."
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/ko/context-ambiguity/noeul-arrived",
+      "schema_version": "1.1.0",
+      "entity_type": "PERSON",
+      "language": "ko",
+      "title": "노을 as an uncommon given name",
+      "why": "Partner of noeul-sunset-glow: an arrival predicate selects a person.",
+      "text": "노을이 약속 장소에 도착했다.",
+      "expectations": [
+        {
+          "start": 0,
+          "end": 2,
+          "surface": "노을",
+          "expect": "person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "rare",
+        "script": "hangul",
+        "token_class": "single",
+        "collision_classes": [
+          "common-word"
+        ],
+        "context_types": [
+          "plain-prose",
+          "sentence-initial",
+          "particle-attached"
+        ],
+        "name_features": [
+          "given-only",
+          "ko-given-only",
+          "ko-given-name-is-common-noun"
+        ],
+        "boundary_tags": [
+          "particle-excluded"
+        ],
+        "familiarity_basis": "author-judgment"
+      },
+      "ambiguity": {
+        "level": "context-resolvable",
+        "kind": "lexical-homograph",
+        "alternative_reading": "common-noun",
+        "resolved_by": [
+          "predicate-or-argument"
+        ],
+        "note": "Arriving at an appointment place needs an animate subject."
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/ko/context-ambiguity/noeul-sunset-glow",
+      "schema_version": "1.1.0",
+      "entity_type": "PERSON",
+      "language": "ko",
+      "title": "노을 as sunset glow",
+      "why": "노을 ('sunset glow') is also an uncommon given name; a colour predicate selects the noun.",
+      "text": "노을이 붉게 물들었다.",
+      "expectations": [
+        {
+          "start": 0,
+          "end": 2,
+          "surface": "노을",
+          "expect": "not-person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "not-applicable",
+        "script": "hangul",
+        "token_class": "single",
+        "collision_classes": [
+          "common-word"
+        ],
+        "context_types": [
+          "plain-prose",
+          "sentence-initial",
+          "particle-attached",
+          "no-person"
+        ],
+        "name_features": [],
+        "boundary_tags": [
+          "particle-excluded"
+        ]
+      },
+      "ambiguity": {
+        "level": "context-resolvable",
+        "kind": "lexical-homograph",
+        "alternative_reading": "common-noun",
+        "resolved_by": [
+          "predicate-or-argument"
+        ],
+        "note": "Being dyed red describes the sky."
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    }
+  ]
+}

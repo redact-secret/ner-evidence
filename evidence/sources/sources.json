@@ -31,6 +31,225 @@
       "review": {
         "provenance": "author-only",
         "legal": "pending"
+      },
+      "use": "authored"
+    },
+    {
+      "id": "src/ref-us-census-2010-surnames",
+      "kind": "reference",
+      "title": "US Census Bureau: Frequently Occurring Surnames from the 2010 Census",
+      "description": "Census Bureau tabulation of the 162,253 surnames occurring 100 or more times in the 2010 Census. Used only to derive a frequency band (common, rare or absent) for surname components cited by cases; no table rows, counts or ranks are stored in this repository.",
+      "version": "2010 Census release, file Names_2010Census.csv inside names.zip (Last-Modified 2016-12-15); landing page last revised 2021-10-08",
+      "as_of": "2016-12-15",
+      "origin": {
+        "type": "url",
+        "locator": "https://www2.census.gov/topics/genealogy/2010surnames/names.zip",
+        "artifact_sha256": "117c41cb4668727b7627b2845b6df3f83eb2a22a1813f42c0ff4bdcab86de135",
+        "retrieved_on": "2026-10-04"
+      },
+      "license": {
+        "spdx": "LicenseRef-US-Government-Work",
+        "redistribution": "cite-only",
+        "terms_note": "Published by a US federal agency; US Government works are generally not subject to copyright in the United States. Not redistributed here regardless: the repository cites the table and stores only derived bands. Legal review of that reading is still pending."
+      },
+      "personal_data": {
+        "contains_personal_data": false,
+        "name_origin": "naturally-occurring",
+        "notes": "Aggregate surname counts; the Census Bureau states the data do not identify individuals. Only band labels for surnames that cases cite are stored."
+      },
+      "transformations": [
+        "Reduced to one band label per cited surname component (common, rare or absent); counts, ranks and all other rows discarded",
+        "Surname normalized to ASCII letters a-z before lookup"
+      ],
+      "known_bias": [
+        "US-centric: surnames frequent in other English-speaking countries or in South Asian, African and East Asian communities can be rare here (for example Raman, Okafor).",
+        "Names are census returns as edited by the Bureau; transliteration variants are separate entries.",
+        "Surnames only: no given-name frequency is derived from this source."
+      ],
+      "review": {
+        "provenance": "author-only",
+        "legal": "pending"
+      },
+      "use": "derived-labels-only",
+      "policy": {
+        "text_redistribution": "prohibited",
+        "attribution_required": false,
+        "share_alike": false,
+        "names_in_cases": "not-applicable"
+      }
+    },
+    {
+      "id": "src/ref-ko-surname-population-2015",
+      "kind": "reference",
+      "title": "South Korean surname populations, 2015 census (Statistics Korea, KOSIS table DT_1IN15SD)",
+      "description": "2015 population by surname from the Statistics Korea census table, read through the English Wikipedia list of Korean surnames at a pinned revision. Used only to derive a frequency band (common or rare) for Hangul surname components cited by cases; no population figures are stored in this repository.",
+      "version": "English Wikipedia revision 1377792072 of 'List of Korean surnames' (timestamp 2026-10-01); table note: total population 49,705,663, surnames of five or more people",
+      "as_of": "2015-11-01",
+      "origin": {
+        "type": "url",
+        "locator": "https://en.wikipedia.org/w/index.php?title=List_of_Korean_surnames&oldid=1377792072&action=raw",
+        "artifact_sha256": "dc36f5de5c59f3d10d8756beb7b0ae8fbedb832cf4221e45843fa19c1b2a3a67",
+        "retrieved_on": "2026-10-04"
+      },
+      "license": {
+        "spdx": "CC-BY-SA-4.0",
+        "redistribution": "cite-only",
+        "terms_note": "The Wikipedia text is CC BY-SA 4.0; the underlying figures are Statistics Korea census statistics. Neither is redistributed: the repository cites the revision and stores only derived band labels. Legal review of that reading is still pending."
+      },
+      "personal_data": {
+        "contains_personal_data": false,
+        "name_origin": "naturally-occurring",
+        "notes": "Aggregate surname populations; no individual is identified. Only band labels for surnames that cases cite are stored."
+      },
+      "transformations": [
+        "Reduced to one band label per cited Hangul surname component (common or rare); populations and all other rows discarded",
+        "Table parsed from wikitext; 153 of the roughly 191 listed Hangul surnames were parsed, covering 49,609,870 of 49,705,663 people"
+      ],
+      "known_bias": [
+        "A secondary transcription of the KOSIS table, not the KOSIS file itself; transcription errors are possible.",
+        "Only part of the surnames in use were parsed, so absence from the parsed table proves nothing and no 'novel' Korean band is derived.",
+        "South Korea only: North Korean and diaspora surname distributions are not represented."
+      ],
+      "review": {
+        "provenance": "author-only",
+        "legal": "pending"
+      },
+      "use": "derived-labels-only",
+      "policy": {
+        "text_redistribution": "prohibited",
+        "attribution_required": true,
+        "share_alike": true,
+        "names_in_cases": "not-applicable",
+        "attribution": "English Wikipedia, 'List of Korean surnames' (pinned revision in the source version field), CC BY-SA 4.0; figures from Statistics Korea (KOSIS)."
+      }
+    },
+    {
+      "id": "src/ref-ko-hangul-matchumbeop",
+      "kind": "reference",
+      "title": "Hangul Spelling Rules (한글 맞춤법), Ministry of Culture, Sports and Tourism Notice No. 2017-12",
+      "description": "Official Korean orthography. Cited for chapter 5 spacing: Article 41 (particles attach to the preceding word) and Article 48 (surname and given name are written together; titles and offices that follow are spaced; spacing a two-syllable surname is allowed where clarity needs it). Cases cite the article number; no rule text is copied.",
+      "version": "Hangul Spelling Rules in force from 2017-03-28 (Notice No. 2017-12), as served by the National Institute of Korean Language norms site",
+      "as_of": "2017-03-28",
+      "origin": {
+        "type": "url",
+        "locator": "https://korean.go.kr/kornorms/regltn/regltnView.do?regltn_code=0001",
+        "artifact_sha256": "d5584b10c30978d49a2318153fbbce4612a7fd9751944513416f96e9a72443c1",
+        "retrieved_on": "2026-10-04"
+      },
+      "license": {
+        "spdx": "LicenseRef-KR-Government-Notice",
+        "redistribution": "cite-only",
+        "terms_note": "A Korean government public notice; such notices appear not to be protected by copyright (Copyright Act of Korea, Article 7) but that reading has not been legally reviewed. Nothing is copied: cases cite article numbers only. The artifact digest is of the HTML page as served on the retrieval date and may change if the site changes."
+      },
+      "personal_data": {
+        "contains_personal_data": false,
+        "name_origin": "naturally-occurring",
+        "notes": "Rule text about naming and spacing; contains no personal data. Examples in the rule that name historical persons are not reused: cases use synthetic names."
+      },
+      "transformations": [
+        "None applied to source text; only the article numbers are cited",
+        "Illustrative names in cases are authored, not taken from the rule's examples"
+      ],
+      "known_bias": [
+        "Describes standard written South Korean orthography; informal, chat and dialect spacing is not covered.",
+        "Spacing rules describe how names are written, not how they are tokenized or detected."
+      ],
+      "review": {
+        "provenance": "author-only",
+        "legal": "pending"
+      },
+      "use": "cited-rule",
+      "policy": {
+        "text_redistribution": "prohibited",
+        "attribution_required": false,
+        "share_alike": false,
+        "names_in_cases": "not-applicable"
+      }
+    },
+    {
+      "id": "src/ref-ko-romanization-rules",
+      "kind": "reference",
+      "title": "Romanization of Korean (국어의 로마자 표기법), Ministry of Culture, Sports and Tourism Notice No. 2014-42",
+      "description": "Official Korean romanization rules. Cited for chapter 3: Article 3 (proper nouns start with a capital letter) and Article 4 (a personal name is written surname, space, given name; the given name is written together, with a hyphen between syllables permitted). Cases cite the article number; no rule text is copied.",
+      "version": "Romanization of Korean in force from 2014-12-05 (Notice No. 2014-42), as served by the National Institute of Korean Language norms site",
+      "as_of": "2014-12-05",
+      "origin": {
+        "type": "url",
+        "locator": "https://korean.go.kr/kornorms/regltn/regltnView.do?regltn_code=0004",
+        "artifact_sha256": "85aaa8ad41b4b697350fc625ba753d0c202447b67d755b82d95263e3975b2b86",
+        "retrieved_on": "2026-10-04"
+      },
+      "license": {
+        "spdx": "LicenseRef-KR-Government-Notice",
+        "redistribution": "cite-only",
+        "terms_note": "A Korean government public notice; such notices appear not to be protected by copyright (Copyright Act of Korea, Article 7) but that reading has not been legally reviewed. Nothing is copied: cases cite article numbers only. The artifact digest is of the HTML page as served on the retrieval date and may change if the site changes."
+      },
+      "personal_data": {
+        "contains_personal_data": false,
+        "name_origin": "naturally-occurring",
+        "notes": "Rule text about naming and spacing; contains no personal data. Examples in the rule that name historical persons are not reused: cases use synthetic names."
+      },
+      "transformations": [
+        "None applied to source text; only the article numbers are cited",
+        "Illustrative names in cases are authored, not taken from the rule's examples"
+      ],
+      "known_bias": [
+        "The rule recommends a form; real romanized names also use older systems, passport spellings and personal preferences (Article 7 allows established spellings).",
+        "It says how to write a name, not how a text will spell it."
+      ],
+      "review": {
+        "provenance": "author-only",
+        "legal": "pending"
+      },
+      "use": "cited-rule",
+      "policy": {
+        "text_redistribution": "prohibited",
+        "attribution_required": false,
+        "share_alike": false,
+        "names_in_cases": "not-applicable"
+      }
+    },
+    {
+      "id": "src/ref-w3c-personal-names",
+      "kind": "reference",
+      "title": "Personal names around the world, W3C Internationalization (i18n) article",
+      "description": "W3C i18n article describing how personal names differ: patronymics, family-name-first order, multiple family names with linking words, middle initials, honorific and title stacking. Cited for the structure of multi-part names; cases cite the section; no article text is copied and the article's example names are not reused.",
+      "version": "First published 2011-08-17; page served with Last-Modified 2024-12-17",
+      "as_of": "2024-12-17",
+      "origin": {
+        "type": "url",
+        "locator": "https://www.w3.org/International/questions/qa-personal-names",
+        "artifact_sha256": "da7e3666c04fbc4811bb532d1b9b7333c6b9119181df4b3543dafee9267050f2",
+        "retrieved_on": "2026-10-04"
+      },
+      "license": {
+        "spdx": "LicenseRef-W3C-Document-License",
+        "redistribution": "cite-only",
+        "terms_note": "W3C documents are published under the W3C Document License. Nothing is copied: cases cite section headings only. Legal review of that use is pending."
+      },
+      "personal_data": {
+        "contains_personal_data": false,
+        "name_origin": "naturally-occurring",
+        "notes": "Descriptive article; it names a few real people as examples. None of those names is reused in cases, which use synthetic names built on the same patterns."
+      },
+      "transformations": [
+        "None applied to source text; only section headings are cited",
+        "Illustrative names in cases are authored; the article's example names are not reused"
+      ],
+      "known_bias": [
+        "An English-language overview with a small set of cultures; it does not cover every naming system.",
+        "Describes how names are structured, not how a text will punctuate or order them."
+      ],
+      "review": {
+        "provenance": "author-only",
+        "legal": "pending"
+      },
+      "use": "cited-rule",
+      "policy": {
+        "text_redistribution": "prohibited",
+        "attribution_required": false,
+        "share_alike": false,
+        "names_in_cases": "not-applicable"
       }
     }
   ]

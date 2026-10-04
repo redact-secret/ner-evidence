@@ -2,7 +2,7 @@
   "cases": [
     {
       "id": "person/en/sentence-initial-trap/amber-underdetermined",
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "en",
       "title": "Sentence-initial colour/material word that is also a name",
@@ -29,7 +29,8 @@
           "sentence-initial"
         ],
         "name_features": [],
-        "boundary_tags": []
+        "boundary_tags": [],
+        "familiarity_basis": "author-judgment"
       },
       "ambiguity": {
         "level": "genuinely-ambiguous",
@@ -47,7 +48,7 @@
     },
     {
       "id": "person/en/sentence-initial-trap/bill-given-name-agent",
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "en",
       "title": "Sentence-initial 'Bill' as a person",
@@ -74,7 +75,8 @@
           "sentence-initial"
         ],
         "name_features": [],
-        "boundary_tags": []
+        "boundary_tags": [],
+        "familiarity_basis": "author-judgment"
       },
       "ambiguity": {
         "level": "context-resolvable",
@@ -92,7 +94,7 @@
     },
     {
       "id": "person/en/sentence-initial-trap/bill-imperative-verb",
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "en",
       "title": "Sentence-initial 'Bill' as an imperative verb",
@@ -120,7 +122,8 @@
           "no-person"
         ],
         "name_features": [],
-        "boundary_tags": []
+        "boundary_tags": [],
+        "familiarity_basis": "author-judgment"
       },
       "ambiguity": {
         "level": "context-resolvable",
@@ -138,7 +141,7 @@
     },
     {
       "id": "person/en/sentence-initial-trap/grant-noun-subject",
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "en",
       "title": "Sentence-initial 'Grant' as a common noun",
@@ -166,7 +169,8 @@
           "no-person"
         ],
         "name_features": [],
-        "boundary_tags": []
+        "boundary_tags": [],
+        "familiarity_basis": "author-judgment"
       },
       "ambiguity": {
         "level": "context-resolvable",
@@ -184,7 +188,7 @@
     },
     {
       "id": "person/en/sentence-initial-trap/grant-person-approved",
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "en",
       "title": "Sentence-initial 'Grant' as a person who approves",
@@ -211,7 +215,8 @@
           "sentence-initial"
         ],
         "name_features": [],
-        "boundary_tags": []
+        "boundary_tags": [],
+        "familiarity_basis": "author-judgment"
       },
       "ambiguity": {
         "level": "context-resolvable",
@@ -229,7 +234,7 @@
     },
     {
       "id": "person/en/sentence-initial-trap/hope-abstract-noun",
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "en",
       "title": "Sentence-initial 'Hope' as an abstract noun",
@@ -257,7 +262,8 @@
           "no-person"
         ],
         "name_features": [],
-        "boundary_tags": []
+        "boundary_tags": [],
+        "familiarity_basis": "author-judgment"
       },
       "ambiguity": {
         "level": "context-resolvable",
@@ -275,7 +281,7 @@
     },
     {
       "id": "person/en/sentence-initial-trap/hope-person-unavailable",
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "en",
       "title": "Sentence-initial 'Hope' as a person",
@@ -302,7 +308,8 @@
           "sentence-initial"
         ],
         "name_features": [],
-        "boundary_tags": []
+        "boundary_tags": [],
+        "familiarity_basis": "author-judgment"
       },
       "ambiguity": {
         "level": "context-resolvable",
@@ -320,7 +327,7 @@
     },
     {
       "id": "person/en/sentence-initial-trap/mark-given-name-agent",
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "en",
       "title": "Sentence-initial 'Mark' as the subject-agent",
@@ -347,7 +354,8 @@
           "sentence-initial"
         ],
         "name_features": [],
-        "boundary_tags": []
+        "boundary_tags": [],
+        "familiarity_basis": "author-judgment"
       },
       "ambiguity": {
         "level": "context-resolvable",
@@ -365,7 +373,7 @@
     },
     {
       "id": "person/en/sentence-initial-trap/mark-imperative-verb",
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "en",
       "title": "Sentence-initial 'Mark' as an imperative verb",
@@ -393,7 +401,8 @@
           "no-person"
         ],
         "name_features": [],
-        "boundary_tags": []
+        "boundary_tags": [],
+        "familiarity_basis": "author-judgment"
       },
       "ambiguity": {
         "level": "context-resolvable",
@@ -411,7 +420,7 @@
     },
     {
       "id": "person/en/sentence-initial-trap/may-given-name-subject",
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "en",
       "title": "Sentence-initial 'May' as a given name",
@@ -439,7 +448,8 @@
           "sentence-initial"
         ],
         "name_features": [],
-        "boundary_tags": []
+        "boundary_tags": [],
+        "familiarity_basis": "author-judgment"
       },
       "ambiguity": {
         "level": "context-resolvable",
@@ -457,7 +467,7 @@
     },
     {
       "id": "person/en/sentence-initial-trap/may-modal-question",
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "en",
       "title": "Sentence-initial 'May' as a modal verb",
@@ -486,7 +496,8 @@
           "no-person"
         ],
         "name_features": [],
-        "boundary_tags": []
+        "boundary_tags": [],
+        "familiarity_basis": "author-judgment"
       },
       "ambiguity": {
         "level": "context-resolvable",
@@ -504,7 +515,7 @@
     },
     {
       "id": "person/en/sentence-initial-trap/rose-flower-plural-subject",
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "en",
       "title": "Sentence-initial 'Rose' as a plant noun",
@@ -532,7 +543,8 @@
           "no-person"
         ],
         "name_features": [],
-        "boundary_tags": []
+        "boundary_tags": [],
+        "familiarity_basis": "author-judgment"
       },
       "ambiguity": {
         "level": "context-resolvable",
@@ -550,7 +562,7 @@
     },
     {
       "id": "person/en/sentence-initial-trap/rose-underdetermined",
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "en",
       "title": "Sentence-initial flower/name with a context-free predicate",
@@ -577,7 +589,8 @@
           "sentence-initial"
         ],
         "name_features": [],
-        "boundary_tags": []
+        "boundary_tags": [],
+        "familiarity_basis": "author-judgment"
       },
       "ambiguity": {
         "level": "genuinely-ambiguous",
@@ -595,7 +608,7 @@
     },
     {
       "id": "person/en/sentence-initial-trap/will-given-name",
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "en",
       "title": "Sentence-initial 'Will' as a given name",
@@ -622,7 +635,8 @@
           "sentence-initial"
         ],
         "name_features": [],
-        "boundary_tags": []
+        "boundary_tags": [],
+        "familiarity_basis": "author-judgment"
       },
       "ambiguity": {
         "level": "context-resolvable",
@@ -639,8 +653,77 @@
       }
     },
     {
+      "id": "person/en/sentence-initial-trap/will-modal-name-noun",
+      "schema_version": "1.1.0",
+      "entity_type": "PERSON",
+      "language": "en",
+      "title": "Modal, name and noun spelled Will in one question",
+      "why": "One sentence containing the modal 'Will', the given name 'Will' and the noun 'will'; only position and grammar separate them.",
+      "text": "Will you ask Will to sign the will?",
+      "expectations": [
+        {
+          "start": 0,
+          "end": 4,
+          "surface": "Will",
+          "expect": "not-person"
+        },
+        {
+          "start": 13,
+          "end": 17,
+          "surface": "Will",
+          "expect": "person"
+        },
+        {
+          "start": 30,
+          "end": 34,
+          "surface": "will",
+          "expect": "not-person"
+        }
+      ],
+      "focus_span": 1,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "latin",
+        "token_class": "single",
+        "collision_classes": [
+          "common-word"
+        ],
+        "context_types": [
+          "plain-prose",
+          "sentence-initial"
+        ],
+        "name_features": [
+          "given-only"
+        ],
+        "boundary_tags": [],
+        "contrast_classes": [
+          "en-common-word-name"
+        ],
+        "familiarity_basis": "author-judgment"
+      },
+      "ambiguity": {
+        "level": "context-resolvable",
+        "kind": "lexical-homograph",
+        "alternative_reading": "adjective-or-verb",
+        "resolved_by": [
+          "syntactic-position",
+          "predicate-or-argument"
+        ],
+        "note": "The first Will inverts with 'you' as a modal; 'ask X to sign' takes a person; 'sign the ...' takes a document."
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
       "id": "person/en/sentence-initial-trap/will-modal-question",
-      "schema_version": "1.0.0",
+      "schema_version": "1.1.0",
       "entity_type": "PERSON",
       "language": "en",
       "title": "Sentence-initial 'Will' as a modal verb",
@@ -668,7 +751,8 @@
           "no-person"
         ],
         "name_features": [],
-        "boundary_tags": []
+        "boundary_tags": [],
+        "familiarity_basis": "author-judgment"
       },
       "ambiguity": {
         "level": "context-resolvable",
