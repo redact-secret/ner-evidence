@@ -92,6 +92,10 @@
       "definition": "An external tool agreed with the authored expectation. Never sufficient on its own; model agreement is not ground truth."
     },
     {
+      "id": "authored-baseline",
+      "definition": "Written by the project as an unambiguous control; the expectation is uncontroversial and rests on the reasoning stated in the case."
+    },
+    {
       "id": "authored-adversarial",
       "definition": "Written by the project to probe a specific ambiguity; expectation rests on linguistic reasoning stated in the case."
     },
@@ -198,6 +202,10 @@
       {
         "id": "product-brand",
         "definition": "The surface form is also or is inside a product or brand name (Ford Mustang)."
+      },
+      {
+        "id": "work-title",
+        "definition": "The surface form is also the title of a book, song, film or similar work."
       }
     ],
     "context_types": [
@@ -251,7 +259,7 @@
       },
       {
         "id": "no-person",
-        "definition": "The text contains no PERSON mention at all."
+        "definition": "No span in the text expects person or either: any name-like tokens are decoys."
       }
     ],
     "name_features": [

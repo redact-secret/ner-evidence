@@ -13,6 +13,7 @@ IMPORT_LICENSE_ALLOWLIST = {
 # Evidence classes each source kind may back.
 KIND_FOR_CLASS = {
     "authored-adversarial": {"project-authored"},
+    "authored-baseline": {"project-authored"},
     "corpus-backed": {"public-corpus", "licensed-corpus"},
     "reference-backed": {"reference", "project-authored"},
     "tool-corroborated": {"project-authored", "public-corpus", "licensed-corpus", "reference"},

@@ -67,7 +67,7 @@ They are part of the evidence: a boundary expectation is only meaningful togethe
 | `token_class` | `single`, `multi` | **Derived**: whitespace tokens in the focus span. |
 | `ambiguity.level` | `unambiguous`, `context-resolvable`, `genuinely-ambiguous` | A case with any collision class cannot be `unambiguous`. |
 | `collision_classes` | `common-word`, `organization`, `location`, `temporal`, `product-brand` | May be empty. |
-| `context_types` | prose, sentence-initial, title-honorific, quotation, list, possessive, particle-attached, structured-text, dialogue, vocative, parenthetical, mixed-script-sentence, no-person | `no-person` iff no span expects `person`. |
+| `context_types` | prose, sentence-initial, title-honorific, quotation, list, possessive, particle-attached, structured-text, dialogue, vocative, parenthetical, mixed-script-sentence, no-person | `no-person` iff no span expects `person` or `either`. |
 | `name_features` | structure tags, language-specific ones prefixed `ko-` | Korean-only tags are rejected on English cases. |
 | `boundary_tags` | punctuation, quote, honorific, particle, spacing, ... | Tag what makes the boundary non-trivial. |
 

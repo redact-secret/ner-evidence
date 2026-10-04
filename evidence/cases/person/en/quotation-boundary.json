@@ -1,0 +1,443 @@
+{
+  "cases": [
+    {
+      "id": "person/en/quotation-boundary/curly-quotes-around-sentence",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "en",
+      "title": "Curly quotation marks around a sentence containing a name",
+      "why": "Typographic quotes are different code points from ASCII quotes; boundary logic must not depend on the ASCII character.",
+      "text": "“Elena is on her way,” he said.",
+      "expectations": [
+        {
+          "start": 1,
+          "end": 6,
+          "surface": "Elena",
+          "expect": "person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "latin",
+        "token_class": "single",
+        "collision_classes": [],
+        "context_types": [
+          "plain-prose",
+          "quotation",
+          "dialogue"
+        ],
+        "name_features": [
+          "given-only"
+        ],
+        "boundary_tags": [
+          "quote-boundary",
+          "punctuation-adjacent"
+        ]
+      },
+      "ambiguity": {
+        "level": "unambiguous"
+      },
+      "evidence_class": "authored-baseline",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      },
+      "projections_excluded": [
+        {
+          "projection_id": "quoted",
+          "reason": "The projection wraps the text in another pair of quotation marks, which would nest with the quotes this case is about and change what it tests."
+        }
+      ]
+    },
+    {
+      "id": "person/en/quotation-boundary/name-inside-direct-speech",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "en",
+      "title": "Given name inside a double-quoted utterance",
+      "why": "The opening and closing quotation marks must be outside the span, with the name in the middle of the quoted sentence.",
+      "text": "He said, \"Maria will lead the team.\"",
+      "expectations": [
+        {
+          "start": 10,
+          "end": 15,
+          "surface": "Maria",
+          "expect": "person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "latin",
+        "token_class": "single",
+        "collision_classes": [],
+        "context_types": [
+          "plain-prose",
+          "quotation",
+          "dialogue"
+        ],
+        "name_features": [
+          "given-only"
+        ],
+        "boundary_tags": [
+          "quote-boundary"
+        ]
+      },
+      "ambiguity": {
+        "level": "unambiguous"
+      },
+      "evidence_class": "authored-baseline",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      },
+      "projections_excluded": [
+        {
+          "projection_id": "quoted",
+          "reason": "The projection wraps the text in another pair of quotation marks, which would nest with the quotes this case is about and change what it tests."
+        }
+      ]
+    },
+    {
+      "id": "person/en/quotation-boundary/nested-quotes",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "en",
+      "title": "Name inside nested quotation",
+      "why": "A quote inside a quote: single curly quotes inside double curly quotes, with the name next to the inner marks.",
+      "text": "He wrote, “She told me, ‘Marcus knows.’”",
+      "expectations": [
+        {
+          "start": 25,
+          "end": 31,
+          "surface": "Marcus",
+          "expect": "person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "latin",
+        "token_class": "single",
+        "collision_classes": [],
+        "context_types": [
+          "plain-prose",
+          "quotation",
+          "dialogue"
+        ],
+        "name_features": [
+          "given-only"
+        ],
+        "boundary_tags": [
+          "quote-boundary",
+          "punctuation-adjacent"
+        ]
+      },
+      "ambiguity": {
+        "level": "unambiguous"
+      },
+      "evidence_class": "authored-baseline",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      },
+      "projections_excluded": [
+        {
+          "projection_id": "quoted",
+          "reason": "The projection wraps the text in another pair of quotation marks, which would nest with the quotes this case is about and change what it tests."
+        }
+      ]
+    },
+    {
+      "id": "person/en/quotation-boundary/quote-closing-comma-attribution",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "en",
+      "title": "Name inside a quote followed by a comma and attribution",
+      "why": "The comma lies inside the closing quote (American style), so the name is followed by a comma and a quote mark in sequence.",
+      "text": "\"Ask Henry Okafor,\" she replied.",
+      "expectations": [
+        {
+          "start": 5,
+          "end": 17,
+          "surface": "Henry Okafor",
+          "expect": "person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "latin",
+        "token_class": "multi",
+        "collision_classes": [],
+        "context_types": [
+          "plain-prose",
+          "quotation",
+          "dialogue"
+        ],
+        "name_features": [
+          "full-name"
+        ],
+        "boundary_tags": [
+          "quote-boundary",
+          "punctuation-adjacent"
+        ]
+      },
+      "ambiguity": {
+        "level": "unambiguous"
+      },
+      "evidence_class": "authored-baseline",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      },
+      "projections_excluded": [
+        {
+          "projection_id": "quoted",
+          "reason": "The projection wraps the text in another pair of quotation marks, which would nest with the quotes this case is about and change what it tests."
+        }
+      ]
+    },
+    {
+      "id": "person/en/quotation-boundary/quoted-alias-full-name",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "en",
+      "title": "Quoted full name used as an online alias",
+      "why": "A full name used as an alias in quotation marks is still a person-style mention; the quotes are excluded.",
+      "text": "He was known online as \"Zane Holloway\" for years.",
+      "expectations": [
+        {
+          "start": 24,
+          "end": 37,
+          "surface": "Zane Holloway",
+          "expect": "person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "latin",
+        "token_class": "multi",
+        "collision_classes": [],
+        "context_types": [
+          "plain-prose",
+          "quotation",
+          "dialogue"
+        ],
+        "name_features": [
+          "full-name"
+        ],
+        "boundary_tags": [
+          "quote-boundary"
+        ]
+      },
+      "ambiguity": {
+        "level": "unambiguous"
+      },
+      "evidence_class": "authored-baseline",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      },
+      "projections_excluded": [
+        {
+          "projection_id": "quoted",
+          "reason": "The projection wraps the text in another pair of quotation marks, which would nest with the quotes this case is about and change what it tests."
+        }
+      ]
+    },
+    {
+      "id": "person/en/quotation-boundary/quoted-imperative-mark-then-person",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "en",
+      "title": "Imperative 'Mark' in a quote with a real person after it",
+      "why": "Inside the quotation, 'Mark' opens the sentence as a verb, while the speaker attribution names a real person. One sentence, two opposite expectations.",
+      "text": "\"Mark my words,\" said Dana Whitley.",
+      "expectations": [
+        {
+          "start": 1,
+          "end": 5,
+          "surface": "Mark",
+          "expect": "not-person"
+        },
+        {
+          "start": 22,
+          "end": 34,
+          "surface": "Dana Whitley",
+          "expect": "person"
+        }
+      ],
+      "focus_span": 1,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "latin",
+        "token_class": "multi",
+        "collision_classes": [
+          "common-word"
+        ],
+        "context_types": [
+          "plain-prose",
+          "quotation",
+          "dialogue",
+          "sentence-initial"
+        ],
+        "name_features": [
+          "full-name"
+        ],
+        "boundary_tags": [
+          "quote-boundary",
+          "punctuation-adjacent"
+        ]
+      },
+      "ambiguity": {
+        "level": "context-resolvable",
+        "note": "'Mark my words' is an idiom (imperative verb); the attribution 'said Dana Whitley' names the speaker."
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      },
+      "projections_excluded": [
+        {
+          "projection_id": "quoted",
+          "reason": "The projection wraps the text in another pair of quotation marks, which would nest with the quotes this case is about and change what it tests."
+        }
+      ]
+    },
+    {
+      "id": "person/en/quotation-boundary/quoted-novel-title-is-a-name",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "en",
+      "title": "A novel whose title is a given name",
+      "why": "A quoted title that is a bare given name denotes a work, not a person. Quotation marks alone do not decide it; the head noun 'novel' does.",
+      "text": "The novel \"Rebecca\" was a bestseller.",
+      "expectations": [
+        {
+          "start": 11,
+          "end": 18,
+          "surface": "Rebecca",
+          "expect": "not-person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "latin",
+        "token_class": "single",
+        "collision_classes": [
+          "work-title"
+        ],
+        "context_types": [
+          "plain-prose",
+          "quotation",
+          "no-person"
+        ],
+        "name_features": [],
+        "boundary_tags": [
+          "quote-boundary"
+        ]
+      },
+      "ambiguity": {
+        "level": "context-resolvable",
+        "note": "A given name in quotation marks after the noun 'novel' is a work title."
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      },
+      "projections_excluded": [
+        {
+          "projection_id": "quoted",
+          "reason": "The projection wraps the text in another pair of quotation marks, which would nest with the quotes this case is about and change what it tests."
+        }
+      ]
+    },
+    {
+      "id": "person/en/quotation-boundary/single-quoted-nickname",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "en",
+      "title": "Nickname in single quotes",
+      "why": "Single quotes around a name used as a nickname; the apostrophe-like marks are outside the span.",
+      "text": "They called him 'Tobias' at school.",
+      "expectations": [
+        {
+          "start": 17,
+          "end": 23,
+          "surface": "Tobias",
+          "expect": "person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "latin",
+        "token_class": "single",
+        "collision_classes": [],
+        "context_types": [
+          "plain-prose",
+          "quotation",
+          "dialogue"
+        ],
+        "name_features": [
+          "given-only"
+        ],
+        "boundary_tags": [
+          "quote-boundary"
+        ]
+      },
+      "ambiguity": {
+        "level": "unambiguous"
+      },
+      "evidence_class": "authored-baseline",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      },
+      "projections_excluded": [
+        {
+          "projection_id": "quoted",
+          "reason": "The projection wraps the text in another pair of quotation marks, which would nest with the quotes this case is about and change what it tests."
+        }
+      ]
+    }
+  ]
+}

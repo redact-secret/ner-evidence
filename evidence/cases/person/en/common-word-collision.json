@@ -1,0 +1,923 @@
+{
+  "cases": [
+    {
+      "id": "person/en/common-word-collision/dawn-name-then-noun",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "en",
+      "title": "Sentence-initial name 'Dawn' and lowercase noun 'dawn'",
+      "why": "Two occurrences of the same letters in one sentence with opposite expectations: person first, time-of-day noun second.",
+      "text": "Dawn arrived before dawn.",
+      "expectations": [
+        {
+          "start": 0,
+          "end": 4,
+          "surface": "Dawn",
+          "expect": "person"
+        },
+        {
+          "start": 20,
+          "end": 24,
+          "surface": "dawn",
+          "expect": "not-person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "latin",
+        "token_class": "single",
+        "collision_classes": [
+          "temporal",
+          "common-word"
+        ],
+        "context_types": [
+          "plain-prose",
+          "sentence-initial"
+        ],
+        "name_features": [],
+        "boundary_tags": []
+      },
+      "ambiguity": {
+        "level": "context-resolvable",
+        "note": "The first word is the subject of 'arrived'; after the preposition 'before' the lowercase word is the time of day."
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/en/common-word-collision/ford-lowercase-verb",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "en",
+      "title": "Lowercase 'ford' as a verb",
+      "why": "Lowercase decoy: to ford a stream. Included so brand/surname detectors do not fire on the bare letters.",
+      "text": "We had to ford the stream on foot.",
+      "expectations": [
+        {
+          "start": 10,
+          "end": 14,
+          "surface": "ford",
+          "expect": "not-person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "not-applicable",
+        "script": "latin",
+        "token_class": "single",
+        "collision_classes": [
+          "common-word"
+        ],
+        "context_types": [
+          "plain-prose",
+          "no-person"
+        ],
+        "name_features": [],
+        "boundary_tags": []
+      },
+      "ambiguity": {
+        "level": "context-resolvable",
+        "note": "After 'had to', the bare lowercase word is a verb meaning to wade across."
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/en/common-word-collision/ford-surname-with-title",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "en",
+      "title": "Ford as a surname after Mrs.",
+      "why": "Ford is a car brand, a river crossing and a surname; with a title and signing action it is a person.",
+      "text": "Mrs. Ford signed the letter.",
+      "expectations": [
+        {
+          "start": 5,
+          "end": 9,
+          "surface": "Ford",
+          "expect": "person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "latin",
+        "token_class": "single",
+        "collision_classes": [
+          "common-word",
+          "product-brand"
+        ],
+        "context_types": [
+          "plain-prose",
+          "title-honorific"
+        ],
+        "name_features": [
+          "surname-only"
+        ],
+        "boundary_tags": [
+          "honorific-excluded",
+          "abbreviation-period"
+        ]
+      },
+      "ambiguity": {
+        "level": "context-resolvable",
+        "note": "Title plus a signing action selects the surname over the brand."
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/en/common-word-collision/jordan-full-name",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "en",
+      "title": "Jordan as the given name in a full name",
+      "why": "A full name whose first token is also a country. The span covers both tokens.",
+      "text": "Jordan Reyes opened the meeting.",
+      "expectations": [
+        {
+          "start": 0,
+          "end": 12,
+          "surface": "Jordan Reyes",
+          "expect": "person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "latin",
+        "token_class": "multi",
+        "collision_classes": [
+          "location"
+        ],
+        "context_types": [
+          "plain-prose",
+          "sentence-initial"
+        ],
+        "name_features": [
+          "full-name"
+        ],
+        "boundary_tags": []
+      },
+      "ambiguity": {
+        "level": "context-resolvable",
+        "note": "'Jordan' followed by a surname-like token and an agentive verb is a person, not the country."
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/en/common-word-collision/jordan-given-name",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "en",
+      "title": "Jordan as a given name used alone",
+      "why": "Jordan is a country, a river and a very common given name. Here a request to bring a laptop selects a person.",
+      "text": "Please ask Jordan to bring the laptop.",
+      "expectations": [
+        {
+          "start": 11,
+          "end": 17,
+          "surface": "Jordan",
+          "expect": "person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "latin",
+        "token_class": "single",
+        "collision_classes": [
+          "location",
+          "common-word"
+        ],
+        "context_types": [
+          "plain-prose"
+        ],
+        "name_features": [],
+        "boundary_tags": []
+      },
+      "ambiguity": {
+        "level": "context-resolvable",
+        "note": "Only a person can be asked to bring a laptop."
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/en/common-word-collision/may-june-months",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "en",
+      "title": "May and June both used as months",
+      "why": "Both words are also given names. In a date range they are months; a detector keyed on surface form alone will tag both.",
+      "text": "The audit runs from May through June.",
+      "expectations": [
+        {
+          "start": 20,
+          "end": 23,
+          "surface": "May",
+          "expect": "not-person"
+        },
+        {
+          "start": 32,
+          "end": 36,
+          "surface": "June",
+          "expect": "not-person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "latin",
+        "token_class": "single",
+        "collision_classes": [
+          "temporal",
+          "common-word"
+        ],
+        "context_types": [
+          "plain-prose",
+          "no-person"
+        ],
+        "name_features": [],
+        "boundary_tags": []
+      },
+      "ambiguity": {
+        "level": "context-resolvable",
+        "note": "Both words are given names, but the 'from ... through' date-range frame requires months."
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/en/common-word-collision/may-month-and-person",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "en",
+      "title": "Same surface form 'May' as a month and as a person in one sentence",
+      "why": "The canonical example from the project README: context, not the word, determines whether PERSON is emitted. Both readings appear in one sentence so a single global decision cannot be right.",
+      "text": "The meeting is in May and May will attend.",
+      "expectations": [
+        {
+          "start": 18,
+          "end": 21,
+          "surface": "May",
+          "expect": "not-person"
+        },
+        {
+          "start": 26,
+          "end": 29,
+          "surface": "May",
+          "expect": "person"
+        }
+      ],
+      "focus_span": 1,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "latin",
+        "token_class": "single",
+        "collision_classes": [
+          "temporal",
+          "common-word"
+        ],
+        "context_types": [
+          "plain-prose"
+        ],
+        "name_features": [],
+        "boundary_tags": []
+      },
+      "ambiguity": {
+        "level": "context-resolvable",
+        "note": "The first 'May' follows the preposition 'in' (a month); the second is the subject of 'will attend' (a person)."
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/en/common-word-collision/may-person-addressee",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "en",
+      "title": "May as a person being asked a question",
+      "why": "The imperative 'Ask May whether ...' needs an animate addressee. Tests whether a month-biased detector over-suppresses real names.",
+      "text": "Ask May whether the review is ready.",
+      "expectations": [
+        {
+          "start": 4,
+          "end": 7,
+          "surface": "May",
+          "expect": "person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "latin",
+        "token_class": "single",
+        "collision_classes": [
+          "temporal",
+          "common-word"
+        ],
+        "context_types": [
+          "plain-prose"
+        ],
+        "name_features": [],
+        "boundary_tags": []
+      },
+      "ambiguity": {
+        "level": "context-resolvable",
+        "note": "'Ask X whether' requires a person as the addressee."
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/en/common-word-collision/may-with-day-number",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "en",
+      "title": "May followed by a day number",
+      "why": "A month-day expression: the number after 'May' is the strongest cue that this is a date.",
+      "text": "The conference opens on May 5th.",
+      "expectations": [
+        {
+          "start": 24,
+          "end": 27,
+          "surface": "May",
+          "expect": "not-person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "latin",
+        "token_class": "single",
+        "collision_classes": [
+          "temporal",
+          "common-word"
+        ],
+        "context_types": [
+          "plain-prose",
+          "no-person"
+        ],
+        "name_features": [],
+        "boundary_tags": [
+          "digit-adjacent"
+        ]
+      },
+      "ambiguity": {
+        "level": "context-resolvable",
+        "note": "'May 5th' is a date; a person name is not followed by an ordinal day number."
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/en/common-word-collision/miles-name-and-unit",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "en",
+      "title": "Given name 'Miles' next to the common noun 'miles'",
+      "why": "The unit word 'miles' (lowercase) follows a full name 'Miles Carter'; checks that the name and the noun are not merged.",
+      "text": "Miles Carter drove for miles.",
+      "expectations": [
+        {
+          "start": 0,
+          "end": 12,
+          "surface": "Miles Carter",
+          "expect": "person"
+        },
+        {
+          "start": 23,
+          "end": 28,
+          "surface": "miles",
+          "expect": "not-person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "latin",
+        "token_class": "multi",
+        "collision_classes": [
+          "common-word"
+        ],
+        "context_types": [
+          "plain-prose",
+          "sentence-initial"
+        ],
+        "name_features": [
+          "full-name"
+        ],
+        "boundary_tags": []
+      },
+      "ambiguity": {
+        "level": "context-resolvable",
+        "note": "The first token is capitalized and followed by a surname; 'for miles' is a distance expression."
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/en/common-word-collision/occupational-surname-baker",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "en",
+      "title": "Occupation noun 'baker' beside the surname 'Baker'",
+      "why": "Occupational surnames are also ordinary nouns. The lowercase occupation is not a person mention here; the capitalized surname after a given name is.",
+      "text": "The baker delivered bread to Marcus Baker on Monday.",
+      "expectations": [
+        {
+          "start": 4,
+          "end": 9,
+          "surface": "baker",
+          "expect": "not-person"
+        },
+        {
+          "start": 29,
+          "end": 41,
+          "surface": "Marcus Baker",
+          "expect": "person"
+        }
+      ],
+      "focus_span": 1,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "latin",
+        "token_class": "multi",
+        "collision_classes": [
+          "common-word"
+        ],
+        "context_types": [
+          "plain-prose"
+        ],
+        "name_features": [
+          "full-name"
+        ],
+        "boundary_tags": []
+      },
+      "ambiguity": {
+        "level": "context-resolvable",
+        "note": "'The baker' is a common noun with a definite article; 'Marcus Baker' is a full name."
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/en/common-word-collision/park-surname-with-title",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "en",
+      "title": "Park as a surname after Ms.",
+      "why": "Park is a common surname (notably Korean 박) and an everyday noun. A title and approval predicate select the surname.",
+      "text": "Ms. Park approved the transfer.",
+      "expectations": [
+        {
+          "start": 4,
+          "end": 8,
+          "surface": "Park",
+          "expect": "person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "latin",
+        "token_class": "single",
+        "collision_classes": [
+          "common-word"
+        ],
+        "context_types": [
+          "plain-prose",
+          "title-honorific"
+        ],
+        "name_features": [
+          "surname-only"
+        ],
+        "boundary_tags": [
+          "honorific-excluded",
+          "abbreviation-period"
+        ]
+      },
+      "ambiguity": {
+        "level": "context-resolvable",
+        "note": "Title plus an approving agent makes it a surname rather than a public green space."
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/en/common-word-collision/rose-given-name",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "en",
+      "title": "Rose as a person invited to an event",
+      "why": "Rose is a very common flower word; as the object of 'invited' it is a person.",
+      "text": "We invited Rose to the opening.",
+      "expectations": [
+        {
+          "start": 11,
+          "end": 15,
+          "surface": "Rose",
+          "expect": "person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "latin",
+        "token_class": "single",
+        "collision_classes": [
+          "common-word"
+        ],
+        "context_types": [
+          "plain-prose"
+        ],
+        "name_features": [],
+        "boundary_tags": []
+      },
+      "ambiguity": {
+        "level": "context-resolvable",
+        "note": "'Invited X to the opening' selects a person, not a flower."
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/en/common-word-collision/rose-lowercase-verb",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "en",
+      "title": "Lowercase 'rose' as a past-tense verb",
+      "why": "A lowercase decoy with the exact letters of a common given name. Documents that capitalization is evidence, while the case also guards against a case-insensitive name lookup.",
+      "text": "Prices rose sharply last quarter.",
+      "expectations": [
+        {
+          "start": 7,
+          "end": 11,
+          "surface": "rose",
+          "expect": "not-person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "not-applicable",
+        "script": "latin",
+        "token_class": "single",
+        "collision_classes": [
+          "common-word"
+        ],
+        "context_types": [
+          "plain-prose",
+          "no-person"
+        ],
+        "name_features": [],
+        "boundary_tags": []
+      },
+      "ambiguity": {
+        "level": "context-resolvable",
+        "note": "Lowercase 'rose' after the plural subject 'Prices' is the past tense of 'rise'."
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/en/common-word-collision/song-noun-compound",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "en",
+      "title": "Capitalized 'Song' as a noun at sentence start",
+      "why": "Song is a common surname (including Korean 송). Here it heads a noun compound 'Song titles'.",
+      "text": "Song titles are rarely protected by copyright.",
+      "expectations": [
+        {
+          "start": 0,
+          "end": 4,
+          "surface": "Song",
+          "expect": "not-person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "latin",
+        "token_class": "single",
+        "collision_classes": [
+          "common-word"
+        ],
+        "context_types": [
+          "plain-prose",
+          "sentence-initial",
+          "no-person"
+        ],
+        "name_features": [],
+        "boundary_tags": []
+      },
+      "ambiguity": {
+        "level": "context-resolvable",
+        "note": "'Song titles' is a noun compound; there is no human referent."
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/en/common-word-collision/song-surname-with-title",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "en",
+      "title": "Song as a surname after Dr.",
+      "why": "Partner of song-noun-compound: with a title and an agentive verb, Song is a person.",
+      "text": "Dr. Song published the results last year.",
+      "expectations": [
+        {
+          "start": 4,
+          "end": 8,
+          "surface": "Song",
+          "expect": "person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "latin",
+        "token_class": "single",
+        "collision_classes": [
+          "common-word"
+        ],
+        "context_types": [
+          "plain-prose",
+          "title-honorific"
+        ],
+        "name_features": [
+          "surname-only"
+        ],
+        "boundary_tags": [
+          "honorific-excluded",
+          "abbreviation-period"
+        ]
+      },
+      "ambiguity": {
+        "level": "context-resolvable",
+        "note": "A title precedes it and 'published the results' needs a human agent."
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/en/common-word-collision/summer-given-name-full",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "en",
+      "title": "Summer as a given name in a full name",
+      "why": "Summer is a season and a given name. 'Please welcome X to the team' selects a person.",
+      "text": "Please welcome Summer Delaney to the team.",
+      "expectations": [
+        {
+          "start": 15,
+          "end": 29,
+          "surface": "Summer Delaney",
+          "expect": "person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "latin",
+        "token_class": "multi",
+        "collision_classes": [
+          "temporal",
+          "common-word"
+        ],
+        "context_types": [
+          "plain-prose"
+        ],
+        "name_features": [
+          "full-name"
+        ],
+        "boundary_tags": []
+      },
+      "ambiguity": {
+        "level": "context-resolvable",
+        "note": "Welcoming someone to a team is an action directed at a person."
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/en/common-word-collision/young-sentence-initial-adjective",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "en",
+      "title": "Capitalized 'Young' as an adjective at sentence start",
+      "why": "Young is a surname; at sentence start it is capitalized by position and here modifies 'people'.",
+      "text": "Young people in the survey mostly agreed.",
+      "expectations": [
+        {
+          "start": 0,
+          "end": 5,
+          "surface": "Young",
+          "expect": "not-person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "latin",
+        "token_class": "single",
+        "collision_classes": [
+          "common-word"
+        ],
+        "context_types": [
+          "plain-prose",
+          "sentence-initial",
+          "no-person"
+        ],
+        "name_features": [],
+        "boundary_tags": []
+      },
+      "ambiguity": {
+        "level": "context-resolvable",
+        "note": "'Young people' is an adjective-noun phrase; the plural noun 'people' follows directly."
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/en/common-word-collision/young-surname-with-title",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "en",
+      "title": "Young as a surname after Mr.",
+      "why": "Partner of the adjective case: the title makes the same word a surname.",
+      "text": "Mr. Young returned the keys.",
+      "expectations": [
+        {
+          "start": 4,
+          "end": 9,
+          "surface": "Young",
+          "expect": "person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "latin",
+        "token_class": "single",
+        "collision_classes": [
+          "common-word"
+        ],
+        "context_types": [
+          "plain-prose",
+          "title-honorific"
+        ],
+        "name_features": [
+          "surname-only"
+        ],
+        "boundary_tags": [
+          "honorific-excluded",
+          "abbreviation-period"
+        ]
+      },
+      "ambiguity": {
+        "level": "context-resolvable",
+        "note": "After the title 'Mr.', the word can only be a surname."
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    }
+  ]
+}

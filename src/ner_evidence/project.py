@@ -9,6 +9,7 @@ from the Case unchanged. Nothing here can create an expectation.
 from __future__ import annotations
 
 import json
+import re
 import unicodedata
 from typing import Callable
 
@@ -102,13 +103,11 @@ def check_ruleset(ruleset: dict, cases: list[dict]) -> list[Problem]:
     plain = next((p for p in ruleset.get("projections", []) if p["id"] == "plain"), None)
     if plain is None or plain["prefix"] or plain["suffix"] or plain["segment_transform"] != "identity":
         probs.append(Problem("RULESET", "plain", "a pure-identity 'plain' projection is required"))
-    surfaces = sorted({e["surface"].lower() for c in cases for e in c["expectations"] if len(e["surface"]) >= 2})
+    surface_words = {w.lower() for c in cases for e in c["expectations"] for w in re.findall(r"\w+", e["surface"]) if len(w) >= 2}
     for p in ruleset.get("projections", []):
-        wrapper = (p["prefix"] + "\0" + p["suffix"]).lower()
-        for s in surfaces:
-            if s in wrapper:
-                probs.append(Problem("RULESET", p["id"], f"wrapper text contains the surface of an authored expectation ({s!r}); wrappers must not introduce name-like content"))
-                break
+        clash = sorted({w.lower() for w in re.findall(r"\w+", p["prefix"] + " " + p["suffix"])} & surface_words)
+        if clash:
+            probs.append(Problem("RULESET", p["id"], f"wrapper words {clash} also occur in authored expectation surfaces; wrappers must not introduce name-like content"))
     return probs
 
 

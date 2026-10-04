@@ -138,9 +138,9 @@ def check_case(case: dict, repo: Repo) -> list[Problem]:
         bad("AMBIGUITY", "a case with collision classes cannot be 'unambiguous' (the surface form is confusable by definition)")
     if has_either != (level == "genuinely-ambiguous"):
         bad("AMBIGUITY", "an 'either' expectation must exist if and only if ambiguity.level is genuinely-ambiguous")
-    has_person = any(s["expect"] == "person" for s in spans)
-    if ("no-person" in dims["context_types"]) == has_person:
-        bad("CONTEXT", "context type 'no-person' must be present exactly when no span expects 'person'")
+    may_have_person = any(s["expect"] in {"person", "either"} for s in spans)
+    if ("no-person" in dims["context_types"]) == may_have_person:
+        bad("CONTEXT", "context type 'no-person' must be present exactly when no span expects 'person' or 'either'")
 
     if case["evidence_class"] not in {e["id"] for e in tax["evidence_classes"]}:
         bad("VOCAB", f"evidence_class {case['evidence_class']!r} unknown")

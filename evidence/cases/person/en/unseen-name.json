@@ -1,0 +1,535 @@
+{
+  "cases": [
+    {
+      "id": "person/en/unseen-name/apostrophe-in-novel-surname",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "en",
+      "title": "Constructed surname with an internal apostrophe",
+      "why": "The apostrophe belongs to the name. Boundary logic that treats apostrophes as token separators splits it.",
+      "text": "The invoice was signed by Brannock O'Quillan.",
+      "expectations": [
+        {
+          "start": 26,
+          "end": 44,
+          "surface": "Brannock O'Quillan",
+          "expect": "person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "novel",
+        "script": "latin",
+        "token_class": "multi",
+        "collision_classes": [],
+        "context_types": [
+          "plain-prose"
+        ],
+        "name_features": [
+          "full-name",
+          "apostrophe"
+        ],
+        "boundary_tags": [
+          "apostrophe-boundary",
+          "punctuation-adjacent"
+        ]
+      },
+      "ambiguity": {
+        "level": "unambiguous"
+      },
+      "evidence_class": "authored-baseline",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/en/unseen-name/diacritics-danish-name",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "en",
+      "title": "Danish name containing ø and æ",
+      "why": "Non-ASCII Latin letters inside a rare name; also exercises Unicode-normalization variants of the same text.",
+      "text": "Søren Kjærgaard answered every question.",
+      "expectations": [
+        {
+          "start": 0,
+          "end": 15,
+          "surface": "Søren Kjærgaard",
+          "expect": "person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "rare",
+        "script": "latin",
+        "token_class": "multi",
+        "collision_classes": [],
+        "context_types": [
+          "plain-prose"
+        ],
+        "name_features": [
+          "full-name",
+          "diacritics"
+        ],
+        "boundary_tags": [
+          "decomposition-sensitive"
+        ]
+      },
+      "ambiguity": {
+        "level": "unambiguous"
+      },
+      "evidence_class": "authored-baseline",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/en/unseen-name/hyphenated-novel-surname",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "en",
+      "title": "Constructed given name with hyphenated double surname",
+      "why": "A hyphenated surname must be one span; splitting at the hyphen yields two partial spans.",
+      "text": "Zephyrine Holloway-Quist opened the exhibition.",
+      "expectations": [
+        {
+          "start": 0,
+          "end": 24,
+          "surface": "Zephyrine Holloway-Quist",
+          "expect": "person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "novel",
+        "script": "latin",
+        "token_class": "multi",
+        "collision_classes": [],
+        "context_types": [
+          "plain-prose"
+        ],
+        "name_features": [
+          "full-name",
+          "hyphenated"
+        ],
+        "boundary_tags": [
+          "hyphen-boundary"
+        ]
+      },
+      "ambiguity": {
+        "level": "unambiguous"
+      },
+      "evidence_class": "authored-baseline",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/en/unseen-name/novel-full-name",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "en",
+      "title": "Constructed two-token name no list would contain",
+      "why": "Both tokens are constructed, so the only available signal is context and orthography. This is the baseline 'unseen multi-token name'.",
+      "text": "Quillon Draxby presented the audit findings.",
+      "expectations": [
+        {
+          "start": 0,
+          "end": 14,
+          "surface": "Quillon Draxby",
+          "expect": "person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "novel",
+        "script": "latin",
+        "token_class": "multi",
+        "collision_classes": [],
+        "context_types": [
+          "plain-prose"
+        ],
+        "name_features": [
+          "full-name"
+        ],
+        "boundary_tags": []
+      },
+      "ambiguity": {
+        "level": "unambiguous"
+      },
+      "evidence_class": "authored-baseline",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/en/unseen-name/novel-single-token",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "en",
+      "title": "Constructed single-token given name",
+      "why": "A single unseen token with no surname, title or capitalization contrast; the hardest unseen-name shape for lookup-based approaches.",
+      "text": "Everyone agreed that Ysolde should lead the project.",
+      "expectations": [
+        {
+          "start": 21,
+          "end": 27,
+          "surface": "Ysolde",
+          "expect": "person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "novel",
+        "script": "latin",
+        "token_class": "single",
+        "collision_classes": [],
+        "context_types": [
+          "plain-prose"
+        ],
+        "name_features": [
+          "given-only"
+        ],
+        "boundary_tags": []
+      },
+      "ambiguity": {
+        "level": "unambiguous"
+      },
+      "evidence_class": "authored-baseline",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/en/unseen-name/novel-surname-only",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "en",
+      "title": "Constructed surname alone, after 'from'",
+      "why": "A single unseen surname with no given name: nothing but context says this is a person.",
+      "text": "The memo from Ulfsdottir arrived late.",
+      "expectations": [
+        {
+          "start": 14,
+          "end": 24,
+          "surface": "Ulfsdottir",
+          "expect": "person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "novel",
+        "script": "latin",
+        "token_class": "single",
+        "collision_classes": [],
+        "context_types": [
+          "plain-prose"
+        ],
+        "name_features": [
+          "surname-only"
+        ],
+        "boundary_tags": []
+      },
+      "ambiguity": {
+        "level": "unambiguous"
+      },
+      "evidence_class": "authored-baseline",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/en/unseen-name/rare-irish-given-name",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "en",
+      "title": "Rare Irish given name whose spelling is not phonetic in English",
+      "why": "The orthography (Aoife) does not follow English spelling patterns, which can defeat character-level cues for names.",
+      "text": "We have not heard back from Aoife yet.",
+      "expectations": [
+        {
+          "start": 28,
+          "end": 33,
+          "surface": "Aoife",
+          "expect": "person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "rare",
+        "script": "latin",
+        "token_class": "single",
+        "collision_classes": [],
+        "context_types": [
+          "plain-prose"
+        ],
+        "name_features": [
+          "given-only"
+        ],
+        "boundary_tags": []
+      },
+      "ambiguity": {
+        "level": "unambiguous"
+      },
+      "evidence_class": "authored-baseline",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/en/unseen-name/rare-zulu-given-and-sotho-surname",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "en",
+      "title": "Genuine but uncommon southern African name",
+      "why": "Real names that are rare in English-language text. Tests that rarity of a real name in the language community, not just invention, is covered.",
+      "text": "Thandiwe Mokoena chaired the session.",
+      "expectations": [
+        {
+          "start": 0,
+          "end": 16,
+          "surface": "Thandiwe Mokoena",
+          "expect": "person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "rare",
+        "script": "latin",
+        "token_class": "multi",
+        "collision_classes": [],
+        "context_types": [
+          "plain-prose"
+        ],
+        "name_features": [
+          "full-name"
+        ],
+        "boundary_tags": []
+      },
+      "ambiguity": {
+        "level": "unambiguous"
+      },
+      "evidence_class": "authored-baseline",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/en/unseen-name/russian-transliterated-compound",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "en",
+      "title": "Transliterated Slavic given name with compound surname",
+      "why": "Transliterated names have unfamiliar letter sequences. A compound surname spans a hyphen, so the span is long relative to typical names.",
+      "text": "Dmitri Volkonsky-Adeyemi is on the guest list.",
+      "expectations": [
+        {
+          "start": 0,
+          "end": 24,
+          "surface": "Dmitri Volkonsky-Adeyemi",
+          "expect": "person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "rare",
+        "script": "latin",
+        "token_class": "multi",
+        "collision_classes": [],
+        "context_types": [
+          "plain-prose",
+          "list-or-enumeration"
+        ],
+        "name_features": [
+          "full-name",
+          "hyphenated"
+        ],
+        "boundary_tags": [
+          "hyphen-boundary"
+        ]
+      },
+      "ambiguity": {
+        "level": "unambiguous"
+      },
+      "evidence_class": "authored-baseline",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/en/unseen-name/short-novel-two-token",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "en",
+      "title": "Very short constructed two-token name",
+      "why": "Two- and three-letter constructed tokens are easily treated as abbreviations or noise.",
+      "text": "Vex Ondar was promoted last week.",
+      "expectations": [
+        {
+          "start": 0,
+          "end": 9,
+          "surface": "Vex Ondar",
+          "expect": "person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "novel",
+        "script": "latin",
+        "token_class": "multi",
+        "collision_classes": [],
+        "context_types": [
+          "plain-prose"
+        ],
+        "name_features": [
+          "full-name"
+        ],
+        "boundary_tags": []
+      },
+      "ambiguity": {
+        "level": "unambiguous"
+      },
+      "evidence_class": "authored-baseline",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/en/unseen-name/three-token-novel-name",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "en",
+      "title": "Constructed three-token full name with middle name",
+      "why": "Three unseen tokens must be one span, testing multi-token extension without any lexical anchor.",
+      "text": "Odalys Marrowgate Verrinder accepted the nomination.",
+      "expectations": [
+        {
+          "start": 0,
+          "end": 27,
+          "surface": "Odalys Marrowgate Verrinder",
+          "expect": "person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "novel",
+        "script": "latin",
+        "token_class": "multi",
+        "collision_classes": [],
+        "context_types": [
+          "plain-prose"
+        ],
+        "name_features": [
+          "full-name",
+          "middle-name"
+        ],
+        "boundary_tags": []
+      },
+      "ambiguity": {
+        "level": "unambiguous"
+      },
+      "evidence_class": "authored-baseline",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/en/unseen-name/unusual-given-common-surname",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "en",
+      "title": "Unusual given name paired with a very common surname",
+      "why": "A familiar surname can pull a detector toward PERSON; the unusual given name tests whether it still extends the span.",
+      "text": "Kestrel Johnson filed the report.",
+      "expectations": [
+        {
+          "start": 0,
+          "end": 15,
+          "surface": "Kestrel Johnson",
+          "expect": "person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "rare",
+        "script": "latin",
+        "token_class": "multi",
+        "collision_classes": [],
+        "context_types": [
+          "plain-prose"
+        ],
+        "name_features": [
+          "full-name"
+        ],
+        "boundary_tags": []
+      },
+      "ambiguity": {
+        "level": "unambiguous"
+      },
+      "evidence_class": "authored-baseline",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    }
+  ]
+}

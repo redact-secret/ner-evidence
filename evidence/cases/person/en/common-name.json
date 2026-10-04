@@ -1,0 +1,363 @@
+{
+  "cases": [
+    {
+      "id": "person/en/common-name/full-name-prose",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "en",
+      "title": "Common two-token name in a plain sentence",
+      "why": "Control case: a very common given name plus surname in an unremarkable sentence. Easy positives are authored explicitly so that slice counts show how much of the corpus is easy.",
+      "text": "John Smith signed the contract on Tuesday.",
+      "expectations": [
+        {
+          "start": 0,
+          "end": 10,
+          "surface": "John Smith",
+          "expect": "person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "latin",
+        "token_class": "multi",
+        "collision_classes": [],
+        "context_types": [
+          "plain-prose"
+        ],
+        "name_features": [
+          "full-name"
+        ],
+        "boundary_tags": []
+      },
+      "ambiguity": {
+        "level": "unambiguous"
+      },
+      "evidence_class": "authored-baseline",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/en/common-name/given-name-only",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "en",
+      "title": "Common given name alone mid-sentence",
+      "why": "Control case: a single-token given name with no surname or title, so any detector relying on multi-token structure has nothing else to lean on.",
+      "text": "Please ask Emily to join the call.",
+      "expectations": [
+        {
+          "start": 11,
+          "end": 16,
+          "surface": "Emily",
+          "expect": "person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "latin",
+        "token_class": "single",
+        "collision_classes": [],
+        "context_types": [
+          "plain-prose"
+        ],
+        "name_features": [
+          "given-only"
+        ],
+        "boundary_tags": []
+      },
+      "ambiguity": {
+        "level": "unambiguous"
+      },
+      "evidence_class": "authored-baseline",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/en/common-name/given-name-recipient",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "en",
+      "title": "Common given name as the indirect object",
+      "why": "Control case: a PERSON in a ditransitive sentence, at a position where common words usually appear.",
+      "text": "The courier handed Michael the signed forms.",
+      "expectations": [
+        {
+          "start": 19,
+          "end": 26,
+          "surface": "Michael",
+          "expect": "person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "latin",
+        "token_class": "single",
+        "collision_classes": [],
+        "context_types": [
+          "plain-prose"
+        ],
+        "name_features": [
+          "given-only"
+        ],
+        "boundary_tags": []
+      },
+      "ambiguity": {
+        "level": "unambiguous"
+      },
+      "evidence_class": "authored-baseline",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/en/common-name/object-of-preposition",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "en",
+      "title": "Common full name as the object of a preposition",
+      "why": "Control case: a PERSON in a prepositional phrase far from the sentence start, where capitalization is the only cue.",
+      "text": "Nobody had heard from Robert Taylor since the merger.",
+      "expectations": [
+        {
+          "start": 22,
+          "end": 35,
+          "surface": "Robert Taylor",
+          "expect": "person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "latin",
+        "token_class": "multi",
+        "collision_classes": [],
+        "context_types": [
+          "plain-prose"
+        ],
+        "name_features": [
+          "full-name"
+        ],
+        "boundary_tags": []
+      },
+      "ambiguity": {
+        "level": "unambiguous"
+      },
+      "evidence_class": "authored-baseline",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/en/common-name/sentence-final-name",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "en",
+      "title": "Common full name immediately before the sentence period",
+      "why": "Control case: the sentence-final period is not part of the name, so the expected span stops before it.",
+      "text": "The award went to Jessica Wilson.",
+      "expectations": [
+        {
+          "start": 18,
+          "end": 32,
+          "surface": "Jessica Wilson",
+          "expect": "person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "latin",
+        "token_class": "multi",
+        "collision_classes": [],
+        "context_types": [
+          "plain-prose"
+        ],
+        "name_features": [
+          "full-name"
+        ],
+        "boundary_tags": [
+          "punctuation-adjacent"
+        ]
+      },
+      "ambiguity": {
+        "level": "unambiguous"
+      },
+      "evidence_class": "authored-baseline",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/en/common-name/surname-only-agent",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "en",
+      "title": "Common surname alone as the agent of a verb",
+      "why": "Control case: a surname used alone, as newspapers and reports do, with a clear human-agent role ('reviewed by').",
+      "text": "The report was reviewed by Johnson before publication.",
+      "expectations": [
+        {
+          "start": 27,
+          "end": 34,
+          "surface": "Johnson",
+          "expect": "person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "latin",
+        "token_class": "single",
+        "collision_classes": [],
+        "context_types": [
+          "plain-prose"
+        ],
+        "name_features": [
+          "surname-only"
+        ],
+        "boundary_tags": []
+      },
+      "ambiguity": {
+        "level": "unambiguous"
+      },
+      "evidence_class": "authored-baseline",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/en/common-name/two-full-names",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "en",
+      "title": "Two common full names in one sentence",
+      "why": "Control case with two PERSON mentions, to check that every mention is expected rather than only the first.",
+      "text": "Sarah Miller and David Brown met the client.",
+      "expectations": [
+        {
+          "start": 0,
+          "end": 12,
+          "surface": "Sarah Miller",
+          "expect": "person"
+        },
+        {
+          "start": 17,
+          "end": 28,
+          "surface": "David Brown",
+          "expect": "person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "latin",
+        "token_class": "multi",
+        "collision_classes": [],
+        "context_types": [
+          "plain-prose"
+        ],
+        "name_features": [
+          "full-name"
+        ],
+        "boundary_tags": []
+      },
+      "ambiguity": {
+        "level": "unambiguous"
+      },
+      "evidence_class": "authored-baseline",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/en/common-name/two-short-given-names",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "en",
+      "title": "Two short common given names joined by 'and'",
+      "why": "Control case: very short single-token names (three letters) that tokenizers may merge with neighbours or ignore.",
+      "text": "Tom and Amy left early.",
+      "expectations": [
+        {
+          "start": 0,
+          "end": 3,
+          "surface": "Tom",
+          "expect": "person"
+        },
+        {
+          "start": 8,
+          "end": 11,
+          "surface": "Amy",
+          "expect": "person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "latin",
+        "token_class": "single",
+        "collision_classes": [],
+        "context_types": [
+          "plain-prose",
+          "list-or-enumeration"
+        ],
+        "name_features": [
+          "given-only"
+        ],
+        "boundary_tags": []
+      },
+      "ambiguity": {
+        "level": "unambiguous"
+      },
+      "evidence_class": "authored-baseline",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    }
+  ]
+}

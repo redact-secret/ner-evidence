@@ -1,0 +1,683 @@
+{
+  "cases": [
+    {
+      "id": "person/en/punctuation-boundary/age-in-commas",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "en",
+      "title": "Name followed by an age between commas",
+      "why": "A news-style appositive with a number; the digits and commas are not part of the name.",
+      "text": "Chen Wei, 34, was elected treasurer.",
+      "expectations": [
+        {
+          "start": 0,
+          "end": 8,
+          "surface": "Chen Wei",
+          "expect": "person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "latin",
+        "token_class": "multi",
+        "collision_classes": [],
+        "context_types": [
+          "plain-prose",
+          "sentence-initial"
+        ],
+        "name_features": [
+          "full-name"
+        ],
+        "boundary_tags": [
+          "punctuation-adjacent",
+          "digit-adjacent"
+        ]
+      },
+      "ambiguity": {
+        "level": "unambiguous"
+      },
+      "evidence_class": "authored-baseline",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/en/punctuation-boundary/bibliography-style-authors",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "en",
+      "title": "Bibliography-style authors with initials",
+      "why": "Inverted surname-comma-initial entries separated by semicolons. The trailing period is part of the initial and is inside the span.",
+      "text": "Authors: Smith, J.; Lee, K.",
+      "expectations": [
+        {
+          "start": 9,
+          "end": 18,
+          "surface": "Smith, J.",
+          "expect": "person"
+        },
+        {
+          "start": 20,
+          "end": 27,
+          "surface": "Lee, K.",
+          "expect": "person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "latin",
+        "token_class": "multi",
+        "collision_classes": [],
+        "context_types": [
+          "list-or-enumeration",
+          "structured-text"
+        ],
+        "name_features": [
+          "surname-only",
+          "initials",
+          "inverted-order"
+        ],
+        "boundary_tags": [
+          "comma-inverted",
+          "abbreviation-period",
+          "punctuation-adjacent"
+        ]
+      },
+      "ambiguity": {
+        "level": "unambiguous"
+      },
+      "evidence_class": "authored-baseline",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/en/punctuation-boundary/comma-separated-list",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "en",
+      "title": "Three full names in a comma-separated list with 'and'",
+      "why": "Commas between names are boundaries, not part of any span. Each of the three names must be found independently.",
+      "text": "Invitees included Maria Lopez, Ahmed Hassan, and Chen Wei.",
+      "expectations": [
+        {
+          "start": 18,
+          "end": 29,
+          "surface": "Maria Lopez",
+          "expect": "person"
+        },
+        {
+          "start": 31,
+          "end": 43,
+          "surface": "Ahmed Hassan",
+          "expect": "person"
+        },
+        {
+          "start": 49,
+          "end": 57,
+          "surface": "Chen Wei",
+          "expect": "person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "latin",
+        "token_class": "multi",
+        "collision_classes": [],
+        "context_types": [
+          "plain-prose",
+          "list-or-enumeration"
+        ],
+        "name_features": [
+          "full-name"
+        ],
+        "boundary_tags": [
+          "punctuation-adjacent"
+        ]
+      },
+      "ambiguity": {
+        "level": "unambiguous"
+      },
+      "evidence_class": "authored-baseline",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/en/punctuation-boundary/ellipsis-around-name",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "en",
+      "title": "Name surrounded by ellipses",
+      "why": "Ellipses touch the name on both sides, as in informal chat text.",
+      "text": "Well... Jonathan... maybe.",
+      "expectations": [
+        {
+          "start": 8,
+          "end": 16,
+          "surface": "Jonathan",
+          "expect": "person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "latin",
+        "token_class": "single",
+        "collision_classes": [],
+        "context_types": [
+          "plain-prose",
+          "dialogue"
+        ],
+        "name_features": [
+          "given-only"
+        ],
+        "boundary_tags": [
+          "punctuation-adjacent"
+        ]
+      },
+      "ambiguity": {
+        "level": "unambiguous"
+      },
+      "evidence_class": "authored-baseline",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/en/punctuation-boundary/email-header-display-name",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "en",
+      "title": "Display name before an angle-bracketed address",
+      "why": "Message-header style 'From: Name <address>'. Only the display name is a PERSON mention; the reserved-domain address is not.",
+      "text": "From: Maria Lopez <maria@example.invalid>",
+      "expectations": [
+        {
+          "start": 6,
+          "end": 17,
+          "surface": "Maria Lopez",
+          "expect": "person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "latin",
+        "token_class": "multi",
+        "collision_classes": [],
+        "context_types": [
+          "structured-text"
+        ],
+        "name_features": [
+          "full-name"
+        ],
+        "boundary_tags": [
+          "punctuation-adjacent"
+        ]
+      },
+      "ambiguity": {
+        "level": "unambiguous"
+      },
+      "evidence_class": "authored-baseline",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/en/punctuation-boundary/exclamation-after-given-name",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "en",
+      "title": "Given name followed by an exclamation mark",
+      "why": "A greeting where the name is followed directly by '!'.",
+      "text": "Congratulations, Priya!",
+      "expectations": [
+        {
+          "start": 17,
+          "end": 22,
+          "surface": "Priya",
+          "expect": "person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "latin",
+        "token_class": "single",
+        "collision_classes": [],
+        "context_types": [
+          "plain-prose",
+          "vocative"
+        ],
+        "name_features": [
+          "given-only"
+        ],
+        "boundary_tags": [
+          "punctuation-adjacent"
+        ]
+      },
+      "ambiguity": {
+        "level": "unambiguous"
+      },
+      "evidence_class": "authored-baseline",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/en/punctuation-boundary/given-name-possessive",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "en",
+      "title": "Possessive after a given name",
+      "why": "The possessive suffix 's is excluded from the span by convention; including it is a boundary error.",
+      "text": "We borrowed Maria's notes.",
+      "expectations": [
+        {
+          "start": 12,
+          "end": 17,
+          "surface": "Maria",
+          "expect": "person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "latin",
+        "token_class": "single",
+        "collision_classes": [],
+        "context_types": [
+          "plain-prose",
+          "possessive"
+        ],
+        "name_features": [
+          "given-only"
+        ],
+        "boundary_tags": [
+          "apostrophe-boundary"
+        ]
+      },
+      "ambiguity": {
+        "level": "unambiguous"
+      },
+      "evidence_class": "authored-baseline",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/en/punctuation-boundary/hyphenated-surname-family",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "en",
+      "title": "Hyphenated double surname used for a family",
+      "why": "A family reference by hyphenated surname. The hyphen is inside the name; the expectation is one span, and 'family' is outside it.",
+      "text": "The Smith-Jones family arrived early.",
+      "expectations": [
+        {
+          "start": 4,
+          "end": 15,
+          "surface": "Smith-Jones",
+          "expect": "person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "latin",
+        "token_class": "single",
+        "collision_classes": [],
+        "context_types": [
+          "plain-prose"
+        ],
+        "name_features": [
+          "surname-only",
+          "hyphenated"
+        ],
+        "boundary_tags": [
+          "hyphen-boundary"
+        ]
+      },
+      "ambiguity": {
+        "level": "unambiguous"
+      },
+      "evidence_class": "authored-baseline",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/en/punctuation-boundary/initials-before-sentence-period",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "en",
+      "title": "Initials end in a period that is followed by the sentence period",
+      "why": "The final character of the name is a letter, so the single period after it is sentence punctuation and not an abbreviation point. Contrast with Jr. cases, where the period is inside the span.",
+      "text": "The letter was signed by A. K. Mensah.",
+      "expectations": [
+        {
+          "start": 25,
+          "end": 37,
+          "surface": "A. K. Mensah",
+          "expect": "person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "latin",
+        "token_class": "multi",
+        "collision_classes": [],
+        "context_types": [
+          "plain-prose"
+        ],
+        "name_features": [
+          "full-name",
+          "initials"
+        ],
+        "boundary_tags": [
+          "abbreviation-period",
+          "punctuation-adjacent"
+        ]
+      },
+      "ambiguity": {
+        "level": "unambiguous"
+      },
+      "evidence_class": "authored-baseline",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/en/punctuation-boundary/name-between-em-dashes",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "en",
+      "title": "Full name set off by em dashes",
+      "why": "Em dashes with no surrounding spaces touch the name directly; they are punctuation, not name characters.",
+      "text": "The manager—Olivia Brandt—approved the plan.",
+      "expectations": [
+        {
+          "start": 12,
+          "end": 25,
+          "surface": "Olivia Brandt",
+          "expect": "person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "latin",
+        "token_class": "multi",
+        "collision_classes": [],
+        "context_types": [
+          "plain-prose",
+          "parenthetical"
+        ],
+        "name_features": [
+          "full-name"
+        ],
+        "boundary_tags": [
+          "punctuation-adjacent",
+          "parenthetical-boundary"
+        ]
+      },
+      "ambiguity": {
+        "level": "unambiguous"
+      },
+      "evidence_class": "authored-baseline",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/en/punctuation-boundary/name-in-parentheses",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "en",
+      "title": "Full name wrapped in parentheses",
+      "why": "Parentheses touch the name on both sides; the span must exclude them.",
+      "text": "The coordinator (Priya Raman) will call you.",
+      "expectations": [
+        {
+          "start": 17,
+          "end": 28,
+          "surface": "Priya Raman",
+          "expect": "person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "latin",
+        "token_class": "multi",
+        "collision_classes": [],
+        "context_types": [
+          "plain-prose",
+          "parenthetical"
+        ],
+        "name_features": [
+          "full-name"
+        ],
+        "boundary_tags": [
+          "parenthetical-boundary"
+        ]
+      },
+      "ambiguity": {
+        "level": "unambiguous"
+      },
+      "evidence_class": "authored-baseline",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/en/punctuation-boundary/slash-separated-reviewers",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "en",
+      "title": "Two surnames separated by a slash",
+      "why": "A slash between names is a delimiter; each surname is its own span.",
+      "text": "Reviewers: Garcia/Nguyen.",
+      "expectations": [
+        {
+          "start": 11,
+          "end": 17,
+          "surface": "Garcia",
+          "expect": "person"
+        },
+        {
+          "start": 18,
+          "end": 24,
+          "surface": "Nguyen",
+          "expect": "person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "latin",
+        "token_class": "single",
+        "collision_classes": [],
+        "context_types": [
+          "list-or-enumeration",
+          "structured-text"
+        ],
+        "name_features": [
+          "surname-only"
+        ],
+        "boundary_tags": [
+          "punctuation-adjacent",
+          "no-space"
+        ]
+      },
+      "ambiguity": {
+        "level": "unambiguous"
+      },
+      "evidence_class": "authored-baseline",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/en/punctuation-boundary/speaker-label-colon",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "en",
+      "title": "Speaker label ending in a colon",
+      "why": "A transcript-style label: the colon is a delimiter and is excluded.",
+      "text": "Maria Lopez: I will send the files tonight.",
+      "expectations": [
+        {
+          "start": 0,
+          "end": 11,
+          "surface": "Maria Lopez",
+          "expect": "person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "latin",
+        "token_class": "multi",
+        "collision_classes": [],
+        "context_types": [
+          "plain-prose",
+          "dialogue",
+          "structured-text"
+        ],
+        "name_features": [
+          "full-name"
+        ],
+        "boundary_tags": [
+          "punctuation-adjacent"
+        ]
+      },
+      "ambiguity": {
+        "level": "unambiguous"
+      },
+      "evidence_class": "authored-baseline",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/en/punctuation-boundary/title-surname-possessive",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "en",
+      "title": "Title, surname and possessive 's",
+      "why": "Both the title before and the possessive after the name are excluded, leaving only the surname. Combines two boundary conventions.",
+      "text": "Dr. Smith's results were replicated.",
+      "expectations": [
+        {
+          "start": 4,
+          "end": 9,
+          "surface": "Smith",
+          "expect": "person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "latin",
+        "token_class": "single",
+        "collision_classes": [],
+        "context_types": [
+          "plain-prose",
+          "title-honorific",
+          "possessive"
+        ],
+        "name_features": [
+          "surname-only"
+        ],
+        "boundary_tags": [
+          "honorific-excluded",
+          "apostrophe-boundary",
+          "abbreviation-period"
+        ]
+      },
+      "ambiguity": {
+        "level": "unambiguous"
+      },
+      "evidence_class": "authored-baseline",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    }
+  ]
+}

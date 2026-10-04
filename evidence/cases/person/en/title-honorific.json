@@ -1,0 +1,471 @@
+{
+  "cases": [
+    {
+      "id": "person/en/title-honorific/dr-surname",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "en",
+      "title": "Dr. followed by a surname",
+      "why": "Pins the convention that the title 'Dr.' is excluded from the PERSON span and only the surname is expected.",
+      "text": "Dr. Nakamura reviewed the scans.",
+      "expectations": [
+        {
+          "start": 4,
+          "end": 12,
+          "surface": "Nakamura",
+          "expect": "person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "rare",
+        "script": "latin",
+        "token_class": "single",
+        "collision_classes": [],
+        "context_types": [
+          "plain-prose",
+          "title-honorific"
+        ],
+        "name_features": [
+          "surname-only"
+        ],
+        "boundary_tags": [
+          "honorific-excluded",
+          "abbreviation-period"
+        ]
+      },
+      "ambiguity": {
+        "level": "unambiguous"
+      },
+      "evidence_class": "authored-baseline",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/en/title-honorific/judge-title-word",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "en",
+      "title": "Occupational title 'Judge' before a surname",
+      "why": "'Judge' is also a common verb and noun; as a capitalized title it must be excluded, and 'Ramirez' alone is the person.",
+      "text": "Judge Ramirez dismissed the motion.",
+      "expectations": [
+        {
+          "start": 6,
+          "end": 13,
+          "surface": "Ramirez",
+          "expect": "person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "latin",
+        "token_class": "single",
+        "collision_classes": [],
+        "context_types": [
+          "plain-prose",
+          "title-honorific"
+        ],
+        "name_features": [
+          "surname-only"
+        ],
+        "boundary_tags": [
+          "honorific-excluded"
+        ]
+      },
+      "ambiguity": {
+        "level": "unambiguous"
+      },
+      "evidence_class": "authored-baseline",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/en/title-honorific/mr-full-name",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "en",
+      "title": "Mr. followed by a full name",
+      "why": "Title excluded, multi-token name included. A span starting at 'Mr.' is a boundary error.",
+      "text": "Mr. Alan Pierce will chair the meeting.",
+      "expectations": [
+        {
+          "start": 4,
+          "end": 15,
+          "surface": "Alan Pierce",
+          "expect": "person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "latin",
+        "token_class": "multi",
+        "collision_classes": [],
+        "context_types": [
+          "plain-prose",
+          "title-honorific"
+        ],
+        "name_features": [
+          "full-name"
+        ],
+        "boundary_tags": [
+          "honorific-excluded",
+          "abbreviation-period"
+        ]
+      },
+      "ambiguity": {
+        "level": "unambiguous"
+      },
+      "evidence_class": "authored-baseline",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/en/title-honorific/mrs-surname-long-tenure",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "en",
+      "title": "Mrs. followed by a surname of non-English origin",
+      "why": "Title plus an Igbo surname: the title boosts PERSON confidence but the span still excludes it.",
+      "text": "Mrs. Okafor taught chemistry for thirty years.",
+      "expectations": [
+        {
+          "start": 5,
+          "end": 11,
+          "surface": "Okafor",
+          "expect": "person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "rare",
+        "script": "latin",
+        "token_class": "single",
+        "collision_classes": [],
+        "context_types": [
+          "plain-prose",
+          "title-honorific"
+        ],
+        "name_features": [
+          "surname-only"
+        ],
+        "boundary_tags": [
+          "honorific-excluded",
+          "abbreviation-period"
+        ]
+      },
+      "ambiguity": {
+        "level": "unambiguous"
+      },
+      "evidence_class": "authored-baseline",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/en/title-honorific/ms-hyphenated-surname",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "en",
+      "title": "Ms. followed by a hyphenated surname",
+      "why": "Title exclusion combined with hyphen handling in one span.",
+      "text": "Ms. Delgado-Ruiz confirmed the booking.",
+      "expectations": [
+        {
+          "start": 4,
+          "end": 16,
+          "surface": "Delgado-Ruiz",
+          "expect": "person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "rare",
+        "script": "latin",
+        "token_class": "single",
+        "collision_classes": [],
+        "context_types": [
+          "plain-prose",
+          "title-honorific"
+        ],
+        "name_features": [
+          "surname-only",
+          "hyphenated"
+        ],
+        "boundary_tags": [
+          "honorific-excluded",
+          "abbreviation-period",
+          "hyphen-boundary"
+        ]
+      },
+      "ambiguity": {
+        "level": "unambiguous"
+      },
+      "evidence_class": "authored-baseline",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/en/title-honorific/prof-rare-name",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "en",
+      "title": "Prof. followed by a rare full name",
+      "why": "Abbreviated academic title with an uncommon Finnish name; neither the title nor the name is a common-word cue.",
+      "text": "Prof. Linnea Aaltonen gave the lecture.",
+      "expectations": [
+        {
+          "start": 6,
+          "end": 21,
+          "surface": "Linnea Aaltonen",
+          "expect": "person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "rare",
+        "script": "latin",
+        "token_class": "multi",
+        "collision_classes": [],
+        "context_types": [
+          "plain-prose",
+          "title-honorific"
+        ],
+        "name_features": [
+          "full-name"
+        ],
+        "boundary_tags": [
+          "honorific-excluded",
+          "abbreviation-period"
+        ]
+      },
+      "ambiguity": {
+        "level": "unambiguous"
+      },
+      "evidence_class": "authored-baseline",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/en/title-honorific/reverend-title",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "en",
+      "title": "Spelled-out clerical title before a surname",
+      "why": "Another full-word title; checks the exclusion convention is not limited to abbreviations.",
+      "text": "Reverend Okonkwo led the service.",
+      "expectations": [
+        {
+          "start": 9,
+          "end": 16,
+          "surface": "Okonkwo",
+          "expect": "person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "rare",
+        "script": "latin",
+        "token_class": "single",
+        "collision_classes": [],
+        "context_types": [
+          "plain-prose",
+          "title-honorific"
+        ],
+        "name_features": [
+          "surname-only"
+        ],
+        "boundary_tags": [
+          "honorific-excluded"
+        ]
+      },
+      "ambiguity": {
+        "level": "unambiguous"
+      },
+      "evidence_class": "authored-baseline",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/en/title-honorific/sir-given-and-surname",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "en",
+      "title": "Honorific 'Sir' before a full name",
+      "why": "Sir attaches to the given name in practice; it is still a title and excluded.",
+      "text": "Sir Edmund Fairchild arrived late.",
+      "expectations": [
+        {
+          "start": 4,
+          "end": 20,
+          "surface": "Edmund Fairchild",
+          "expect": "person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "latin",
+        "token_class": "multi",
+        "collision_classes": [],
+        "context_types": [
+          "plain-prose",
+          "title-honorific"
+        ],
+        "name_features": [
+          "full-name"
+        ],
+        "boundary_tags": [
+          "honorific-excluded"
+        ]
+      },
+      "ambiguity": {
+        "level": "unambiguous"
+      },
+      "evidence_class": "authored-baseline",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/en/title-honorific/spelled-out-title-captain",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "en",
+      "title": "Spelled-out military title before a surname",
+      "why": "A full-word title (Captain) written with a capital letter looks like part of a proper noun; the convention still excludes it.",
+      "text": "Captain Hayes gave the order.",
+      "expectations": [
+        {
+          "start": 8,
+          "end": 13,
+          "surface": "Hayes",
+          "expect": "person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "latin",
+        "token_class": "single",
+        "collision_classes": [],
+        "context_types": [
+          "plain-prose",
+          "title-honorific"
+        ],
+        "name_features": [
+          "surname-only"
+        ],
+        "boundary_tags": [
+          "honorific-excluded"
+        ]
+      },
+      "ambiguity": {
+        "level": "unambiguous"
+      },
+      "evidence_class": "authored-baseline",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    },
+    {
+      "id": "person/en/title-honorific/title-forms-brand",
+      "schema_version": "1.0.0",
+      "entity_type": "PERSON",
+      "language": "en",
+      "title": "Title-plus-name that is actually a beverage brand",
+      "why": "'Dr. Pepper' has the exact surface pattern of title plus surname but names a product, so no PERSON is expected. A pattern-only detector fails here.",
+      "text": "She ordered a Dr. Pepper with lunch.",
+      "expectations": [
+        {
+          "start": 14,
+          "end": 24,
+          "surface": "Dr. Pepper",
+          "expect": "not-person"
+        }
+      ],
+      "focus_span": 0,
+      "dimensions": {
+        "familiarity": "common",
+        "script": "latin",
+        "token_class": "multi",
+        "collision_classes": [
+          "product-brand"
+        ],
+        "context_types": [
+          "plain-prose",
+          "title-honorific",
+          "no-person"
+        ],
+        "name_features": [],
+        "boundary_tags": []
+      },
+      "ambiguity": {
+        "level": "context-resolvable",
+        "note": "The title-plus-surname pattern is shared with real people; only the product context (ordering a drink) resolves it."
+      },
+      "evidence_class": "authored-adversarial",
+      "source_ids": [
+        "src/project-authored-synthetic"
+      ],
+      "review": {
+        "factual": "author-only",
+        "linguistic": "author-only",
+        "schema": "machine-validated"
+      }
+    }
+  ]
+}
